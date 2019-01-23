@@ -1,0 +1,12 @@
+{
+  "name": "ashley-shared-lib",
+  "version": "1.0.1",
+  "description": "A demo repository to illustrate how to share palette and typography through NPM",
+  "license": "MIT",
+  "private": false,
+  "files": [
+    "./src/1-settings/all.scss",
+    "./src/2-tools/all.scss",
+    "./src/3-settings/all.scss"
+  ]
+}
