@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"/>
+</head>
+
+<body>
+    <div>
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container">
+                <h1 class="title is-1">{{ name }}</h1>
+                <h3 class="subtitle is-6">Last updated: {{ lastUpdated }}</h3>
+                </div>
+            </div>
+        </section>
+        <main class="container">
+        {{#styleData}}
+        <h2 class="title is-{{depth}}">{{header}}</h2>
+        <div class="columns is-multiline">
+        {{#colors}}
+            <div class="column is-3">
+                <div class="card">
+                    <div class="section" style="background-color: {{color}}"></div>
+                    <div class="card-content">
+                        <div class="title is-4">{{{description}}}</div>
+                        <p class="subtitle is-6">
+                            {{name}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {{/colors}}
+        </div>
+        {{/styleData}}
+        </main>
+    </div>
+</body>
+
+</html>

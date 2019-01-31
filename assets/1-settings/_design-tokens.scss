@@ -1,0 +1,722 @@
+// These tokens are imported from https://projects.invisionapp.com/dsm-export/ashley-test/ds-test/_style-params.scss?key=S1K_10dmV 
+
+// Chat with art team before modification
+
+$color-tribune-yellow: #ffc200;
+$color-blue-light: #a1d2df;
+$color-blue-dark: #223136;
+$color-teal-gray: #539bae;
+$color-red: #ff6047;
+$color-sand: #020201;
+
+$color-white-pure: #ffffff;
+$color-white-off: #f3f3f3;
+$color-gray-light: #d0d0d0;
+$color-gray-medium: #797979;
+$color-black-off: #222222;
+$color-black-pure: #000000;
+
+$color-facebook: #2d60c4;
+$color-twitter: #55acee;
+
+$color-republican: #e81919;
+$color-democrat: #1775b0;
+$color-libertarian: #dcb732;
+$color-green-party: #336633;
+$color-generic-party: #d1d1d1;
+
+$font-headline-font-size: 60px;
+$font-headline-line-height: 72px;
+$font-headline-text-align: start;
+$font-headline-color: #000000;
+$font-headline-font-style: normal;
+$font-headline-font-weight: bold;
+$font-headline-font-family: Helvetica;
+
+@mixin font-headline () {
+  font-size: $font-headline-font-size;
+  line-height: $font-headline-line-height;
+  text-align: $font-headline-text-align;
+  color: $font-headline-color;
+  font-style: $font-headline-font-style;
+  font-weight: $font-headline-font-weight;
+  font-family: $font-headline-font-family;
+}
+
+$font-subtitle-font-size: 36px;
+$font-subtitle-line-height: 48px;
+$font-subtitle-text-align: start;
+$font-subtitle-color: #000000;
+$font-subtitle-font-style: normal;
+$font-subtitle-font-weight: 400;
+$font-subtitle-font-family: Helvetica;
+
+@mixin font-subtitle () {
+  font-size: $font-subtitle-font-size;
+  line-height: $font-subtitle-line-height;
+  text-align: $font-subtitle-text-align;
+  color: $font-subtitle-color;
+  font-style: $font-subtitle-font-style;
+  font-weight: $font-subtitle-font-weight;
+  font-family: $font-subtitle-font-family;
+}
+
+$font-section-header-font-size: 28px;
+$font-section-header-line-height: 34px;
+$font-section-header-text-align: start;
+$font-section-header-color: #000000;
+$font-section-header-font-style: normal;
+$font-section-header-font-weight: 400;
+$font-section-header-font-family: Helvetica;
+
+@mixin font-section-header () {
+  font-size: $font-section-header-font-size;
+  line-height: $font-section-header-line-height;
+  text-align: $font-section-header-text-align;
+  color: $font-section-header-color;
+  font-style: $font-section-header-font-style;
+  font-weight: $font-section-header-font-weight;
+  font-family: $font-section-header-font-family;
+}
+
+$font-button-text-font-size: 12px;
+$font-button-text-line-height: 20px;
+$font-button-text-text-align: start;
+$font-button-text-color: #000000;
+$font-button-text-letter-spacing: 0.75px;
+$font-button-text-text-transform: uppercase;
+$font-button-text-font-style: normal;
+$font-button-text-font-weight: bold;
+$font-button-text-font-family: Helvetica;
+
+@mixin font-button-text () {
+  font-size: $font-button-text-font-size;
+  line-height: $font-button-text-line-height;
+  text-align: $font-button-text-text-align;
+  color: $font-button-text-color;
+  letter-spacing: $font-button-text-letter-spacing;
+  text-transform: $font-button-text-text-transform;
+  font-style: $font-button-text-font-style;
+  font-weight: $font-button-text-font-weight;
+  font-family: $font-button-text-font-family;
+}
+
+$font-h-5-left-prime-font-size: 16px;
+$font-h-5-left-prime-line-height: 24px;
+$font-h-5-left-prime-text-align: start;
+$font-h-5-left-prime-color: #000000;
+$font-h-5-left-prime-font-style: normal;
+$font-h-5-left-prime-font-weight: bold;
+$font-h-5-left-prime-font-family: Helvetica;
+
+@mixin font-h-5-left-prime () {
+  font-size: $font-h-5-left-prime-font-size;
+  line-height: $font-h-5-left-prime-line-height;
+  text-align: $font-h-5-left-prime-text-align;
+  color: $font-h-5-left-prime-color;
+  font-style: $font-h-5-left-prime-font-style;
+  font-weight: $font-h-5-left-prime-font-weight;
+  font-family: $font-h-5-left-prime-font-family;
+}
+
+$font-h-4-left-prime-font-size: 20px;
+$font-h-4-left-prime-line-height: 26px;
+$font-h-4-left-prime-text-align: start;
+$font-h-4-left-prime-color: #000000;
+$font-h-4-left-prime-font-style: normal;
+$font-h-4-left-prime-font-weight: bold;
+$font-h-4-left-prime-font-family: Helvetica;
+
+@mixin font-h-4-left-prime () {
+  font-size: $font-h-4-left-prime-font-size;
+  line-height: $font-h-4-left-prime-line-height;
+  text-align: $font-h-4-left-prime-text-align;
+  color: $font-h-4-left-prime-color;
+  font-style: $font-h-4-left-prime-font-style;
+  font-weight: $font-h-4-left-prime-font-weight;
+  font-family: $font-h-4-left-prime-font-family;
+}
+
+$font-paragraph-text-normal-font-size: 16px;
+$font-paragraph-text-normal-line-height: 24px;
+$font-paragraph-text-normal-text-align: center;
+$font-paragraph-text-normal-color: #000000;
+$font-paragraph-text-normal-font-style: normal;
+$font-paragraph-text-normal-font-weight: 400;
+$font-paragraph-text-normal-font-family: Helvetica;
+
+@mixin font-paragraph-text-normal () {
+  font-size: $font-paragraph-text-normal-font-size;
+  line-height: $font-paragraph-text-normal-line-height;
+  text-align: $font-paragraph-text-normal-text-align;
+  color: $font-paragraph-text-normal-color;
+  font-style: $font-paragraph-text-normal-font-style;
+  font-weight: $font-paragraph-text-normal-font-weight;
+  font-family: $font-paragraph-text-normal-font-family;
+}
+
+$font-paragraph-text-bold-font-size: 16px;
+$font-paragraph-text-bold-line-height: 24px;
+$font-paragraph-text-bold-text-align: center;
+$font-paragraph-text-bold-color: #000000;
+$font-paragraph-text-bold-font-style: normal;
+$font-paragraph-text-bold-font-weight: bold;
+$font-paragraph-text-bold-font-family: Helvetica;
+
+@mixin font-paragraph-text-bold () {
+  font-size: $font-paragraph-text-bold-font-size;
+  line-height: $font-paragraph-text-bold-line-height;
+  text-align: $font-paragraph-text-bold-text-align;
+  color: $font-paragraph-text-bold-color;
+  font-style: $font-paragraph-text-bold-font-style;
+  font-weight: $font-paragraph-text-bold-font-weight;
+  font-family: $font-paragraph-text-bold-font-family;
+}
+
+$font-paragraph-text-italic-font-size: 16px;
+$font-paragraph-text-italic-line-height: 24px;
+$font-paragraph-text-italic-text-align: center;
+$font-paragraph-text-italic-color: #000000;
+$font-paragraph-text-italic-font-style: italic;
+$font-paragraph-text-italic-font-weight: 400;
+$font-paragraph-text-italic-font-family: Helvetica;
+
+@mixin font-paragraph-text-italic () {
+  font-size: $font-paragraph-text-italic-font-size;
+  line-height: $font-paragraph-text-italic-line-height;
+  text-align: $font-paragraph-text-italic-text-align;
+  color: $font-paragraph-text-italic-color;
+  font-style: $font-paragraph-text-italic-font-style;
+  font-weight: $font-paragraph-text-italic-font-weight;
+  font-family: $font-paragraph-text-italic-font-family;
+}
+
+$font-forms-inactive-font-size: 16px;
+$font-forms-inactive-line-height: 24px;
+$font-forms-inactive-text-align: start;
+$font-forms-inactive-color: #000000;
+$font-forms-inactive-font-style: normal;
+$font-forms-inactive-font-weight: 400;
+$font-forms-inactive-font-family: Helvetica;
+
+@mixin font-forms-inactive () {
+  font-size: $font-forms-inactive-font-size;
+  line-height: $font-forms-inactive-line-height;
+  text-align: $font-forms-inactive-text-align;
+  color: $font-forms-inactive-color;
+  font-style: $font-forms-inactive-font-style;
+  font-weight: $font-forms-inactive-font-weight;
+  font-family: $font-forms-inactive-font-family;
+}
+
+$font-control-bold-inverse-font-size: 12px;
+$font-control-bold-inverse-line-height: 24px;
+$font-control-bold-inverse-text-align: start;
+$font-control-bold-inverse-color: #ffffff;
+$font-control-bold-inverse-font-style: normal;
+$font-control-bold-inverse-font-weight: bold;
+$font-control-bold-inverse-font-family: Helvetica;
+
+@mixin font-control-bold-inverse () {
+  font-size: $font-control-bold-inverse-font-size;
+  line-height: $font-control-bold-inverse-line-height;
+  text-align: $font-control-bold-inverse-text-align;
+  color: $font-control-bold-inverse-color;
+  font-style: $font-control-bold-inverse-font-style;
+  font-weight: $font-control-bold-inverse-font-weight;
+  font-family: $font-control-bold-inverse-font-family;
+}
+
+$font-forms-secondary-font-size: 16px;
+$font-forms-secondary-line-height: 24px;
+$font-forms-secondary-text-align: start;
+$font-forms-secondary-color: #000000;
+$font-forms-secondary-font-style: normal;
+$font-forms-secondary-font-weight: 400;
+$font-forms-secondary-font-family: Helvetica;
+
+@mixin font-forms-secondary () {
+  font-size: $font-forms-secondary-font-size;
+  line-height: $font-forms-secondary-line-height;
+  text-align: $font-forms-secondary-text-align;
+  color: $font-forms-secondary-color;
+  font-style: $font-forms-secondary-font-style;
+  font-weight: $font-forms-secondary-font-weight;
+  font-family: $font-forms-secondary-font-family;
+}
+
+$font-par-left-prime-default-font-size: 16px;
+$font-par-left-prime-default-line-height: 24px;
+$font-par-left-prime-default-text-align: start;
+$font-par-left-prime-default-color: #000000;
+$font-par-left-prime-default-font-style: normal;
+$font-par-left-prime-default-font-weight: 400;
+$font-par-left-prime-default-font-family: Helvetica;
+
+@mixin font-par-left-prime-default () {
+  font-size: $font-par-left-prime-default-font-size;
+  line-height: $font-par-left-prime-default-line-height;
+  text-align: $font-par-left-prime-default-text-align;
+  color: $font-par-left-prime-default-color;
+  font-style: $font-par-left-prime-default-font-style;
+  font-weight: $font-par-left-prime-default-font-weight;
+  font-family: $font-par-left-prime-default-font-family;
+}
+
+$font-control-bold-default-font-size: 12px;
+$font-control-bold-default-line-height: 24px;
+$font-control-bold-default-text-align: start;
+$font-control-bold-default-color: #000000;
+$font-control-bold-default-font-style: normal;
+$font-control-bold-default-font-weight: bold;
+$font-control-bold-default-font-family: Helvetica;
+
+@mixin font-control-bold-default () {
+  font-size: $font-control-bold-default-font-size;
+  line-height: $font-control-bold-default-line-height;
+  text-align: $font-control-bold-default-text-align;
+  color: $font-control-bold-default-color;
+  font-style: $font-control-bold-default-font-style;
+  font-weight: $font-control-bold-default-font-weight;
+  font-family: $font-control-bold-default-font-family;
+}
+
+$font-control-small-dark-font-size: 12px;
+$font-control-small-dark-line-height: 24px;
+$font-control-small-dark-text-align: start;
+$font-control-small-dark-color: #000000;
+$font-control-small-dark-font-style: normal;
+$font-control-small-dark-font-weight: 400;
+$font-control-small-dark-font-family: Helvetica;
+
+@mixin font-control-small-dark () {
+  font-size: $font-control-small-dark-font-size;
+  line-height: $font-control-small-dark-line-height;
+  text-align: $font-control-small-dark-text-align;
+  color: $font-control-small-dark-color;
+  font-style: $font-control-small-dark-font-style;
+  font-weight: $font-control-small-dark-font-weight;
+  font-family: $font-control-small-dark-font-family;
+}
+
+$font-forms-default-font-size: 16px;
+$font-forms-default-line-height: 24px;
+$font-forms-default-text-align: start;
+$font-forms-default-color: #000000;
+$font-forms-default-font-style: normal;
+$font-forms-default-font-weight: 400;
+$font-forms-default-font-family: Helvetica;
+
+@mixin font-forms-default () {
+  font-size: $font-forms-default-font-size;
+  line-height: $font-forms-default-line-height;
+  text-align: $font-forms-default-text-align;
+  color: $font-forms-default-color;
+  font-style: $font-forms-default-font-style;
+  font-weight: $font-forms-default-font-weight;
+  font-family: $font-forms-default-font-family;
+}
+
+$font-control-bold-dark-font-size: 12px;
+$font-control-bold-dark-line-height: 24px;
+$font-control-bold-dark-text-align: start;
+$font-control-bold-dark-color: #000000;
+$font-control-bold-dark-font-style: normal;
+$font-control-bold-dark-font-weight: bold;
+$font-control-bold-dark-font-family: Helvetica;
+
+@mixin font-control-bold-dark () {
+  font-size: $font-control-bold-dark-font-size;
+  line-height: $font-control-bold-dark-line-height;
+  text-align: $font-control-bold-dark-text-align;
+  color: $font-control-bold-dark-color;
+  font-style: $font-control-bold-dark-font-style;
+  font-weight: $font-control-bold-dark-font-weight;
+  font-family: $font-control-bold-dark-font-family;
+}
+
+$font-forms-active-font-size: 16px;
+$font-forms-active-line-height: 24px;
+$font-forms-active-text-align: start;
+$font-forms-active-color: #000000;
+$font-forms-active-font-style: normal;
+$font-forms-active-font-weight: 400;
+$font-forms-active-font-family: Helvetica;
+
+@mixin font-forms-active () {
+  font-size: $font-forms-active-font-size;
+  line-height: $font-forms-active-line-height;
+  text-align: $font-forms-active-text-align;
+  color: $font-forms-active-color;
+  font-style: $font-forms-active-font-style;
+  font-weight: $font-forms-active-font-weight;
+  font-family: $font-forms-active-font-family;
+}
+
+$font-control-small-inverse-font-size: 12px;
+$font-control-small-inverse-line-height: 24px;
+$font-control-small-inverse-text-align: start;
+$font-control-small-inverse-color: #ffffff;
+$font-control-small-inverse-font-style: normal;
+$font-control-small-inverse-font-weight: 400;
+$font-control-small-inverse-font-family: Helvetica;
+
+@mixin font-control-small-inverse () {
+  font-size: $font-control-small-inverse-font-size;
+  line-height: $font-control-small-inverse-line-height;
+  text-align: $font-control-small-inverse-text-align;
+  color: $font-control-small-inverse-color;
+  font-style: $font-control-small-inverse-font-style;
+  font-weight: $font-control-small-inverse-font-weight;
+  font-family: $font-control-small-inverse-font-family;
+}
+
+$font-par-large-left-prime-default-font-size: 20px;
+$font-par-large-left-prime-default-line-height: 28px;
+$font-par-large-left-prime-default-text-align: start;
+$font-par-large-left-prime-default-color: #000000;
+$font-par-large-left-prime-default-font-style: normal;
+$font-par-large-left-prime-default-font-weight: 400;
+$font-par-large-left-prime-default-font-family: Helvetica;
+
+@mixin font-par-large-left-prime-default () {
+  font-size: $font-par-large-left-prime-default-font-size;
+  line-height: $font-par-large-left-prime-default-line-height;
+  text-align: $font-par-large-left-prime-default-text-align;
+  color: $font-par-large-left-prime-default-color;
+  font-style: $font-par-large-left-prime-default-font-style;
+  font-weight: $font-par-large-left-prime-default-font-weight;
+  font-family: $font-par-large-left-prime-default-font-family;
+}
+
+$font-par-large-center-prime-inv-bold-font-size: 20px;
+$font-par-large-center-prime-inv-bold-line-height: 28px;
+$font-par-large-center-prime-inv-bold-text-align: center;
+$font-par-large-center-prime-inv-bold-color: #ffffff;
+$font-par-large-center-prime-inv-bold-font-style: normal;
+$font-par-large-center-prime-inv-bold-font-weight: bold;
+$font-par-large-center-prime-inv-bold-font-family: Helvetica;
+
+@mixin font-par-large-center-prime-inv-bold () {
+  font-size: $font-par-large-center-prime-inv-bold-font-size;
+  line-height: $font-par-large-center-prime-inv-bold-line-height;
+  text-align: $font-par-large-center-prime-inv-bold-text-align;
+  color: $font-par-large-center-prime-inv-bold-color;
+  font-style: $font-par-large-center-prime-inv-bold-font-style;
+  font-weight: $font-par-large-center-prime-inv-bold-font-weight;
+  font-family: $font-par-large-center-prime-inv-bold-font-family;
+}
+
+$font-par-small-center-prime-bold-font-size: 14px;
+$font-par-small-center-prime-bold-line-height: 22px;
+$font-par-small-center-prime-bold-text-align: center;
+$font-par-small-center-prime-bold-color: #000000;
+$font-par-small-center-prime-bold-font-style: normal;
+$font-par-small-center-prime-bold-font-weight: bold;
+$font-par-small-center-prime-bold-font-family: Helvetica;
+
+@mixin font-par-small-center-prime-bold () {
+  font-size: $font-par-small-center-prime-bold-font-size;
+  line-height: $font-par-small-center-prime-bold-line-height;
+  text-align: $font-par-small-center-prime-bold-text-align;
+  color: $font-par-small-center-prime-bold-color;
+  font-style: $font-par-small-center-prime-bold-font-style;
+  font-weight: $font-par-small-center-prime-bold-font-weight;
+  font-family: $font-par-small-center-prime-bold-font-family;
+}
+
+$font-par-small-center-prime-inv-default-font-size: 14px;
+$font-par-small-center-prime-inv-default-line-height: 22px;
+$font-par-small-center-prime-inv-default-text-align: center;
+$font-par-small-center-prime-inv-default-color: #ffffff;
+$font-par-small-center-prime-inv-default-font-style: normal;
+$font-par-small-center-prime-inv-default-font-weight: 400;
+$font-par-small-center-prime-inv-default-font-family: Helvetica;
+
+@mixin font-par-small-center-prime-inv-default () {
+  font-size: $font-par-small-center-prime-inv-default-font-size;
+  line-height: $font-par-small-center-prime-inv-default-line-height;
+  text-align: $font-par-small-center-prime-inv-default-text-align;
+  color: $font-par-small-center-prime-inv-default-color;
+  font-style: $font-par-small-center-prime-inv-default-font-style;
+  font-weight: $font-par-small-center-prime-inv-default-font-weight;
+  font-family: $font-par-small-center-prime-inv-default-font-family;
+}
+
+$font-par-small-center-prime-inv-bold-font-size: 14px;
+$font-par-small-center-prime-inv-bold-line-height: 22px;
+$font-par-small-center-prime-inv-bold-text-align: center;
+$font-par-small-center-prime-inv-bold-color: #ffffff;
+$font-par-small-center-prime-inv-bold-font-style: normal;
+$font-par-small-center-prime-inv-bold-font-weight: bold;
+$font-par-small-center-prime-inv-bold-font-family: Helvetica;
+
+@mixin font-par-small-center-prime-inv-bold () {
+  font-size: $font-par-small-center-prime-inv-bold-font-size;
+  line-height: $font-par-small-center-prime-inv-bold-line-height;
+  text-align: $font-par-small-center-prime-inv-bold-text-align;
+  color: $font-par-small-center-prime-inv-bold-color;
+  font-style: $font-par-small-center-prime-inv-bold-font-style;
+  font-weight: $font-par-small-center-prime-inv-bold-font-weight;
+  font-family: $font-par-small-center-prime-inv-bold-font-family;
+}
+
+$font-h-4-left-prime-inv-font-size: 20px;
+$font-h-4-left-prime-inv-line-height: 26px;
+$font-h-4-left-prime-inv-text-align: start;
+$font-h-4-left-prime-inv-color: #ffffff;
+$font-h-4-left-prime-inv-font-style: normal;
+$font-h-4-left-prime-inv-font-weight: bold;
+$font-h-4-left-prime-inv-font-family: Helvetica;
+
+@mixin font-h-4-left-prime-inv () {
+  font-size: $font-h-4-left-prime-inv-font-size;
+  line-height: $font-h-4-left-prime-inv-line-height;
+  text-align: $font-h-4-left-prime-inv-text-align;
+  color: $font-h-4-left-prime-inv-color;
+  font-style: $font-h-4-left-prime-inv-font-style;
+  font-weight: $font-h-4-left-prime-inv-font-weight;
+  font-family: $font-h-4-left-prime-inv-font-family;
+}
+
+$font-button-left-sec-font-size: 12px;
+$font-button-left-sec-line-height: 20px;
+$font-button-left-sec-text-align: start;
+$font-button-left-sec-color: #000000;
+$font-button-left-sec-letter-spacing: 0.75px;
+$font-button-left-sec-text-transform: uppercase;
+$font-button-left-sec-font-style: normal;
+$font-button-left-sec-font-weight: bold;
+$font-button-left-sec-font-family: Helvetica;
+
+@mixin font-button-left-sec () {
+  font-size: $font-button-left-sec-font-size;
+  line-height: $font-button-left-sec-line-height;
+  text-align: $font-button-left-sec-text-align;
+  color: $font-button-left-sec-color;
+  letter-spacing: $font-button-left-sec-letter-spacing;
+  text-transform: $font-button-left-sec-text-transform;
+  font-style: $font-button-left-sec-font-style;
+  font-weight: $font-button-left-sec-font-weight;
+  font-family: $font-button-left-sec-font-family;
+}
+
+$font-button-centered-disabled-inv-font-size: 12px;
+$font-button-centered-disabled-inv-line-height: 20px;
+$font-button-centered-disabled-inv-text-align: center;
+$font-button-centered-disabled-inv-color: #000000;
+$font-button-centered-disabled-inv-letter-spacing: 0.75px;
+$font-button-centered-disabled-inv-text-transform: uppercase;
+$font-button-centered-disabled-inv-font-style: normal;
+$font-button-centered-disabled-inv-font-weight: bold;
+$font-button-centered-disabled-inv-font-family: Helvetica;
+
+@mixin font-button-centered-disabled-inv () {
+  font-size: $font-button-centered-disabled-inv-font-size;
+  line-height: $font-button-centered-disabled-inv-line-height;
+  text-align: $font-button-centered-disabled-inv-text-align;
+  color: $font-button-centered-disabled-inv-color;
+  letter-spacing: $font-button-centered-disabled-inv-letter-spacing;
+  text-transform: $font-button-centered-disabled-inv-text-transform;
+  font-style: $font-button-centered-disabled-inv-font-style;
+  font-weight: $font-button-centered-disabled-inv-font-weight;
+  font-family: $font-button-centered-disabled-inv-font-family;
+}
+
+$font-button-left-disabled-font-size: 12px;
+$font-button-left-disabled-line-height: 20px;
+$font-button-left-disabled-text-align: start;
+$font-button-left-disabled-color: #000000;
+$font-button-left-disabled-letter-spacing: 0.75px;
+$font-button-left-disabled-text-transform: uppercase;
+$font-button-left-disabled-font-style: normal;
+$font-button-left-disabled-font-weight: bold;
+$font-button-left-disabled-font-family: Helvetica;
+
+@mixin font-button-left-disabled () {
+  font-size: $font-button-left-disabled-font-size;
+  line-height: $font-button-left-disabled-line-height;
+  text-align: $font-button-left-disabled-text-align;
+  color: $font-button-left-disabled-color;
+  letter-spacing: $font-button-left-disabled-letter-spacing;
+  text-transform: $font-button-left-disabled-text-transform;
+  font-style: $font-button-left-disabled-font-style;
+  font-weight: $font-button-left-disabled-font-weight;
+  font-family: $font-button-left-disabled-font-family;
+}
+
+$font-button-centered-prime-font-size: 12px;
+$font-button-centered-prime-line-height: 20px;
+$font-button-centered-prime-text-align: center;
+$font-button-centered-prime-color: #000000;
+$font-button-centered-prime-letter-spacing: 0.75px;
+$font-button-centered-prime-text-transform: uppercase;
+$font-button-centered-prime-font-style: normal;
+$font-button-centered-prime-font-weight: bold;
+$font-button-centered-prime-font-family: Helvetica;
+
+@mixin font-button-centered-prime () {
+  font-size: $font-button-centered-prime-font-size;
+  line-height: $font-button-centered-prime-line-height;
+  text-align: $font-button-centered-prime-text-align;
+  color: $font-button-centered-prime-color;
+  letter-spacing: $font-button-centered-prime-letter-spacing;
+  text-transform: $font-button-centered-prime-text-transform;
+  font-style: $font-button-centered-prime-font-style;
+  font-weight: $font-button-centered-prime-font-weight;
+  font-family: $font-button-centered-prime-font-family;
+}
+
+$font-button-centered-link-font-size: 12px;
+$font-button-centered-link-line-height: 20px;
+$font-button-centered-link-text-align: center;
+$font-button-centered-link-color: #000000;
+$font-button-centered-link-letter-spacing: 0.75px;
+$font-button-centered-link-text-transform: uppercase;
+$font-button-centered-link-font-style: normal;
+$font-button-centered-link-font-weight: bold;
+$font-button-centered-link-font-family: Helvetica;
+
+@mixin font-button-centered-link () {
+  font-size: $font-button-centered-link-font-size;
+  line-height: $font-button-centered-link-line-height;
+  text-align: $font-button-centered-link-text-align;
+  color: $font-button-centered-link-color;
+  letter-spacing: $font-button-centered-link-letter-spacing;
+  text-transform: $font-button-centered-link-text-transform;
+  font-style: $font-button-centered-link-font-style;
+  font-weight: $font-button-centered-link-font-weight;
+  font-family: $font-button-centered-link-font-family;
+}
+
+$font-button-left-prime-inv-font-size: 12px;
+$font-button-left-prime-inv-line-height: 20px;
+$font-button-left-prime-inv-text-align: start;
+$font-button-left-prime-inv-color: #ffffff;
+$font-button-left-prime-inv-letter-spacing: 0.75px;
+$font-button-left-prime-inv-text-transform: uppercase;
+$font-button-left-prime-inv-font-style: normal;
+$font-button-left-prime-inv-font-weight: bold;
+$font-button-left-prime-inv-font-family: Helvetica;
+
+@mixin font-button-left-prime-inv () {
+  font-size: $font-button-left-prime-inv-font-size;
+  line-height: $font-button-left-prime-inv-line-height;
+  text-align: $font-button-left-prime-inv-text-align;
+  color: $font-button-left-prime-inv-color;
+  letter-spacing: $font-button-left-prime-inv-letter-spacing;
+  text-transform: $font-button-left-prime-inv-text-transform;
+  font-style: $font-button-left-prime-inv-font-style;
+  font-weight: $font-button-left-prime-inv-font-weight;
+  font-family: $font-button-left-prime-inv-font-family;
+}
+
+$font-button-left-disabled-inv-font-size: 12px;
+$font-button-left-disabled-inv-line-height: 20px;
+$font-button-left-disabled-inv-text-align: start;
+$font-button-left-disabled-inv-color: #000000;
+$font-button-left-disabled-inv-letter-spacing: 0.75px;
+$font-button-left-disabled-inv-text-transform: uppercase;
+$font-button-left-disabled-inv-font-style: normal;
+$font-button-left-disabled-inv-font-weight: bold;
+$font-button-left-disabled-inv-font-family: Helvetica;
+
+@mixin font-button-left-disabled-inv () {
+  font-size: $font-button-left-disabled-inv-font-size;
+  line-height: $font-button-left-disabled-inv-line-height;
+  text-align: $font-button-left-disabled-inv-text-align;
+  color: $font-button-left-disabled-inv-color;
+  letter-spacing: $font-button-left-disabled-inv-letter-spacing;
+  text-transform: $font-button-left-disabled-inv-text-transform;
+  font-style: $font-button-left-disabled-inv-font-style;
+  font-weight: $font-button-left-disabled-inv-font-weight;
+  font-family: $font-button-left-disabled-inv-font-family;
+}
+
+$font-button-centered-sec-font-size: 12px;
+$font-button-centered-sec-line-height: 20px;
+$font-button-centered-sec-text-align: center;
+$font-button-centered-sec-color: #000000;
+$font-button-centered-sec-letter-spacing: 0.75px;
+$font-button-centered-sec-text-transform: uppercase;
+$font-button-centered-sec-font-style: normal;
+$font-button-centered-sec-font-weight: bold;
+$font-button-centered-sec-font-family: Helvetica;
+
+@mixin font-button-centered-sec () {
+  font-size: $font-button-centered-sec-font-size;
+  line-height: $font-button-centered-sec-line-height;
+  text-align: $font-button-centered-sec-text-align;
+  color: $font-button-centered-sec-color;
+  letter-spacing: $font-button-centered-sec-letter-spacing;
+  text-transform: $font-button-centered-sec-text-transform;
+  font-style: $font-button-centered-sec-font-style;
+  font-weight: $font-button-centered-sec-font-weight;
+  font-family: $font-button-centered-sec-font-family;
+}
+
+$font-button-left-prime-font-size: 12px;
+$font-button-left-prime-line-height: 20px;
+$font-button-left-prime-text-align: start;
+$font-button-left-prime-color: #000000;
+$font-button-left-prime-letter-spacing: 0.75px;
+$font-button-left-prime-text-transform: uppercase;
+$font-button-left-prime-font-style: normal;
+$font-button-left-prime-font-weight: bold;
+$font-button-left-prime-font-family: Helvetica;
+
+@mixin font-button-left-prime () {
+  font-size: $font-button-left-prime-font-size;
+  line-height: $font-button-left-prime-line-height;
+  text-align: $font-button-left-prime-text-align;
+  color: $font-button-left-prime-color;
+  letter-spacing: $font-button-left-prime-letter-spacing;
+  text-transform: $font-button-left-prime-text-transform;
+  font-style: $font-button-left-prime-font-style;
+  font-weight: $font-button-left-prime-font-weight;
+  font-family: $font-button-left-prime-font-family;
+}
+
+$font-button-centered-disabled-font-size: 12px;
+$font-button-centered-disabled-line-height: 20px;
+$font-button-centered-disabled-text-align: center;
+$font-button-centered-disabled-color: #000000;
+$font-button-centered-disabled-letter-spacing: 0.75px;
+$font-button-centered-disabled-text-transform: uppercase;
+$font-button-centered-disabled-font-style: normal;
+$font-button-centered-disabled-font-weight: bold;
+$font-button-centered-disabled-font-family: Helvetica;
+
+@mixin font-button-centered-disabled () {
+  font-size: $font-button-centered-disabled-font-size;
+  line-height: $font-button-centered-disabled-line-height;
+  text-align: $font-button-centered-disabled-text-align;
+  color: $font-button-centered-disabled-color;
+  letter-spacing: $font-button-centered-disabled-letter-spacing;
+  text-transform: $font-button-centered-disabled-text-transform;
+  font-style: $font-button-centered-disabled-font-style;
+  font-weight: $font-button-centered-disabled-font-weight;
+  font-family: $font-button-centered-disabled-font-family;
+}
+
+$font-button-centered-prime-inv-font-size: 12px;
+$font-button-centered-prime-inv-line-height: 20px;
+$font-button-centered-prime-inv-text-align: center;
+$font-button-centered-prime-inv-color: #ffffff;
+$font-button-centered-prime-inv-letter-spacing: 0.75px;
+$font-button-centered-prime-inv-text-transform: uppercase;
+$font-button-centered-prime-inv-font-style: normal;
+$font-button-centered-prime-inv-font-weight: bold;
+$font-button-centered-prime-inv-font-family: Helvetica;
+
+@mixin font-button-centered-prime-inv () {
+  font-size: $font-button-centered-prime-inv-font-size;
+  line-height: $font-button-centered-prime-inv-line-height;
+  text-align: $font-button-centered-prime-inv-text-align;
+  color: $font-button-centered-prime-inv-color;
+  letter-spacing: $font-button-centered-prime-inv-letter-spacing;
+  text-transform: $font-button-centered-prime-inv-text-transform;
+  font-style: $font-button-centered-prime-inv-font-style;
+  font-weight: $font-button-centered-prime-inv-font-weight;
+  font-family: $font-button-centered-prime-inv-font-family;
+}

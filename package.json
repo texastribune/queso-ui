@@ -1,12 +1,33 @@
 {
-  "name": "ashley-shared-lib",
-  "version": "1.0.1",
+  "name": "ds-toolbox",
+  "version": "1.0.0",
   "description": "A demo repository to illustrate how to share palette and typography through NPM",
   "license": "MIT",
   "private": false,
   "files": [
-    "./src/1-settings/all.scss",
-    "./src/2-tools/all.scss",
-    "./src/3-settings/all.scss"
-  ]
+    "/assets"
+  ],
+  "scripts": {
+    "template": "node -r esm task-runners/task-build-template.js",
+    "data": "node task-runners/task-styleguide.js",
+    "update-ds": "node task-runners/task-import-ds.js",
+    "build": "npm run update-ds --scripts-prepend-node-path && npm run data --scripts-prepend-node-path && npm run template --scripts-prepend-node-path",
+    "prettier": "prettier --write './task-runners/**/*.js'"
+  },
+  "prettier": {
+    "bracketSpacing": true,
+    "printWidth": 80,
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "esm": "^3.2.0",
+    "kss": "^3.0.0-beta.25",
+    "moment": "^2.24.0",
+    "mustache": "^3.0.1",
+    "node-fetch": "^2.3.0",
+    "prettier": "1.16.3"
+  }
 }
