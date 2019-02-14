@@ -1,0 +1,8 @@
+// Resets
+//
+// Experimental: We want to import normalize instead. It's around 6kb and we can update versions as https://github.com/necolas/normalize.css changes.
+//
+//
+// Styleguide 3.0.0
+@import 'box-sizing';
+@import 'node_modules/normalize.css/normalize';

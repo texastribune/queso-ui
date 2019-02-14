@@ -1,0 +1,38 @@
+{% macro snippet(name, code, modifier, isFile, description, codeSnippet) %}
+<div class="card">
+    {% set className = modifier.className %}
+    
+    {% if className %}
+    <div class="card-header has-background-light">
+        <pre class="has-text-info">{{className}}</pre>
+    </div>
+    {% endif %}
+    <div class="card-content">
+        {% if isFile %}
+            <div class="box">{% include "../" + code %}</div>
+        {% else %}
+            {% if modifier %}
+            <div class="box">{{ modifier.markup | safe }}</div>
+            <p>{{ modifier.description }}</p>
+            {% else %}
+            <div class="box">{{ code | safe }}</div>
+            {% endif %}
+        {% endif %}
+        {% if codeSnippet %}
+            <div class="dropdown">
+                <div class="dropdown-trigger">
+                    <button aria-controls="dropdown-menu" aria-haspopup="true" class="button">
+                        HTML Example
+                    </button>
+                </div>
+                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                        <pre class="has-text-danger has-background-black">{{codeSnippet | safe}}</pre>
+                    </div>
+                </div>
+            </div>
+            
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}

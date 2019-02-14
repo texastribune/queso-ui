@@ -8,11 +8,13 @@
     "/assets"
   ],
   "scripts": {
-    "template": "node -r esm task-runners/task-build-template.js",
-    "data": "node task-runners/task-styleguide.js",
-    "update-ds": "node task-runners/task-import-ds.js",
-    "build": "npm run update-ds --scripts-prepend-node-path && npm run data --scripts-prepend-node-path && npm run template --scripts-prepend-node-path",
-    "prettier": "prettier --write './task-runners/**/*.js'"
+    "start": "npm-run-all -s import-ds compile build-style-data build-template",
+    "compile": "node task-runners/task-compile.js",
+    "build-template": "node task-runners/task-build-template.js",
+    "build-style-data": "node task-runners/task-build-style-data.js",
+    "import-ds": "node task-runners/task-import-ds.js",
+    "prettier": "prettier --write './task-runners/**/*.js'",
+    "lint": "stylelint 'assets/**/**.scss'"
   },
   "prettier": {
     "bracketSpacing": true,
@@ -23,11 +25,57 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "esm": "^3.2.0",
+    "browser-sync": "^2.26.3",
+    "clean-css": "^4.2.1",
+    "dotenv": "^6.2.0",
     "kss": "^3.0.0-beta.25",
     "moment": "^2.24.0",
-    "mustache": "^3.0.1",
     "node-fetch": "^2.3.0",
-    "prettier": "1.16.3"
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "nunjucks": "^3.1.7",
+    "prettier": "1.16.3",
+    "stylelint": "^9.10.1"
+  },
+  "stylelint": {
+    "rules": {
+      "block-no-empty": null,
+      "color-no-invalid-hex": true,
+      "comment-empty-line-before": [
+        "always",
+        {
+          "ignore": [
+            "stylelint-commands",
+            "after-comment"
+          ]
+        }
+      ],
+      "declaration-colon-space-after": "always",
+      "indentation": 2,
+      "max-empty-lines": 2,
+      "rule-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment"
+          ]
+        }
+      ],
+      "unit-whitelist": [
+        "em",
+        "rem",
+        "%",
+        "s",
+        "px",
+        "ms"
+      ]
+    }
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "sass-mq": "^5.0.0"
   }
 }

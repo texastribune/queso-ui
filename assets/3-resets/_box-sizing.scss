@@ -1,8 +1,10 @@
 // Apply a natural box layout model to all elements, but allowing components to change
 // @link: https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+// @link: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 html {
   box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {

@@ -1,0 +1,239 @@
+// Font Serif (t-font-serif)
+//
+// Experimental: Uses new mixin and naming convention
+//
+//
+// Markup: <h4 class="t-font-serif">Serif font</h4>
+// 
+//
+// Styleguide 5.2.1
+.t-font-serif {
+  @include font-setting('secondary');
+}
+
+// Font Sans-serif (t-font-sans)
+//
+// Experimental: Uses new mixin and naming convention
+//
+//
+// Markup: <h4 class="t-font-sans">Sans-serif font</h4>
+// 
+//
+// Styleguide 5.2.2
+.t-font-sans {
+  @include font-setting;
+}
+
+// Prose (t-prose)
+//
+// Experimental: V2 of prose relies on <code>font-setting</code> and <code>border-hover-link-parent</code> mixins
+//
+// Markup: <div class="t-prose"><p>Lorem ipsum. <a>Link text</a></p></div>
+// 
+//
+// Styleguide 5.2.3
+.t-prose {
+  p {
+    @include font-setting('secondary');
+    @include border-hover-link-parent;
+    color: $color-black-off;
+    line-height: 1.4;
+    margin: $size-b 0;
+
+    &:first-of-type {
+      margin: 0 0 $size-b;
+    }
+  }
+}
+
+
+// Titlecase (REMOVED)
+//
+// Experimental: Switched to utility class
+//
+// Markup: <h4 class="has-text-titlecase">This is a title.</h4>
+// 
+//
+// Styleguide 5.2.5
+
+
+// Uppercase (REMOVED)
+//
+// Experimental: Switched to utility class
+//
+// Markup: <h4 class="has-texhas-text-uppercase">This is a title.</h4>
+// 
+//
+// Styleguide 5.2.6
+
+
+// Center Text (REMOVED)
+//
+// Experimental: Switched to utility class
+//
+// Markup: <h4 class="has-text-center">Center Me</h4>
+// 
+//
+// Styleguide 5.2.8
+
+// Headline (t-headline)
+//
+// Experimental: New naming convention and mixin method.
+//
+// Markup: <h1 class="t-headline">Story Headline Text</h1>
+// 
+//
+// Styleguide 5.2.9
+.t-headline {
+  @include font-setting('secondary');
+  @include border-hover-link-parent('true');
+  color: $color-black-off;
+  font-weight: 700;
+}
+
+// Sectionhead (t-sectionhead)
+//
+// Experimental: New naming convention and mixin method. Ditches explicit <a> tag rule and case assignment. Also inherits body font instead of setting.
+//
+// Markup: <h3 class="t-sectionhead has-text-uppercase">Title for a section of text with <a>link.</a></h3>
+// 
+//
+// Styleguide 5.3.1
+.t-sectionhead {
+  border-bottom: 2px solid $color-gray-medium;
+  font-weight: 700;
+  letter-spacing: $font-letter-spacing;
+  padding-bottom: $size-b/4;
+}
+
+// Widgethead (t-widgethead)
+//
+// Experimental: New naming convention and mixin method. Ditches modifier classes.
+//
+// .has-bg-black-off - BG of black with white text
+// .has-bg-yellow - BG of yellow
+// .has-bg-blue - BG of blue
+//
+// Markup: <h3 class="t-widgethead has-text-uppercase {{ className }}">Widgetheads can be coupled with the has-bg-color classes.</h3>
+// 
+//
+// Styleguide 5.3.2
+.t-widgethead {
+  background-color: $color-white-off;
+  letter-spacing: $font-letter-spacing;
+  padding: $size-b/2 $size-b;
+}
+
+// Smallcaps (t-smallcaps)
+//
+// Experimental: V2 of smallcaps more reliant on helper classes and a more DRY approach.
+//
+// Currently, this is used to style mini-headers, "read more" links, button text and bylines.
+//
+// .t-smallcaps--light - Applies a lighter font weight and bumps down font-size
+// .t-smallcaps--section - Applies bottom margin and bumps down font-size
+// .t-smallcaps--bordered - Applies a top border
+//
+// Markup: <span class="t-smallcaps {{ className }}">Lorem ipsum</span>
+//
+//
+// Styleguide 5.3.3
+//
+.t-smallcaps {
+  font-weight: 700;
+  letter-spacing: $font-letter-spacing;
+  padding: .2em 0;
+  text-transform: uppercase;
+
+  // Byline
+  &--light {
+    font-size: $size-xs;
+    font-weight: 400;
+    letter-spacing: $font-letter-spacing-lg;
+
+    @include mq($until: bp-l) {
+      font-size: $size-s;
+    }
+  }
+
+  &--section {
+    font-size: $size-s;
+    margin-bottom: $size-b/4;
+  }
+
+  &--bordered {
+    border-top: 2px solid $color-black-off;
+  }
+}
+
+// Byline (t-byline)
+//
+// Experimental: Drop extend of smallcaps
+//
+// Markup: <span class="t-byline"><span class="byline--item">By Bob Buttons</span></span>
+//
+//
+// Styleguide 5.3.4
+//
+.t-byline {
+  @include border-hover-link-parent('true');
+  color: $color-gray-medium;
+  font-size: $size-xs;
+  letter-spacing: $font-letter-spacing-lg;
+  margin: $size-b/2 0 0;
+  text-transform: uppercase;
+
+  &--item {
+    display: inline-block;
+    padding-right: $size-b;
+  }
+}
+
+// Description (t-description)
+//
+// Experimental: Removes extends and setting of inner p tags links and font.
+//
+// Markup: <span class="t-description">Description<p>with a paragraph</p></span>
+//
+//
+// Styleguide 5.3.5
+.t-description {
+  @include border-hover-link-parent();
+  color: $color-gray-medium;
+  font-size: $size-s;
+
+  p {
+    font-size: $size-xs;
+  }
+}
+
+// Subtext (REMOVED)
+//
+// Experimental: Remove subtext in favor of helper classes
+//
+// Markup: <span class="has-text-gray">Lorem ipsum <a>Link</a></span>
+//
+//
+// Styleguide 5.3.6
+
+
+// Headline List (REMOVED)
+//
+// Experimental: This is more like a component with typographical elements sprinkled in. Proof of concept with helper classes in preview.
+//
+//
+// Markup: assets/5-typography/headline_list-v2.html
+//
+// Styleguide 5.3.9
+
+
+// Highlight (REMOVED)
+//
+// Experimental: Use background-color helper classes for this instead.  Proof of concept with helper class in preview.
+//
+// These link helpers are used on parent classes to set subsequent link styles.
+//
+//
+// Markup: <p class="has-bg-yellow l-display-ib">Highlighted text</p>
+//
+// Styleguide 5.4.1

@@ -1,6 +1,33 @@
 // sass-mq settings
 $mq-responsive: true;
 
+
+// Breakpoints
+//
+// We import the sass-mq library for our responsive utilities. Our own custom breakpoints are as follows:
+//
+// $bp-xs = 320px - Mobile
+// $bp-s = 520px - Mobile
+// $bp-m = 650px - Tablet
+// $bp-l = 845px - Small Desktop
+// $bp-xl = 1080px - Desktop
+// $bp-xxl = 1300px - Large Desktop
+//
+// Styleguide 1.3.1
+//
+
+
+// @function mq
+//
+// Media Query mixin <code class="is-block">@include mq($from: bp-m, $and: '(orientation: landscape)') {}</code>
+//
+// $from = false -  {String | Boolean} One of $mq-breakpoints
+// $until = false - {String | Boolean}  One of $mq-breakpoints
+// $and = false - {String | Boolean}  Additional media query parameters
+// $media-type - {String} ($mq-media-type) Media type: screen, print…
+//
+// Styleguide 1.3.2
+//
 $bp-xs: 320px;
 $bp-s: 520px;
 $bp-m: 650px;
@@ -20,7 +47,25 @@ $mq-breakpoints: (
   bp-default: $bp-default
 );
 
+
+// Size units
+//
 // Sizes in comparison to 16px root
+//
+// $size-xxxl = 3rem - size xxxl
+// $size-giant = 2.5rem - size giant
+// $size-xxl = 2rem - size xxl
+// $size-xl = 1.75rem - size xl
+// $size-l = 1.5rem - size l
+// $size-m = 1.2rem - size m
+// $size-b = 1.1rem - size b
+// $size-s = .92rem - size s
+// $size-xs = .85rem - size xs
+// $size-xxs = .7rem - size xxs
+//
+// Styleguide 1.3.3
+//
+// 
 $size-xxxl: 3rem;
 $size-giant: 2.5rem;
 $size-xxl: 2rem;

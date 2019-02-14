@@ -1,4 +1,17 @@
-.link--teal,
+// Link
+//
+// Deprecated: We're moving to the <code>@inlcude border-hover-link</code> mixin approach.
+//
+// These link helpers are used on parent classes to set subsequent link styles.
+//
+// .link--teal - Colors all descendant links teal
+// .link--blue - Gives all descendant links underline on default and hover
+// .link--blue_subtle - Gives all descendant links underline on hover
+//
+// Markup: <p class="{{ className }}">Lorem <a>ipsum</a>. Includes <a class="unlink">an "unlink" class</a></p>
+//
+// Styleguide 5.1.1
+//
 %link--teal {
   a {
     color: $color-teal-gray;
@@ -11,7 +24,11 @@
     }
   }
 }
-.link--blue,
+
+.link--teal {
+  @extend %link--teal;
+}
+
 %link--blue {
   a {
     border-bottom: 1px solid $color-blue-light;
@@ -42,7 +59,10 @@
   }
 }
 
-.link--blue_subtle,
+.link--blue {
+  @extend %link--blue;
+}
+
 %link--blue_subtle {
   a {
     color: inherit;
@@ -57,13 +77,16 @@
   }
 }
 
+.link--blue_subtle {
+  @extend %link--blue_subtle;
+}
 
 %link--hover_animation {
   display: inline-block;
   text-decoration: none;
 
   &:after {
-    display:block;
+    display: block;
     content: '';
     padding-bottom: $size-b/2;
     border-bottom: solid 3px $color-blue-light;

@@ -1,0 +1,28 @@
+{% macro snippetTable(modifiers) %}
+<h4 class="subtitle is-4">Modifiers</h4>
+<table class="table ds-wide">
+  <tr>
+    <th>
+      Class
+    </th>
+    <th>Description</th>
+    <th>Preview</th>
+  </tr>
+  {% for modifier in modifiers %}
+  <tr>
+    <td class="has-background-light">
+      <pre class="has-text-info">{{ modifier.className }}</pre>
+    </td>
+    <td>
+      {{ modifier.description }}
+    </td>
+    <td>
+      <div class="box">
+        {{ modifier.markup | safe }}
+      </div>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endmacro %}

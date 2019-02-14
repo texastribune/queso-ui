@@ -1,0 +1,208 @@
+// Utility
+//
+// Helper overrides for various utilities. Can be prefixed with .l-, .has-, .is-
+//
+// Styleguide 7.0.0
+
+
+// Text color (has-text-color)
+//
+// New utility to help eliminate repitition.
+//
+// .has-text-black -  black text color
+// .has-text-black-off - black-off text color
+// .has-text-white -  white text color
+// .has-text-teal -  teal text color
+// .has-text-gray -  gray text color
+// .has-text-gray-light - gray-light text color
+// .has-text-yellow -  yellow text color
+// .has-text-blue - blue text color
+//
+// Markup: <p class="{{ className }}">Example</p>
+// 
+//
+// Styleguide 7.0.1
+//
+
+
+// Background color - (has-bg-color)
+//
+// New utility to help eliminate repitition.
+//
+// .has-bg-black -  black background color
+// .has-bg-black-off - black-off background color
+// .has-bg-white -  white background color
+// .has-bg-teal -  teal background color
+// .has-bg-gray -  gray background color
+// .has-bg-gray-light - gray-light background color
+// .has-bg-yellow -  yellow background color
+// .has-bg-blue - blue background color
+//
+// Markup: <p class="{{ className }}">Example</p>
+// 
+//
+// Styleguide 7.0.2
+//
+
+$color-map: (
+  black: $color-black-pure,
+  black-off: $color-black-off,
+  white: $color-white-pure,
+  teal: $color-teal-gray,
+  gray: $color-gray-medium,
+  gray-light: $color-gray-light,
+  yellow: $color-yellow-tribune,
+  blue: $color-blue-light
+);
+
+@each $color, $value in $color-map {
+  .has-bg-#{$color} {
+    background-color: $value;
+  }
+}
+@each $color, $value in $color-map {
+  .has-text-#{$color} {
+    color: $value;
+  }
+}
+
+
+// Font size  (has-text-size)
+//
+//
+// New utility to help eliminate repitition.
+//
+// The .has-text-{SIZE} class can be added to any element to override the inherited font-size.
+//
+// .has-text-xxs - XXS Text size
+// .has-text-xs - XS Text size
+// .has-text-s - S Text size
+// .has-text-m - M Text size
+// .has-text-l - L Text size
+// .has-text-xl - XL Text size
+// .has-text-giant - Giant Text size
+//
+// Markup: <p class="{{ className }}">Example</p>
+// 
+//
+// Styleguide 7.0.3
+//
+$type-sets: (
+  xxxl: $size-xxxl,
+  giant: $size-giant,
+  xxl: $size-xxl,
+  xl: $size-xl,
+  l: $size-l,
+  m: $size-m,
+  b: $size-b,
+  s: $size-s,
+  xs: $size-xs,
+  xxs: $size-xxs
+);
+@each $type-set, $font-size in $type-sets {
+  .has-text-#{$type-set} {
+    font-size: $font-size;
+  }
+}
+
+
+// Text Casing  (has-text-case)
+//
+// New naming convention.
+//
+// .has-text-titlecase - Text transformed to Title Case
+// .has-text-uppercase - Text transformed to UPPERCASE
+//
+// Markup: <p class="{{ className }}">Example</p>
+// 
+//
+// Styleguide 7.0.4
+.has-text-titlecase {
+  text-transform: capitalize;
+}
+
+.has-text-uppercase {
+  text-transform: uppercase;
+}
+
+// Text Alignment  (has-text-alignment)
+//
+// New naming convention.
+//
+// .has-text-center - Center aligned
+// .has-text-right - Right aligned
+//
+// Markup: <p class="{{ className }}">Example</p>
+// 
+//
+// Styleguide 7.0.5
+.has-text-center {
+  text-align: center;
+}
+
+.has-text-right {
+  text-align: right;
+}
+
+// Lists  (l-list)
+//
+// Resets list styles.
+//
+// .l-list--has-arrow - Adds SVG arrow as bullet. Turns yellow on hover.
+//
+// Markup: <ul class="l-list {{ className }}"><li>Example</li><li>Example</li></ul>
+// 
+//
+// Styleguide 7.0.5
+.l-list {
+  list-style: none;
+
+  &--has-arrow {
+    li {
+      padding-left: $size-b;
+      position: relative;
+      @include mq($until: bp-s) {
+        padding: $size-b/4 $size-b;
+      }
+
+      &:before {
+        background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 28"><path fill="rgb(208,208,208)" d="M9 14c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297-0.547 0-1-0.453-1-1v-14c0-0.547 0.453-1 1-1 0.266 0 0.516 0.109 0.703 0.297l7 7c0.187 0.187 0.297 0.438 0.297 0.703z"></path></svg>');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: $size-xs $size-xs;
+        content: '';
+        height: $size-xs;
+        left: 0;
+        margin-top: 3px;
+        position: absolute;
+        width: $size-xs;
+      }
+
+      &:hover {
+        &:before {
+          background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 28"><path fill="rgb(255,194,0)" d="M9 14c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297-0.547 0-1-0.453-1-1v-14c0-0.547 0.453-1 1-1 0.266 0 0.516 0.109 0.703 0.297l7 7c0.187 0.187 0.297 0.438 0.297 0.703z"></path></svg>');
+        }
+      }
+    }
+  }
+}
+
+
+// Display  (l-display)
+//
+// Resets list styles.
+//
+// .l-display-ib - Inline Block
+// .l-display-block - Block
+//
+// Markup: <span class="{{ className }} has-bg-gray">Example</span>
+// 
+//
+// Styleguide 7.0.6
+.l-display-ib {
+  display: inline-block;
+}
+
+.l-display-block {
+  display: block;
+}

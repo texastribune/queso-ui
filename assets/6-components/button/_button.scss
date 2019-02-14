@@ -1,0 +1,27 @@
+// Button (c-button)
+//
+// Your standard button suitable for clicking.
+//
+// .c-button--yellow - Primary button
+// .c-button--gray - Gray button
+//
+// Markup: assets/6-components/button/button.html
+//
+// Styleguide 6.1.1
+.c-button {
+  background-color: $color-blue-light;
+  border: none;
+  color: $color-white-pure;
+  font-weight: 700;
+  letter-spacing: .03em;
+  padding: 1rem;
+  text-transform: uppercase;
+
+  &--yellow {
+    background-color: $color-yellow-tribune;
+  }
+
+  &--gray {
+    background-color: $color-gray-dark;
+  }
+}

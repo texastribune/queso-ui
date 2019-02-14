@@ -1,0 +1,19 @@
+{% macro snippetTool(name, modifier, description, codeSnippet) %}
+    <div class="card">
+        {% set className = modifier.className %}
+        {% set modDescription = modifier.description %}
+        {% if className %}
+            <div class="card-header">
+                <pre>{{className}}</pre>
+            </div>
+        {% endif %}
+        <div class="card-content">
+            {% if codeSnippet %}
+                <pre class="has-text-danger has-background-black">{{codeSnippet | safe}}</pre>
+            {% endif %}
+            {% if modDescription %}
+                {{modDescription}}
+            {% endif %}
+        </div>
+    </div>
+{% endmacro %}

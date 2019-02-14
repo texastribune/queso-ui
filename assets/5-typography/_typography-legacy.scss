@@ -1,0 +1,474 @@
+// Font Serif (font-serif)
+//
+// Deprecated: Not using font variables or "t-" naming convention.
+//
+//
+// Markup: <h4 class="font-serif">Serif font</h4>
+// 
+//
+// Styleguide 5.2.1
+.font-serif {
+  font-family: Georgia, serif;
+
+  .fonts-loaded & {
+    font-family: 'PT Serif', Georgia, serif;
+  }
+}
+
+// Font Sans-serif (font-sansserif)
+//
+// Deprecated: Not using font variables or "t-" naming convention.
+//
+//
+// Markup: <h4 class="font-sansserif">Sans-serif font</h4>
+// 
+//
+// Styleguide 5.2.2
+.font-sansserif {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  .fonts-loaded & {
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+}
+
+// Prose
+//
+// Deprecated: This uses @extends and we're hoping to remove those methods.
+//
+// The .prose class can be extended around a group of <p> to apply our default serif prose styles.
+//
+// Markup: <div class="prose"><p>Lorem ipsum. <a>Link text</a></p></div>
+// 
+//
+// Styleguide 5.2.3
+.prose {
+  p {
+    @extend .font-serif;
+    @extend %link--blue;
+    color: $color-black-off;
+    line-height: 1.4;
+    margin: $size-b 0;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+}
+
+// Sansserif
+//
+// Deprecated: Duplicate of font-sansserif
+//
+// Markup: <div class="prose"><p>Lorem ipsum. <a>Link text</a></p></div>
+// 
+//
+// Styleguide 5.2.4
+.sansserif {
+  @extend .font-sansserif;
+}
+
+// Titlecase
+//
+// Deprecated: Old naming convention.
+//
+// Markup: <h4 class="titlecase">This is a title.</h4>
+// 
+//
+// Styleguide 5.2.5
+.titlecase {
+  text-transform: capitalize;
+}
+
+// Uppercase
+//
+// Deprecated: Old naming convention.
+//
+// Markup: <h4 class="uppercase">This is a title.</h4>
+// 
+//
+// Styleguide 5.2.6
+.uppercase {
+  text-transform: uppercase;
+}
+
+// Bold
+//
+// Deprecated: Use &lt;strong&gt; for these use-cases
+//
+// Markup: <span class="bold">Bold text</span>
+// 
+//
+// Styleguide 5.2.7
+.bold {
+  font-weight: bold;
+}
+
+// Center Text
+//
+// Deprecated: Old naming convention.
+//
+// Markup: <div class="center-text">Center Me</div>
+// 
+//
+// Styleguide 5.2.8
+.center-text {
+  text-align: center;
+}
+
+// Headline
+//
+// Deprecated: Old naming convention and use of @extend.
+//
+// Markup: <h1 class="headline">Story Headline Text</h1>
+// 
+//
+// Styleguide 5.2.9
+.headline {
+  @extend .font-serif;
+  @extend %link--blue_subtle;
+  color: $color-black-off;
+  font-weight: 700;
+}
+
+// Sectionhead
+//
+// Deprecated: Old naming convention and use of @extend. Check on use with uppercase helper instead of explicitly changing case. Also look into whether descendant <a> tag rule is needed. 
+//
+// Markup: <h3 class="sectionhead">Title for a section of text with <a>link.</a></h3>
+// 
+//
+// Styleguide 5.3.1
+.sectionhead {
+  @extend .font-sansserif;
+  border-bottom: 2px solid $color-gray-medium;
+  font-weight: 700;
+  letter-spacing: .03em;
+  padding-bottom: $size-b/4;
+  text-transform: uppercase;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+// Widgethead
+//
+// Deprecated: Old naming convention and use of @extend. Check on use with uppercase helper instead of explicitly changing case.
+//
+// .inverse - BG of black with white text
+// .widgethead--yellow - BG of yellow
+// .widgethead--blue - BG of blue
+//
+// Markup: <h3 class="widgethead {{ className }}">Widget Heading</h3>
+// 
+//
+// Styleguide 5.3.2
+.widgethead {
+  @extend .font-sansserif;
+  background-color: $color-white-off;
+  letter-spacing: .03em;
+  padding: $size-b/2 $size-b;
+  text-transform: uppercase;
+
+  &.inverse {
+    background-color: $color-black-off;
+    color: $color-white-pure;
+  }
+
+  &--yellow {
+    background-color: $color-yellow-tribune;
+  }
+
+  &--blue {
+    background-color: $color-blue-light;
+  }
+}
+
+// Smallcaps
+//
+// Deprecated: This uses @extend frequently and we're hoping to move to a more helper class-based approach. We also might not use these frequently.
+//
+// Currently, this is used to style mini-headers, "read more" links, button text and bylines.
+//
+// .smallcaps - Default, all caps with some letter-spacing love
+// .smallcaps--light - Lighter weight more letter-spacing; also style links
+// .smallcaps--teal - Default but with teal gray
+// .smallcaps--white - More letter-spacing; white
+// .smallcaps--yellow - Another new letter-spacing value; yellow
+// .smallcaps--nospacing - Adds margin, but resets padding. Probably not used.
+//
+// Markup: <span class="{{ className }}">Lorem <a>ipsum</a></span>
+//
+//
+// Styleguide 5.3.3
+.smallcaps {
+  @extend .font-sansserif;
+  color: $color-black-pure;
+  font-weight: 700;
+  letter-spacing: .03em;
+  line-height: 1;
+  text-transform: uppercase;
+
+  &--light {
+    @extend .font-sansserif;
+    @extend %link--teal;
+    color: $color-gray-medium;
+    font-weight: 400;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+  }
+
+  &--teal {
+    @extend .smallcaps;
+    color: $color-teal-gray;
+  }
+
+  &--white {
+    @extend .smallcaps;
+    color: $color-white-pure;
+    letter-spacing: .05em;
+  }
+
+  &--yellow {
+    @extend .smallcaps;
+    color: $color-yellow-tribune;
+    letter-spacing: .1em;
+  }
+
+  &--nospacing {
+    line-height: 1;
+    margin-bottom: $size-b/4;
+    padding: 0;
+  }
+}
+
+// Byline
+//
+// Deprecated: Old naming convention/BEM implementation and use of @extend.
+//
+// Markup: <span class="byline"><span class="byline--item">By Bob Buttons</span></span>
+//
+//
+// Styleguide 5.3.4
+.byline {
+  @extend .smallcaps--light;
+  @extend %link--teal;
+  font-size: $size-xs;
+  margin: $size-b/2 0 0;
+
+  &--item {
+    display: inline-block;
+    padding-right: $size-b;
+  }
+}
+
+// Description
+//
+// Deprecated: Old naming convention and use of @extend.
+//
+// Markup: <span class="description">Description<p>with a paragraph</p></span>
+//
+//
+// Styleguide 5.3.5
+.description {
+  @extend .font-sansserif;
+  @extend %link--blue;
+  color: $color-gray-medium;
+  font-size: $size-s;
+
+  // for templates that render safe HTML text
+  p {
+    @extend .font-sansserif;
+    @extend %link--blue;
+    font-size: $size-xs;
+  }
+}
+
+// Subtext Main version (subtext)
+//
+// Deprecated: This can probably be kicked out in favor of helper classes. It doesn't seem to be used very much.
+//
+// Subtext is used for paragraphs below .smallcaps and for other tiny text needs.
+//
+// Markup: <span class="subtext">Lorem ipsum <a>Link</a></span>
+//
+//
+// Styleguide 5.3.6
+.subtext {
+  @extend .font-sansserif;
+  color: darken($color-gray-light, 20%);
+  font-size: $size-xxs;
+
+  a {
+    border: 0;
+    box-shadow: none;
+    color: $color-teal-gray;
+
+    &:hover {
+      border: 0;
+      box-shadow: none;
+      text-decoration: underline;
+    }
+  }
+}
+
+// Subtext Donations version (subtext)
+//
+// Deprecated: This can probably be kicked out in favor of helper classes. It doesn't seem to be used very much.
+//
+// Subtext is used for paragraphs below .smallcaps and for other tiny text needs. Deviates from the styles in main repo.
+//
+// Markup: <span class="subtext">Lorem ipsum</span>
+//
+//
+// Styleguide 5.3.7
+.subtext {
+  @extend %link--blue;
+  color: $color-gray-medium;
+  font-size: $size-xs;
+  font-weight: 400;
+  padding: 0;
+}
+
+// Story Quote (story_quote)
+//
+// Deprecated: Never used.
+//
+//
+// Markup: <p class="story_quote">Highlighted text</p>
+//
+// Styleguide 5.3.8
+.story_quote {
+  &--pull {
+    @extend .font-sansserif;
+    color: $color-black-pure;
+    font-size: $size-m;
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1.3;
+    padding: $size-b 0;
+  }
+
+  &--cite {
+    @extend .font-sansserif;
+    display: block;
+    font-size: $size-b;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: $size-b/2 0 0;
+  }
+}
+
+// Headline List (headline_list)
+//
+// Deprecated: NEEDS DOC
+//
+//
+// Markup: assets/5-typography/headline_list.html
+//
+// Styleguide 5.3.9
+.headline_list {
+  list-style-type: none;
+  position: relative;
+
+  li {
+    // @extend .grid_separator--s;
+    @extend .font-serif;
+    font-size: $size-s;
+    font-weight: 400;
+    padding: 0 $size-b;
+    position: relative;
+    margin-left: 0;
+    overflow: visible;
+
+    @include mq($until: bp-s) {
+      padding: $size-b/4 $size-b;
+    }
+
+    &:before {
+      color: $color-gray-light;
+      font: normal normal normal 14px/1 FontAwesome;
+      position: absolute;
+      left: 0;
+      margin-top: 3px;
+      content: '\f0da';
+    }
+
+    &:hover {
+      &:before {
+        color: $color-yellow-tribune;
+      }
+    }
+
+    a {
+      color: $color-gray-dark;
+      text-decoration: none;
+
+      &:hover {
+        color: $color-black-off;
+      }
+    }
+
+    .byline {
+      @extend %link--teal;
+      font-size: $size-xxs;
+    }
+  }
+
+  li.headline_list--data {
+    margin-bottom: $size-b/4;
+
+    &:before {
+      margin-top: 5px;
+    }
+
+    .subtext {
+      font-size: $size-xxs;
+      line-height: 1.5;
+    }
+  }
+}
+
+// Highlight
+//
+// Deprecated: With the background-color helper classes, "has-bg-yellow" this will become obsolete.
+//
+// These link helpers are used on parent classes to set subsequent link styles.
+//
+//
+// Markup: <p class="highlight">Highlighted text</p>
+//
+// Styleguide 5.4.1
+.highlight {
+  background-color: $color-yellow-tribune;
+  display: inline-block;
+  padding-left: $size-xxs;
+  padding-right: $size-xxs;
+}
+
+// List Bulleted
+//
+// Deprecated: This uses an extend and can likely be converted to a utility class.
+//
+// These link helpers are used on parent classes to set subsequent link styles.
+//
+//
+// Markup: <ul class="list--bulleted"><li>Item 1</li><li><a>Item 2 (with link)</a></li></ul>
+//
+// Styleguide 5.4.2
+.list--bulleted {
+  @include font-setting('secondary');
+
+  li {
+    font-size: $size-b;
+    margin: 0 0 $size-b $size-m;
+    @extend %link--blue;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
