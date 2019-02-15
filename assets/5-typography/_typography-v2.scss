@@ -24,18 +24,147 @@
   @include font-setting;
 }
 
+
+// Text Case (t-case)
+//
+// Experimental: Adds new naming convention
+//
+// .t-titlecase - Text transformed to Title Case
+// .t-uppercase - Text transformed to UPPERCASE
+//
+// Markup: <p class="{{ className }}">Text transform helper.</p>
+// 
+//
+// Styleguide 5.2.5
+.t-titlecase {
+  text-transform: capitalize;
+}
+
+.t-uppercase {
+  text-transform: uppercase;
+}
+
+
+// Text Alignment
+//
+// Experimental: Adds new naming convention
+//
+// .t-center - Center aligned
+// .t-right - Right aligned
+//
+// Markup: <p class="{{ className }}">Example</p>
+// 
+//
+// Styleguide 5.2.7
+.t-center {
+  text-align: center;
+}
+
+.t-right {
+  text-align: right;
+}
+
+
+// Text size
+//
+// Experimental: New utility to help eliminate repitition.
+//
+// .t-xxs - XXS Text size
+// .t-xs - XS Text size
+// .t-s - S Text size
+// .t-m - M Text size
+// .t-l - L Text size
+// .t-xl - XL Text size
+// .t-giant - Giant Text size
+//
+// Markup: <p class="{{ className }}">Example</p>
+// 
+//
+// Styleguide 5.2.7
+//
+$type-sets: (xxxl: $size-xxxl,
+giant: $size-giant,
+xxl: $size-xxl,
+xl: $size-xl,
+l: $size-l,
+m: $size-m,
+b: $size-b,
+s: $size-s,
+xs: $size-xs,
+xxs: $size-xxs);
+
+@each $type-set, $font-size in $type-sets {
+  .t-#{$type-set} {
+    font-size: $font-size;
+  }
+}
+
+
+// Links (t-linkstyle)
+//
+// Experimental: Although we can now use the mixin underlined-link to style links, we still need a helper class at times to apply it. NOTE: Apply this to a parent to have descendant a tags inherit the respective link style.
+//
+// .t-linkstyle--blue - Blue instead of default teal.
+// .t-linkstyle--underlined - Give our underlined look to all links.
+// .t-linkstyle--underlined-subtle - Give our underlined look to all links ONLY ON HOVER.
+//
+// Markup: <p class="t-linkstyle {{ className }}">In V2, we still apply link classes to a parent block. <a>This is a regular link in that block ipsum. <a class="t-unlink">This is link using the "t-unlink" class, which is used to override default link style and look like regular text.</a></p>
+//
+// Styleguide 5.2.8
+//
+.t-linkstyle {
+  a:not(.t-unlink) {
+    color: $color-teal-gray;
+    font-weight: bold;
+  }
+
+  &--blue {
+    a:not(.t-unlink) {
+      color: $color-blue-dark;
+    }
+  }
+
+  &--underlined {
+    @include underlined-link-parent;
+  }
+
+  &--underlined-subtle {
+    @include underlined-link-parent('true');
+  }
+}
+
+// Non-links (t-unlink)
+//
+// Experimental: Force a link to look like regular text.
+//
+// Markup: <p class="t-linkstyle">The unlink class removes default link styles. <a>This is a regular link</a> and <a class="t-unlink">this is a link with the t-unlink class.</a></p>
+//
+// Styleguide 5.2.8
+//
+.t-unlink {
+  border: none;
+  box-shadow: none;
+
+  &:hover,
+  &:active {
+    border: 0;
+    text-decoration: none;
+  }
+}
+
+
 // Prose (t-prose)
 //
-// Experimental: V2 of prose relies on <code>font-setting</code> and <code>border-hover-link-parent</code> mixins
+// Experimental: V2 of prose relies on <code>font-setting</code> and <code>underlined-link-parent</code> mixins
 //
 // Markup: <div class="t-prose"><p>Lorem ipsum. <a>Link text</a></p></div>
 // 
 //
-// Styleguide 5.2.3
+// Styleguide 5.2.9
 .t-prose {
   p {
     @include font-setting('secondary');
-    @include border-hover-link-parent;
+    @include underlined-link-parent;
     color: $color-black-off;
     line-height: 1.4;
     margin: $size-b 0;
@@ -46,36 +175,6 @@
   }
 }
 
-
-// Titlecase (REMOVED)
-//
-// Experimental: Switched to utility class
-//
-// Markup: <h4 class="has-text-titlecase">This is a title.</h4>
-// 
-//
-// Styleguide 5.2.5
-
-
-// Uppercase (REMOVED)
-//
-// Experimental: Switched to utility class
-//
-// Markup: <h4 class="has-texhas-text-uppercase">This is a title.</h4>
-// 
-//
-// Styleguide 5.2.6
-
-
-// Center Text (REMOVED)
-//
-// Experimental: Switched to utility class
-//
-// Markup: <h4 class="has-text-center">Center Me</h4>
-// 
-//
-// Styleguide 5.2.8
-
 // Headline (t-headline)
 //
 // Experimental: New naming convention and mixin method.
@@ -83,10 +182,10 @@
 // Markup: <h1 class="t-headline">Story Headline Text</h1>
 // 
 //
-// Styleguide 5.2.9
+// Styleguide 5.3.1
 .t-headline {
   @include font-setting('secondary');
-  @include border-hover-link-parent('true');
+  @include underlined-link-parent('true');
   color: $color-black-off;
   font-weight: 700;
 }
@@ -95,10 +194,10 @@
 //
 // Experimental: New naming convention and mixin method. Ditches explicit <a> tag rule and case assignment. Also inherits body font instead of setting.
 //
-// Markup: <h3 class="t-sectionhead has-text-uppercase">Title for a section of text with <a>link.</a></h3>
+// Markup: <h3 class="t-sectionhead t-uppercase">Title for a section of text with <a>link.</a></h3>
 // 
 //
-// Styleguide 5.3.1
+// Styleguide 5.3.2
 .t-sectionhead {
   border-bottom: 2px solid $color-gray-medium;
   font-weight: 700;
@@ -110,14 +209,14 @@
 //
 // Experimental: New naming convention and mixin method. Ditches modifier classes.
 //
-// .has-bg-black-off - BG of black with white text
+// .has-bg-black-off.has-text-white - BG of black with white text
 // .has-bg-yellow - BG of yellow
 // .has-bg-blue - BG of blue
 //
-// Markup: <h3 class="t-widgethead has-text-uppercase {{ className }}">Widgetheads can be coupled with the has-bg-color classes.</h3>
+// Markup: <h3 class="t-widgethead t-uppercase {{ className }}">Widgetheads can be coupled with the has-bg-color classes.</h3>
 // 
 //
-// Styleguide 5.3.2
+// Styleguide 5.3.3
 .t-widgethead {
   background-color: $color-white-off;
   letter-spacing: $font-letter-spacing;
@@ -137,8 +236,7 @@
 // Markup: <span class="t-smallcaps {{ className }}">Lorem ipsum</span>
 //
 //
-// Styleguide 5.3.3
-//
+// Styleguide 5.3.4
 .t-smallcaps {
   font-weight: 700;
   letter-spacing: $font-letter-spacing;
@@ -173,10 +271,10 @@
 // Markup: <span class="t-byline"><span class="byline--item">By Bob Buttons</span></span>
 //
 //
-// Styleguide 5.3.4
+// Styleguide 5.3.5
 //
 .t-byline {
-  @include border-hover-link-parent('true');
+  @include underlined-link-parent('true');
   color: $color-gray-medium;
   font-size: $size-xs;
   letter-spacing: $font-letter-spacing-lg;
@@ -196,9 +294,9 @@
 // Markup: <span class="t-description">Description<p>with a paragraph</p></span>
 //
 //
-// Styleguide 5.3.5
+// Styleguide 5.3.6
 .t-description {
-  @include border-hover-link-parent();
+  @include underlined-link-parent();
   color: $color-gray-medium;
   font-size: $size-s;
 
@@ -214,7 +312,14 @@
 // Markup: <span class="has-text-gray">Lorem ipsum <a>Link</a></span>
 //
 //
-// Styleguide 5.3.6
+// Styleguide 5.3.7
+
+// Story Quote (REMOVED)
+//
+// Experimental: Remove this completely and no need for helper class substitutes.
+//
+//
+// Styleguide 5.3.8
 
 
 // Headline List (REMOVED)
@@ -227,13 +332,17 @@
 // Styleguide 5.3.9
 
 
-// Highlight (REMOVED)
+// Highlight (t-highlight)
 //
-// Experimental: Use background-color helper classes for this instead.  Proof of concept with helper class in preview.
+// Experimental: Use background-color helper classes  instead and add 2 rules for padding and display.
 //
 // These link helpers are used on parent classes to set subsequent link styles.
 //
 //
-// Markup: <p class="has-bg-yellow l-display-ib">Highlighted text</p>
+// Markup: <p class="has-bg-yellow t-highlight">Highlighted text</p>
 //
 // Styleguide 5.4.1
+.t-highlight {
+  display: inline-block;
+  padding: 0 $size-xs;
+}

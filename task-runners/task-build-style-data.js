@@ -117,10 +117,12 @@ async function getComments() {
         let mainClass = sectionObj.slug;
         let parens = /\(([^)]+)\)/;
         let parensMatch = parens.exec(section.header);
-
+        let prettyName = section.header;
         if (parensMatch && typeof parensMatch[1] !== 'undefined') {
           mainClass = parensMatch[1];
+          prettyName = prettyName.replace(parens, '');
         }
+        sectionObj.prettyName = prettyName;
         sectionObj.mainClass = mainClass;
 
         // Strip description tags

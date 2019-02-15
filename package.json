@@ -13,8 +13,7 @@
     "build-template": "node task-runners/task-build-template.js",
     "build-style-data": "node task-runners/task-build-style-data.js",
     "import-ds": "node task-runners/task-import-ds.js",
-    "prettier": "prettier --write './task-runners/**/*.js'",
-    "lint": "stylelint 'assets/**/**.scss'"
+    "lint": "stylelint 'assets/**/**.scss' && prettier --write './task-runners/**/*.js'"
   },
   "prettier": {
     "bracketSpacing": true,

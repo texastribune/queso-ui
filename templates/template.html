@@ -17,9 +17,16 @@
   <style>
     .ds-stick-it { position: sticky; top: 0; z-index: 1 }
     .ds-breathe {padding: 1rem}
+    .ds-breathe-m {margin: 1rem; display: block}
+    .ds-desc p {margin: 1rem 0}
     .ds-menu {overflow: scroll; height: 80vh}
     .ds-menu__child {padding-left: 1rem;}
     .ds-wide {width: 100%}
+    .ds-spacer {padding-bottom: 5rem; position: relative;}  
+    .ds-anchor {position: absolute;}    
+    .is-active .ds-code-dropdown {position: static;}
+    /* Bulma overrides */
+    a {color: inherit}
   </style>
 </head>
 
@@ -41,13 +48,13 @@
           </p>
           <ul class="menu-list ds-menu">
             {% for item in styleData %}
-            {% if item.experimental !== true %}
-            <li class="{% if item.depth !== 1 %}ds-menu__child{% else %}has-text-weight-bold{% endif %}">
-              <a class="" href="#{{ item.slug }}">
-              {{ item.header }}
-              </a>
-            </li>
-            {% endif %}
+              {% if item.experimental !== true %}
+                <li class="{% if item.depth !== 1 %}ds-menu__child{% else %}has-text-weight-bold{% endif %}">
+                  <a class="" href="#{{ item.slug }}">
+                  {{ item.prettyName }}
+                  </a>
+                </li>
+              {% endif %}
             {% endfor %}
           </ul>
         </aside>
@@ -61,14 +68,13 @@
           {% set descriptionTags = item.description %}
           {% set codeSnippet = item.codeSnippet %}
           {% set isTool = item.isTool %}
-          <a id="{{ item.slug }}"></a>
-          {% if item.depth === 1 %}
-          <p class="ds-breathe menu-label ds-stick-it has-background-white-ter">{{item.header}}</p>
-          {% endif %}
-          <div class="section">
-            
+          {# <span class="ds-breathe"></span> #}
+          
+          <div class="section ds-spacer">
+            <a class="ds-anchor" id="{{ item.slug }}"></a>
+            <p class="ds-breathe menu-label ds-stick-it has-text-white has-background-black-ter ">{{item.groupName}} >{% if item.depth !== 1 %} <span class="has-text-weight-bold {% if item.experimental  %}has-text-info{% elif item.deprecated %}has-text-warning{% endif %}">{{item.prettyName}}</span>{% endif %}</p>
             <h2 class="title is-{{ item.depth }}">
-              {{ item.header }}
+              {{ item.prettyName }}
               {% if item.experimental %}
               <span class="tag is-info">V2</span>
               {% endif %}
@@ -76,13 +82,9 @@
               <span class="tag is-warning">Sunset</span>
               {% endif %}
             </h2>
-            <h3 class="subtitle">
-              {% if isTool %}
+            <div class="subtitle ds-desc">
               {{ descriptionTags | safe }}
-              {% else %}
-              {{ description }}
-              {% endif %}
-            </h3>
+            </div>
             <div class="columns is-multiline">
               {% for color in item.colors %}
               <div class="column is-3">
@@ -134,7 +136,7 @@
             {% if markup %}
             <div class="columns is-multiline">
               <div class="column is-full">
-                {{ snippet(item.header, markup, '', isFile, description, codeSnippet) }}
+                {{ snippet(item.header, markup, '', isFile, description, codeSnippet, item.mainClass) }}
               </div>
               {% if (item.modifiers|length) and ( item.groupName === 'Typography' or item.groupName === 'Utility') %}
                 <div class="column is-full">
@@ -176,9 +178,6 @@
             event.stopPropagation();
             $el.classList.toggle('is-active');
           });
-        });
-        document.addEventListener('click', function (event) {
-          closeDropdowns();
         });
       }
       function closeDropdowns() {

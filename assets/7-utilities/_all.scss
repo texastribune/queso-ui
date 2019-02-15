@@ -25,7 +25,7 @@
 //
 
 
-// Background color - (has-bg-color)
+// Background color (has-bg-color)
 //
 // New utility to help eliminate repitition.
 //
@@ -67,83 +67,6 @@ $color-map: (
 }
 
 
-// Font size  (has-text-size)
-//
-//
-// New utility to help eliminate repitition.
-//
-// The .has-text-{SIZE} class can be added to any element to override the inherited font-size.
-//
-// .has-text-xxs - XXS Text size
-// .has-text-xs - XS Text size
-// .has-text-s - S Text size
-// .has-text-m - M Text size
-// .has-text-l - L Text size
-// .has-text-xl - XL Text size
-// .has-text-giant - Giant Text size
-//
-// Markup: <p class="{{ className }}">Example</p>
-// 
-//
-// Styleguide 7.0.3
-//
-$type-sets: (
-  xxxl: $size-xxxl,
-  giant: $size-giant,
-  xxl: $size-xxl,
-  xl: $size-xl,
-  l: $size-l,
-  m: $size-m,
-  b: $size-b,
-  s: $size-s,
-  xs: $size-xs,
-  xxs: $size-xxs
-);
-@each $type-set, $font-size in $type-sets {
-  .has-text-#{$type-set} {
-    font-size: $font-size;
-  }
-}
-
-
-// Text Casing  (has-text-case)
-//
-// New naming convention.
-//
-// .has-text-titlecase - Text transformed to Title Case
-// .has-text-uppercase - Text transformed to UPPERCASE
-//
-// Markup: <p class="{{ className }}">Example</p>
-// 
-//
-// Styleguide 7.0.4
-.has-text-titlecase {
-  text-transform: capitalize;
-}
-
-.has-text-uppercase {
-  text-transform: uppercase;
-}
-
-// Text Alignment  (has-text-alignment)
-//
-// New naming convention.
-//
-// .has-text-center - Center aligned
-// .has-text-right - Right aligned
-//
-// Markup: <p class="{{ className }}">Example</p>
-// 
-//
-// Styleguide 7.0.5
-.has-text-center {
-  text-align: center;
-}
-
-.has-text-right {
-  text-align: right;
-}
-
 // Lists  (l-list)
 //
 // Resets list styles.
@@ -153,7 +76,7 @@ $type-sets: (
 // Markup: <ul class="l-list {{ className }}"><li>Example</li><li>Example</li></ul>
 // 
 //
-// Styleguide 7.0.5
+// Styleguide 7.0.3
 .l-list {
   list-style: none;
 
@@ -195,10 +118,10 @@ $type-sets: (
 // .l-display-ib - Inline Block
 // .l-display-block - Block
 //
-// Markup: <span class="{{ className }} has-bg-gray">Example</span>
+// Markup: <span class="{{ className }} has-bg-gray-light">Example</span>
 // 
 //
-// Styleguide 7.0.6
+// Styleguide 7.0.4
 .l-display-ib {
   display: inline-block;
 }

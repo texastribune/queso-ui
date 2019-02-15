@@ -1,10 +1,15 @@
-{% macro snippet(name, code, modifier, isFile, description, codeSnippet) %}
+{% macro snippet(name, code, modifier, isFile, description, codeSnippet, mainClass) %}
 <div class="card">
     {% set className = modifier.className %}
     
     {% if className %}
     <div class="card-header has-background-light">
-        <pre class="has-text-info">{{className}}</pre>
+        <pre class="has-text-info">.{{className}}</pre>
+    </div>
+    {% endif %}
+    {% if mainClass %}
+    <div class="card-header has-background-light">
+        <pre class="has-text-info">.{{mainClass}}</pre>
     </div>
     {% endif %}
     <div class="card-content">
@@ -19,13 +24,13 @@
             {% endif %}
         {% endif %}
         {% if codeSnippet %}
-            <div class="dropdown">
+            <div class="dropdown is-block">
                 <div class="dropdown-trigger">
                     <button aria-controls="dropdown-menu" aria-haspopup="true" class="button">
                         HTML Example
                     </button>
                 </div>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-menu ds-code-dropdown" id="dropdown-menu" role="menu">
                     <div class="dropdown-content">
                         <pre class="has-text-danger has-background-black">{{codeSnippet | safe}}</pre>
                     </div>

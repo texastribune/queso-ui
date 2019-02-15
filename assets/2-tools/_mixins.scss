@@ -1,6 +1,6 @@
 // @mixin font-setting
 //
-// Experimental: This will help us move away from silent classes for setting font-families. It still keeps our two main font-family rules in one place. <code class="is-block">p { @include font-setting('secondary') }</code>
+// Experimental: This will help us move away from silent classes for setting font-families. It still keeps our two main font-family rules in one place. <code class="ds-breathe-m">p { @include font-setting('secondary') }</code>
 //
 // $type = 'primary' - Version of font-setting. Options: primary | secondary
 //
@@ -22,15 +22,16 @@
   }
 }
 
-// @mixin border-hover-link
+
+// @mixin underlined-link
 //
-// Experimental: Again, this will replace the reliance on silent classes, specifically <code>%link--teal</code>.  To use this mixin, apply to an <code>a</code> tag to add special link style. Example: <code class="is-block"> a { @include border-hover-link }</code>
+// Experimental: This will replace the need for silent classes, specifically <code>%link--teal</code>.  To use this mixin, apply to an <code>a</code> tag to add special link style. Example: <code class="ds-breathe-m"> a { @include border-hover-link }</code>
 //
 // $subtle = false - Whether or not this a subtle or default variation. Options: true | false
 //
 // Styleguide 2.1.2
 //
-@mixin border-hover-link($subtle: false) {
+@mixin underlined-link($subtle: false) {
   // Set color var
   $border-hover-color: $color-blue-light;
   @if ( $subtle == false ) {
@@ -39,8 +40,9 @@
     border-bottom: 1px solid $color-blue-light;
     box-shadow: inset 0 -1px 0 0 $color-blue-light;
   }
+  font-weight: inherit;
   color: inherit;
-  transition: all .8s ease;
+  transition: all .08s ease;
 
   &:hover,
   &:active {
@@ -49,16 +51,31 @@
     text-decoration: none;
   }
 }
-// @mixin border-hover-link-parent
+
+
+// @mixin underlined-link-parent
 //
-// Experimental: This is an extension of the <code>border-hover-link</code> mixin. This version is applied to a parent to force all descendant <code>a</code> tags get a special link style. Example: <code class="is-block"> .text-block-with-subtle-links { @include border-hover-link-parent(true) }</code>
+// Experimental: This is an extension of the <code>underlined-link</code> mixin. This version is applied to a parent to force all descendant <code>a</code> tags get a special link style. Example: <code class="ds-breathe-m"> .text-block-with-subtle-links { @include underlined-link-parent('true') }</code>
 //
 // $subtle = false - Whether or not this a subtle or default variation. Options: true | false
 //
 // Styleguide 2.1.3
 //
-@mixin border-hover-link-parent($subtle: false) {
-  a {
-    @include border-hover-link($subtle)
+@mixin underlined-link-parent($subtle: false) {
+  a:not(.t-unlink) {
+    @include underlined-link($subtle)
   }
 }
+
+
+// @mixin mq
+//
+// This is a mixin helper imported via NPM via the <a href="https://github.com/sass-mq/sass-mq">Sass MQ library</a> <code class="ds-breathe-m">@include mq($from: bp-m, $and: '(orientation: landscape)') {}</code>
+//
+// $from = false -  {String | Boolean} One of $mq-breakpoints
+// $until = false - {String | Boolean}  One of $mq-breakpoints
+// $and = false - {String | Boolean}  Additional media query parameters
+// $media-type - {String} ($mq-media-type) Media type: screen, print…
+//
+// Styleguide 2.1.4
+//
