@@ -1,10 +1,8 @@
 const fs = require('fs');
 const fetch = require('node-fetch');
-
-const brandURL =
-  'https://projects.invisionapp.com/dsm-export/ashley-test/ds-test/_style-params.scss?key=S1K_10dmV ';
-
-const outputDir = 'assets';
+const dotenv = require('dotenv').config();
+const brandURL = process.env.DS_SCSS;
+const outputDir = 'assets/scss';
 
 const stripCssComments = str => {
   // Remove multi-line CSS comments
@@ -17,6 +15,9 @@ const stripCssComments = str => {
 };
 
 (importBrand => {
+  if (typeof brandURL === 'undefined') {
+    return;
+  }
   const commentsLine1 = `// These tokens are imported from ${brandURL}\n\n`;
   const commentsLine2 = `// Chat with art team before modification\n\n`;
   const styleOutputDir = `${outputDir}/1-settings`;

@@ -100,7 +100,7 @@ async function getDesignTokens() {
 async function getComments() {
   let allStyles = [];
   return kss
-    .traverse('./assets/', options)
+    .traverse('./assets/scss/', options)
     .then(function(styleGuide) {
       // Now use KSS parsed data
       let styleGuideString = JSON.stringify(styleGuide);
@@ -134,11 +134,11 @@ async function getComments() {
         let codeSnippet = escapeHTML(section.markup);
         if (
           typeof section.markup !== 'undefined' &&
-          section.markup.includes('assets/')
+          section.markup.includes('.html')
         ) {
           isFile = true;
           // Parse contents and write to object
-          let contents = fs.readFileSync(`./${section.markup}`, 'utf-8');
+          let contents = fs.readFileSync(`./assets/scss/${section.markup}`, 'utf-8');
           codeSnippet = escapeHTML(contents);
         } else if (
           typeof section.markup !== 'undefined' &&

@@ -1,9 +1,6 @@
 const fs = require('fs');
-
 const nunjucks = require('nunjucks');
-// require the module as normal
-var bs = require('browser-sync').create();
-
+const bs = require('browser-sync').create();
 const data = require('../dist/styles.json');
 
 const outputDir = 'dist';
@@ -15,12 +12,12 @@ var rendered = nunjucks.render('./templates/template.html', data);
 fs.writeFile(outputTemplate, rendered, err => {
   if (err) throw err;
   console.log(`📝  Write file to ${outputTemplate}`);
-  // bs.init({
-  //   server: './dist',
-  //   port: 8080,
-  //   ui: {
-  //     port: 8081,
-  //   },
-  // });
+  bs.init({
+    server: './dist',
+    port: 8080,
+    ui: {
+      port: 8081,
+    },
+  });
   console.log(`Launching...`);
 });

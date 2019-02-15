@@ -14,7 +14,7 @@
     {% endif %}
     <div class="card-content">
         {% if isFile %}
-            <div class="box">{% include "../" + code %}</div>
+            <div class="box">{% include "../assets/scss/" + code %}</div>
         {% else %}
             {% if modifier %}
             <div class="box">{{ modifier.markup | safe }}</div>
