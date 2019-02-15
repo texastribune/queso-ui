@@ -1,6 +1,6 @@
 // Font Serif (font-serif)
 //
-// Deprecated: Not using font variables or "t-" naming convention.
+// Deprecated: Needs naming update.
 //
 //
 // Markup: <h4 class="font-serif">Serif font</h4>
@@ -17,7 +17,7 @@
 
 // Font Sans-serif (font-sansserif)
 //
-// Deprecated: Not using font variables or "t-" naming convention.
+// Deprecated: Needs naming update.
 //
 //
 // Markup: <h4 class="font-sansserif">Sans-serif font</h4>
@@ -46,7 +46,7 @@
 
 // Titlecase
 //
-// Deprecated: Old naming convention.
+// Deprecated: Needs naming update.
 //
 // Markup: <h4 class="titlecase">This is a title.</h4>
 // 
@@ -58,7 +58,7 @@
 
 // Uppercase
 //
-// Deprecated: Old naming convention.
+// Deprecated: Needs naming update.
 //
 // Markup: <h4 class="uppercase">This is a title.</h4>
 // 
@@ -82,7 +82,7 @@
 
 // Center Text
 //
-// Deprecated: Old naming convention.
+// Deprecated: Needs naming update.
 //
 // Markup: <div class="center-text">Center Me</div>
 // 
@@ -195,7 +195,7 @@
 
 // Prose
 //
-// Deprecated: This uses @extends and we're hoping to remove those methods.
+// Deprecated: Needs naming update and removal of extend method.
 //
 // The .prose class can be extended around a group of <p> to apply our default serif prose styles.
 //
@@ -219,7 +219,7 @@
 
 // Headline
 //
-// Deprecated: Old naming convention and use of @extend.
+// Deprecated: Needs naming update and removal of extend method.
 //
 // Markup: <h1 class="headline">Story Headline Text</h1>
 // 
@@ -234,7 +234,7 @@
 
 // Sectionhead
 //
-// Deprecated: Old naming convention and use of @extend. Check on use with uppercase helper instead of explicitly changing case. Also look into whether descendant <a> tag rule is needed. 
+// Deprecated: Needs naming update and removal of extend method. Check on use with uppercase helper instead of explicitly changing case. Also look into whether descendant <a> tag rule is needed.
 //
 // Markup: <h3 class="sectionhead">Title for a section of text with <a>link.</a></h3>
 // 
@@ -256,7 +256,7 @@
 
 // Widgethead
 //
-// Deprecated: Old naming convention and use of @extend. Check on use with uppercase helper instead of explicitly changing case.
+// Deprecated: Needs naming update and removal of extend method. Check on use with uppercase helper instead of explicitly changing case.
 //
 // .inverse - BG of black with white text
 // .widgethead--yellow - BG of yellow
@@ -289,7 +289,7 @@
 
 // Smallcaps
 //
-// Deprecated: This uses @extend frequently and we're hoping to move to a more helper class-based approach. We also might not use these frequently.
+// Deprecated: Needs naming update and removal of extend method. We also might not use these frequently.
 //
 // Currently, this is used to style mini-headers, "read more" links, button text and bylines.
 //
@@ -347,7 +347,7 @@
 
 // Byline
 //
-// Deprecated: Old naming convention/BEM implementation and use of @extend.
+// Deprecated: Needs naming update, removal of extend method, and BEM update.
 //
 // Markup: <span class="byline"><span class="byline--item">By Bob Buttons</span></span>
 //
@@ -367,7 +367,7 @@
 
 // Description
 //
-// Deprecated: Old naming convention and use of @extend.
+// Deprecated: Needs naming update and removal of extend method.
 //
 // Markup: <span class="description">Description<p>with a paragraph</p></span>
 //

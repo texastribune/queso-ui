@@ -19,7 +19,7 @@
     .ds-breathe {padding: 1rem}
     .ds-breathe-m {margin: 1rem; display: block}
     .ds-desc p {margin: 1rem 0}
-    .ds-menu {overflow: scroll; height: 80vh}
+    .ds-menu {overflow: scroll; height: 95vh}
     .ds-menu__child {padding-left: 1rem;}
     .ds-wide {width: 100%}
     .ds-spacer {padding-bottom: 5rem; position: relative;}  
@@ -46,7 +46,7 @@
           <p class="menu-label">
             Sections
           </p>
-          <ul class="menu-list ds-menu">
+          <ul class="menu-list ds-menu box has-background-light">
             {% for item in styleData %}
               {% if item.experimental !== true %}
                 <li class="{% if item.depth !== 1 %}ds-menu__child{% else %}has-text-weight-bold{% endif %}">
@@ -72,7 +72,7 @@
           
           <div class="section ds-spacer">
             <a class="ds-anchor" id="{{ item.slug }}"></a>
-            <p class="ds-breathe menu-label ds-stick-it has-text-white has-background-black-ter ">{{item.groupName}} >{% if item.depth !== 1 %} <span class="has-text-weight-bold {% if item.experimental  %}has-text-info{% elif item.deprecated %}has-text-warning{% endif %}">{{item.prettyName}}</span>{% endif %}</p>
+            <p class="ds-breathe menu-label ds-stick-it has-text-white has-background-black-ter ">{{item.groupName}}{% if item.depth !== 1 %} > <span class="has-text-weight-bold {% if item.experimental  %}has-text-info{% elif item.deprecated %}has-text-warning{% endif %}">{{item.prettyName}}</span>{% endif %}</p>
             <h2 class="title is-{{ item.depth }}">
               {{ item.prettyName }}
               {% if item.experimental %}

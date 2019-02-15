@@ -64,7 +64,7 @@ const createMap = arr => {
 };
 
 let styles = {
-  name: 'Design Preview',
+  name: 'Our CSS Toolbox',
   cssFile: 'all.min.css',
 };
 
