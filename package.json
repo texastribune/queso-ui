@@ -8,11 +8,12 @@
     "/assets"
   ],
   "scripts": {
-    "start": "npm-run-all -s import-ds compile build-style-data build-template",
+    "start": "npm-run-all -s import-ds icons compile build-style-data build-template",
     "compile": "node task-runners/task-compile.js",
     "build-template": "node task-runners/task-build-template.js",
     "build-style-data": "node task-runners/task-build-style-data.js",
     "import-ds": "node task-runners/task-import-ds.js",
+    "icons": "node task-runners/task-icons.js",
     "lint": "stylelint 'assets/**/**.scss' && prettier --write './task-runners/**/*.js'"
   },
   "prettier": {
@@ -26,6 +27,7 @@
   "devDependencies": {
     "browser-sync": "^2.26.3",
     "clean-css": "^4.2.1",
+    "directory-tree": "^2.2.1",
     "dotenv": "^6.2.0",
     "kss": "^3.0.0-beta.25",
     "moment": "^2.24.0",
@@ -34,7 +36,8 @@
     "npm-run-all": "^4.1.5",
     "nunjucks": "^3.1.7",
     "prettier": "1.16.3",
-    "stylelint": "^9.10.1"
+    "stylelint": "^9.10.1",
+    "svg-sprite": "^1.5.0"
   },
   "stylelint": {
     "rules": {

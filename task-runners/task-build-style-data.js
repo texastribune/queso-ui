@@ -138,7 +138,10 @@ async function getComments() {
         ) {
           isFile = true;
           // Parse contents and write to object
-          let contents = fs.readFileSync(`./assets/scss/${section.markup}`, 'utf-8');
+          let contents = fs.readFileSync(
+            `./assets/scss/${section.markup}`,
+            'utf-8'
+          );
           codeSnippet = escapeHTML(contents);
         } else if (
           typeof section.markup !== 'undefined' &&
