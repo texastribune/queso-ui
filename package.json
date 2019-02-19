@@ -14,7 +14,8 @@
     "build-style-data": "node task-runners/task-build-style-data.js",
     "import-ds": "node task-runners/task-import-ds.js",
     "icons": "node task-runners/task-icons.js",
-    "lint": "stylelint 'assets/**/**.scss' && prettier --write './task-runners/**/*.js'"
+    "lint": "stylelint 'assets/**/**.scss' && prettier --write './task-runners/**/*.js'",
+    "deploy": "surge dist --domain 'ttds.surge.sh'"
   },
   "prettier": {
     "bracketSpacing": true,

@@ -9,6 +9,7 @@ const token = process.env.GITHUB_TOKEN;
 
 const doFetch = false;
 const brandJSON = process.env.DS_URL;
+const icons = require('../dist/icons.json');
 
 const outputDir = 'dist';
 const outputFilename = `${outputDir}/styles.json`;
@@ -66,6 +67,7 @@ const createMap = arr => {
 let styles = {
   name: 'Our CSS Toolbox',
   cssFile: 'all.min.css',
+  iconSets: icons,
 };
 
 async function getDesignTokens() {
@@ -132,6 +134,21 @@ async function getComments() {
         // Check for markup as file or inline
         let isFile = false;
         let codeSnippet = escapeHTML(section.markup);
+
+        // Look for "white" in class name
+        let modifierEdit = [];
+        section.modifiers.forEach(modifier => {
+          // If there's white in the class name, mark as inverse
+          let isInverse = false;
+          if (modifier.className.includes('white')) {
+            isInverse = true;
+          }
+          let modObj = modifier;
+          modObj.isInverse = isInverse;
+          modifierEdit.push(modObj);
+        });
+        sectionObj.modifiers = modifierEdit;
+
         if (
           typeof section.markup !== 'undefined' &&
           section.markup.includes('.html')
@@ -147,16 +164,16 @@ async function getComments() {
           typeof section.markup !== 'undefined' &&
           section.markup.includes('<')
         ) {
-          // Pass className to modifiers
-          let newModArr = [];
+          // Pass className to modifiers and look for inverses
+          let modifierEdit2 = [];
           section.modifiers.forEach(modifier => {
             let pattern = /{{ className }}/g;
             let markupStr = section.markup.replace(pattern, modifier.className);
             let modObj = modifier;
             modObj.markup = markupStr;
-            newModArr.push(modObj);
+            modifierEdit2.push(modObj);
           });
-          sectionObj.modifiers = newModArr;
+          sectionObj.modifiers = modifierEdit2;
         }
         sectionObj.isFile = isFile;
         sectionObj.codeSnippet = codeSnippet;

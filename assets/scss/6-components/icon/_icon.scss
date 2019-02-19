@@ -1,0 +1,30 @@
+// Icon (c-icon)
+//
+// SVG icon class. The sizes start small and XL and XXL are to be used for larger icons. Default fill is yellow with a helper for white icons needed.
+//
+// .c-icon--xl - XL
+// .c-icon--xxl - XXL
+// .c-icon--white - Inverse
+//
+// Markup: 6-components/icon/icon.html
+//
+// Styleguide 6.1.2
+.c-icon {
+  width: $size-xs;
+  height: $size-xs;
+  fill: $color-yellow-tribune;
+
+  &--xl {
+    width: $size-xl;
+    height: $size-xl;
+  }
+
+  &--xxl {
+    width: $size-xxl;
+    height: $size-xxl;
+  }
+
+  &--white {
+    fill: $color-white-pure;
+  }
+}

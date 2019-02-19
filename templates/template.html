@@ -18,6 +18,7 @@
     .ds-stick-it { position: sticky; top: 0; z-index: 1 }
     .ds-breathe {padding: 1rem}
     .ds-breathe-m {margin: 1rem; display: block}
+    .ds-breathe-vert {padding: 1rem 0}
     .ds-desc p {margin: 1rem 0}
     .ds-menu {overflow: scroll; height: 95vh}
     .ds-menu__child {padding-left: 1rem;}
@@ -31,6 +32,7 @@
 </head>
 
 <body class="fonts-loaded">
+  {% include '../dist/base-sprite.svg' %}
   <section class="hero">
     <div class="hero-body">
       <div class="container">
@@ -56,6 +58,11 @@
                 </li>
               {% endif %}
             {% endfor %}
+            <li class="has-text-weight-bold">
+              <a class="" href="#icons">
+                Icons
+              </a>
+            </li>
           </ul>
         </aside>
       </div>
@@ -73,7 +80,8 @@
           <div class="section ds-spacer">
             <a class="ds-anchor" id="{{ item.slug }}"></a>
             <p class="ds-breathe menu-label ds-stick-it has-text-white has-background-black-ter ">{{item.groupName}}{% if item.depth !== 1 %} > <span class="has-text-weight-bold {% if item.experimental  %}has-text-info{% elif item.deprecated %}has-text-warning{% endif %}">{{item.prettyName}}</span>{% endif %}</p>
-            <h2 class="title is-{{ item.depth }}">
+            <div class="ds-breathe-vert">
+              <h2 class="title is-{{ item.depth }}">
               {{ item.prettyName }}
               {% if item.experimental %}
               <span class="tag is-info">V2</span>
@@ -81,16 +89,17 @@
               {% if item.deprecated %}
               <span class="tag is-warning">Sunset</span>
               {% endif %}
-            </h2>
-            <div class="subtitle ds-desc">
-              {{ descriptionTags | safe }}
-            </div>
-            <div class="columns is-multiline">
-              {% for color in item.colors %}
-              <div class="column is-3">
-                {{ colorSwatch(color.name, color.color, color.description) }}
+              </h2>
+              <div class="subtitle ds-desc">
+                {{ descriptionTags | safe }}
               </div>
-              {% endfor %}
+              <div class="columns is-multiline">
+                {% for color in item.colors %}
+                <div class="column is-3">
+                  {{ colorSwatch(color.name, color.color, color.description) }}
+                </div>
+                {% endfor %}
+              </div>
             </div>
             {% if item.parameters | length %}
             <!-- Parameters used for SCSS Variables -->
@@ -153,6 +162,30 @@
             {% endif %}
           </div>
           {% endfor %}
+          <div class="section ds-spacer">
+            <a class="ds-anchor" id="icons"></a>
+            
+            {% for iconSet in iconSets %}
+              <h3 class="title is-3">{{iconSet.name}}</h3>
+              <div class="columns is-multiline">
+                {% set icons = iconSet.icons %}
+                {% for icon in icons %}
+                  <div class="column is-3">
+                    <div class="card t-center">
+                      <div class="section has-background-light">
+                        <svg class="c-icon c-icon--xxl" aria-hidden="true" focusable="true">
+                          <use xlink:href="#{{icon}}"></use>
+                        </svg>
+                      </div>
+                      <div class="card-content">
+                        <h4 class="subtitle is-4">{{icon}}</h4>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </section>
         </main>
       </div>
     </div>

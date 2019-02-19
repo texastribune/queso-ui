@@ -9,10 +9,13 @@ const groups = ['base'];
 
 // Loop through each icon in each folder and build SVG sprite
 (buildIcons => {
+  const setArr = [];
   groups.forEach(group => {
-    const iconTree = dirTree(`./assets/icons/${group}`);
+    const iconTree = dirTree(`./assets/icons/${group}`, {
+      extensions: /\.svg/,
+    });
     const allArr = iconTree.children;
-    const newArr = [];
+    const iconArr = [];
     // Create spriter instance (see https://github.com/jkphl/svg-sprite#general-configuration-options for `config` examples)
     const spriter = new SVGSpriter({
       dest: './dist',
@@ -32,8 +35,8 @@ const groups = ['base'];
     });
     if (Array.isArray(allArr)) {
       allArr.forEach(element => {
-        // Build new clean array
-        newArr.push(element.name.replace(/(\/|\.|svg)/g, ''));
+        // Add clean name to icon array
+        iconArr.push(element.name.replace(/(\/|\.|svg)/g, ''));
         // Add spriter icon
         let svgPath = `./${element.path}`;
         spriter.add(
@@ -43,6 +46,11 @@ const groups = ['base'];
         );
       });
     }
+    // Push array of icons to set array
+    setArr.push({
+      name: group,
+      icons: iconArr,
+    });
     // Compile the sprite
     spriter.compile(function(error, result) {
       /* Write `result` files to disk */
@@ -60,8 +68,8 @@ const groups = ['base'];
         }
       }
     });
-    console.log(
-      `✓ Create icon sprite in ./dist/${group}-sprite.svg`
-    );
+    // Create JSON data of icons
+    fs.writeFileSync(`./dist/icons.json`, JSON.stringify(setArr));
+    console.log(`✓ Create icon sprite in ./dist/${group}-sprite.svg`);
   });
 })();

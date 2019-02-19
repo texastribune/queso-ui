@@ -1,25 +1,18 @@
-// Font Serif (t-font-serif)
+// Text font (t-font-type)
 //
 // Experimental: Uses new mixin and naming convention
 //
+// .t-font-serif - Default serif
+// .t-font-sans - Default sans
 //
-// Markup: <h4 class="t-font-serif">Serif font</h4>
+// Markup: <h4 class="{{ className }}">Change inherit font family</h4>
 // 
 //
-// Styleguide 5.2.1
+// Styleguide 5.2.2
 .t-font-serif {
   @include font-setting('secondary');
 }
 
-// Font Sans-serif (t-font-sans)
-//
-// Experimental: Uses new mixin and naming convention
-//
-//
-// Markup: <h4 class="t-font-sans">Sans-serif font</h4>
-// 
-//
-// Styleguide 5.2.2
 .t-font-sans {
   @include font-setting;
 }
@@ -45,7 +38,7 @@
 }
 
 
-// Text Alignment
+// Text Alignment (t-alignment)
 //
 // Experimental: Adds new naming convention
 //
@@ -65,7 +58,7 @@
 }
 
 
-// Text size
+// Text size (t-size)
 //
 // Experimental: New utility to help eliminate repitition.
 //
