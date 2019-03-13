@@ -148,6 +148,12 @@ async function getComments() {
         let cleanDesc = stripTags(section.description);
         sectionObj.cleanDesc = cleanDesc;
 
+        // Add github link
+        const githubLink = `${styles.github}/${section.source.path}#L${
+          section.source.line
+        }`;
+        sectionObj.githubLink = githubLink;
+
         // Check for markup as file or inline
         let isFile = false;
         let codeSnippet = escapeHTML(section.markup);
@@ -340,7 +346,7 @@ const buildStyleData = async () => {
   });
 
   // ADD to styles to style config
-  styles.styleData = checkedArr;
+  // styles.styleData = checkedArr;
 
   // nest the json by section
   let nested = {};

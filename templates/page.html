@@ -38,8 +38,8 @@
         <aside class="menu ds-stick-it">
           <p class="menu-label ds-breathe">
             {{ name }}
+            {{ github }}
           </p>
-          
           <ul class="menu-list ds-menu box has-background-light">
             {% for item in list %}
               {% if item.depth !== 1 %}
@@ -73,7 +73,7 @@
           {% if item.depth !== 1 %}
           <div class="section ds-spacer">
             <a class="ds-anchor" id="{{ item.slug }}"></a>
-            {{ titleBar(item, github) }}
+            {{ titleBar(item) }}
             <div class="ds-breathe-vert">
               <h2 class="title is-{{ item.depth }}">
               {{ item.prettyName }}
