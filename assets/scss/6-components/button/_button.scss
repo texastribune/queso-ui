@@ -1,9 +1,9 @@
 // Button (c-button)
 //
-// Your standard button suitable for clicking.
+// Buttons rely on color helpers for background. The variations are simply sizes. One catch is that are buttons run small in sizes so the names aren't true to their padding and font-size assignments.
 //
-// .c-button--yellow - Primary button
-// .c-button--gray - Gray button
+// .c-button--l - Large button
+// .c-button--s - XS button
 //
 // Markup: 6-components/button/button.html
 //
@@ -11,17 +11,20 @@
 .c-button {
   background-color: $color-blue-light;
   border: none;
-  color: $color-white-pure;
   font-weight: 700;
-  letter-spacing: .03em;
-  padding: 1rem;
+  font-size: $size-xxs;
+  letter-spacing: $font-letter-spacing;
+  padding: $size-xxs;
+  text-align: center;
   text-transform: uppercase;
 
-  &--yellow {
-    background-color: $color-yellow-tribune;
+  &--l {
+    font-size: $size-l;
+    padding: $size-l;
   }
 
-  &--gray {
-    background-color: $color-gray-dark;
+  &--s {
+    font-size: $size-xxxs;
+    padding: $size-xxxs;
   }
 }

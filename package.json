@@ -1,6 +1,6 @@
 {
-  "name": "ds-toolbox",
-  "version": "1.0.0",
+  "name": "ds-toolbox-test",
+  "version": "0.0.1",
   "description": "A demo repository to illustrate how to share palette and typography through NPM",
   "license": "MIT",
   "private": false,
@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "npm-run-all -s import-ds icons compile build-style-data build-template",
-    "compile": "node task-runners/task-compile.js",
+    "compile": "node task-runners/task-compile.js && node task-runners/task-js.js",
     "build-template": "node task-runners/task-build-template.js",
     "build-style-data": "node task-runners/task-build-style-data.js",
     "import-ds": "node task-runners/task-import-ds.js",
@@ -78,6 +78,7 @@
     }
   },
   "dependencies": {
+    "fast-glob": "^2.2.6",
     "normalize.css": "^8.0.1",
     "sass-mq": "^5.0.0"
   }

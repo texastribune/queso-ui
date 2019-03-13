@@ -1,0 +1,57 @@
+// Card (c-card)
+//
+// Generic card used for articles, podcasts, events, and more! {{isWide}}
+//
+//
+// Markup: 6-components/card/card.html
+//
+// Styleguide 6.1.3
+.c-card {
+  $card-overlay-padding: $size-xxs;
+  // Global position relative to allow for overlays
+  position: relative;
+
+  &__title {
+    font-size: $size-m;
+    letter-spacing: 0.02rem;
+    line-height: 1.2;
+
+    &--lg {
+      font-size: $size-xl;
+    }
+  }
+
+  &__tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: $size-xxs;
+    padding: $size-xxxs;
+  }
+  @include mq($from: bp-m) {
+    &__overlay {
+      background: linear-gradient(rgba(0, 0, 0, 0) 60%, #000);
+      position: absolute;
+      color: $color-white-pure;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      padding: $card-overlay-padding;
+      align-items: flex-end;
+    }
+
+    &__overlay-text {
+      color: $color-white-pure;
+    }
+  }
+  @include mq($from: bp-xl) {
+    &__title {
+      font-size: $size-l;
+
+      &--lg {
+        font-size: $size-xxl;
+      }
+    }
+  }
+}

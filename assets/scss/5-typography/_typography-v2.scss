@@ -1,22 +1,21 @@
-// Text font (t-font-type)
+// Text font (t-font-variant)
 //
 // Experimental: Uses new mixin and naming convention
 //
-// .t-font-serif - Default serif
-// .t-font-sans - Default sans
+// .t-serif - Default serif
+// .t-sans - Default sans
 //
 // Markup: <h4 class="{{ className }}">Change inherit font family</h4>
-// 
+//
 //
 // Styleguide 5.2.2
-.t-font-serif {
+.t-serif {
   @include font-setting('secondary');
 }
 
-.t-font-sans {
+.t-sans {
   @include font-setting;
 }
-
 
 // Text Case (t-case)
 //
@@ -26,7 +25,7 @@
 // .t-uppercase - Text transformed to UPPERCASE
 //
 // Markup: <p class="{{ className }}">Text transform helper.</p>
-// 
+//
 //
 // Styleguide 5.2.5
 .t-titlecase {
@@ -37,7 +36,6 @@
   text-transform: uppercase;
 }
 
-
 // Text Alignment (t-alignment)
 //
 // Experimental: Adds new naming convention
@@ -46,7 +44,7 @@
 // .t-right - Right aligned
 //
 // Markup: <p class="{{ className }}">Example</p>
-// 
+//
 //
 // Styleguide 5.2.7
 .t-center {
@@ -57,11 +55,11 @@
   text-align: right;
 }
 
-
 // Text size (t-size)
 //
 // Experimental: New utility to help eliminate repitition.
 //
+// .t-xxxs - XXXS Text size
 // .t-xxs - XXS Text size
 // .t-xs - XS Text size
 // .t-s - S Text size
@@ -69,29 +67,57 @@
 // .t-l - L Text size
 // .t-xl - XL Text size
 // .t-giant - Giant Text size
+// .t-xxxl - XXXL Text size
 //
 // Markup: <p class="{{ className }}">Example</p>
-// 
+//
 //
 // Styleguide 5.2.7
 //
-$type-sets: (xxxl: $size-xxxl,
-giant: $size-giant,
-xxl: $size-xxl,
-xl: $size-xl,
-l: $size-l,
-m: $size-m,
-b: $size-b,
-s: $size-s,
-xs: $size-xs,
-xxs: $size-xxs);
+$type-sizes: (
+  xxxl: $size-xxxl,
+  giant: $size-giant,
+  xxl: $size-xxl,
+  xl: $size-xl,
+  l: $size-l,
+  m: $size-m,
+  b: $size-b,
+  s: $size-s,
+  xs: $size-xs,
+  xxs: $size-xxs,
+  xxxs: $size-xxxs,
+);
 
-@each $type-set, $font-size in $type-sets {
+@each $type-set, $font-size in $type-sizes {
   .t-#{$type-set} {
     font-size: $font-size;
   }
 }
 
+// Text line-height (t-space-type)
+//
+// Experimental: New utility to help eliminate repitition.
+//
+// t-space-nospace - Tight leading
+// t-space-heading - More spaced out
+// t-space-default - Default
+//
+// Markup: <p style="height: 100px" class="{{ className }} t-headline t-l">Texas again mistakenly flags voters for citizenship reviews</p>
+//
+//
+// Styleguide 5.2.7
+//
+$line-height-type: (
+  nospace: 1,
+  heading: 1.25,
+  default: 1.5,
+);
+
+@each $type-set, $line-height in $line-height-type {
+  .t-space-#{$type-set} {
+    line-height: $line-height;
+  }
+}
 
 // Links (t-linkstyle)
 //
@@ -109,6 +135,10 @@ xxs: $size-xxs);
   a:not(.t-unlink) {
     color: $color-teal-gray;
     font-weight: bold;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   &--blue {
@@ -145,13 +175,12 @@ xxs: $size-xxs);
   }
 }
 
-
 // Prose (t-prose)
 //
 // Experimental: V2 of prose relies on <code>font-setting</code> and <code>underlined-link-parent</code> mixins
 //
 // Markup: <div class="t-prose"><p>Lorem ipsum. <a>Link text</a></p></div>
-// 
+//
 //
 // Styleguide 5.2.9
 .t-prose {
@@ -172,8 +201,10 @@ xxs: $size-xxs);
 //
 // Experimental: New naming convention and mixin method.
 //
-// Markup: <h1 class="t-headline">Story Headline Text</h1>
-// 
+// Headlines are typically &lt;h1&gt; elements, but you can apply the styles to any header element to size appropriately. Linked headlines will be given a teal underline style on hover.
+//
+// Markup: <h1 class="t-headline">Story headline text <a>with link.</a></h1>
+//
 //
 // Styleguide 5.3.1
 .t-headline {
@@ -188,7 +219,7 @@ xxs: $size-xxs);
 // Experimental: New naming convention and mixin method. Ditches explicit <a> tag rule and case assignment. Also inherits body font instead of setting.
 //
 // Markup: <h3 class="t-sectionhead t-uppercase">Title for a section of text with <a>link.</a></h3>
-// 
+//
 //
 // Styleguide 5.3.2
 .t-sectionhead {
@@ -207,7 +238,7 @@ xxs: $size-xxs);
 // .has-bg-blue - BG of blue
 //
 // Markup: <h3 class="t-widgethead t-uppercase {{ className }}">Widgetheads can be coupled with the has-bg-color classes.</h3>
-// 
+//
 //
 // Styleguide 5.3.3
 .t-widgethead {
@@ -233,7 +264,7 @@ xxs: $size-xxs);
 .t-smallcaps {
   font-weight: 700;
   letter-spacing: $font-letter-spacing;
-  padding: .2em 0;
+  padding: 0.2em 0;
   text-transform: uppercase;
 
   // Byline
@@ -261,20 +292,17 @@ xxs: $size-xxs);
 //
 // Experimental: Drop extend of smallcaps
 //
-// Markup: <span class="t-byline"><span class="byline--item">By Bob Buttons</span></span>
+// Markup: <span class="t-byline"><span class="byline__item">By Bob Buttons</span></span>
 //
 //
 // Styleguide 5.3.5
 //
 .t-byline {
-  @include underlined-link-parent('true');
-  color: $color-gray-medium;
-  font-size: $size-xs;
   letter-spacing: $font-letter-spacing-lg;
   margin: $size-b/2 0 0;
   text-transform: uppercase;
 
-  &--item {
+  &__item {
     display: inline-block;
     padding-right: $size-b;
   }
@@ -314,7 +342,6 @@ xxs: $size-xxs);
 //
 // Styleguide 5.3.8
 
-
 // Headline List (REMOVED)
 //
 // Experimental: This is more like a component with typographical elements sprinkled in. Proof of concept with helper classes in preview.
@@ -323,7 +350,6 @@ xxs: $size-xxs);
 // Markup: 5-typography/headline_list-v2.html
 //
 // Styleguide 5.3.9
-
 
 // Highlight (t-highlight)
 //

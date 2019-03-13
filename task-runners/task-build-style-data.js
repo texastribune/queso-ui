@@ -7,12 +7,14 @@ const kss = require('kss'),
 const dotenv = require('dotenv').config();
 const token = process.env.GITHUB_TOKEN;
 
-const doFetch = false;
+const doFetch = true;
 const brandJSON = process.env.DS_URL;
 const icons = require('../dist/icons.json');
+const githubData = require('../dist/github.json');
 
 const outputDir = 'dist';
 const outputFilename = `${outputDir}/styles.json`;
+const outputFilenameNested = `${outputDir}/styles-nested.json`;
 
 // Helpers
 const slugify = text => {
@@ -68,7 +70,9 @@ let styles = {
   name: 'Our CSS Toolbox',
   cssFile: 'all.min.css',
   iconSets: icons,
+  github: 'https://github.com/texastribune/ds-toolbox/blob/master',
 };
+let nestedStyles = styles;
 
 async function getDesignTokens() {
   let designTokens = [];
@@ -91,7 +95,10 @@ async function getDesignTokens() {
           };
           swatchSet.push(swatchObj);
         });
-        let colorSetObj = { header: colorSet.name, colors: swatchSet };
+        let colorSetObj = {
+          header: colorSet.name,
+          colors: swatchSet,
+        };
         console.log(`Added ${colorSet.name} to design data`);
         designTokens.push(colorSetObj);
       });
@@ -126,6 +133,16 @@ async function getComments() {
         }
         sectionObj.prettyName = prettyName;
         sectionObj.mainClass = mainClass;
+
+        // Check description for hints
+        let isWide = /{{isWide}}/;
+        let isWideMatch = isWide.exec(section.description);
+        let isWideBool = false;
+        if (isWideMatch && typeof isWideMatch[0] !== 'undefined') {
+          section.description = section.description.replace(isWide, '');
+          isWideBool = true;
+        }
+        sectionObj.isWide = isWideBool;
 
         // Strip description tags
         let cleanDesc = stripTags(section.description);
@@ -200,6 +217,7 @@ async function getComments() {
     })
     .catch(e => console.log(e));
 }
+
 function fetchGithubData(url) {
   let occurrenceArr = [];
   return fetch(url, {
@@ -248,6 +266,7 @@ const buildStyleData = async () => {
   let checkedArr = [];
   const duplicates = findDupe(mergedData);
   const groupMap = createMap(mergedData);
+  let searchUrls = [];
   // Loop through again and perform github and duplicate checks
   for (const item of mergedData) {
     // Now check in on github for deprecated items
@@ -266,31 +285,46 @@ const buildStyleData = async () => {
         const main = `https://api.github.com/search/code?q=${
           item.mainClass
         }+language:${language}+repo:texastribune/texastribune`;
-        let gitHubData1 = await githubFn(main);
-        let gitHubData2 = await githubFn(donations);
-        item.gitHubData = [
-          {
-            name: 'Main (texastribune)',
-            results: gitHubData1.results,
-            count: gitHubData1.count,
-          },
-          {
-            name: 'Donations',
-            results: gitHubData2.results,
-            count: gitHubData2.count,
-          },
-        ];
+        searchUrls.push({
+          name: item.slug,
+          donations: donations,
+          main: main,
+        });
       }
     }
+    fs.writeFileSync(
+      `${outputDir}/urls.json`,
+      JSON.stringify(searchUrls, null, 2)
+    );
     // Label duplicates
     if (duplicates.includes(item.orderNumber.toString())) {
       item.isDuplicate = true;
     } else {
       item.isDuplicate = false;
     }
-
     // Label groups
     item.groupName = groupMap[item.group.toString()];
+
+    // Check for github data
+    const found = githubData.find(function(query) {
+      if (query.name === item.slug) {
+        return query;
+      }
+    });
+    if (typeof found === 'object') {
+      item.gitHubData = [
+        {
+          name: 'Main (texastribune)',
+          results: found.main.results,
+          count: found.main.count,
+        },
+        {
+          name: 'Donations',
+          results: found.donations.results,
+          count: found.donations.count,
+        },
+      ];
+    }
 
     checkedArr.push(item);
   }
@@ -307,6 +341,37 @@ const buildStyleData = async () => {
 
   // ADD to styles to style config
   styles.styleData = checkedArr;
+
+  // nest the json by section
+  let nested = {};
+  let nestedArr = [];
+  checkedArr.forEach(classItem => {
+    let group = classItem.groupName;
+    if (typeof nested[group] !== 'object') {
+      nested[group] = {
+        name: group,
+        list: [classItem],
+        slug: slugify(group),
+      };
+    } else {
+      nested[group]['list'].push(classItem);
+    }
+  });
+  Object.keys(nested).forEach((e, index) => {
+    // Sort style data by reference number
+    nested[e].list.sort(function(a, b) {
+      var keyA = a.header,
+        keyB = b.header;
+      // Compare the 2 dates
+      if (keyA < keyB) return -1;
+      if (keyA > keyB) return 1;
+      return 0;
+    });
+    nestedArr.push(nested[e]);
+  });
+  nestedStyles.items = nestedArr;
+
+  fs.writeFileSync(outputFilenameNested, JSON.stringify(nestedStyles, null, 4));
   fs.writeFileSync(outputFilename, JSON.stringify(styles, null, 4));
 };
 

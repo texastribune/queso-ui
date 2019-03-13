@@ -1,0 +1,63 @@
+// Text color (has-text-color)
+//
+// New utility to help eliminate repitition.
+//
+// .has-text-black -  black text color
+// .has-text-black-off - black-off text color
+// .has-text-white -  white text color
+// .has-text-teal -  teal text color
+// .has-text-gray -  gray text color
+// .has-text-gray-light - gray-light text color
+// .has-text-gray-dark - gray-dark text color
+// .has-text-yellow -  yellow text color
+// .has-text-blue - blue text color
+//
+// Markup: <p class="{{ className }}">Example</p>
+//
+//
+// Styleguide 7.0.1
+//
+
+// Background color (has-bg-color)
+//
+// New utility to help eliminate repitition.
+//
+// .has-bg-black -  black background color
+// .has-bg-black-off - black-off background color
+// .has-bg-white -  white background color
+// .has-bg-teal -  teal background color
+// .has-bg-gray -  gray background color
+// .has-bg-gray-light - gray-light background color
+// .has-bg-gray-dark - gray-dark background color
+// .has-bg-yellow -  yellow background color
+// .has-bg-blue - blue background color
+//
+// Markup: <p class="{{ className }}">Example</p>
+//
+//
+// Styleguide 7.0.2
+//
+
+$color-map: (
+  black: $color-black-pure,
+  black-off: $color-black-off,
+  white: $color-white-pure,
+  teal: $color-teal-gray,
+  gray: $color-gray-medium,
+  gray-light: $color-gray-light,
+  gray-dark: $color-gray-dark,
+  yellow: $color-yellow-tribune,
+  blue: $color-blue-light,
+);
+
+@each $color, $value in $color-map {
+  .has-bg-#{$color} {
+    background-color: $value;
+  }
+}
+
+@each $color, $value in $color-map {
+  .has-text-#{$color} {
+    color: $value;
+  }
+}

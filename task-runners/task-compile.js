@@ -1,5 +1,5 @@
 // Compile .scss files in */styles folders
-var glob = require('glob');
+var glob = require('fast-glob');
 var chokidar = require('chokidar');
 var fs = require('fs');
 var CleanCSS = require('clean-css');
@@ -15,10 +15,17 @@ const compile = file => {
   let fileName = arr[arr.length - 1];
   let fileNameCSS = fileName.replace('.scss', '.css');
   let fileNameMin = fileName.replace('.scss', '.min.css');
+  const outputPath = `./dist/${fileNameCSS}`;
+  const outputPathMin = `./dist/${fileNameMin}`;
   // 1. Compile SCSS
   sass.render(
     {
       file: file,
+      includePaths: ['node_modules'],
+      outFile: outputPath,
+      sourceComments: true,
+      sourceMap: true,
+      sourceMapEmbed: true,
     },
     function(err, result) {
       if (err) {
@@ -27,13 +34,13 @@ const compile = file => {
       }
       let css = result.css.toString();
       // 2. Build CSS
-      fs.writeFile(`./dist/${fileNameCSS}`, css, err => {
+      fs.writeFile(outputPath, css, err => {
         if (err) throw err;
         console.log(`🎨 ${fileNameCSS} - updated!`);
       });
       // 3. Build Minified CSS
       let output = new CleanCSS().minify(css);
-      fs.writeFile(`./dist/${fileNameMin}`, output.styles, err => {
+      fs.writeFile(outputPathMin, output.styles, err => {
         if (err) throw err;
         console.log(`🎨 ${fileNameMin} - updated!`);
       });
@@ -75,22 +82,21 @@ const lint = () => {
 };
 
 // Glob
-let cssFiles = './assets/**/*.scss';
-
-// Glob options
-let options = {
-  cwd: __dirname + '/..',
-  ignore: ['./assets/**/_*/**'],
-};
+let cssFiles = ['./assets/**/[^_]*.scss', './docs/**/*.scss'];
 
 // Main task.
-const main = () => {
-  glob(cssFiles, options, function(er, files) {
-    files.forEach(file => {
-      compile(file);
-    });
-  });
-  lint();
+// const main = () => {
+//   glob(cssFiles, options, function(er, files) {
+//     files.forEach(file => {
+//       compile(file);
+//     });
+//   });
+//   lint();
+// };
+
+const main = async () => {
+  const css = await glob(cssFiles);
+  Promise.all(css.map((file, index) => compile(file))).then(resp => lint());
 };
 
 main();

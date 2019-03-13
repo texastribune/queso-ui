@@ -14,13 +14,13 @@
     {% endif %}
     <div class="card-content">
         {% if isFile %}
-            <div class="box{% if modifier.isInverse %} has-background-black{% endif %}">{% include "../assets/scss/" + code %}</div>
+            <div class="box{% if modifier.isInverse %} has-background-black{% endif %} ds-grid-lines">{% include "../assets/scss/" + code %}</div>
         {% else %}
             {% if modifier %}
-            <div class="box{% if modifier.isInverse %} has-background-black{% endif %}">{{ modifier.markup | safe }}</div>
+            <div class="box{% if modifier.isInverse %} has-background-black{% endif %} ds-grid-lines">{{ modifier.markup | safe }}</div>
             <p>{{ modifier.description }}</p>
             {% else %}
-            <div class="box{% if modifier.isInverse %} has-background-black{% endif %}">{{ code | safe }}</div>
+            <div class="box{% if modifier.isInverse %} has-background-black{% endif %} ds-grid-lines">{{ code | safe }}</div>
             {% endif %}
         {% endif %}
         {% if codeSnippet %}

@@ -1,0 +1,7 @@
+{% macro titleBar(item, link) %}
+<a href="{{link + '/' + item.source.path + '#L' + item.source.line}}" target="_blank" class="ds-breathe menu-label ds-stick-it has-text-white has-background-black-ter is-block">{{item.groupName}}{%
+  if item.depth !== 1 %} > <span class="has-text-weight-bold {% if item.experimental  %}has-text-info{% elif item.deprecated %}has-text-warning{% endif %}">{{item.prettyName}}</span>{%
+endif %}</a>
+{% endmacro %}
+
+

@@ -1,0 +1,103 @@
+.ds-stick-it {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.ds-breathe {
+  padding: 1rem;
+}
+
+.ds-breathe-m {
+  margin: 1rem;
+  display: block;
+}
+
+.ds-breathe-vert {
+  padding: 1rem 0;
+}
+
+.ds-desc p {
+  margin: 1rem 0;
+}
+
+.ds-menu {
+  overflow: scroll;
+  height: 95vh;
+}
+
+.ds-menu__child {
+  padding-left: 1rem;
+}
+
+.ds-wide {
+  width: 100%;
+}
+
+.ds-spacer {
+  padding-bottom: 5rem;
+  position: relative;
+}
+
+.ds-anchor {
+  position: absolute;
+}
+
+.is-active .ds-code-dropdown {
+  position: static;
+}
+
+.ds-grid-example div[class^='col'] {
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.ds-hide-sidebar .ds-main {
+  width: 100%;
+}
+
+.ds-hide-sidebar .ds-sidebar {
+  display: none;
+}
+
+.ds-hide-sidebar .card-content,
+.ds-hide-sidebar .section {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.ds-util {
+  right: 0;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  max-width: 220px;
+}
+
+.ds-grid-lines {
+  background-size: 16px 16px;
+  background-image: linear-gradient(to right, #eee 1px, transparent 1px),
+    linear-gradient(to bottom, #eee 1px, transparent 1px);
+  border: 1px solid #eee;
+
+  .ds-hide-grid & {
+    border: none;
+    background: none;
+  }
+}
+
+.ds-multicols {
+  @media screen and (min-width: 768px) {
+    column-count: 3;
+  }
+}
+.ds-multicol {
+  page-break-inside: avoid;
+  break-inside: avoid-column;
+}
+
+/* Bulma overrides */
+a,
+strong {
+  color: inherit;
+}

@@ -8,7 +8,8 @@
 // $font-family-secondary-fallback = Georgia, serif - This displays as the secondary font before fonts load.
 //
 // Styleguide 1.2.1
-$font-family-primary: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family-primary: 'Open Sans', 'Helvetica Neue', Helvetica, Arial,
+  sans-serif;
 $font-family-secondary: 'PT Serif', Georgia, serif;
 $font-family-primary-fallback: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-family-secondary-fallback: Georgia, serif;
@@ -39,8 +40,11 @@ $font-root-mobile: 15px;
 //
 // Consistent letter-spacing value
 //
-// $font-letter-spacing = .03em - "Magic" letter spacing value
+// $font-letter-spacing-sm = .02em - Used sometimes in card headline
+// $font-letter-spacing = .03em - Default used with uppercase usually
+// $font-letter-spacing = .05em - Bring on that kerning
 //
 // Styleguide 1.2.3
-$font-letter-spacing: .03em;
-$font-letter-spacing-lg: .05em;
+$font-letter-spacing-sm: 0.02em;
+$font-letter-spacing: 0.03em;
+$font-letter-spacing-lg: 0.05em;

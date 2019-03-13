@@ -1,0 +1,122 @@
+{% from "templates/color-swatch.html" import colorSwatch %}
+{% from "templates/variable-swatch.html" import variableSwatch %}
+{% from "templates/snippet.html" import snippet %}
+{% from "templates/snippet-tool.html" import snippetTool %}
+{% from "templates/snippet-table.html" import snippetTable %}
+{% from "templates/title-bar.html" import titleBar %}
+<!DOCTYPE html>
+<html class="fonts-loaded" lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <meta content="ie=edge" http-equiv="X-UA-Compatible" />
+  <title>Document</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="base.min.css" />
+  <link rel="stylesheet" href="base-v2.min.css" />
+  <link id="ds" rel="stylesheet" href="ds.min.css" />
+</head>
+
+<body class="fonts-loaded">
+  {% include '../dist/base-sprite.svg' %}
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          {{ name }}
+        </h1>
+        <h2 class="subtitle">
+          CSS + HTML Guide for The Texas Tribune.
+        </h2>
+      </div>
+    </div>
+  </section>
+  <div class="container">
+    <div class="tile is-ancestor">
+      <div class="tile is-parent is-vertical is-3">
+        <aside class="menu ds-stick-it">
+          <p class="menu-label">
+            Sections
+          </p>
+          <ul class="menu-list ds-menu box has-background-light">
+            {% for item in items %}
+              {% if (item.list | length) > 2 %}
+              <li class="has-text-weight-bold">
+                <a class="" href="{{ item.slug }}.html">
+                {{ item.name }}
+                </a>
+              </li>
+              {% endif %}
+            {% endfor %}
+            <li class="has-text-weight-bold">
+              <a class="" href="#icons">
+                Icons
+              </a>
+            </li>
+          </ul>
+        </aside>
+      </div>
+      <div class="tile is-parent is-vertical is-9">
+        <main>
+          <div class="ds-multicols">
+          {% for item in items %}
+            {% set slug = item.slug %}
+            {% set list = item.list %}
+            {% if (list | length) > 2 %}
+            <div class="ds-multicol">
+              <h4 class="title is-size-4"><a href="{{slug}}.html">{{ item.name }}</a></h4>
+              <ul class="menu-list ds-spacer">      
+              {% for rule in list %}
+                {% if rule.depth !== 1 %}
+                  <li><a href="{{ slug + '.html#' + rule.slug }}">{{ rule.prettyName }}</a></li>
+                {% endif %}
+              {% endfor %}
+              </ul>
+            </div>
+            {% endif %}
+            
+          {% endfor %}
+          </div>
+          <div class="section ds-spacer">
+            <a class="ds-anchor" id="icons"></a>
+            
+            {% for iconSet in iconSets %}
+              <h3 class="title is-3">{{iconSet.name}}</h3>
+              <div class="columns is-multiline">
+                {% set icons = iconSet.icons %}
+                {% for icon in icons %}
+                  <div class="column is-3">
+                    <div class="card t-center">
+                      <div class="section has-background-light">
+                        <svg class="c-icon c-icon--xxl" aria-hidden="true" focusable="true">
+                          <use xlink:href="#{{icon}}"></use>
+                        </svg>
+                      </div>
+                      <div class="card-content">
+                        <h4 class="subtitle is-4">{{icon}}</h4>
+                      </div>
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+            {% endfor %}
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>
+          {{ name }}</strong>
+        for
+        <a href="https://www.texastribune.org/">The Texas Tribune</a>.
+      </p>
+    </div>
+  </footer>
+  <script src="ds.js"></script>
+</body>
+
+</html>

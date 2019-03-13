@@ -1,0 +1,172 @@
+// Lists  (l-list)
+//
+// Experimental: Resets list styles.
+//
+// .l-list--has-arrow - Adds SVG arrow as bullet. Turns yellow on hover.
+//
+// Markup: <ul class="l-list {{ className }}"><li>Example</li><li>Example</li></ul>
+// 
+//
+// Styleguide 7.0.3
+.l-list {
+  list-style: none;
+
+  &--has-arrow {
+    li {
+      padding-left: $size-b;
+      position: relative;
+
+      @include mq($until: bp-s) {
+        padding: $size-b/4 $size-b;
+      }
+
+      &:before {
+        background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 28"><path fill="rgb(208,208,208)" d="M9 14c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297-0.547 0-1-0.453-1-1v-14c0-0.547 0.453-1 1-1 0.266 0 0.516 0.109 0.703 0.297l7 7c0.187 0.187 0.297 0.438 0.297 0.703z"></path></svg>');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: $size-xs $size-xs;
+        content: '';
+        height: $size-xs;
+        left: 0;
+        margin-top: 3px;
+        position: absolute;
+        width: $size-xs;
+      }
+
+      &:hover {
+        &:before {
+          background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 28"><path fill="rgb(255,194,0)" d="M9 14c0 0.266-0.109 0.516-0.297 0.703l-7 7c-0.187 0.187-0.438 0.297-0.703 0.297-0.547 0-1-0.453-1-1v-14c0-0.547 0.453-1 1-1 0.266 0 0.516 0.109 0.703 0.297l7 7c0.187 0.187 0.297 0.438 0.297 0.703z"></path></svg>');
+        }
+      }
+    }
+  }
+}
+
+
+// Display  (l-display)
+//
+// Experimental: Display helpers
+//
+// .l-display-ib - Inline Block
+// .l-display-block - Block
+// .l-display-inline - Inline
+// .l-clearfix - Clears floats
+//
+// Markup: <span class="{{ className }} has-bg-gray-light"><span class="l-float-left">Example</span></span>
+// 
+//
+// Styleguide 7.0.4
+.l-display-ib {
+  display: inline-block;
+}
+
+.l-display-block {
+  display: block;
+}
+
+.l-display-inline {
+  display: inline;
+}
+
+.l-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Float  (l-float)
+//
+// Experimental: Opinionated floating
+//
+// .l-float--left - Float left
+// .l-float--right  - Float right
+//
+// Markup: <span class="l-display-block l-clearfix has-bg-gray-light"><span class="l-float {{ className }}">Example</span></span>
+// 
+//
+// Styleguide 7.0.4
+.l-float {
+  width: 50%;
+
+  @include mq($until: bp-s) {
+    width: 100%;
+  }
+
+  &--left {
+    float: left;
+    margin: 0 $size-s $size-s 0;
+  }
+
+  &--right {
+    float: right;
+    margin: 0 0 $size-s $size-s;
+  }
+}
+
+
+// Vertical Center  (l-v-center)
+//
+// Experimental: Centers an element in a position: relative parent.
+//
+// Markup: <span style="height: 50px; width: 50px; position: relative" class="has-bg-gray-light"><span class="l-vert-center">Example</span></span>
+// 
+//
+// Styleguide 7.0.4
+.l-v-center {
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 1;
+}
+
+// Vertical Center  (l-h-center)
+//
+// Experimental: Centers an element if display: block.
+//
+// Markup: <span style="height: 50px; width: 50px; position: relative" class="has-bg-gray-light"><span class="l-display-block l-h-center" style="width: 50px;>Example</span></span>
+// 
+//
+// Styleguide 7.0.4
+.l-h-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// apply to an item with a flex parent
+.l-self-center {
+  align-self: center;
+}
+
+// Hidden  (l-hidden)
+//
+// Experimental: Hides elements for specified experiences.
+//
+// .l-hidden-sr  - Hidden from screen readers
+// .l-hidden-print  - Hidden from printed output
+//
+// Markup: <span style="height: 50px; width: 50px; position: relative" class="has-bg-gray-light"><span class="{{ className }}">Example</span></span>
+// 
+//
+// Styleguide 7.0.4
+.l-hidden {
+  display: none !important;
+}
+
+.l-hidden-sr {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.l-hidden-print {
+  @media print {
+    display: none !important;
+  }
+}

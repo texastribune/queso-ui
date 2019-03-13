@@ -4,7 +4,10 @@
 //
 // .c-icon--xl - XL
 // .c-icon--xxl - XXL
+// .c-icon--l - L
 // .c-icon--white - Inverse
+// .c-icon--gray - Gray (dark)
+// .c-icon--teal - Teal
 //
 // Markup: 6-components/icon/icon.html
 //
@@ -13,6 +16,13 @@
   width: $size-xs;
   height: $size-xs;
   fill: $color-yellow-tribune;
+  // Attempt to position this correctly always
+  vertical-align: sub;
+
+  &--l {
+    width: $size-l;
+    height: $size-l;
+  }
 
   &--xl {
     width: $size-xl;
@@ -27,4 +37,13 @@
   &--white {
     fill: $color-white-pure;
   }
+
+  &--gray {
+    fill: $color-gray-dark;
+  }
+
+  &--teal {
+    fill: $color-teal-gray ;
+  }
+  
 }

@@ -36,7 +36,7 @@ $mq-breakpoints: (
 
 // Size units
 //
-// Sizes in comparison to 16px root
+// Sizes in comparison to base pixel root
 //
 // $size-xxxl = 3rem - size xxxl
 // $size-giant = 2.5rem - size giant
@@ -48,6 +48,8 @@ $mq-breakpoints: (
 // $size-s = .92rem - size s
 // $size-xs = .85rem - size xs
 // $size-xxs = .7rem - size xxs
+// $size-xxs = .55rem - size xxxs
+//
 //
 // Styleguide 1.3.3
 //
@@ -62,6 +64,7 @@ $size-b: 1.1rem;
 $size-s: .92rem;
 $size-xs: .85rem;
 $size-xxs: .7rem;
+$size-xxxs: .55rem;
 
 // Animation breakpoints
 $animation-single-line-bp: 400px;

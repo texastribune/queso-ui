@@ -1,0 +1,192 @@
+// Clearfix
+//
+// Deprecated: Needs naming update and should be only one class.
+//
+// Styleguide 7.0.4
+.clearfix,
+.clear {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Float
+//
+// Deprecated: Needs naming update and should be only one class. Note: Don't rename these classes without running regex-replace to catch usage in stories.
+//
+// Styleguide 7.0.4
+.float {
+  &_left,
+  &_right {
+    width: 50%;
+
+    @include mq($until: bp-s) {
+      width: 100%;
+    }
+  }
+
+  &_left {
+    float: left;
+    margin: 0 $size-s $size-s 0;
+  }
+
+  &_right {
+    float: right;
+    margin: 0 0 $size-s $size-s;
+  }
+}
+
+// Vertical Center
+//
+// Deprecated: Needs naming update. Apply to an element inside a parent that has position: relative
+//
+// Styleguide 7.0.4
+.vertical_center {
+  left: 0;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  z-index: 1;
+}
+
+// Horizontal Center
+//
+// Deprecated: Needs naming update. Apply to an element that has display block.
+//
+// Styleguide 7.0.4
+.horizontal_center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Self Center
+//
+// Apply to an item with a flex parent
+//
+// Styleguide 7.0.4
+.l-self-center {
+  align-self: center;
+}
+
+// Text Alignment
+//
+// Deprecated: Moved to typography
+//
+// Styleguide 7.0.4
+.text {
+  &__center {
+    text-align: center;
+  }
+
+  &__left {
+    text-align: left;
+  }
+
+  &__right {
+    text-align: right;
+  }
+}
+
+// Hidden
+//
+// Deprecated: Needs naming update.
+//
+// Styleguide 7.0.4
+.hidden {
+  display: none !important;
+}
+
+// Accessible Hidden
+//
+// Deprecated: Needs naming update.
+//
+// Styleguide 7.0.4
+.accessible-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+// Hidden - Print
+//
+// Deprecated: Needs naming update.
+//
+// Styleguide 7.0.4
+.print {
+  &__hide {
+    @media print {
+      display: none !important;
+    }
+  }
+}
+
+// Borders
+//
+// Deprecated: Needs naming update and to be moved into border helpers file.
+//
+// .border--yellow_bottom - Bottom border
+// .border--yellow_left - Left border
+// .border--yellow_right - Right border
+// .border--yellow_notch - Small yellow separator, often used under headers
+// .border--yellow_smallnotch - Smaller yellow separator, often used under headers
+//
+// Markup: <span style="height: 50px; width: 50px;" class="{{ className }} has-bg-gray-light">Example</span>
+//
+// Styleguide 7.0.4
+.border {
+  &--yellow {
+    &_bottom {
+      border-bottom: 3px solid $color-yellow-tribune;
+    }
+
+    &_left {
+      border-left: 3px solid $color-yellow-tribune;
+      padding-left: $size-b;
+    }
+
+    &_right {
+      border-right: 3px solid $color-yellow-tribune;
+      padding-right: $size-b;
+    }
+
+    // Small yellow separator, often used under headers
+    &_notch {
+      border-top: 5px solid $color-yellow-tribune;
+      clear: both;
+      color: $color-yellow-tribune;
+      height: 0;
+      margin-bottom: $size-b;
+      text-align: left;
+      width: 40px;
+    }
+
+    // Small yellow separator, often used under headers
+    &_smallnotch {
+      border-top: 3px solid $color-yellow-tribune;
+      clear: both;
+      color: $color-yellow-tribune;
+      height: 0;
+      margin-bottom: $size-xxs;
+      text-align: left;
+      width: 25px;
+    }
+  }
+}
+
+// CTA box
+//
+// Deprecated: Needs naming update and to be moved into components.
+//
+// Markup: <span style="height: 50px; width: 50px;" class="cta__box">Wrapper for call to action.</span>
+//
+// Styleguide 7.0.4
+.cta__box {
+  background-color: $color-sand;
+  padding: $size-b;
+}
