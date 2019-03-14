@@ -64,7 +64,7 @@
               <ul class="menu-list ds-spacer">      
               {% for rule in list %}
                 {% if rule.depth !== 1 %}
-                  <li><a href="{{ slug + '.html#' + rule.slug }}">{{ rule.prettyName }}</a></li>
+                  <li><a href="{{ slug + '.html#' + rule.slug }}">{{ rule.header }}</a></li>
                 {% endif %}
               {% endfor %}
               </ul>
