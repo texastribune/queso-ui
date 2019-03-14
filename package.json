@@ -1,6 +1,6 @@
 {
   "name": "ds-toolbox-test",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A demo repository to illustrate how to share palette and typography through NPM",
   "license": "MIT",
   "private": false,
