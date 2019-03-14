@@ -105,16 +105,25 @@
   }
 }
 
-
-// Vertical Center  (l-v-center)
+// Align (l-align)
 //
-// Experimental: Centers an element in a position: relative parent.
+// Experimental: Mostly used for centering and some assume a flex parent.
 //
-// Markup: <span style="height: 50px; width: 50px; position: relative" class="has-bg-gray-light"><span class="l-vert-center">Example</span></span>
+// l-align-center-x - Margin auto FTW
+// l-align-center-y - The ol' vertical transform trick
+// l-align-center-self - Used to center itself in a flex parent
+// l-algin-justify - Centers children assuming a display flex is present
+//
+// Markup: 7-utilities/alignment-demo.html
 // 
 //
 // Styleguide 7.0.4
-.l-v-center {
+.l-align-center-x {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.l-align-center-y {
   left: 0;
   position: absolute;
   top: 50%;
@@ -123,23 +132,15 @@
   z-index: 1;
 }
 
-// Vertical Center  (l-h-center)
-//
-// Experimental: Centers an element if display: block.
-//
-// Markup: <span style="height: 50px; width: 50px; position: relative" class="has-bg-gray-light"><span class="l-display-block l-h-center" style="width: 50px;>Example</span></span>
-// 
-//
-// Styleguide 7.0.4
-.l-h-center {
-  margin-left: auto;
-  margin-right: auto;
-}
-
 // apply to an item with a flex parent
-.l-self-center {
+.l-align-center-self {
   align-self: center;
 }
+
+.l-align-justify {
+  justify-content: center;
+}
+
 
 // Hidden (l-hidden)
 //

@@ -72,7 +72,7 @@ let styles = {
   iconSets: icons,
   github: 'https://github.com/texastribune/ds-toolbox/blob/master',
 };
-let nestedStyles = styles;
+
 
 async function getDesignTokens() {
   let designTokens = [];
@@ -375,9 +375,8 @@ const buildStyleData = async () => {
     });
     nestedArr.push(nested[e]);
   });
-  nestedStyles.items = nestedArr;
+  styles.items = nestedArr;
 
-  fs.writeFileSync(outputFilenameNested, JSON.stringify(nestedStyles, null, 4));
   fs.writeFileSync(outputFilename, JSON.stringify(styles, null, 4));
 };
 

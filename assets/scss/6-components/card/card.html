@@ -1,4 +1,5 @@
 <!-- Preview desc -->
+<p>Cards are special beast with various HTML recipes. The card component relies on the grid classes for structure, but has a few inner rulesets to accomplish different looks.</p>
 <div class="ds-breathe-vert">
   <h3>Default</h3>
 </div>
@@ -7,7 +8,7 @@
   <div class="col_5 grid_separator">
     <figure>
       <a
-        href="/2019/03/11/special-election-runoff-texas-house-seat-democrats-work-avoid-repeat-2/"
+        href="#"
         class="l-display-block"
       >
         <img
@@ -33,7 +34,7 @@
     <header class="grid_separator--s">
       <h3 class="t-headline c-card__title">
         <a
-          href="/2019/03/11/special-election-runoff-texas-house-seat-democrats-work-avoid-repeat-2/"
+          href="#"
           >In special election runoff for Texas House seat, Democrats work to
           avoid repeat of 2018 upset</a
         >
@@ -59,7 +60,7 @@
       <span class="t-linkstyle t-uppercase"
         ><a
           class="t-xs"
-          href="/2019/03/11/special-election-runoff-texas-house-seat-democrats-work-avoid-repeat-2/"
+          href="#"
           >Full Story&nbsp;<svg
             class="c-icon c-icon--teal"
             aria-hidden="false"
@@ -85,7 +86,7 @@
   <div class="col_6 grid_separator">
     <figure>
       <a
-        href="/2019/03/11/special-election-runoff-texas-house-seat-democrats-work-avoid-repeat-2/"
+        href="#"
         class="l-display-block"
       >
         <img
@@ -111,7 +112,7 @@
     <header class="grid_separator--s">
       <h1 class="t-headline c-card__title c-card__title--lg">
         <a
-          href="/2019/03/11/special-election-runoff-texas-house-seat-democrats-work-avoid-repeat-2/"
+          href="#"
           >In special election runoff for Texas House seat, Democrats work to
           avoid repeat of 2018 upset</a
         >
@@ -137,7 +138,7 @@
       <span class="t-linkstyle t-uppercase"
         ><a
           class="t-xs"
-          href="/2019/03/11/special-election-runoff-texas-house-seat-democrats-work-avoid-repeat-2/"
+          href="#"
           >Full Story&nbsp;<svg
             class="c-icon c-icon--teal"
             aria-hidden="false"
@@ -178,7 +179,7 @@
   <div class="col_5 col_12--m">
     <figure>
       <a
-        href="/2019/03/11/special-election-runoff-texas-house-seat-democrats-work-avoid-repeat-2/"
+        href="#"
         class="l-display-block"
       >
         <img
@@ -202,13 +203,13 @@
 <div class="ds-breathe-vert">
   <h3>HTML Variation 3</h3>
   <p>
-    Overlay; As seen in events
+    Overlay; As seen in events. The trick here is to use <code>.c-card__overlay</code>
   </p>
 </div>
 <div class="c-card l-display-ib">
   <figure>
     <a
-      href="/2019/03/11/special-election-runoff-texas-house-seat-democrats-work-avoid-repeat-2/"
+      href="#"
       class="l-display-block"
     >
       <img class="l-display-block" src="https://picsum.photos/800/420?random" />
@@ -253,31 +254,32 @@
 <div class="ds-breathe-vert">
   <h3>HTML Variation 3</h3>
   <p>
-    Overlay; As seen in podcasts
+    Overlay; As seen in podcasts. This includes a <code>.c-card__bottom-stick</code>, which is a hack to get the last element of the card to align to the bottom. This card is set as a <code>disply: flex; flex-direction: column</code>. This means its other flex siblings will all be the same height. The player at the bottom is <code>position: aboslute;</code> so that no matter what, it'll always appear at the bottom visually. We shamefully add an inline style of the static height since that can be adjusted in the embed of the player.
   </p>
 </div>
-<div class="c-card">
-  <figure>
-    <a href="#" class="l-display-block">
-      <img
-        class="l-display-block l-full-width"
-        src="https://static.feedpress.it/logo/trib-brief-podcast-5ad61ddc8230d.jpg"
-      />
-    </a>
-  </figure>
+<div class="c-card grid grid_vertical" style="padding-bottom: 80px;">
+  <a href="#" class="l-display-block">
+    <img
+      class="l-display-block l-full-width"
+      src="https://static.feedpress.it/logo/trib-brief-podcast-5ad61ddc8230d.jpg"
+    />
+  </a>
   <div class="c-card__tag l-display-ib has-bg-black-off t-smallcaps t-center">
     <div class="t-uppercase has-text-yellow t-xs">Daily</div>
     <div class="t-xs has-text-white t-space-nospace">M - F</div>
   </div>
-  <div class="grid grid_separator has-bg-teal">
+  <div class="grid grid_separator has-bg-teal t-xs l-align-justify">
     <div class="grid_row">
-      <a class="col_inline c-button has-text-white has-bg-teal" href="#"
+      <a class="col_inline c-button c-button--s has-text-white has-bg-teal" href="#"
         >iTunes</a
       >
-      <a class="col_inline c-button has-text-white has-bg-teal" href="#"
+      <a class="col_inline c-button c-button--s has-text-white has-bg-teal" href="#"
         >Google Play</a
       >
-      <a class="col_inline c-button has-text-white has-bg-teal" href="#">RSS</a>
+      <a class="col_inline c-button c-button--s has-text-white has-bg-teal" href="#"
+        >Amazon</a
+      >
+      <a class="col_inline c-button c-button--s has-text-white has-bg-teal" href="#">RSS</a>
     </div>
   </div>
   <header class="t-prose grid_separator">
@@ -285,10 +287,10 @@
       Get a quick take on the latest Texas politics and policy news via your
       favorite podcast app. Use the player below or&nbsp;
     </p>
-    <span class="t-linkstyle t-uppercase"
+    <span class="t-linkstyle t-uppercase l-display-ib"
       ><a
         class="t-xs"
-        href="/2019/03/11/special-election-runoff-texas-house-seat-democrats-work-avoid-repeat-2/"
+        href="#"
         >View All Episodes&nbsp;<svg
           class="c-icon c-icon--teal"
           aria-hidden="false"

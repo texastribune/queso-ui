@@ -47,11 +47,8 @@
                 <a class="" href="#{{ item.slug }}">
                 {{ item.prettyName }}
                 {% if item.experimental === true %}
-                  <span class="tag is-info">V2</span>
+                  <span class="has-text-info">V2</span>
                 {% endif %}
-                {% if item.deprecated === true %}
-                  <span class="tag is-warning">Sunset</span>
-                {% endif%}
                 </a>
               </li>
               {% endif %}
@@ -81,7 +78,7 @@
               <span class="tag is-info">V2</span>
               {% endif %}
               {% if item.deprecated %}
-              <span class="tag is-warning">Sunset</span>
+              <span class="tag is-warning">Legacy</span>
               {% endif %}
               </h2>
               <div class="subtitle ds-desc">
