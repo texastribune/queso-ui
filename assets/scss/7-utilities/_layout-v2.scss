@@ -141,7 +141,7 @@
   align-self: center;
 }
 
-// Hidden  (l-hidden)
+// Hidden (l-hidden)
 //
 // Experimental: Hides elements for specified experiences.
 //
@@ -169,4 +169,23 @@
   @media print {
     display: none !important;
   }
+}
+
+// Full width (l-width)
+//
+// Experimental: Stretches element to 100% or at most 100% of its natural width
+//
+// .l-width-full - Width is 100% of parent
+// .l-width-max - Max width is 100% of parent
+//
+// Markup: <div style="width: 300px;" class="has-bg-gray-light"><img class="{{ className }}" src="https://picsum.photos/250?random"/></div>
+// 
+//
+// Styleguide 7.0.5
+.l-width-full {
+  width: 100%;
+}
+
+.l-width-max {
+  max-width: 50%;
 }
