@@ -1,0 +1,20 @@
+// Ad (c-ad)
+//
+// Basic class that wraps around our ads. Mostly used for spacing and disclaimer text. {{isWide}}
+//
+// .c-ad--header - We like to call this the roofline. It usually appears just below the navbar.
+// .c-ad--footer - The final ad just before c-footer. Just a bit of bottom spacing for this one.
+//
+// Markup: 6-components/ad/ad.html
+//
+// Styleguide 6.1.3
+.c-ad {
+  &--header {
+    padding: $size-b 0;
+  }
+
+  &--footer {
+    padding: $size-xxs 0 $size-xs 0;
+  }
+  
+}
