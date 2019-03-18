@@ -30,6 +30,7 @@
     "clean-css": "^4.2.1",
     "directory-tree": "^2.2.1",
     "dotenv": "^6.2.0",
+    "fast-glob": "^2.2.6",
     "kss": "https://github.com/kss-node/kss-node",
     "moment": "^2.24.0",
     "node-fetch": "^2.3.0",
@@ -79,7 +80,6 @@
     }
   },
   "dependencies": {
-    "fast-glob": "^2.2.6",
     "normalize.css": "^8.0.1",
     "sass-mq": "^5.0.0"
   }
