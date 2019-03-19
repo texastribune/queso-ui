@@ -17,12 +17,6 @@
   width: $size-s;
   height: $size-s;
   fill: $color-yellow-tribune;
-  // Attempt to position this correctly always
-  vertical-align: middle;
-  // Sibling spans get centering
-  + span {
-    vertical-align: middle;
-  }
   
   &--xs {
     width: $size-xs;
