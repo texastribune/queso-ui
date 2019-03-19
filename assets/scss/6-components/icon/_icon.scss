@@ -1,10 +1,11 @@
 // Icon (c-icon)
 //
-// SVG icon class. The sizes start small and XL and XXL are to be used for larger icons. Default fill is yellow with a helper for white icons needed.
+// SVG icon class. There are helper variations for sizes. Default fill is yellow with a helper for white, teal, and gray icons.
 //
+// .c-icon--xs - XS
+// .c-icon--l - L
 // .c-icon--xl - XL
 // .c-icon--xxl - XXL
-// .c-icon--l - L
 // .c-icon--white - Inverse
 // .c-icon--gray - Gray (dark)
 // .c-icon--teal - Teal
@@ -17,7 +18,16 @@
   height: $size-s;
   fill: $color-yellow-tribune;
   // Attempt to position this correctly always
-  vertical-align: sub;
+  vertical-align: middle;
+  // Sibling spans get centering
+  + span {
+    vertical-align: middle;
+  }
+  
+  &--xs {
+    width: $size-xs;
+    height: $size-xs;
+  }
 
   &--l {
     width: $size-l;
