@@ -68,21 +68,34 @@
     }
   }
 
-  &__item-content {
-    line-height: 45px;
-  }
-
   &__clickable {
+    align-items: center;
     background-color: $color-black-off;
     border: none;
     color: $color-gray-light;
+    display: flex;
     font-size: $size-xxs;
     font-weight: 700;
     letter-spacing: 0.07rem;
     padding: 0;
+    position: relative;
     text-decoration: none;
     text-transform: uppercase;
     transition: all 0.15s;
+
+    &:after {
+      content: '';
+      height: 3px;
+      left: 0;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      transition: background-color 0.15s;
+      @include mq($from: bp-l) {
+        top: auto;
+        bottom: 0;
+      }
+    }
 
     &:hover,
     &:active {
@@ -92,20 +105,19 @@
     &--animated {
       @include mq($from: bp-l) {
         &:hover {
-          border-bottom: 3px solid $color-yellow-tribune;
+          &:after {
+            background-color: $color-yellow-tribune;
+          }
         }
       }
     }
 
     &--current {
-      border-bottom: 3px solid $color-yellow-tribune;
       color: $color-white-pure;
-    }
 
-    i {
-      color: $color-yellow-tribune;
-      font-size: $size-s;
-      pointer-events: none;
+      &:after {
+        background-color: $color-yellow-tribune;
+      }
     }
   }
 
@@ -177,4 +189,5 @@
     display: flex;
     list-style: none;
   }
+
 }

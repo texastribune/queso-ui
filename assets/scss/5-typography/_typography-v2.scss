@@ -59,15 +59,16 @@
 //
 // Experimental: New utility to help eliminate repitition.
 //
-// .t-xxxs - XXXS Text size
-// .t-xxs - XXS Text size
-// .t-xs - XS Text size
-// .t-s - S Text size
-// .t-m - M Text size
-// .t-l - L Text size
-// .t-xl - XL Text size
-// .t-giant - Giant Text size
-// .t-xxxl - XXXL Text size
+// .t-size-xxxs - XXXS Text size
+// .t-size-xxs - XXS Text size
+// .t-size-xs - XS Text size
+// .t-size-s - S Text size
+// .t-size-b - Base Text size
+// .t-size-m - M Text size
+// .t-size-l - L Text size
+// .t-size-xl - XL Text size
+// .t-size-giant - Giant Text size
+// .t-size-xxxl - XXXL Text size
 //
 // Markup: <p class="{{ className }}">Example</p>
 //
@@ -89,7 +90,7 @@ $type-sizes: (
 );
 
 @each $type-set, $font-size in $type-sizes {
-  .t-#{$type-set} {
+  .t-size-#{$type-set} {
     font-size: $font-size;
   }
 }
@@ -98,9 +99,9 @@ $type-sizes: (
 //
 // Experimental: New utility to help eliminate repitition.
 //
-// t-space-nospace - Tight leading
-// t-space-heading - More spaced out
-// t-space-default - Default
+// t-space-nospace - Tight leading | line-height: 1
+// t-space-heading - More spaced out | line-height: 1.25
+// t-space-heading-l - Even more | line-height: 1.5
 //
 // Markup: <p style="height: 100px" class="{{ className }} t-headline t-l">Texas again mistakenly flags voters for citizenship reviews</p>
 //
@@ -110,7 +111,7 @@ $type-sizes: (
 $line-height-type: (
   nospace: 1,
   heading: 1.25,
-  default: 1.5,
+  heading-l: 1.5,
 );
 
 @each $type-set, $line-height in $line-height-type {
