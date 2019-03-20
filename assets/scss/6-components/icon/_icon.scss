@@ -3,6 +3,7 @@
 // SVG icon class. There are helper variations for sizes. Default fill is yellow with a helper for white, teal, and gray icons.
 //
 // .c-icon--xs - XS
+// .c-icon--m - M (actually uses <code>$size-b</code>)
 // .c-icon--l - L
 // .c-icon--xl - XL
 // .c-icon--xxl - XXL
@@ -17,7 +18,13 @@
   width: $size-s;
   height: $size-s;
   fill: $color-yellow-tribune;
+  overflow: visible;
   
+  &--m {
+    width: $size-b;
+    height: $size-b;
+  }
+
   &--xs {
     width: $size-xs;
     height: $size-xs;
