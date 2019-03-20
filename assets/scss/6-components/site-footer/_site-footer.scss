@@ -12,26 +12,17 @@
 
   &__logo {
     width: 60px;
-    height: 60px;
-    margin: $size-xs 0 $size-giant;
+    height: 68px;
+    margin: $size-xs 0 $size-xl;
   }
 
   &__header {
     color: $color-yellow-tribune;
     font-weight: 700;
-    letter-spacing: 0.08em;
+    letter-spacing: .08em;
     margin: $size-b/2 0;
     text-align: left;
     text-transform: uppercase;
-  }
-
-  .border--yellow_notch {
-    border-top: 2px solid $color-yellow-tribune;
-    margin: $size-xs 0;
-  }
-  
-  &__social {
-    margin-right: $size-xxxs;
   }
 
   ul {
@@ -56,6 +47,17 @@
     &.donate {
       color: $color-blue-light;
       margin-top: $size-b;
+    }
+
+    svg {
+      margin-right: $size-xxxs;
+    }
+    // alignment for social icons
+    span,
+    svg {
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
     }
   }
 }

@@ -22,25 +22,23 @@
   {% include '../dist/base-sprite.svg' %}
   <div class="grid_container--xl">
     <div id="content" class="tile is-ancestor ds-content">
+      <!--<div class="ds-util">
+        <span class="subtitle is-size-6">Toggle CSS</span>
+        <div class="buttons has-addons ds-breathe is-centered">
+          <button id="buttonLegacy" class="button is-warning">V1</button>
+          <button id="buttonV2" class="button is-info">V2</button>
+        </div>
+        <div id="buttonToggle" class="is-size-7"></div>   
+      </div>-->
       <div class="tile is-parent is-vertical is-3 ds-sidebar">
         <aside class="menu ds-stick-it">
-          <p class="menu-label ds-breathe">
-            {{ name }}
-            {{ github }}
-          </p>
-          <ul class="menu-list ds-menu box has-background-light">
+          <p class="menu-label">
             <div class="box buttons has-text-centered">
               <a href="index.html" class="button is-primary is-outlined is-fullwidth">< Back</a>
               <button class="button is-primary is-outlined is-fullwidth" id="sidebarToggle">Toggle Menu</button>
-              <div class="ds-breathe">
-                <span class="subtitle is-size-6">Toggle CSS</span>
-                <div class="buttons has-addons ds-breathe is-centered">
-                  <button id="buttonLegacy" class="button is-warning">V1</button>
-                  <button id="buttonV2" class="button is-info">V2</button>
-                </div>
-                <div id="buttonToggle" class="is-size-7"></div>   
-              </div>
             </div>
+          </p>
+          <ul class="menu-list ds-menu box has-background-light">
             {% for item in list %}
               {% if item.depth !== 1 %}
               <li class="has-text-weight-bold">

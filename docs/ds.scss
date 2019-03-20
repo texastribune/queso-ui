@@ -23,7 +23,7 @@
 
 .ds-menu {
   overflow: scroll;
-  height: 95vh;
+  height: 75vh;
 }
 
 .ds-menu__child {
@@ -95,6 +95,17 @@
 .ds-multicol {
   page-break-inside: avoid;
   break-inside: avoid-column;
+}
+
+
+.ds-title-bar {
+  &__icon {
+    fill: #fff;
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    transform: translateY(-50%)
+  }
 }
 
 /* Bulma overrides */
