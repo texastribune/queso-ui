@@ -20,18 +20,6 @@
 
 <body class="fonts-loaded">
   {% include '../dist/base-sprite.svg' %}
-  <div class="ds-util box buttons has-text-centered">
-    <a href="index.html" class="button is-primary is-outlined is-fullwidth">< Back</a>
-    <button class="button is-primary is-outlined is-fullwidth" id="sidebarToggle">Toggle Menu</button>
-    <div class="ds-breathe">
-      <span class="subtitle is-size-6">Toggle CSS</span>
-      <div class="buttons has-addons ds-breathe is-centered">
-        <button id="buttonLegacy" class="button is-warning">V1</button>
-        <button id="buttonV2" class="button is-info">V2</button>
-      </div>
-      <div id="buttonToggle" class="is-size-7"></div>   
-    </div>
-  </div>
   <div class="grid_container--xl">
     <div id="content" class="tile is-ancestor ds-content">
       <div class="tile is-parent is-vertical is-3 ds-sidebar">
@@ -41,6 +29,18 @@
             {{ github }}
           </p>
           <ul class="menu-list ds-menu box has-background-light">
+            <div class="box buttons has-text-centered">
+              <a href="index.html" class="button is-primary is-outlined is-fullwidth">< Back</a>
+              <button class="button is-primary is-outlined is-fullwidth" id="sidebarToggle">Toggle Menu</button>
+              <div class="ds-breathe">
+                <span class="subtitle is-size-6">Toggle CSS</span>
+                <div class="buttons has-addons ds-breathe is-centered">
+                  <button id="buttonLegacy" class="button is-warning">V1</button>
+                  <button id="buttonV2" class="button is-info">V2</button>
+                </div>
+                <div id="buttonToggle" class="is-size-7"></div>   
+              </div>
+            </div>
             {% for item in list %}
               {% if item.depth !== 1 %}
               <li class="has-text-weight-bold">
