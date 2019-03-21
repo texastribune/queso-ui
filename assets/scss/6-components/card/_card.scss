@@ -8,8 +8,11 @@
 // Styleguide 6.1.3
 .c-card {
   $card-overlay-padding: $size-xxs;
-  // Global position relative to allow for overlays
-  position: relative;
+
+  &__stick-parent {
+    // Global position relative to allow for overlays
+    position: relative;
+  }
 
   &__title {
     font-size: $size-m;

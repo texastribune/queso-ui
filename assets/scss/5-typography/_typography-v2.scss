@@ -23,6 +23,8 @@
 //
 // .t-titlecase - Text transformed to Title Case
 // .t-uppercase - Text transformed to UPPERCASE
+// .t-uppercase--wide - To be used with UPPERCASE to add kerning
+// .t-uppercase--extra-wide - To be used with UPPERCASE to add more kerning
 //
 // Markup: <p class="{{ className }}">Text transform helper.</p>
 //
@@ -34,6 +36,14 @@
 
 .t-uppercase {
   text-transform: uppercase;
+
+  &--wide {
+    letter-spacing: $font-letter-spacing;
+  }
+
+  &--extra-wide {
+    letter-spacing: $font-letter-spacing-lg;
+  }
 }
 
 // Text Alignment (t-alignment)

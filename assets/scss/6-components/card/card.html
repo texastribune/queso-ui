@@ -206,7 +206,7 @@
     Overlay; As seen in events. The trick here is to use <code>.c-card__overlay</code>
   </p>
 </div>
-<div class="c-card l-display-ib">
+<div class="c-card c-card__stick-parent l-display-ib">
   <figure>
     <a
       href="#"
@@ -257,7 +257,7 @@
     Overlay; As seen in podcasts. This includes a <code>.c-card__bottom-stick</code>, which is a hack to get the last element of the card to align to the bottom. This card is set as a <code>disply: flex; flex-direction: column</code>. This means its other flex siblings will all be the same height. The player at the bottom is <code>position: aboslute;</code> so that no matter what, it'll always appear at the bottom visually. We shamefully add an inline style of the static height since that can be adjusted in the embed of the player.
   </p>
 </div>
-<div class="c-card grid grid_vertical" style="padding-bottom: 105px;">
+<div class="c-card grid grid_vertical c-card__stick-parent" style="padding-bottom: 105px;">
   <a href="#" class="l-display-block">
     <img
       class="l-display-block l-width-full"
@@ -301,6 +301,65 @@
         </svg></a>
     </span>
   </div>
+</div>
+
+
+
+<!-- Preview desc -->
+<div class="ds-breathe-vert">
+  <h3>HTML Variation 5 [under construction]</h3>
+  <p>
+    Overlay; As seen in podcasts. This includes a <code>.c-card__bottom-stick</code>, which is a hack to get the last
+    element of the card to align to the bottom. This card is set as a <code>disply: flex; flex-direction: column</code>.
+    This means its other flex siblings will all be the same height. The player at the bottom is
+    <code>position: aboslute;</code> so that no matter what, it'll always appear at the bottom visually. We shamefully
+    add an inline style of the static height since that can be adjusted in the embed of the player.
+  </p>
+</div>
+<div class="c-card grid_row has-bg-blue-dark has-text-white">
+  <div class="grid_row">
+    <div class="col_5 grid_separator">
+      <a href="#" class="l-display-block">
+        <img class="l-display-block l-width-full"
+          src="https://static.feedpress.it/logo/trib-brief-podcast-5ad61ddc8230d.jpg" />
+      </a>
+      <div class="c-card__tag l-display-ib has-bg-black-off t-smallcaps t-center">
+        <div class="t-uppercase has-text-yellow t-size-xs">Daily</div>
+        <div class="t-size-xs has-text-white t-space-nospace">M - F</div>
+      </div>
+    </div>
+    <div class="col_7 grid_separator c-card__stick-parent" style="padding-bottom: 80px;">
+      <div class="grid_vertical grid_row">
+        <header class="t-prose grid_separator">
+          <p class="has-text-white">
+            Get a quick take on the latest Texas politics and policy news via your
+            favorite podcast app.
+          </p>
+        </header>
+        <div class="c-card__bottom-stick">
+          <a class="spreaker-player" href="https://www.spreaker.com/show/texas-tribune-brief"
+            data-resource="show_id=2716012" data-width="100%" data-height="80px" data-theme="dark" data-playlist="false"
+            data-playlist-continuous="false" data-autoplay="false" data-live-autoplay="false" data-chapters-image="true"
+            data-episode-image-position="right" data-hide-logo="true" data-hide-likes="true" data-hide-comments="true"
+            data-hide-sharing="false" data-hide-download="false">Listen to "Texas Tribune Brief" on Spreaker.</a>
+        </div>
+      </div>
+    
+    </div>
+  </div>
+  <div class=" grid grid_separator has-bg-blue-dark t-size-xs l-align-justify">
+    <div class="grid_row">
+      <a class="col_inline c-button c-button--s has-text-hover-white has-text-gray-light has-bg-blue-dark"
+        href="#">iTunes</a>
+      <a class="col_inline c-button c-button--s has-text-hover-white has-text-gray-light has-bg-blue-dark" href="#">Google
+        Play</a>
+      <a class="col_inline c-button c-button--s has-text-hover-white has-text-gray-light has-bg-blue-dark"
+        href="#">Amazon</a>
+      <a class="col_inline c-button c-button--s has-text-hover-white has-text-gray-light has-bg-blue-dark"
+        href="#">RSS</a>
+    </div>
+  </div>
+  
 </div>
 
 <script async src="https://widget.spreaker.com/widgets.js"></script>

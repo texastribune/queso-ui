@@ -42,9 +42,9 @@ $font-root-mobile: 15px;
 //
 // $font-letter-spacing-sm = .02em - Used sometimes in card headline
 // $font-letter-spacing = .03em - Default used with uppercase usually
-// $font-letter-spacing = .05em - Bring on that kerning
+// $font-letter-spacing-lg = .05em - Bring on that kerning
 //
 // Styleguide 1.2.3
-$font-letter-spacing-sm: 0.02em;
-$font-letter-spacing: 0.03em;
-$font-letter-spacing-lg: 0.05em;
+$font-letter-spacing-sm: .02em;
+$font-letter-spacing: .03em;
+$font-letter-spacing-lg: .05em;
