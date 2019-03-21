@@ -110,8 +110,9 @@ $type-sizes: (
 // Experimental: New utility to help eliminate repitition.
 //
 // t-space-nospace - Tight leading | line-height: 1
-// t-space-heading - More spaced out | line-height: 1.25
-// t-space-heading-l - Even more | line-height: 1.5
+// t-space-heading-s - More spaced out | line-height: 1.25
+// t-space-heading-m - More spaced out | line-height: 1.5
+// t-space-heading-l - Even more | line-height: 2
 //
 // Markup: <p style="height: 100px" class="{{ className }} t-headline t-l">Texas again mistakenly flags voters for citizenship reviews</p>
 //
@@ -120,8 +121,9 @@ $type-sizes: (
 //
 $line-height-type: (
   nospace: 1,
-  heading: 1.25,
-  heading-l: 1.5,
+  heading-s: 1.25,
+  heading-m: 1.5,
+  heading-l: 2,
 );
 
 @each $type-set, $line-height in $line-height-type {
