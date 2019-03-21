@@ -98,13 +98,15 @@
 }
 
 
-.ds-title-bar {
-  &__icon {
-    fill: #fff;
-    position: absolute;
-    right: 1em;
-    top: 50%;
-    transform: translateY(-50%)
+.ds-icon {
+  fill: #fff;
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &--dark {
+    fill: #242424;
   }
 }
 
@@ -112,4 +114,8 @@
 a,
 strong {
   color: inherit;
+}
+
+.card-header {
+  position: relative;
 }

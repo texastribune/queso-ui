@@ -5,25 +5,36 @@ const data = require('../dist/styles.json');
 
 const outputDir = 'dist';
 const outputTemplate = `${outputDir}/index.html`;
+const assetDir = './assets/scss/';
 
-const slugify = text => {
-  return text
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '')
-    .replace(/--+/g, '-')
-    .replace(/^-+/, '')
-    .replace(/-+$/, '');
-};
-
+const { slugify, mkDirByPathSync } = require('./utils');
 // Render variables with Handlebars based on JSON
 var rendered = nunjucks.render('./templates/index.html', data);
 
 // Render each page
 data.items.forEach(item => {
   const inner = nunjucks.render('./templates/page.html', item);
-  fs.writeFile(`${outputDir}/${slugify(item.name)}.html`, inner, err => {});
+  fs.writeFileSync(`${outputDir}/${slugify(item.name)}.html`, inner);
+  // Loop through each item and make page for markup files
+  item.list.forEach(childItem => {
+    const childData = {
+      className: childItem.mainClass,
+    };
+    if (childItem.isFile) {
+      const preview = nunjucks.render(`${assetDir}${childItem.markup}`, childData);
+      const previewData = {
+        markup: preview,
+      };
+      const previewTemplate = nunjucks.render(
+        './templates/preview.html',
+        previewData
+      );
+      fs.writeFileSync(
+        `${outputDir}/${childItem.mainClass}.html`,
+        previewTemplate
+      );
+    }
+  });
 });
 
 // Write file into outputDir

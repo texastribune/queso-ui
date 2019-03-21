@@ -2,8 +2,9 @@
 //
 // Buttons rely on color helpers for background. The variations are simply sizes. One catch is that are buttons run small in sizes so the names aren't true to their padding and font-size assignments.
 //
-// .c-button--l - Large button
-// .c-button--s - XS button
+// .c-button--l - Uses size-l for font size and padding
+// .c-button--s - One step down from default
+// .c-button--xs - Two steps down from default
 //
 // Markup: 6-components/button/button.html
 //
@@ -12,9 +13,9 @@
   background-color: $color-blue-light;
   border: none;
   font-weight: 700;
-  font-size: $size-xxs;
+  font-size: $size-xs;
   letter-spacing: $font-letter-spacing;
-  padding: $size-xxs;
+  padding: $size-xs;
   text-align: center;
   text-transform: uppercase;
 
@@ -24,6 +25,11 @@
   }
 
   &--s {
+    font-size: $size-xxs;
+    padding: $size-xxs;
+  }
+
+  &--xs {
     font-size: $size-xxxs;
     padding: $size-xxxs;
   }

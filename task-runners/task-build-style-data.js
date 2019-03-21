@@ -11,46 +11,15 @@ const doFetch = true;
 const brandJSON = process.env.DS_URL;
 const icons = require('../dist/icons.json');
 const githubData = require('../dist/github.json');
-
+const {
+  slugify,
+  escapeHTML,
+  stripTags,
+  findDupe,
+} = require('./utils');
 const outputDir = 'dist';
 const outputFilename = `${outputDir}/styles.json`;
-const outputFilenameNested = `${outputDir}/styles-nested.json`;
 
-// Helpers
-const slugify = text => {
-  return text
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(/[^\w-]+/g, '')
-    .replace(/--+/g, '-')
-    .replace(/^-+/, '')
-    .replace(/-+$/, '');
-};
-const escapeHTML = unsafeText => {
-  return unsafeText.replace(/[^0-9A-Za-z ]/g, function(c) {
-    return '&#' + c.charCodeAt(0) + ';';
-  });
-};
-const stripTags = str => {
-  return str.replace(/(<([^>]+)>)/gi, '');
-};
-
-const findDupe = arr => {
-  const object = {};
-  const result = [];
-
-  arr.forEach(item => {
-    if (!object[item.orderNumber]) object[item.orderNumber] = 0;
-    object[item.orderNumber] += 1;
-  });
-  for (const prop in object) {
-    if (object[prop] >= 2) {
-      result.push(prop);
-    }
-  }
-  return result;
-};
 
 const createMap = arr => {
   const object = {};

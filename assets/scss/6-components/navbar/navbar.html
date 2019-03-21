@@ -1,166 +1,221 @@
-<div id="site_footer" class="c-site-footer">
-  <div class="grid_container--xl grid_row">
-    <div class="col">
-      <svg class="c-icon c-icon--xl c-site-footer__logo" aria-hidden="true">
-        <use xlink:href="#bug"></use>
-      </svg>
-      <ul>
-        <div class="has-notch has-notch--thin has-bg-yellow"></div>
-        <li>
-          <a href="https://support.texastribune.org/donate?installmentPeriod=once&amp;amount=60#join-today"
-            title="Donate" class="donate" ga-on="click" ga-event-category="donations"
-            ga-event-action="membership-intent" ga-event-label="footer">Donate</a>
+<nav class="c-navbar ">
+  <div class="c-navbar__top c-navbar__top--home">
+    <div class="c-navbar__content c-navbar__content--home">
+      <ul class="c-navbar__items hide_from--l">
+        <li class="c-navbar__item">
+          <button
+            id="nav-menu-open"
+            class="c-navbar__item-content c-navbar__text c-navbar__clickable"
+            aria-label="Show menu"
+            ga-on="click"
+            ga-event-category="navigation"
+            ga-event-action="top nav click"
+            ga-event-label="menu-open"
+          >
+            <svg class="c-icon" aria-hidden="true">
+              <use xlink:href="#bars"></use></svg><span>&nbsp;Menu</span</button>
         </li>
-        <li>
-          <a href="/contact/" title="Contact Us">Contact Us</a>
+        <li id="nav-menu-close" class="c-navbar__item hidden">
+          <button
+            class="c-navbar__item-content c-navbar__text c-navbar__clickable"
+            aria-label="Hide menu"
+            ga-on="click"
+            ga-event-category="navigation"
+            ga-event-action="top nav click"
+            ga-event-label="menu-close"
+          >
+            <svg class="c-icon" aria-hidden="true">
+              <use xlink:href="#close"></use></svg><span>&nbsp;Close</span>
+          </button>
         </li>
-        <li>
-          <a href="https://mediakit.texastribune.org/" title="Advertise" class="advertise">Advertise</a>
+      </ul>
+      <ul class="c-navbar__items hide_until--l ">
+        <li class="c-navbar__item c-navbar__item--space-right">
+          <a
+            class="c-navbar__item-content c-navbar__clickable c-navbar__clickable--animated "
+            href="/our-picks/"
+            ga-on="click"
+            ga-event-category="navigation"
+            ga-event-action="top nav click"
+            ga-event-label="our-picks"
+            >Our Picks</a
+          >
         </li>
-        <li><a href="/">© 2019 The Texas Tribune</a></li>
+        <li class="c-navbar__item c-navbar__item--space-right">
+          <a
+            class="c-navbar__item-content c-navbar__clickable c-navbar__clickable--animated "
+            href="/series/news-apps-graphics-databases/"
+            ga-on="click"
+            ga-event-category="navigation"
+            ga-event-action="top nav click"
+            ga-event-label="data"
+            >Data</a
+          >
+        </li>
+        <li class="c-navbar__item c-navbar__item--space-right">
+          <a
+            class="c-navbar__item-content c-navbar__clickable c-navbar__clickable--animated "
+            href="/events/"
+            ga-on="click"
+            ga-event-category="navigation"
+            ga-event-action="top nav click"
+            ga-event-label="events"
+            >Events</a
+          >
+        </li>
+        <li class="c-navbar__item c-navbar__item--space-right">
+          <a
+            class="c-navbar__item-content c-navbar__clickable c-navbar__clickable--animated "
+            href="/about/subscribe/"
+            ga-on="click"
+            ga-event-category="subscribe intent"
+            ga-event-action="top nav click"
+            ga-event-label="frontpage"
+            >Newsletters</a
+          >
+        </li>
+        <li class="c-navbar__item ">
+          <a
+            class="c-navbar__item-content c-navbar__clickable c-navbar__clickable--animated"
+            href="https://support.texastribune.org/donate?installmentPeriod=once&amp;amount=60#join-today"
+            ga-on="click"
+            ga-event-category="donations"
+            ga-event-action="membership-intent"
+            ga-event-label="c-navbar"
+            >Donate</a
+          >
+        </li>
+      </ul>
+      <ul id="greeting" class="c-navbar__items js-toggle-on-search ">
+        <ul class="c-navbar__greeting hide_until--l">
+          <li class="c-navbar__item c-navbar__item--space-right">
+            <a
+              href="/accounts/login/?next=/"
+              class="c-navbar__clickable c-navbar__clickable--animated c-navbar__item-content"
+              ><svg class="c-icon hide_from--l" aria-hidden="true">
+                <use xlink:href="#sign-in"></use></svg><span>&nbsp;Log In</span></a
+            >
+          </li>
+        </ul>
+        <li class="c-navbar__item">
+          <button
+            id="nav-search-open"
+            class="c-navbar__item-content c-navbar__clickable"
+            aria-label="Show site search form"
+            ga-on="click"
+            ga-event-category="navigation"
+            ga-event-action="top nav click"
+            ga-event-label="search-open"
+          >
+            <svg class="c-icon" aria-hidden="true">
+              <use xlink:href="#search"></use>
+            </svg>
+          </button>
+        </li>
       </ul>
     </div>
-    <div id="footer-sections" class="col hide_until--s">
-      <h5 class="c-site-footer__header">Topics</h5>
-      <ul>
-        <li>
-          <a href="/topics/congress/" data-section="congress">Congress</a>
-        </li>
-        <li>
-          <a href="/topics/courts/" data-section="courts">Courts</a>
-        </li>
-        <li>
-          <a href="/topics/criminal-justice/" data-section="criminal-justice">Criminal justice</a>
-        </li>
-        <li>
-          <a href="/topics/demographics/" data-section="demographics">Demographics</a>
-        </li>
-        <li>
-          <a href="/topics/economy/" data-section="economy">Economy</a>
-        </li>
-        <li>
-          <a href="/topics/energy/" data-section="energy">Energy</a>
-        </li>
-        <li>
-          <a href="/topics/environment/" data-section="environment">Environment</a>
-        </li>
-        <li>
-          <a href="/topics/health-care/" data-section="health-care">Health care</a>
-        </li>
-        <li>
-          <a href="/topics/higher-education/" data-section="higher-education">Higher education</a>
-        </li>
-        <li>
-          <a href="/topics/immigration/" data-section="immigration">Immigration</a>
-        </li>
-        <li>
-          <a href="/topics/politics/" data-section="politics">Politics</a>
-        </li>
-        <li>
-          <a href="/topics/public-education/" data-section="public-education">Public education</a>
-        </li>
-        <li>
-          <a href="/topics/state-government/" data-section="state-government">State government</a>
-        </li>
-      </ul>
-    </div>
-    <div class="col">
-      <h5 class="c-site-footer__header">Info</h5>
-      <ul>
-        <li>
-          <a href="/about/" title="About Us">About Us</a>
-        </li>
-        <li>
-          <a href="/about/staff/">Our Staff</a>
-        </li>
-        <li>
-          <a href="/support-us/donors-and-members/" title="Who Funds Us?">Who Funds Us?</a>
-        </li>
-        <li>
-          <a href="/about/texas-tribune-strategic-plan/" title="Strategic Plan">Strategic Plan</a>
-        </li>
-        <li>
-          <a href="/republishing-guidelines/" title="Republishing Guidelines">Republishing Guidelines</a>
-        </li>
-        <li>
-          <a href="/about/ethics/" title="Code of Ethics">Code of Ethics</a>
-        </li>
-        <li>
-          <a href="/about/terms-of-service/" title="Terms of Service">Terms of Service</a>
-        </li>
-        <li>
-          <a href="/about/privacy-policy/" title="Privacy Policy">Privacy Policy</a>
-        </li>
-        <li>
-          <a href="/about/tips/" title="Send a Tip">Send us a confidential tip</a>
-        </li>
-        <li>
-          <a href="/corrections/" title="Corrections">Corrections</a>
-        </li>
-        <li>
-          <a href="/about/feeds/" title="Feeds">Feeds</a>
-        </li>
-        <li>
-          <a href="/about/subscribe/" title="Newsletters" ga-event-category="subscribe intent"
-            ga-event-action="footer link">Newsletters</a>
-        </li>
-        <li>
-          <a href="/video/" title="Video">Video</a>
-        </li>
-      </ul>
-    </div>
-    <div class="col">
-      <h5 class="c-site-footer__header">Social Media</h5>
-      <ul>
-        <li>
-          <a href="https://facebook.com/texastribune" title="Facebook" class="external" ga-event-action="TT Facebook"
-            ga-event-category="social follow intent">
-            <svg class="c-icon c-icon--white" aria-hidden="true">
-              <use xlink:href="#facebook"></use>
-            </svg><span>Facebook</span></a>
-        </li>
-        <li>
-          <a href="https://twitter.com/texastribune" title="Twitter" class="external" ga-event-action="TT Twitter"
-            ga-event-category="social follow intent">
-            <svg class="c-icon c-icon--white" aria-hidden="true">
-              <use xlink:href="#twitter"></use>
-            </svg><span>Twitter</span></a>
-        </li>
-        <li>
-          <a href="https://youtube.com/user/thetexastribune?sub_confirmation=1" title="YouTube" class="external"
-            ga-event-action="TT YouTube" ga-event-category="social follow intent">
-            <svg class="c-icon c-icon--white" aria-hidden="true">
-              <use xlink:href="#youtube"></use>
-            </svg><span>YouTube</span></a>
-        </li>
-        <li>
-          <a href="https://instagram.com/texas_tribune" title="Instagram" class="external"
-            ga-event-action="TT Instagram" ga-event-category="social follow intent">
-            <svg class="c-icon c-icon--white" aria-hidden="true">
-              <use xlink:href="#instagram"></use>
-            </svg><span>Instagram</span></a>
-        </li>
-        <li>
-          <a href="https://www.linkedin.com/company/texas-tribune" title="LinkedIn" class="external"
-            ga-event-action="TT LinkedIn" ga-event-category="social follow intent">
-            <svg class="c-icon c-icon--white" aria-hidden="true">
-              <use xlink:href="#linkedin"></use>
-            </svg><span>LinkedIn</span></a>
-        </li>
-        <li>
-          <a href="https://www.reddit.com/user/texastribune" title="Reddit" class="external">
-            <svg class="c-icon c-icon--white" aria-hidden="true">
-              <use xlink:href="#reddit"></use>
-            </svg><span>Reddit</span></a>
-        </li>
-        <div class="has-notch has-notch--thin has-bg-yellow"></div>
-        <li>
-          <a href="https://www.facebook.com/groups/thisisyourtexas/" title="This is Your Texas" class="external">
-            <svg class="c-icon c-icon--white" aria-hidden="true">
-              <use xlink:href="#facebook"></use>
-            </svg>Join our Facebook Group, This Is Your Texas.</a>
-        </li>
-      </ul>
+    <div id="nav-search-form" class="c-navbar__search hidden ">
+      <form class="c-navbar__search-form" method="get" action="/search/">
+        <button
+          class="c-navbar__search-button c-navbar__clickable"
+          type="submit"
+          ga-on="click"
+          ga-event-category="navigation"
+          ga-event-action="top nav click"
+          ga-event-label="search-submit"
+        >
+          <svg class="c-icon" aria-hidden="true" focusable="false">
+            <use xlink:href="#search"></use>
+          </svg>
+        </button>
+        <input
+          class="c-navbar__search-input"
+          name="q"
+          type="text"
+          placeholder="Search The Texas Tribune"
+          aria-label="Search The Texas Tribune"
+        />
+        <button
+          id="nav-search-close"
+          class="c-navbar__clickable"
+          type="button"
+          aria-label="Close site search form"
+          ga-on="click"
+          ga-event-category="navigation"
+          ga-event-action="top nav click"
+          ga-event-label="search-close"
+        >
+          <svg class="c-icon" aria-hidden="true" focusable="false">
+            <use xlink:href="#close"></use>
+          </svg>
+        </button>
+      </form>
     </div>
   </div>
-</div>
+  <div id="nav-dropdown" class="c-navbar__dropdown hide_from--l hidden">
+    <ul id="mobile-greeting" class="c-navbar__dropdown-items">
+      <li class="c-navbar__dropdown-item">
+        <a
+          class="c-navbar__clickable "
+          href="/our-picks/"
+          ga-on="click"
+          ga-event-category="navigation"
+          ga-event-action="top nav click"
+          ga-event-label="our picks"
+          >Our Picks</a
+        >
+      </li>
+      <li class="c-navbar__dropdown-item">
+        <a
+          class="c-navbar__clickable "
+          href="/series/news-apps-graphics-databases/"
+          ga-on="click"
+          ga-event-category="navigation"
+          ga-event-action="top nav click"
+          ga-event-label="data"
+          >Data</a
+        >
+      </li>
+      <li class="c-navbar__dropdown-item">
+        <a
+          class="c-navbar__clickable "
+          href="/events/"
+          ga-on="click"
+          ga-event-category="navigation"
+          ga-event-action="top nav click"
+          ga-event-label="events"
+          >Events</a
+        >
+      </li>
+      <li class="c-navbar__dropdown-item">
+        <a
+          class="c-navbar__clickable "
+          href="/about/subscribe/"
+          ga-on="click"
+          ga-event-category="subscribe intent"
+          ga-event-action="top nav click"
+          ga-event-label="frontpage"
+          >Newsletters</a
+        >
+      </li>
+      <li class="c-navbar__dropdown-item">
+        <a
+          class="c-navbar__clickable"
+          href="https://support.texastribune.org/donate?installmentPeriod=once&amp;amount=60#join-today"
+          ga-on="click"
+          ga-event-category="donations"
+          ga-event-action="membership-intent"
+          ga-event-label="c-navbar"
+          >Donate</a
+        >
+      </li>
+      <ul class="c-navbar__greeting">
+        <li class="c-navbar__dropdown-item">
+          <a href="/accounts/login/?next=/" class="c-navbar__clickable"
+            ><svg class="c-icon hide_from--l" aria-hidden="true">
+              <use xlink:href="#sign-in"></use></svg><span>&nbsp;Log In</span></a>
+        </li>
+      </ul>
+    </ul>
+  </div>
+</nav>
