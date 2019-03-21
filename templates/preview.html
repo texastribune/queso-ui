@@ -1,17 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="fonts-loaded" lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta content="ie=edge" http-equiv="X-UA-Compatible" />
   <title>Document</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet" />
   <link id="base" rel="stylesheet" href="base.min.css" />
   <link id="base-v2" rel="stylesheet" href="base-v2.min.css" />
   <link id="ds" rel="stylesheet" href="ds.min.css" />
 </head>
-<body class="fonts-loaded">
+<body>
   {% include '../dist/base-sprite.svg' %}
-  {{markup | safe}}
+<div class="ds-util">
+  <p>Resize the container</p>
+  Viewport width: <code id="display"></code>px
+</div>
+<div class="resize-container">
+  <div class="resize-drag">
+    {{markup | safe}}
+  </div>
+</div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/interactjs@next/dist/interact.min.js"></script>
+  <script src="resize.js"></script>
 </body>
 </html>

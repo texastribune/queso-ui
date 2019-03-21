@@ -1,4 +1,4 @@
-// Text color (has-text-color)
+// Color helper text (has-text-color)
 //
 // New utility to help eliminate repitition.
 //
@@ -11,6 +11,7 @@
 // .has-text-gray-dark - gray-dark text color
 // .has-text-yellow -  yellow text color
 // .has-text-blue - blue text color
+// .has-text-blue-dark - blue dark text color
 //
 // Markup: <p class="{{ className }}">Example</p>
 //
@@ -18,7 +19,28 @@
 // Styleguide 7.0.1
 //
 
-// Background color (has-bg-color)
+// Color helper text hover (has-text-hover-color)
+//
+// New utility to help eliminate repitition.
+//
+// .has-text-hover-black -  black text color
+// .has-text-hover-black-off - black-off text color
+// .has-text-hover-white -  white text color
+// .has-text-hover-teal -  teal text color
+// .has-text-hover-gray -  gray text color
+// .has-text-hover-gray-light - gray-light text color
+// .has-text-hover-gray-dark - gray-dark text color
+// .has-text-hover-yellow -  yellow text color
+// .has-text-hover-blue - blue text color
+// .has-text-hover-blue-dark - blue dark text color
+//
+// Markup: <p class="{{ className }}">Example</p>
+//
+//
+// Styleguide 7.0.2
+//
+
+// Color helper background (has-bg-color)
 //
 // New utility to help eliminate repitition.
 //
@@ -31,11 +53,12 @@
 // .has-bg-gray-dark - gray-dark background color
 // .has-bg-yellow -  yellow background color
 // .has-bg-blue - blue background color
+// .has-bg-blue-dark - blue dark background color
 //
 // Markup: <p class="{{ className }}">Example</p>
 //
 //
-// Styleguide 7.0.2
+// Styleguide 7.0.3
 //
 
 $color-map: (
@@ -48,11 +71,20 @@ $color-map: (
   gray-dark: $color-gray-dark,
   yellow: $color-yellow-tribune,
   blue: $color-blue-light,
+  blue-dark: $color-blue-dark,
 );
 
 @each $color, $value in $color-map {
   .has-bg-#{$color} {
     background-color: $value;
+  }
+}
+
+@include mq($from: bp-m) {
+  @each $color, $value in $color-map {
+    .has-text-hover-#{$color}:hover {
+      color: $value;
+    }
   }
 }
 

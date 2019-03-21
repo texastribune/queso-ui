@@ -19,7 +19,7 @@ const compile = file => {
 };
 
 // Glob
-let jsFiles = ['./docs/ds.js'];
+let jsFiles = ['./docs/*.js'];
 
 // Glob options
 let options = {

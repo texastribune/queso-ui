@@ -18,7 +18,8 @@
   padding: $size-xs;
   text-align: center;
   text-transform: uppercase;
-
+  transition: all .3s;
+  
   &--l {
     font-size: $size-l;
     padding: $size-l;

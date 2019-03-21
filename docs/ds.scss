@@ -119,3 +119,18 @@ strong {
 .card-header {
   position: relative;
 }
+
+.resize-drag {
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  touch-action: none;
+  width: 80%;
+  margin: 2em;
+  box-sizing: border-box;
+}
+
+.resize-container {
+  display: inline-block;
+  width: 100%;
+  height: 95vh;
+}
