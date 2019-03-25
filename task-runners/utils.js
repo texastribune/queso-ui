@@ -42,7 +42,7 @@ const slugify = text => {
 };
 
 const escapeHTML = unsafeText => {
-  return unsafeText.replace(/[^0-9A-Za-z ]/g, function (c) {
+  return unsafeText.replace(/[^0-9A-Za-z ]/g, function(c) {
     return '&#' + c.charCodeAt(0) + ';';
   });
 };
@@ -71,5 +71,5 @@ module.exports = {
   slugify,
   escapeHTML,
   stripTags,
-  findDupe
+  findDupe,
 };

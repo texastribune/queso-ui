@@ -306,53 +306,61 @@
 
 
 <!-- Preview desc -->
+
+
+
+<!-- Preview desc -->
 <div class="ds-breathe-vert">
-  <h3>HTML Variation 5 [under construction]</h3>
+  <h3>HTML Variation 6</h3>
   <p>
     Overlay; As seen in podcasts. Alternate
   </p>
 </div>
-<div class="c-card grid grid_vertical c-card__stick-parent" style="padding-bottom: 105px;">
-  <a href="#" class="l-display-block">
-    <img class="l-display-block l-width-full"
-      src="https://static.feedpress.it/logo/trib-brief-podcast-5ad61ddc8230d.jpg" />
-  </a>
-  <div>
-    <!-- <span class="t-smallcaps">Listen to the latest episode</span> -->
-    <a class="spreaker-player" href="https://www.spreaker.com/show/texas-tribune-brief" data-resource="show_id=2716012"
-      data-width="100%" data-height="80px" data-theme="light" data-playlist="false" data-playlist-continuous="false"
-      data-autoplay="false" data-live-autoplay="false" data-chapters-image="true" data-episode-image-position="right"
-      data-hide-logo="true" data-hide-likes="true" data-hide-comments="true" data-hide-sharing="false"
-      data-hide-download="false">Listen to "Texas Tribune Brief" on Spreaker.</a>
-    <span class="t-linkstyle t-uppercase l-display-ib"><a class="t-size-xxs grid_row" href="#">View All
-        Episodes&nbsp;<svg class="c-icon c-icon--xs c-icon--teal l-align-center-self" aria-hidden="false"
-          focusable="false">
-          <use xlink:href="#long-arrow-right"></use>
-        </svg></a>
-    </span>
-  </div>
-  <div class="c-card__tag l-display-ib has-bg-black-off t-smallcaps t-center">
-    <div class="t-uppercase has-text-yellow t-size-xs">Daily</div>
-    <div class="t-size-xs has-text-white t-space-nospace">M - F</div>
-  </div>
-  <div class="grid grid_separator has-bg-white-off t-size-xs l-align-justify">
-    <div class="grid_row">
-      <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off"
-        href="#">iTunes</a>
-      <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off"
-        href="#">Google Play</a>
-      <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off"
-        href="#">Amazon</a>
-      <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off"
-        href="#">RSS</a>
+<!-- Preview desc -->
+<article class="grid_row grid_wrap--l c-card c-card__stick-parent">
+  <div class="col_6">
+    <a href="/{{ podcast.tt_link_path }}" class="l-display-block">
+      <img class="l-display-block l-width-full" src="thumb.png" />
+    </a>
+    <div class="c-card__bottom-stick l-width-full">
+      <div class="grid has-bg-white-off t-size-xs l-align-justify">
+        <div class="grid_row">
+          <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off"
+            href="#">iTunes</a>
+          <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off" href="#">Google
+            Play</a>
+          <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off"
+            href="#">Amazon</a>
+          <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off" href="#">RSS</a>
+        </div>
+      </div>
     </div>
   </div>
-  <header class="t-prose grid_separator">
-    <p>
-      Get a quick take on the latest Texas politics and policy news via your
-      favorite podcast app.
-    </p>
-  </header>
-</div>
+  <section class="col_6 c-card__content">
+    <h3 class="t-headline grid_separator--s t-size-xl t-space-nospace">
+      <a href="/{{ podcast.tt_link_path }}">The Brief</a>
+    </h3>
+    <div class="t-uppercase has-text-black-off t-uppercase--extra-wide grid_separator--s t-size-xs"><strong>Daily | M - F</strong></div>
+    <div class="grid_separator--l t-prose t-size-s">
+      <p class="l-display-inline">
+        Get a quick take on the latest Texas politics and policy news via your favorite podcast app. Also available on Amazon Echo.
+      </p>
+      <span class="l-display-ib">
+        <a class="t-size-xs grid_row t-uppercase t-uppercase--extra-wide has-text-teal t-space-nospace"
+          href="/{{ podcast.tt_link_path }}">
+          <strong>View All Episodes&nbsp;</strong><svg class="c-icon c-icon--xs c-icon--teal l-align-center-self"
+            aria-hidden="false" focusable="false">
+            <use xlink:href="#long-arrow-right"></use>
+          </svg></a>
+      </span>
+    </div>
+    <div class="l-width-full">
+      <div class="t-uppercase t-uppercase--extra-wide has-text-gray t-size-xxs grid_separator--s">Play the latest episode</div>
+      <a class="spreaker-player l-display-block" href="https://www.spreaker.com/show/texas-tribune-brief" data-resource="show_id=2716012"
+        data-width="100%" data-height="80px" data-theme="light" data-playlist="false" data-playlist-continuous="false"
+        data-autoplay="false" data-live-autoplay="false" data-chapters-image="true"data-hide-logo="true" data-hide-likes="true" data-hide-comments="true" data-hide-sharing="false" data-hide-download="false" data-cover="https://keen-elion-84a6fc.netlify.com/spreaker-bg.png">Listen to "Texas Tribune Brief" on Spreaker.</a>
+    </div>
+  </section>
+</article>
 
 <script async src="https://widget.spreaker.com/widgets.js"></script>

@@ -1,4 +1,4 @@
-// Compile .js files into /dist folder
+// Compile .scss files in */styles folders
 const glob = require('fast-glob');
 const fs = require('fs');
 
@@ -7,24 +7,24 @@ const compile = file => {
   let arr = file.split('/');
   let fileName = arr[arr.length - 1];
 
-  const js = fs.readFileSync(file);
+  const img = fs.readFileSync(file);
 
   // For now, just move to dist
   const outputPath = `./dist/${fileName}`;
 
-  fs.writeFile(outputPath, js, err => {
+  fs.writeFile(outputPath, img, err => {
     if (err) throw err;
     console.log(`🎨 ${fileName} - updated!`);
   });
 };
 
 // Glob
-let jsFiles = ['./docs/*.js'];
+let imageFiles = ['./docs/img/*.png', './docs/img/*.jpg'];
 
 // Main task.
 const main = async () => {
-  const js = await glob(jsFiles);
-  return Promise.all(js.map((file, index) => compile(file)));
+  const imgs = await glob(imageFiles);
+  return Promise.all(imgs.map((file, index) => compile(file)));
 };
 
 main();

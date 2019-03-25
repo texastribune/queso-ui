@@ -14,6 +14,11 @@
     position: relative;
   }
 
+  &__content {
+    // HACK: Forcing buttons to fall to bottom on mobile
+    padding: $size-xxs 0 $size-xxl;
+  }
+
   &__title {
     font-size: $size-m;
     letter-spacing: 0.02rem;
@@ -31,6 +36,13 @@
     margin: $size-xxs;
     padding: $size-xxxs;
   }
+  // HACK: Special case where we want to move buttons out of their natural position
+  &__bottom-stick {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
   @include mq($from: bp-m) {
     &__overlay {
       background: linear-gradient(rgba(0, 0, 0, 0) 60%, #000);
@@ -48,11 +60,14 @@
       color: $color-white-pure;
     }
 
-    // Special case where we want equal heights and to align the lower element to the base
     &__bottom-stick {
-      position: absolute;
-      bottom: 0;
-      left: 0;
+      position: static;
+    }
+    // HACK: Align the last element to the bottom
+    &__content {
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      padding: 0;
     }
   }
   @include mq($from: bp-xl) {
