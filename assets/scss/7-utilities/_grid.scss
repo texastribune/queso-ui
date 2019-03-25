@@ -138,13 +138,13 @@ $column-slug: col !default;
     margin-bottom: $size-xl;
   }
 
-  &_separator--xl {
-    margin-bottom: $size-giant;
+  &_separator--xxl {
+    margin-bottom: $size-xxl;
   }
 
-  // &_separator--xgiant {
-  //   margin-bottom: $size-xgiant;
-  // }
+  &_separator--xxxl {
+    margin-bottom: $size-xxxl;
+  }
 
   &_order {
     &--primary {
