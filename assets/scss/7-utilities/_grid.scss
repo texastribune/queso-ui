@@ -134,17 +134,25 @@ $column-slug: col !default;
     margin-bottom: $grid-gutter/2;
   }
 
+  &_separator--m {
+    margin-bottom: $size-m;
+  }
+
   &_separator--l {
-    margin-bottom: $size-xl;
+    margin-bottom: $size-l;
   }
 
   &_separator--xl {
-    margin-bottom: $size-giant;
+    margin-bottom: $size-xl;
   }
 
-  // &_separator--xgiant {
-  //   margin-bottom: $size-xgiant;
-  // }
+  &_separator--xxl {
+    margin-bottom: $size-xxl;
+  }
+
+  &_separator--xxxl {
+    margin-bottom: $size-xxxl;
+  }
 
   &_order {
     &--primary {

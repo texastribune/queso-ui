@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "start": "npm-run-all -s import-ds icons compile build-style-data build-template",
-    "compile": "node task-runners/task-compile.js && node task-runners/task-js.js",
+    "compile": "node task-runners/task-compile.js && node task-runners/task-js.js && node task-runners/task-images.js",
     "build-template": "node task-runners/task-build-template.js",
     "build-style-data": "node task-runners/task-build-style-data.js",
     "import-ds": "node task-runners/task-import-ds.js",
@@ -75,7 +75,8 @@
         "s",
         "px",
         "ms",
-        "vh"
+        "vh",
+        "fr"
       ]
     }
   },

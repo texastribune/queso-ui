@@ -23,19 +23,18 @@ const chunkArray = (arr, chunkSize) => {
   }
 
   return tempArray;
-}
+};
 
-
-const startTimer = (time) => {
+const startTimer = time => {
   var i = time;
-  var countdownTimer = setInterval(function () {
+  var countdownTimer = setInterval(function() {
     console.log(`fetching again in ${i} seconds`);
     i = i - 1;
     if (i <= 0) {
       clearInterval(countdownTimer);
     }
   }, 1000);
-}
+};
 
 // function fetchGithubData(dataSet) {
 //   let wait = dataSet.index === 0 ? 0 : 10000;
@@ -61,13 +60,13 @@ function fetchGithubData(url) {
   // return url;
   let occurrenceArr = [];
   return fetch(url, {
-      method: 'GET',
-      withCredentials: true,
-      headers: {
-        Authorization: 'token ' + token,
-        'user-agent': 'node.js',
-      },
-    })
+    method: 'GET',
+    withCredentials: true,
+    headers: {
+      Authorization: 'token ' + token,
+      'user-agent': 'node.js',
+    },
+  })
     .then(resp => resp.json())
     .then(json => {
       console.log(json);
@@ -107,7 +106,7 @@ const buildStyleData = async () => {
   // let interval = 1000;
   for (let index = 0; index < chunks.length; index++) {
     let currentSet = chunks[index];
-    (async (index) => {
+    (async index => {
       await setTimeout(async function() {
         let foundItems = [];
         for (const url in currentSet) {
@@ -117,13 +116,13 @@ const buildStyleData = async () => {
             name: currentSet[url].name,
             main: {
               results: gitHubData1.results,
-              count: gitHubData1.count
+              count: gitHubData1.count,
             },
             donations: {
               results: gitHubData2.results,
-              count: gitHubData2.count
-            }
-          }
+              count: gitHubData2.count,
+            },
+          };
           // let dataObj = {
           //   name: currentSet[url].name,
           //   donations: {
@@ -140,7 +139,6 @@ const buildStyleData = async () => {
           let fileData = JSON.parse(readFile.toString());
           foundItems = fileData.concat(foundItems);
           fs.writeFileSync(outputFilename, JSON.stringify(foundItems, null, 2));
-
         } catch (err) {
           fs.writeFileSync(outputFilename, JSON.stringify(foundItems, null, 2));
         }

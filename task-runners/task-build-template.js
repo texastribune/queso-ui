@@ -21,7 +21,10 @@ data.items.forEach(item => {
       className: childItem.mainClass,
     };
     if (childItem.isFile) {
-      const preview = nunjucks.render(`${assetDir}${childItem.markup}`, childData);
+      const preview = nunjucks.render(
+        `${assetDir}${childItem.markup}`,
+        childData
+      );
       const previewData = {
         markup: preview,
       };

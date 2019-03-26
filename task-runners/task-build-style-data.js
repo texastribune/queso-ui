@@ -11,15 +11,9 @@ const doFetch = true;
 const brandJSON = process.env.DS_URL;
 const icons = require('../dist/icons.json');
 const githubData = require('../dist/github.json');
-const {
-  slugify,
-  escapeHTML,
-  stripTags,
-  findDupe,
-} = require('./utils');
+const { slugify, escapeHTML, stripTags, findDupe } = require('./utils');
 const outputDir = 'dist';
 const outputFilename = `${outputDir}/styles.json`;
-
 
 const createMap = arr => {
   const object = {};
@@ -41,7 +35,6 @@ let styles = {
   iconSets: icons,
   github: 'https://github.com/texastribune/ds-toolbox/blob/master',
 };
-
 
 async function getDesignTokens() {
   let designTokens = [];
