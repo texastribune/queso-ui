@@ -134,8 +134,12 @@ $column-slug: col !default;
     margin-bottom: $grid-gutter/2;
   }
 
+  &_separator--m {
+    margin-bottom: $size-m;
+  }
+
   &_separator--l {
-    margin-bottom: $size-xl;
+    margin-bottom: $size-l;
   }
 
   &_separator--xl {
