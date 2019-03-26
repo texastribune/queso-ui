@@ -1,6 +1,6 @@
 // Card (c-card)
 //
-// Generic card used for articles, podcasts, events, and more! {{isWide}}
+// Generic card used for articles, podcasts, events, and more! Note: Look into c-card__col perhaps just as a utility class. {{isWide}}
 //
 //
 // Markup: 6-components/card/card.html
@@ -16,7 +16,12 @@
 
   &__content {
     // HACK: Forcing buttons to fall to bottom on mobile
-    padding: $size-xxs 0 $size-xxl;
+    padding: $size-xxs 0 0;
+  }
+
+  &__col {
+    // Override column overflow setting
+    overflow: visible
   }
 
   &__title {
@@ -36,12 +41,6 @@
     margin: $size-xxs;
     padding: $size-xxxs;
   }
-  // HACK: Special case where we want to move buttons out of their natural position
-  &__bottom-stick {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
 
   @include mq($from: bp-m) {
     &__overlay {
@@ -59,17 +58,17 @@
     &__overlay-text {
       color: $color-white-pure;
     }
+  }
 
-    &__bottom-stick {
-      position: static;
-    }
+  @include mq($from: bp-l) {
     // HACK: Align the last element to the bottom
-    &__content {
+    &__content--grid {
       display: grid;
       grid-template-rows: auto auto 1fr;
       padding: 0;
     }
   }
+
   @include mq($from: bp-xl) {
     &__title {
       font-size: $size-l;
