@@ -16,7 +16,7 @@
 
   &__content {
     // HACK: Forcing buttons to fall to bottom on mobile
-    padding: $size-xxs 0 $size-xxl;
+    padding: $size-xxxs 0;
   }
 
   &__title {
@@ -36,12 +36,6 @@
     margin: $size-xxs;
     padding: $size-xxxs;
   }
-  // HACK: Special case where we want to move buttons out of their natural position
-  &__bottom-stick {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-  }
 
   @include mq($from: bp-m) {
     &__overlay {
@@ -59,17 +53,17 @@
     &__overlay-text {
       color: $color-white-pure;
     }
+  }
 
-    &__bottom-stick {
-      position: static;
-    }
-    // HACK: Align the last element to the bottom
+  @include mq($from: bp-l) {
+    // HACK: Align the last element to the bottom (only works with 3 rows :( )
     &__content {
       display: grid;
       grid-template-rows: auto auto 1fr;
       padding: 0;
     }
   }
+
   @include mq($from: bp-xl) {
     &__title {
       font-size: $size-l;
