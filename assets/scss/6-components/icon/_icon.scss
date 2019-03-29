@@ -2,8 +2,8 @@
 //
 // SVG icon class. Icons will take the size of parent font-size. Default fill is yellow with a helper for white, teal, and gray icons.
 //
-// .c-icon__svg--yellow - Forces a yellow fill. Can likely be replaced for color helper.
-// .c-icon__svg--baseline - Forces a yellow fill. Can likely be replaced for color helper.
+// .c-icon--yellow - Forces a yellow fill. Can likely be replaced for color helper.
+// .c-icon--baseline - Forces a the vertical alignment to the baseline of the font.
 //
 // Markup: 6-components/icon/icon.html
 //
@@ -18,15 +18,18 @@
     width: 1em;
   }
 
-  &__svg {
-    &--baseline {
+  &--baseline {
+    svg {
       position: relative;
       top: 0.125em;
     }
+  }
 
-    &--yellow {
+  // Eventually phase out
+  &--yellow {
+    svg {
       fill: $color-yellow-tribune;
     }
-
   }
+
 }

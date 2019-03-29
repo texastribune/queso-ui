@@ -12,8 +12,7 @@
             ga-event-action="top nav click"
             ga-event-label="menu-open"
           >
-            <svg class="c-icon" aria-hidden="true">
-              <use xlink:href="#bars"></use></svg><span>&nbsp;Menu</span</button>
+          <span class="c-icon"><svg aria-hidden="true"><use xlink:href="#bars"></use></svg></span>&nbsp;Menu</button>
         </li>
         <li id="nav-menu-close" class="c-navbar__item hidden">
           <button
@@ -24,8 +23,7 @@
             ga-event-action="top nav click"
             ga-event-label="menu-close"
           >
-            <svg class="c-icon" aria-hidden="true">
-              <use xlink:href="#close"></use></svg><span>&nbsp;Close</span>
+          <span class="c-icon"><svg aria-hidden="true"><use xlink:href="#close"></use></svg></span>&nbsp;Close
           </button>
         </li>
       </ul>
@@ -92,8 +90,7 @@
             <a
               href="/accounts/login/?next=/"
               class="c-navbar__clickable c-navbar__clickable--animated c-navbar__item-content"
-              ><svg class="c-icon hide_from--l" aria-hidden="true">
-                <use xlink:href="#sign-in"></use></svg><span>&nbsp;Log In</span></a
+              ><span class="c-icon hide_from--l"><svg aria-hidden="true"><use xlink:href="#sign-in"></use></svg></span>&nbsp;Log In</a
             >
           </li>
         </ul>
@@ -107,9 +104,11 @@
             ga-event-action="top nav click"
             ga-event-label="search-open"
           >
-            <svg class="c-icon" aria-hidden="true">
-              <use xlink:href="#search"></use>
-            </svg>
+            <span class="c-icon c-icon--yellow t-size-s">
+              <svg aria-hidden="true">
+                <use xlink:href="#search"></use>
+              </svg>
+            </span>
           </button>
         </li>
       </ul>
@@ -124,9 +123,11 @@
           ga-event-action="top nav click"
           ga-event-label="search-submit"
         >
-          <svg class="c-icon" aria-hidden="true" focusable="false">
-            <use xlink:href="#search"></use>
-          </svg>
+          <span class="c-icon c-icon--yellow">
+            <svg aria-hidden="true">
+              <use xlink:href="#search"></use>
+            </svg>
+          </span>
         </button>
         <input
           class="c-navbar__search-input"
@@ -145,9 +146,11 @@
           ga-event-action="top nav click"
           ga-event-label="search-close"
         >
-          <svg class="c-icon" aria-hidden="true" focusable="false">
-            <use xlink:href="#close"></use>
-          </svg>
+          <span class="c-icon c-icon--yellow">
+            <svg aria-hidden="true">
+              <use xlink:href="#close"></use>
+            </svg>
+          </span>
         </button>
       </form>
     </div>
@@ -206,14 +209,16 @@
           ga-event-category="donations"
           ga-event-action="membership-intent"
           ga-event-label="c-navbar"
-          >Donate</a
-        >
+          >Donate</a>
       </li>
       <ul class="c-navbar__greeting">
         <li class="c-navbar__dropdown-item">
-          <a href="/accounts/login/?next=/" class="c-navbar__clickable"
-            ><svg class="c-icon hide_from--l" aria-hidden="true">
-              <use xlink:href="#sign-in"></use></svg><span>&nbsp;Log In</span></a>
+          <a href="/accounts/login/?next=/" class="c-navbar__clickable">
+            <span class="c-icon c-icon--yellow hide_from--l">
+              <svg aria-hidden="true"><use xlink:href="#sign-in"></use></svg>
+            </span>
+            &nbsp;Log In
+          </a>
         </li>
       </ul>
     </ul>

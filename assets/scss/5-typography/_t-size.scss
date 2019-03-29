@@ -1,0 +1,39 @@
+// Text size (t-size)
+//
+// Experimental: New utility to help eliminate repitition.
+//
+// .t-size-xxxs - XXXS Text size
+// .t-size-xxs - XXS Text size
+// .t-size-xs - XS Text size
+// .t-size-s - S Text size
+// .t-size-b - Base Text size
+// .t-size-m - M Text size
+// .t-size-l - L Text size
+// .t-size-xl - XL Text size
+// .t-size-giant - Giant Text size
+// .t-size-xxxl - XXXL Text size
+//
+// Markup: <p class="{{ className }}">Example</p>
+//
+//
+// Styleguide 5.2.7
+//
+$type-sizes: (
+  xxxl: $size-xxxl,
+  giant: $size-giant,
+  xxl: $size-xxl,
+  xl: $size-xl,
+  l: $size-l,
+  m: $size-m,
+  b: $size-b,
+  s: $size-s,
+  xs: $size-xs,
+  xxs: $size-xxs,
+  xxxs: $size-xxxs,
+);
+
+@each $type-set, $font-size in $type-sizes {
+  .t-size-#{$type-set} {
+    font-size: $font-size;
+  }
+}
