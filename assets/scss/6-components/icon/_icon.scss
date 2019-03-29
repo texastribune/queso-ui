@@ -1,60 +1,32 @@
 // Icon (c-icon)
 //
-// SVG icon class. There are helper variations for sizes. Default fill is yellow with a helper for white, teal, and gray icons.
+// SVG icon class. Icons will take the size of parent font-size. Default fill is yellow with a helper for white, teal, and gray icons.
 //
-// .c-icon--xs - XS
-// .c-icon--m - M (actually uses <code>$size-b</code>)
-// .c-icon--l - L
-// .c-icon--xl - XL
-// .c-icon--xxl - XXL
-// .c-icon--white - Inverse
-// .c-icon--gray - Gray (dark)
-// .c-icon--teal - Teal
+// .c-icon__svg--yellow - Forces a yellow fill. Can likely be replaced for color helper.
+// .c-icon__svg--baseline - Forces a yellow fill. Can likely be replaced for color helper.
 //
 // Markup: 6-components/icon/icon.html
 //
 // Styleguide 6.1.2
 .c-icon {
-  width: $size-s;
-  height: $size-s;
-  fill: $color-yellow-tribune;
-  overflow: visible;
-  
-  &--m {
-    width: $size-b;
-    height: $size-b;
+  display: inline-flex;
+  align-self: center;
+
+  svg {
+    fill: currentColor;
+    height: 1em;
+    width: 1em;
   }
 
-  &--xs {
-    width: $size-xs;
-    height: $size-xs;
-  }
+  &__svg {
+    &--baseline {
+      position: relative;
+      top: 0.125em;
+    }
 
-  &--l {
-    width: $size-l;
-    height: $size-l;
-  }
+    &--yellow {
+      fill: $color-yellow-tribune;
+    }
 
-  &--xl {
-    width: $size-xl;
-    height: $size-xl;
   }
-
-  &--xxl {
-    width: $size-xxl;
-    height: $size-xxl;
-  }
-
-  &--white {
-    fill: $color-white-pure;
-  }
-
-  &--gray {
-    fill: $color-gray-dark;
-  }
-
-  &--teal {
-    fill: $color-teal-gray ;
-  }
-  
 }
