@@ -5,7 +5,7 @@ const pathTool = require('path');
 const mkdirp = require('mkdirp');
 
 // Folders to parse
-const groups = ['base'];
+const groups = ['base', 'amp'];
 
 // Loop through each icon in each folder and build SVG sprite
 (buildIcons => {
