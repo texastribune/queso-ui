@@ -4,7 +4,6 @@
 //
 // .c-icon--yellow - Forces a yellow fill. Can likely be replaced for color helper.
 // .c-icon--baseline - Forces a the vertical alignment to the baseline of the font.
-// .c-icon--grow - Slightly increase the base size.
 //
 // Markup: 6-components/icon/icon.html
 //
@@ -15,8 +14,8 @@
 
   svg {
     fill: currentColor;
-    height: $size-b;
-    width: $size-b;
+    height: 1.1em;
+    width: 1.1em;
   }
 
   &--baseline {
