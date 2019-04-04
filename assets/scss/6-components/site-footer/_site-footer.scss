@@ -11,8 +11,7 @@
   padding: $size-b $size-b $size-giant;
 
   &__logo {
-    width: 60px;
-    height: 68px;
+    font-size: 4rem;
     margin: $size-xs 0 $size-xl;
   }
 
@@ -52,12 +51,7 @@
     svg {
       margin-right: $size-xxxs;
     }
-    // alignment for social icons
-    span,
-    svg {
-      display: inline-block;
-      vertical-align: middle;
-      line-height: 1;
-    }
+
   }
+
 }
