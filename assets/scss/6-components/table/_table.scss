@@ -8,9 +8,8 @@
 //
 // Styleguide 6.1.5
 .c-table {
-  border: 1px solid $color-white-off;
   border-collapse: collapse;
-  
+
   &--striped {
     tr:nth-child(2n) {
       background-color: $color-white-off;
