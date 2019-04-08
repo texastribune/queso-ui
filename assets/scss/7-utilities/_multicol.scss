@@ -1,0 +1,17 @@
+// Multi column  (l-multicol)
+//
+// Experimental: Add columns
+//
+// .l-multicol--3 - Text of 3 cols
+//
+// Markup: <ul class="l-multicol {{ className }}"><li>Blue cheese</li><li>Feta</li><li>Swiss</li><li>Colby Jack</li><li>Pepper Jack</li><li>Cheddar</li></ul>
+// 
+//
+// Styleguide 7.0.4
+.l-multicol {
+  columns: 2;
+
+  &--3 {
+    columns: 3;
+  }
+}
