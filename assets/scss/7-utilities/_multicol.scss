@@ -10,8 +10,9 @@
 // Styleguide 7.0.4
 .l-multicol {
   columns: 2;
-
-  &--3 {
-    columns: 3;
+  @include mq($from: bp-l) {
+    &--3 {
+      columns: 3;
+    }
   }
 }
