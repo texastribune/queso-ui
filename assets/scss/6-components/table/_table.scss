@@ -9,7 +9,9 @@
 // Styleguide 6.1.5
 .c-table {
   border-collapse: collapse;
-
+  // fixes width overflows
+  table-layout: fixed;
+  
   &--striped {
     tr:nth-child(2n) {
       background-color: $color-white-off;
