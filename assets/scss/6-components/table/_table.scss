@@ -1,0 +1,23 @@
+// Table (c-table)
+//
+// Helper for table display
+//
+// .c-table--striped - Zebra stripes odd rows
+//
+// Markup: 6-components/table/table.html
+//
+// Styleguide 6.1.5
+.c-table {
+  border: 1px solid $color-white-off;
+
+  &--striped {
+    tr:nth-child(2n) {
+      background-color: $color-white-off;
+    }
+  }
+
+  td,
+  th {
+    padding: $size-xxxs;
+  }
+}
