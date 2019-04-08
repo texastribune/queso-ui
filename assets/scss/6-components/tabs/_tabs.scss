@@ -1,0 +1,50 @@
+// Tabs (c-tabs)
+//
+// Tab class {{isWide}} https://gist.github.com/jonathantneal/435478e415bfe4f54d06
+//
+// Markup: 6-components/tabs/tabs.html
+//
+// Styleguide 6.1.3
+.c-tabs {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+
+  &__tab {
+    &--wide {
+      flex: 0 1 10rem;
+    }
+  }
+
+  &__link {
+    background-color: $color-black-off;
+    color: $color-white-pure;
+    display: block;
+    border-right: 2px solid #fff;
+    padding: $size-s;
+    text-align: center;
+
+    &--s {
+      padding: $size-xxxs;
+    }
+
+    &--active {
+      background-color: $color-yellow-tribune;
+      color: $color-black-off;
+      font-weight: 700;
+    }
+  }
+
+}
+
+// display helpers
+.c-tab-panes {
+  &__pane {
+    display: none;
+    
+    &--active {
+      display: block;
+    }
+  }
+}
