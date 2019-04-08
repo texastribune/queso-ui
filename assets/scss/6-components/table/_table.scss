@@ -11,7 +11,7 @@
   border-collapse: collapse;
   // fixes width overflows
   table-layout: fixed;
-  
+
   &--striped {
     tr:nth-child(2n) {
       background-color: $color-white-off;
@@ -20,6 +20,6 @@
 
   td,
   th {
-    padding: $size-xxxs;
+    padding: $size-s;
   }
 }
