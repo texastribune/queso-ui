@@ -50,18 +50,18 @@
 //
 // Experimental: Adds new naming convention
 //
-// .t-center - Center aligned
-// .t-right - Right aligned
+// .t-align-center - Center aligned
+// .t-align-right - Right aligned
 //
 // Markup: <p class="{{ className }}">Example</p>
 //
 //
 // Styleguide 5.2.7
-.t-center {
+.t-align-center {
   text-align: center;
 }
 
-.t-right {
+.t-align-right {
   text-align: right;
 }
 

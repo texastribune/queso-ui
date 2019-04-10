@@ -1,0 +1,13 @@
+// Back to top (c-back-to-top)
+//
+// This is a weird one because it is optioned on position. It could also be converted to a more global style, but for now we're keeping it specific to this one use. NOTE: The trick is to place this class outside of your button since position: sticky works best on direct children of a body tag.
+//
+//
+// Markup: 6-components/back-to-top/back-to-top.html
+//
+// Styleguide 6.1.3
+.c-back-to-top {
+  position: sticky;
+  bottom: $size-s;
+  right: $size-s;
+}
