@@ -8,5 +8,7 @@
 //
 // Styleguide 7.0.4
 .l-multicol {
-  column-width: 250px;
+  @include mq($from: bp-s) {
+    columns: 2;
+  }
 }
