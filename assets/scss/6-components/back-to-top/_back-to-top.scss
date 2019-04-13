@@ -7,13 +7,25 @@
 //
 // Styleguide 6.1.3
 .c-back-to-top {
-  position: sticky;
+  cursor: pointer;
   bottom: $size-s;
   padding-right: $size-s;
+  position: sticky;
   transition: opacity .3s;
   opacity: 1;
 
   &.hide {
     opacity: 0;
   }
+}
+
+
+.c-back-to-top-viewport {
+  height: 200vh;
+  left: 0;
+  top: 0;
+  position: absolute;
+  right: 0;
+  width: 100%;
+  z-index: -1
 }
