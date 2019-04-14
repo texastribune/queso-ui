@@ -5,18 +5,14 @@
   "license": "MIT",
   "private": false,
   "files": [
-    "/assets"
+    "/assets",
+    "/tasks"
   ],
   "scripts": {
-    "start": "npm-run-all -s import-ds icons compile build-style-data build-template",
-    "compile": "node task-runners/task-compile.js && node task-runners/task-js.js && node task-runners/task-images.js",
-    "build-template": "node task-runners/task-build-template.js",
-    "build-style-data": "node task-runners/task-build-style-data.js",
-    "import-ds": "node task-runners/task-import-ds.js",
-    "icons": "node task-runners/task-icons.js",
-    "lint": "stylelint 'assets/**/**.scss' && prettier --write './task-runners/**/*.js'",
-    "deploy": "surge dist --domain 'ttds.surge.sh'",
-    "build-docs": "node docs/build/build.js"
+    "lint": "stylelint 'assets/**/**.scss' && prettier --write './tasks/**/*.js'",
+    "deploy-docs": "npm run build-docs && surge dist --domain 'ttds.surge.sh'",
+    "build-docs": "node docs/build/build.js",
+    "dev-docs": "node docs/build/develop.js"
   },
   "prettier": {
     "bracketSpacing": true,
@@ -27,11 +23,14 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
+    "ansi-colors": "^3.2.4",
     "browser-sync": "^2.26.3",
     "clean-css": "^4.2.1",
     "directory-tree": "^2.2.1",
     "dotenv": "^6.2.0",
     "fast-glob": "^2.2.6",
+    "fs-extra": "^7.0.1",
+    "glob-watcher": "^5.0.3",
     "kss": "https://github.com/kss-node/kss-node",
     "moment": "^2.24.0",
     "node-fetch": "^2.3.0",

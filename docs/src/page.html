@@ -1,88 +1,75 @@
-{% from "templates/color-swatch.html" import colorSwatch %}
-{% from "templates/variable-swatch.html" import variableSwatch %}
-{% from "templates/snippet.html" import snippet %}
-{% from "templates/snippet-tool.html" import snippetTool %}
-{% from "templates/snippet-table.html" import snippetTable %}
-{% from "templates/title-bar.html" import titleBar %}
+{% from "../src/macros/color-swatch.html" import colorSwatch %}
+{% from "../src/macros/variable-swatch.html" import variableSwatch %}
+{% from "../src/macros/snippet.html" import snippet %}
+{% from "../src/macros/snippet-tool.html" import snippetTool %}
+{% from "../src/macros/snippet-table.html" import snippetTable %}
+{% from "../src/macros/title-bar.html" import titleBar %}
 <!DOCTYPE html>
 <html class="fonts-loaded" lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta content="ie=edge" http-equiv="X-UA-Compatible" />
   <title>Document</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="base.css" />
-  <link rel="stylesheet" href="base-v2.css" />
-  <link id="ds" rel="stylesheet" href="ds.css" />
-  <style>
-    .ds-stick-it { position: sticky; top: 0; z-index: 1 }
-    .ds-breathe {padding: 1rem}
-    .ds-breathe-m {margin: 1rem; display: block}
-    .ds-breathe-vert {padding: 1rem 0}
-    .ds-desc p {margin: 1rem 0}
-    .ds-menu {overflow: scroll; height: 95vh}
-    .ds-menu__child {padding-left: 1rem;}
-    .ds-wide {width: 100%}
-    .ds-spacer {padding-bottom: 5rem; position: relative;}  
-    .ds-anchor {position: absolute;}    
-    .is-active .ds-code-dropdown {position: static;}
-    .ds-grid-example div[class^="col"] {border: 1px solid #ccc; text-align: center;}
-    /* Bulma overrides */
-    a {color: inherit}
-  </style>
+  <link id="base" rel="stylesheet" href="../css/base.css" />
+  <link id="base-v2" rel="stylesheet" href="../css/base-v2.css" />
+  <link id="ds" rel="stylesheet" href="../css/ds.css" />
 </head>
 
 <body class="fonts-loaded">
-  {% include '../dist/base-sprite.svg' %}
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title is-1">
-          {{ name }}</h1>
-      </div>
-    </div>
-  </section>
-  <div class="container">
-    <div class="tile is-ancestor">
-      <div class="tile is-parent is-vertical is-3">
+  <div style="display: none">
+    {% include '../dist/sprites/base.html' %}
+  </div>
+  <div class="grid_container--xl">
+    <div id="content" class="tile is-ancestor ds-content">
+      <!--<div class="ds-util">
+        <span class="subtitle is-size-6">Toggle CSS</span>
+        <div class="buttons has-addons ds-breathe is-centered">
+          <button id="buttonLegacy" class="button is-warning">V1</button>
+          <button id="buttonV2" class="button is-info">V2</button>
+        </div>
+        <div id="buttonToggle" class="is-size-7"></div>   
+      </div>-->
+      <div class="tile is-parent is-vertical is-3 ds-sidebar">
         <aside class="menu ds-stick-it">
           <p class="menu-label">
-            Sections
+            <div class="box buttons has-text-centered">
+              <a href="../index.html" class="button is-primary is-outlined is-fullwidth">< Back</a>
+              <button class="button is-primary is-outlined is-fullwidth" id="sidebarToggle">Toggle Menu</button>
+            </div>
           </p>
           <ul class="menu-list ds-menu box has-background-light">
-            {% for item in styleData %}
-              {% if item.experimental !== true and item.depth === 1 %}
-                <li class="{% if item.depth !== 1 %}ds-menu__child{% else %}has-text-weight-bold{% endif %}">
-                  <a class="" href="{{ item.slug }}.html">
-                  {{ item.prettyName }}
-                  </a>
-                </li>
+            {% for item in list %}
+              {% if item.depth !== 1 %}
+              <li class="has-text-weight-bold">
+                <a class="" href="#{{ item.slug }}">
+                {{ item.prettyName }}
+                {% if item.experimental === true %}
+                  <span class="has-text-info">V2</span>
+                {% endif %}
+                </a>
+              </li>
               {% endif %}
             {% endfor %}
-            <li class="has-text-weight-bold">
-              <a class="" href="#icons">
-                Icons
-              </a>
-            </li>
           </ul>
         </aside>
       </div>
-      <div class="tile is-parent is-vertical is-9">
+      <div class="tile is-parent is-vertical is-9 ds-main">
         <main>
-          {% for item in styleData %}
+          {% for item in list %}
           {% set markup = item.markup %}
           {% set isFile = item.isFile %}
+          {% set isWide = item.isWide %}
           {% set description = item.cleanDesc %}
           {% set descriptionTags = item.description %}
           {% set codeSnippet = item.codeSnippet %}
           {% set isTool = item.isTool %}
           {# <span class="ds-breathe"></span> #}
-          
+          {% if item.depth !== 1 %}
           <div class="section ds-spacer">
             <a class="ds-anchor" id="{{ item.slug }}"></a>
-            {{ titleBar(item, github) }}
+            {{ titleBar(name, item) }}
             <div class="ds-breathe-vert">
               <h2 class="title is-{{ item.depth }}">
               {{ item.prettyName }}
@@ -90,7 +77,7 @@
               <span class="tag is-info">V2</span>
               {% endif %}
               {% if item.deprecated %}
-              <span class="tag is-warning">Sunset</span>
+              <span class="tag is-warning">Legacy</span>
               {% endif %}
               </h2>
               <div class="subtitle ds-desc">
@@ -160,7 +147,7 @@
                 </div>
               {% else %}
                 {% for modifier in item.modifiers %}
-                  <div class="column is-half">
+                  <div class="column {% if isWide %}is-full{% else %}is-half{% endif %}">
                     {{ snippet(item.header, markup, modifier, isFile) }}
                   </div>
                 {% endfor %}
@@ -168,6 +155,7 @@
             </div>
             {% endif %}
           </div>
+          {% endif %}
           {% endfor %}
           <div class="section ds-spacer">
             <a class="ds-anchor" id="icons"></a>
@@ -201,13 +189,13 @@
     <div class="content has-text-centered">
       <p>
         <strong>
-          {{ name }}</strong>
+          Style Docs</strong>
         for
         <a href="https://www.texastribune.org/">The Texas Tribune</a>.
       </p>
     </div>
   </footer>
-  <script src="ds.js"></script>
+  <script src="../js/ds.js"></script>
 </body>
 
 </html>
