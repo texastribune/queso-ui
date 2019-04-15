@@ -51,7 +51,6 @@
 // .l-display-block - Block
 // .l-display-inline - Inline
 // .l-clearfix - Clears floats
-// .l-display-fade-in - Clears floats
 //
 // Markup: <span class="{{ className }} has-bg-gray-light"><span class="l-float-left">Example</span></span>
 // 
@@ -75,11 +74,6 @@
     display: table;
     clear: both;
   }
-}
-
-.l-display-fade-in {
-  opacity: 1;
-  transition: opacity .3s;
 }
 
 
