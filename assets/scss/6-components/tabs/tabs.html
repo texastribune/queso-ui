@@ -1,0 +1,57 @@
+<ul class="c-tabs">
+  <li class="c-tabs__tab"><a href="#tab1" class="c-tabs__link c-tabs__link--active">Tab 1</a></li>
+  <li class="c-tabs__tab c-tabs__tab--wide"><a href="#tab2" class="c-tabs__link">Wide Tab</a></li>
+  <li class="c-tabs__tab"><a href="#tab3" class="c-tabs__link c-tabs__link--s">Small Link</a></li>
+  <li class="c-tabs__tab"><a href="#tab4" class="c-tabs__link">Tab 4</a></li>
+</ul>
+<div class="c-tab-panes">
+	<div id="tab1" class="c-tab-panes__pane c-tab-panes__pane--active">
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?</p>
+	</div>
+	<div id="tab2" class="c-tab-panes__pane">
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
+		incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?</p>
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
+			incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?</p>
+	</div>
+	<div id="tab3" class="c-tab-panes__pane">
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
+			incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?</p>
+	</div>
+	<div id="tab4" class="c-tab-panes__pane">
+		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
+			incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?</p>
+	</div>
+</div>
+
+
+
+<script>
+
+window.addEventListener("load", function() {
+	// store tabs variable
+	var myTabs = document.querySelectorAll(".c-tabs__link");
+  function myTabClicks(tabClickEvent) {
+		var activeTabClass = 'c-tabs__link--active';
+		var activePaneClass = 'c-tab-panes__pane--active';
+		for (var i = 0; i < myTabs.length; i++) {
+			myTabs[i].classList.remove(activeTabClass);
+		}
+		var clickedTab = tabClickEvent.currentTarget;
+		clickedTab.classList.add(activeTabClass);
+		tabClickEvent.preventDefault();
+		var myContentPanes = document.querySelectorAll(".c-tab-panes__pane");
+		for (i = 0; i < myContentPanes.length; i++) {
+			myContentPanes[i].classList.remove(activePaneClass);
+		}
+		var anchorReference = tabClickEvent.target;
+		var activePaneId = anchorReference.getAttribute("href");
+		var activePane = document.querySelector(activePaneId);
+		activePane.classList.add(activePaneClass);
+	}
+	
+	for (i = 0; i < myTabs.length; i++) {
+		myTabs[i].addEventListener("click", myTabClicks)
+	}
+});
+</script>

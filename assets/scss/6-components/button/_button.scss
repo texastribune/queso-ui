@@ -5,6 +5,8 @@
 // .c-button--l - Uses size-l for font size and padding
 // .c-button--s - One step down from default
 // .c-button--xs - Two steps down from default
+// .c-button--circle - Circular button (experimentally used for back to top)
+// .c-button--circle-responsive - Adapts to parent container
 //
 // Markup: 6-components/button/button.html
 //
@@ -33,5 +35,19 @@
   &--xs {
     font-size: $size-xxxs;
     padding: $size-xxxs;
+  }
+
+  &--circle {
+    border-radius: 50%;
+    width: 4rem;
+    height: 4rem;
+    position: relative;
+  }
+
+  &--circle-responsive {
+    border-radius: 50%;
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
   }
 }
