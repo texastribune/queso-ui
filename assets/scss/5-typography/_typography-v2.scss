@@ -50,6 +50,7 @@
 //
 // Experimental: Adds new naming convention
 //
+// .t-align-left - Left aligned
 // .t-align-center - Center aligned
 // .t-align-right - Right aligned
 //
@@ -57,6 +58,11 @@
 //
 //
 // Styleguide 5.2.7
+
+.t-align-left {
+  text-align: left;
+}
+
 .t-align-center {
   text-align: center;
 }
