@@ -40,7 +40,7 @@
             {% for item in styleDocs.items %}
               {% if (item.list | length) > 2 %}
               <li class="has-text-weight-bold">
-                <a class="" href="pages/{{ item.slug }}.html">
+                <a class="" href="pages/{{ item.slug }}/index.html">
                 {{ item.name }}
                 </a>
               </li>
@@ -62,11 +62,11 @@
             {% set list = item.list %}
             {% if (list | length) > 2 %}
             <div class="ds-multicol">
-              <h4 class="title is-size-4"><a href="pages/{{slug}}.html">{{ item.name }}</a></h4>
+              <h4 class="title is-size-4"><a href="pages/{{slug}}/index.html">{{ item.name }}</a></h4>
               <ul class="menu-list ds-spacer">      
               {% for rule in list %}
                 {% if rule.depth !== 1 %}
-                  <li><a href="pages/{{ slug + '.html#' + rule.slug }}">{{ rule.header }}</a></li>
+                  <li><a href="pages/{{ slug + '/index.html#' + rule.slug }}">{{ rule.header }}</a></li>
                 {% endif %}
               {% endfor %}
               </ul>

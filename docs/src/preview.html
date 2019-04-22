@@ -5,23 +5,28 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta content="ie=edge" http-equiv="X-UA-Compatible" />
   <title>Document</title>
-  <link id="base" rel="stylesheet" href="base.min.css" />
-  <link id="base-v2" rel="stylesheet" href="base-v2.min.css" />
-  <link id="ds" rel="stylesheet" href="ds.min.css" />
+  <link id="base" rel="stylesheet" href="../../css/base.css" />
+  <link id="base-v2" rel="stylesheet" href="../../css/base-v2.css" />
+  <link id="base-v2" rel="stylesheet" href="../../css/ds.css" />
 </head>
 <body>
-  {% include '../dist/icons/base-sprite.svg' %}
-<div class="ds-util">
-  <p>Resize the container</p>
-  Viewport width: <code id="display"></code>px
-</div>
-<div class="resize-container">
-  <div class="resize-drag">
-    {{markup | safe}}
+  <div style="display: none">
+    {% include '../dist/sprites/base.html' %}
   </div>
-</div>
-  
+  <div class="ds-util">
+    <p>Resize the container</p>
+    Viewport width: <code id="display"></code>px
+  </div>
+  <div class="resize-container">
+    <div class="resize-drag">
+      {% if isFile %}
+          {% include "../../assets/scss/" + markup %}
+      {% else %}
+          {{ markup | safe }}
+      {% endif %}
+    </div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/interactjs@next/dist/interact.min.js"></script>
-  <script src="resize.js"></script>
+  <script src="../../js/resize.js"></script>
 </body>
 </html>

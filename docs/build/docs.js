@@ -30,12 +30,32 @@ module.exports = async () => {
   const htmlMap = styleDocs.items.map(section => {
     return {
       in: pagesPathIn,
-      out: `${pagesPathOut}${section.slug}.html`,
+      out: `${pagesPathOut}${section.slug}/index.html`,
       data: section,
     };
   });
 
   await htmlRunner(htmlMap);
+
+  // creates previews
+  const previewPathIn = './docs/src/preview.html';
+  const previewPathOut = './docs/dist/pages/';
+  let previewArr = [];
+  styleDocs.items.map(section => {
+    section.list.map(item => {
+      if (item.markup.length > 0) {
+        previewArr.push({
+          in: previewPathIn,
+          out: `${previewPathOut}${section.slug}/${item.mainClass}.html`,
+          data: item,
+        });
+      }
+      return;
+    });
+    return;
+  });
+
+  await htmlRunner(previewArr);
 
   // creates main
   const mainPathIn = './docs/src/index.html';
