@@ -1,5 +1,8 @@
 // utility
 const fs = require('fs-extra');
+const Purgecss = require('purgecss');
+const purgeHtml = require('purgecss-from-html');
+const path = require('path');
 
 // internal
 const styleDocRunner = require('../../tasks/style-doc');
@@ -7,8 +10,31 @@ const iconDocRunner = require('../../tasks/icon-doc');
 const htmlRunner = require('../../tasks/html');
 const { docsStyles, docsIcons } = require('./paths.js');
 
+const COMPONENT_CSS = './docs/dist/css/base-v2.css';
+
+const clean = async html => {
+  const purgecss = new Purgecss({
+    content: [html],
+    css: [COMPONENT_CSS],
+    extractors: [
+      {
+        extractor: purgeHtml,
+        extensions: ['html'],
+      },
+    ],
+  });
+  const file = path.basename(html, path.extname(html));
+  const dir = path.dirname(html);
+  const purgecssResult = await purgecss.purge();
+  try {
+    await fs.outputFile(`${dir}/${file}.css`, purgecssResult[0].css);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 module.exports = async () => {
-    // creates object for docs
+  // creates object for docs
   const styleDocs = await styleDocRunner(docsStyles);
   const iconDocs = await iconDocRunner(docsIcons);
   const allDocs = {
@@ -39,16 +65,30 @@ module.exports = async () => {
 
   // creates previews
   const previewPathIn = './docs/src/preview.html';
+  const previewPathInRaw = './docs/src/preview-raw.html';
   const previewPathOut = './docs/dist/pages/';
   let previewArr = [];
+  let componentArr = [];
   styleDocs.items.map(section => {
     section.list.map(item => {
       if (item.markup.length > 0) {
+        const out = `${previewPathOut}${section.slug}/${
+          item.mainClass
+        }`;
+        // map preview
         previewArr.push({
           in: previewPathIn,
-          out: `${previewPathOut}${section.slug}/${item.mainClass}.html`,
+          out: `${out}.html`,
           data: item,
         });
+        // map raw preview for components
+        if (section.slug === 'components') {
+          componentArr.push({
+            in: previewPathInRaw,
+            out: `${out}/raw.html`,
+            data: item,
+          });
+        }
       }
       return;
     });
@@ -56,6 +96,10 @@ module.exports = async () => {
   });
 
   await htmlRunner(previewArr);
+  await htmlRunner(componentArr);
+
+  // generate component CSS
+  await Promise.all(componentArr.map(component => clean(component.out)));
 
   // creates main
   const mainPathIn = './docs/src/index.html';
@@ -68,5 +112,5 @@ module.exports = async () => {
 
   await htmlRunner([mainMap]);
 
-  return 'Generated docs'
-}
+  return 'Generated docs';
+};

@@ -26,6 +26,21 @@
       {% endif %}
     </div>
   </div>
+  {% for modifier in modifiers %}
+    <div class="resize-container">
+      <div class="resize-drag">
+          {% set className = modifier.name %}
+          <h2>{{ modifier.name }}</h2>
+          {% if isFile %}
+            {% include "../../assets/scss/" + markup %}
+          {% else %}
+            {{ modifier.markup | safe }}
+          {% endif %}
+          <p>{{ modifier.description }}</p>
+      </div>
+    </div>
+    </div>
+  {% endfor %}
   <script src="https://cdn.jsdelivr.net/npm/interactjs@next/dist/interact.min.js"></script>
   <script src="../../js/resize.js"></script>
 </body>

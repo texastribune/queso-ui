@@ -23,7 +23,9 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
-    "browser-sync": "^2.26.3"
+    "browser-sync": "^2.26.3",
+    "purgecss": "^1.3.0",
+    "purgecss-from-html": "^1.1.0"
   },
   "stylelint": {
     "rules": {
@@ -74,13 +76,13 @@
     "glob-watcher": "^5.0.3",
     "kss": "https://github.com/kss-node/kss-node",
     "node-sass": "^4.11.0",
+    "normalize.css": "^8.0.1",
     "nunjucks": "^3.1.7",
     "ora": "^3.4.0",
     "prettier": "1.16.3",
+    "sass-mq": "^5.0.0",
     "stylelint": "^9.10.1",
     "svgo": "^1.2.1",
-    "svgstore": "^3.0.0-2",
-    "normalize.css": "^8.0.1",
-    "sass-mq": "^5.0.0"
+    "svgstore": "^3.0.0-2"
   }
 }
