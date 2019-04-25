@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "lint": "stylelint 'assets/**/**.scss' && prettier --write './tasks/**/*.js'",
-    "deploy-docs": "npm run build-docs && surge dist --domain 'ttds.surge.sh'",
+    "deploy-docs": "npm run build-docs && surge ./docs/dist --domain 'ttds.surge.sh'",
     "build-docs": "node docs/build/build.js",
     "dev-docs": "node docs/build/develop.js"
   },

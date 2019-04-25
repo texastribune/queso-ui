@@ -26,8 +26,20 @@ const clean = async html => {
   const file = path.basename(html, path.extname(html));
   const dir = path.dirname(html);
   const purgecssResult = await purgecss.purge();
+  const purgecssParsed = purgecssResult[0].css;
+  // create a css file
   try {
-    await fs.outputFile(`${dir}/${file}.css`, purgecssResult[0].css);
+    await fs.outputFile(`${dir}/${file}.css`, purgecssParsed);
+  } catch (err) {
+    console.error(err);
+  }
+  // create a styled preview
+  try {
+    const htmlStr = await fs.readFileSync(html, 'utf-8');
+    await fs.outputFile(
+      `${dir}/${file}-preview.html`,
+      `<style>${purgecssParsed}</style>\n${htmlStr}`
+    );
   } catch (err) {
     console.error(err);
   }

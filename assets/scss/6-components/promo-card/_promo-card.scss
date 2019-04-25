@@ -1,0 +1,50 @@
+// Promo Card (c-promo-card)
+//
+// Used for paid posts {{isWide}}
+//
+// Markup: 6-components/promo-card/promo-card.html
+//
+// Styleguide 6.1.3
+$c-promo-card-padding: $size-s;
+$c-promo-card-min: 300px;
+
+.c-promo-card {
+  border-top: 5px solid $color-sponsor;
+  display: grid;
+  grid-gap: $c-promo-card-padding;
+  grid-template-columns: repeat( auto-fit, minmax( $c-promo-card-min, auto ) );
+  padding: ($c-promo-card-padding * 3) $c-promo-card-padding $c-promo-card-padding;
+  align-items: center;
+  position: relative;
+  direction: rtl;
+
+  &__text,
+  &__label {
+    direction: ltr;
+  }
+
+  &__image {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__label {
+    left: $c-promo-card-padding;
+    padding: 0;
+    position: absolute;
+    top: $c-promo-card-padding;
+  }
+
+  @include mq($from: bp-m) {
+    padding-top: $c-promo-card-padding;
+    
+    &__text {
+      padding: 0 $c-promo-card-padding;
+    }
+  }
+  @include mq($from: bp-l) {
+    &__text {
+      padding: $c-promo-card-padding * 4;
+    }
+  }
+}

@@ -105,6 +105,7 @@ module.exports = async () => {
       // docs watching
       watch(
         [
+          './assets/scss/**/*.html',
           './assets/scss/**/*.scss',
           './docs/src/**/*.html',
           './docs/src/scss/**/*.scss',
