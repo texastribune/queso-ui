@@ -76,6 +76,7 @@ $color-map: (
   yellow: $color-yellow-tribune,
   blue: $color-blue-light,
   blue-dark: $color-blue-dark,
+  sponsor: $color-sponsor,
 );
 
 @each $color, $value in $color-map {

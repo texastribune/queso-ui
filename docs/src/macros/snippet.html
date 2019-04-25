@@ -10,12 +10,17 @@
     {% if mainClass %}
     <div class="card-header has-background-light">
         <pre class="has-text-info">.{{mainClass}}</pre>
-        <a class="button is-primary ds-icon" target="_blank" href="{{mainClass}}.html">View in new window</a>
+        <div class="ds-icon buttons">
+            <a class="button is-primary" target="_blank" href="{{mainClass}}.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16 0v2h-8v-2h8zm2 2h4v4h2v-6h-6v2zm-16 4v-4h4v-2h-6v6h2zm22 2h-2v8h2v-8zm-2 10v4h-4v2h6v-6h-2zm-22 6h16v-16h-16v16z" /></svg></a>
+            <a class="button is-primary" target="_blank" href="{{mainClass}}/raw-preview.html">Standalone&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z" /></svg></a>
+        </div>
+        
+        
     </div>
     {% endif %}
     <div class="card-content">
         {% if isFile %}
-            <div class="box{% if modifier.isInverse %} has-background-black{% endif %} ds-grid-lines">{% include "../assets/scss/" + code %}</div>
+            <div class="box{% if modifier.isInverse %} has-background-black{% endif %} ds-grid-lines">{% include "../../../assets/scss/" + code %}</div>
         {% else %}
             {% if modifier %}
             <div class="box{% if modifier.isInverse %} has-background-black{% endif %} ds-grid-lines">{{ modifier.markup | safe }}</div>
