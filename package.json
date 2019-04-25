@@ -23,9 +23,24 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
+    "ansi-colors": "^3.2.4",
     "browser-sync": "^2.26.3",
+    "clean-css": "^4.2.1",
+    "fast-glob": "^2.2.6",
+    "fs-extra": "^7.0.1",
+    "glob-watcher": "^5.0.3",
+    "kss": "https://github.com/kss-node/kss-node",
+    "node-sass": "^4.11.0",
+    "normalize.css": "^8.0.1",
+    "nunjucks": "^3.1.7",
+    "ora": "^3.4.0",
+    "prettier": "1.16.3",
     "purgecss": "^1.3.0",
-    "purgecss-from-html": "^1.1.0"
+    "purgecss-from-html": "^1.1.0",
+    "sass-mq": "^5.0.0",
+    "stylelint": "^9.10.1",
+    "svgo": "^1.2.1",
+    "svgstore": "^3.0.0-2"
   },
   "stylelint": {
     "rules": {
@@ -68,21 +83,6 @@
     }
   },
   "dependencies": {
-    "ansi-colors": "^3.2.4",
-    "browser-sync": "^2.26.3",
-    "clean-css": "^4.2.1",
-    "fast-glob": "^2.2.6",
-    "fs-extra": "^7.0.1",
-    "glob-watcher": "^5.0.3",
-    "kss": "https://github.com/kss-node/kss-node",
-    "node-sass": "^4.11.0",
-    "normalize.css": "^8.0.1",
-    "nunjucks": "^3.1.7",
-    "ora": "^3.4.0",
-    "prettier": "1.16.3",
-    "sass-mq": "^5.0.0",
-    "stylelint": "^9.10.1",
-    "svgo": "^1.2.1",
-    "svgstore": "^3.0.0-2"
+
   }
 }
