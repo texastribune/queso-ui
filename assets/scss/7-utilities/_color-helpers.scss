@@ -13,6 +13,7 @@
 // .has-text-yellow -  yellow text color
 // .has-text-blue - blue text color
 // .has-text-blue-dark - blue dark text color
+// .has-text-error - error text color
 //
 // Markup: <p class="{{ className }}">Example</p>
 //
@@ -24,17 +25,18 @@
 //
 // New utility to help eliminate repitition.
 //
-// .has-text-hover-black -  black text color
-// .has-text-hover-black-off - black-off text color
-// .has-text-hover-white -  white text color
-// .has-text-hover-white-off -  white off text color
-// .has-text-hover-teal -  teal text color
-// .has-text-hover-gray -  gray text color
-// .has-text-hover-gray-light - gray-light text color
-// .has-text-hover-gray-dark - gray-dark text color
-// .has-text-hover-yellow -  yellow text color
-// .has-text-hover-blue - blue text color
-// .has-text-hover-blue-dark - blue dark text color
+// .has-text-hover-black -  black text-hover color
+// .has-text-hover-black-off - black-off text-hover color
+// .has-text-hover-white -  white text-hover color
+// .has-text-hover-white-off -  white off text-hover color
+// .has-text-hover-teal -  teal text-hover color
+// .has-text-hover-gray -  gray text-hover color
+// .has-text-hover-gray-light - gray-light text-hover color
+// .has-text-hover-gray-dark - gray-dark text-hover color
+// .has-text-hover-yellow -  yellow text-hover color
+// .has-text-hover-blue - blue text-hover color
+// .has-text-hover-blue-dark - blue dark text-hover color
+// .has-text-hover-error - error text-hover color
 //
 // Markup: <p class="{{ className }}">Example</p>
 //
@@ -57,6 +59,7 @@
 // .has-bg-yellow -  yellow background color
 // .has-bg-blue - blue background color
 // .has-bg-blue-dark - blue dark background color
+// .has-bg-error - error background color
 //
 // Markup: <p class="{{ className }}">Example</p>
 //
@@ -76,6 +79,7 @@ $color-map: (
   yellow: $color-yellow-tribune,
   blue: $color-blue-light,
   blue-dark: $color-blue-dark,
+  error: $color-error,
 );
 
 @each $color, $value in $color-map {
