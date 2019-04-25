@@ -52,3 +52,20 @@
     position: relative;
   }
 }
+
+// Button link (c-link-button)
+//
+// Sometimes, we need buttons to look like links (see Talk embed log in/log out buttons)
+//
+// Markup: <button class="c-link-button">Click me, I'm Irish</button>
+//
+// Styleguide 6.1.1
+//
+.c-link-button {
+  @include underlined-link;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  padding: 0;
+}
