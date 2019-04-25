@@ -1,6 +1,6 @@
 // Margin helpers (has-<size>-btm-marg)
 //
-// Bottom margin only. Opt for these instead of adding margin-bottom to a new class.
+// Experimental: Bottom margin only. Opt for these instead of adding margin-bottom to a new class.
 //
 // .has-xxxl-btm-marg -  Margin bottom with $size-xxxl
 // .has-giant-btm-marg -  Margin bottom with $size-giant
@@ -23,4 +23,29 @@
   .has-#{$size-name}-btm-marg {
     margin-bottom: $size-value;
   }
+}
+
+// Padding helpers (has-padding)
+//
+// Experimental: Not all sizes are accounted for. Often, specific padding rules should go on a component.
+//
+// .has-padding -  All-around padding with $size-b
+// .has-xs-padding -  All-around padding with $size-xs
+// .has-xl-padding -  All-around padding with $size-xl
+//
+// Markup: <div style="background:#ffc200;" class="{{ className }}">Example</div>
+//
+//
+// Styleguide 7.0.1
+//
+.has-padding {
+  padding: $size-b;
+}
+
+.has-xs-padding {
+  padding: $size-xs;
+}
+
+.has-xl-padding {
+  padding: $size-xl;
 }
