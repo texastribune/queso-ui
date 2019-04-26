@@ -25,3 +25,6 @@ yarn start
 * [ ] Accessibility compliance checking
 * [ ] Make VS code comment snippet
 * [ ] Fix code preview and GitHub search feature
+* [ ] Add Autoprefixer settings
+* [ ] Way to easily build universal stylesheet
+* [ ] Way to easily build universal sprite
