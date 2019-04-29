@@ -80,6 +80,7 @@ $color-map: (
   blue: $color-blue-light,
   blue-dark: $color-blue-dark,
   error: $color-error,
+  sponsor: $color-sponsor,
 );
 
 @each $color, $value in $color-map {
