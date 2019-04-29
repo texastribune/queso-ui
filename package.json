@@ -14,6 +14,14 @@
     "build-docs": "node docs/build/build.js",
     "dev-docs": "node docs/build/develop.js"
   },
+  "browserslist": [
+    "> 0.5%",
+    "last 2 versions",
+    "Firefox ESR",
+    "iOS >= 11",
+    "Safari >= 11",
+    "not dead"
+  ],
   "prettier": {
     "bracketSpacing": true,
     "printWidth": 80,
