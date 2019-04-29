@@ -13,7 +13,7 @@ const { isProductionEnv } = require('./env');
 
 // postCSS plugins
 // @todo: Add linting when further along in CSS cleanup.
-const postCSSInstance = postCSS([autoprefixer()]);
+const postCSSInstance = postCSS([autoprefixer({ grid: true })]);
 
 const processSass = async dirMap => {
   // get input and output
