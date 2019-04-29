@@ -2,22 +2,22 @@
 const fs = require('fs-extra');
 const glob = require('fast-glob');
 const ora = require('ora');
+const path = require('path');
 
 // icon packages
 const SVGO = require('svgo');
 const svgstore = require('svgstore');
 
 // internal
-const { replaceExtension, SVGOSettings } = require('./utils');
+const { SVGOSettings } = require('./utils');
 
 const SVGOInstance = new SVGO({
   plugins: SVGOSettings,
 });
 
 const addSprite = async (currentSVG, spriteInstance) => {
-  // grab name of svg icon
-  const pathArr = currentSVG.split('/');
-  const svgFilename = replaceExtension(pathArr[pathArr.length - 1], '');
+  // filename
+  const svgFilename = path.basename(currentSVG, path.extname(currentSVG));
 
   // extract svg contents
   const svgContents = fs.readFileSync(currentSVG, 'utf-8');
@@ -26,6 +26,9 @@ const addSprite = async (currentSVG, spriteInstance) => {
   const optimized = await SVGOInstance.optimize(svgContents, {
     path: currentSVG,
   });
+
+  // clean original file
+  await fs.writeFileSync(currentSVG, optimized.data, 'utf-8');
 
   try {
     // add to optimized to sprite instance
