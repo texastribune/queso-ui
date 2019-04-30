@@ -1,3 +1,8 @@
+// Elements
+//
+// Set font root sizes for desktop, tablet, mobile
+//
+// Styleguide 4.0.0
 html {
   font-size: $font-root;
   @include mq($until: bp-s) {
@@ -27,6 +32,33 @@ h6,
 p {
   margin: 0;
   padding: 0;
+}
+
+// Set base typography proportions for headers, paragraphs, etc.
+// sizing variables in settings/_breakpoints.scss
+h1 {
+  font-size: $size-xxl;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: $size-xl;
+}
+
+h3 {
+  font-size: $size-l;
+}
+
+h4 {
+  font-size: $size-m;
+}
+
+h5 {
+  font-size: $size-s;
+}
+
+p {
+  font-size: $size-b;
 }
 
 a {

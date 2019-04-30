@@ -1,7 +1,8 @@
-// Resets (normalize)
+// Resets
 //
-// Deprecated: We paste in an old version of normalize as our base. It's around 8kb
+// Experimental: We want to import normalize instead. It's around 6kb and we can update versions as https://github.com/necolas/normalize.css changes.
+//
 //
 // Styleguide 3.0.0
 @import 'box-sizing';
-@import 'normalize';
+@import 'normalize.css/normalize';

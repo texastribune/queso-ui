@@ -134,3 +134,18 @@ strong {
   width: 100%;
   height: 95vh;
 }
+
+.ds-version-tag {
+  &--show {
+    display: none; 
+    
+    .js-ds-hide-legacy & {
+      display: inline;
+    }
+  }
+}
+
+.js-ds-hide-legacy .ds-legacy,
+.js-ds-hide-legacy .ds-version-tag {
+  display: none;
+}

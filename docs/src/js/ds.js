@@ -1,9 +1,3 @@
-// Add a simple sidebar toggle
-var container = document.querySelector('#content');
-var button = document.querySelector('#sidebarToggle');
-button.addEventListener('click', function() {
-  container.classList.toggle('ds-hide-sidebar');
-});
 // Add simple dropdown for Bulma dropdown component
 document.addEventListener('DOMContentLoaded', function() {
   // Dropdowns
@@ -34,35 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-var buttonLegacy = document.querySelector('#buttonLegacy');
-buttonLegacy.addEventListener('click', function() {
-  this.disabled = true;
-  document.getElementById('buttonV2').disabled = false;
-  changeCSS('base-v2', 'base');
+var hideLegacy = document.querySelector('#hideLegacy');
+hideLegacy.addEventListener('click', function() {
+  document.body.classList.toggle('js-ds-hide-legacy');
+  this.classList.toggle('is-active');
 });
-var buttonV2 = document.querySelector('#buttonV2');
-buttonV2.addEventListener('click', function() {
-  this.disabled = true;
-  document.getElementById('buttonLegacy').disabled = false;
-  changeCSS('base', 'base-v2');
-});
-var addLink = function(id) {
-  var link = document.createElement('link');
-  link.href = id + '.min.css';
-  link.id = id;
-  link.rel = 'stylesheet';
-  link.type = 'text/css'; // no need for HTML5
-  document.getElementsByTagName('head')[0].appendChild(link);
-};
-function changeCSS(cssFileOut, cssFileIn) {
-  var outEl = document.querySelector('#' + cssFileOut);
-  var inEl = document.querySelector('#' + cssFileIn);
-  if (outEl.parentNode) {
-    outEl.parentNode.removeChild(outEl);
-    document.getElementById('buttonToggle').textContent =
-      'Viewing ' + cssFileIn + '.css ONLY.';
-  }
-  if (!inEl) {
-    addLink(cssFileIn);
-  }
-}

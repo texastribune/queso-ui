@@ -12,8 +12,8 @@
   <meta content="ie=edge" http-equiv="X-UA-Compatible" />
   <title>Document</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet" />
-  <link id="base" rel="stylesheet" href="../../css/base.css" />
-  <link id="base-v2" rel="stylesheet" href="../../css/base-v2.css" />
+  <link id="base" rel="stylesheet" href="../../css/all-legacy.css" />
+  <link id="base-v2" rel="stylesheet" href="../../css/all.css" />
   <link id="ds" rel="stylesheet" href="../../css/ds.css" />
 </head>
 
@@ -23,30 +23,22 @@
   </div>
   <div class="grid_container--xl">
     <div id="content" class="tile is-ancestor ds-content">
-      <!--<div class="ds-util">
-        <span class="subtitle is-size-6">Toggle CSS</span>
-        <div class="buttons has-addons ds-breathe is-centered">
-          <button id="buttonLegacy" class="button is-warning">V1</button>
-          <button id="buttonV2" class="button is-info">V2</button>
-        </div>
-        <div id="buttonToggle" class="is-size-7"></div>   
-      </div>-->
       <div class="tile is-parent is-vertical is-3 ds-sidebar">
         <aside class="menu ds-stick-it">
           <p class="menu-label">
             <div class="box buttons has-text-centered">
               <a href="../../index.html" class="button is-primary is-outlined is-fullwidth">< Back</a>
-              <button class="button is-primary is-outlined is-fullwidth" id="sidebarToggle">Toggle Menu</button>
+              <button class="button is-primary is-fullwidth" id="hideLegacy"><span class="ds-version-tag">Hide</span><span class="ds-version-tag--show">Show</span>&nbsp;Legacy</button>
             </div>
           </p>
           <ul class="menu-list ds-menu box has-background-light">
             {% for item in list %}
               {% if item.depth !== 1 %}
-              <li class="has-text-weight-bold">
+              <li class="has-text-weight-bold {% if item.deprecated %} ds-legacy{% endif %}">
                 <a class="" href="#{{ item.slug }}">
                 {{ item.prettyName }}
                 {% if item.experimental === true %}
-                  <span class="has-text-info">V2</span>
+                  <span class="has-text-info ds-version-tag">V2</span>
                 {% endif %}
                 </a>
               </li>
@@ -67,17 +59,17 @@
           {% set isTool = item.isTool %}
           {# <span class="ds-breathe"></span> #}
           {% if item.depth !== 1 %}
-          <div class="section ds-spacer">
+          <div class="section ds-spacer{% if item.deprecated %} ds-legacy{% endif %}">
             <a class="ds-anchor" id="{{ item.slug }}"></a>
             {{ titleBar(name, item) }}
             <div class="ds-breathe-vert">
               <h2 class="title is-{{ item.depth }}">
               {{ item.prettyName }}
               {% if item.experimental %}
-              <span class="tag is-info">V2</span>
+              <span class="tag is-info ds-version-tag">V2</span>
               {% endif %}
               {% if item.deprecated %}
-              <span class="tag is-warning">Legacy</span>
+              <span class="tag is-warning ds-version-tag">Legacy</span>
               {% endif %}
               </h2>
               <div class="subtitle ds-desc">
@@ -195,7 +187,7 @@
       </p>
     </div>
   </footer>
-  <script src="../js/ds.js"></script>
+  <script src="../../js/ds.js"></script>
 </body>
 
 </html>
