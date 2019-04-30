@@ -1,7 +1,20 @@
 @import '1-settings/all';
 @import '2-tools/all';
-@import '3-resets/all-v2';
-@import '4-elements/all-v2';
-@import '5-typography/all-v2';
-@import '6-components/all';
-@import '7-utilities/all-v2';
+@import '3-resets/all';
+@import '4-elements/all';
+@import '5-typography/all';
+
+// Our base component set (minimum amount needed for getting started)
+@import '6-components/icon/icon';
+@import '6-components/navbar/navbar';
+@import '6-components/site-footer/site-footer';
+
+// To be removed after directory restructure (will also just rename this file to base.scss)
+@import '6-components/ad/ad';
+@import '6-components/back-to-top/back-to-top';
+@import '6-components/button/button';
+@import '6-components/card/card';
+@import '6-components/table/table';
+@import '6-components/tabs/tabs';
+
+@import '7-utilities/all';

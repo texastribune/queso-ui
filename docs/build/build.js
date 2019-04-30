@@ -1,6 +1,3 @@
-// utility
-const fs = require('fs-extra');
-
 // lib
 const stylesRunner = require('../../tasks/styles');
 const iconsRunner = require('../../tasks/icons');
