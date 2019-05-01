@@ -1,17 +1,12 @@
 $loader-bar-height: 10px;
 
-/*
-  No demo for this component because, if we made one,
-  it would cover the entire page!
-
-  This component is for putting the entire width and
-  height of a page in a loading/pending state.
-
-  Inspired by:
-  https://codepen.io/brunjo/pen/XJmbNz
-*/
+// Full-page loader (c-full-page-loader)
+//
+// For putting entire width and height of page in a loading state. Inspired by: https://codepen.io/brunjo/pen/XJmbNz
+//
+// Styleguide 6.1.1
 .c-full-page-loader {
-  background-color: rgba(255,255,255,.95);
+  background-color: rgba($color-white-pure, .95);
   height: 100%;
   left: 0;
   position: fixed;
@@ -43,9 +38,14 @@ $loader-bar-height: 10px;
 
 @keyframes loading-bar {
   from { left: -200px; width: 30%; }
+  
   50% { width: 30%; }
+  
   70% { width: 70%; }
+  
   80% { left: 50%; }
+  
   95% { left: 120%; }
+  
   to { left: 100%; }
 }
