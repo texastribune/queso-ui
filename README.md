@@ -27,3 +27,4 @@ yarn start
 * [ ] Fix code preview and GitHub search feature
 * [ ] Way to easily build universal stylesheet
 * [ ] Way to easily build universal sprite
+* [ ] Allow for hiding main demo
