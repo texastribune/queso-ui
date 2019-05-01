@@ -4,12 +4,12 @@ const mappedStyles = [
     out: './docs/dist/css/ds.css',
   },
   {
-    in: './assets/scss/base-v2.scss',
-    out: './docs/dist/css/base-v2.css',
+    in: './assets/scss/all.scss',
+    out: './docs/dist/css/all.css',
   },
   {
-    in: './assets/scss/base.scss',
-    out: './docs/dist/css/base.css',
+    in: './assets/scss/all-legacy.scss',
+    out: './docs/dist/css/all-legacy.css',
   },
 ];
 

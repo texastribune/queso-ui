@@ -8,8 +8,8 @@
   <meta content="ie=edge" http-equiv="X-UA-Compatible" />
   <title>Document</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/base-v2.css" />
+  <link rel="stylesheet" href="css/all-legacy.css" />
+  <link rel="stylesheet" href="css/all.css" />
   <link id="ds" rel="stylesheet" href="css/ds.css" />
 </head>
 
@@ -33,6 +33,9 @@
     <div class="tile is-ancestor">
       <div class="tile is-parent is-vertical is-3">
         <aside class="menu ds-stick-it">
+          <div class="box buttons has-text-centered">
+              <button class="button is-primary is-fullwidth" id="hideLegacy"><span class="ds-version-tag">Hide</span><span class="ds-version-tag--show">Show</span>&nbsp;Legacy</button>
+            </div>
           <p class="menu-label">
             Sections
           </p>
@@ -66,7 +69,7 @@
               <ul class="menu-list ds-spacer">      
               {% for rule in list %}
                 {% if rule.depth !== 1 %}
-                  <li><a href="pages/{{ slug + '/index.html#' + rule.slug }}">{{ rule.header }}</a></li>
+                  <li class="{% if rule.deprecated %} ds-legacy{% endif %}"><a href="pages/{{ slug + '/index.html#' + rule.slug }}">{{ rule.header }}</a></li>
                 {% endif %}
               {% endfor %}
               </ul>
@@ -79,12 +82,12 @@
             <a class="ds-anchor" id="icons"></a>
             
             {% for iconSet in iconDocs %}
-              <h3 class="title is-3">{{iconSet.name}}</h3>
+              <h3 class="title is-3">{{iconSet.name}} <span class="tag is-info">Count: {{iconSet.icons|length}}</span></h3>
               <div class="columns is-multiline">
                 {% set icons = iconSet.icons %}
                 {% for icon in icons %}
                   <div class="column is-3">
-                    <div class="card t-center">
+                    <div class="card t-align-center">
                       <div class="section has-background-light">
                         <div class="c-icon t-size-xxl">
                           <svg aria-hidden="true" focusable="true">

@@ -5,6 +5,7 @@ const colors = require('ansi-colors');
 
 // lib
 const stylesRunner = require('../../tasks/styles');
+const copyRunner = require('../../tasks/copy');
 const {
   clearConsole,
   printInstructions,
@@ -12,7 +13,7 @@ const {
 } = require('../../tasks/utils');
 
 const docsRunner = require('./docs.js');
-const { mappedStyles } = require('./paths.js');
+const { mappedStyles, mappedCopies } = require('./paths.js');
 
 module.exports = async () => {
   // create the browser-sync client
@@ -91,6 +92,13 @@ module.exports = async () => {
           templatesError = err;
         }
 
+        try {
+          await copyRunner(mappedCopies);
+          templatesError = null;
+        } catch (err) {
+          templatesError = err;
+        }
+
         // if browsersync is active, reload it
         if (bs.active) {
           bs.reload();
@@ -109,6 +117,7 @@ module.exports = async () => {
           './assets/scss/**/*.scss',
           './docs/src/**/*.html',
           './docs/src/scss/**/*.scss',
+          './docs/src/js/**/*.js',
         ],
         compile
       );
