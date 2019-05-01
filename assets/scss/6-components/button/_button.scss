@@ -57,7 +57,7 @@
   }
 }
 
-// Button link (c-link-button)
+// Link button (c-link-button)
 //
 // Experimental: Sometimes, we need buttons to look like links (see Talk embed log in/log out buttons)
 //
@@ -67,9 +67,4 @@
 //
 .c-link-button {
   @include underlined-link;
-  background: none;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  padding: 0;
 }
