@@ -10,7 +10,7 @@
   flex-wrap: wrap;
 
   &__item {
-    flex: 1 1 33.3%;
+    flex: 1 1 auto;
 
     @include mq($until: bp-l) {
       flex: 1 1 100%;
