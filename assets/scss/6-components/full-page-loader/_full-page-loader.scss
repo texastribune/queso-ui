@@ -6,6 +6,9 @@ $loader-bar-height: 10px;
 
   This component is for putting the entire width and
   height of a page in a loading/pending state.
+
+  Inspired by:
+  https://codepen.io/brunjo/pen/XJmbNz
 */
 .c-full-page-loader {
   background-color: rgba(255,255,255,.95);
