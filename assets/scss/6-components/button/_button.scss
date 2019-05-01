@@ -1,6 +1,6 @@
 // Button (c-button)
 //
-// Buttons rely on color helpers for background. The variations are simply sizes. One catch is that are buttons run small in sizes so the names aren't true to their padding and font-size assignments.
+// Buttons rely on color helpers for background and text color. The variations are simply sizes. One catch is that are buttons run small in sizes so the names aren't true to their padding and font-size assignments.
 //
 // .c-button--l - Uses size-l for font size and padding
 // .c-button--s - One step down from default
@@ -21,7 +21,11 @@
   padding: $size-xs;
   text-align: center;
   text-transform: uppercase;
-  transition: all .3s;
+  transition: opacity .3s;
+
+  &:hover, &:active {
+    opacity: .7;
+  }
   
   &--l {
     font-size: $size-l;
@@ -51,4 +55,16 @@
     padding-bottom: 100%;
     position: relative;
   }
+}
+
+// Link button (c-link-button)
+//
+// Experimental: Sometimes, we need buttons to look like links (see Talk embed log in/log out buttons)
+//
+// Markup: <button class="c-link-button">Click me, I'm Irish</button>
+//
+// Styleguide 6.1.1
+//
+.c-link-button {
+  @include underlined-link;
 }

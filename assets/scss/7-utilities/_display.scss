@@ -1,0 +1,42 @@
+// Hidden (is-hidden-<specifier>)
+//
+// Experimental: Contain !important flags to override other display rules.
+//
+// .is-hidden -  Hide always
+// .is-hidden-from-bp-xs -  Hide from bp-xs onward
+// .is-hidden-from-bp-s -  Hide from bp-s onward
+// .is-hidden-from-bp-m -  Hide from bp-m onward
+// .is-hidden-from-bp-l -  Hide from bp-l onward
+// .is-hidden-from-bp-xl -  Hide from bp-xl onward
+// .is-hidden-from-bp-xxl -  Hide from bp-xxl onward
+// .is-hidden-from-bp-default -  Hide from bp-default onward
+// .is-hidden-until-bp-xs -  Hide until bp-xs
+// .is-hidden-until-bp-s -  Hide until bp-s
+// .is-hidden-until-bp-m -  Hide until bp-m
+// .is-hidden-until-bp-l -  Hide until bp-l
+// .is-hidden-until-bp-xl -  Hide until bp-xl
+// .is-hidden-until-bp-xxl -  Hide until bp-xxl
+// .is-hidden-until-bp-default -  Hide until bp-default
+//
+// Markup: <div style="background:#ffc200;" class="{{ className }}">Resize to see me appear/disappear</div>
+//
+//
+// Styleguide 7.0.1
+//
+.is-hidden {
+  display: none !important;
+}
+
+@each $bp-name, $bp-value in $mq-breakpoints {
+  .is-hidden-from-#{$bp-name} {
+    @include mq($from: #{$bp-name}) {
+      display: none !important;
+    }
+  }
+
+  .is-hidden-until-#{$bp-name} {
+    @include mq($until: #{$bp-name}) {
+      display: none !important;
+    }
+  }
+}

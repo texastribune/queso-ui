@@ -66,6 +66,21 @@ $size-xs: .85rem;
 $size-xxs: .7rem;
 $size-xxxs: .55rem;
 
+// Map of all sizes for easy iteration
+$size-map: (
+  xxxl: $size-xxxl,
+  giant: $size-giant,
+  xxl: $size-xxl,
+  xl: $size-xl,
+  l: $size-l,
+  m: $size-m,
+  b: $size-b,
+  s: $size-s,
+  xs: $size-xs,
+  xxs: $size-xxs,
+  xxxs: $size-xxxs,
+);
+
 // Animation breakpoints
 $animation-single-line-bp: 400px;
 $animation-single-line-bp: 550px;
