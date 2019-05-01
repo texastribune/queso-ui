@@ -11,7 +11,7 @@
 
 // Table (c-table)
 //
-// Tabular display classes
+// Tabular display classes. Tables should be constructed with a <thead> and <tbody>.
 //
 // .c-table--striped - Zebra stripes odd rows
 // .c-table--bordered - Bordered rows
@@ -22,9 +22,7 @@
 //
 // Styleguide 6.1.5
 .c-table {
-  // @extend .font-sansserif; // use font helper
   border-collapse: collapse;
-  width: 100%; // use helper class
 
   td,
   th {
@@ -59,10 +57,4 @@
       border-top: 1px solid $color-white-off;
     }
   }
-}
-
-// add to td with text that should be
-// allowed to wrap mid-word
-.is-verbose {
-  word-break: break-all;
 }

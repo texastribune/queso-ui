@@ -345,3 +345,17 @@ $line-height-type: (
   display: inline-block;
   padding: 0 $size-xs;
 }
+
+// Word break (t-wrap)
+//
+// Helper classes for handling how words are allowed to wrap and break.
+// 
+// .t-wrap-break - Allow a word to wrap to the next line mid-word
+//
+// Markup: <p class="t-wrap-break" style="width: 150px;">barbara.gervin.hawkins@house.texas.gov</p>
+//
+//
+// Styleguide 5.3.6
+.t-wrap-break {
+  word-break: break-all;
+}
