@@ -1,0 +1,49 @@
+// Sponsor Card (c-sponsor-card)
+//
+// Used for paid posts {{isWide}}
+//
+// Markup: 6-components/sponsor-card/sponsor-card.html
+//
+// Styleguide 6.1.3
+$c-sponsor-card-padding: $size-s;
+$c-sponsor-card-min: 300px;
+
+.c-sponsor-card {
+  border-top: 5px solid $color-sponsor;
+  display: grid;
+  grid-gap: $c-sponsor-card-padding;
+  grid-template-columns: repeat( auto-fit, minmax( $c-sponsor-card-min, auto ) );
+  padding: ($c-sponsor-card-padding * 3) $c-sponsor-card-padding $c-sponsor-card-padding;
+  align-items: center;
+  position: relative;
+  direction: rtl;
+
+  &__text,
+  &__label {
+    direction: ltr;
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__label {
+    left: $c-sponsor-card-padding;
+    padding: 0;
+    position: absolute;
+    top: $c-sponsor-card-padding;
+  }
+
+  @include mq($from: bp-m) {
+    padding-top: $c-sponsor-card-padding;
+    
+    &__text {
+      padding: 0 $c-sponsor-card-padding;
+    }
+  }
+  @include mq($from: bp-l) {
+    &__text {
+      padding: $c-sponsor-card-padding * 4;
+    }
+  }
+}

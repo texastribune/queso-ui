@@ -10,7 +10,7 @@ const iconDocRunner = require('../../tasks/icon-doc');
 const htmlRunner = require('../../tasks/html');
 const { docsStyles, docsIcons } = require('./paths.js');
 
-const COMPONENT_CSS = './docs/dist/css/base-v2.css';
+const COMPONENT_CSS = './docs/dist/css/all.css';
 
 const clean = async html => {
   const purgecss = new Purgecss({
