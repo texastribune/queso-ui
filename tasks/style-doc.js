@@ -31,8 +31,12 @@ const processSection = (section, dir) => {
   const isFile = markup.includes('.html');
   const isWideStr = '{{isWide}}';
   const isWide = section.description.includes(isWideStr);
+  const isHelperStr = '{{isHelper}}';
+  const isHelper = section.description.includes(isHelperStr);
   const isTool = header.includes('@');
-  const description = section.description.replace(isWideStr, '');
+  const description = section.description
+    .replace(isWideStr, '')
+    .replace(isHelperStr, '');
   const cleanDesc = stripTags(description);
   const githubLink = `${GITHUB_URL}/${section.source.path}#L${
     section.source.line
@@ -77,6 +81,7 @@ const processSection = (section, dir) => {
     slug,
     isFile,
     isWide,
+    isHelper,
     isTool,
     cleanDesc,
     githubLink,

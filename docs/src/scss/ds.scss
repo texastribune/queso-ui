@@ -149,3 +149,8 @@ strong {
 .js-ds-hide-legacy .ds-version-tag {
   display: none;
 }
+
+// Hide arrow for HTML code snippet
+::-webkit-details-marker {
+  display: none;
+}

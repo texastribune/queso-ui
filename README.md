@@ -17,14 +17,37 @@ yarn start
 
 
 ## To Dos
-* [ ] Watch task
+* [x] Watch task
 * [ ] Actions/Versioning and Deploy visual output to URL[https://medium.com/devopslinks/automate-your-npm-publish-with-github-actions-dfe8059645dd] rules
-* [ ] Pre commit linting
+* [x] Pre commit linting
 * [ ] File size tracker
 * [ ] Component status tracker
 * [ ] Accessibility compliance checking
 * [ ] Make VS code comment snippet
-* [ ] Fix code preview and GitHub search feature
+* [x] Fix code preview
+* [ ] GitHub search feature
 * [ ] Way to easily build universal stylesheet
 * [ ] Way to easily build universal sprite
 * [ ] Allow for hiding main demo
+
+
+
+## SCSS docs boilerplate
+
+We use a comment parser along with some [extra logic](https://github.com/texastribune/ds-toolbox/blob/master/tasks/style-doc.js) to generate our docs. To add a new section of documentation, add a boilerplate above your CSS rules like the one below: 
+
+```scss
+// Title of Section (root-class-name)
+//
+// Description {{isWide}} {{isHelper}}
+//
+// root-class-name-modifier - desc
+//
+// Markup: 6-components/test/test.html
+//
+// Styleguide 6.0.1
+//
+.root-class-name {
+  
+}
+```

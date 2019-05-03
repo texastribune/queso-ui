@@ -1,0 +1,12 @@
+repos:
+  - repo: 'https://github.com/prettier/prettier'
+    rev: 1.15.3
+    hooks:
+    -   id: prettier
+        files: '/.*\.(js$)'
+  - repo: 'https://github.com/awebdeveloper/pre-commit-stylelint'
+    sha: 'c4c991cd38b0218735858716b09924f8b20e3812'
+    hooks:
+    -   id: stylelint
+        additional_dependencies: ['stylelint@9.10.1']
+        files: '/.*\.(scss$)'

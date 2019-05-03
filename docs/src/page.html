@@ -130,9 +130,11 @@
             </div>
             {% if markup %}
             <div class="columns is-multiline">
-              <div class="column is-full">
-                {{ snippet(item.header, markup, '', isFile, description, codeSnippet, item.mainClass) }}
-              </div>
+              {% if not item.isHelper %}
+                <div class="column is-full">
+                  {{ snippet(item.header, markup, '', isFile, description, codeSnippet, item.mainClass) }}
+                </div>
+              {% endif %}
               {% if (item.modifiers|length) and ( item.groupName === 'Typography' or item.groupName === 'Utility') %}
                 <div class="column is-full">
                   {{ snippetTable(item.modifiers) }}
