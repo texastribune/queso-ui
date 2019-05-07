@@ -28,7 +28,7 @@ yarn start
 * [ ] GitHub search feature
 * [ ] Way to easily build universal stylesheet
 * [ ] Way to easily build universal sprite
-* [ ] Allow for hiding main demo
+* [x] Allow for hiding main demo
 
 
 
@@ -51,3 +51,5 @@ We use a comment parser along with some [extra logic](https://github.com/texastr
   
 }
 ```
+- `{{isWide}}` is used to display the demo of each modifier at full width
+- `{{isHelper}}` is used to hide main demo and only display modifiers
