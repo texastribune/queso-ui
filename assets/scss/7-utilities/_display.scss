@@ -1,8 +1,43 @@
+// Display  (l-display)
+//
+// Experimental: Display helpers {{isHelper}}
+//
+// .l-display-ib - Inline Block
+// .l-display-block - Block
+// .l-display-inline - Inline
+// .l-clearfix - Clears floats
+//
+// Markup: <span class="{{ className }} has-bg-gray-light"><span class="l-float-left">Example</span></span>
+// 
+//
+// Styleguide 7.0.4
+.l-display-ib {
+  display: inline-block;
+}
+
+.l-display-block {
+  display: block;
+}
+
+.l-display-inline {
+  display: inline;
+}
+
+.l-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
 // Hidden (is-hidden-<specifier>)
 //
-// Experimental: Contain !important flags to override other display rules.
+// Experimental: Contain !important flags to override other display rules. {{isHelper}}
 //
 // .is-hidden -  Hide always
+// .is-hidden-print -  Hide from print previews
 // .is-hidden-from-bp-xs -  Hide from bp-xs onward
 // .is-hidden-from-bp-s -  Hide from bp-s onward
 // .is-hidden-from-bp-m -  Hide from bp-m onward
@@ -25,6 +60,12 @@
 //
 .is-hidden {
   display: none !important;
+}
+
+.is-hidden-print {
+  @media print {
+    display: none !important;
+  }
 }
 
 @each $bp-name, $bp-value in $mq-breakpoints {

@@ -1,35 +1,5 @@
-// Add simple dropdown for Bulma dropdown component
-document.addEventListener('DOMContentLoaded', function() {
-  // Dropdowns
-  var $dropdowns = getAll('.dropdown:not(.is-hoverable)');
-  if ($dropdowns.length > 0) {
-    $dropdowns.forEach(function($el) {
-      $el.addEventListener('click', function(event) {
-        event.stopPropagation();
-        $el.classList.toggle('is-active');
-      });
-    });
-  }
-  function closeDropdowns() {
-    $dropdowns.forEach(function($el) {
-      $el.classList.remove('is-active');
-    });
-  }
-  // Close dropdowns if ESC pressed
-  document.addEventListener('keydown', function(event) {
-    var e = event || window.event;
-    if (e.keyCode === 27) {
-      closeDropdowns();
-    }
-  });
-  // Functions
-  function getAll(selector) {
-    return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
-  }
-});
-
-var hideLegacy = document.querySelector('#hideLegacy');
-hideLegacy.addEventListener('click', function() {
-  document.body.classList.toggle('js-ds-hide-legacy');
+var showLegacy = document.querySelector('#showLegacy');
+showLegacy.addEventListener('click', function() {
+  document.body.classList.toggle('js-ds-show-legacy');
   this.classList.toggle('is-active');
 });

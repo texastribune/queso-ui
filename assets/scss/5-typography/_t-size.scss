@@ -18,21 +18,8 @@
 //
 // Styleguide 5.2.7
 //
-$type-sizes: (
-  xxxl: $size-xxxl,
-  giant: $size-giant,
-  xxl: $size-xxl,
-  xl: $size-xl,
-  l: $size-l,
-  m: $size-m,
-  b: $size-b,
-  s: $size-s,
-  xs: $size-xs,
-  xxs: $size-xxs,
-  xxxs: $size-xxxs,
-);
 
-@each $type-set, $font-size in $type-sizes {
+@each $type-set, $font-size in $size-map {
   .t-size-#{$type-set} {
     font-size: $font-size;
   }
