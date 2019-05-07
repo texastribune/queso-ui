@@ -58,9 +58,11 @@
 //
 // Styleguide 7.0.1
 //
-.is-hidden {
+.is-hidden,
+.hidden {
   display: none !important;
 }
+// ^ including a duplicate class of .hidden right now since it's so littered throughout the code base.
 
 .is-hidden-print {
   @media print {
