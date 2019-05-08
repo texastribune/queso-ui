@@ -42,73 +42,9 @@
   }
 }
 
-
-// Display  (l-display)
-//
-// Experimental: Display helpers
-//
-// .l-display-ib - Inline Block
-// .l-display-block - Block
-// .l-display-inline - Inline
-// .l-clearfix - Clears floats
-//
-// Markup: <span class="{{ className }} has-bg-gray-light"><span class="l-float-left">Example</span></span>
-// 
-//
-// Styleguide 7.0.4
-.l-display-ib {
-  display: inline-block;
-}
-
-.l-display-block {
-  display: block;
-}
-
-.l-display-inline {
-  display: inline;
-}
-
-.l-clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
-
-// Float  (l-float)
-//
-// Experimental: Opinionated floating
-//
-// .l-float--left - Float left
-// .l-float--right  - Float right
-//
-// Markup: <span class="l-display-block l-clearfix has-bg-gray-light"><span class="l-float {{ className }}">Example</span></span>
-// 
-//
-// Styleguide 7.0.4
-.l-float {
-  width: 50%;
-
-  @include mq($until: bp-s) {
-    width: 100%;
-  }
-
-  &--left {
-    float: left;
-    margin: 0 $size-s $size-s 0;
-  }
-
-  &--right {
-    float: right;
-    margin: 0 0 $size-s $size-s;
-  }
-}
-
 // Align (l-align)
 //
-// Experimental: Mostly used for centering and some assume a flex parent.
+// Experimental: Mostly used for centering and some assume a flex parent. {{isHelper}}
 //
 // l-align-center-x - Margin auto FTW
 // l-align-center-y - The ol' vertical transform trick
@@ -148,45 +84,14 @@
 }
 
 
-// Hidden (l-hidden)
-//
-// Experimental: Hides elements for specified experiences.
-//
-// .l-hidden-sr  - Hidden from screen readers
-// .l-hidden-print  - Hidden from printed output
-//
-// Markup: <span style="height: 50px; width: 50px; position: relative" class="has-bg-gray-light"><span class="{{ className }}">Example</span></span>
-// 
-//
-// Styleguide 7.0.4
-.hidden,
-.l-hidden {
-  display: none !important;
-}
-
-.l-hidden-sr {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
-
-.l-hidden-print {
-  @media print {
-    display: none !important;
-  }
-}
-
 // Full width (l-width)
 //
-// Experimental: Stretches element to 100% or at most 100% of its natural width
+// Experimental: Stretches element to 100% or at most 100% of its natural width {{isHelper}}
 //
 // .l-width-full - Width is 100% of parent
 // .l-width-max - Max width is 100% of parent
 //
-// Markup: <div style="width: 300px;" class="has-bg-gray-light"><img class="{{ className }}" src="https://picsum.photos/250?random"/></div>
+// Markup: <div class="has-bg-gray-light"><img class="{{ className }}" src="https://picsum.photos/250?random"/></div>
 // 
 //
 // Styleguide 7.0.5

@@ -230,109 +230,38 @@
 <div class="ds-breathe-vert">
   <h3>HTML Variation 4</h3>
   <p>
-    Overlay; As seen in podcasts. This includes a <code>.c-card__bottom-stick</code>, which is a hack to get the last element of the card to align to the bottom. This card is set as a <code>disply: flex; flex-direction: column</code>. This means its other flex siblings will all be the same height. The player at the bottom is <code>position: aboslute;</code> so that no matter what, it'll always appear at the bottom visually. We shamefully add an inline style of the static height since that can be adjusted in the embed of the player.
+    Overlay; As seen in podcasts.
   </p>
 </div>
-<div class="c-card grid grid_vertical c-card__stick-parent" style="padding-bottom: 105px;">
-  <a href="#" class="l-display-block">
-    <img
-      class="l-display-block l-width-full"
-      src="https://static.feedpress.it/logo/trib-brief-podcast-5ad61ddc8230d.jpg"
-    />
+<article class="grid_row grid_wrap--m c-card c-card__stick-parent grid_separator--xxxl">
+  <div class="col_7 c-card__col">
+  <a href="/podcast/the-brief/" class="l-display-block">
+  <picture class="has-text-gray-dark">
+  <source srcset="https://www.texastribune.org/static/about/images/podcasts/brief-2x.aca85d2bdd95.png 2x, https://www.texastribune.org/static/about/images/podcasts/brief.c78e04c0fe4f.png">
+  <img alt="The Brief podcast" class="l-display-block l-width-full" src="https://www.texastribune.org/static/about/images/podcasts/brief.c78e04c0fe4f.png">
+  </picture>
   </a>
-  <div class="c-card__tag l-display-ib has-bg-black-off t-smallcaps t-center">
-    <div class="t-uppercase has-text-yellow t-size-xs">Daily</div>
-    <div class="t-size-xs has-text-white t-space-nospace">M - F</div>
   </div>
-  <div class="grid grid_separator has-bg-white-off t-size-xs l-align-justify">
-    <div class="grid_row">
-      <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off" href="#"
-        >iTunes</a
-      >
-      <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off" href="#"
-        >Google Play</a
-      >
-      <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off" href="#"
-        >Amazon</a
-      >
-      <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off" href="#">RSS</a>
-    </div>
-  </div>
-  <header class="t-prose grid_separator">
-    <p>
-      Get a quick take on the latest Texas politics and policy news via your
-      favorite podcast app.
-    </p>
-  </header>
-  <div class="c-card__bottom-stick">
-    <span class="t-smallcaps">Listen to the latest episode</span>
-    <a class="spreaker-player" href="https://www.spreaker.com/show/texas-tribune-brief"
-        data-resource="show_id=2716012" data-width="100%" data-height="80px" data-theme="light" data-playlist="false"
-        data-playlist-continuous="false" data-autoplay="false" data-live-autoplay="false" data-chapters-image="true"
-        data-episode-image-position="right" data-hide-logo="true" data-hide-likes="true" data-hide-comments="true"
-        data-hide-sharing="false" data-hide-download="false">Listen to "Texas Tribune Brief" on Spreaker.</a>
-    <span class="t-linkstyle t-uppercase l-display-ib"><a class="t-size-xxs grid_row" href="#">View All
-        Episodes&nbsp;<span class="c-icon"><svg aria-hidden="true"><use xlink:href="#long-arrow-right"></use></svg></span>
-        </svg></a>
-    </span>
-  </div>
-</div>
-
-
-
-<!-- Preview desc -->
-
-
-
-<!-- Preview desc -->
-<div class="ds-breathe-vert">
-  <h3>HTML Variation 6</h3>
-  <p>
-    Overlay; As seen in podcasts. Alternate
-  </p>
-</div>
-<!-- Preview desc -->
-<article class="grid_row grid_wrap--l c-card c-card__stick-parent">
-  <div class="col_6">
-    <a href="/{{ podcast.tt_link_path }}" class="l-display-block">
-      <img class="l-display-block l-width-full" src="thumb.png" />
-    </a>
-    <div class="c-card__bottom-stick l-width-full">
-      <div class="grid has-bg-white-off t-size-xs l-align-justify">
-        <div class="grid_row">
-          <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off"
-            href="#">iTunes</a>
-          <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off" href="#">Google
-            Play</a>
-          <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off"
-            href="#">Amazon</a>
-          <a class="col_inline c-button c-button--s has-text-hover-gray-dark has-text-gray has-bg-white-off" href="#">RSS</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <section class="col_6 c-card__content">
-    <h3 class="t-headline grid_separator--s t-size-xl t-space-nospace">
-      <a href="/{{ podcast.tt_link_path }}">The Brief</a>
+  <section class="col_6 c-card__content c-card__content--grid">
+    <h3 class="t-headline grid_separator--s t-size-l">
+    <a href="/podcast/the-brief/">The Brief</a>
     </h3>
-    <div class="t-uppercase has-text-black-off t-uppercase--extra-wide grid_separator--s t-size-xs"><strong>Daily | M - F</strong></div>
-    <div class="grid_separator--l t-prose t-size-s">
-      <p class="l-display-inline">
-        Get a quick take on the latest Texas politics and policy news via your favorite podcast app. Also available on Amazon Echo.
+    <div class="grid_separator--s t-uppercase t-uppercase--extra-wide t-size-xs"><strong>Monday - Friday</strong></div>
+    <div class="grid_separator--s t-prose t-size-b">
+      <p>
+      Start your day with a quick take on the latest Texas politics and policy news.
+      Subscribe on
+      <a href="https://itunes.apple.com/us/podcast/texas-tribune-brief/id1362288303?mt=2" target="_blank" rel="noopener noreferrer">iTunes</a>,
+      <a href="https://play.google.com/music/listen?u=0#/ps/Ihttygx5gjxrz56yjtxa7dmjkka" target="_blank" rel="noopener noreferrer">Google Play</a>,
+      <a href="https://open.spotify.com/show/6rQtjb1tJJHeS3aDzxP9td" target="_blank" rel="noopener noreferrer">Spotify</a>,
+      <a href="https://www.amazon.com/gp/product/B076HVR13S?ie=UTF8&amp;ref-suffix=ss_rw" target="_blank" rel="noopener noreferrer">Amazon Echo</a>, or&nbsp;
+      <a href="https://feeds.texastribune.org/feeds/podcasts/brief/" target="_blank" rel="noopener noreferrer">RSS</a>
       </p>
-      <span class="l-display-ib">
-        <a class="t-size-xs grid_row t-uppercase t-uppercase--extra-wide has-text-teal t-space-nospace"
-          href="/{{ podcast.tt_link_path }}">
-          <strong>View All Episodes&nbsp;</strong><span class="c-icon"><svg aria-hidden="true"><use xlink:href="#long-arrow-right"></use></svg></span></a>
-      </span>
     </div>
     <div class="l-width-full">
-      <div class="t-uppercase t-uppercase--extra-wide has-text-gray t-size-xxs grid_separator--s">Play the latest episode</div>
-      <a class="spreaker-player l-display-block" href="https://www.spreaker.com/show/texas-tribune-brief" data-resource="show_id=2716012"
-        data-width="100%" data-height="80px" data-theme="light" data-playlist="false" data-playlist-continuous="false"
-        data-autoplay="false" data-live-autoplay="false" data-chapters-image="true"data-hide-logo="true" data-hide-likes="true" data-hide-comments="true" data-hide-sharing="false" data-hide-download="false" data-cover="https://keen-elion-84a6fc.netlify.com/spreaker-bg.png">Listen to "Texas Tribune Brief" on Spreaker.</a>
+      <div class="t-uppercase t-uppercase--extra-wide has-text-gray t-size-xxs grid_separator--xs">Play the latest episode</div>
+      <iframe src="https://widget.spreaker.com/player?show_id=2716012&amp;theme=light&amp;playlist=true&amp;playlist-continuous=true&amp;playlist-loop=false&amp;playlist-autoupdate=true&amp;autoplay=false&amp;live-autoplay=false&amp;chapters-image=true&amp;episode_image_position=right&amp;hide-likes=true&amp;hide-comments=false&amp;hide-sharing=false&amp;hide-logo=true&amp;hide-download=true&amp;hide-episode-description=false&amp;hide-playlist-images=false&amp;hide-playlist-descriptions=false&amp;gdpr-consent=undefined" class="spreaker-player l-display-block" id="spreaker-player-160950" width="100%" height="78px" frameborder="0"></iframe>
     </div>
   </section>
 </article>
-
 <script async src="https://widget.spreaker.com/widgets.js"></script>

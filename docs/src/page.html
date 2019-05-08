@@ -10,7 +10,7 @@
   <meta charset="UTF-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <meta content="ie=edge" http-equiv="X-UA-Compatible" />
-  <title>Document</title>
+  <title>{{name}} | Style Docs for The Texas Tribune.</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet" />
   <link id="base" rel="stylesheet" href="../../css/all-legacy.css" />
   <link id="base-v2" rel="stylesheet" href="../../css/all.css" />
@@ -28,7 +28,7 @@
           <p class="menu-label">
             <div class="box buttons has-text-centered">
               <a href="../../index.html" class="button is-primary is-outlined is-fullwidth">< Back</a>
-              <button class="button is-primary is-fullwidth" id="hideLegacy"><span class="ds-version-tag">Hide</span><span class="ds-version-tag--show">Show</span>&nbsp;Legacy</button>
+              <button class="button is-primary is-fullwidth" id="showLegacy"><span class="ds-version-toggle">Show</span><span>Hide</span>&nbsp;Legacy</button>
             </div>
           </p>
           <ul class="menu-list ds-menu box has-background-light">
@@ -66,10 +66,10 @@
               <h2 class="title is-{{ item.depth }}">
               {{ item.prettyName }}
               {% if item.experimental %}
-              <span class="tag is-info ds-version-tag">V2</span>
+              <span class="ds-version-tag"><span class="tag is-info">V2</span></span>
               {% endif %}
               {% if item.deprecated %}
-              <span class="tag is-warning ds-version-tag">Legacy</span>
+              <span class="ds-version-tag"><span class="tag is-warning">Legacy</span></span>
               {% endif %}
               </h2>
               <div class="subtitle ds-desc">
@@ -130,9 +130,11 @@
             </div>
             {% if markup %}
             <div class="columns is-multiline">
-              <div class="column is-full">
-                {{ snippet(item.header, markup, '', isFile, description, codeSnippet, item.mainClass) }}
-              </div>
+              {% if not item.isHelper %}
+                <div class="column is-full">
+                  {{ snippet(item.header, markup, '', isFile, description, codeSnippet, item.mainClass) }}
+                </div>
+              {% endif %}
               {% if (item.modifiers|length) and ( item.groupName === 'Typography' or item.groupName === 'Utility') %}
                 <div class="column is-full">
                   {{ snippetTable(item.modifiers) }}
@@ -149,30 +151,7 @@
           </div>
           {% endif %}
           {% endfor %}
-          <div class="section ds-spacer">
-            <a class="ds-anchor" id="icons"></a>
-            
-            {% for iconSet in iconSets %}
-              <h3 class="title is-3">{{iconSet.name}}</h3>
-              <div class="columns is-multiline">
-                {% set icons = iconSet.icons %}
-                {% for icon in icons %}
-                  <div class="column is-3">
-                    <div class="card t-center">
-                      <div class="section has-background-light">
-                        <svg class="c-icon c-icon--xxl" aria-hidden="true" focusable="true">
-                          <use xlink:href="#{{icon}}"></use>
-                        </svg>
-                      </div>
-                      <div class="card-content">
-                        <h4 class="subtitle is-4">{{icon}}</h4>
-                      </div>
-                    </div>
-                  </div>
-                {% endfor %}
-              </div>
-            {% endfor %}
-          </section>
+          
         </main>
       </div>
     </div>

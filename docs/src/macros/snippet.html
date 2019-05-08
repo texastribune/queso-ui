@@ -30,19 +30,10 @@
             {% endif %}
         {% endif %}
         {% if codeSnippet %}
-            <div class="dropdown is-block">
-                <div class="dropdown-trigger">
-                    <button aria-controls="dropdown-menu" aria-haspopup="true" class="button">
-                        HTML Example
-                    </button>
-                </div>
-                <div class="dropdown-menu ds-code-dropdown" id="dropdown-menu" role="menu">
-                    <div class="dropdown-content">
-                        <pre class="has-text-danger has-background-black">{{codeSnippet | safe}}</pre>
-                    </div>
-                </div>
-            </div>
-            
+            <details>
+                <summary class="button">HTML Example</summary>
+                <pre class="has-text-danger has-background-black">{{codeSnippet | safe}}</pre>
+            </details>
         {% endif %}
     </div>
 </div>

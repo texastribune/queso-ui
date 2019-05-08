@@ -82,6 +82,7 @@
   },
   "dependencies": {
     "ansi-colors": "^3.2.4",
+    "autoprefixer": "^9.5.1",
     "clean-css": "^4.2.1",
     "fast-glob": "^2.2.6",
     "fs-extra": "^7.0.1",
