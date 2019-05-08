@@ -1,6 +1,6 @@
 // Margin helpers (has-<size>-btm-marg)
 //
-// Experimental: Bottom margin only. Opt for these instead of adding margin-bottom to a new class.
+// Experimental: Bottom margin only. Opt for these instead of adding margin-bottom to a new class. {{isHelper}}
 //
 // .has-xxxl-btm-marg -  Margin bottom with $size-xxxl
 // .has-giant-btm-marg -  Margin bottom with $size-giant
@@ -27,7 +27,7 @@
 
 // Padding helpers (has-padding)
 //
-// Experimental: Not all sizes are accounted for. Often, specific padding rules should go on a component.
+// Experimental: Not all sizes are accounted for. Often, specific padding rules should go on a component. {{isHelper}}
 //
 // .has-padding -  All-around padding with $size-b
 // .has-xs-padding -  All-around padding with $size-xs

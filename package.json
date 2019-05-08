@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "ansi-colors": "^3.2.4",
+    "autoprefixer": "^9.5.1",
     "browser-sync": "^2.26.3",
     "clean-css": "^4.2.1",
     "fast-glob": "^2.2.6",

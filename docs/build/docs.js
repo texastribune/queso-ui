@@ -84,9 +84,7 @@ module.exports = async () => {
   styleDocs.items.map(section => {
     section.list.map(item => {
       if (item.markup.length > 0) {
-        const out = `${previewPathOut}${section.slug}/${
-          item.mainClass
-        }`;
+        const out = `${previewPathOut}${section.slug}/${item.mainClass}`;
         // map preview
         previewArr.push({
           in: previewPathIn,
@@ -94,13 +92,11 @@ module.exports = async () => {
           data: item,
         });
         // map raw preview for components
-        if (section.slug === 'components') {
-          componentArr.push({
-            in: previewPathInRaw,
-            out: `${out}/raw.html`,
-            data: item,
-          });
-        }
+        componentArr.push({
+          in: previewPathInRaw,
+          out: `${out}/raw.html`,
+          data: item,
+        });
       }
       return;
     });

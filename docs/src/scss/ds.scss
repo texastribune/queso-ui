@@ -135,17 +135,27 @@ strong {
   height: 95vh;
 }
 
-.ds-version-tag {
-  &--show {
-    display: none; 
-    
-    .js-ds-hide-legacy & {
-      display: inline;
-    }
-  }
+
+.ds-legacy,
+.ds-version-tag,
+.ds-version-toggle + span {
+  display: none;
 }
 
-.js-ds-hide-legacy .ds-legacy,
-.js-ds-hide-legacy .ds-version-tag {
+.js-ds-show-legacy .ds-legacy,
+.js-ds-show-legacy .ds-version-toggle + span {
+  display: block;
+}
+
+.js-ds-show-legacy .ds-version-toggle {
+  display: none;
+}
+
+.js-ds-show-legacy .ds-version-tag {
+  display: inline-block;
+}
+
+// Hide arrow for HTML code snippet
+::-webkit-details-marker {
   display: none;
 }
