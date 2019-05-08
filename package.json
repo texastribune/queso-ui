@@ -90,6 +90,7 @@
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
     "ora": "^3.4.0",
+    "postcss": "^7.0.16",
     "sass-mq": "^5.0.0",
     "svgo": "^1.2.1",
     "svgstore": "^3.0.0-2"
