@@ -18,17 +18,18 @@ yarn start
 
 ## To Dos
 * [x] Watch task
-* [ ] Actions/Versioning and Deploy visual output to URL[https://medium.com/devopslinks/automate-your-npm-publish-with-github-actions-dfe8059645dd] rules
 * [x] Pre commit linting
+* [x] Fix code preview
+* [x] Allow for hiding main demo
 * [ ] File size tracker
 * [ ] Component status tracker
 * [ ] Accessibility compliance checking
 * [ ] Make VS code comment snippet
-* [x] Fix code preview
 * [ ] GitHub search feature
 * [ ] Way to easily build universal stylesheet
 * [ ] Way to easily build universal sprite
-* [x] Allow for hiding main demo
+* [ ] Add cache busting hash options for assets
+* [ ] Establish a merge to master deployment flow
 
 
 
