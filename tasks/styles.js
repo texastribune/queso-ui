@@ -10,6 +10,7 @@ const CleanCSS = require('clean-css');
 
 // internal
 const { isProductionEnv } = require('./env');
+const { bustCache } = require('./utils');
 
 // postCSS plugins
 // @todo: Add linting when further along in CSS cleanup.
@@ -19,6 +20,7 @@ const processSass = async dirMap => {
   // get input and output
   const filePath = dirMap.in;
   const outputPath = dirMap.out;
+  const { bustedName, baseName, bustedLocation } = bustCache(outputPath);
 
   // compile the sass file
   let compiled = {};
@@ -27,7 +29,7 @@ const processSass = async dirMap => {
     compiled = await sass.renderSync({
       file: filePath,
       includePaths: ['node_modules'],
-      outFile: outputPath,
+      outFile: bustedLocation,
       sourceComments: doShowSourceMaps,
       sourceMap: doShowSourceMaps,
       sourceMapEmbed: doShowSourceMaps,
@@ -67,23 +69,39 @@ const processSass = async dirMap => {
 
   // write out compiled css or html to specified output directory
   try {
-    await fs.outputFile(outputPath, css);
+    await fs.outputFile(bustedLocation, css);
   } catch (err) {
     console.error(err);
   }
-  return `${dirMap.in} => ${dirMap.out}`;
+  let obj = {};
+  obj[baseName] = bustedName;
+  return obj;
 };
 
-module.exports = async mappedStylesArr => {
+const processManifest = async (bustedMap, mappedStylesManifest) => {
+  let bustedMapObj = {};
+  bustedMap.forEach(
+    file => (bustedMapObj[Object.keys(file)] = file[Object.keys(file)])
+  );
+  try {
+    await fs.outputFile(
+      mappedStylesManifest,
+      JSON.stringify(bustedMapObj, null, 2)
+    );
+  } catch (err) {
+    throw err;
+  }
+  return;
+};
+
+module.exports = async (mappedStylesArr, mappedStylesManifest) => {
   const spinner = ora('Compiling SCSS').start();
   // loop through each file found and process our sass
-  return await Promise.all(mappedStylesArr.map(dirMap => processSass(dirMap)))
-    .then(resp => {
-      spinner.succeed();
-      return resp;
-    })
-    .catch(e => {
-      spinner.fail(e);
-      throw e;
-    });
+  const bustedMap = await Promise.all(
+    mappedStylesArr.map(dirMap => processSass(dirMap))
+  );
+  // write a manifest
+  await processManifest(bustedMap, mappedStylesManifest);
+
+  spinner.succeed();
 };

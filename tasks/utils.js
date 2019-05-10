@@ -1,5 +1,5 @@
 // internal
-const fs = require('fs');
+const fs = require('fs-extra');
 // native
 const path = require('path');
 
@@ -274,6 +274,20 @@ const logErrorMessage = err => {
   console.log(`${message || err}\n\n`);
 };
 
+const bustCache = file => {
+  const ext = path.extname(file);
+  const baseName = path.basename(file, ext);
+  const bustedName = `${baseName}.${Date.now()}${ext}`;
+  const bustedLocation = `${path.dirname(file)}/${bustedName}`;
+  return {
+    baseName,
+    bustedName,
+    bustedLocation,
+  };
+};
+
+const getBundles = async mapLocation => await fs.readJson(mapLocation);
+
 module.exports = {
   clearConsole,
   logMessage,
@@ -288,4 +302,6 @@ module.exports = {
   parallel,
   series,
   printInstructions,
+  bustCache,
+  getBundles,
 };

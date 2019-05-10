@@ -13,7 +13,11 @@ const {
 } = require('../../tasks/utils');
 
 const docsRunner = require('./docs.js');
-const { mappedStyles, mappedCopies } = require('./paths.js');
+const {
+  mappedStyles,
+  mappedCopies,
+  mappedStylesManifest,
+} = require('./paths.js');
 
 module.exports = async () => {
   // create the browser-sync client
@@ -77,10 +81,9 @@ module.exports = async () => {
         }
       };
 
-
       const compile = async () => {
         try {
-          await stylesRunner(mappedStyles);
+          await stylesRunner(mappedStyles, mappedStylesManifest);
           stylesError = null;
         } catch (err) {
           stylesError = err;
