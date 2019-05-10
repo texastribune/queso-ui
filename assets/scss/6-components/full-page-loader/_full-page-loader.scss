@@ -2,11 +2,11 @@ $loader-bar-height: 10px;
 
 // Full-page loader (c-full-page-loader)
 //
-// For putting entire width and height of page in a loading state. Inspired by: https://codepen.io/brunjo/pen/XJmbNz
+// For putting a translucent overlay over the entire page. Can contain nested items (including .c-loading), probably with absolute positioning.
 //
 // Styleguide 6.1.1
 .c-full-page-loader {
-  background-color: rgba($color-white-pure, .95);
+  background-color: rgba(247, 247, 247, 0.9);
   height: 100%;
   left: 0;
   position: fixed;
@@ -15,37 +15,4 @@ $loader-bar-height: 10px;
   // normally this is terrible, but we can say with
   // confidence this component should always be on top
   z-index: 9999;
-
-  &__bar {
-    background-color: $color-white-off;
-    height: $loader-bar-height;
-    overflow: hidden;
-    position: relative;
-    width: 100%;
-    
-    &:before {
-      animation: loading-bar 2s linear infinite;
-      background-color: $color-yellow-tribune;
-      content: '';
-      display: block;
-      height: $loader-bar-height;
-      left: -200px;
-      position: absolute;
-      width: 200px;
-    }
-  }
-}
-
-@keyframes loading-bar {
-  from { left: -200px; width: 30%; }
-  
-  50% { width: 30%; }
-  
-  70% { width: 70%; }
-  
-  80% { left: 50%; }
-  
-  95% { left: 120%; }
-  
-  to { left: 100%; }
 }
