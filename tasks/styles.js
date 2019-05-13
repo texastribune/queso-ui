@@ -62,6 +62,7 @@ const processSass = async dirMap => {
   if (isProductionEnv) {
     const cssCleaner = new CleanCSS({
       returnPromise: true,
+      level: 2,
     });
     const { styles: minified } = await cssCleaner.minify(css);
     css = minified;
