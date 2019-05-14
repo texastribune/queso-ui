@@ -6,15 +6,12 @@
 //
 // Styleguide 6.1.3
 .c-info-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $size-xl;
   list-style: none;
 
-  &__item {
-    flex: 1 1 auto;
-
-    @include mq($until: bp-l) {
-      flex: 1 1 100%;
-    }
+  @include mq($until: bp-s) {
+    grid-template-columns: 1fr;
   }
 }
