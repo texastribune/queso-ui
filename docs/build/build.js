@@ -19,7 +19,7 @@ const {
 
 async function build() {
   // empty dist
-  await fs.emptyDir(buildDir);
+  // await fs.emptyDir(buildDir);
 
   // compile and move files
   await stylesRunner(mappedStyles, mappedStylesManifest);
