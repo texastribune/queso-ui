@@ -1,28 +1,33 @@
+const buildDir = './docs/dist/';
+
 const mappedStyles = [
   {
     in: './docs/src/scss/ds.scss',
-    out: './docs/dist/css/ds.css',
+    out: `${buildDir}css/ds.css`,
   },
   {
     in: './assets/scss/all.scss',
-    out: './docs/dist/css/all.css',
+    out: `${buildDir}css/all.css`,
   },
   {
     in: './assets/scss/all-legacy.scss',
-    out: './docs/dist/css/all-legacy.css',
+    out: `${buildDir}css/all-legacy.css`,
   },
 ];
+
+// cache busting map
+const mappedStylesManifest = `${buildDir}css/styles.json`;
 
 const docsStyles = './assets/scss/';
 
 const mappedIcons = [
   {
     in: './assets/icons/amp/',
-    out: './docs/dist/sprites/amp.html',
+    out: `${buildDir}sprites/amp.html`,
   },
   {
     in: './assets/icons/base/',
-    out: './docs/dist/sprites/base.html',
+    out: `${buildDir}sprites/base.html`,
   },
 ];
 
@@ -31,18 +36,20 @@ const docsIcons = ['./assets/icons/'];
 const mappedCopies = [
   {
     in: './docs/src/img',
-    out: './docs/dist/img',
+    out: `${buildDir}img`,
   },
   {
     in: './docs/src/js',
-    out: './docs/dist/js',
+    out: `${buildDir}js`,
   },
 ];
 
 module.exports = {
   mappedStyles,
+  mappedStylesManifest,
   docsStyles,
   mappedIcons,
   docsIcons,
   mappedCopies,
+  buildDir,
 };

@@ -1,5 +1,6 @@
 // utility packages
 const fs = require('fs-extra');
+const path = require('path');
 const ora = require('ora');
 
 // css packages
@@ -10,15 +11,20 @@ const CleanCSS = require('clean-css');
 
 // internal
 const { isProductionEnv } = require('./env');
+const { bustCache, getBundles } = require('./utils');
+const spinner = ora();
 
 // postCSS plugins
 // @todo: Add linting when further along in CSS cleanup.
 const postCSSInstance = postCSS([autoprefixer({ grid: true })]);
 
-const processSass = async dirMap => {
+const processSass = async (dirMap, oldBundles) => {
   // get input and output
   const filePath = dirMap.in;
   const outputPath = dirMap.out;
+  const outputDir = path.dirname(outputPath);
+
+  let { bustedName, baseName, bustedLocation } = bustCache(outputPath);
 
   // compile the sass file
   let compiled = {};
@@ -27,7 +33,7 @@ const processSass = async dirMap => {
     compiled = await sass.renderSync({
       file: filePath,
       includePaths: ['node_modules'],
-      outFile: outputPath,
+      outFile: bustedLocation,
       sourceComments: doShowSourceMaps,
       sourceMap: doShowSourceMaps,
       sourceMapEmbed: doShowSourceMaps,
@@ -43,8 +49,7 @@ const processSass = async dirMap => {
   }
 
   // grab CSS of compiled object
-  // eslint-disable-next-line prefer-destructuring
-  let css = compiled.css;
+  let { css } = compiled;
 
   // pass CSS through postcss plugins declared in postCSSInstance
   try {
@@ -60,30 +65,70 @@ const processSass = async dirMap => {
   if (isProductionEnv) {
     const cssCleaner = new CleanCSS({
       returnPromise: true,
+      level: 2,
     });
     const { styles: minified } = await cssCleaner.minify(css);
     css = minified;
   }
 
+  // check if this css is same as last
+  if (typeof oldBundles[baseName] !== 'undefined') {
+    try {
+      const oldName = oldBundles[baseName];
+      const oldLocation = `${outputDir}/${oldName}`;
+      const oldVersion = await fs.readFileSync(oldLocation, 'utf8');
+      if (oldVersion === css) {
+        bustedName = oldName;
+        bustedLocation = oldLocation;
+      }
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
   // write out compiled css or html to specified output directory
   try {
-    await fs.outputFile(outputPath, css);
+    await fs.outputFile(bustedLocation, css);
   } catch (err) {
     console.error(err);
   }
-  return `${dirMap.in} => ${dirMap.out}`;
+
+  let obj = {};
+  obj[baseName] = bustedName;
+  return obj;
 };
 
-module.exports = async mappedStylesArr => {
-  const spinner = ora('Compiling SCSS').start();
+const processManifest = async (bustedMap, mappedStylesManifest) => {
+  let bustedMapObj = {};
+  bustedMap.forEach(
+    file => (bustedMapObj[Object.keys(file)] = file[Object.keys(file)])
+  );
+  try {
+    await fs.outputFile(
+      mappedStylesManifest,
+      JSON.stringify(bustedMapObj, null, 2)
+    );
+  } catch (err) {
+    throw err;
+  }
+  return;
+};
+
+module.exports = async (mappedStylesArr, mappedStylesManifest) => {
+  spinner.start('Compiling SCSS');
+  // first grab old bundle map for no-change events
+  let oldBundles = {};
+  try {
+    oldBundles = await getBundles(mappedStylesManifest);
+  } catch (error) {
+    spinner.warn('No prior CSS bundles found.');
+  }
   // loop through each file found and process our sass
-  return await Promise.all(mappedStylesArr.map(dirMap => processSass(dirMap)))
-    .then(resp => {
-      spinner.succeed();
-      return resp;
-    })
-    .catch(e => {
-      spinner.fail(e);
-      throw e;
-    });
+  const bustedMap = await Promise.all(
+    mappedStylesArr.map(dirMap => processSass(dirMap, oldBundles))
+  );
+  // write a manifest
+  await processManifest(bustedMap, mappedStylesManifest);
+
+  spinner.succeed();
 };

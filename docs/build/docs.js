@@ -8,14 +8,18 @@ const path = require('path');
 const styleDocRunner = require('../../tasks/style-doc');
 const iconDocRunner = require('../../tasks/icon-doc');
 const htmlRunner = require('../../tasks/html');
-const { docsStyles, docsIcons } = require('./paths.js');
+const { getBundles } = require('../../tasks/utils');
+const { docsStyles, docsIcons, mappedStylesManifest } = require('./paths.js');
 
-const COMPONENT_CSS = './docs/dist/css/all.css';
+const COMPONENT_CSS_FILE = 'all';
+const COMPONENT_CSS_PATH = './docs/dist/css';
 
-const clean = async html => {
+const clean = async (html, bundles) => {
+  const filePath = `${COMPONENT_CSS_PATH}/${bundles[COMPONENT_CSS_FILE]}`;
+
   const purgecss = new Purgecss({
     content: [html],
-    css: [COMPONENT_CSS],
+    css: [filePath],
     extractors: [
       {
         extractor: purgeHtml,
@@ -49,9 +53,12 @@ module.exports = async () => {
   // creates object for docs
   const styleDocs = await styleDocRunner(docsStyles);
   const iconDocs = await iconDocRunner(docsIcons);
+  const bundles = await getBundles(mappedStylesManifest);
+
   const allDocs = {
     styleDocs,
     iconDocs,
+    bundles,
   };
   try {
     await fs.outputFile(
@@ -66,6 +73,7 @@ module.exports = async () => {
   const pagesPathIn = './docs/src/page.html';
   const pagesPathOut = './docs/dist/pages/';
   const htmlMap = styleDocs.items.map(section => {
+    section['bundles'] = bundles;
     return {
       in: pagesPathIn,
       out: `${pagesPathOut}${section.slug}/index.html`,
@@ -85,6 +93,7 @@ module.exports = async () => {
     section.list.map(item => {
       if (item.markup.length > 0) {
         const out = `${previewPathOut}${section.slug}/${item.mainClass}`;
+        item['bundles'] = bundles;
         // map preview
         previewArr.push({
           in: previewPathIn,
@@ -107,7 +116,9 @@ module.exports = async () => {
   await htmlRunner(componentArr);
 
   // generate component CSS
-  await Promise.all(componentArr.map(component => clean(component.out)));
+  await Promise.all(
+    componentArr.map(component => clean(component.out, bundles))
+  );
 
   // creates main
   const mainPathIn = './docs/src/index.html';
