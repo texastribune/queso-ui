@@ -10,4 +10,8 @@
   grid-template-columns: repeat(3, 1fr);
   gap: $size-xl;
   list-style: none;
+
+  @include mq($until: bp-s) {
+    grid-template-columns: 1fr;
+  }
 }
