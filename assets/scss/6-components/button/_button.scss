@@ -67,4 +67,6 @@
 //
 .c-link-button {
   @include underlined-link;
+  cursor: pointer;
+  line-height: normal;
 }
