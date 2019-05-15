@@ -15,4 +15,9 @@ $loader-bar-height: 10px;
   // normally this is terrible, but we can say with
   // confidence this component should always be on top
   z-index: 9999;
+
+  // if you don't want anything below to be visible
+  &--opaque {
+    background-color: rgb(247, 247, 247);
+  }
 }
