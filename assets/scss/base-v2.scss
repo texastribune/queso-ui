@@ -1,3 +1,14 @@
+// base-v2.css
+//
+// This of this as our <strong>MVP</strong> (most viable product). The minimum amount of styles you'd need to get up and running with a new template in our eco-system. <div><code>@import "ds-toolbox-test/assets/scss/1-settings/base-v2"</code></div>
+//
+// Styleguide 0.0.1
+@import '1-settings/all';
+@import '2-tools/all';
+@import '4-elements/all';
+@import '5-typography/all';
+@import '6-components/all';
+@import '7-utilities/all';
 @import '1-settings/all';
 @import '2-tools/all';
 @import '3-resets/all';

@@ -13,6 +13,10 @@ const mappedStyles = [
     in: './assets/scss/all-legacy.scss',
     out: `${buildDir}css/all-legacy.css`,
   },
+  {
+    in: './assets/scss/no-resets.scss',
+    out: `${buildDir}css/no-resets.css`,
+  },
 ];
 
 // cache busting map

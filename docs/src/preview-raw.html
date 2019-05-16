@@ -1,15 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>{{mainClass}} | Standalone</title>
+</head>
+<body>
 <!-- {{ mainClass }} -->
 {% if isFile %}
-    {% include "../../assets/scss/" + markup %}
+  {% include "../../assets/scss/" + markup %}
 {% else %}
-    {{ markup | safe }}
+  {{ markup | safe }}
 {% endif %}
 {% for modifier in modifiers %}
-  {% set className = modifier.className %}
-  <!-- {{ className }} -->
-  {% if isFile %}
-    {% include "../../assets/scss/" + markup %}
-  {% else %}
-    {{ modifier.markup | safe }}
-  {% endif %}     
+{% set className = modifier.className %}
+<!-- {{ className }} -->
+{% if isFile %}
+  {% include "../../assets/scss/" + markup %}
+{% else %}
+  {{ modifier.markup | safe }}
+{% endif %}
 {% endfor %}
+</body>
+</html>
+
