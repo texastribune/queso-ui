@@ -1,0 +1,11 @@
+// no-resets.css
+//
+// This CSS file uses <strong>everything with the exception of our resets</strong>. We use this to generate standalone CSS for components. In that process we take the component HTML and no-resets.css. We then prune the excess CSS that isn't referenced in the HTML. If you were to navigate to <em>pages/components/{c-component-name}/raw-preview.html</em> and view source, you'll see the pruned output of this file based on the HTML of the component. <div><code>@import "ds-toolbox-test/assets/scss/1-settings/no-resets"</code></div>
+//
+// Styleguide 0.0.1
+@import '1-settings/all';
+@import '2-tools/all';
+@import '4-elements/all';
+@import '5-typography/all';
+@import '6-components/all';
+@import '7-utilities/all';

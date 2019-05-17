@@ -1,6 +1,6 @@
 // Sponsor Card (c-sponsor-card)
 //
-// Used for paid posts {{isWide}}
+// Our sponsored content components are a work in progress, but the idea is for this card to be minimally reliant on media queries. It should scale appropriately to any size of parent container. {{isWide}}
 //
 // Markup: 6-components/sponsor-card/sponsor-card.html
 //
@@ -12,9 +12,9 @@ $c-sponsor-card-min: 300px;
   border-top: 5px solid $color-sponsor;
   display: grid;
   grid-gap: $c-sponsor-card-padding;
-  grid-template-columns: repeat( auto-fit, minmax( $c-sponsor-card-min, auto ) );
-  padding: ($c-sponsor-card-padding * 3) $c-sponsor-card-padding $c-sponsor-card-padding;
-  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax($c-sponsor-card-min, auto));
+  padding: ($c-sponsor-card-padding * 3) $c-sponsor-card-padding
+    $c-sponsor-card-padding;
   position: relative;
   direction: rtl;
 
@@ -24,6 +24,7 @@ $c-sponsor-card-min: 300px;
   }
 
   &__image {
+    min-height: 100%;
     object-fit: cover;
   }
 
@@ -34,16 +35,25 @@ $c-sponsor-card-min: 300px;
     top: $c-sponsor-card-padding;
   }
 
+  &__main {
+    align-self: flex-start;
+  }
+
+  &__text {
+    display: grid;
+  }
+
   @include mq($from: bp-m) {
     padding-top: $c-sponsor-card-padding;
-    
-    &__text {
-      padding: 0 $c-sponsor-card-padding;
+
+    &__label {
+      position: static;
+      align-self: start;
     }
-  }
-  @include mq($from: bp-l) {
-    &__text {
-      padding: $c-sponsor-card-padding * 4;
+
+    &__main {
+      padding: 0 $c-sponsor-card-padding 0 $c-sponsor-card-padding * 2;
     }
+
   }
 }

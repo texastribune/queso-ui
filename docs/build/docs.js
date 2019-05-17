@@ -11,7 +11,7 @@ const htmlRunner = require('../../tasks/html');
 const { getBundles } = require('../../tasks/utils');
 const { docsStyles, docsIcons, mappedStylesManifest } = require('./paths.js');
 
-const COMPONENT_CSS_FILE = 'all';
+const COMPONENT_CSS_FILE = 'no-resets';
 const COMPONENT_CSS_PATH = './docs/dist/css';
 
 const clean = async (html, bundles) => {
