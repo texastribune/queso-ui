@@ -1,8 +1,10 @@
 // utility
 const fs = require('fs-extra');
+const axios = require('axios');
 const Purgecss = require('purgecss');
 const purgeHtml = require('purgecss-from-html');
 const path = require('path');
+const dotenv = require('dotenv').config();
 
 // internal
 const styleDocRunner = require('../../tasks/style-doc');
@@ -13,6 +15,7 @@ const { docsStyles, docsIcons, mappedStylesManifest } = require('./paths.js');
 
 const COMPONENT_CSS_FILE = 'no-resets';
 const COMPONENT_CSS_PATH = './docs/dist/css';
+const GITHUB_DATA_URL = process.env.GITHUB_DATA_URL;
 
 const clean = async (html, bundles) => {
   const filePath = `${COMPONENT_CSS_PATH}/${bundles[COMPONENT_CSS_FILE]}`;
@@ -49,16 +52,71 @@ const clean = async (html, bundles) => {
   }
 };
 
+const fetch = async () => {
+  try {
+    const response = await axios.get(GITHUB_DATA_URL);
+    const { data } = response;
+    return data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+const merge = (github, styles) => {
+  const items = styles.items.map(section => {
+    const list = section.list.map(classInfo => {
+      const { mainClass } = classInfo;
+      let githubData = {};
+      if (typeof github[mainClass] !== 'undefined') {
+        githubData = github[mainClass];
+      }
+      const modifiers = classInfo.modifiers.map(modifier => {
+        const { className } = modifier;
+        let githubDataMod = {};
+        if (typeof github[className] !== 'undefined') {
+          githubDataMod = github[className];
+        }
+        return {
+          ...modifier,
+          githubData: githubDataMod,
+        };
+      });
+      return {
+        ...classInfo,
+        githubData,
+        modifiers,
+      };
+    });
+    return {
+      ...section,
+      list,
+    };
+  });
+  return {
+    ...styles,
+    items,
+  };
+};
+
 module.exports = async () => {
   // creates object for docs
-  const styleDocs = await styleDocRunner(docsStyles);
+  let styleDocs = await styleDocRunner(docsStyles);
   const iconDocs = await iconDocRunner(docsIcons);
   const bundles = await getBundles(mappedStylesManifest);
 
+  // add github data
+  const githubJSON = await fetch();
+  try {
+    styleDocs = merge(githubJSON, styleDocs);
+  } catch (error) {
+    console.log(error);
+  }
+  // loop through classes and add github data
   const allDocs = {
     styleDocs,
     iconDocs,
     bundles,
+    githubJSON,
   };
   try {
     await fs.outputFile(

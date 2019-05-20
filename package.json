@@ -31,7 +31,9 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
+    "axios": "^0.18.0",
     "browser-sync": "^2.26.3",
+    "dotenv": "^8.0.0",
     "kss": "https://github.com/kss-node/kss-node",
     "nunjucks": "^3.1.7",
     "prettier": "1.16.3",
