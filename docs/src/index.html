@@ -82,7 +82,7 @@
             <a class="ds-anchor" id="icons"></a>
             
             {% for iconSet in iconDocs %}
-              <h3 class="title is-3">{{iconSet.name}} <span class="tag is-info">Count: {{iconSet.icons|length}}</span></h3>
+              <h3 class="title is-3">{{iconSet.name}} <span class="tag is-rounded">{{iconSet.icons|length}}</span></h3>
               <div class="columns is-multiline">
                 {% set icons = iconSet.icons %}
                 {% for icon in icons %}

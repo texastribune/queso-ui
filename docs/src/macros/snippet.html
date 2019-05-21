@@ -1,3 +1,4 @@
+{% from "../../src/macros/data-list.html" import dataList %}
 {% macro snippet(name, code, modifier, isFile, description, codeSnippet, mainClass) %}
 <div class="card">
     {% set className = modifier.className %}
@@ -25,7 +26,8 @@
         {% else %}
             {% if modifier %}
             <div class="box{% if modifier.isInverse %} has-background-black{% endif %} ds-grid-lines">{{ modifier.markup | safe }}</div>
-            <p>{{ modifier.description }}</p>
+            <p class="ds-breathe-vert">{{ modifier.description }}</p>
+            {{ dataList(modifier.githubData) }}
             {% else %}
             <div class="box{% if modifier.isInverse %} has-background-black{% endif %} ds-grid-lines">{{ code | safe }}</div>
             {% endif %}

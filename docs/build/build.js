@@ -1,6 +1,3 @@
-// utility
-const fs = require('fs-extra');
-
 // lib
 const stylesRunner = require('../../tasks/styles');
 const iconsRunner = require('../../tasks/icons');
@@ -8,18 +5,18 @@ const copyRunner = require('../../tasks/copy');
 
 // custom to this build
 const docsRunner = require('./docs.js');
+const githubRunner = require('./github.js');
 
 const {
   mappedStyles,
   mappedIcons,
   mappedCopies,
   mappedStylesManifest,
-  buildDir,
 } = require('./paths.js');
 
 async function build() {
-  // empty dist
-  // await fs.emptyDir(buildDir);
+  // grab github data
+  await githubRunner();
 
   // compile and move files
   await stylesRunner(mappedStyles, mappedStylesManifest);

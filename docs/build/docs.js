@@ -9,7 +9,12 @@ const styleDocRunner = require('../../tasks/style-doc');
 const iconDocRunner = require('../../tasks/icon-doc');
 const htmlRunner = require('../../tasks/html');
 const { getBundles } = require('../../tasks/utils');
-const { docsStyles, docsIcons, mappedStylesManifest } = require('./paths.js');
+const {
+  docsStyles,
+  docsIcons,
+  mappedStylesManifest,
+  mappedGithubData,
+} = require('./paths.js');
 
 const COMPONENT_CSS_FILE = 'no-resets';
 const COMPONENT_CSS_PATH = './docs/dist/css';
@@ -49,12 +54,63 @@ const clean = async (html, bundles) => {
   }
 };
 
+const merge = async styles => {
+  let github = {};
+  try {
+    github = await fs.readJson(mappedGithubData.out);
+  } catch (err) {
+    console.error(err);
+    return styles;
+  }
+  const items = styles.items.map(section => {
+    const list = section.list.map(classInfo => {
+      const { mainClass } = classInfo;
+      let githubData = {};
+      if (typeof github[mainClass] !== 'undefined') {
+        githubData = github[mainClass].searchDataArr;
+      }
+      const modifiers = classInfo.modifiers.map(modifier => {
+        const { className } = modifier;
+        let githubDataMod = {};
+        if (typeof github[className] !== 'undefined') {
+          githubDataMod = github[className].searchDataArr;
+        }
+        return {
+          ...modifier,
+          githubData: githubDataMod,
+        };
+      });
+      return {
+        ...classInfo,
+        githubData,
+        modifiers,
+      };
+    });
+    return {
+      ...section,
+      list,
+    };
+  });
+  return {
+    ...styles,
+    items,
+  };
+};
+
 module.exports = async () => {
   // creates object for docs
-  const styleDocs = await styleDocRunner(docsStyles);
+  let styleDocs = await styleDocRunner(docsStyles);
   const iconDocs = await iconDocRunner(docsIcons);
   const bundles = await getBundles(mappedStylesManifest);
 
+  // add github data
+  try {
+    styleDocs = await merge(styleDocs);
+  } catch (error) {
+    console.log(error);
+  }
+
+  // loop through classes and add github data
   const allDocs = {
     styleDocs,
     iconDocs,
