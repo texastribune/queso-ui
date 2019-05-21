@@ -13,6 +13,8 @@ const {
 } = require('../../tasks/utils');
 
 const docsRunner = require('./docs.js');
+const githubRunner = require('./github.js');
+
 const {
   mappedStyles,
   mappedCopies,
@@ -109,6 +111,9 @@ module.exports = async () => {
 
         logStatus();
       };
+
+      // build github data
+      await githubRunner();
 
       // initial compile
       await compile();

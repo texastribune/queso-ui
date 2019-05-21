@@ -43,9 +43,6 @@
   position: absolute;
 }
 
-.is-active .ds-code-dropdown {
-  position: static;
-}
 
 .ds-grid-example div[class^='col'] {
   border: 1px solid #ccc;
@@ -158,4 +155,14 @@ strong {
 // Hide arrow for HTML code snippet
 ::-webkit-details-marker {
   display: none;
+}
+
+.ds-dropdown {
+  position: relative;
+  
+  &__items {
+    position: absolute;
+    z-index: 1;
+  }
+  
 }

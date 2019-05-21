@@ -48,9 +48,15 @@ const mappedCopies = [
   },
 ];
 
+const mappedGithubData = {
+  in: 'https://ds-test-1234.s3.amazonaws.com/github.json',
+  out: './docs/dist/data/github.json',
+};
+
 module.exports = {
   mappedStyles,
   mappedStylesManifest,
+  mappedGithubData,
   docsStyles,
   mappedIcons,
   docsIcons,

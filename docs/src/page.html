@@ -4,6 +4,7 @@
 {% from "../src/macros/snippet-tool.html" import snippetTool %}
 {% from "../src/macros/snippet-table.html" import snippetTable %}
 {% from "../src/macros/title-bar.html" import titleBar %}
+{% from "../src/macros/data-list.html" import dataList %}
 <!DOCTYPE html>
 <html class="fonts-loaded" lang="en">
 <head>
@@ -102,31 +103,7 @@
             {% endif %}
             <!-- GitHub counts -->
             <div class="ds-breathe-vert">
-            {% for repo in item.gitHubData %}
-            
-              <div class="dropdown">
-                <div class="dropdown-trigger">
-                  <button aria-controls="dropdown-menu" aria-haspopup="true" class="button">
-                    Found in&nbsp;
-                    <span class="tag is-warning">
-                      <strong>
-                        {{ repo.count }}</strong>
-                    </span>
-                    &nbsp;places in&nbsp;<strong>{{ repo.name }}</strong>
-                  </button>
-                </div>
-                <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                  <div class="dropdown-content">
-                    {% for result in repo.results %}
-                    <a class="dropdown-item" href="{{ result.link }}">
-                      {{ result.file }}
-                    </a>
-                    {% endfor %}
-                  </div>
-                </div>
-              </div>
-            
-            {% endfor %}
+            {{ dataList(item.githubData) }}
             </div>
             {% if markup %}
             <div class="columns is-multiline">
@@ -151,7 +128,6 @@
           </div>
           {% endif %}
           {% endfor %}
-          
         </main>
       </div>
     </div>

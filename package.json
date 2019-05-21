@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "lint": "stylelint 'assets/**/**.scss' && prettier --write './tasks/**/*.js'",
-    "deploy-docs": "npm run build-docs && surge ./docs/dist --domain 'ttds.surge.sh'",
+    "deploy-docs": "npm run build-docs && surge ./docs/dist --domain 'https://ttds.surge.sh/'",
     "build-docs": "node docs/build/build.js",
     "dev-docs": "node docs/build/develop.js"
   },
@@ -33,7 +33,6 @@
   "devDependencies": {
     "axios": "^0.18.0",
     "browser-sync": "^2.26.3",
-    "dotenv": "^8.0.0",
     "kss": "https://github.com/kss-node/kss-node",
     "nunjucks": "^3.1.7",
     "prettier": "1.16.3",
