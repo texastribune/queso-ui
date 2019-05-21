@@ -159,10 +159,10 @@ strong {
 
 .ds-dropdown {
   position: relative;
-  
+
   &__items {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
   }
   
 }
