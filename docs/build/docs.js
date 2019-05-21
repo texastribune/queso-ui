@@ -18,7 +18,6 @@ const {
 
 const COMPONENT_CSS_FILE = 'no-resets';
 const COMPONENT_CSS_PATH = './docs/dist/css';
-const GITHUB_DATA_PATH = './docs/dist/data/github.json';
 
 const clean = async (html, bundles) => {
   const filePath = `${COMPONENT_CSS_PATH}/${bundles[COMPONENT_CSS_FILE]}`;

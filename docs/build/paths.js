@@ -49,7 +49,8 @@ const mappedCopies = [
 ];
 
 const mappedGithubData = {
-  in: 'https://ds-test-1234.s3.amazonaws.com/github.json',
+  in:
+    'https://s3.amazonaws.com/cdn.texastribune.org/design-system/class-usage.json',
   out: './docs/dist/data/github.json',
 };
 

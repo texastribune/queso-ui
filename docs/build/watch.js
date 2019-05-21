@@ -1,4 +1,4 @@
-// packages
+// utility
 const watch = require('glob-watcher');
 const browserSync = require('browser-sync');
 const colors = require('ansi-colors');

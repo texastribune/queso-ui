@@ -12,7 +12,6 @@ const {
   mappedIcons,
   mappedCopies,
   mappedStylesManifest,
-  buildDir,
 } = require('./paths.js');
 
 async function build() {
