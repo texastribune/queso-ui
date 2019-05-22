@@ -1,6 +1,6 @@
 // all.css
 //
-// This includes our <strong>whole system</strong>. You will very rarely want to import this. One use case is this documentation site. <div><code>@import "ds-toolbox-test/assets/scss/all"</code></div>
+// This includes our <strong>whole system</strong>. You will very rarely want to import this. One use case is this documentation site. <div>`@import "ds-toolbox-test/assets/scss/all"`</div>
 //
 // Styleguide 0.0.1
 @import '1-settings/all';
@@ -9,4 +9,5 @@
 @import '4-elements/all';
 @import '5-typography/all';
 @import '6-components/all';
-@import '7-utilities/all';
+@import '7-layout/all';
+@import 'utilities/all';

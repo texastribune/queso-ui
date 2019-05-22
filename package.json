@@ -34,6 +34,7 @@
     "axios": "^0.18.0",
     "browser-sync": "^2.26.3",
     "kss": "https://github.com/kss-node/kss-node",
+    "markdown-it": "^8.4.2",
     "nunjucks": "^3.1.7",
     "prettier": "1.16.3",
     "purgecss": "^1.3.0",

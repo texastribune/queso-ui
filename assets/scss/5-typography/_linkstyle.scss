@@ -1,0 +1,55 @@
+// Links (t-linkstyle)
+//
+// Although we can now use the mixin underlined-link to style links, we still need a helper class at times to apply it. NOTE: Apply this to a parent to have descendant a tags inherit the respective link style.
+//
+// .t-linkstyle--blue - Blue instead of default teal.
+// .t-linkstyle--underlined - Give our underlined look to all links.
+// .t-linkstyle--underlined-subtle - Give our underlined look to all links ONLY ON HOVER.
+//
+// Markup: <p class="t-linkstyle {{ className }}">In V2, we still apply link classes to a parent block. <a>This is a regular link in that block ipsum. <a class="t-unlink">This is link using the "t-unlink" class, which is used to override default link style and look like regular text.</a></p>
+//
+// Styleguide 5.2.8
+//
+.t-linkstyle {
+  a:not(.t-unlink) {
+    color: $color-teal-gray;
+    font-weight: bold;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  &--blue {
+    a:not(.t-unlink) {
+      color: $color-blue-dark;
+    }
+  }
+
+  &--underlined {
+    @include underlined-link-parent;
+  }
+
+  &--underlined-subtle {
+    @include underlined-link-parent('true');
+  }
+}
+
+// Non-links (t-unlink)
+//
+// Force a link to look like regular text.
+//
+// Markup: <p class="t-linkstyle">The unlink class removes default link styles. <a>This is a regular link</a> and <a class="t-unlink">this is a link with the t-unlink class.</a></p>
+//
+// Styleguide 5.2.8
+//
+.t-unlink {
+  border: none;
+  box-shadow: none;
+
+  &:hover,
+  &:active {
+    border: 0;
+    text-decoration: none;
+  }
+}

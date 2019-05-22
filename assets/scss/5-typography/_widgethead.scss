@@ -1,0 +1,17 @@
+// Widgethead (t-widgethead)
+//
+// Colored block with padding and letter spacing. This could likely be deprecated in favor of combining helper classes to accomplish the same look.
+//
+// .has-bg-black-off.has-text-white - BG of black with white text
+// .has-bg-yellow - BG of yellow
+// .has-bg-blue - BG of blue
+//
+// Markup: <h3 class="t-widgethead t-uppercase {{ className }}">Widgetheads can be coupled with the has-bg-color classes.</h3>
+//
+//
+// Styleguide 5.3.3
+.t-widgethead {
+  background-color: $color-white-off;
+  letter-spacing: $font-letter-spacing;
+  padding: $size-b/2 $size-b;
+}

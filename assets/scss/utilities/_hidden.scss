@@ -1,40 +1,6 @@
-// Display  (l-display)
-//
-// Experimental: Display helpers {{isHelper}}
-//
-// .l-display-ib - Inline Block
-// .l-display-block - Block
-// .l-display-inline - Inline
-// .l-clearfix - Clears floats
-//
-// Markup: <span class="{{ className }} has-bg-gray-light"><span class="l-float-left">Example</span></span>
-// 
-//
-// Styleguide 7.0.4
-.l-display-ib {
-  display: inline-block;
-}
-
-.l-display-block {
-  display: block;
-}
-
-.l-display-inline {
-  display: inline;
-}
-
-.l-clearfix {
-  &:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-}
-
-
 // Hidden (is-hidden-<specifier>)
 //
-// Experimental: Contain !important flags to override other display rules. {{isHelper}}
+// Contain !important flags to override other display rules. {{isHelper}}
 //
 // .is-hidden -  Hide always
 // .is-hidden-print -  Hide from print previews
@@ -56,7 +22,7 @@
 // Markup: <div style="background:#ffc200;" class="{{ className }}">Resize to see me appear/disappear</div>
 //
 //
-// Styleguide 7.0.1
+// Styleguide 8.0.1
 //
 .is-hidden,
 .hidden {
