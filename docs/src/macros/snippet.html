@@ -22,11 +22,13 @@
     <div class="card-content">
         {% if isFile %}
             <div class="box{% if modifier.isInverse %} has-background-black{% endif %} ds-grid-lines">{% include "../../../assets/scss/" + code %}</div>
-            {% if modifier %}<p>{{ modifier.description }}</p>{% endif %}
+            {% if modifier %}{{ modifier.description | safe }} <div class="ds-breathe-vert"></div>
+            {{ dataList(modifier.githubData) }}{% endif %}
         {% else %}
             {% if modifier %}
             <div class="box{% if modifier.isInverse %} has-background-black{% endif %} ds-grid-lines">{{ modifier.markup | safe }}</div>
-            <p class="ds-breathe-vert">{{ modifier.description }}</p>
+            {{ modifier.description | safe }}
+            <div class="ds-breathe-vert"></div>
             {{ dataList(modifier.githubData) }}
             {% else %}
             <div class="box{% if modifier.isInverse %} has-background-black{% endif %} ds-grid-lines">{{ code | safe }}</div>

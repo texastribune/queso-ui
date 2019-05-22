@@ -1,8 +1,8 @@
 // utility packages
 const fs = require('fs');
 const ora = require('ora');
-
 const kss = require('kss');
+const md = require('markdown-it')({ html: true });
 
 // internal
 const { slugify, stripTags, escapeHTML } = require('./utils');
@@ -34,9 +34,9 @@ const processSection = (section, dir) => {
   const isHelperStr = '{{isHelper}}';
   const isHelper = section.description.includes(isHelperStr);
   const isTool = header.includes('@');
-  const description = section.description
-    .replace(isWideStr, '')
-    .replace(isHelperStr, '');
+  const description = md.render(
+    section.description.replace(isWideStr, '').replace(isHelperStr, '')
+  );
   const cleanDesc = stripTags(description);
   const githubLink = `${GITHUB_URL}/${section.source.path}#L${
     section.source.line
@@ -69,10 +69,12 @@ const processSection = (section, dir) => {
     const className = modifier.className;
     const isInverse = className.includes('white');
     const modifierMarkup = markup.replace(/{{ className }}/g, className);
+    const modifierDesc = md.render(modifier.description);
     return {
       ...modifier,
       isInverse,
       markup: modifierMarkup,
+      description: modifierDesc,
     };
   });
 

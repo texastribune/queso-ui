@@ -59,34 +59,33 @@
       </div>
       <div class="tile is-parent is-vertical is-9">
         <main>
-          <div class="ds-multicols">
+          <section>
           {% for item in styleDocs.items %}
             {% set slug = item.slug %}
             {% set list = item.list %}
             {% if (list | length) > 2 %}
-            <div class="ds-multicol">
-              <h4 class="title is-size-4"><a href="pages/{{slug}}/index.html">{{ item.name }}</a></h4>
-              <ul class="menu-list ds-spacer">      
+              <h4 class="title is-size-6 ds-breathe menu-label ds-stick-it has-background-white ds-title-bar"><a href="pages/{{slug}}/index.html">{{ item.name }}</a></h4>
+              <ul class="menu-list ds-multicols ds-breathe">      
               {% for rule in list %}
                 {% if rule.depth !== 1 %}
-                  <li class="{% if rule.deprecated %} ds-legacy{% endif %}"><a href="pages/{{ slug + '/index.html#' + rule.slug }}">{{ rule.header }}</a></li>
+                  <li class="{% if rule.deprecated %} ds-legacy{% endif %}"><a href="pages/{{ slug + '/index.html#' + rule.slug }}">{{ rule.prettyName }} {% if item.name != "Starter CSS" and item.name != "Settings" and item.name != "Tools" %}| <span class="has-text-weight-semibold">.{{rule.mainClass}}</span>{% endif %}</a></li>
                 {% endif %}
               {% endfor %}
               </ul>
-            </div>
             {% endif %}
             
           {% endfor %}
-          </div>
-          <div class="section ds-spacer">
+          </section>
+          <section class="ds-spacer">
             <a class="ds-anchor" id="icons"></a>
-            
+            <h4 class="title is-size-6 ds-breathe menu-label ds-stick-it has-background-white ds-title-bar">Icons</h4>
+            <div class="ds-breathe">
             {% for iconSet in iconDocs %}
-              <h3 class="title is-3">{{iconSet.name}} <span class="tag is-rounded">{{iconSet.icons|length}}</span></h3>
+              <h3 class="title is-6">{{iconSet.name}} <span class="tag is-rounded">{{iconSet.icons|length}}</span></h3>
               <div class="columns is-multiline">
                 {% set icons = iconSet.icons %}
                 {% for icon in icons %}
-                  <div class="column is-3">
+                  <div class="column is-3 ds-spacer">
                     <div class="card t-align-center">
                       <div class="section has-background-light">
                         <div class="c-icon t-size-xxl">
@@ -103,6 +102,7 @@
                 {% endfor %}
               </div>
             {% endfor %}
+            </div>
           </section>
         </main>
       </div>

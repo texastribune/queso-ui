@@ -1,0 +1,27 @@
+// Display  (l-display-<prop>)
+//
+// Sometimes we need to make `<a>` tags block and `<div>` tags inline-block. We use these helpers to override a tag's default display type. {{isHelper}}
+//
+// .l-display-ib - **Inline Block**: Take up just what you need.
+// .l-display-block - **Block**: Take up all the space.
+// .l-clearfix - **Clears floats** Clear out everything after a float.
+//
+// Markup: 7-layout/display.html
+// 
+//
+// Styleguide 7.0.4
+.l-display-ib {
+  display: inline-block;
+}
+
+.l-display-block {
+  display: block;
+}
+
+.l-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

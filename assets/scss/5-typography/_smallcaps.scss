@@ -1,0 +1,40 @@
+// Smallcaps (t-smallcaps)
+//
+// V2 of smallcaps more reliant on helper classes and a more DRY approach.
+//
+// Currently, this is used to style mini-headers, "read more" links, button text and bylines.
+//
+// .t-smallcaps--light - Applies a lighter font weight and bumps down font-size
+// .t-smallcaps--section - Applies bottom margin and bumps down font-size
+// .t-smallcaps--bordered - Applies a top border
+//
+// Markup: <span class="t-smallcaps {{ className }}">Lorem ipsum</span>
+//
+//
+// Styleguide 5.3.4
+.t-smallcaps {
+  font-weight: 700;
+  letter-spacing: $font-letter-spacing;
+  padding: 0.2em 0;
+  text-transform: uppercase;
+
+  // Byline
+  &--light {
+    font-size: $size-xs;
+    font-weight: 400;
+    letter-spacing: $font-letter-spacing-lg;
+
+    @include mq($until: bp-l) {
+      font-size: $size-s;
+    }
+  }
+
+  &--section {
+    font-size: $size-s;
+    margin-bottom: $size-b/4;
+  }
+
+  &--bordered {
+    border-top: 2px solid $color-black-off;
+  }
+}

@@ -76,6 +76,9 @@
               <div class="subtitle ds-desc">
                 {{ descriptionTags | safe }}
               </div>
+              {% if item.isHelper %}
+              <code>{{item.mainClass}}</code>
+              {% endif %}
               <div class="columns is-multiline">
                 {% for color in item.colors %}
                 <div class="column is-3">
