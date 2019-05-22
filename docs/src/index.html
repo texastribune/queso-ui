@@ -68,7 +68,7 @@
               <ul class="menu-list ds-multicols ds-breathe">      
               {% for rule in list %}
                 {% if rule.depth !== 1 %}
-                  <li class="{% if rule.deprecated %} ds-legacy{% endif %}"><a href="pages/{{ slug + '/index.html#' + rule.slug }}">{{ rule.prettyName }} {% if item.name != "Starter CSS" and item.name != "Settings" and item.name != "Tools" %}| <span class="has-text-weight-semibold">.{{rule.mainClass}}</span>{% endif %}</a></li>
+                  <li class="{% if rule.deprecated %} ds-legacy{% endif %} ds-multicol"><a href="pages/{{ slug + '/index.html#' + rule.slug }}">{{ rule.prettyName }} {% if item.name != "Starter CSS" and item.name != "Settings" and item.name != "Tools" %}| <span class="has-text-weight-semibold">.{{rule.mainClass}}</span>{% endif %}</a></li>
                 {% endif %}
               {% endfor %}
               </ul>
