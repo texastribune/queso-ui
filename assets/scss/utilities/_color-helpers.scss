@@ -102,35 +102,3 @@ $color-map: (
     color: $value;
   }
 }
-
-
-// Notch (has-notch)
-//
-// Accent element for adding separation to text.
-//
-// .has-notch--short -  Shorter in width and height
-// .has-notch--thin -  Shorter in height. Used in footer
-//
-// Markup: <div class="has-notch {{ className }} has-bg-yellow"></div><p>Use with any color helper, but you'll usually use yellow.</p>
-//
-//
-// Styleguide 8.0.3
-//
-.has-notch {
-  clear: both;
-  height: 5px;
-  margin-bottom: $size-b;
-  text-align: left;
-  width: 40px;
-
-  &--short {
-    height: 3px;
-    margin-bottom: $size-xxs;
-    width: 25px;
-  }
-
-  &--thin {
-    height: 2px;
-    margin: $size-xxs 0;
-  }
-}
