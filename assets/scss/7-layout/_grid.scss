@@ -8,6 +8,41 @@
 //
 // Styleguide 7.0.1
 //
+
+// Grid Container (grid_container)
+//
+// Deprecated: Max width container, centered with margin auto {{isHelper}}
+//
+// grid_container - 960px
+// grid_container--s - 520px
+// grid_container--m - 650px
+// grid_container--l - 845px
+// grid_container--xl - 1080px
+// grid_container--xxl - 1300px
+//
+// Markup: <div class="{{className}}">Container</div>
+//
+// Styleguide 7.0.1
+//
+
+// Grid Separator (grid_separator)
+//
+// Deprecated: Adds varying amounts of bottom spacing. We're replacing that with our margin utility class. {{isHelper}}
+//
+// .grid_separator - 1.1rem
+// .grid_separator--xs - .275rem
+// .grid_separator--s - .55rem
+// .grid_separator--m - 1.2rem
+// .grid_separator--l - 1.5rem
+// .grid_separator--xl - 1.75rem
+// .grid_separator--xxl - 2rem
+// .grid_separator--xxxl - 3rem
+//
+// Markup: <ul><li class="{{ className }}" style="border:2px solid black;">Example</li><li style="border:2px solid black;">Example</li></ul>
+//
+//
+// Styleguide 7.0.1
+//
 $grid-columns: 12;
 $grid-gutter: $size-b;
 $grid-gutter-px: 17.6;
@@ -120,39 +155,39 @@ $column-slug: col !default;
     }
   }
 
-  // .grid_separator
+  // .grid_separator (deprecating in favor of has-<size>-btm-marg
   // adds margin-bottom to separate elements
-  &_separator {
-    margin-bottom: $grid-gutter;
-  }
+  // &_separator {
+  //   margin-bottom: $grid-gutter;
+  // }
 
-  &_separator--xs {
-    margin-bottom: $grid-gutter/4;
-  }
+  // &_separator--xs {
+  //   margin-bottom: $grid-gutter/4;
+  // }
 
-  &_separator--s {
-    margin-bottom: $grid-gutter/2;
-  }
+  // &_separator--s {
+  //   margin-bottom: $grid-gutter/2;
+  // }
 
-  &_separator--m {
-    margin-bottom: $size-m;
-  }
+  // &_separator--m {
+  //   margin-bottom: $size-m;
+  // }
 
-  &_separator--l {
-    margin-bottom: $size-l;
-  }
+  // &_separator--l {
+  //   margin-bottom: $size-l;
+  // }
 
-  &_separator--xl {
-    margin-bottom: $size-xl;
-  }
+  // &_separator--xl {
+  //   margin-bottom: $size-xl;
+  // }
 
-  &_separator--xxl {
-    margin-bottom: $size-xxl;
-  }
+  // &_separator--xxl {
+  //   margin-bottom: $size-xxl;
+  // }
 
-  &_separator--xxxl {
-    margin-bottom: $size-xxxl;
-  }
+  // &_separator--xxxl {
+  //   margin-bottom: $size-xxxl;
+  // }
 
   &_order {
     &--primary {
@@ -184,12 +219,13 @@ $column-slug: col !default;
     }
   }
 
-  // Set max container width based on breakpoint sizes
-  .grid_container--#{$size} {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $width;
-  }
+  // Deprecating for l-container
+  // // Set max container width based on breakpoint sizes
+  // .grid_container--#{$size} {
+  //   margin-left: auto;
+  //   margin-right: auto;
+  //   max-width: $width;
+  // }
 
   .grid_separator--until_#{$size} {
     @include mq($until: $bp) {
