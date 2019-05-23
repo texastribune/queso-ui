@@ -40,8 +40,14 @@ const addSprite = async (currentSVG, spriteInstance) => {
 };
 
 const processSVGs = async dirMap => {
-  // find all .svg files in specified icon directory
-  const svgs = await glob(`${dirMap.in}*.svg`);
+  const input = dirMap.in;
+
+  let svgs = input;
+
+  // check if a whole directory is passed
+  if (typeof input === 'string') {
+    svgs = await glob(`${dirMap.in}*.svg`);
+  }
 
   // create a new svgstore instance
   const sprites = svgstore();
