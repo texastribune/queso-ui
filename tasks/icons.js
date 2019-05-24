@@ -46,7 +46,7 @@ const processSVGs = async dirMap => {
 
   // check if a whole directory is passed
   if (typeof input === 'string') {
-    svgs = await glob(`${dirMap.in}*.svg`);
+    svgs = await glob(`${input}*.svg`);
   }
 
   // create a new svgstore instance
@@ -66,7 +66,7 @@ const processSVGs = async dirMap => {
   } catch (err) {
     console.error(err);
   }
-  return `${dirMap.in} => ${dirMap.out}`;
+  return `${input} => ${dirMap.out}`;
 };
 
 module.exports = async mappedIcons => {
