@@ -7,34 +7,46 @@
 //
 // Styleguide 6.1.3
 .c-navbar {
-  background-color: $color-black-off;
   display: flex;
-  padding: 0 $size-s;
+  padding: 0 $size-b;
 
   @include mq($until: bp-l) {
     flex-wrap: wrap;
+  }
+
+  &--light {
+    background-color: $color-white-pure;
+    border-bottom: 1px solid $color-white-off;
+
+    .c-icon {
+      color: $color-black-off;
+    }
+  }
+
+  &--dark {
+    background-color: $color-black-off;
+
+    .c-icon {
+      color: $color-yellow-tribune;
+    }
   }
 
   &__top {
     flex: 0 1 100%;
     display: flex;
     height: 45px;
-    margin-left: auto;
-    margin-right: auto;
+    justify-content: space-between;
+    max-width: 100rem;
     position: relative;
 
-    &--home {
-      max-width: 1080px;
-    }
-
-    &--standard {
-      justify-content: space-between;
-      max-width: 1600px;
+    // move to texastribune repo
+    .c-navbar--home & {
+      justify-content: normal;
+      max-width: 67.5rem; // maybe use l-container class
     }
   }
 
   &__logo {
-    align-self: center;
     flex: 0 1 210px;
 
     img {
@@ -45,7 +57,8 @@
   &__content {
     display: flex;
 
-    &--home {
+    // move to texastribune repo
+    .c-navbar--home & {
       flex: 0 1 100%;
       justify-content: space-between;
     }
@@ -70,36 +83,28 @@
 
   &__clickable {
     align-items: center;
-    background-color: $color-black-off;
     border: none;
-    color: $color-gray-light;
+    cursor: pointer;
     display: flex;
-    font-size: $size-xxs;
-    font-weight: 700;
-    letter-spacing: 0.07rem;
     padding: 0;
     position: relative;
     text-decoration: none;
-    text-transform: uppercase;
     transition: all 0.15s;
 
-    &:after {
-      content: '';
-      height: 3px;
-      left: 0;
-      position: absolute;
-      top: 100%;
-      width: 100%;
-      transition: background-color 0.15s;
-      @include mq($from: bp-l) {
-        top: auto;
-        bottom: 0;
-      }
+    .c-navbar--light & {
+      background-color: $color-white-pure;
+      color: $color-black-off;
     }
 
-    &:hover,
-    &:active {
-      color: $color-white-pure;
+    .c-navbar--dark & {
+      background-color: $color-black-off;
+      color: $color-gray-light;
+
+      &:hover,
+      &:active,
+      &.is-active {
+        color: $color-white-pure;
+      }
     }
 
     &--animated {
@@ -112,15 +117,50 @@
       }
     }
 
-    &--current {
-      color: $color-white-pure;
-
+    &.is-active {
       &:after {
         background-color: $color-yellow-tribune;
       }
     }
+
+    &:after {
+      content: '';
+      height: 3px;
+      left: 0;
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      transition: background-color 0.15s;
+
+      @include mq($from: bp-l) {
+        top: auto;
+        bottom: 0;
+      }
+    }
   }
 
+  &__dropdown {
+    display: flex;
+    flex: 1 1 100%;
+    flex-wrap: wrap;
+    padding: $size-b/2 0 0 0;
+  }
+
+  &__dropdown-items {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+
+  &__dropdown-item {
+    margin-right: $size-m;
+    margin-bottom: $size-m;
+  }
+
+  //
+  // UNTOUCHED CSS STARTS HERE
+  // move all to texastribune repo
+  //
   &__search {
     background-color: $color-black-off;
     bottom: 1px;
@@ -163,31 +203,9 @@
     margin-right: $size-b;
   }
 
-  &__dropdown {
-    display: flex;
-    flex: 1 1 100%;
-    flex-wrap: wrap;
-    padding: $size-b/2 0 0 0;
-  }
-
-  &__dropdown-items {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-  }
-
-  &__dropdown-item {
-    margin-right: $size-m;
-    margin-bottom: $size-m;
-  }
-
-  &__dropdown-search {
-    flex: 1 1 100%;
-  }
-
   &__greeting {
     display: flex;
     list-style: none;
   }
-  
 }
+
