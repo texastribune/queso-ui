@@ -1,6 +1,6 @@
 // Navbar (c-navbar)
 //
-// Main navigation bar {{isWide}}
+// Main navigation bar. To use a white background, change .c-navbar--dark to .c-navbar--light and update the Tribune logo to one with black text. {{isWide}}
 //
 //
 // Markup: 6-components/navbar/navbar.html
@@ -42,7 +42,7 @@
     // move to texastribune repo
     .c-navbar--home & {
       justify-content: normal;
-      max-width: 67.5rem; // maybe use l-container class
+      max-width: 67.5rem;
     }
   }
 
