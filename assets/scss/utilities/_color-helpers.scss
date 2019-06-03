@@ -1,4 +1,4 @@
-// Color helper text (has-text-color)
+// Text color (has-text-<color>)
 //
 // Set the color of text. {{isHelper}}
 //
@@ -18,10 +18,10 @@
 // Markup: <p class="{{ className }}">Example</p>
 //
 //
-// Styleguide 7.0.1
+// Styleguide 8.0.1
 //
 
-// Color helper text-hover (has-text-hover-color) 
+// Text color:hover (has-text-hover-<color>) 
 //
 // Set the color of text on hover. {{isHelper}}
 //
@@ -38,13 +38,13 @@
 // .has-text-hover-blue-dark - blue dark text-hover color
 // .has-text-hover-error - error text-hover color
 //
-// Markup: <p class="{{ className }}">Example</p>
+// Markup: <p class="{{ className }}">Hover me</p>
 //
 //
-// Styleguide 7.0.2
+// Styleguide 8.0.2
 //
 
-// Color helper bg (has-bg-color) 
+// Background Color (has-bg-<color>) 
 //
 // Set the background-color of an element. {{isHelper}}
 //
@@ -61,10 +61,10 @@
 // .has-bg-blue-dark - blue dark background color
 // .has-bg-error - error background color
 //
-// Markup: <p class="{{ className }}">Example</p>
+// Markup: <div class="has-padding {{ className }}">Example</div>
 //
 //
-// Styleguide 7.0.3
+// Styleguide 8.0.3
 //
 
 $color-map: (
@@ -100,37 +100,5 @@ $color-map: (
 @each $color, $value in $color-map {
   .has-text-#{$color} {
     color: $value;
-  }
-}
-
-
-// Notch (has-notch)
-//
-// Experimental: Replaces the <code>.border--yellow...</code> classes.
-//
-// .has-notch--short -  Shorter in width and height
-// .has-notch--thin -  Shorter in height. Used in footer
-//
-// Markup: <div class="has-notch {{ className }} has-bg-yellow"></div><p>Use with any color helper, but you'll usually use yellow.</p>
-//
-//
-// Styleguide 7.0.3
-//
-.has-notch {
-  clear: both;
-  height: 5px;
-  margin-bottom: $size-b;
-  text-align: left;
-  width: 40px;
-
-  &--short {
-    height: 3px;
-    margin-bottom: $size-xxs;
-    width: 25px;
-  }
-
-  &--thin {
-    height: 2px;
-    margin: $size-xxs 0;
   }
 }

@@ -1,6 +1,6 @@
-// Margin helpers (has-<size>-btm-marg)
+// Margin (has-<size>-btm-marg)
 //
-// Experimental: Bottom margin only. Opt for these instead of adding margin-bottom to a new class. {{isHelper}}
+// Bottom margin only. Opt for these instead of adding margin-bottom to a new class. {{isHelper}}
 //
 // .has-xxxl-btm-marg -  Margin bottom with $size-xxxl
 // .has-giant-btm-marg -  Margin bottom with $size-giant
@@ -17,7 +17,7 @@
 // Markup: <ul><li class="{{ className }}" style="border:2px solid black;">Example</li><li style="border:2px solid black;">Example</li></ul>
 //
 //
-// Styleguide 7.0.1
+// Styleguide 8.0.1
 //
 @each $size-name, $size-value in $size-map {
   .has-#{$size-name}-btm-marg {
@@ -25,9 +25,9 @@
   }
 }
 
-// Padding helpers (has-padding)
+// Padding (has-padding)
 //
-// Experimental: Not all sizes are accounted for. Often, specific padding rules should go on a component. {{isHelper}}
+// Not all sizes are accounted for. Often, specific padding rules should go on a component. {{isHelper}}
 //
 // .has-padding -  All-around padding with $size-b
 // .has-xs-padding -  All-around padding with $size-xs
@@ -36,7 +36,7 @@
 // Markup: <div style="background:#ffc200;" class="{{ className }}">Example</div>
 //
 //
-// Styleguide 7.0.1
+// Styleguide 8.0.1
 //
 .has-padding {
   padding: $size-b;

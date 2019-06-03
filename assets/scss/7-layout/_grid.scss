@@ -1,13 +1,17 @@
 // Grid
 //
-// Flex grid
+// This is a flexbox based grid. In the future, we'll start to rely more on CSS grid and slowly phase out this grid, piece by piece.
 //
+// _Replacements so far:_
+// grid_separator => **has-<size>-btm-marg** |
+// grid_container => **l-container**
 //
-// Markup: 7-utilities/grid.html
+// Markup: 7-layout/grid.html
 //
 //
 // Styleguide 7.0.1
 //
+
 $grid-columns: 12;
 $grid-gutter: $size-b;
 $grid-gutter-px: 17.6;
@@ -120,40 +124,6 @@ $column-slug: col !default;
     }
   }
 
-  // .grid_separator
-  // adds margin-bottom to separate elements
-  &_separator {
-    margin-bottom: $grid-gutter;
-  }
-
-  &_separator--xs {
-    margin-bottom: $grid-gutter/4;
-  }
-
-  &_separator--s {
-    margin-bottom: $grid-gutter/2;
-  }
-
-  &_separator--m {
-    margin-bottom: $size-m;
-  }
-
-  &_separator--l {
-    margin-bottom: $size-l;
-  }
-
-  &_separator--xl {
-    margin-bottom: $size-xl;
-  }
-
-  &_separator--xxl {
-    margin-bottom: $size-xxl;
-  }
-
-  &_separator--xxxl {
-    margin-bottom: $size-xxxl;
-  }
-
   &_order {
     &--primary {
       order: -1;
@@ -182,13 +152,6 @@ $column-slug: col !default;
         width: calc(#{get-col-percent($i)} - #{omega($i)});
       }
     }
-  }
-
-  // Set max container width based on breakpoint sizes
-  .grid_container--#{$size} {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: $width;
   }
 
   .grid_separator--until_#{$size} {
@@ -333,12 +296,3 @@ $column-slug: col !default;
 .col_omega {
   margin-right: 0;
 }
-
-// .section_padded {
-//   padding-top: $size-xgiant;
-//   padding-bottom: $size-xgiant;
-//   @include mq($until: bp-m) {
-//     padding-top: $size-xl;
-//     padding-bottom: $size-xl;
-//   }
-// }

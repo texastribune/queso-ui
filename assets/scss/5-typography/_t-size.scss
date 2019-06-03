@@ -1,17 +1,18 @@
-// Text size (t-size)
+// Text size (t-size-<size>)
 //
-// Experimental: New utility to help eliminate repitition. {{isHelper}}
+// New utility to help eliminate repitition. {{isHelper}}
 //
-// .t-size-xxxs - XXXS Text size
-// .t-size-xxs - XXS Text size
-// .t-size-xs - XS Text size
-// .t-size-s - S Text size
-// .t-size-b - Base Text size
-// .t-size-m - M Text size
-// .t-size-l - L Text size
-// .t-size-xl - XL Text size
-// .t-size-giant - Giant Text size
-// .t-size-xxxl - XXXL Text size
+// .t-size-xxxs - .55rem
+// .t-size-xxs - .7rem
+// .t-size-xs - .85rem 
+// .t-size-s - .92rem
+// .t-size-b - 1.1rem
+// .t-size-m - 1.2rem 
+// .t-size-l - 1.5rem 
+// .t-size-xl - 1.75rem
+// .t-size-xxl - 2rem
+// .t-size-giant - 2.5rem
+// .t-size-xxxl - 3rem
 //
 // Markup: <p class="{{ className }}">Example</p>
 //
