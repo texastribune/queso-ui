@@ -13,15 +13,16 @@
 // Styleguide 7.0.1
 //
 .l-container {
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: px-to-rem($bp-default);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @each $size-label, $value in $mq-breakpoints {
   $label: str-replace($size-label, 'bp-', '');
   @if $size-label != 'default'  {
     .l-container--#{$label} {
-      max-width: $value;
+      max-width: px-to-rem($value);
     }
   }
   

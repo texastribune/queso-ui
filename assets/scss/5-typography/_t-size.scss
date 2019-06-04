@@ -2,19 +2,19 @@
 //
 // New utility to help eliminate repitition. {{isHelper}}
 //
-// .t-size-xxxs - .55rem
-// .t-size-xxs - .7rem
-// .t-size-xs - .85rem 
-// .t-size-s - .92rem
-// .t-size-b - 1.1rem
-// .t-size-m - 1.2rem 
-// .t-size-l - 1.5rem 
-// .t-size-xl - 1.75rem
-// .t-size-xxl - 2rem
-// .t-size-giant - 2.5rem
-// .t-size-xxxl - 3rem
+// .t-size-xxxs - xxxs size
+// .t-size-xxs - xxs size
+// .t-size-xs - xs size
+// .t-size-s - s size
+// .t-size-b - b size
+// .t-size-m - m size
+// .t-size-l - l size
+// .t-size-xl - xl size
+// .t-size-xxl - xxl size
+// .t-size-giant - giant size
+// .t-size-xxxl - xxxl size
 //
-// Markup: <p class="{{ className }}">Example</p>
+// Markup: <span class="{{ className }} text-size-demo">Example text</span>
 //
 //
 // Styleguide 5.2.7

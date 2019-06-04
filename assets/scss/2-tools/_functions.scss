@@ -17,3 +17,17 @@
   
   @return $string;
 }
+
+// @function px-to-rem
+//
+// Convert pixels to rem. EX: `px-to-rem(16px)`
+//
+// $pixel-size = '' - {String} Pixel value to convert (required)
+// $context = $font-root - {String} Substring to replace (defaults to $font-root)
+//
+// Styleguide 2.1.3
+//
+
+@function px-to-rem($pixel-size, $context: $font-root) {
+  @return ($pixel-size / $context) * 1rem;
+} 
