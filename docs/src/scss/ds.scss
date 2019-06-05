@@ -17,8 +17,13 @@
   padding: 1rem 0;
 }
 
+.ds-desc a {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
 .ds-desc p {
-  margin: 1rem 0;
+  margin-bottom: 1rem;
 }
 
 .ds-menu {

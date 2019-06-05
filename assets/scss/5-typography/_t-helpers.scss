@@ -1,0 +1,114 @@
+// Text font variant (t-<font-variant>)
+//
+// Uses new mixin and naming convention {{isHelper}}
+//
+// .t-serif - Default serif
+// .t-sans - Default sans
+//
+// Markup: <h4 class="{{ className }}">Change inherit font family</h4>
+//
+//
+// Styleguide 5.2.2
+.t-serif {
+  @include font-setting('secondary');
+}
+
+.t-sans {
+  @include font-setting;
+}
+
+// Text case (t-<case>)
+//
+// Adds new naming convention {{isHelper}}
+//
+// .t-titlecase - Text transformed to Title Case
+// .t-uppercase - Text transformed to UPPERCASE
+// .t-uppercase--wide - To be used with UPPERCASE to add kerning
+// .t-uppercase--extra-wide - To be used with UPPERCASE to add more kerning
+//
+// Markup: <p class="{{ className }}">Text transform helper.</p>
+//
+//
+// Styleguide 5.2.5
+.t-titlecase {
+  text-transform: capitalize;
+}
+
+.t-uppercase {
+  text-transform: uppercase;
+
+  &--wide {
+    letter-spacing: $font-letter-spacing;
+  }
+
+  &--extra-wide {
+    letter-spacing: $font-letter-spacing-lg;
+  }
+}
+
+// Text align (t-align-<dir>)
+//
+// Adds new naming convention {{isHelper}}
+//
+// .t-align-left - Left aligned
+// .t-align-center - Center aligned
+// .t-align-right - Right aligned
+//
+// Markup: <p class="{{ className }}">Example</p>
+//
+//
+// Styleguide 5.2.7
+
+.t-align-left {
+  text-align: left;
+}
+
+.t-align-center {
+  text-align: center;
+}
+
+.t-align-right {
+  text-align: right;
+}
+
+
+// Text line-height (t-space-<type>)
+//
+// New utility to help eliminate repitition. {{isHelper}}
+//
+// t-space-nospace - Tight leading | line-height: 1
+// t-space-heading-s - More spaced out | line-height: 1.25
+// t-space-heading-m - More spaced out | line-height: 1.5
+// t-space-heading-l - Even more | line-height: 2
+//
+// Markup: <p style="height: 100px" class="{{ className }} t-headline t-l">Texas again mistakenly flags voters for citizenship reviews</p>
+//
+//
+// Styleguide 5.2.7
+//
+$line-height-type: (
+  nospace: 1,
+  heading-s: 1.25,
+  heading-m: 1.5,
+  heading-l: 2,
+);
+
+@each $type-set, $line-height in $line-height-type {
+  .t-space-#{$type-set} {
+    line-height: $line-height;
+  }
+}
+
+// Word break (t-wrap-<setting>)
+//
+// Helper classes for handling how words are allowed to wrap and break. {{isHelper}}
+// 
+// .t-wrap-break - Allow a word to wrap to the next line mid-word
+//
+// Markup: <p class="t-wrap-break" style="width: 150px;">barbara.gervin.hawkins@house.texas.gov</p>
+//
+//
+// Styleguide 5.3.6
+.t-wrap-break {
+  word-break: break-all;
+}

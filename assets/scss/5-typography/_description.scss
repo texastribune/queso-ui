@@ -1,0 +1,17 @@
+// Description (t-description)
+//
+// Used to shrink down text for subtext. Could likely be accomplished with helper classes. Consider deprecating.
+//
+// Markup: <span class="t-description">Description<p>with a paragraph</p></span>
+//
+//
+// Styleguide 5.3.6
+.t-description {
+  @include underlined-link-parent();
+  color: $color-gray-medium;
+  font-size: $size-s;
+
+  p {
+    font-size: $size-xs;
+  }
+}

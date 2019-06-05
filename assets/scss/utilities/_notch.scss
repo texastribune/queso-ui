@@ -1,0 +1,32 @@
+// Notch (has-notch)
+//
+// Accent element for adding separation to text.
+//
+// .has-notch--short -  Shorter in width and height
+// .has-notch--thin -  Shorter in height. Used in footer
+// .has-notch--full -  Stretches to full width
+//
+// Markup: <div class="has-notch {{ className }} has-bg-yellow"></div>
+//
+//
+// Styleguide 8.0.3
+//
+.has-notch {
+  clear: both;
+  height: 5px;
+  text-align: left;
+  width: 40px;
+
+  &--short {
+    height: 3px;
+    width: 25px;
+  }
+
+  &--thin {
+    height: 2px;
+  }
+
+  &--full {
+    width: 100%;
+  }
+}

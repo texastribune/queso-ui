@@ -1,0 +1,21 @@
+// Prose (t-prose)
+//
+// V2 of prose relies on <code>font-setting</code> and <code>underlined-link-parent</code> mixins
+//
+// Markup: <div class="t-prose"><p>Lorem ipsum. <a>Link text</a></p></div>
+//
+//
+// Styleguide 5.2.9
+.t-prose {
+  p {
+    @include font-setting('secondary');
+    @include underlined-link-parent;
+    color: $color-black-off;
+    line-height: 1.4;
+    margin: $size-b 0;
+
+    &:first-of-type {
+      margin: 0 0 $size-b;
+    }
+  }
+}

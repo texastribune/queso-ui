@@ -1,187 +1,93 @@
-<div id="c-site-footer" class="c-site-footer">
-  <div class="grid_container--xl grid_row">
+<div class="c-site-footer has-bg-black-off">
+  <!--
+    Eventually replace grid_container--xl with l-container--xl
+
+    Our various sites will have different variations on the footer
+    with different links, number of columns, etc. You'll likely need
+    to implement a grid system at the app level to handle those scenarios.
+  -->
+  <div class="c-site-footer__inner grid_container--xl grid_row">
     <div class="col">
-      <span class="c-site-footer__logo c-icon c-icon--yellow">
-        <svg aria-hidden="true" focusable="false">
-          <use xlink:href="#bug"></use>
-        </svg>
-      </span>
-      <ul>
-        <div class="has-notch has-notch--thin has-bg-yellow"></div>
-        <li>
-          <a
-            href="https://support.texastribune.org/donate?installmentPeriod=once&amp;amount=60#join-today"
-            title="Donate"
-            class="donate"
-            ga-on="click"
-            ga-event-category="donations"
-            ga-event-action="membership-intent"
-            ga-event-label="footer"
-            >Donate</a
-          >
-        </li>
-        <li>
-          <a href="/contact/" title="Contact Us">Contact Us</a>
-        </li>
-        <li>
-          <a
-            href="https://mediakit.texastribune.org/"
-            title="Advertise"
-            class="advertise"
-            >Advertise</a
-          >
-        </li>
-        <li><a href="/">© 2019 The Texas Tribune</a></li>
+      <div class="has-b-btm-marg">
+        <span style="font-size: 4rem;" class="c-icon has-text-yellow">
+          <svg aria-hidden="true" focusable="false">
+            <use xlink:href="#bug"></use>
+          </svg>
+        </span>
+      </div>
+
+      <div class="has-notch has-notch--thin has-bg-yellow has-b-btm-marg" aria-hidden="true"></div>
+      
+      <ul class="c-site-footer__links t-size-xs has-text-white has-text-hover-white">
+        <li class="has-xxxs-btm-marg"><a class="has-text-blue has-text-hover-blue" href="https://support.texastribune.org/donate">Donate</a></li>
+        <li class="has-xxxs-btm-marg"><a href="https://www.texastribune.org/contact/">Contact Us</a></li>
+        <li>&copy; 2019 The Texas Tribune</li>
       </ul>
     </div>
-    <div id="footer-sections" class="col hide_until--s">
-      <h5 class="c-site-footer__header">Topics</h5>
-      <ul>
-        <li>
-          <a href="/topics/congress/" data-section="congress">Congress</a>
-        </li>
-        <li>
-          <a href="/topics/courts/" data-section="courts">Courts</a>
-        </li>
-        <li>
-          <a href="/topics/criminal-justice/" data-section="criminal-justice"
-            >Criminal justice</a
-          >
-        </li>
-        <li>
-          <a href="/topics/demographics/" data-section="demographics"
-            >Demographics</a
-          >
-        </li>
-        <li>
-          <a href="/topics/economy/" data-section="economy">Economy</a>
-        </li>
-        <li>
-          <a href="/topics/energy/" data-section="energy">Energy</a>
-        </li>
-        <li>
-          <a href="/topics/environment/" data-section="environment"
-            >Environment</a
-          >
-        </li>
-        <li>
-          <a href="/topics/health-care/" data-section="health-care"
-            >Health care</a
-          >
-        </li>
-        <li>
-          <a href="/topics/higher-education/" data-section="higher-education"
-            >Higher education</a
-          >
-        </li>
-        <li>
-          <a href="/topics/immigration/" data-section="immigration"
-            >Immigration</a
-          >
-        </li>
-        <li>
-          <a href="/topics/politics/" data-section="politics">Politics</a>
-        </li>
-        <li>
-          <a href="/topics/public-education/" data-section="public-education"
-            >Public education</a
-          >
-        </li>
-        <li>
-          <a href="/topics/state-government/" data-section="state-government"
-            >State government</a
-          >
-        </li>
+    
+    <div class="col t-size-xs">
+      <!-- no need for the <strong> tags anywhere but here; we're using them to override a theme -->
+      <h5 class="c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg"><strong>Heading</strong></h5>
+      <ul class="c-site-footer__links has-text-white has-text-hover-white">
+        <li class="has-xxxs-btm-marg"><a href="#">Foo</a></li>
+        <li class="has-xxxs-btm-marg"><a href="#">Bar</a></li>
+        <li class="has-xxxs-btm-marg"><a href="#">Baz</a></li>
+        <li class="has-xxxs-btm-marg"><a href="#">Hello</a></li>
+        <li><a href="#">World</a></li>
       </ul>
     </div>
-    <div class="col">
-      <h5 class="c-site-footer__header">Info</h5>
-      <ul>
-        <li>
-          <a href="/about/" title="About Us">About Us</a>
-        </li>
-        <li>
-          <a href="/about/staff/">Our Staff</a>
-        </li>
-        <li>
-          <a href="/support-us/donors-and-members/" title="Who Funds Us?"
-            >Who Funds Us?</a
-          >
-        </li>
-        <li>
-          <a href="/about/texas-tribune-strategic-plan/" title="Strategic Plan"
-            >Strategic Plan</a
-          >
-        </li>
-        <li>
-          <a href="/republishing-guidelines/" title="Republishing Guidelines"
-            >Republishing Guidelines</a
-          >
-        </li>
-        <li>
-          <a href="/about/ethics/" title="Code of Ethics">Code of Ethics</a>
-        </li>
-        <li>
-          <a href="/about/terms-of-service/" title="Terms of Service"
-            >Terms of Service</a
-          >
-        </li>
-        <li>
-          <a href="/about/privacy-policy/" title="Privacy Policy"
-            >Privacy Policy</a
-          >
-        </li>
-        <li>
-          <a href="/about/tips/" title="Send a Tip"
-            >Send us a confidential tip</a
-          >
-        </li>
-        <li>
-          <a href="/corrections/" title="Corrections">Corrections</a>
-        </li>
-        <li>
-          <a href="/about/feeds/" title="Feeds">Feeds</a>
-        </li>
-        <li>
-          <a
-            href="/about/subscribe/"
-            title="Newsletters"
-            ga-event-category="subscribe intent"
-            ga-event-action="footer link"
-            >Newsletters</a
-          >
-        </li>
-        <li>
-          <a href="/video/" title="Video">Video</a>
-        </li>
+
+    <div class="col t-size-xs">
+      <h5 class="c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg"><strong>Heading</strong></h5>
+      <ul class="c-site-footer__links has-text-white has-text-hover-white">
+        <li class="has-xxxs-btm-marg"><a href="#">Foo</a></li>
+        <li class="has-xxxs-btm-marg"><a href="#">Bar</a></li>
+        <li class="has-xxxs-btm-marg"><a href="#">Baz</a></li>
+        <li class="has-xxxs-btm-marg"><a href="#">Hello</a></li>
+        <li class="has-xxxs-btm-marg"><a href="#">World</a></li>
       </ul>
     </div>
-    <div class="col">
-      <h5 class="c-site-footer__header">Social Media</h5>
-      <ul>
-          <li>
-            <a href="http://facebook.com/texastribune" title="Facebook" class="external" ga-event-action="footer link click" ga-event-category="footer link click" ga-event-label="facebook"><span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#facebook"></use></svg></span>Facebook</a>
-          </li>
-          <li>
-            <a href="http://twitter.com/texastribune" title="Twitter" class="external" ga-event-action="footer link click" ga-event-category="footer link click" ga-event-label="twitter"><span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#twitter"></use></svg></span>Twitter</a>
-          </li>
-          <li>
-            <a href="http://youtube.com/user/thetexastribune?sub_confirmation=1" title="YouTube" class="external" ga-event-action="footer link click" ga-event-category="footer link click" ga-event-label="youtube"><span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#youtube"></use></svg></span>YouTube</a>
-          </li>
-          <li>
-            <a href="http://instagram.com/texas_tribune" title="Instagram" class="external" ga-event-action="footer link click" ga-event-category="footer link click" ga-event-label="instagram"><span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#instagram"></use></svg></span>Instagram</a>
-          </li>
-          <li>
-            <a href="http://www.linkedin.com/company/texas-tribune" title="LinkedIn" class="external" ga-event-action="footer link click" ga-event-category="footer link click" ga-event-label="linkedin"><span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#linkedin"></use></svg></span>LinkedIn</a>
-          </li>
-          <li>
-            <a href="https://www.reddit.com/user/texastribune" title="Reddit" class="external" ga-event-action="footer link click" ga-event-category="footer link click" ga-event-label="reddit"><span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#reddit"></use></svg></span>Reddit</a>
-          </li>
-          <div class="border--yellow_notch has-notch has-notch--thin has-bg-yellow"></div>
-          <li>
-            <a href="https://www.facebook.com/groups/thisisyourtexas/" title="This is Your Texas" class="external" ga-event-action="footer link click" ga-event-category="footer link click" ga-event-label="this is your texas"><span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#facebook"></use></svg></span>Join our Facebook Group, This Is Your Texas.</a>
-          </li>
-        </ul>
+    
+    <div class="col t-size-xs">
+      <h5 class="c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg"><strong>Social Media</strong></h5>
+      <ul class="c-site-footer__links has-b-btm-marg has-text-white has-text-hover-white">
+        <li class="has-xxxs-btm-marg">
+          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#facebook"></use></svg></span>
+          <a href="http://facebook.com/texastribune">Facebook</a>
+        </li>
+        <li class="has-xxxs-btm-marg">
+          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#twitter"></use></svg></span>
+          <a href="http://twitter.com/texastribune">Twitter</a>
+        </li>
+        <li class="has-xxxs-btm-marg">
+          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#youtube"></use></svg></span>
+          <a href="http://youtube.com/user/thetexastribune?sub_confirmation=1">YouTube</a>
+        </li>
+        <li class="has-xxxs-btm-marg">
+          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#instagram"></use></svg></span>
+          <a href="http://instagram.com/texas_tribune">Instagram</a>
+        </li>
+        <li class="has-xxxs-btm-marg">
+          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#linkedin"></use></svg></span>
+          <a href="http://www.linkedin.com/company/texas-tribune">LinkedIn</a>
+        </li>
+        <li>
+          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#reddit"></use></svg></span>
+          <a href="https://www.reddit.com/user/texastribune">Reddit</a>
+        </li>
+      </ul>
+
+      <div class="has-notch has-notch--thin has-bg-yellow has-b-btm-marg" aria-hidden="true"></div>
+
+      <ul class="c-site-footer__links has-text-white has-text-hover-white">
+        <li>
+          <a href="https://www.facebook.com/groups/thisisyourtexas/">
+            <span class="t-size-s c-icon c-icon--baseline">
+              <svg aria-hidden="true"><use xlink:href="#your-texas"></use></svg></span>
+              Join our Facebook Group, This Is Your Texas.
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

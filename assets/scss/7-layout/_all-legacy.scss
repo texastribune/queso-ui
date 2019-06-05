@@ -1,3 +1,12 @@
+// Layout
+//
+// Deprecated: Many changes in layout land. We're phasing out our old grid, which carried us strong for many templates. Our new approach with rely on CSS grid and include the new standard naming conventions.
+//
+//
+// Styleguide 7.0.0
+
+@import 'grid-legacy';
+
 // Clearfix
 //
 // Deprecated: Needs naming update and should be only one class.

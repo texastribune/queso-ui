@@ -22,7 +22,7 @@
   <div style="display: none">
     {% include '../dist/sprites/base.html' %}
   </div>
-  <div class="grid_container--xl">
+  <div class="container">
     <div id="content" class="tile is-ancestor ds-content">
       <div class="tile is-parent is-vertical is-3 ds-sidebar">
         <aside class="menu ds-stick-it">
@@ -64,7 +64,7 @@
             <a class="ds-anchor" id="{{ item.slug }}"></a>
             {{ titleBar(name, item) }}
             <div class="ds-breathe-vert">
-              <h2 class="title is-{{ item.depth }}">
+              <h2 class="title is-{{ item.depth }} is-spaced">
               {{ item.prettyName }}
               {% if item.experimental %}
               <span class="ds-version-tag"><span class="tag is-info">V2</span></span>
@@ -76,6 +76,9 @@
               <div class="subtitle ds-desc">
                 {{ descriptionTags | safe }}
               </div>
+              {% if item.isHelper %}
+              <code>{{item.mainClass}}</code>
+              {% endif %}
               <div class="columns is-multiline">
                 {% for color in item.colors %}
                 <div class="column is-3">

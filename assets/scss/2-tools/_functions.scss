@@ -1,0 +1,33 @@
+// @function str-replace
+//
+// String replace for class names just like in JS. Used to rename map variables. Stolen from [CSS Tricks](https://css-tricks.com/snippets/sass/str-replace-function/).
+//
+// $string = '' - {String} Initial string (required)
+// $search = '' - {String} Substring to replace (required)
+// $replace = '' - {String} New value
+//
+// Styleguide 2.1.3
+//
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+  
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+  
+  @return $string;
+}
+
+// @function px-to-rem
+//
+// Convert pixels to rem. EX: `px-to-rem(16px)`
+//
+// $pixel-size = '' - {String} Pixel value to convert (required)
+// $context = $font-root - {String} Substring to replace (defaults to $font-root)
+//
+// Styleguide 2.1.3
+//
+
+@function px-to-rem($pixel-size, $context: $font-root) {
+  @return ($pixel-size / $context) * 1rem;
+} 

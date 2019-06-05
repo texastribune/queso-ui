@@ -1,0 +1,16 @@
+// Headline (t-headline)
+//
+// Our default headline formatting. Does not include size.
+//
+// Headlines are typically &lt;h1&gt; elements, but you can apply the styles to any header element to size appropriately. Linked headlines will be given a teal underline style on hover.
+//
+// Markup: <h1 class="t-headline">Story headline text <a>with link.</a></h1>
+//
+//
+// Styleguide 5.3.1
+.t-headline {
+  @include font-setting('secondary');
+  @include underlined-link-parent('true');
+  color: $color-black-off;
+  font-weight: 700;
+}

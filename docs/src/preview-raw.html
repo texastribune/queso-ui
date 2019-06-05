@@ -6,21 +6,25 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>{{mainClass}} | Standalone</title>
 </head>
-<body>
+<body style="margin: 20px;">
 <!-- {{ mainClass }} -->
+<section style="margin-bottom: 20px">
 {% if isFile %}
   {% include "../../assets/scss/" + markup %}
 {% else %}
   {{ markup | safe }}
 {% endif %}
+</section>
 {% for modifier in modifiers %}
 {% set className = modifier.className %}
 <!-- {{ className }} -->
+<section style="margin-bottom: 20px">
 {% if isFile %}
   {% include "../../assets/scss/" + markup %}
 {% else %}
   {{ modifier.markup | safe }}
 {% endif %}
+</section>
 {% endfor %}
 </body>
 </html>
