@@ -19,103 +19,11 @@ Spin up docs preview (to see what you're styling)
 yarn dev-docs
 ```
 
-
-## SCSS docs boilerplate
-> How to document a new CSS class
-
-We use a comment parser along with some [extra logic](https://github.com/texastribune/ds-toolbox/blob/master/tasks/style-doc.js) to generate our docs. To add a new section of documentation, add a boilerplate above your CSS rules like the one below: 
-
-```scss
-// Title of Section (root-class-name)
-//
-// Description {{isWide}} {{isHelper}}
-//
-// root-class-name-modifier - desc
-//
-// Markup: 6-components/test/test.html
-//
-// Styleguide 6.0.1
-//
-.root-class-name {
-  
-}
-```
-- `{{isWide}}` is used to display the demo of each modifier at full width
-- `{{isHelper}}` is used to hide main demo and only display modifiers
-- `// Deprecated` is used to signify a class to be removed. See _Deprecating a CSS class_ for details.
-
-## Naming and organization
-
-### ITCSS
-We organize our SCSS files with the [inverted triangle](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/) approach in mind. We put our own spin on it by adding a `typography` and `layouts` folder, but the general idea is all the same; increased specificity as you move down the stylesheet.
-
-### BEM
-We closely follow the BEM (Block Element Modifier) class naming convention in our `components` folder, but we break BEM rules in other places. This is a deliberate attempt to create a hybrid approach of using BEM when scoped to a component and helper classes when styling globally in a more ad hoc context.
-
-### Namespacing
-Use namespacing for quick reference of the function of a CSS class. The following key can be used a guideline for naming your class:
-
-Components
-```css
-.c-component-name[__<element>|--<-modifier>] {}
-```
-_Example: `c-button`_
-
-Typography
-```css
-.t-type-util {}
-```
-_Example: `t-headline`_
-
-Layout
-```css
-.l-layout-util {}
-```
-_Example: `l-container`_
-
-Utilities
-```css
-.[is|has]-state {}
-```
-_Example: `has-bg-yellow`_
-
-
-## Legacy styles
-
-This toolbox is a living system and we use it to keep a vigilant eye on how we're using CSS throughout our various products. As an outcome, there are times we will need to deprecate naming conventions, class names, and approaches within our system.
-
-### Deprecating a CSS class
-
-We denote any class not to be used moving forward in our commenting boilerplate with the following syntax:
-```scss
-// Title of Section (root-class-name)
-//
-// Deprecated: Description of old usage and why it's being removed
-//
-// ...
-```
-As we phase out classes, we must be mindful of where those classes are relied upon in our various repos and ultimately our public-facing products. 
-
-**Steps for removing a class:**
-1. Add the deprecation notice to the comment. `// Deprecated: This class was used for x, but were phasing it out for y because...`
-
-2. Note where the classes appear according to the docs. (You should see a repo name and count signifying potential HTML usages in the docs interface.)
-
-3. Push your changes to a branch in this repo.
-
-4. Go to the repo(s) where the class was used.
-
-5. In your dev environment, run `yarn add https://github.com/<REPO>/ds-toolbox.git#your-new-branch` to import your toolbox changes.
-
-6. Run the correct `yarn build` or whatever task compiles the CSS.
-
-7. Preview the page using the HTML with the classes you altered. Does it break a style? Does it reference a class no longer attached to any CSS? Update the HTML accordingly.
-
-8. Once everything is looking stable, merge your branch in this repo with master.
-
-9. In the repos where you've made HTML edits, yarn add the toolbox again, this time with `yarn add https://github.com/<REPO>/ds-toolbox.git#master`.
-
-10. Compile the new CSS and perform one last round of all your visual checks and follow the PR procedure for that repo.
+## Tools
+This repo consists of three sections:
+- `/assets`: All of our SCSS and icons needed to get up a running with a new landing page or template. The assets are available as an [npm package](https://www.npmjs.com/package/@texastribune/ds-toolbox-assets).
+- `/docs`: Static site files that output the data grabbed from assets
+- `/tasks`: Node task runners used to compile SCSS, build SVGs, and whatever else we want JS to do for us. The tasks are available as an [npm package](https://www.npmjs.com/package/@texastribune/ds-toolbox-tasks).
 
 
 ## Using this system in our products
