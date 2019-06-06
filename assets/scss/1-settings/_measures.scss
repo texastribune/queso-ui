@@ -49,6 +49,7 @@ $mq-breakpoints: (
 // $size-xs = .85rem - size xs
 // $size-xxs = .7rem - size xxs
 // $size-xxxs = .55rem - size xxxs
+// $size-tiny = .275rem - size tiny (only used for margin)
 //
 //
 // Styleguide 1.3.3
@@ -65,6 +66,7 @@ $size-s: .92rem;
 $size-xs: .85rem;
 $size-xxs: .7rem;
 $size-xxxs: .55rem;
+$size-tiny: $size-b / 4;
 
 // Map of all sizes for easy iteration
 $size-map: (
@@ -80,6 +82,10 @@ $size-map: (
   xxs: $size-xxs,
   xxxs: $size-xxxs,
 );
+
+// Margin map
+$tiny-map: (tiny: $size-tiny);
+$margin-map: map-merge($size-map, $tiny-map);
 
 // Animation breakpoints
 $animation-single-line-bp: 400px;
