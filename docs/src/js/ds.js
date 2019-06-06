@@ -29,7 +29,7 @@ textBlocks.forEach(el => {
 });
 
 // inject l-container-<size> max-width
-var containers = document.querySelectorAll('.l-container');
+var containers = document.querySelectorAll('.container-demo');
 containers.forEach(el => {
   el.querySelector('span').textContent = getSizes(el, 'max-width');
 });

@@ -1,12 +1,10 @@
 <div class="c-site-footer has-bg-black-off">
   <!--
-    Eventually replace grid_container--xl with l-container--xl
-
     Our various sites will have different variations on the footer
     with different links, number of columns, etc. You'll likely need
     to implement a grid system at the app level to handle those scenarios.
   -->
-  <div class="c-site-footer__inner grid_container--xl grid_row">
+  <div class="c-site-footer__inner l-container l-container--xl grid_row">
     <div class="col">
       <div class="has-b-btm-marg">
         <span style="font-size: 4rem;" class="c-icon has-text-yellow">
@@ -19,8 +17,8 @@
       <div class="has-notch has-notch--thin has-bg-yellow has-b-btm-marg" aria-hidden="true"></div>
       
       <ul class="c-site-footer__links t-size-xs has-text-white has-text-hover-white">
-        <li class="has-xxxs-btm-marg"><a class="has-text-blue has-text-hover-blue" href="https://support.texastribune.org/donate">Donate</a></li>
-        <li class="has-xxxs-btm-marg"><a href="https://www.texastribune.org/contact/">Contact Us</a></li>
+        <li class="has-tiny-btm-marg"><a class="has-text-blue has-text-hover-blue" href="https://support.texastribune.org/donate">Donate</a></li>
+        <li class="has-tiny-btm-marg"><a href="https://www.texastribune.org/contact/">Contact Us</a></li>
         <li>&copy; 2019 The Texas Tribune</li>
       </ul>
     </div>
@@ -29,10 +27,10 @@
       <!-- no need for the <strong> tags anywhere but here; we're using them to override a theme -->
       <h5 class="c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg"><strong>Heading</strong></h5>
       <ul class="c-site-footer__links has-text-white has-text-hover-white">
-        <li class="has-xxxs-btm-marg"><a href="#">Foo</a></li>
-        <li class="has-xxxs-btm-marg"><a href="#">Bar</a></li>
-        <li class="has-xxxs-btm-marg"><a href="#">Baz</a></li>
-        <li class="has-xxxs-btm-marg"><a href="#">Hello</a></li>
+        <li class="has-tiny-btm-marg"><a href="#">Foo</a></li>
+        <li class="has-tiny-btm-marg"><a href="#">Bar</a></li>
+        <li class="has-tiny-btm-marg"><a href="#">Baz</a></li>
+        <li class="has-tiny-btm-marg"><a href="#">Hello</a></li>
         <li><a href="#">World</a></li>
       </ul>
     </div>
@@ -40,39 +38,39 @@
     <div class="col t-size-xs">
       <h5 class="c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg"><strong>Heading</strong></h5>
       <ul class="c-site-footer__links has-text-white has-text-hover-white">
-        <li class="has-xxxs-btm-marg"><a href="#">Foo</a></li>
-        <li class="has-xxxs-btm-marg"><a href="#">Bar</a></li>
-        <li class="has-xxxs-btm-marg"><a href="#">Baz</a></li>
-        <li class="has-xxxs-btm-marg"><a href="#">Hello</a></li>
-        <li class="has-xxxs-btm-marg"><a href="#">World</a></li>
+        <li class="has-tiny-btm-marg"><a href="#">Foo</a></li>
+        <li class="has-tiny-btm-marg"><a href="#">Bar</a></li>
+        <li class="has-tiny-btm-marg"><a href="#">Baz</a></li>
+        <li class="has-tiny-btm-marg"><a href="#">Hello</a></li>
+        <li class="has-tiny-btm-marg"><a href="#">World</a></li>
       </ul>
     </div>
     
     <div class="col t-size-xs">
       <h5 class="c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg"><strong>Social Media</strong></h5>
       <ul class="c-site-footer__links has-b-btm-marg has-text-white has-text-hover-white">
-        <li class="has-xxxs-btm-marg">
-          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#facebook"></use></svg></span>
+        <li class="has-tiny-btm-marg">
+          <span class="t-size-s c-icon c-icon--baseline c-site-footer__icon"><svg aria-hidden="true"><use xlink:href="#facebook"></use></svg></span>
           <a href="http://facebook.com/texastribune">Facebook</a>
         </li>
-        <li class="has-xxxs-btm-marg">
-          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#twitter"></use></svg></span>
+        <li class="has-tiny-btm-marg">
+          <span class="t-size-s c-icon c-icon--baseline c-site-footer__icon"><svg aria-hidden="true"><use xlink:href="#twitter"></use></svg></span>
           <a href="http://twitter.com/texastribune">Twitter</a>
         </li>
-        <li class="has-xxxs-btm-marg">
-          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#youtube"></use></svg></span>
+        <li class="has-tiny-btm-marg">
+          <span class="t-size-s c-icon c-icon--baseline c-site-footer__icon"><svg aria-hidden="true"><use xlink:href="#youtube"></use></svg></span>
           <a href="http://youtube.com/user/thetexastribune?sub_confirmation=1">YouTube</a>
         </li>
-        <li class="has-xxxs-btm-marg">
-          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#instagram"></use></svg></span>
+        <li class="has-tiny-btm-marg">
+          <span class="t-size-s c-icon c-icon--baseline c-site-footer__icon"><svg aria-hidden="true"><use xlink:href="#instagram"></use></svg></span>
           <a href="http://instagram.com/texas_tribune">Instagram</a>
         </li>
-        <li class="has-xxxs-btm-marg">
-          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#linkedin"></use></svg></span>
+        <li class="has-tiny-btm-marg">
+          <span class="t-size-s c-icon c-icon--baseline c-site-footer__icon"><svg aria-hidden="true"><use xlink:href="#linkedin"></use></svg></span>
           <a href="http://www.linkedin.com/company/texas-tribune">LinkedIn</a>
         </li>
         <li>
-          <span class="t-size-s c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#reddit"></use></svg></span>
+          <span class="t-size-s c-icon c-icon--baseline c-site-footer__icon"><svg aria-hidden="true"><use xlink:href="#reddit"></use></svg></span>
           <a href="https://www.reddit.com/user/texastribune">Reddit</a>
         </li>
       </ul>
@@ -82,7 +80,7 @@
       <ul class="c-site-footer__links has-text-white has-text-hover-white">
         <li>
           <a href="https://www.facebook.com/groups/thisisyourtexas/">
-            <span class="t-size-s c-icon c-icon--baseline">
+            <span class="t-size-s c-icon c-icon--baseline c-site-footer__icon">
               <svg aria-hidden="true"><use xlink:href="#your-texas"></use></svg></span>
               Join our Facebook Group, This Is Your Texas.
           </a>

@@ -13,9 +13,8 @@
     letter-spacing: .08em;
   }
 
-  &__links {
-    // remove when part of base ul style
-    list-style: none;
+  &__icon {
+    margin-right: $size-xxxs;
   }
 
   a {
