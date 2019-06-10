@@ -18,6 +18,7 @@
 // .is-hidden-until-bp-xl -  Hide until bp-xl
 // .is-hidden-until-bp-xxl -  Hide until bp-xxl
 // .is-hidden-until-bp-default -  Hide until bp-default
+// .is-transparent -  Removes opacity. (Use this to fade elements out.)
 //
 // Markup: <div style="background:#ffc200;" class="{{ className }}">Resize to see me appear/disappear</div>
 //
@@ -29,6 +30,10 @@
   display: none !important;
 }
 // ^ including a duplicate class of .hidden right now since it's so littered throughout the code base.
+
+.is-transparent {
+  opacity: 0;
+}
 
 .is-hidden-print {
   @media print {
