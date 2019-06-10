@@ -4,6 +4,7 @@
 //
 // .c-loading--xs - Extra small loader animation.
 // .c-loading--s - Small loader animation.
+// .c-loading--tight - Small loader animation with no space around it.
 //
 // Markup: <div class="c-loading {{ className }}" aria-hidden="true"></div>
 //
@@ -40,6 +41,18 @@
 
   &--s {
     height: 250px;
+
+    &:before {
+      border-width: 5px;
+      height: 50px;
+      margin-left: -25px;
+      margin-top: -25px;
+      width: 50px;
+    }
+  }
+
+  &--tight {
+    height: 50px;
 
     &:before {
       border-width: 5px;
