@@ -1,21 +1,18 @@
 {
   "name": "@texastribune/ds-toolbox-assets",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "CSS framework and icon assets for The Texas Tribune",
   "files": [
     "/icons",
     "/scss"
   ],
   "scripts": {
-    "publish": "np"
+    "publish": "npm publish --access public"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/texastribune/ds-toolbox/tree/break-up/assets"
   },
   "author": "The Texas Tribune Engineering Team",
-  "license": "MIT",
-  "devDependencies": {
-    "np": "^5.0.3"
-  }
+  "license": "MIT"
 }

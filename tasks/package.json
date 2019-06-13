@@ -10,7 +10,7 @@
     "utils.js"
   ],
   "scripts": {
-    "publish": "np"
+    "publish": "npm publish --access public"
   },
   "repository": {
     "type": "git",
@@ -72,8 +72,5 @@
     "sass-mq": "^5.0.0",
     "svgo": "^1.2.1",
     "svgstore": "^3.0.0-2"
-  },
-  "devDependencies": {
-    "np": "^5.0.3"
   }
 }
