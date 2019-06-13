@@ -1,6 +1,6 @@
 {
   "name": "@texastribune/ds-toolbox-assets",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "CSS framework and icon assets for The Texas Tribune",
   "files": [
     "/icons",
