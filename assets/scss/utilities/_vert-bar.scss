@@ -1,0 +1,31 @@
+// Vertical Bar (has-vert-bar)
+//
+// Accent element for distinguishing a block of text.
+//
+// .has-vert-bar--thin - Used in membership CTA callout on stories
+// .has-vert-bar--from-bp-s - Resets styling on mobile
+//
+// Markup: <p class="has-vert-bar {{ className }} has-text-yellow"><span class="has-text-gray-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt vel rerum deserunt debitis voluptas, omnis dignissimos, doloribus saepe quae itaque! Consequuntur et eveniet fugit in veritatis quos ver incidunt.</span></p>
+//
+//
+// Styleguide 8.0.3
+//
+$vert-bar-base: px-to-rem(5px);
+$vert-bar-thin: px-to-rem(4px);
+
+.has-vert-bar {
+  border-left: $vert-bar-base solid currentColor;
+  padding-left: $size-b;
+
+  &--thin {
+    border-left-width: $vert-bar-thin;
+    padding-left: $size-xxl;
+  }
+
+  @include mq($until: bp-s) {
+    &--from-bp-s {
+      padding-left: 0;
+      border-left: 0;
+    }
+  }
+}
