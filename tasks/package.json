@@ -10,7 +10,7 @@
     "utils.js"
   ],
   "scripts": {
-    "publish": "npm publish --access public"
+    "publish": "np"
   },
   "repository": {
     "type": "git",
@@ -18,59 +18,62 @@
   },
   "author": "The Texas Tribune Engineering Team",
   "license": "MIT",
-    "stylelint": {
-      "rules": {
-        "block-no-empty": null,
-        "color-no-invalid-hex": true,
-        "comment-empty-line-before": [
-          "always",
-          {
-            "ignore": [
-              "stylelint-commands",
-              "after-comment"
-            ]
-          }
-        ],
-        "declaration-colon-space-after": "always",
-        "indentation": 2,
-        "max-empty-lines": 2,
-        "rule-empty-line-before": [
-          "always",
-          {
-            "except": [
-              "first-nested"
-            ],
-            "ignore": [
-              "after-comment"
-            ]
-          }
-        ],
-        "unit-whitelist": [
-          "em",
-          "rem",
-          "%",
-          "s",
-          "px",
-          "ms",
-          "vh",
-          "fr",
-          "deg"
-        ]
-      }
-    },
-    "dependencies": {
-      "ansi-colors": "^3.2.4",
-      "autoprefixer": "^9.5.1",
-      "clean-css": "^4.2.1",
-      "fast-glob": "^2.2.6",
-      "fs-extra": "^7.0.1",
-      "glob-watcher": "^5.0.3",
-      "node-sass": "^4.11.0",
-      "normalize.css": "^8.0.1",
-      "ora": "^3.4.0",
-      "postcss": "^7.0.16",
-      "sass-mq": "^5.0.0",
-      "svgo": "^1.2.1",
-      "svgstore": "^3.0.0-2"
+  "stylelint": {
+    "rules": {
+      "block-no-empty": null,
+      "color-no-invalid-hex": true,
+      "comment-empty-line-before": [
+        "always",
+        {
+          "ignore": [
+            "stylelint-commands",
+            "after-comment"
+          ]
+        }
+      ],
+      "declaration-colon-space-after": "always",
+      "indentation": 2,
+      "max-empty-lines": 2,
+      "rule-empty-line-before": [
+        "always",
+        {
+          "except": [
+            "first-nested"
+          ],
+          "ignore": [
+            "after-comment"
+          ]
+        }
+      ],
+      "unit-whitelist": [
+        "em",
+        "rem",
+        "%",
+        "s",
+        "px",
+        "ms",
+        "vh",
+        "fr",
+        "deg"
+      ]
     }
+  },
+  "dependencies": {
+    "ansi-colors": "^3.2.4",
+    "autoprefixer": "^9.5.1",
+    "clean-css": "^4.2.1",
+    "fast-glob": "^2.2.6",
+    "fs-extra": "^7.0.1",
+    "glob-watcher": "^5.0.3",
+    "node-sass": "^4.11.0",
+    "normalize.css": "^8.0.1",
+    "ora": "^3.4.0",
+    "postcss": "^7.0.16",
+    "sass-mq": "^5.0.0",
+    "svgo": "^1.2.1",
+    "svgstore": "^3.0.0-2"
+  },
+  "devDependencies": {
+    "np": "^5.0.3"
+  }
 }

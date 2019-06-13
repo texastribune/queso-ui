@@ -7,12 +7,15 @@
     "/scss"
   ],
   "scripts": {
-    "publish": "npm publish --access public"
+    "publish": "np"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/texastribune/ds-toolbox/tree/break-up/assets"
   },
   "author": "The Texas Tribune Engineering Team",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "np": "^5.0.3"
+  }
 }

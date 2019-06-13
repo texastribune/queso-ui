@@ -19,12 +19,21 @@ Spin up docs preview (to see what you're styling)
 yarn dev-docs
 ```
 
-## Tools
+## Structure
 This repo consists of three sections:
 - `/assets`: All of our SCSS and icons needed to get up a running with a new landing page or template. The assets are available as an [npm package](https://www.npmjs.com/package/@texastribune/ds-toolbox-assets).
 - `/docs`: Static site files that output the data grabbed from assets
 - `/tasks`: Node task runners used to compile SCSS, build SVGs, and whatever else we want JS to do for us. The tasks are available as an [npm package](https://www.npmjs.com/package/@texastribune/ds-toolbox-tasks).
 
+## Publishing to npm
+This project is split into two packages published under the `@texastribune` organization on npm. You'll an npm account and that account will need to be added our org in order to publish. Once your privileges are all set, follow these steps to add updates.
+
+1. Create a branch and make your desired changes.
+2. Commit and push those changes to your branch.
+3. If you've made changes to the `/assets` folder, navigate to that folder in your terminal `cd assets`.
+4. Next run `yarn publish` to step through the publishing prompt created by the [np helper package](https://www.npmjs.com/package/np).
+5. Once you've published, test out your changes by updating the `@texastribune/ds-toolbox-assets` dependency in the various repos it's used in our ecosystem. (This is a very important step to ensure you didn't in advertently disrupt any styles or icons.)
+6. If you've made changes to one of the JS tasks in `/tasks`, the process is exactly the same, but you'll want `/tasks` as your current directory when you run the `yarn publish` command. Also you'll also be checking that our various builds are executing as well as style/icon review.
 
 ## Using this system in our products
 This system is experimental and under rapid development. Use it in situations where it makes sense for the scope of your task.
