@@ -1,0 +1,81 @@
+// Info drop (c-info-drop)
+//
+// Uses `<details>` and `<summary>` tags to create an information dropdown component. This includes fallbacks for IE and Edge, which currently don't support those tags. Edge has marked implementation for those as high-priority. {{isWide}}
+//
+// Markup: 6-components/info-drop/info-drop.html
+//
+// Styleguide 6.1.3
+
+$info-drop-size: px-to-rem(14px);
+
+.c-info-drop {
+  height: $info-drop-size;
+  position: relative;
+
+  &__inner {
+    position: absolute;
+  }
+
+  &__content {
+    max-height: 0;
+    transition: max-height 0.3s;
+  }
+
+  &__cta {
+    border-radius: 50%;
+    cursor: pointer;
+    height: $info-drop-size * 2;
+    left: auto;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: $info-drop-size * 2;
+    z-index: 1;
+  }
+
+  &__container {
+    position: relative;
+  }
+
+  .is-transparent {
+    transition: opacity 0.3s;
+  }
+
+  // expanded view
+  [open=''],
+  [open='open'] {
+    .c-info-drop__icon {
+      opacity: 0;
+    }
+
+    .c-info-drop__content {
+      max-height: 500px;
+    }
+
+    .c-info-drop__cta {
+      margin-top: -($info-drop-size);
+    }
+
+    .is-transparent {
+      opacity: 1;
+    }
+  }
+
+  // no support (IE & Edge)
+  .js-no-details-support {
+    &.c-info-drop__container {
+      // IE & Edge need this for <details> tag for some strange reason
+      display: block;
+    }
+
+    .c-info-drop__content {
+      display: none;
+    }
+
+    &[open='open'] {
+      .c-info-drop__content {
+        display: block;
+      }
+    }
+  }
+}
