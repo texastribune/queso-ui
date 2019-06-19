@@ -68,19 +68,19 @@
 //
 
 $color-map: (
-  black: $color-black-pure,
-  black-off: $color-black-off,
-  white: $color-white-pure,
-  white-off: $color-white-off,
-  teal: $color-teal-gray,
-  gray: $color-gray-medium,
-  gray-light: $color-gray-light,
-  gray-dark: $color-gray-dark,
-  yellow: $color-yellow-tribune,
-  blue: $color-blue-light,
-  blue-dark: $color-blue-dark,
-  error: $color-error,
-  sponsor: $color-sponsor,
+  "black": $color-black-pure,
+  "black-off": $color-black-off,
+  "white": $color-white-pure,
+  "white-off": $color-white-off,
+  "teal": $color-teal-gray,
+  "gray": $color-gray-medium,
+  "gray-light": $color-gray-light,
+  "gray-dark": $color-gray-dark,
+  "yellow": $color-yellow-tribune,
+  "blue": $color-blue-light,
+  "blue-dark": $color-blue-dark,
+  "error": $color-error,
+  "sponsor": $color-sponsor,
 );
 
 @each $color, $value in $color-map {

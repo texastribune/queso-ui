@@ -4,7 +4,7 @@ const browserSync = require('browser-sync');
 const colors = require('ansi-colors');
 
 // lib
-const stylesRunner = require('../../tasks/styles');
+const { styles, icons } = require('@texastribune/queso-tools');
 const copyRunner = require('../../tasks/copy');
 const {
   clearConsole,
@@ -19,6 +19,7 @@ const {
   mappedStyles,
   mappedCopies,
   mappedStylesManifest,
+  mappedIcons,
 } = require('./paths.js');
 
 module.exports = async () => {
@@ -85,7 +86,7 @@ module.exports = async () => {
 
       const compile = async () => {
         try {
-          await stylesRunner(mappedStyles, mappedStylesManifest);
+          await styles(mappedStyles, mappedStylesManifest);
           stylesError = null;
         } catch (err) {
           stylesError = err;
@@ -114,6 +115,9 @@ module.exports = async () => {
 
       // build github data
       await githubRunner();
+
+      // build icons
+      await icons(mappedIcons);
 
       // initial compile
       await compile();

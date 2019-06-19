@@ -31,6 +31,7 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
+    "@texastribune/queso-tools": "^0.0.1-0",
     "axios": "^0.19.0",
     "browser-sync": "^2.26.3",
     "kss": "https://github.com/kss-node/kss-node",
