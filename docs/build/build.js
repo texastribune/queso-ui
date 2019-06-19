@@ -1,6 +1,4 @@
-// lib
-const stylesRunner = require('../../tasks/styles');
-const iconsRunner = require('../../tasks/icons');
+const { styles, icons } = require('@texastribune/queso-tools');
 const copyRunner = require('../../tasks/copy');
 
 // custom to this build
@@ -19,19 +17,15 @@ async function build() {
   await githubRunner();
 
   // compile and move files
-  await stylesRunner(mappedStyles, mappedStylesManifest);
-  await iconsRunner(mappedIcons);
+  await styles(mappedStyles, mappedStylesManifest);
+  await icons(mappedIcons);
   await copyRunner(mappedCopies);
 
   // build doc data and template
   await docsRunner();
 }
 
-build()
-  .then(() => {
-    console.log('Success!');
-  })
-  .catch(err => {
-    console.log(err);
-    process.exit(1);
-  });
+build().catch(err => {
+  console.log(err);
+  process.exit(1);
+});
