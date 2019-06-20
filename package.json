@@ -8,7 +8,7 @@
     "build": "node docs/config/tasks/build.js",
     "dev": "node docs/config/tasks/dev.js",
     "prepublish": "yarn run lint && yarn run build",
-    "release": "np"
+    "release": "np --any-branch"
   },
   "files": [
     "assets"
