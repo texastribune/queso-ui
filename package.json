@@ -1,27 +1,50 @@
 {
-  "name": "ds-toolbox-test",
-  "version": "0.0.4",
-  "description": "A demo repository to illustrate how to share palette and typography through NPM",
-  "license": "MIT",
-  "private": false,
-  "files": [
-    "/assets",
-    "/tasks"
-  ],
+  "name": "@texastribune/queso-ui",
+  "version": "0.0.0",
+  "description": "Asset library of SCSS and SVG files",
   "scripts": {
-    "lint": "stylelint 'assets/**/**.scss' && prettier --write './tasks/**/*.js'",
-    "deploy-docs": "npm run build-docs && surge ./docs/dist --domain 'https://ttds.surge.sh/'",
-    "build-docs": "node docs/build/build.js",
-    "dev-docs": "node docs/build/develop.js"
+    "lint": "stylelint 'assets/**/**.scss' && prettier --write './docs/**/*.js' && eslint docs/config",
+    "deploy": "npm run build-docs && surge ./docs/dist --domain 'https://ttds.surge.sh/'",
+    "build": "node docs/config/tasks/build.js",
+    "dev": "node docs/config/tasks/dev.js",
+    "prepublish": "yarn run lint && yarn run build",
+    "release": "np"
   },
-  "browserslist": [
-    "> 0.5%",
-    "last 2 versions",
-    "Firefox ESR",
-    "iOS >= 11",
-    "Safari >= 11",
-    "not dead"
+  "files": [
+    "assets"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/texastribune/queso-ui.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb",
+      "prettier"
+    ],
+    "env": {
+      "jest": true,
+      "node": true
+    },
+    "rules": {
+      "no-console": "error",
+      "no-underscore-dangle": [
+        "error",
+        {
+          "allowAfterThis": true
+        }
+      ],
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": true
+        }
+      ]
+    }
+  },
   "prettier": {
     "bracketSpacing": true,
     "printWidth": 80,
@@ -29,19 +52,6 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "es5"
-  },
-  "devDependencies": {
-    "@texastribune/queso-tools": "^0.0.1-0",
-    "axios": "^0.19.0",
-    "browser-sync": "^2.26.3",
-    "kss": "https://github.com/kss-node/kss-node",
-    "markdown-it": "^8.4.2",
-    "nunjucks": "^3.1.7",
-    "prettier": "1.16.3",
-    "purgecss": "^1.3.0",
-    "purgecss-from-html": "^1.1.0",
-    "stylelint": "^9.10.1",
-    "surge": "^0.20.4"
   },
   "stylelint": {
     "rules": {
@@ -83,19 +93,38 @@
       ]
     }
   },
-  "dependencies": {
-    "ansi-colors": "^3.2.4",
-    "autoprefixer": "^9.5.1",
-    "clean-css": "^4.2.1",
-    "fast-glob": "^2.2.6",
-    "fs-extra": "^7.0.1",
+  "license": "MIT",
+  "author": "The Texas Tribune Engineering Team <tech@texastribune.org>",
+  "bugs": {
+    "url": "https://github.com/texastribune/queso-ui/issues"
+  },
+  "homepage": "https://github.com/texastribune/queso-ui#readme",
+  "devDependencies": {
+    "@texastribune/queso-tools": "^0.0.1-4",
+    "axios": "^0.19.0",
+    "browser-sync": "^2.26.3",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-plugin-import": "^2.17.3",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.13.0",
+    "fast-glob": "^3.0.1",
+    "fs-extra": "^8.0.1",
     "glob-watcher": "^5.0.3",
-    "node-sass": "^4.11.0",
-    "normalize.css": "^8.0.1",
+    "kss": "https://github.com/kss-node/kss-node",
+    "markdown-it": "^8.4.2",
+    "np": "^5.0.3",
+    "nunjucks": "^3.1.7",
     "ora": "^3.4.0",
-    "postcss": "^7.0.16",
-    "sass-mq": "^5.0.0",
-    "svgo": "^1.2.1",
-    "svgstore": "^3.0.0-2"
+    "prettier": "1.16.3",
+    "purgecss": "^1.3.0",
+    "purgecss-from-html": "^1.1.0",
+    "stylelint": "^9.10.1",
+    "surge": "^0.20.4"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "sass-mq": "^5.0.0"
   }
 }

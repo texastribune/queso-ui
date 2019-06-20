@@ -1,17 +1,12 @@
-// utility
+/**
+ * Spins up browserSync server and builds docs
+ *
+ */
+
 const watch = require('glob-watcher');
 const browserSync = require('browser-sync');
-const colors = require('ansi-colors');
-
-// lib
-const { styles, icons } = require('@texastribune/queso-tools');
-const copyRunner = require('../../tasks/copy');
-const {
-  clearConsole,
-  printInstructions,
-  logErrorMessage,
-} = require('../../tasks/utils');
-
+const { styles, icons, utils } = require('@texastribune/queso-tools');
+const copyRunner = require('./copy');
 const docsRunner = require('./docs.js');
 const githubRunner = require('./github.js');
 
@@ -20,9 +15,13 @@ const {
   mappedCopies,
   mappedStylesManifest,
   mappedIcons,
-} = require('./paths.js');
+} = require('../paths.js');
 
-module.exports = async () => {
+const printInstructions = (external, local) => {
+  utils.logMessage(`${external} | ${local}`, 'green');
+};
+
+async function dev() {
   // create the browser-sync client
   const bs = browserSync.create();
 
@@ -40,31 +39,28 @@ module.exports = async () => {
     },
     async err => {
       // if browser-sync failed to start up, hard stop here
-      if (err) return console.error(err);
+      if (err) {
+        return utils.logMessage(err, 'red');
+      }
 
       // track whether errors or warnings already exist on other compiles
       let templatesError = null;
       let stylesError = null;
 
-      console.log('Starting initial serve...');
+      utils.logMessage('Starting initial serve...');
 
       const urls = bs.getOption('urls');
 
       const local = urls.get('local');
       const external = urls.get('external');
 
-      const onError = (type, err) => {
-        console.log(colors.red(`${type} failed to compile.\n`));
-        logErrorMessage(err);
-      };
-
-      const onWarning = (type, err) => {
-        console.log(colors.yellow(`${type} compiled with warnings.\n`));
-        logErrorMessage(err);
+      const onError = (type, error) => {
+        utils.logMessage(`${type} failed to compile.\n`);
+        utils.logMessage(error);
       };
 
       const logStatus = () => {
-        clearConsole();
+        // clearConsole();
 
         let hadError = false;
 
@@ -79,8 +75,7 @@ module.exports = async () => {
         }
 
         if (!hadError) {
-          console.log(colors.green('Project compiled successfully!'));
-          printInstructions({ local, external });
+          printInstructions(local, external);
         }
       };
 
@@ -88,21 +83,21 @@ module.exports = async () => {
         try {
           await styles(mappedStyles, mappedStylesManifest);
           stylesError = null;
-        } catch (err) {
-          stylesError = err;
+        } catch (e) {
+          stylesError = e;
         }
         try {
           await docsRunner();
           templatesError = null;
-        } catch (err) {
-          templatesError = err;
+        } catch (e) {
+          templatesError = e;
         }
 
         try {
           await copyRunner(mappedCopies);
           templatesError = null;
-        } catch (err) {
-          templatesError = err;
+        } catch (e) {
+          templatesError = e;
         }
 
         // if browsersync is active, reload it
@@ -123,7 +118,7 @@ module.exports = async () => {
       await compile();
 
       // docs watching
-      watch(
+      return watch(
         [
           './assets/scss/**/*.html',
           './assets/scss/**/*.scss',
@@ -135,4 +130,9 @@ module.exports = async () => {
       );
     }
   );
-};
+}
+
+dev().catch(err => {
+  // eslint-disable-next-line no-console
+  console.error(err.message);
+});
