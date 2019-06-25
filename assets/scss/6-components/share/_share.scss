@@ -1,0 +1,17 @@
+// Share (c-share)
+//
+// Grid of social share buttons. Typically the "Republish" button is only used on desktop.
+//
+// Markup: 6-components/share/share.html
+//
+// Styleguide 6.0.1
+$share-height: $size-l;
+$share-width: $size-xxxl;
+$share-gap: $size-m;
+
+.c-share {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($share-width, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax($share-height, 1fr));
+  grid-gap: $share-gap;
+}

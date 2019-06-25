@@ -1,0 +1,25 @@
+// Caption (c-caption)
+//
+// This is a block of text, which gives context to media. We generally use helper classes for text styles and use this component simply for spacing.
+//
+// c-caption--wide - The removal of padding comes a bit sooner.
+//
+// Markup: 6-components/caption/caption.html
+//
+// Styleguide 6.0.1
+.c-caption {
+  margin: -5px 0 0 0; // not sure what this accounts for (copied from base)
+  padding: $size-xs;
+
+  @include mq($from: bp-xl) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &--wide {
+    @include mq($from: bp-m) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+}
