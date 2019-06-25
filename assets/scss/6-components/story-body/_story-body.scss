@@ -7,8 +7,15 @@
 // Styleguide 6.1.3
 
 .c-story-body {
-  // this is probably crazy
-  > *:not(.plugin) {
+  > p,
+  > h2,
+  > h3,
+  > h4,
+  > h5,
+  > h6,
+  > ul,
+  > span,
+  > div:not([class^="plugin"]) {
     max-width: $story-narrow;
     margin: $size-b auto;
     line-height: 1.4;
@@ -17,6 +24,11 @@
   ul {
     list-style: disc;
     padding: 0 $size-b 0 3.5rem;
+    
+  }
+
+  li {
+    margin-bottom: $size-b;
   }
 
   sub, sup {

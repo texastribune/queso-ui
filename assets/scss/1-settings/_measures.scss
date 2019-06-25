@@ -33,6 +33,19 @@ $mq-breakpoints: (
   bp-default: $bp-default
 );
 
+// Story Containers
+//
+// Our stories have varying containers on them. There is a bit of overlap with our `$mq-breakpoints`; in the future, we might consider revisiting these.
+//
+// $story-small = 30rem - This is our smallest story container; used for plugins
+// $story-narrow = 41.5rem - This is the text story container; used for text and plugins
+// $story-giant = 60rem - This is our widest story container; used for plugins
+//
+// Styleguide 1.3.1
+$story-small: 30rem;
+$story-narrow: 41.5rem;
+$story-giant: 60rem;
+
 
 // Size units
 //
