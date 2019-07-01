@@ -3,7 +3,9 @@
   "version": "0.0.1-0",
   "description": "Asset library of SCSS and SVG files",
   "scripts": {
-    "lint": "stylelint 'assets/**/**.scss' && prettier --write './docs/**/*.js' && eslint docs/config",
+    "prettier": "prettier --write './docs/**/*.js'",
+    "stylelint": "stylelint 'assets/**/**.scss'",
+    "lint": "eslint docs/config",
     "deploy": "npm run build-docs && surge ./docs/dist --domain 'https://ttds.surge.sh/'",
     "build": "node docs/config/tasks/build.js",
     "dev": "node docs/config/tasks/dev.js",
@@ -11,7 +13,7 @@
     "release": "np --any-branch"
   },
   "files": [
-    "assets"
+    "/assets"
   ],
   "repository": {
     "type": "git",
