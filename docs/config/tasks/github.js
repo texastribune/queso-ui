@@ -1,9 +1,13 @@
-// utility
+/**
+ * Fetches GitHub data from s3 and writes to JSON file
+ *
+ */
+
 const ora = require('ora');
 const axios = require('axios');
 const fs = require('fs-extra');
 
-const { mappedGithubData } = require('./paths.js');
+const { mappedGithubData } = require('../paths.js');
 
 const fetch = async () => {
   try {
@@ -28,6 +32,6 @@ module.exports = async () => {
     spinner.succeed('Wrote GitHub data');
   } catch (err) {
     spinner.fail('Did not fetch data');
-    console.error(err);
+    throw new Error(err.message);
   }
 };

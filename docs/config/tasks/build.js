@@ -1,31 +1,35 @@
-const { styles, icons } = require('@texastribune/queso-tools');
-const copyRunner = require('../../tasks/copy');
+/**
+ * Builds and compiles docs
+ *
+ */
 
-// custom to this build
-const docsRunner = require('./docs.js');
-const githubRunner = require('./github.js');
+const { styles, icons } = require('@texastribune/queso-tools');
+const copy = require('./copy');
+const docs = require('./docs.js');
+const github = require('./github.js');
 
 const {
   mappedStyles,
   mappedIcons,
   mappedCopies,
   mappedStylesManifest,
-} = require('./paths.js');
+} = require('../paths.js');
 
 async function build() {
   // grab github data
-  await githubRunner();
+  await github();
 
   // compile and move files
   await styles(mappedStyles, mappedStylesManifest);
   await icons(mappedIcons);
-  await copyRunner(mappedCopies);
+  await copy(mappedCopies);
 
   // build doc data and template
-  await docsRunner();
+  await docs();
 }
 
 build().catch(err => {
+  // eslint-disable-next-line no-console
   console.log(err);
   process.exit(1);
 });

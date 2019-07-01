@@ -1,12 +1,11 @@
 /**
- * Create a JSON file of svg icons in a directory
+ * Create object of svg icons in a directory
  *
- * @param {Arr} mappedIcons - in/out directory
- * @returns {String} - Log of processed files
+ * @param {Arr} dir - in/out directory
+ * @returns {Object} - array of processed icons
  */
 
 // utility packages
-const fs = require('fs');
 const glob = require('fast-glob');
 const ora = require('ora');
 const path = require('path');
@@ -15,8 +14,8 @@ const createIconMap = async dirMap => {
   // find all .svg files in specified icon directory
   const svgs = await glob(`${dirMap}*/**.svg`);
 
-  let output = [];
-  const iconMap = svgs.map(svg => {
+  const output = [];
+  svgs.forEach(svg => {
     // filename
     const iconName = path.basename(svg, path.extname(svg));
     // parent dir
@@ -34,7 +33,7 @@ const createIconMap = async dirMap => {
       );
     } else {
       output.push({
-        name: name,
+        name,
         icons: [iconName],
       });
     }

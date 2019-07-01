@@ -1,20 +1,23 @@
-// utility
+/**
+ * Kicks off all the documentation runners and template compiling steps
+ *
+ */
+
 const fs = require('fs-extra');
 const Purgecss = require('purgecss');
 const purgeHtml = require('purgecss-from-html');
 const path = require('path');
+const { utils } = require('@texastribune/queso-tools');
+const styleDocRunner = require('./style-doc');
+const iconDocRunner = require('./icon-doc');
+const htmlRunner = require('./html');
 
-// internal
-const styleDocRunner = require('../../tasks/style-doc');
-const iconDocRunner = require('../../tasks/icon-doc');
-const htmlRunner = require('../../tasks/html');
-const { getBundles } = require('../../tasks/utils');
 const {
   docsStyles,
   docsIcons,
   mappedStylesManifest,
   mappedGithubData,
-} = require('./paths.js');
+} = require('../paths.js');
 
 const COMPONENT_CSS_FILE = 'no-resets';
 const COMPONENT_CSS_PATH = './docs/dist/css';
@@ -40,7 +43,7 @@ const clean = async (html, bundles) => {
   try {
     await fs.outputFile(`${dir}/${file}.css`, purgecssParsed);
   } catch (err) {
-    console.error(err);
+    throw err;
   }
   // create a styled preview
   try {
@@ -50,7 +53,7 @@ const clean = async (html, bundles) => {
       `<style>${purgecssParsed}</style>\n${htmlStr}`
     );
   } catch (err) {
-    console.error(err);
+    throw err;
   }
 };
 
@@ -59,6 +62,7 @@ const merge = async styles => {
   try {
     github = await fs.readJson(mappedGithubData.out);
   } catch (err) {
+    // eslint-disable-next-line no-console
     console.error(err);
     return styles;
   }
@@ -101,12 +105,13 @@ module.exports = async () => {
   // creates object for docs
   let styleDocs = await styleDocRunner(docsStyles);
   const iconDocs = await iconDocRunner(docsIcons);
-  const bundles = await getBundles(mappedStylesManifest);
+  const bundles = await utils.getBundles(mappedStylesManifest);
 
   // add github data
   try {
     styleDocs = await merge(styleDocs);
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(error);
   }
 
@@ -122,18 +127,20 @@ module.exports = async () => {
       JSON.stringify(allDocs, null, 2)
     );
   } catch (err) {
-    console.error(err);
+    throw new Error(err.message);
   }
 
   // creates pages
   const pagesPathIn = './docs/src/page.html';
   const pagesPathOut = './docs/dist/pages/';
   const htmlMap = styleDocs.items.map(section => {
-    section['bundles'] = bundles;
     return {
       in: pagesPathIn,
       out: `${pagesPathOut}${section.slug}/index.html`,
-      data: section,
+      data: {
+        ...section,
+        bundles,
+      },
     };
   });
 
@@ -143,29 +150,29 @@ module.exports = async () => {
   const previewPathIn = './docs/src/preview.html';
   const previewPathInRaw = './docs/src/preview-raw.html';
   const previewPathOut = './docs/dist/pages/';
-  let previewArr = [];
-  let componentArr = [];
-  styleDocs.items.map(section => {
-    section.list.map(item => {
+  const previewArr = [];
+  const componentArr = [];
+  styleDocs.items.forEach(section => {
+    section.list.forEach(item => {
       if (item.markup.length > 0) {
         const out = `${previewPathOut}${section.slug}/${item.mainClass}`;
-        item['bundles'] = bundles;
-        // map preview
+        // build preview
         previewArr.push({
           in: previewPathIn,
           out: `${out}.html`,
-          data: item,
+          data: {
+            ...item,
+            bundles,
+          },
         });
-        // map raw preview for components
+        // build raw preview
         componentArr.push({
           in: previewPathInRaw,
           out: `${out}/raw.html`,
           data: item,
         });
       }
-      return;
     });
-    return;
   });
 
   await htmlRunner(previewArr);

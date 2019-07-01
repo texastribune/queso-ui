@@ -1,3 +1,10 @@
+/**
+ * Create object of SCSS documentation in a directory
+ *
+ * @param {Arr} dir - in/out directory
+ * @returns {Object} - array of processed style docs
+ */
+
 // utility packages
 const fs = require('fs');
 const ora = require('ora');
@@ -5,17 +12,17 @@ const kss = require('kss');
 const md = require('markdown-it')({ html: true });
 
 // internal
-const { slugify, stripTags, escapeHTML } = require('./utils');
+const { slugify, stripTags } = require('./utils');
 
-GITHUB_URL = 'https://github.com/texastribune/ds-toolbox/blob/master';
+const GITHUB_URL = 'https://github.com/texastribune/ds-toolbox/blob/master';
 
 const createMap = arr => {
   const object = {};
 
   arr.forEach(item => {
     if (item.depth === 1) {
-      let name = item.header;
-      let number = item.group;
+      const name = item.header;
+      const number = item.group;
       object[number] = name;
     }
   });
@@ -25,9 +32,8 @@ const createMap = arr => {
 
 const processSection = (section, dir) => {
   // helper vars
-  const header = section.header;
+  const { header, markup } = section;
   const slug = slugify(header);
-  const markup = section.markup;
   const isFile = markup.includes('.html');
   const isWideStr = '{{isWide}}';
   const isWide = section.description.includes(isWideStr);
@@ -45,7 +51,7 @@ const processSection = (section, dir) => {
   // create an order number
   const ref = section.referenceURI;
   const orderNumber =
-    section.depth === 1 ? Number(ref + '00') : Number(ref.replace(/-/gi, ''));
+    section.depth === 1 ? Number(`${ref}00`) : Number(ref.replace(/-/gi, ''));
   const group = ref[0];
 
   // extract mainClass and prettyName (regex)
@@ -54,19 +60,21 @@ const processSection = (section, dir) => {
   const parens = /\(([^)]+)\)/;
   const parensMatch = parens.exec(header);
   if (parensMatch && typeof parensMatch[1] !== 'undefined') {
-    mainClass = parensMatch[1];
+    [, mainClass] = parensMatch;
     prettyName = prettyName.replace(parens, '').trim();
   }
 
   // grab code snippet
-  const snippet = isFile
-    ? fs.readFileSync(`${dir}/${markup}`, 'utf-8')
-    : markup;
-  const codeSnippet = escapeHTML(snippet);
+  let snippet = markup;
+  if (isFile) {
+    const markupPath = `${dir}/${markup}`;
+    snippet = fs.readFileSync(markupPath, 'utf-8');
+  }
+  const codeSnippet = snippet;
 
   // process modifiers
   const modifiers = section.modifiers.map(modifier => {
-    const className = modifier.className;
+    const { className } = modifier;
     const isInverse = className.includes('white');
     const modifierMarkup = markup.replace(/{{ className }}/g, className);
     const modifierDesc = md.render(modifier.description);
@@ -78,7 +86,7 @@ const processSection = (section, dir) => {
     };
   });
 
-  let context = {
+  const context = {
     ...section,
     slug,
     isFile,
@@ -101,8 +109,8 @@ const processSection = (section, dir) => {
 
 const processComments = async dirMap => {
   const raw = await kss.traverse(dirMap, { markdown: true });
-  let styleGuideString = JSON.stringify(raw);
-  let styleGuideData = JSON.parse(styleGuideString);
+  const styleGuideString = JSON.stringify(raw);
+  const styleGuideData = JSON.parse(styleGuideString);
 
   // parse sections
   const sectionData = styleGuideData.sections.map(section =>
@@ -112,38 +120,37 @@ const processComments = async dirMap => {
   // create a map of groups
   const groupMap = createMap(sectionData);
 
-  // sort step 1 (reference number)
-  sectionData.sort(function(a, b) {
-    var keyA = a.orderNumber,
-      keyB = b.orderNumber;
-    // Compare the 2 dates
+  // sort step 1 (orderNumber)
+  sectionData.sort((a, b) => {
+    const keyA = a.orderNumber;
+    const keyB = b.orderNumber;
     if (keyA < keyB) return -1;
     if (keyA > keyB) return 1;
     return 0;
   });
 
   // sort step 2 (nest by section)
-  let nested = {};
-  for (const item of sectionData) {
+  const nested = {};
+  sectionData.forEach(item => {
     const name = groupMap[item.group.toString()];
     if (typeof nested[name] !== 'object') {
       nested[name] = {
-        name: name,
         list: [item],
         slug: slugify(name),
+        name,
       };
     } else {
-      nested[name]['list'].push(item);
+      nested[name].list.push(item);
     }
-  }
+  });
 
   // sort step 3 (convert back to arr)
-  let nestedArr = [];
-  Object.keys(nested).forEach((e, index) => {
+  const nestedArr = [];
+  Object.keys(nested).forEach(e => {
     // Sort style data by reference number
-    nested[e].list.sort(function(a, b) {
-      var keyA = a.header,
-        keyB = b.header;
+    nested[e].list.sort((a, b) => {
+      const keyA = a.header;
+      const keyB = b.header;
       // Compare the 2 names
       if (keyA < keyB) return -1;
       if (keyA > keyB) return 1;
