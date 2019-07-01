@@ -60,8 +60,6 @@ async function dev() {
       };
 
       const logStatus = () => {
-        // clearConsole();
-
         let hadError = false;
 
         if (templatesError) {
