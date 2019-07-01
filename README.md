@@ -3,11 +3,11 @@
 
 This repo contains a library of styles and icons available to import via npm.
 
-Along with the library, we set up a few tools that document this system as we iterate. CSS comments are parsed to create a JSON object of documentation. That data is rendered with nunjucks to give us a visual representation of the various components and rule-sets we're building.
+Along with the library, we set up a few tools that help document updates. CSS comments are parsed to create a JSON object of documentation. That data is rendered with nunjucks to give us a visual representation of the various components and rule-sets we're building.
 
-The spirit of the project is that as we iterate upon the design of our products, we document along the way. This keeps our **style docs current and allows for continuos optimization our CSS.**
+Our goal is that as we iterate upon the design of our products, we document everything along the way. This keeps our **style docs current and allows for continuous optimization our CSS.**
 
-We named it "queso" because we wanted a Texas-esque name and an easy way to refer to it internally. And of course everything is better with queso. 🧀
+We named it "queso" because we wanted a Texas-esque name and an easy way to refer to it internally. Also as we all know, everything is better with queso 🧀. 
 
 ## Install
 
@@ -66,7 +66,9 @@ We organize our SCSS files with the [inverted triangle](https://www.xfive.co/blo
 We closely follow the BEM (Block Element Modifier) class naming convention in our `components` folder, but we break BEM rules in other places. This is a deliberate attempt to create a hybrid approach of using BEM when scoped to a component and helper classes when styling globally in a more ad hoc context.
 
 #### Namespacing
-Use namespacing for quick reference of the function of a CSS class. The following key can be used a guideline for naming your class:
+Use namespacing for quick reference of the function of a CSS class. The following key can be used as a guideline for naming your class:
+
+---
 
 Components
 ```css
@@ -74,11 +76,15 @@ Components
 ```
 _Example: `c-button`_
 
+---
+
 Typography
 ```css
 .t-type-util {}
 ```
 _Example: `t-headline`_
+
+---
 
 Layout
 ```css
@@ -86,11 +92,15 @@ Layout
 ```
 _Example: `l-container`_
 
+---
+
 Utilities
 ```css
 .[is|has]-state {}
 ```
 _Example: `has-bg-yellow`_
+
+---
 
 
 ## Using this system in our products
