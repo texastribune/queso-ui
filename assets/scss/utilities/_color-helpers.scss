@@ -81,6 +81,8 @@ $color-map: (
   "blue-dark": $color-blue-dark,
   "error": $color-error,
   "sponsor": $color-sponsor,
+  "twitter": $color-twitter,
+  "facebook": $color-facebook,
 );
 
 @each $color, $value in $color-map {

@@ -24,7 +24,9 @@ h3,
 h4,
 h5,
 h6,
-p {
+p,
+figure,
+blockquote {
   margin: 0;
   padding: 0;
 }
@@ -47,4 +49,8 @@ button {
 // No bullets by default
 ul {
   list-style: none;
+}
+
+hr {
+  border: 1px solid $color-gray-light;
 }

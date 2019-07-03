@@ -1,4 +1,4 @@
-<div style="border:2px solid black; width: 200px; height: 100px; position: relative; {% if className == 'l-align-center-self' %}display: flex{% endif %}">
+<div style="border:2px solid black; width: 200px; height: 100px; position: relative; {% if className == 'l-align-center-self' %}display: flex{% endif %}" {% if className == 'l-align-center-children' %}class="{{className}}"{% endif %}>
   <div style="width: 50%;" class="has-padding has-bg-yellow {{className}}">Example</div>
 </div>
 {% if className == 'l-align-center-self' %}Parent is display: flex{% endif %}
