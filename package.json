@@ -17,7 +17,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/texastribune/queso-ui.git"
+    "url": "https://github.com/texastribune/ds-toolbox.git"
   },
   "publishConfig": {
     "access": "public"
