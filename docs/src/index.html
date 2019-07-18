@@ -8,27 +8,16 @@
   <meta content="ie=edge" http-equiv="X-UA-Compatible" />
   <title>CSS + HTML Guide for The Texas Tribune</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="css/{{bundles['all-legacy']}}" />
-  <link rel="stylesheet" href="css/{{bundles['all']}}" />
-  <link rel="stylesheet" href="css/{{bundles['ds']}}" />
+  <link rel="stylesheet" href="css/all-legacy.css" />
+  <link rel="stylesheet" href="css/all.css" />
+  <link rel="stylesheet" href="css/ds.css" />
 </head>
 
 <body class="fonts-loaded">
   <div style="display: none">
     {% include '../dist/sprites/base.html' %}
   </div>
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          Style Docs
-        </h1>
-        <h2 class="subtitle">
-          CSS + HTML Guide for The Texas Tribune.
-        </h2>
-      </div>
-    </div>
-  </section>
+  {% include '../src/includes/header.html' %}
   <div class="container">
     <div class="tile is-ancestor">
       <div class="tile is-parent is-vertical is-3">

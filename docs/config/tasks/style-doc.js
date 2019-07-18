@@ -14,7 +14,7 @@ const md = require('markdown-it')({ html: true });
 // internal
 const { slugify, stripTags } = require('./utils');
 
-const GITHUB_URL = 'https://github.com/texastribune/ds-toolbox/blob/master';
+const GITHUB_URL = 'https://github.com/texastribune/queso-ui/blob/master';
 
 const createMap = arr => {
   const object = {};
