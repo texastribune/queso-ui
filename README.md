@@ -33,7 +33,7 @@ When you add a new class, component, scss variable, mixin, etc., you'll want to 
 ### SCSS docs boilerplate
 > How to document a new CSS class
 
-We use a comment parser along with some [extra logic](https://github.com/texastribune/ds-toolbox/blob/master/tasks/style-doc.js) to generate our docs. To add a new section of documentation, add a boilerplate above your CSS rules like the one below: 
+We use a comment parser along with some [extra logic](https://github.com/texastribune/queso-ui/blob/master/tasks/style-doc.js) to generate our docs. To add a new section of documentation, add a boilerplate above your CSS rules like the one below: 
 
 ```scss
 // Title of Section (root-class-name)

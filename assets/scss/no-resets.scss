@@ -1,6 +1,6 @@
 // no-resets.css
 //
-// This CSS file uses <strong>everything with the exception of our resets</strong>. We use this to generate standalone CSS for components. In that process we take the component HTML and no-resets.css. We then prune the excess CSS that isn't referenced in the HTML. If you were to navigate to _pages/components/{c-component-name}/raw-preview.html_ and view source, you'll see the pruned output of this file based on the HTML of the component. <div>`@import "ds-toolbox-test/assets/scss/no-resets"`</div>
+// This CSS file uses <strong>everything with the exception of our resets</strong>. We use this to generate standalone CSS for components. In that process we take the component HTML and no-resets.css. We then prune the excess CSS that isn't referenced in the HTML. If you were to navigate to _pages/components/{c-component-name}/raw-preview.html_ and view source, you'll see the pruned output of this file based on the HTML of the component. <div>`@import "@texastribune/queso-ui/assets/scss/no-resets"`</div>
 //
 // Styleguide 0.0.1
 @import '1-settings/all';

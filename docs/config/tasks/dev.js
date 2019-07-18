@@ -10,12 +10,7 @@ const copyRunner = require('./copy');
 const docsRunner = require('./docs.js');
 const githubRunner = require('./github.js');
 
-const {
-  mappedStyles,
-  mappedCopies,
-  mappedStylesManifest,
-  mappedIcons,
-} = require('../paths.js');
+const { mappedStyles, mappedCopies, mappedIcons } = require('../paths.js');
 
 const printInstructions = (external, local) => {
   utils.logMessage(`${external} | ${local}`, 'green');
@@ -29,7 +24,7 @@ async function dev() {
     {
       logConnections: true,
       logLevel: 'silent',
-      logPrefix: 'ds-toolbox',
+      logPrefix: 'queso-ui',
       notify: false,
       open: false,
       port: 3000,
@@ -79,7 +74,7 @@ async function dev() {
 
       const compile = async () => {
         try {
-          await styles(mappedStyles, mappedStylesManifest);
+          await styles(mappedStyles);
           stylesError = null;
         } catch (e) {
           stylesError = e;

@@ -19,9 +19,6 @@ const mappedStyles = [
   },
 ];
 
-// cache busting map
-const mappedStylesManifest = `${buildDir}css/styles.json`;
-
 const docsStyles = './assets/scss/';
 
 const mappedIcons = [
@@ -56,7 +53,6 @@ const mappedGithubData = {
 
 module.exports = {
   mappedStyles,
-  mappedStylesManifest,
   mappedGithubData,
   docsStyles,
   mappedIcons,

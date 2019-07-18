@@ -7,23 +7,17 @@ const fs = require('fs-extra');
 const Purgecss = require('purgecss');
 const purgeHtml = require('purgecss-from-html');
 const path = require('path');
-const { utils } = require('@texastribune/queso-tools');
 const styleDocRunner = require('./style-doc');
 const iconDocRunner = require('./icon-doc');
 const htmlRunner = require('./html');
 
-const {
-  docsStyles,
-  docsIcons,
-  mappedStylesManifest,
-  mappedGithubData,
-} = require('../paths.js');
+const { docsStyles, docsIcons, mappedGithubData } = require('../paths.js');
 
-const COMPONENT_CSS_FILE = 'no-resets';
+const COMPONENT_CSS_FILE = 'no-resets.css';
 const COMPONENT_CSS_PATH = './docs/dist/css';
 
-const clean = async (html, bundles) => {
-  const filePath = `${COMPONENT_CSS_PATH}/${bundles[COMPONENT_CSS_FILE]}`;
+const clean = async html => {
+  const filePath = `${COMPONENT_CSS_PATH}/${COMPONENT_CSS_FILE}`;
 
   const purgecss = new Purgecss({
     content: [html],
@@ -105,7 +99,6 @@ module.exports = async () => {
   // creates object for docs
   let styleDocs = await styleDocRunner(docsStyles);
   const iconDocs = await iconDocRunner(docsIcons);
-  const bundles = await utils.getBundles(mappedStylesManifest);
 
   // add github data
   try {
@@ -119,7 +112,6 @@ module.exports = async () => {
   const allDocs = {
     styleDocs,
     iconDocs,
-    bundles,
   };
   try {
     await fs.outputFile(
@@ -139,7 +131,6 @@ module.exports = async () => {
       out: `${pagesPathOut}${section.slug}/index.html`,
       data: {
         ...section,
-        bundles,
       },
     };
   });
@@ -162,7 +153,6 @@ module.exports = async () => {
           out: `${out}.html`,
           data: {
             ...item,
-            bundles,
           },
         });
         // build raw preview
@@ -179,9 +169,7 @@ module.exports = async () => {
   await htmlRunner(componentArr);
 
   // generate component CSS
-  await Promise.all(
-    componentArr.map(component => clean(component.out, bundles))
-  );
+  await Promise.all(componentArr.map(component => clean(component.out)));
 
   // creates main
   const mainPathIn = './docs/src/index.html';
