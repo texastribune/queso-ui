@@ -18,6 +18,7 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
   > h6,
   > ul,
   > span,
+  > hr,
   > div:not([class^="plugin"]) {
     max-width: $story-narrow;
     margin: $size-b auto;
@@ -42,4 +43,7 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
     position: initial;
   }
 
+  hr {
+    margin: $size-xl auto;
+  }
 }
