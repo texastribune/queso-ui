@@ -14,11 +14,16 @@ const htmlRunner = require('./html');
 const { docsStyles, docsIcons, mappedGithubData } = require('../paths.js');
 
 const COMPONENT_CSS_FILE = 'no-resets.css';
+const LEGACY_CSS_FILE = 'all-legacy.css';
 const COMPONENT_CSS_PATH = './docs/dist/css';
 
-const clean = async html => {
-  const filePath = `${COMPONENT_CSS_PATH}/${COMPONENT_CSS_FILE}`;
+const clean = async (html, deprecated) => {
+  let css = COMPONENT_CSS_FILE;
+  if (deprecated) {
+    css = LEGACY_CSS_FILE;
+  }
 
+  const filePath = `${COMPONENT_CSS_PATH}/${css}`;
   const purgecss = new Purgecss({
     content: [html],
     css: [filePath],
@@ -169,7 +174,11 @@ module.exports = async () => {
   await htmlRunner(componentArr);
 
   // generate component CSS
-  await Promise.all(componentArr.map(component => clean(component.out)));
+  await Promise.all(
+    componentArr.map(component =>
+      clean(component.out, component.data.deprecated)
+    )
+  );
 
   // creates main
   const mainPathIn = './docs/src/index.html';
