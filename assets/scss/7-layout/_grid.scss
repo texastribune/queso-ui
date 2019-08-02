@@ -2,9 +2,11 @@
 //
 // This is a flexbox based grid. In the future, we'll start to rely more on CSS grid and slowly phase out this grid, piece by piece.
 //
-// _Replacements so far:_
-// grid_separator => **has-<size>-btm-marg** |
-// grid_container => **l-container**
+// _Replacements so far:_<br>
+// grid_separator => [**has-{size}-btm-marg**](/pages/utilities/index.html#margin-has-size-btm-marg) <br>
+// grid_container => [**l-container**](#container-l-container) <br>
+// grid_padded => [**has-gutter-padding**](/pages/utilities/index.html#padding-has-padding) <br>
+// grid_padded--temp => [**has-temp-gutter-padding**](/pages/utilities/index.html#padding-has-padding) <br>
 //
 // Markup: 7-layout/grid.html
 //
@@ -77,11 +79,6 @@ $column-slug: col !default;
   }
 }
 
-.col_adunit300x250 {
-  @extend %flex-col;
-  margin-right: 0;
-  max-width: 310px;
-}
 
 .grid {
   display: flex;
@@ -94,29 +91,6 @@ $column-slug: col !default;
     flex-wrap: nowrap;
   }
 
-  // .grid_padded -- DEFAULT
-  // adds left/right padding on small screens
-  &_padded {
-    padding: 0 $size-xs;
-
-    @include mq($from: bp-m, $until: bp-xl) {
-      padding: 0 $size-b;
-    }
-
-    @include mq($from: bp-xl) {
-      padding: 0;
-    }
-  }
-
-  // Custom setting for story page lead art
-  // adds left/right padding on middle-size screens
-  &_padded--temp {
-    padding: 0;
-
-    @include mq($from: bp-l, $until: bp-xl) {
-      padding: 0 $size-b;
-    }
-  }
 
   &_order {
     &--primary {
@@ -189,7 +163,7 @@ $column-slug: col !default;
 
   /**
     Use the following two classes in tandem,
-    probably with .col and .col_adunit300x250
+    probably with .col and .col_300x250
     together in a row. It flips the order
     at different breakpoints, which can be
     useful when stacking.
@@ -238,50 +212,6 @@ $column-slug: col !default;
             max-width: 100%;
           }
         }
-      }
-    }
-
-    .col_adunit300x250 {
-      flex: 0 1 100%;
-      margin-right: 0;
-      max-width: 100%;
-
-      @include mq($from: $bp) {
-        margin-left: 0;
-        margin-right: 0;
-        max-width: 310px;
-      }
-    }
-  }
-
-  // Set left/right padded until a breakpoint
-  // grid_padded--m = 1.1rem padding until bp-m
-  .grid_padded--#{$size} {
-    @include mq($until: $bp-xs) {
-      padding: 0 $size-xs;
-    }
-
-    @include mq($until: $bp) {
-      padding: 0 $size-b;
-    }
-  }
-
-  // Hide element screens > $bp
-  // i.e. display until $bp
-  .hide_from {
-    &--#{$size} {
-      @include mq($from: $bp) {
-        display: none !important;
-      }
-    }
-  }
-
-  // Hide element screens < $bp
-  // i.e. display from $bp
-  .hide_until {
-    &--#{$size} {
-      @include mq($until: $bp) {
-        display: none !important;
       }
     }
   }

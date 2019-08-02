@@ -9,7 +9,7 @@
 // grid_container--xl - 1080px
 // grid_container--xxl - 1300px
 //
-// Markup: <div class="{{className}}">Container</div>
+// Markup: <div style="border: 2px solid black; padding: 20px;" class="{{ className }} container-demo"><strong>{{ className }}</strong> (<span></span>)</div>
 //
 // Styleguide 7.0.1
 //
@@ -28,6 +28,24 @@
 // .grid_separator--xxxl - 3rem
 //
 // Markup: <ul><li class="{{ className }}" style="border:2px solid black;">Example</li><li style="border:2px solid black;">Example</li></ul>
+//
+//
+// Styleguide 7.0.1
+//
+
+
+// Grid Padded (grid_padded)
+//
+// Deprecated: Adds varying amounts side padding. Note: Demo is best viewed in [standalone preview](/pages/layout/grid_padded/raw-preview.html). {{isHelper}}
+//
+// .grid_padded--s - .275rem
+// .grid_padded--m - 1.75rem
+// .grid_padded--l - .55rem
+// .grid_padded--xl - 1.2rem
+// .grid_padded--xxl - 1.5rem
+// .grid_padded--temp - 1.5rem
+//
+// Markup: <div class="{{ className }}" style="border:2px solid black; background: #eee;"><div style="background-color: black; color: white; height: 30px">{{ className }}</div></div>
 //
 //
 // Styleguide 7.0.1
