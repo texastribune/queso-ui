@@ -36,17 +36,38 @@
 
 // Grid Padded (grid_padded)
 //
-// Deprecated: Adds varying amounts side padding. Note: Demo is best viewed in [standalone preview](/pages/layout/grid_padded/raw-preview.html). {{isHelper}}
+// Deprecated: Adds side padding at various viewport widths. Note: Demo is best viewed in [standalone preview](/pages/layout/grid_padded/raw-preview.html). {{isHelper}}
 //
-// .grid_padded--s - .275rem
-// .grid_padded--m - 1.75rem
-// .grid_padded--l - .55rem
-// .grid_padded--xl - 1.2rem
-// .grid_padded--xxl - 1.5rem
-// .grid_padded--temp - 1.5rem
+// .grid_padded - Gutter padding:<br>`.92rem` mobile<br> `1.1rem` tablet - desktop <br>`0` large desktop
+// .grid_padded--temp - Gutter padding:<br>`0` mobile - small desktop<br>`1.1rem` desktop<br>`0` large desktop
+// .grid_padded--s - Gutter padding:<br>`1.1rem` mobile<br>`0` tablet+
+// .grid_padded--m - Gutter padding:<br>`1.1rem` tablet<br>`0` small desktop+
+// .grid_padded--l - Gutter padding:<br>`1.1rem` small desktop<br>`0` desktop+
+// .grid_padded--xl - Gutter padding:<br>`1.1rem` desktop<br>`0` large desktop+
+// .grid_padded--xxl - Gutter padding:<br>`1.1rem` large desktop<br>`0` large desktop+
 //
 // Markup: <div class="{{ className }}" style="border:2px solid black; background: #eee;"><div style="background-color: black; color: white; height: 30px">{{ className }}</div></div>
 //
+//
+// Styleguide 7.0.1
+//
+
+// Hide (hide_<from | until>--<size>)
+//
+// Deprecated: Adds varying amounts side padding. Note: Demo is best viewed in [standalone preview](/pages/layout/grid_padded/raw-preview.html). {{isHelper}}
+//
+// .hide_from--s - Hide from large mobile onward; Show small mobile only
+// .hide_from--m - Hide from tablet onward; Show on all mobile
+// .hide_from--l - Hide from small desktop onward; Show on all mobile and tablet
+// .hide_from--xl - Hide from desktop onward; Show on all mobile, tablet, and small desktop
+// .hide_from--xxl - Hide from large desktop onward; Show on all mobile, tablet, small desktop, and desktop
+// .hide_until--s - Hide until large mobile; Show on large mobile, tablet, desktop
+// .hide_until--m - Hide until tablet; Show tablet, desktop
+// .hide_until--l - Hide until small desktop; Show all desktop
+// .hide_until--xl - Hide until desktop; Show desktop, large desktop
+// .hide_until--xxl - Hide until large desktop; Show on large desktop only
+//
+// Markup: <div style="background:#ffc200;" class="{{ className }}"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>
 //
 // Styleguide 7.0.1
 //
