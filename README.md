@@ -122,6 +122,24 @@ Make sure you're authenticated for npm publishing.
 1. `npm login` - then follow the prompts
 2. `npm run release` - There's a [bug](https://github.com/sindresorhus/np/issues/420#issuecomment-499273013) in the `np` publishing tool we use where `yarn` commands don't seem to work.
 
+### Semantic versioning
+The npm helper we use for versioning simplifies matching version numbers with the various `MAJOR`, `MINOR`, `PATCH` increment types. For guidance on what type of release you're making, refer to [https://semver.org/](https://semver.org/)
+
+Generally, you could base your increment type on the following list:
+
+- MAJOR version = CSS changes that visually break layouts where `queso-ui` is used on production
+- MINOR version = CSS changes that have no visual effect on production
+- PATCH version = CSS changes that fix a previous bug introduced on production or in development 
+
+### Steps to test breaking changes:
+1. Publish these changes on npm: `npm run release`. Copy the version number.
+2. Create a new branch in the repo in question.
+3. `yarn add @texastribune/queso-ui@VERSION`
+4. Compile the CSS
+5. Scan the various places where queso-ui is used. At the time of writing, the following pages heavily rely upon this CSS so be sure to check those if you're deprecating/changing classes.
+* [ ] [/podcasts](http://local.texastribune.org:8000/podcasts)
+* [ ] [/support-us/donors-and-members](http://local.texastribune.org:8000/support-us/donors-and-members)
+* [ ] [/newsletters/slug](http://local.texastribune.org:8000/newsletters/tribweek)
 
 
 ##  Features/Wishlist
