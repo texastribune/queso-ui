@@ -35,9 +35,8 @@
 // .has-padding -  All-around padding with $size-b
 // .has-xs-padding - All-around padding with $size-xs
 // .has-xl-padding - All-around padding with $size-xl
-// .has-reset-padding - Removes padding
-// .has-gutter-padding - Left/right padding on small screens
-// .has-temp-gutter-padding - Custom setting for story page lead art
+// .has-page-padding - Left/right padding on small screens
+// .has-page-padding-at-bp-l - Custom setting for story page lead art
 // .has-section-padding - Top/bottom responsive padding
 //
 // Markup: <div style="border: 2px solid #000; background: #eee" class="{{ className }}"><div style="background: #000;color: #fff;">{{ className }}</div></div>
@@ -61,7 +60,7 @@
   padding: 0;
 }
 
-.has-gutter-padding {
+.has-page-padding {
   padding: 0 $size-xs;
   @include mq($from: bp-m, $until: bp-xl) {
     padding: 0 $size-b;
@@ -71,7 +70,7 @@
   }
 }
 
-.has-temp-gutter-padding {
+.has-page-padding-at-bp-l {
   @include mq($from: bp-l, $until: bp-xl) {
     padding: 0 $size-b;
   }
