@@ -38,13 +38,13 @@
 //
 // Deprecated: Adds side padding at various viewport widths. Note: Demo is best viewed in [standalone preview](/pages/layout/grid_padded/raw-preview.html). {{isHelper}}
 //
-// .grid_padded - Gutter padding:<br>`.92rem` mobile<br> `1.1rem` tablet - desktop <br>`0` large desktop
-// .grid_padded--temp - Gutter padding:<br>`0` mobile - small desktop<br>`1.1rem` desktop<br>`0` large desktop
-// .grid_padded--s - Gutter padding:<br>`1.1rem` mobile<br>`0` tablet+
-// .grid_padded--m - Gutter padding:<br>`1.1rem` tablet<br>`0` small desktop+
-// .grid_padded--l - Gutter padding:<br>`1.1rem` small desktop<br>`0` desktop+
-// .grid_padded--xl - Gutter padding:<br>`1.1rem` desktop<br>`0` large desktop+
-// .grid_padded--xxl - Gutter padding:<br>`1.1rem` large desktop<br>`0` large desktop+
+// .grid_padded - Left/right padding:<br>`.92rem` mobile<br> `1.1rem` tablet - desktop <br>`0` large desktop
+// .grid_padded--temp - Left/right padding:<br>`0` mobile - small desktop<br>`1.1rem` desktop<br>`0` large desktop
+// .grid_padded--s - Left/right padding:<br>`1.1rem` mobile<br>`0` tablet+
+// .grid_padded--m - Left/right padding:<br>`1.1rem` tablet<br>`0` small desktop+
+// .grid_padded--l - Left/right padding:<br>`1.1rem` small desktop<br>`0` desktop+
+// .grid_padded--xl - Left/right padding:<br>`1.1rem` desktop<br>`0` large desktop+
+// .grid_padded--xxl - Left/right padding:<br>`1.1rem` large desktop<br>`0` large desktop+
 //
 // Markup: <div class="{{ className }}" style="border:2px solid black; background: #eee;"><div style="background-color: black; color: white; height: 30px">{{ className }}</div></div>
 //
