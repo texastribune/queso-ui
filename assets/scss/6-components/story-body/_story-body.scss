@@ -29,15 +29,15 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
   }
 
 
-  ul {
+  > ul {
     list-style: disc;
     padding: 0 $size-b 0 3.5rem;
-    
+
+    li {
+      margin-bottom: $size-b;
+    }
   }
 
-  li {
-    margin-bottom: $size-b;
-  }
 
   sub, sup {
     position: initial;
