@@ -71,6 +71,17 @@
 //
 // Styleguide 7.0.1
 //
+
+
+// Section Padding (section_padded)
+//
+// Deprecated: Adds top/bottom padding for sections. Usually used with grid_padded.
+//
+//
+// Markup: <div class="section_padded" style="border:2px solid black; background: #eee;"><div style="background-color: black; color: white; height: 30px">section_padded</div></div>
+//
+// Styleguide 7.0.1
+//
 $grid-columns: 12;
 $grid-gutter: $size-b;
 $grid-gutter-px: 17.6;
@@ -396,11 +407,11 @@ $column-slug: col !default;
   margin-right: 0;
 }
 
-// .section_padded {
-//   padding-top: $size-xgiant;
-//   padding-bottom: $size-xgiant;
-//   @include mq($until: bp-m) {
-//     padding-top: $size-xl;
-//     padding-bottom: $size-xl;
-//   }
-// }
+.section_padded {
+  padding-top: $size-xxxl;
+  padding-bottom: $size-xxxl;
+  @include mq($until: bp-m) {
+    padding-top: $size-xl;
+    padding-bottom: $size-xl;
+  }
+}
