@@ -9,7 +9,24 @@ Our goal is that as we iterate upon the design of our products, we document ever
 
 We named it "queso" because we wanted a Texas-esque name and an easy way to refer to it internally. Also as we all know, everything is better with queso 🧀. 
 
-## Install
+## Getting started
+To preview these assets and accompanying docs locally, run the following commands:
+```sh
+yarn
+```
+
+```sh
+yarn dev
+```
+Visit http://localhost:3000
+
+This spins up a browsersync server and watch task for all SCSS and HTML files.
+
+**Requirements**
+- node >=8.11.3 (to be replaced with a docker container)
+
+
+## Installing as a dependency
 
 ```sh
 yarn add @texastribune/queso-ui --dev
