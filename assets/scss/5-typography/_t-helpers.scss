@@ -76,7 +76,7 @@
 //
 // New utility to help eliminate repitition. {{isHelper}}
 //
-// t-space-nospace - Tight leading | line-height: 1
+// t-space-base - Base leading | line-height: 1.4 (used on paragraphs)
 // t-space-heading-s - More spaced out | line-height: 1.25
 // t-space-heading-m - More spaced out | line-height: 1.5
 // t-space-heading-l - Even more | line-height: 2
@@ -87,10 +87,10 @@
 // Styleguide 5.2.7
 //
 $line-height-type: (
-  nospace: 1,
-  heading-s: 1.25,
-  heading-m: 1.5,
-  heading-l: 2,
+  base: $line-height-b,
+  heading-s: $line-height-s,
+  heading-m: $line-height-m,
+  heading-l: $line-height-l,
 );
 
 @each $type-set, $line-height in $line-height-type {

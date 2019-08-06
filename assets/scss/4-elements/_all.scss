@@ -54,3 +54,8 @@ ul {
 hr {
   border: 1px solid $color-gray-light;
 }
+
+// By default we add leading to paragraphs
+p {
+  line-height: $line-height-b;
+}

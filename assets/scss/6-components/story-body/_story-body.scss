@@ -28,6 +28,12 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
     }
   }
 
+  > p,
+  > h3,
+  > ul li {
+    @include font-setting('secondary');
+    @include underlined-link-parent;
+  }
 
   > ul {
     list-style: disc;
