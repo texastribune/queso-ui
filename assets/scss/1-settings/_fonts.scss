@@ -48,3 +48,18 @@ $font-root-mobile: 15px;
 $font-letter-spacing-sm: .02em;
 $font-letter-spacing: .03em;
 $font-letter-spacing-lg: .05em;
+
+// Line Height
+//
+// Consistent line-height values
+//
+// $line-height-s = 1.25 - Tight leading
+// $line-height-b = 1.4 - Default leading used on p tags
+// $line-height-m = 1.5 - Heading spacing
+// $line-height-l = 2 - More heading spacing
+//
+// Styleguide 1.2.3
+$line-height-s: 1.25;
+$line-height-b: 1.4;
+$line-height-m: 1.5;
+$line-height-l: 2;
