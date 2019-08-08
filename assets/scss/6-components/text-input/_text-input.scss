@@ -11,10 +11,19 @@
   border-radius: 0;
   border-style: solid;
   border-width: 1px;
-  line-height: $line-height-b;
+  outline: none;
   padding: $size-xxs;
+  transition: box-shadow .15s ease-in-out;
+
+  &:focus {
+    box-shadow: 0 0 0 .2rem rgba($color-blue-light, .4);
+  }
 
   &.is-invalid {
     border-color: $color-error;
+
+    &:focus {
+      box-shadow: 0 0 0 .2rem rgba($color-error, .4);
+    }
   }
 }
