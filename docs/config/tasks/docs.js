@@ -13,7 +13,7 @@ const htmlRunner = require('./html');
 
 const { docsStyles, docsIcons, mappedGithubData } = require('../paths.js');
 
-const COMPONENT_CSS_FILE = 'no-resets.css';
+const COMPONENT_CSS_FILE = 'all.css';
 const LEGACY_CSS_FILE = 'all-legacy.css';
 const COMPONENT_CSS_PATH = './docs/dist/css';
 
