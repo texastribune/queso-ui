@@ -1,0 +1,16 @@
+// Checkbox (c-checkbox)
+//
+// A good old-fashioned checkbox with light styling for alignment.
+//
+// Markup: 6-components/checkbox/checkbox.html
+//
+// Styleguide 6.1.5
+.c-checkbox {
+  line-height: $line-height-b;
+
+  input {
+    margin-bottom: 2px;
+    margin-right: 2px;
+    vertical-align: middle;
+  }
+}
