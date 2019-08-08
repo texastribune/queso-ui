@@ -1,0 +1,24 @@
+// Mini form (c-mini-form)
+//
+// A text input adjacent to a button/submit input.
+//
+// Markup: 6-components/mini-form/mini-form.html
+//
+// Styleguide 6.1.5
+.c-mini-form {
+  display: grid;
+  grid-template-columns: 1fr 6rem;
+
+  &__input {
+    grid-column: 1;
+  }
+
+  &__submit {
+    grid-column: 2;
+  }
+
+  .c-text-input,
+  .c-button {
+    height: 45px;
+  }
+}
