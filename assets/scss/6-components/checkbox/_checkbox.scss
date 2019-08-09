@@ -1,0 +1,25 @@
+// Checkbox (c-checkbox)
+//
+// A good old-fashioned checkbox with light styling for alignment.
+//
+// Markup: 6-components/checkbox/checkbox.html
+//
+// Styleguide 6.1.5
+.c-checkbox {
+  display: grid;
+  gap: $size-b;
+  grid-gap: $size-b;
+  grid-template-columns: .2rem 1fr;
+  
+  &__box {
+    grid-column: 1;
+    
+    input {
+      margin-top: 4px;
+    }
+  }
+
+  &__label {
+    grid-column: 2;
+  }
+}

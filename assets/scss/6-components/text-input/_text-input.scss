@@ -1,0 +1,29 @@
+// Text input (c-text-input)
+//
+// Text form inputs. Can be used with type="text", type="email", etc. Add .is-valid if the value is not valid.
+//
+// Markup: 6-components/text-input/text-input.html
+//
+// Styleguide 6.1.5
+.c-text-input {
+  -webkit-appearance: none;
+  border-color: $color-gray-light;
+  border-radius: 0;
+  border-style: solid;
+  border-width: 1px;
+  outline: none;
+  padding: $size-xxs;
+  transition: box-shadow .15s ease-in-out;
+
+  &:focus {
+    box-shadow: 0 0 0 .2rem rgba($color-blue-light, .4);
+  }
+
+  &.is-invalid {
+    border-color: $color-error;
+
+    &:focus {
+      box-shadow: 0 0 0 .2rem rgba($color-error, .4);
+    }
+  }
+}
