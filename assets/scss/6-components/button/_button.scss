@@ -27,7 +27,12 @@
   &:disabled,
   &[disabled]
   &:not([disabled="false"]) {
-    opacity: .4;
+    opacity: 0.4;
+
+    &:hover,
+    &:active {
+      opacity: 0.4;
+    }
   }
 
   @media (hover: hover) {
