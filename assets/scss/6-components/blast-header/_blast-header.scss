@@ -16,17 +16,17 @@ $blast-header-height: 18rem;
     margin-left: auto;
     margin-right: auto;
 
-    &--logo {
+    &--brand {
+      margin-bottom: $size-m;
       max-width: px-to-rem(450px);
     }
 
     &--title {
       max-width: px-to-rem(250px);
-      align-self: center;
-
-      img {
-        height: px-to-rem(20px);
-      }
+    }
+    
+    &__logo {
+      height: px-to-rem(20px);
     }
   }
   @supports (display: grid) {
