@@ -1,0 +1,45 @@
+// Blast Header (c-blast-header)
+//
+// Header for Blast product.
+//
+// Markup: 6-components/blast-header/blast-header.html
+//
+// Styleguide 6.1.1
+$blast-header-height: 18rem;
+
+// Header w/ logos
+.c-blast-header {
+  background-size: cover;
+  height: $blast-header-height;
+
+  &__col {
+    margin-left: auto;
+    margin-right: auto;
+
+    &--logo {
+      max-width: px-to-rem(450px);
+    }
+
+    &--title {
+      max-width: px-to-rem(250px);
+      align-self: center;
+
+      img {
+        height: px-to-rem(20px);
+      }
+    }
+  }
+  @supports (display: grid) {
+    @include mq($from: bp-m) {
+      &__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: $size-b;
+      }
+
+      &__col {
+        margin: 0;
+      }
+    }
+  }
+}
