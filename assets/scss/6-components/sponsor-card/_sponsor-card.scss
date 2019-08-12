@@ -9,9 +9,9 @@ $c-sponsor-card-padding: $size-s;
 $c-sponsor-card-min: 300px;
 
 .c-sponsor-card {
+  @include gap($c-sponsor-card-padding);
   border-top: 5px solid $color-sponsor;
   display: grid;
-  grid-gap: $c-sponsor-card-padding;
   grid-template-columns: repeat(auto-fit, minmax($c-sponsor-card-min, auto));
   padding: ($c-sponsor-card-padding * 3) $c-sponsor-card-padding
     $c-sponsor-card-padding;

@@ -32,9 +32,9 @@ $blast-header-height: 18rem;
   @supports (display: grid) {
     @include mq($from: bp-m) {
       &__inner {
+        @include gap;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-gap: $size-b;
       }
 
       &__col {
