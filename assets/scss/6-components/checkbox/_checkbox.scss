@@ -6,9 +6,8 @@
 //
 // Styleguide 6.1.5
 .c-checkbox {
+  @include gap;
   display: grid;
-  gap: $size-b;
-  grid-gap: $size-b;
   grid-template-columns: .2rem 1fr;
   
   &__box {
