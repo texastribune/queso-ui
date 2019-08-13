@@ -157,7 +157,7 @@ Generally, you could base your increment type on the following list:
 * [ ] [/podcasts](http://local.texastribune.org:8000/podcasts)
 * [ ] [/support-us/donors-and-members](http://local.texastribune.org:8000/support-us/donors-and-members)
 * [ ] [/newsletters/slug](http://local.texastribune.org:8000/newsletters/tribweek)
-
+* [ ] [/theblast/*](http://local.texastribune.org:8000/theblast)
 
 ##  Features/Wishlist
 
