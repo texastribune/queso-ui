@@ -15,6 +15,12 @@
   padding: $size-xxs;
   transition: box-shadow .15s ease-in-out;
 
+  // kill X button that appears on IE and edge
+  // because it doesn't handle JS input event correctly
+  &::-ms-clear {
+    display: none;
+  }
+
   &:focus {
     box-shadow: 0 0 0 .2rem rgba($color-blue-light, .4);
   }
