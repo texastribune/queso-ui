@@ -7,8 +7,9 @@
 // Styleguide 6.1.3
 .c-info-list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: $size-xl;
+  grid-gap: $size-xl;
+  grid-template-columns: repeat(3, 1fr);
   list-style: none;
 
   @include mq($until: bp-s) {
