@@ -1,6 +1,6 @@
 {
   "name": "@texastribune/queso-ui",
-  "version": "2.3.1",
+  "version": "2.4.0",
   "description": "Asset library of SCSS and SVG files",
   "scripts": {
     "prettier": "prettier --write './docs/**/*.js'",
