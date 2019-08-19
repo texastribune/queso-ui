@@ -1,7 +1,22 @@
-<div class="c-back-to-top l-display-ib">
-  <button class="c-button c-button--circle">
-    <span class="l-align-center-y t-size-xxs"><span class="c-icon c-icon--arrow-up l-display-block"><svg aria-hidden="true">
-        <use xlink:href="#arrow-up"></use>
-    </svg></span>Back to Top</span>
+<div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsa, magni ad, quae iste quos dicta fuga, harum aliquam expedita accusantium voluptatum illo quis! Neque ea dolore veritatis corporis, ab temporibus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, eius aut. Ducimus qui recusandae laborum voluptatem alias nemo dicta. Porro aspernatur, dolorem doloribus repellat repellendus odit perspiciatis! Facere, fuga atque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero inventore dicta quo ipsam deserunt assumenda expedita qui deleniti, saepe sed eligendi harum error quas dolores aspernatur quos autem tenetur dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem sit, architecto veritatis sapiente, mollitia aspernatur voluptas odit modi, cupiditate illum quam ipsum porro quasi omnis error saepe laborum expedita aliquam! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minus laboriosam veritatis dolorem quis similique repudiandae ipsam. A perspiciatis unde tenetur est delectus in repudiandae dolor quibusdam, dolore nobis, iusto cupiditate. Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro assumenda, quis quibusdam sequi iste voluptatibus accusamus accusantium sint id similique facere. Doloremque, assumenda temporibus repellendus nulla labore quod recusandae quos. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quidem, vero amet. Obcaecati unde ipsum iste odio recusandae eaque fugiat dolor beatae! Nam placeat, sequi cumque itaque voluptatem dolores quam ea. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta debitis fugit quasi quidem repellendus natus ea qui voluptates, placeat saepe cupiditate enim. Earum nostrum neque vero at. Neque, consequuntur. Nesciunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem repudiandae tempore voluptatum ex pariatur omnis illo ullam consequuntur eveniet quisquam quidem temporibus quas similique error a architecto laboriosam, voluptatibus fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum nisi mollitia minus molestias incidunt assumenda quo vitae velit quod veritatis expedita veniam ipsum saepe beatae, et consequatur pariatur quisquam impedit.</div>
+<div id="back-to-top-btn" class="c-back-to-top">
+  <button class="c-back-to-top__inner c-button c-button--circle">
+    <span class="l-align-center-y t-size-xxs">
+      <span class="c-icon c-icon--arrow-up l-display-block">
+        <svg aria-hidden="true">
+          <use xlink:href="#arrow-up"></use>
+        </svg>
+      </span>Back to Top</span>
   </button>
 </div>
+
+<script>
+const BUTTON = '#back-to-top-btn';
+document.querySelector(BUTTON).addEventListener('click', () => {
+  window.scrollTo({
+    behavior: 'smooth',
+    left: 0,
+    top: 0,
+  });
+});
+</script>

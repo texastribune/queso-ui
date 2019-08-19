@@ -1,6 +1,6 @@
 // Back to top (c-back-to-top)
 //
-// This is a weird one because it is opinionated on position. It could also be converted to a more global style, but for now we're keeping it specific to this one use. This also depends on a JS helper. NOTE: The trick is to place this class outside of your button since position: sticky works best on direct children of a body tag.
+// This component is is opinionated on position. There is an optional `c-back-to-top-viewport` class, which is used to conditionally show back-to-top when the viewport is scrolled for a bit. That feature requires some [extra JS](https://github.com/texastribune/texastribune/blob/master/snollygoster/common/js/modules/entry-utils/ui/index.js#L18-L34). <h4>Note:</h4><ol><li>Place this class outside of your back to top button because `position: sticky` works best on direct children of body.</li><li>To use `position: sticky` on Safari, you need a block-level element.</li></ol>
 //
 //
 // Markup: 6-components/back-to-top/back-to-top.html
@@ -11,8 +11,16 @@
   left: 100%;
   opacity: 1;
   padding-right: $size-s;
+  pointer-events: none;
   position: sticky;
   transition: opacity .3s;
+  // Safari won't allow inline-block; we need a width for positioning.
+  // If this grows in the future, consider making this a variation.
+  width: 4rem;
+
+  &__inner {
+    pointer-events: all;
+  }
 }
 
 

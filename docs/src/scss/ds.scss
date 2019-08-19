@@ -25,14 +25,28 @@
   padding: 1rem 0;
 }
 
-.ds-desc a {
-  text-decoration: underline;
-  font-weight: bold;
+.ds-desc {
+  a {
+    text-decoration: underline;
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+
+  ol,
+  ul {
+    margin: .5rem;
+    padding-left: 2rem;
+    font-size: medium;
+
+    li {
+      margin-bottom: .5rem;
+    }
+  }
 }
 
-.ds-desc p {
-  margin-bottom: 1rem;
-}
 
 .ds-menu {
   overflow: scroll;
