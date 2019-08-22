@@ -1,24 +1,4 @@
-<div class="l-content-grid">
-  <div class="l-content-grid__content has-bg-white-off">
-    <h3 class="has-padding">Content</h3>
-  </div>
-  <div class="l-content-grid__side has-bg-gray-light">
-    <h3 class="has-padding">Sidebar</h3>
-  </div>
-</div>
-
-<hr>
-
-<p>Example with overrides</p>
-<style>
-/* Scope to a variation of your choosing */
-.l-content-grid--custom {
-  --content-grid-order: 'side content';
-  --content-grid-template: 20rem 1fr;
-  --content-grid-gap: 0;
-}
-</style>
-<div class="l-content-grid l-content-grid--custom">
+<div class="l-content-grid {{ className }}">
   <div class="l-content-grid__content has-bg-white-off">
     <h3 class="has-padding">Content</h3>
   </div>
