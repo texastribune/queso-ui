@@ -6,9 +6,9 @@
 //
 // Styleguide 6.1.5
 .c-checkbox {
-  @include gap;
+  @include gap($size-xxxs);
   display: grid;
-  grid-template-columns: .2rem 1fr;
+  grid-template-columns: auto 1fr;
   
   &__box {
     grid-column: 1;
