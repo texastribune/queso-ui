@@ -4,7 +4,7 @@
 //
 // Currently, this is used to style mini-headers, "read more" links, button text and bylines.
 //
-// .t-smallcaps--light - Applies a lighter font weight and bumps down font-size
+// .t-smallcaps--light - Applies a lighter font weight and increases the letter-spacing
 // .t-smallcaps--section - Applies bottom margin and bumps down font-size
 // .t-smallcaps--bordered - Applies a top border
 //
@@ -20,13 +20,8 @@
 
   // Byline
   &--light {
-    font-size: $size-xs;
     font-weight: 400;
     letter-spacing: $font-letter-spacing-lg;
-
-    @include mq($until: bp-l) {
-      font-size: $size-s;
-    }
   }
 
   &--section {
