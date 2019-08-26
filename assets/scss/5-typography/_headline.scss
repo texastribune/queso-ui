@@ -4,7 +4,9 @@
 //
 // Headlines are typically &lt;h1&gt; elements, but you can apply the styles to any header element to size appropriately. Linked headlines will be given a teal underline style on hover.
 //
-// Markup: <h1 class="t-headline">Story headline text <a>with link.</a></h1>
+// t-headline--article - Article headlines are special and have responsive font-sizing. The size after bp-s falls outside of our scale; this might be worth revisiting.
+//
+// Markup: <h1 class="t-headline {{ className }}">Story headline text <a>with link.</a></h1>
 //
 //
 // Styleguide 5.3.1
@@ -13,4 +15,12 @@
   @include underlined-link-parent('true');
   color: $color-black-off;
   font-weight: 700;
+
+  &--article {
+    font-size: $size-xl;
+    line-height: 1.2;
+    @include mq($from: bp-s) {
+      font-size: 2.1rem;
+    }
+  }
 }

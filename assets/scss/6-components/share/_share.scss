@@ -5,7 +5,7 @@
 // Markup: 6-components/share/share.html
 //
 // Styleguide 6.0.1
-$share-height: $size-l;
+$share-height: px-to-rem(26px);
 $share-width: $size-xxxl;
 $share-gap: $size-m;
 
