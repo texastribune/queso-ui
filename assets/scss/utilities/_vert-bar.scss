@@ -1,8 +1,10 @@
 // Vertical Bar (has-vert-bar)
 //
-// Accent element for distinguishing a block of text.
+// Accent element for distinguishing a block of text. Used on story summaries, pullquotes, and membership CTA.
 //
 // .has-vert-bar--thin - Used in membership CTA callout on stories
+// .has-vert-bar--padded-l - Used in pullquotes
+// .has-vert-bar--padded-xxl - Used in membership CTA callout on stories
 // .has-vert-bar--from-bp-s - Resets styling on mobile
 //
 // Markup: <p class="has-vert-bar {{ className }} has-text-yellow"><span class="has-text-gray-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt vel rerum deserunt debitis voluptas, omnis dignissimos, doloribus saepe quae itaque! Consequuntur et eveniet fugit in veritatis quos ver incidunt.</span></p>
@@ -10,8 +12,8 @@
 //
 // Styleguide 8.0.3
 //
-$vert-bar-base: px-to-rem(5px);
-$vert-bar-thin: px-to-rem(4px);
+$vert-bar-base: 5px;
+$vert-bar-thin: 4px;
 
 .has-vert-bar {
   border-left: $vert-bar-base solid currentColor;
@@ -19,6 +21,13 @@ $vert-bar-thin: px-to-rem(4px);
 
   &--thin {
     border-left-width: $vert-bar-thin;
+  }
+
+  &--padded-l {
+    padding-left: $size-l;
+  }
+
+  &--padded-xxl {
     padding-left: $size-xxl;
   }
 
