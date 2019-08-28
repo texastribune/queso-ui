@@ -6,30 +6,32 @@
 //
 // Styleguide 6.1.5
 .c-text-input {
-  -webkit-appearance: none;
-  border-color: $color-gray-light;
-  border-radius: 0;
-  border-style: solid;
-  border-width: 1px;
-  outline: none;
-  padding: $size-xxs;
-  transition: box-shadow .15s ease-in-out;
+  &__input {
+    -webkit-appearance: none;
+    border-color: $color-gray-light;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 1px;
+    outline: none;
+    padding: $size-xxs;
+    transition: box-shadow .15s ease-in-out;
 
-  // kill X button that appears on IE and edge
-  // because it doesn't handle JS input event correctly
-  &::-ms-clear {
-    display: none;
-  }
-
-  &:focus {
-    box-shadow: 0 0 0 .2rem rgba($color-blue-light, .4);
-  }
-
-  &.is-invalid {
-    border-color: $color-error;
+    // kill X button that appears on IE and edge
+    // because it doesn't handle JS input event correctly
+    &::-ms-clear {
+      display: none;
+    }
 
     &:focus {
-      box-shadow: 0 0 0 .2rem rgba($color-error, .4);
+      box-shadow: 0 0 0 .2rem rgba($color-blue-light, .4);
+    }
+
+    &.is-invalid {
+      border-color: $color-error;
+
+      &:focus {
+        box-shadow: 0 0 0 .2rem rgba($color-error, .4);
+      }
     }
   }
 }
