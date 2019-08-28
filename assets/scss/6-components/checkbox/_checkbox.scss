@@ -6,13 +6,15 @@
 //
 // Styleguide 6.1.5
 .c-checkbox {
-  @include gap($size-xxxs);
-  display: grid;
-  grid-template-columns: auto 1fr;
+  &__inputs {
+    @include gap($size-xxxs);
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
   
   &__box {
     grid-column: 1;
-    
+
     input {
       margin-top: 4px;
     }
