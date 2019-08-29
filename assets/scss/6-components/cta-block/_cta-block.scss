@@ -1,16 +1,13 @@
 // CTA Block (c-cta-block)
 //
-// Call to action with messaging and buttons. NOTE: The preview demos two approaches, but ultimately we'll decide between them. {{isHelper}} {{isWide}}
-//
-// .c-cta-block--responsive - Responds to `bp-m`. The window size determine the layout.
-// .c-cta-block--flex - Responds to parent container. The window size and page context determines layout.
+// Call to action with messaging and buttons. **The window size determines the layout.**
 //
 //
 // Markup: 6-components/cta-block/cta-block.html
 //
 // Styleguide 6.0.1
 
-$cta-block-min-col: px-to-rem(200px);
+$cta-block-min-col: px-to-rem(160px);
 $cta-block-btn-height: px-to-rem(26px);
 
 .c-cta-block {
@@ -20,42 +17,26 @@ $cta-block-btn-height: px-to-rem(26px);
       @include gap;
       display: grid;
       grid-auto-rows: $cta-block-btn-height;
-    }
-  }
-  
-  &--responsive {
-    @supports (display: grid) {
-      .c-cta-block__btns {
-        grid-template-columns: 1fr 1fr;
-        margin-top: $cta-block-btn-height;
-      }
-      @include mq($from: bp-m) {
-        @include gap($size-xxxl);
-        display: grid;
-        grid-template-columns: 1fr $cta-block-min-col;
-        align-items: center;
+      grid-template-columns: 1fr 1fr;
+      margin-top: $cta-block-btn-height;
 
-        .c-cta-block__btns {
-          grid-template-columns: 1fr;
-          margin-top: 0;
-        }
+      &--4x {
+        grid-template-columns: repeat(4, 1fr);
       }
     }
-  }
-
-  &--flex {
-    @supports (display: grid) {
-      column-gap: $size-xxxl;
-      row-gap: $size-b;
-      align-items: center;
+    @include mq($from: bp-m) {
+      @include gap($size-l);
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax($cta-block-min-col, auto));
+      grid-template-columns: 1fr $cta-block-min-col;
+      align-items: center;
 
-      .c-cta-block__btns {
-        grid-template-columns: repeat(
-          auto-fit,
-          minmax($cta-block-min-col/2, auto)
-        );
+      &__btns {
+        grid-template-columns: 1fr;
+        margin-top: 0;
+        
+        &--4x {
+          grid-template-columns: repeat(2, 1fr);
+        }
       }
     }
   }
