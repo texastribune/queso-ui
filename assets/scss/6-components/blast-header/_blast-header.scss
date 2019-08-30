@@ -29,17 +29,15 @@ $blast-header-height: 18rem;
       height: px-to-rem(20px);
     }
   }
-  @supports (display: grid) {
-    @include mq($from: bp-m) {
-      &__inner {
-        @include gap;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-      }
+  @include mq($from: bp-m) {
+    &__inner {
+      @include gap;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
 
-      &__col {
-        margin: 0;
-      }
+    &__col {
+      margin: 0;
     }
   }
 }

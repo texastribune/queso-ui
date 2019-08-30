@@ -13,31 +13,31 @@ $cta-block-btn-height: px-to-rem(29px);
 .c-cta-block {
   border: 1px solid $color-white-off;
   border-radius: $border-radius-b;
-  @supports (display: grid) {
+
+  &__btns {
+    @include gap;
+    display: grid;
+    grid-auto-rows: $cta-block-btn-height;
+    grid-template-columns: 1fr 1fr;
+    margin-top: $cta-block-btn-height;
+
+    &--4x {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @include mq($from: bp-m) {
+    @include gap($size-l);
+    display: grid;
+    grid-template-columns: 1fr $cta-block-min-col;
+    align-items: center;
+
     &__btns {
-      @include gap;
-      display: grid;
-      grid-auto-rows: $cta-block-btn-height;
-      grid-template-columns: 1fr 1fr;
-      margin-top: $cta-block-btn-height;
+      grid-template-columns: 1fr;
+      margin-top: 0;
 
       &--4x {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-    @include mq($from: bp-m) {
-      @include gap($size-l);
-      display: grid;
-      grid-template-columns: 1fr $cta-block-min-col;
-      align-items: center;
-
-      &__btns {
-        grid-template-columns: 1fr;
-        margin-top: 0;
-        
-        &--4x {
-          grid-template-columns: repeat(2, 1fr);
-        }
+        grid-template-columns: repeat(2, 1fr);
       }
     }
   }
