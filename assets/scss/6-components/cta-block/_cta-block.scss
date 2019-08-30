@@ -8,10 +8,11 @@
 // Styleguide 6.0.1
 
 $cta-block-min-col: px-to-rem(160px);
-$cta-block-btn-height: px-to-rem(26px);
+$cta-block-btn-height: px-to-rem(29px);
 
 .c-cta-block {
   border: 1px solid $color-white-off;
+  border-radius: $border-radius-b;
   @supports (display: grid) {
     &__btns {
       @include gap;
