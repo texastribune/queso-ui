@@ -55,7 +55,9 @@ hr {
   border: 1px solid $color-gray-light;
 }
 
-// By default we add leading to paragraphs
-p {
+// By default we add leading to paragraphs, lists, and captions
+p,
+ul,
+figcaption {
   line-height: $line-height-b;
 }
