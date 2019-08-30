@@ -4,7 +4,7 @@
 //
 // l-col-grid--1x3 - Columns split in thirds
 // l-col-grid--xxxs-gap - Shrink up the default gap. Used on photo grid
-// l-col-grid--resp - Collapse all columns at `bp-m`
+// l-col-grid--1x1-until-bp-m - Collapse all columns at `bp-m`
 //
 // Markup: 7-layout/col-grid.html
 //
@@ -25,7 +25,7 @@
     }
     
     @include mq($until: bp-m) {
-      &--resp {
+      &--1x1-until-bp-m {
         grid-template-columns: 1fr;
       }
     }
