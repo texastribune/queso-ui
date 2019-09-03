@@ -12,29 +12,27 @@
 $content-grid-sidebar: px-to-rem(310px);
 
 .l-content-grid {
-  @supports (display: grid) {
-    @include mq($from: bp-l) {
-      @include gap($size-xxl);
-      display: grid;
-      grid-template-areas: 'content side';
-      grid-template-columns: 1fr $content-grid-sidebar;
+  @include mq($from: bp-l) {
+    @include gap($size-xxl);
+    display: grid;
+    grid-template-areas: 'content side';
+    grid-template-columns: 1fr $content-grid-sidebar;
 
-      &__side {
-        grid-area: side;
-      }
+    &__side {
+      grid-area: side;
+    }
 
-      &__content {
-        grid-area: content;
-      }
+    &__content {
+      grid-area: content;
+    }
 
-      &--reversed {
-        grid-template-areas: 'side content';
-        grid-template-columns: $content-grid-sidebar 1fr;
-      }
-      
-      &--flush {
-        @include gap(0);
-      }
+    &--reversed {
+      grid-template-areas: 'side content';
+      grid-template-columns: $content-grid-sidebar 1fr;
+    }
+    
+    &--flush {
+      @include gap(0);
     }
   }
 }

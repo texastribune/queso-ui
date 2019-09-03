@@ -1,0 +1,44 @@
+// CTA Block (c-cta-block)
+//
+// Call to action with messaging and buttons. **The window size determines the layout.**
+//
+//
+// Markup: 6-components/cta-block/cta-block.html
+//
+// Styleguide 6.0.1
+
+$cta-block-min-col: px-to-rem(160px);
+$cta-block-btn-height: px-to-rem(29px);
+
+.c-cta-block {
+  border: 1px solid $color-white-off;
+  border-radius: $border-radius-b;
+
+  &__btns {
+    @include gap;
+    display: grid;
+    grid-auto-rows: $cta-block-btn-height;
+    grid-template-columns: 1fr 1fr;
+    margin-top: $cta-block-btn-height;
+
+    &--1x4 {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @include mq($from: bp-m) {
+    @include gap($size-l);
+    display: grid;
+    grid-template-columns: 1fr $cta-block-min-col;
+    align-items: center;
+
+    &__btns {
+      grid-template-columns: 1fr;
+      margin-top: 0;
+
+      &--1x4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}
