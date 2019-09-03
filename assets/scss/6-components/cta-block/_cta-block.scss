@@ -21,7 +21,7 @@ $cta-block-btn-height: px-to-rem(29px);
     grid-template-columns: 1fr 1fr;
     margin-top: $cta-block-btn-height;
 
-    &--4x {
+    &--1x4 {
       grid-template-columns: repeat(4, 1fr);
     }
   }
@@ -36,7 +36,7 @@ $cta-block-btn-height: px-to-rem(29px);
       grid-template-columns: 1fr;
       margin-top: 0;
 
-      &--4x {
+      &--1x4 {
         grid-template-columns: repeat(2, 1fr);
       }
     }
