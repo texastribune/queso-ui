@@ -99,10 +99,10 @@
 }
 
 .ds-grid-lines {
-  background-size: 16px 16px;
+  background-size: 1rem 1rem;
   background-image: linear-gradient(to right, #eee 1px, transparent 1px),
     linear-gradient(to bottom, #eee 1px, transparent 1px);
-  border: 1px solid #eee;
+  padding: 1rem;
 
   .ds-hide-grid & {
     border: none;
