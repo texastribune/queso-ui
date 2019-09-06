@@ -14,6 +14,10 @@
   
   &__box {
     grid-column: 1;
+
+    input {
+      margin-top: 4px;
+    }
   }
 
   &__label {
