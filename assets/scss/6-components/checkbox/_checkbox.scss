@@ -1,6 +1,6 @@
 // Checkbox (c-checkbox)
 //
-// A good old-fashioned checkbox with light styling for alignment.
+// A good old-fashioned checkbox and label
 //
 // Markup: 6-components/checkbox/checkbox.html
 //
@@ -14,10 +14,6 @@
   
   &__box {
     grid-column: 1;
-
-    input {
-      margin-top: 4px;
-    }
   }
 
   &__label {
