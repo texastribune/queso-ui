@@ -7,15 +7,15 @@
 //
 // Styleguide 6.0.1
 
-$cta-block-min-col: px-to-rem(160px);
+$cta-block-min-col: px-to-rem(140px);
 $cta-block-btn-height: px-to-rem(29px);
 
 .c-cta-block {
-  border: 1px solid $color-white-off;
+  border: 1px solid $color-gray-light;
   border-radius: $border-radius-b;
 
   &__btns {
-    @include gap;
+    @include gap($size-xxs);
     display: grid;
     grid-auto-rows: $cta-block-btn-height;
     grid-template-columns: 1fr 1fr;
