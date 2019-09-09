@@ -38,12 +38,6 @@
     justify-content: space-between;
     max-width: 100rem;
     position: relative;
-
-    // move to texastribune repo
-    .c-navbar--home & {
-      justify-content: normal;
-      max-width: 67.5rem;
-    }
   }
 
   &__logo {
@@ -56,12 +50,6 @@
 
   &__content {
     display: flex;
-
-    // move to texastribune repo
-    .c-navbar--home & {
-      flex: 0 1 100%;
-      justify-content: space-between;
-    }
   }
 
   &__items {
@@ -156,56 +144,4 @@
     margin-right: $size-m;
     margin-bottom: $size-m;
   }
-
-  //
-  // UNTOUCHED CSS STARTS HERE
-  // move all to texastribune repo
-  //
-  &__search {
-    background-color: $color-black-off;
-    bottom: 1px;
-    display: flex;
-    position: absolute;
-    max-width: 400px;
-    right: 0;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-
-    @include mq($until: bp-l) {
-      max-width: none;
-    }
-  }
-
-  &__search-form {
-    display: flex;
-    flex: 1 1 100%;
-  }
-
-  &__search-input {
-    background-color: $color-black-off;
-    border: 0;
-    border-bottom: 1px solid #757575;
-    color: $color-gray-light;
-    flex: 1 1 100%;
-    outline: 0;
-
-    &::placeholder {
-      color: #757575;
-    }
-
-    &::-ms-clear {
-      display: none;
-    }
-  }
-
-  &__search-button {
-    margin-right: $size-b;
-  }
-
-  &__greeting {
-    display: flex;
-    list-style: none;
-  }
 }
-
