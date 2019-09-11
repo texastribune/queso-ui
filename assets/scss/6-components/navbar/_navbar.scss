@@ -55,17 +55,31 @@
   &__items {
     display: flex;
     list-style: none;
+    margin-right: $size-xxl;
+
+    // useful override for when you have another adjacent `.c-navbar__items` that's hidden;
+    // in that case, you'll get unwanted right margin because your element isn't the last child
+    &--no-space {
+      margin-right: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 
   &__item {
     display: flex;
+    margin-right: $size-b;
 
-    &--space-right {
-      margin-right: $size-m;
+    // useful override for when you have another adjacent `.c-navbar__items` that's hidden;
+    // in that case, you'll get unwanted right margin because your element isn't the last child
+    &--no-space {
+      margin-right: 0;
     }
 
-    &--giant-space-right {
-      margin-right: $size-giant;
+    &:last-child {
+      margin-right: 0;
     }
   }
 
@@ -134,10 +148,17 @@
     padding: $size-b/2 0 0 0;
   }
 
+  // bottom margin is so you can have multiple sets of dropdown items (for example
+  // one with nav links, one with log in/log out buttons) that are spaced a bit
   &__dropdown-items {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
+    margin-bottom: $size-xxxs;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 
   &__dropdown-item {
