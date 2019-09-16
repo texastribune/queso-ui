@@ -40,26 +40,27 @@ $font-root-mobile: 15px;
 //
 // Consistent letter-spacing value
 //
-// $font-letter-spacing-sm = .02em - Used sometimes in card headline
-// $font-letter-spacing = .03em - Default used with uppercase usually
-// $font-letter-spacing-lg = .05em - Bring on that kerning
+// $font-letter-spacing-s = .02em - Small lsp setting
+// $font-letter-spacing-b = .03em - Base lsp setting
+// $font-letter-spacing-m = .05em - Medium lsp setting
+// $font-letter-spacing-l = .07em - Large lsp setting
 //
 // Styleguide 1.2.3
-$font-letter-spacing-sm: .02em;
-$font-letter-spacing: .03em;
-$font-letter-spacing-lg: .05em;
-
+$font-letter-spacing-s: .02em;
+$font-letter-spacing-b: .03em;
+$font-letter-spacing-m: .05em;
+$font-letter-spacing-l: .07em;
 // Line Height
 //
 // Consistent line-height values
 //
-// $line-height-s = 1.25 - Tight leading
+// $line-height-s = 1.2 - Typically used on headlines
 // $line-height-b = 1.4 - Default leading used on p tags
 // $line-height-m = 1.5 - Heading spacing
 // $line-height-l = 2 - More heading spacing
 //
 // Styleguide 1.2.3
-$line-height-s: 1.25;
-$line-height-b: 1.4;
-$line-height-m: 1.5;
-$line-height-l: 2;
+$font-line-height-s: 1.2;
+$font-line-height-b: 1.4;
+$font-line-height-m: 1.5;
+$font-line-height-l: 2;

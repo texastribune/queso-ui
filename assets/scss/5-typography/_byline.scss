@@ -1,6 +1,6 @@
 // Byline (t-byline)
 //
-// Used for attribution of content. Does not include size, which in theory varies by context.
+// Use the example to find common classes that accompany `.t-byline` to form the proper formatting. The only function of this classes at its core is for spacing out child elements(`.t-byline__item`).
 //
 // Markup: 5-typography/byline.html
 //
@@ -8,12 +8,7 @@
 // Styleguide 5.3.5
 //
 .t-byline {
-  letter-spacing: $font-letter-spacing-lg;
-  margin: $size-b/2 0 0;
-  text-transform: uppercase;
-
   &__item {
-    display: inline-block;
     padding-right: $size-b;
   }
 }
