@@ -22,7 +22,7 @@
 // Adds new naming convention {{isHelper}}
 //
 // .t-titlecase - Text transformed to Title Case
-// .t-uppercase - Text transformed to UPPERCASE
+// .t-uppercase - Text transformed to UPPERCASE. Don't forget to add kerning `t-lsp-<size>` with uppercase text.
 //
 // Markup: <p class="{{ className }}">Text transform helper.</p>
 //
@@ -91,14 +91,14 @@ $line-height-type: (
 
 // Text letter-spacing (t-lsp-<size>)
 //
-// Kerning helpers {{isHelper}}
+// Kerning helpers. We generally use this in conjunction with `t-uppercase`. {{isHelper}}
 //
 // t-lsp-s - `letter-spacing: .02em`
 // t-lsp-b - `letter-spacing: .03em`
 // t-lsp-m - `letter-spacing: .05em`
 // t-lsp-l - `letter-spacing: .07em`
 //
-// Markup: <h2 class="{{ className }}">Texas again mistakenly flags voters for citizenship reviews</h2>
+// Markup: <h2 class="{{ className }} t-uppercase">Texas again mistakenly flags voters for citizenship reviews</h2>
 //
 //
 // Styleguide 5.2.7
@@ -116,7 +116,7 @@ $letter-spacing-type: (
   }
 }
 
-// Word break (t-wrap-<setting>)
+// Text wrap (t-wrap-<setting>)
 //
 // Helper classes for handling how words are allowed to wrap and break. {{isHelper}}
 //

@@ -1,23 +1,19 @@
 // Headline (t-headline)
 //
-// Our default headline formatting. Does not include size.
+// This helper is purely used for proper headline sizing.<br>
+// ### Other classes needed in headlines:
+// - `t-serif`
+// - `t-links-underlined-hover` (when used in top story or sponsor card ad)
+// - `t-lh-s`
 //
-// Headlines are typically &lt;h1&gt; elements, but you can apply the styles to any header element to size appropriately. Linked headlines will be given a teal underline style on hover.
 //
-// t-headline--article - Article headlines are special and have responsive font-sizing. The size after bp-s falls outside of our scale; this might be worth revisiting.
-//
-// Markup: <h1 class="t-headline {{ className }}">Story headline text <a>with link.</a></h1>
+// Markup: <h1 class="t-headline t-serif t-links-underlined l-lh-s {{ className }}">Story headline text <a>with link.</a></h1>
 //
 //
 // Styleguide 5.3.1
 .t-headline {
-  @include font-setting('secondary');
-  @include underlined-link-parent('true');
-
-  &--article {
-    font-size: $size-xl;
-    @include mq($from: bp-s) {
-      font-size: 2.1rem;
-    }
+  font-size: $size-xl;
+  @include mq($from: bp-s) {
+    font-size: 2.1rem;
   }
 }

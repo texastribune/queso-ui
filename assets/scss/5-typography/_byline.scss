@@ -1,6 +1,13 @@
 // Byline (t-byline)
 //
-// Use the example to find common classes that accompany `.t-byline` to form the proper formatting. The only function of this classes at its core is for spacing out child elements(`.t-byline__item`).
+// The only actual function of this class is for spacing out child elements with<br>`.t-byline__item`. <br>
+// ### Other classes needed in bylines:
+// - `t-links`
+// - `t-uppercase`
+// - `t-lsp-m`
+// - `t-size-xs` (varies with context)
+// - `has-text-gray`
+//
 //
 // Markup: 5-typography/byline.html
 //
