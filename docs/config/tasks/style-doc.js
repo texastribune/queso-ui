@@ -39,9 +39,14 @@ const processSection = (section, dir) => {
   const isWide = section.description.includes(isWideStr);
   const isHelperStr = '{{isHelper}}';
   const isHelper = section.description.includes(isHelperStr);
+  const isRecipeStr = '{{isRecipe}}';
+  const isRecipe = section.description.includes(isRecipeStr);
   const isTool = header.includes('@');
   const description = md.render(
-    section.description.replace(isWideStr, '').replace(isHelperStr, '')
+    section.description
+      .replace(isWideStr, '')
+      .replace(isHelperStr, '')
+      .replace(isRecipeStr, '')
   );
   const cleanDesc = stripTags(description);
   const githubLink = `${GITHUB_URL}/${section.source.path}#L${
@@ -92,6 +97,7 @@ const processSection = (section, dir) => {
     isFile,
     isWide,
     isHelper,
+    isRecipe,
     isTool,
     cleanDesc,
     githubLink,

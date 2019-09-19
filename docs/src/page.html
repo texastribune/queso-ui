@@ -113,7 +113,7 @@
             <div class="columns is-multiline">
               {% if not item.isHelper %}
                 <div class="column is-full">
-                  {{ snippet(item.header, markup, '', isFile, description, codeSnippet, item.mainClass) }}
+                  {{ snippet(item.header, markup, '', isFile, description, codeSnippet, item.mainClass, item.isRecipe) }}
                 </div>
               {% else %}
                 <div class="column is-full">

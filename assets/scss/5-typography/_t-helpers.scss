@@ -22,9 +22,7 @@
 // Adds new naming convention {{isHelper}}
 //
 // .t-titlecase - Text transformed to Title Case
-// .t-uppercase - Text transformed to UPPERCASE
-// .t-uppercase--wide - To be used with UPPERCASE to add kerning
-// .t-uppercase--extra-wide - To be used with UPPERCASE to add more kerning
+// .t-uppercase - Text transformed to UPPERCASE. Don't forget to add kerning `t-lsp-<size>` with uppercase text.
 //
 // Markup: <p class="{{ className }}">Text transform helper.</p>
 //
@@ -36,14 +34,6 @@
 
 .t-uppercase {
   text-transform: uppercase;
-
-  &--wide {
-    letter-spacing: $font-letter-spacing;
-  }
-
-  &--extra-wide {
-    letter-spacing: $font-letter-spacing-lg;
-  }
 }
 
 // Text align (t-align-<dir>)
@@ -72,43 +62,89 @@
 }
 
 
-// Text line-height (t-space-<type>)
+// Text line-height (t-lh-<size>)
 //
-// New utility to help eliminate repitition. {{isHelper}}
+// Various sizes of unitless line-height. {{isHelper}}
 //
-// t-space-base - Base leading | line-height: 1.4 (used on paragraphs)
-// t-space-heading-s - More spaced out | line-height: 1.25
-// t-space-heading-m - More spaced out | line-height: 1.5
-// t-space-heading-l - Even more | line-height: 2
+// t-lh-s - `line-height: 1.2`
+// t-lh-b - `line-height: 1.4` (used on paragraphs, lists, and figcaptions)
+// t-lh-m - `line-height: 1.5`
+// t-lh-l - `line-height: 2`
 //
-// Markup: <p style="height: 100px" class="{{ className }} t-headline t-l">Texas again mistakenly flags voters for citizenship reviews</p>
+// Markup: <h2 class="{{ className }}">Texas again mistakenly flags voters for citizenship reviews</h2>
 //
 //
 // Styleguide 5.2.7
 //
 $line-height-type: (
-  base: $line-height-b,
-  heading-s: $line-height-s,
-  heading-m: $line-height-m,
-  heading-l: $line-height-l,
+  s: $font-line-height-s,
+  b: $font-line-height-b,
+  m: $font-line-height-m,
+  l: $font-line-height-l,
 );
 
 @each $type-set, $line-height in $line-height-type {
-  .t-space-#{$type-set} {
+  .t-lh-#{$type-set} {
     line-height: $line-height;
   }
 }
 
-// Word break (t-wrap-<setting>)
+// Text letter-spacing (t-lsp-<size>)
+//
+// Kerning helpers. We generally use this in conjunction with `t-uppercase`. {{isHelper}}
+//
+// t-lsp-s - `letter-spacing: .02em`
+// t-lsp-b - `letter-spacing: .03em`
+// t-lsp-m - `letter-spacing: .05em`
+// t-lsp-l - `letter-spacing: .07em`
+//
+// Markup: <h2 class="{{ className }} t-uppercase">Texas again mistakenly flags voters for citizenship reviews</h2>
+//
+//
+// Styleguide 5.2.7
+//
+$letter-spacing-type: (
+  s: $font-letter-spacing-s,
+  b: $font-letter-spacing-b,
+  m: $font-letter-spacing-m,
+  l: $font-letter-spacing-l,
+);
+
+@each $type-set, $letter-spacing in $letter-spacing-type {
+  .t-lsp-#{$type-set} {
+    letter-spacing: $letter-spacing;
+  }
+}
+
+// Text wrap (t-wrap-<setting>)
 //
 // Helper classes for handling how words are allowed to wrap and break. {{isHelper}}
-// 
+//
 // .t-wrap-break - Allow a word to wrap to the next line mid-word
 //
-// Markup: <p class="t-wrap-break" style="width: 150px;">barbara.gervin.hawkins@house.texas.gov</p>
+// Markup: <p class="{{ className }}" style="width: 150px;">barbara.gervin.hawkins@house.texas.gov</p>
 //
 //
 // Styleguide 5.3.6
 .t-wrap-break {
   word-break: break-all;
+}
+
+// Text weight (t-weight-<setting>)
+//
+// Helper for adding bold/normal `font-weight`. Sometimes individual `<strong>` can be redundant tags. {{isHelper}}
+//
+// .t-weight-bold - `font-weight: 700`
+// .t-weight-normal - `font-weight: 400`
+//
+// Markup: <p class="{{ className }}">Example text</p>
+//
+//
+// Styleguide 5.3.6
+.t-weight-bold {
+  font-weight: 700;
+}
+
+.t-weight-normal {
+  font-weight: 400;
 }

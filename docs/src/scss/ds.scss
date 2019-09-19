@@ -40,6 +40,7 @@
     margin: .5rem;
     padding-left: 2rem;
     font-size: medium;
+    list-style: disc;
 
     li {
       margin-bottom: .5rem;
@@ -138,6 +139,14 @@
 a,
 strong {
   color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
 }
 
 .card-header {

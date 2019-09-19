@@ -1,14 +1,15 @@
 // Sectionhead (t-sectionhead)
 //
-// New naming convention and mixin method. Ditches explicit <a> tag rule and case assignment. Also inherits body font instead of setting.
+// Used to separate sections. <br>
+// ### Other classes needed in sectionheads:
+// - `t-uppercase`
+// - `t-lsp-b`
 //
-// Markup: <h3 class="t-sectionhead t-uppercase">Title for a section of text with <a>link.</a></h3>
+// Markup: <h3 class="t-sectionhead t-uppercase t-lsp-b">More in this series »</h3>
 //
 //
 // Styleguide 5.3.2
 .t-sectionhead {
   border-bottom: 2px solid $color-gray-medium;
-  font-weight: 700;
-  letter-spacing: $font-letter-spacing;
   padding-bottom: $size-b/4;
 }
