@@ -119,7 +119,7 @@
     "markdown-it": "^10.0.0",
     "np": "^5.0.3",
     "nunjucks": "^3.1.7",
-    "ora": "^3.4.0",
+    "ora": "^4.0.1",
     "prettier": "1.18.2",
     "purgecss": "^1.3.0",
     "purgecss-from-html": "^1.1.0",
