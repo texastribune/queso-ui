@@ -9,14 +9,12 @@
 .c-back-to-top {
   bottom: $size-s;
   left: 100%;
-  opacity: 1;
   padding-right: $size-s;
   pointer-events: none;
   position: sticky;
-  transition: opacity .3s;
   // Safari won't allow inline-block; we need a width for positioning.
   // If this grows in the future, consider making this a variation.
-  width: 4rem;
+  width: 6rem;
 
   &__inner {
     pointer-events: all;

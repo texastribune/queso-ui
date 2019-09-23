@@ -32,6 +32,7 @@
 // ^ including a duplicate class of .hidden right now since it's so littered throughout the code base.
 
 .is-transparent {
+  transition: opacity .3s;
   opacity: 0;
   z-index: -1;
 }
