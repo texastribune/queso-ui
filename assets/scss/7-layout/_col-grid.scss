@@ -1,10 +1,11 @@
 // Column grid (l-col-grid)
 //
-// Just testing the waters of a tiny grid helper. For now, used on photo grids and in AMP templates. By default the grid is an even two column grid. We include variations for col counts and spacing.
+// Just testing the waters of a tiny grid helper. For now, used on photo grids. By default the grid is an even two column grid. We include variations for col counts and spacing.
 //
 // l-col-grid--1x3 - Columns split in thirds
 // l-col-grid--xxxs-gap - Shrink up the default gap. Used on photo grid
-// l-col-grid--1x1-until-bp-m - Collapse all columns at `bp-m`
+// l-col-grid--stack-until-bp-m - Collapse all columns at `bp-m`
+// l-col-grid--stack-until-bp-l - Collapse all columns at `bp-l`
 //
 // Markup: 7-layout/col-grid.html
 //
@@ -23,9 +24,14 @@
     &--xxxs-gap {
       @include gap($size-xxxs);
     }
-    
+
     @include mq($until: bp-m) {
-      &--1x1-until-bp-m {
+      &--stack-until-bp-m {
+        grid-template-columns: 1fr;
+      }
+    }
+    @include mq($until: bp-l) {
+      &--stack-until-bp-l {
         grid-template-columns: 1fr;
       }
     }
