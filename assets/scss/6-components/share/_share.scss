@@ -13,5 +13,4 @@ $share-gap: $size-m;
   @include gap($share-gap);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax($share-width, 1fr));
-  grid-template-rows: repeat(auto-fit, minmax($share-height, 1fr));
 }

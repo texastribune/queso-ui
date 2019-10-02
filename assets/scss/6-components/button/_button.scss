@@ -89,9 +89,11 @@
     }
   }
 
-  &--compact {
+  &--standard {
     padding-top: 0;
     padding-bottom: 0;
+    height: 26px;
+    line-height: 22px;
   }
 
   &--round {
