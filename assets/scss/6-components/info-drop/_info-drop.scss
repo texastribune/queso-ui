@@ -6,68 +6,92 @@
 //
 // Styleguide 6.1.3
 
+// TODO: move to queso-ui
 $info-drop-size: px-to-rem(14px);
 
+@keyframes slideDown {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
 .c-info-drop {
-  height: $info-drop-size;
-  position: relative;
+  overflow: hidden;
+  padding-bottom: $info-drop-size * 2;
 
   &__inner {
-    position: absolute;
-  }
-
-  &__content {
-    max-height: 0;
-    transition: max-height 0.3s;
-  }
-
-  &__cta {
-    border-radius: 50%;
-    cursor: pointer;
-    height: $info-drop-size * 2;
-    left: auto;
-    position: absolute;
-    right: 0;
-    top: 100%;
-    width: $info-drop-size * 2;
-    z-index: 1;
-    // hide browser arrow
-    &::-webkit-details-marker {
-      display: none;
-    }
-  }
-
-  &__container {
     position: relative;
   }
 
-  .is-transparent {
-    transition: opacity 0.3s;
+  &__trigger {
+    height: $info-drop-size;
+    // add focus state for tabbing on desktop
+    @include mq($from: bp-l) {
+      &:focus {
+        .c-info-drop__cta {
+          box-shadow: 0 0 0 .2rem rgba($color-blue-light, .9);
+        }
+      }
+    }
   }
 
-  // expanded view
+  &__cta-wrap {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+  }
+
+  &__cta {
+    border-radius: 20px;
+    cursor: pointer;
+    // height: $info-drop-size * 2;
+    margin-top: -$info-drop-size;
+    position: absolute;
+    right: $size-xs;
+    top: 0;
+    padding: $size-tiny $size-xxs;
+    // width: $info-drop-size * 2;
+    z-index: 1;
+
+    @include mq($from: bp-m) {
+      right: $size-b;
+    }
+    @include mq($from: bp-xl) {
+      right: 0;
+    }
+  }
+
+  &__content {
+    padding-bottom: $size-m;
+  }
+
+  [open],
   [open=''],
   [open='open'] {
+    animation-name: slideDown;
+    animation-duration: 0.15s;
+
     .c-info-drop__icon {
-      opacity: 0;
-    }
-
-    .c-info-drop__content {
-      max-height: 500px;
-    }
-
-    .c-info-drop__cta {
-      margin-top: -($info-drop-size);
-    }
-
-    .is-transparent {
-      opacity: 1;
+      transform: rotate(180deg);
     }
   }
 
-  // no support (IE & Edge)
   .js-no-details-support {
-    &.c-info-drop__container {
+    &.c-info-drop__inner {
       // IE & Edge need this for <details> tag for some strange reason
       display: block;
     }
@@ -82,4 +106,24 @@ $info-drop-size: px-to-rem(14px);
       }
     }
   }
+}
+
+
+// hide details/summary arrow (webkit)
+details summary::-webkit-details-marker {
+  display: none;
+}
+// hide details/summary arrow (chrome)
+details summary::marker {
+  content: '';
+}
+
+.js-details-is-open main {
+  animation-name: slideDown;
+  animation-duration: 0.15s;
+}
+
+.js-details-is-closed main {
+  animation-name: slideUp;
+  animation-duration: 0.15s;
 }

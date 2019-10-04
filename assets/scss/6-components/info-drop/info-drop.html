@@ -1,49 +1,58 @@
-<aside class="c-info-drop has-bg-sponsor t-align-left has-m-btm-marg">
-	<div class="c-info-drop__inner has-bg-sponsor has-text-white l-width-full has-box-shadow">
-		<details id="details-container" class="l-container c-info-drop__container">
-			<summary id="details-trigger" class="has-bg-sponsor c-info-drop__cta l-display-ib t-align-center"
-				aria-label="Toggle more information about paid posts">
-				<span class="c-info-drop__icon c-icon c-icon--baseline l-align-center-y l-display-ib t-size-xxs"><svg
-						aria-hidden="true">
-						<use xlink:href="#info"></use>
-					</svg></span>
-				<span class="c-info-drop__icon is-transparent c-icon c-icon--baseline l-align-center-y l-display-ib t-size-xxs"><svg
-						aria-hidden="true">
-						<use xlink:href="#close"></use>
-					</svg></span>
-			</summary>
-			<div class="c-info-drop__content has-xl-padding">
-				<h4 class="t-uppercase has-xxxs-btm-marg is-transparent">What is a paid post?</h4>
-				<p class="t-size-xs is-transparent">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt vel rerum deserunt debitis voluptas, omnis dignissimos, doloribus saepe quae itaque! Consequuntur et eveniet fugit in veritatis quos ver incidunt.</p>
-			</div>
-		</details>
-	</div>
+<aside class="c-info-drop">
+  <details id="details-container" class="c-info-drop__inner has-bg-sponsor has-text-white">
+    <summary id="details-trigger" aria-label="Toggle more information about paid posts"
+      title="Toggle infomation about paid posts" class="has-bg-sponsor c-info-drop__trigger">
+      <div class="l-container l-container--l c-info-drop__cta-wrap">
+        <span class="c-info-drop__cta has-bg-sponsor t-align-center t-uppercase t-lsp-b t-size-xxs t-weight-bold has-text-white l-align-center-children">
+					<span class="c-icon c-info-drop__icon t-size-s"><svg aria-hidden="true"><use xlink:href="#caret-down"></use></svg></span>
+          &nbsp;What is a paid post?
+        </span>
+      </div>
+    </summary>
+    <div class="c-info-drop__content has-bg-sponsor l-container l-container--l has-page-padding">
+      <p class="t-size-xs">Paid posts allow sponsors to reach The Texas Tribune’s policy-minded audience through brand
+        messaging in the form of written articles. The points of view expressed don’t reflect those of the Tribune and
+        sponsors play no role in the Tribune’s editorial decisions. The Texas Tribune is the only member-supported,
+        digital-first, nonpartisan media organization that informs Texans — and engages with them — about public policy,
+        politics, government and statewide issues. Learn more about <strong><a class="has-text-white" href="#">The Texas Tribune's mission</a></strong>.</p>
+    </div>
+  </details>
 </aside>
 
-
-
-
-<!-- just for purge CSS -->
-<span class="js-no-details-support"></span>
 <!-- for IE/Edge support -->
 <script>
-	function supportsDetails() {
-		if (!('open' in document.createElement('details'))) {
-			return false;
-		}
-		return true;
-	}
-	function switchOpen() {
-		if (details.getAttribute('open')) {
-			details.removeAttribute('open');
-		} else {
-			details.setAttribute('open', 'open');
-		}
-	}
-	if (!supportsDetails()) {
-		var details = document.getElementById('details-container');
-		var summary = document.getElementById('details-trigger');;
-		details.classList.add('js-no-details-support');
-		summary.addEventListener('click', switchOpen, false);
-	}
+  (function () {
+    var details = document.getElementById('details-container');
+    var summary = document.getElementById('details-trigger');
+    var DETAILS_HELPER_CLASS = 'js-details-is-';
+
+    function supportsDetails() {
+      if (!('open' in document.createElement('details'))) {
+        return false;
+      }
+      return true;
+    }
+    function switchOpen() {
+      var closed = DETAILS_HELPER_CLASS + 'closed';
+      var open = DETAILS_HELPER_CLASS + 'open';
+      if (document.body.classList.contains(open)) {
+        document.body.classList.remove(open)
+        document.body.classList.add(closed)
+      } else {
+        document.body.classList.remove(closed)
+        document.body.classList.add(open)
+      }
+      if (!supportsDetails()) {
+        if (details.getAttribute('open')) {
+          details.removeAttribute('open');
+        } else {
+          details.setAttribute('open', 'open');
+        }
+      }
+    }
+    if (!supportsDetails()) {
+      details.classList.add('js-no-details-support');
+    }
+    summary.addEventListener('click', switchOpen, false);
+  }());
 </script>
