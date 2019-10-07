@@ -61,3 +61,13 @@ ul,
 figcaption {
   line-height: $font-line-height-b;
 }
+
+
+// hide details/summary arrow (webkit)
+details summary::-webkit-details-marker {
+  display: none;
+}
+// hide details/summary arrow (chrome/ff)
+details summary::marker {
+  content: '';
+}

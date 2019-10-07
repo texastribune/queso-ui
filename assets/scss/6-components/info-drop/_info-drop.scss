@@ -5,8 +5,6 @@
 // Markup: 6-components/info-drop/info-drop.html
 //
 // Styleguide 6.1.3
-
-// TODO: move to queso-ui
 $info-drop-size: px-to-rem(14px);
 
 @keyframes slideDown {
@@ -58,18 +56,17 @@ $info-drop-size: px-to-rem(14px);
   &__cta {
     border-radius: 20px;
     cursor: pointer;
-    // height: $info-drop-size * 2;
     margin-top: -$info-drop-size;
+    padding: $size-tiny $size-xxs;
     position: absolute;
     right: $size-xs;
     top: 0;
-    padding: $size-tiny $size-xxs;
-    // width: $info-drop-size * 2;
     z-index: 1;
 
     @include mq($from: bp-m) {
       right: $size-b;
     }
+
     @include mq($from: bp-xl) {
       right: 0;
     }
@@ -109,21 +106,13 @@ $info-drop-size: px-to-rem(14px);
 }
 
 
-// hide details/summary arrow (webkit)
-details summary::-webkit-details-marker {
-  display: none;
-}
-// hide details/summary arrow (chrome)
-details summary::marker {
-  content: '';
-}
-
-.js-details-is-open main {
+.js-details-is-open .c-info-drop__pushed {
   animation-name: slideDown;
   animation-duration: 0.15s;
 }
 
-.js-details-is-closed main {
+.js-details-is-closed .c-info-drop,
+.js-details-is-closed .c-info-drop__pushed {
   animation-name: slideUp;
   animation-duration: 0.15s;
 }

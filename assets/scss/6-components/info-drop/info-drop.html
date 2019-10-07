@@ -3,8 +3,11 @@
     <summary id="details-trigger" aria-label="Toggle more information about paid posts"
       title="Toggle infomation about paid posts" class="has-bg-sponsor c-info-drop__trigger">
       <div class="l-container l-container--l c-info-drop__cta-wrap">
-        <span class="c-info-drop__cta has-bg-sponsor t-align-center t-uppercase t-lsp-b t-size-xxs t-weight-bold has-text-white l-align-center-children">
-					<span class="c-icon c-info-drop__icon t-size-s"><svg aria-hidden="true"><use xlink:href="#caret-down"></use></svg></span>
+        <span
+          class="c-info-drop__cta has-bg-sponsor t-align-center t-uppercase t-lsp-b t-size-xxs t-weight-bold has-text-white l-align-center-children">
+          <span class="c-icon c-info-drop__icon t-size-s"><svg aria-hidden="true">
+              <use xlink:href="#caret-down"></use>
+            </svg></span>
           &nbsp;What is a paid post?
         </span>
       </div>
@@ -13,13 +16,20 @@
       <p class="t-size-xs">Paid posts allow sponsors to reach The Texas Tribune’s policy-minded audience through brand
         messaging in the form of written articles. The points of view expressed don’t reflect those of the Tribune and
         sponsors play no role in the Tribune’s editorial decisions. The Texas Tribune is the only member-supported,
-        digital-first, nonpartisan media organization that informs Texans — and engages with them — about public policy,
-        politics, government and statewide issues. Learn more about <strong><a class="has-text-white" href="#">The Texas Tribune's mission</a></strong>.</p>
+        digital-first, nonpartisan media organization that informs Texans — and engages with them — about public
+        policy,
+        politics, government and statewide issues. Learn more about <strong><a class="has-text-white" href="#">The
+            Texas Tribune's mission</a></strong>.</p>
     </div>
   </details>
 </aside>
 
-<!-- for IE/Edge support -->
+<!-- for demo only -->
+<main class="c-info-drop__pushed has-bg-gray-light has-padding">
+  <h2>Content below is pushed down.</h2>
+</main>
+
+<!-- Animation enhancements (optional) and Edge support -->
 <script>
   (function () {
     var details = document.getElementById('details-container');
@@ -32,9 +42,12 @@
       }
       return true;
     }
+
     function switchOpen() {
       var closed = DETAILS_HELPER_CLASS + 'closed';
       var open = DETAILS_HELPER_CLASS + 'open';
+
+      // Toggle classes for animation
       if (document.body.classList.contains(open)) {
         document.body.classList.remove(open)
         document.body.classList.add(closed)
@@ -42,6 +55,8 @@
         document.body.classList.remove(closed)
         document.body.classList.add(open)
       }
+
+      // Edge fallback
       if (!supportsDetails()) {
         if (details.getAttribute('open')) {
           details.removeAttribute('open');
@@ -50,9 +65,15 @@
         }
       }
     }
+
     if (!supportsDetails()) {
       details.classList.add('js-no-details-support');
     }
+
     summary.addEventListener('click', switchOpen, false);
   }());
 </script>
+
+<!-- for demo only -->
+<div class="js-details-is-open"></div>
+<div class="js-details-is-closed"></div>
