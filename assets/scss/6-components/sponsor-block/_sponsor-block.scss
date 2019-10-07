@@ -1,0 +1,60 @@
+// Sponsor block (c-sponsor-block)
+//
+// Sponsor block is a promotional element featuring a paid post. The goal of this approach is to be minimally reliant on media queries; the inner content should scale appropriately to any size of parent container.
+//
+//
+// Markup: 6-components/sponsor-block/sponsor-block.html
+//
+// Styleguide 6.1.3
+$c-sponsor-block-padding: $size-s;
+$c-sponsor-block-min: 300px;
+
+.c-sponsor-block {
+  @include gap($c-sponsor-block-padding);
+  border-top: 5px solid $color-sponsor;
+  border-bottom: 2px solid $color-sponsor;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($c-sponsor-block-min, auto));
+  padding: ($c-sponsor-block-padding * 3) $c-sponsor-block-padding
+    $c-sponsor-block-padding;
+  position: relative;
+  direction: rtl;
+
+  &__text,
+  &__label {
+    direction: ltr;
+  }
+
+  &__image {
+    min-height: 100%;
+    object-fit: cover;
+  }
+
+  &__label {
+    left: $c-sponsor-block-padding;
+    position: absolute;
+    top: $c-sponsor-block-padding;
+  }
+
+  &__main {
+    align-self: flex-start;
+  }
+
+  &__text {
+    display: grid;
+  }
+
+  @include mq($from: bp-m) {
+    padding-top: $c-sponsor-block-padding;
+
+    &__label {
+      position: static;
+      align-self: start;
+    }
+
+    &__main {
+      padding: 0 $c-sponsor-block-padding 0 $size-xxxl;
+    }
+
+  }
+}
