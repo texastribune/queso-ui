@@ -18,34 +18,31 @@ const COMPONENT_CSS_FILE_MIN = 'no-resets.css';
 const LEGACY_CSS_FILE = 'all-legacy.css';
 const COMPONENT_CSS_PATH = './docs/dist/css';
 
+const purge = (html, filePath) => {
+  return new Purgecss({
+    content: [html],
+    css: [filePath],
+    keyframes: true,
+    extractors: [
+      {
+        extractor: purgeHtml,
+        extensions: ['html'],
+      },
+    ],
+  });
+};
+
 const clean = async (html, deprecated) => {
   let css = COMPONENT_CSS_FILE;
   if (deprecated) {
     css = LEGACY_CSS_FILE;
   }
-
   const filePath = `${COMPONENT_CSS_PATH}/${css}`;
-  const purgecss = new Purgecss({
-    content: [html],
-    css: [filePath],
-    extractors: [
-      {
-        extractor: purgeHtml,
-        extensions: ['html'],
-      },
-    ],
-  });
   const filePathMin = `${COMPONENT_CSS_PATH}/${COMPONENT_CSS_FILE_MIN}`;
-  const purgecssMin = new Purgecss({
-    content: [html],
-    css: [filePathMin],
-    extractors: [
-      {
-        extractor: purgeHtml,
-        extensions: ['html'],
-      },
-    ],
-  });
+
+  const purgecss = purge(html, filePath);
+  const purgecssMin = purge(html, filePathMin);
+
   const file = path.basename(html, path.extname(html));
   const dir = path.dirname(html);
   const purgecssResult = await purgecss.purge();
