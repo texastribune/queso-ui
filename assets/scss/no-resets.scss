@@ -5,8 +5,12 @@
 // Styleguide 0.0.1
 @import '1-settings/all';
 @import '2-tools/all';
-@import '4-elements/all';
-@import '5-typography/all';
+@import '5-typography/byline';
+@import '5-typography/headline';
+@import '5-typography/links';
+@import '5-typography/sectionhead';
+@import '5-typography/t-helpers';
+@import '5-typography/t-size';
 @import '6-components/all';
 @import '7-layout/all';
 @import 'utilities/all';
