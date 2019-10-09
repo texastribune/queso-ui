@@ -26,8 +26,9 @@ $c-sponsor-block-min: 300px;
   }
 
   &__image {
-    min-height: 100%;
+    height: 100%;
     object-fit: cover;
+    max-height: 300px;
   }
 
   &__label {
