@@ -1,0 +1,18 @@
+// Widgethead
+//
+// Widgetheads are colored text headers usually placed above feeds. The markup is mostly comprised of helper classes, but there is one declaration built into the `t-widgethead` class for padding.<br>
+// ### Classes needed:
+// - `t-uppercase`
+// - `t-lsp-b`
+// - `t-size-xs` (varies with context)
+// - `has-text-black`
+// - `has-bg-white-off`
+// - `has-xxs-btm-marg` (varies with context)
+//
+// Markup: <h3 class="t-widgethead t-uppercase t-lsp-b t-size-xs has-text-black has-bg-white-off has-xxs-btm-marg">New in series</h3>
+//
+//
+// Styleguide 5.3.1
+.t-widgethead {
+  padding: $size-xxxs $size-b;
+}

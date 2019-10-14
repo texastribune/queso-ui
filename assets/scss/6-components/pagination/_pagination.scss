@@ -15,4 +15,14 @@
   &__count {
     margin: 0 $size-xxxs;
   }
+
+  &__icon {
+    &--prev {
+      margin-right: $size-xxxs;
+    }
+
+    &--next {
+      margin-left: $size-xxxs;
+    }
+  }
 }

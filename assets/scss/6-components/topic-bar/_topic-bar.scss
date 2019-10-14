@@ -1,0 +1,22 @@
+// Topic bar (c-topic-bar)
+//
+// List of curated topics, which is hard-coded into a flatblock. For layout, use `l-align-center-children` in the markup.
+//
+// Markup: 6-components/topic-bar/topic-bar.html
+//
+// Styleguide 6.1.5
+.c-topic-bar {
+  li {
+    margin: 0 auto;
+    padding: 0 $size-tiny;
+    text-align: center;
+  }
+
+  a {
+    color: $color-black-off;
+
+    &:hover {
+      color: $color-teal-gray;
+    }
+  }
+}
