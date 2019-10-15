@@ -17,6 +17,7 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
   > h5,
   > h6,
   > ul,
+  > ol,
   > span,
   > hr {
     max-width: $story-narrow;
@@ -29,13 +30,14 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
 
   > p,
   > h3,
-  > ul li {
+  > ul,
+  > ol {
     @include font-setting('secondary');
     @include underlined-link-parent;
   }
 
-  > ul {
-    list-style: disc;
+  > ul,
+  > ol {
     padding: 0 $size-b 0 3.5rem;
 
     li {
@@ -43,6 +45,9 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
     }
   }
 
+  > ul {
+    list-style: disc;
+  }
 
   sub, sup {
     position: initial;
