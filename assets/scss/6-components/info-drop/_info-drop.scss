@@ -36,6 +36,7 @@ $info-drop-size: px-to-rem(14px);
 
   &__trigger {
     height: $info-drop-size;
+    outline: none;
     // add focus state for tabbing on desktop
     @include mq($from: bp-l) {
       &:focus {
