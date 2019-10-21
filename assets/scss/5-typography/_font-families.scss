@@ -51,3 +51,12 @@
   font-weight: 700;
   font-style: normal;
 }
+
+@font-face {
+  font-display: swap;
+  font-family: 'Open Sans';
+  src: url('https://cdn.texastribune.org/fonts/opensans-italic.woff2') format('woff2'),
+    url('https://cdn.texastribune.org/fonts/opensans-italic.woff') format('woff');
+  font-weight: 400;
+  font-style: italic;
+}
