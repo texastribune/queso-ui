@@ -7,7 +7,7 @@
 //
 // Styleguide 6.1.3
 $c-sponsor-block-padding: $size-s;
-$c-sponsor-block-min: 300px;
+$c-sponsor-block-min: 200px;
 
 .c-sponsor-block {
   @include gap($c-sponsor-block-padding);
@@ -26,9 +26,8 @@ $c-sponsor-block-min: 300px;
   }
 
   &__image {
-    height: 100%;
     object-fit: cover;
-    max-height: 300px;
+    max-height: 200px;
   }
 
   &__label {
@@ -37,12 +36,20 @@ $c-sponsor-block-min: 300px;
     top: $c-sponsor-block-padding;
   }
 
-  &__main {
-    align-self: flex-start;
-  }
-
   &__text {
     display: grid;
+  }
+
+  &__sponsor {
+    font-size: $size-xxs;
+  }
+
+  &__headline {
+    font-size: $size-b;
+  }
+
+  &__desc {
+    font-size: $size-xs;
   }
 
   @include mq($from: bp-m) {
@@ -50,12 +57,23 @@ $c-sponsor-block-min: 300px;
 
     &__label {
       position: static;
-      align-self: start;
     }
 
+    &__sponsor {
+      font-size: $size-xs;
+    }
+
+    &__headline {
+      font-size: $size-m;
+    }
+
+    &__desc {
+      font-size: $size-s;
+    }
+  }
+  @include mq($from: bp-l) {
     &__main {
       padding: 0 $c-sponsor-block-padding 0 $size-xxxl;
     }
-
   }
 }
