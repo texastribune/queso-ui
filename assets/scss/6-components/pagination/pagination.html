@@ -1,14 +1,38 @@
-<nav class="c-pagination t-links t-uppercase t-lsp-b t-size-xs" aria-label="Pagination">
-  <ul class="c-pagination__grid t-align-center">
-    <li class="t-align-left"><a href="#" aria-label="Previous Page"><span class="c-icon c-icon--baseline c-pagination__icon c-pagination__icon--prev"><svg aria-hidden="true"><use xlink:href="#long-arrow-left"></use></svg></span>Previous</a></li>
-    <span class="l-align-center-children">
-    <li class="is-hidden-until-bp-m"><a class="c-pagination__count" href="#" aria-label="Goto Page 1">1</a></li>
-    <li class="is-hidden-until-bp-m"><a class="c-pagination__count" href="#" aria-label="Goto Page 2">2</a></li>
-    <li class="is-hidden-until-bp-m"><a class="c-pagination__count" href="#" aria-label="Current Page, Page 3" aria-current="true">3</a></li>
+<ul class="c-pagination t-links t-uppercase t-lsp-b t-size-xs t-align-center t-weight-bold" role="navigation"
+  aria-label="Pagination">
+  <li class="t-align-left">
+    <a href="#" aria-label="Previous page">
+      <span class="c-icon c-icon--baseline c-pagination__icon c-pagination__icon--prev">
+        <svg aria-hidden="true">
+          <use xlink:href="#long-arrow-left"></use>
+        </svg>
+      </span>
+      Previous
+    </a>
+  </li>
+  <span class="l-align-center-children">
+    <li class="is-hidden-until-bp-m">
+      <a class="c-pagination__count" href="#" aria-label="Page 1">1</a>
+    </li>
+    <li class="is-hidden-until-bp-m">
+      <a class="c-pagination__count" href="#" aria-label="Page 2">2</a>
+    </li>
+    <li class="is-hidden-until-bp-m c-pagination__count" aria-label="You're on page 3">
+      <span aria-hidden="true"> 3</span>
+    </li>
     <li class="is-hidden-until-bp-m" aria-hidden="true">…</li>
-    <li class="is-hidden-until-bp-m"><a class="c-pagination__count" href="#" aria-label="Goto Page 100">100</a></li>
-    </span>
-    <li class="t-align-right"><a href="#" aria-label="Next Page">Next<span class="c-icon c-icon--baseline c-pagination__icon c-pagination__icon--next"><svg aria-hidden="true"><use xlink:href="#long-arrow-right"></use></svg></span></a></li>
-  </ul>
-</nav>
-
+    <li class="is-hidden-until-bp-m">
+      <a class="c-pagination__count" href="#" aria-label="Skip to page 100">100</a>
+    </li>
+  </span>
+  <li class="t-align-right">
+    <a href="#" aria-label="Next Page">
+      Next
+      <span class="c-icon c-icon--baseline c-pagination__icon c-pagination__icon--next">
+        <svg aria-hidden="true">
+          <use xlink:href="#long-arrow-right"></use>
+        </svg>
+      </span>
+    </a>
+  </li>
+</ul>

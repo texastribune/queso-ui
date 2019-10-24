@@ -1,6 +1,6 @@
 // Topic bar (c-topic-bar)
 //
-// List of curated topics, which is hard-coded into a flatblock. For layout, use `l-align-center-children` in the markup.
+// Horizontal list of links. This is found on the homepage in a flatblock. For layout, use `l-align-center-children` in the markup. We rely on inheritance for this component to simplify the markup.
 //
 // Markup: 6-components/topic-bar/topic-bar.html
 //

@@ -1,16 +1,14 @@
 // Pagination (c-pagination)
 //
-// Nav buttons for aggregate pages. <br>*<span class="tag is-error">Needs art review</span> At current state, this does not meet WCAG2 level AA standards.*
+// Nav buttons for a series of pages used on index pages. The markup is modeled after some of the accessibility features documented in [Yale University's Style Guide](https://yaleux.github.io/yaleui/styleguide/pagination.html).<br>*<span class="tag is-error">Needs art review</span> At current state, this does not meet WCAG2 level AA standards for color contrast and font size. We could consider bumping up the font-size or switching to a darker color from our color palette.*
 //
 //
 // Markup: 6-components/pagination/pagination.html
 //
 // Styleguide 6.1.3
 .c-pagination {
-  &__grid {
-    display: grid;
-    grid-template-columns: 4fr 1fr 4fr;
-  }
+  display: grid;
+  grid-template-columns: 4fr 1fr 4fr;
 
   &__count {
     margin: 0 $size-xxxs;
