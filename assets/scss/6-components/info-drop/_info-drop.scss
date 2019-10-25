@@ -29,6 +29,8 @@ $info-drop-size: px-to-rem(14px);
 .c-info-drop {
   overflow: hidden;
   padding-bottom: $info-drop-size * 2;
+  position: sticky;
+  top: 0;
 
   &__inner {
     position: relative;
