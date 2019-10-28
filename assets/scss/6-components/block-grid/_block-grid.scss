@@ -1,6 +1,6 @@
 // Block grid (c-block-grid)
 //
-// Auto flow grid of child elements. Mobile has a set rule to stack, while larger viewports auto flow based on min/max width rule on child elements. If the container does not allow for each column to be at least 200px, remaining columns will wrap to the next row. {{isWide}}
+// Auto flow grid of child elements. Mobile has a set rule to stack, while larger viewports auto flow based on min/max width rule on child elements. If the container does not allow for each column to be at least 100px, remaining columns will wrap to the next row. {{isWide}}
 //
 // .c-block-grid--bordered - Has a top/bottom border for separation
 //
