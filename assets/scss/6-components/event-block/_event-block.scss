@@ -27,16 +27,14 @@
 
   @include mq($from: bp-m) {
     &__content {
-      background: linear-gradient(rgba(0,0,0,0) 60%,#000);
-      color: #fff;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      padding: $size-xxs;
-    }
-
-    &__title {
-      font-weight: normal;
+      &--overlay {
+        background: linear-gradient(rgba(0,0,0,0) 60%,#000);
+        color: #fff;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        padding: $size-xxs;
+      }
     }
   }
 }

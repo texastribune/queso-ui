@@ -25,9 +25,11 @@ $cta-block-btn-height: px-to-rem(29px);
     grid-auto-rows: $cta-block-btn-height;
     margin-top: $cta-block-btn-height;
 
+    // four buttons, all in a row
     &--4 {
       grid-template-columns: repeat(4, 1fr);
 
+      // buttons should become 2x2 on wide screens
       &-stack-from-m {
         grid-template-columns: repeat(4, 1fr);
         @include mq($from: bp-m) {
@@ -37,9 +39,11 @@ $cta-block-btn-height: px-to-rem(29px);
       }
     }
 
+    // two buttons, side by side
     &--2 {
       grid-template-columns: repeat(2, 1fr);
 
+      // buttons should become 1x1 on wide screens
       &-stack-from-m {
         grid-template-columns: repeat(2, 1fr);
         @include mq($from: bp-m) {
@@ -51,6 +55,7 @@ $cta-block-btn-height: px-to-rem(29px);
   }
 
   @include mq($from: bp-m) {
+    // container should become two columns on wide screens
     &--horiz-from-m {
       @include gap($size-l);
       align-items: center;
