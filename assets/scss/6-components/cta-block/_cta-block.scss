@@ -18,27 +18,39 @@ $cta-block-btn-height: px-to-rem(29px);
     @include gap($size-xxs);
     display: grid;
     grid-auto-rows: $cta-block-btn-height;
-    grid-template-columns: 1fr 1fr;
     margin-top: $cta-block-btn-height;
 
-    &--1x4 {
+    &--4 {
       grid-template-columns: repeat(4, 1fr);
+
+      &-stack-from-m {
+        grid-template-columns: repeat(4, 1fr);
+        @include mq($from: bp-m) {
+          grid-template-columns: repeat(2, 1fr);
+          margin-top: 0;
+        }
+      }
+    }
+
+    &--2 {
+      grid-template-columns: repeat(2, 1fr);
+
+      &-stack-from-m {
+        grid-template-columns: repeat(2, 1fr);
+        @include mq($from: bp-m) {
+          grid-template-columns: 1fr;
+          margin-top: 0;
+        }
+      }
     }
   }
 
   @include mq($from: bp-m) {
-    @include gap($size-l);
-    display: grid;
-    grid-template-columns: 1fr $cta-block-min-col;
-    align-items: center;
-
-    &__btns {
-      grid-template-columns: 1fr;
-      margin-top: 0;
-
-      &--1x4 {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    &--horiz-from-m {
+      @include gap($size-l);
+      align-items: center;
+      display: grid;
+      grid-template-columns: 1fr $cta-block-min-col;
     }
   }
 }
