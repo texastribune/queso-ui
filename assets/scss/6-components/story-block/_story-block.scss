@@ -1,0 +1,59 @@
+// Story block (c-story-block)
+//
+// Story blocks are card-like components. These blocks generally contain a story's thumbnail and metadata. By default the columns are 30/70. {{isWide}}
+//
+// .c-story-block--featured - Larger thumbnail photo. Columns are 50/50.
+// .c-story-block--stack-from-bp-m - Columns on mobile; **stacked at `bp-m`**. Used in *trending on homepage.*
+// .c-story-block--stack-from-bp-l - Columns on mobile; **stacked at `bp-l`**. Used in *two story wells*.
+// .c-story-block--stack-until-bp-m - **Stacked on mobile**; columns on `bp-m`. Used in *our picks series posts*.
+// .c-story-block--stack-until-bp-l - **Stacked on mobile**; columns on `bp-l`. Used in *top stories* along with `.c-story-block--featured`
+//
+//
+// Markup: 6-components/story-block/story-block.html
+//
+// Styleguide 6.1.3
+.c-story-block {
+  @include gap;
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+
+  &__headline {
+    font-size: $size-s;
+  }
+
+  &--featured {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include mq($from: bp-m) {
+    &--stack-from-bp-m {
+      @include gap($size-xxs);
+      grid-template-columns: 1fr;
+      grid-auto-rows: min-content;
+    }
+
+    &__headline {
+      font-size: $size-m;
+    }
+  }
+
+  @include mq($from: bp-l) {
+    &--stack-from-bp-l {
+      @include gap($size-xxs);
+      grid-template-columns: 1fr;
+      grid-auto-rows: min-content;
+    }
+  }
+
+  @include mq($until: bp-m) {
+    &--stack-until-bp-m {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @include mq($until: bp-l) {
+    &--stack-until-bp-l {
+      grid-template-columns: 1fr;
+    }
+  }
+}

@@ -3,6 +3,7 @@
 // This is a block of text, which gives context to media. We generally use helper classes for text styles and use this component simply for spacing.
 //
 // c-caption--wide - The removal of padding comes a bit sooner.
+// c-caption--compact - Just a bit o' top padding.
 //
 // Markup: 6-components/caption/caption.html
 //
@@ -10,6 +11,10 @@
 .c-caption {
   margin: -5px 0 0 0; // not sure what this accounts for (copied from base)
   padding: $size-xs;
+
+  &--compact {
+    padding: $size-xxxs 0 0;
+  }
 
   @include mq($from: bp-xl) {
     padding-left: 0;

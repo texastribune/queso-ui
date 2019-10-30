@@ -1,6 +1,6 @@
-// CTA Block (c-cta-block)
+// CTA block (c-cta-block)
 //
-// Call to action with messaging and buttons. **The window size determines the layout.**
+// Call to action with messaging and buttons. The window size determines the layout. **This would be a great use case for container queries.**
 //
 //
 // Markup: 6-components/cta-block/cta-block.html
@@ -13,6 +13,11 @@ $cta-block-btn-height: px-to-rem(29px);
 .c-cta-block {
   border: 1px solid $color-gray-light;
   border-radius: $border-radius-b;
+
+  &--no-border {
+    border-width: 0;
+    border-radius: 0;
+  }
 
   &__btns {
     @include gap($size-xxs);
