@@ -2,8 +2,7 @@
 //
 // Standard two col grid with a content area and sidebar. This grid starts at `bp-l`. The sidebar width is to account for 300x250 ads. {{isWide}}
 //
-// .l-content-grid--reversed - Left sidebar and right content
-// .l-content-grid--flush - No grid gap
+// .l-content-grid--swapped-until-bp-l - Flip the visual order on smaller devices
 //
 // Markup: 7-layout/content-grid.html
 //
@@ -12,27 +11,27 @@
 $content-grid-sidebar: px-to-rem(310px);
 
 .l-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'content' 'side';
+
+  &__side {
+    grid-area: side;
+  }
+
+  &__content {
+    grid-area: content;
+  }
+
   @include mq($from: bp-l) {
     @include gap($size-xxl);
-    display: grid;
     grid-template-areas: 'content side';
     grid-template-columns: 1fr $content-grid-sidebar;
+  }
 
-    &__side {
-      grid-area: side;
-    }
-
-    &__content {
-      grid-area: content;
-    }
-
-    &--reversed {
-      grid-template-areas: 'side content';
-      grid-template-columns: $content-grid-sidebar 1fr;
-    }
-    
-    &--flush {
-      @include gap(0);
+  @include mq($until: bp-l) {
+    &--swapped-until-bp-l {
+      grid-template-areas: 'side' 'content';
     }
   }
 }

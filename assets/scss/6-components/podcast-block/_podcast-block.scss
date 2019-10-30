@@ -1,0 +1,31 @@
+// Podcast block (c-podcast-block)
+//
+// Block for featuring podcasts. Breaks to two columns from `bp-l`. {{isWide}}
+//
+//
+// Markup: 6-components/podcast-block/podcast-block.html
+//
+// Styleguide 6.1.3
+.c-podcast-block {
+  @include gap;
+  display: grid;
+  @include mq($from: bp-l) {
+    grid-template-columns: 7fr 6fr;
+    // HACK: Align the last element to the bottom (only works with 3 rows :( )
+    &__content {
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      padding: 0;
+    }
+  }
+
+  @include mq($from: bp-xl) {
+    &__title {
+      font-size: $size-l;
+
+      &--lg {
+        font-size: $size-xxl;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+// Event block (c-event-block)
+//
+// Block for featuring events. Becomes unstacked and metadata is overlayed at `bp-m`. Event blocks include a `c-cta-block`. {{isWide}}
+//
+//
+// Markup: 6-components/event-block/event-block.html
+//
+// Styleguide 6.1.3
+.c-event-block {
+  position: relative;
+
+  &__tag {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: $size-xxs;
+    padding: $size-xxxs;
+  }
+
+  &__day {
+    line-height: 1;
+  }
+
+  &__content {
+    padding-top: $size-tiny;
+  }
+
+  @include mq($from: bp-m) {
+    &__content {
+      background: linear-gradient(rgba(0,0,0,0) 60%,#000);
+      color: #fff;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: $size-xxs;
+    }
+
+    &__title {
+      font-weight: normal;
+    }
+  }
+}
