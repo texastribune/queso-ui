@@ -23,7 +23,7 @@ $cta-block-btn-height: px-to-rem(29px);
     @include gap($size-xxs);
     display: grid;
     grid-auto-rows: $cta-block-btn-height;
-    margin-top: $cta-block-btn-height;
+    margin-top: $size-b;
 
     // four buttons, all in a row
     &--4 {
