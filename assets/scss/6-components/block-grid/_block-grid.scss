@@ -15,6 +15,10 @@
 
   @include mq($from: bp-m) {
     grid-template-columns: repeat(auto-fit, minmax(px-to-rem(300px), 1fr));
+
+    &--min-100 {
+      grid-template-columns: repeat(auto-fit, minmax(px-to-rem(100px), 1fr));
+    }
   }
 
   &--bordered {
