@@ -6,12 +6,12 @@
 // Markup: 6-components/sponsor-block/sponsor-block.html
 //
 // Styleguide 6.1.3
+$sb-headline-lines: 2;
 $sb-desc-lines: 3;
 
 .c-sponsor-block {
   @include gap($size-s);
-  border-top: 5px solid $color-sponsor;
-  border-bottom: 2px solid $color-sponsor;
+  
   display: grid;
   grid-template-areas: 'image-wrap' 'text';
   grid-template-columns: 1fr;
@@ -37,19 +37,25 @@ $sb-desc-lines: 3;
     font-size: $size-xxs;
   }
 
+  &__static-text {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-box-orient: vertical;
+  }
+
   &__headline {
     font-size: $size-b;
+    max-height: $size-b * $font-line-height-m * $sb-headline-lines; // Fallback for non-webkit
+    line-height: $font-line-height-s;
+    -webkit-line-clamp: $sb-headline-lines;
   }
 
   &__desc {
-    display: -webkit-box;
     font-size: $size-xs;
     height: $size-xs * $font-line-height-m * $sb-desc-lines; // Fallback for non-webkit
     line-height: $font-line-height-m;
-    overflow: hidden;
-    text-overflow: ellipsis;
     -webkit-line-clamp: $sb-desc-lines;
-    -webkit-box-orient: vertical;
   }
 
   &__image-wrap {
@@ -79,6 +85,7 @@ $sb-desc-lines: 3;
 
     &__headline {
       font-size: $size-m;
+      max-height: $size-m * $font-line-height-s * $sb-headline-lines;
     }
 
     &__desc {
@@ -91,4 +98,35 @@ $sb-desc-lines: 3;
       padding: 0 $size-s 0 $size-xxxl;
     }
   }
+}
+
+
+.c-fluid-ad {
+  border-top: 5px solid $color-sponsor;
+  border-bottom: 2px solid $color-sponsor;
+  display: flex;
+  align-items: center;
+  background-color: $color-white-off;
+  margin: 2rem 0;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1080px;
+
+  @include mq($from: bp-xs) {
+    height: 365px;
+  }
+
+  @include mq($from: bp-s) {
+    height: 380px;
+  }
+
+  @include mq($from: bp-m) {
+    height: 250px;
+  }
+}
+
+// demo lazy
+.c-sponsor-block {
+  opacity: 0;
 }
