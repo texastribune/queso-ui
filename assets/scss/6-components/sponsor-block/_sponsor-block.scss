@@ -1,7 +1,8 @@
 // Sponsor block (c-sponsor-block)
 //
-// Sponsor block is a promotional element featuring a paid post. The goal of this approach is to be minimally reliant on media queries; the inner content should scale appropriately to any size of parent container.
+// Sponsor block is a promotional element featuring a paid post. When loaded lazily, wrap this component in `c-ad-fluid`. {{isWide}}
 //
+// c-sponsor-block--filled - This version includes a border/bg color. It can be dropped after lazy ads rolls out and c-sponsor-block becomes coupled with `c-ad-fluid`.
 //
 // Markup: 6-components/sponsor-block/sponsor-block.html
 //
@@ -11,7 +12,6 @@ $sb-desc-lines: 3;
 
 .c-sponsor-block {
   @include gap($size-s);
-  
   display: grid;
   grid-template-areas: 'image-wrap' 'text';
   grid-template-columns: 1fr;
@@ -66,6 +66,12 @@ $sb-desc-lines: 3;
     grid-area: text;
   }
 
+  &--filled {
+    background-color: $color-white-off;
+    border-top: 5px solid $color-sponsor;
+    border-bottom: 2px solid $color-sponsor;
+  }
+
   @include mq($from: bp-m) {
     grid-template-areas: 'text image-wrap';
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
@@ -98,35 +104,4 @@ $sb-desc-lines: 3;
       padding: 0 $size-s 0 $size-xxxl;
     }
   }
-}
-
-
-.c-fluid-ad {
-  border-top: 5px solid $color-sponsor;
-  border-bottom: 2px solid $color-sponsor;
-  display: flex;
-  align-items: center;
-  background-color: $color-white-off;
-  margin: 2rem 0;
-  height: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1080px;
-
-  @include mq($from: bp-xs) {
-    height: 365px;
-  }
-
-  @include mq($from: bp-s) {
-    height: 380px;
-  }
-
-  @include mq($from: bp-m) {
-    height: 240px;
-  }
-}
-
-// demo lazy
-.c-sponsor-block {
-  opacity: 0;
 }
