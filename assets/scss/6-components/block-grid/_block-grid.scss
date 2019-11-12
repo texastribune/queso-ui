@@ -9,14 +9,15 @@
 //
 // Styleguide 6.1.3
 .c-block-grid {
-  @include col-gap($size-s);
   @include row-gap($size-xxl);
   display: grid;
 
   @include mq($from: bp-m) {
+    @include col-gap($size-xxl);
     grid-template-columns: repeat(auto-fit, minmax(px-to-rem(300px), 1fr));
 
     &--min-100 {
+      @include col-gap($size-s);
       grid-template-columns: repeat(auto-fit, minmax(px-to-rem(100px), 1fr));
     }
   }
