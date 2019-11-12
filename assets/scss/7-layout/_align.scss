@@ -5,7 +5,7 @@
 // l-align-center-x - Uses auto side margin for **horizontal** center
 // l-align-center-y - Absolutely positioned for vertical **vertical** center
 // l-align-center-self - Used on children of flex or grid parent for **vertical** center
-// l-align-bottom-self - Used on children of flex or grid parent for forcing **bottom** alignment
+// l-align-end-self - Used on children of flex or grid parent for forcing **bottom** alignment
 // l-align-center-children - Apply to parent to center children. Centers x and y.
 //
 // Markup: 7-layout/align.html
@@ -31,7 +31,7 @@
   align-self: center;
 }
 // apply to an item with a flex or grid parent
-.l-align-bottom-self {
+.l-align-end-self {
   align-self: end;
 }
 
