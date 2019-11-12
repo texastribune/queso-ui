@@ -8,7 +8,6 @@
 // .c-button--xs - Two steps down from default
 // .c-button--circle - Circular button (experimentally used for back to top)
 // .c-button--outline - Hover effect of outline (used on social)
-// .c-button--round - For the most part, buttons associated with revenue are rounded.
 //
 // Markup: 6-components/button/button.html
 //
@@ -94,10 +93,6 @@
     padding-bottom: 0;
     height: 26px;
     line-height: 26px;
-  }
-
-  &--round {
-    border-radius: $border-radius-l;
   }
 }
 

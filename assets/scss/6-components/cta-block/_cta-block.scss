@@ -1,7 +1,8 @@
 // CTA block (c-cta-block)
 //
-// Call to action with messaging and buttons. The window size determines the layout. **This would be a great use case for container queries.**
+// Call to action with messaging and buttons. The window size determines the layout. **This would be a great use case for container queries.** {{isWide}}
 //
+// .c-cta-block--horiz-from-bp-m - Container becomes two columns on wide screens. Fits a wider space.
 //
 // Markup: 6-components/cta-block/cta-block.html
 //
@@ -11,55 +12,43 @@ $cta-block-min-col: px-to-rem(130px);
 $cta-block-btn-height: px-to-rem(29px);
 
 .c-cta-block {
-  border: 1px solid $color-gray-light;
-  border-radius: $border-radius-b;
-
-  &--no-border {
-    border-width: 0;
-    border-radius: 0;
-  }
+  @include row-gap($size-s);
+  display: grid;
+  grid-template-columns: 1fr;
 
   &__btns {
     @include gap($size-xxs);
     display: grid;
     grid-auto-rows: $cta-block-btn-height;
-    margin-top: $size-s;
 
     // four buttons, all in a row
     &--4 {
       grid-template-columns: repeat(4, 1fr);
-
-      // buttons should become 2x2 on wide screens
-      &-stack-from-m {
-        grid-template-columns: repeat(4, 1fr);
-        @include mq($from: bp-m) {
-          grid-template-columns: repeat(2, 1fr);
-          margin-top: 0;
-        }
-      }
     }
 
     // two buttons, side by side
     &--2 {
       grid-template-columns: repeat(2, 1fr);
+    }
 
+    @include mq($from: bp-m) {
       // buttons should become 1x1 on wide screens
-      &-stack-from-m {
+      &--1-from-bp-m {
+        grid-template-columns: 1fr;
+      }
+      // buttons should become 2x2 on wide screens
+      &--2-from-bp-m {
         grid-template-columns: repeat(2, 1fr);
-        @include mq($from: bp-m) {
-          grid-template-columns: 1fr;
-          margin-top: 0;
-        }
       }
     }
+
   }
 
   @include mq($from: bp-m) {
     // container should become two columns on wide screens
-    &--horiz-from-m {
+    &--horiz-from-bp-m {
       @include gap($size-l);
       align-items: center;
-      display: grid;
       grid-template-columns: 1fr $cta-block-min-col;
     }
   }

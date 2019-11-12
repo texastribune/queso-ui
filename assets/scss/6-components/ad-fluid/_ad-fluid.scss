@@ -8,8 +8,6 @@
 
 
 .c-ad-fluid {
-  border-top: 5px solid $color-sponsor;
-  border-bottom: 2px solid $color-sponsor;
   height: 400px;
 
   @include mq($from: bp-xs) {
