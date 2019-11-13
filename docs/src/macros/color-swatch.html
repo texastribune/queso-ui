@@ -1,11 +1,17 @@
-{% macro colorSwatch(name, color, description) %}
+{% macro colorSwatch(color) %}
 <div class="card">
-    <div class="section has-text-centered" style="background-color: {{ color }}"><code>{{ color }}</code></div>
+    <div class="section has-text-centered" style="background-color: {{ color.color }}"><code>{{ color.color }}</code></div>
     <div class="card-content">
-        <div class="title is-6">{{ name }}</div>
+        <div class="title is-6">{{ color.name }}</div>
         <p class="subtitle is-6">
-            {{ description | safe }}
+            {{ color.description | safe }}
         </p>
+        <ul>
+            <li><div class="ds-mini-swatch" aria-hidden="true" style="color: {{ color.color }}"></div></li>
+            <li class="ds-half-cols"><span>AA:</span><span>{% if color.aa %}✅{% else %}🚩{% endif %}</span></li>
+            <li class="ds-half-cols"><span>AAA:</span><span>{% if color.aaa %}✅{% else %}🚩{% endif %}</span></li>
+            <li class="ds-half-cols"><span>AA lg text:</span><span>{% if color.aaLargeText %}✅{% else %}🚩{% endif %}</span></li>
+        </ul>
     </div>
 </div>
 {% endmacro %}

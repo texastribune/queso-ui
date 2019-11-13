@@ -9,7 +9,7 @@
 .ds-stick-it {
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 3;
 }
 
 .ds-breathe {
@@ -200,5 +200,37 @@ h6 {
     position: absolute;
     z-index: 2;
   }
-  
+
+}
+
+.ds-half-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ds-mini-swatch {
+  height: 25px;
+  margin-bottom: 1rem;
+  position: relative;
+  width: 25px;
+
+  &:before,
+  &:after {
+    content: '';
+    background-color: currentColor;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.1),inset 0 0 0 1px rgba(0,0,0,.1);
+    left: 0px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+  }
+
+  &:before {
+    background-color: #fff;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+  }
 }
