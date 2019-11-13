@@ -32,7 +32,7 @@
   @include mq($from: bp-m) {
     &__content {
       &--overlay {
-        background: linear-gradient(rgba(0,0,0,0) -100%,#000);
+        background: linear-gradient(rgba(0,0,0,0) 0%,#000);
         color: #fff;
         grid-template-rows: 1fr;
         position: absolute;
