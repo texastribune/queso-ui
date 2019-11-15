@@ -1,0 +1,19 @@
+// Border Radius (is-rounded-<size>)
+//
+// For roundin' out those corners. {{isHelper}}
+//
+// .is-rounded-b - The base rounded measure `4px`
+// .is-rounded-l - More dramatic rounding of `40px`. (Used for pill buttons in donation CTAs.)
+//
+// Markup: <div class="{{ className }} has-bg-gray-light has-padding">Bordered</div>
+//
+//
+// Styleguide 8.0.3
+//
+.is-rounded-b {
+  border-radius: 4px;
+}
+
+.is-rounded-l {
+  border-radius: 40px;
+}

@@ -6,7 +6,7 @@
 // - `t-uppercase`
 // - `t-lsp-m`
 // - `t-size-xs` (varies with context)
-// - `has-text-gray`
+// - `has-text-gray-dark`
 //
 //
 // Markup: 5-typography/byline.html
@@ -16,6 +16,6 @@
 //
 .t-byline {
   &__item {
-    padding-right: $size-b;
+    margin-right: $size-b;
   }
 }
