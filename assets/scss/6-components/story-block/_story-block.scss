@@ -16,7 +16,6 @@
   @include gap;
   display: grid;
   grid-template-columns: 5fr 7fr;
-  grid-auto-rows: min-content;
   grid-template-areas: 'image-wrap text';
 
   &__headline {
