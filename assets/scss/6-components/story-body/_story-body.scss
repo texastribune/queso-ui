@@ -49,16 +49,17 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
     list-style: disc;
   }
 
+  // h2s are a dropdown option in the CMS
+  // we hard-set the font size for this reason
+  > h2 {
+    font-size: $size-m;
+  }
+
   sub, sup {
     position: initial;
   }
 
   hr {
     margin: $size-xl auto;
-  }
-  // h3s are a dropdown option in the CMS
-  // we hard-set the font size for this reason
-  h3 {
-    font-size: $size-m;
   }
 }
