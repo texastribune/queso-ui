@@ -16,9 +16,18 @@
   @include gap;
   display: grid;
   grid-template-columns: 5fr 7fr;
+  grid-template-areas: 'image-wrap text';
 
   &__headline {
     font-size: $size-s;
+  }
+
+  &__image-wrap {
+    grid-area: image-wrap;
+  }
+
+  &__text {
+    grid-area: text;
   }
 
   &--featured {
@@ -29,7 +38,7 @@
     &--stack-from-bp-m {
       @include gap($size-xxs);
       grid-template-columns: 1fr;
-      grid-auto-rows: min-content;
+      grid-template-areas: 'image-wrap' 'text';
     }
 
     &__headline {
@@ -41,19 +50,21 @@
     &--stack-from-bp-l {
       @include gap($size-xxs);
       grid-template-columns: 1fr;
-      grid-auto-rows: min-content;
+      grid-template-areas: 'image-wrap' 'text';
     }
   }
 
   @include mq($until: bp-m) {
     &--stack-until-bp-m {
       grid-template-columns: 1fr;
+      grid-template-areas: 'image-wrap' 'text';
     }
   }
 
   @include mq($until: bp-l) {
     &--stack-until-bp-l {
       grid-template-columns: 1fr;
+      grid-template-areas: 'image-wrap' 'text';
     }
   }
 }
