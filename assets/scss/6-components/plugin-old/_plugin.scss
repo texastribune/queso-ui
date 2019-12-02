@@ -1,0 +1,163 @@
+// Plugin (plugin)
+//
+// The soul purpose of adding this here is document how our plugins work at current state. We will refactor these classes eventually. {{isWide}} {{isHelper}}
+//
+// plugin--centered.plugin--centered-giant-full - Full width, giant
+// plugin--centered.plugin--centered-narrow-full - Full width, text-width
+// plugin--side.plugin--side-left.plugin--side-narrow-full - Left
+// plugin--side.plugin--side-right.plugin--side-narrow-full - Right
+//
+// Markup: 6-components/plugin-old/plugin.html
+//
+// Styleguide 6.1.3
+
+// plugin base (container for individual plugins)
+$small-plugin-width: 30rem;
+$text-plugin-width: 41.5rem;
+$wide-plugin-width: 52.813rem;
+$giant-plugin-width: 60rem;
+
+$plugin-padding-buffer: 2em;
+
+$small-plugin-bp: ($small-plugin-width / 1rem) + $plugin-padding-buffer;
+$text-plugin-bp: ($text-plugin-width / 1rem) + $plugin-padding-buffer;
+$giant-plugin-bp: ($giant-plugin-width / 1rem) + $plugin-padding-buffer;
+
+.plugin {
+  clear: both;
+
+  .story_body > &:last-child,
+  .c-story-body > &:last-child {
+    margin-bottom: 0;
+  }
+
+  &--centered {
+    margin: $size-giant auto;
+
+    &-small {
+      &-padded {
+        max-width: $small-plugin-width;
+
+        @include mq($until: $small-plugin-bp) {
+          padding-left: $size-xs;
+          padding-right: $size-xs;
+        }
+      }
+
+      &-full {
+        max-width: $small-plugin-width;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    &-narrow {
+      &-padded {
+        max-width: $text-plugin-width;
+
+        @include mq($until: $text-plugin-bp) {
+          padding-left: $size-xs;
+          padding-right: $size-xs;
+        }
+      }
+
+      &-full {
+        max-width: $text-plugin-width;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    &-giant {
+      &-padded {
+        max-width: $giant-plugin-width;
+
+        @include mq($until: $giant-plugin-bp) {
+          padding-left: $size-xs;
+          padding-right: $size-xs;
+        }
+      }
+
+      &-full-when-stacked-m {
+        max-width: $giant-plugin-width;
+
+        @include mq($until: bp-m) {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        @include mq($from: bp-m, $until: $giant-plugin-bp) {
+          padding-left: $size-xs;
+          padding-right: $size-xs;
+        }
+      }
+
+      &-full {
+        max-width: $giant-plugin-width;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+
+  &--side {
+    @include mq($until: bp-l) {
+      float: none;
+      margin: $size-giant auto;
+    }
+
+    @include mq($from: bp-l) {
+      width: 50%;
+    }
+
+    &-small {
+      &-padded {
+        max-width: $small-plugin-width;
+
+        @include mq($until: $small-plugin-bp) {
+          padding-left: $size-xs;
+          padding-right: $size-xs;
+        }
+      }
+
+      &-full {
+        max-width: $small-plugin-width;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    &-narrow {
+      &-padded {
+        max-width: $text-plugin-width;
+
+        @include mq($until: $text-plugin-bp) {
+          padding-left: $size-xs;
+          padding-right: $size-xs;
+        }
+      }
+
+      &-full {
+        max-width: $text-plugin-width;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    &-left {
+      @include mq($from: bp-l) {
+        float: left;
+        padding-right: $size-b;
+        padding-left: 10%;
+      }
+    }
+
+    &-right {
+      @include mq($from: bp-l) {
+        float: right;
+        padding-left: $size-b;
+        padding-right: 10%;
+      }
+    }
+  }
+}
