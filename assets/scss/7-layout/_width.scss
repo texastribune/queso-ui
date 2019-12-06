@@ -4,9 +4,18 @@
 //
 // .l-width-full - Width is 100% of parent
 // .l-width-max - Max-width: 100%. Never greater than parent, but not stretched beyond its natural size.
+// l-width-max-tiny = 21.875rem - 350px
+// l-width-max-xxxs = 22.5rem - 360px
+// l-width-max-xxs = 30rem - 480px
+// l-width-max-xs = 32.5rem - 520px
+// l-width-max-s = 41.5rem - 664px (text width)
+// l-width-max-b = 52.813rem - 845px
+// l-width-max-m = 60rem - 960px
+// l-width-max-l = 67.5rem - 1080px
+// l-width-max-xl = 80rem - 1280px
 //
-// Markup: <div style="border:2px solid black"><img class="{{ className }}" src="https://static.texastribune.org/media/images/2015/10/22/SpaceJam_Nightscapes_BO_DSC02387.jpg"/></div>
-// 
+// Markup: <div style="border:2px solid black"><div class="{{ className }} has-padding has-bg-blue">{{ className }}</div></div>
+//
 //
 // Styleguide 7.0.5
 .l-width-full {
@@ -15,4 +24,10 @@
 
 .l-width-max {
   max-width: 100%;
+}
+
+@each $width-size, $width in $width-map {
+  .l-width-max-#{$width-size} {
+    max-width: $width;
+  }
 }

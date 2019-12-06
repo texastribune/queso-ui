@@ -63,10 +63,12 @@
 .has-page-padding {
   padding-left: $size-xs;
   padding-right: $size-xs;
+
   @include mq($from: bp-m, $until: bp-xl) {
     padding-left: $size-b;
     padding-right: $size-b;
   }
+
   @include mq($from: bp-xl) {
     padding-left: 0;
     padding-right: 0;
@@ -83,6 +85,7 @@
 .has-section-padding {
   padding-top: $size-xxxl;
   padding-bottom: $size-xxxl;
+
   @include mq($until: bp-m) {
     padding-top: $size-xl;
     padding-bottom: $size-xl;

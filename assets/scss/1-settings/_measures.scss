@@ -6,12 +6,12 @@ $mq-responsive: true;
 //
 // We import the sass-mq library for our responsive utilities. Our own custom breakpoints are as follows:
 //
-// $bp-xs = 320px - Mobile
-// $bp-s = 520px - Mobile
-// $bp-m = 650px - Tablet
-// $bp-l = 845px - Small Desktop
-// $bp-xl = 1080px - Desktop
-// $bp-xxl = 1300px - Large Desktop
+// $bp-xs = 320px - Mobile ~20em
+// $bp-s = 520px - Mobile ~32.5em
+// $bp-m = 650px - Tablet ~40.625em
+// $bp-l = 845px - Small Desktop ~52.8125em
+// $bp-xl = 1080px - Desktop ~67.5em
+// $bp-xxl = 1300px - Large Desktop ~81.24em
 //
 // Styleguide 1.3.1
 $bp-xs: 320px;
@@ -33,6 +33,7 @@ $mq-breakpoints: (
   bp-default: $bp-default
 );
 
+
 // Story Containers
 //
 // Our stories have varying containers on them. There is a bit of overlap with our `$mq-breakpoints`; in the future, we might consider revisiting these.
@@ -42,17 +43,70 @@ $mq-breakpoints: (
 // $story-giant = 60rem - This is our widest story container; used for plugins
 //
 // Styleguide 1.3.1
-$story-small: 30rem;
-$story-narrow: 41.5rem;
-$story-giant: 60rem;
 
+$dv-1: 21.875rem; // tiny
+$dv-2: 22.5rem; // xxxs
+$story-small: 30rem; // xxs
+$l-container-s: 32.5rem; // xs
+$dv-3: 40rem; // s
+$l-container-m: 40.625rem; // b
+$story-narrow: 41.5rem; // l
+$dv-4: 42.75rem; // xl
+$l-container-l: 52.813rem; // xxl
+$l-container-b: 60rem; // xxxl
+$story-giant: 60rem; // xxxl;
+$l-container-xl: 67.5rem; // giant
+$dv-5: 80rem; // x-giant
+$l-container-xxl: 81.25rem; // xl-giant
+
+// Widths
+//
+// We have an arbitrary scale of various widths used on the site.
+//
+// $width-tiny = 21.875rem - 350px
+// $width-xxxs = 22.5rem - 360px
+// $width-xxs = 30rem - 480px
+// $width-xs = 32.5rem - 520px
+// $width-s = 41.5rem - 664px (text width)
+// $width-b = 52.813rem - 845px
+// $width-m = 60rem - 960px
+// $width-l = 67.5rem - 1080px
+// $width-xl = 80rem - 1280px
+//
+// Styleguide 1.3.1
+
+$width-tiny: 21.875rem;
+$width-xxxs: 22.5rem;
+$width-xxs: 30rem;
+$width-xs: 32.5rem;
+$width-s: 41.5rem; // text
+$width-b: 52.813rem;
+$width-m: 60rem;
+$width-l: 67.5rem;
+$width-xl: 80rem;
+
+// Map of all sizes for easy iteration
+$width-map: (
+  tiny: $width-tiny,
+  xxxs: $width-xxxs,
+  xxs: $width-xxs,
+  xs: $width-xs,
+  s: $width-s,
+  b: $width-b,
+  m: $width-m,
+  l: $width-l,
+  xl: $width-xl,
+);
+
+$story-padding-buffer: 2em; // must be em for SASSmq helper
+$story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer; // ~43.5em
 
 // Size units
 //
 // Sizes in comparison to base pixel root
 //
-// $size-xxxl = 3rem - size xxxl
-// $size-giant = 2.5rem - size giant
+// $size-giant = 3rem - size giant
+// $size-xxxl = 2.5rem - size xxxl
 // $size-xxl = 2rem - size xxl
 // $size-xl = 1.75rem - size xl
 // $size-l = 1.5rem - size l
@@ -67,9 +121,9 @@ $story-giant: 60rem;
 //
 // Styleguide 1.3.3
 //
-// 
-$size-xxxl: 3rem;
-$size-giant: 2.5rem;
+//
+$size-giant: 3rem;
+$size-xxxl: 2.5rem;
 $size-xxl: 2rem;
 $size-xl: 1.75rem;
 $size-l: 1.5rem;
@@ -83,8 +137,8 @@ $size-tiny: $size-b / 4;
 
 // Map of all sizes for easy iteration
 $size-map: (
-  xxxl: $size-xxxl,
   giant: $size-giant,
+  xxxl: $size-xxxl,
   xxl: $size-xxl,
   xl: $size-xl,
   l: $size-l,

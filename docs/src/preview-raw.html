@@ -19,15 +19,16 @@
 {% endif %}
 </section>
 {% for modifier in modifiers %}
-{% set className = modifier.className %}
-<!-- {{ className }} -->
-<section style="margin-bottom: 20px">
-{% if isFile %}
-  {% include "../../assets/scss/" + markup %}
-{% else %}
-  {{ modifier.markup | safe }}
-{% endif %}
-</section>
+  {% set className = modifier.className %}
+  {% set description = modifier.description %}
+  <!-- {{ className }} -->
+  <section style="margin-bottom: 20px">
+    {% if isFile %}
+      {% include "../../assets/scss/" + markup %}
+    {% else %}
+      {{ modifier.markup | safe }}
+    {% endif %}
+  </section>
 {% endfor %}
 
 <!-- demo JS -->
