@@ -48,7 +48,7 @@ $cta-block-btn-height: px-to-rem(29px);
     // container should become two columns on wide screens
     &--horiz-from-bp-m {
       @include gap($size-l);
-      align-items: end;
+      align-items: center;
       grid-template-columns: 1fr $cta-block-min-col;
     }
   }
