@@ -97,9 +97,33 @@ $width-map: (
   l: $width-l,
   xl: $width-xl,
 );
+// Widths breakpoints
+//
+// Sometimes we want our breakpoint to key off of width settings with a little buffer. For now, these are only used for plugins.
+//
+// $bp-width-tiny = 23.875em - Breakpoint based on `$width-tiny`
+// $bp-width-xxxs = 24.5em - Breakpoint based on `$width-xxxs`
+// $bp-width-xxs = 32em - Breakpoint based on `$width-xxs`
+// $bp-width-xs = 34.5em - Breakpoint based on `$width-xs`
+// $bp-width-s = 43.5em - Breakpoint based on `$width-s` (text width)
+// $bp-width-b = 54.813em - Breakpoint based on `$width-b`
+// $bp-width-m = 62em - Breakpoint based on `$width-m`
+// $bp-width-l = 69.5em - Breakpoint based on `$width-l`
+// $bp-width-xl = 82em - Breakpoint based on `$width-xl`
+//
+// Styleguide 1.3.1
+$width-buffer: 2em;
 
-$story-padding-buffer: 2em; // must be em for SASSmq helper
-$story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer; // ~43.5em
+$bp-width-tiny: ($width-tiny / 1rem) + $width-buffer;
+$bp-width-xxxs: ($width-xxxs / 1rem) + $width-buffer;
+$bp-width-xxs: ($width-xxs / 1rem) + $width-buffer;
+$bp-width-xs: ($width-xs / 1rem) + $width-buffer;
+$bp-width-s: ($width-s / 1rem) + $width-buffer;
+$bp-width-b: ($width-b / 1rem) + $width-buffer;
+$bp-width-m: ($width-m / 1rem) + $width-buffer;
+$bp-width-l: ($width-l / 1rem) + $width-buffer;
+$bp-width-xl: ($width-xl / 1rem) + $width-buffer;
+
 
 // Size units
 //

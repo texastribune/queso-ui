@@ -18,10 +18,10 @@
   > ol,
   > span,
   > hr {
-    max-width: $story-narrow;
+    max-width: $width-s;
     margin: $size-b auto;
     line-height: 1.4;
-    @include mq($until: $story-narrow-bp) {
+    @include mq($until: $bp-width-s) {
       padding: 0 $size-xs;
     }
   }

@@ -1,0 +1,65 @@
+// Plugin (c-plugin)
+//
+// Plugins are configured within an article page. They can float to the left and right or be centered. {{isWide}}
+//
+// l-width-max-xxs.c-plugin--flush-from-bp-width-xxs - Used for tiny graphics
+// l-width-max-xs.c-plugin--flush - Also used for smaller graphics
+// l-width-max-s.c-plugin--flush-from-bp-width-s - **Standard** size used for most plugins. Has padding on small screens.
+// l-width-max-m.c-plugin--flush-from-bp-width-m - Comes out a little wider than the text.
+// c-plugin--side.c-plugin--left.l-width-max-s.c-plugin--flush-from-bp-width-s - Left of text
+// c-plugin--side.c-plugin--right.l-width-max-s - Right of text
+// c-plugin--side.c-plugin--flush.c-plugin--right.l-width-max-s - Example of floated text and no padding on small devices.
+//
+// Markup: 6-components/plugin/plugin.html
+//
+// Styleguide 6.1.3
+:root {
+  --plugin-buffer: #{$size-xs};
+}
+
+.c-plugin {
+  clear: both;
+  margin: $size-giant auto;
+  padding-left: var(--plugin-buffer);
+  padding-right: var(--plugin-buffer);
+
+  &--flush {
+    --plugin-buffer: 0;
+  }
+  @include mq($from: $bp-width-xxs) {
+    &--flush-from-bp-width-xxs {
+      --plugin-buffer: 0;
+    }
+  }
+
+  @include mq($from: $bp-width-s) {
+    &--flush-from-bp-width-s {
+      --plugin-buffer: 0;
+    }
+  }
+
+  @include mq($from: $bp-width-m) {
+    &--flush-from-bp-width-m {
+      --plugin-buffer: 0;
+    }
+  }
+
+  @include mq($from: bp-l) {
+    &--side {
+      width: 50%;
+      margin: 0;
+    }
+
+    &--left {
+      float: left;
+      padding-right: $size-b;
+      padding-left: 10%;
+    }
+
+    &--right {
+      float: right;
+      padding-left: $size-b;
+      padding-right: 10%;
+    }
+  }
+}
