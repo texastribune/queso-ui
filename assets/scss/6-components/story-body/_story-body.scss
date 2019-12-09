@@ -1,4 +1,4 @@
-// Story Body (c-story-body)
+// Story body (c-story-body)
 //
 // Story bodies are a special component because we have limited control over the class names within them. We must deviate from BEM and create catch-all tag selectors to allow the greatest flexibility of the markup.
 //
@@ -17,6 +17,7 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
   > h5,
   > h6,
   > ul,
+  > ol,
   > span,
   > hr {
     max-width: $story-narrow;
@@ -29,13 +30,14 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
 
   > p,
   > h3,
-  > ul li {
+  > ul,
+  > ol {
     @include font-setting('secondary');
     @include underlined-link-parent;
   }
 
-  > ul {
-    list-style: disc;
+  > ul,
+  > ol {
     padding: 0 $size-b 0 3.5rem;
 
     li {
@@ -43,6 +45,15 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
     }
   }
 
+  > ul {
+    list-style: disc;
+  }
+
+  // h2s are a dropdown option in the CMS
+  // we hard-set the font size for this reason
+  > h2 {
+    font-size: $size-m;
+  }
 
   sub, sup {
     position: initial;
@@ -50,10 +61,5 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
 
   hr {
     margin: $size-xl auto;
-  }
-  // h3s are a dropdown option in the CMS
-  // we hard-set the font size for this reason
-  h3 {
-    font-size: $size-m;
   }
 }

@@ -1,0 +1,31 @@
+// Block grid (c-block-grid)
+//
+// Auto flow grid of child elements. Mobile has a set rule to stack, while larger viewports auto flow based on min/max width rule on child elements. If the container does not allow for each column to be at least 100px, remaining columns will wrap to the next row. {{isWide}}
+//
+// .c-block-grid--bordered - Has a top/bottom border for separation
+//
+//
+// Markup: 6-components/block-grid/block-grid.html
+//
+// Styleguide 6.1.3
+.c-block-grid {
+  @include row-gap($size-xxl);
+  display: grid;
+
+  @include mq($from: bp-m) {
+    @include col-gap($size-xxl);
+    grid-template-columns: repeat(auto-fit, minmax(px-to-rem(300px), 1fr));
+
+    &--min-100 {
+      @include col-gap($size-s);
+      grid-template-columns: repeat(auto-fit, minmax(px-to-rem(100px), 1fr));
+    }
+  }
+
+  &--bordered {
+    border-top: 1px solid $color-gray-light;
+    border-bottom: 1px solid $color-gray-light;
+    padding-top: $size-b;
+    padding-bottom: $size-b;
+  }
+}

@@ -14,19 +14,15 @@ const htmlRunner = require('./html');
 const { docsStyles, docsIcons, mappedGithubData } = require('../paths.js');
 
 const COMPONENT_CSS_FILE = 'all.css';
+const COMPONENT_CSS_FILE_MIN = 'no-resets.css';
 const LEGACY_CSS_FILE = 'all-legacy.css';
 const COMPONENT_CSS_PATH = './docs/dist/css';
 
-const clean = async (html, deprecated) => {
-  let css = COMPONENT_CSS_FILE;
-  if (deprecated) {
-    css = LEGACY_CSS_FILE;
-  }
-
-  const filePath = `${COMPONENT_CSS_PATH}/${css}`;
-  const purgecss = new Purgecss({
+const purge = (html, filePath) => {
+  return new Purgecss({
     content: [html],
     css: [filePath],
+    keyframes: true,
     extractors: [
       {
         extractor: purgeHtml,
@@ -34,13 +30,33 @@ const clean = async (html, deprecated) => {
       },
     ],
   });
+};
+
+const clean = async (html, deprecated) => {
+  let css = COMPONENT_CSS_FILE;
+  if (deprecated) {
+    css = LEGACY_CSS_FILE;
+  }
+  const filePath = `${COMPONENT_CSS_PATH}/${css}`;
+  const filePathMin = `${COMPONENT_CSS_PATH}/${COMPONENT_CSS_FILE_MIN}`;
+
+  const purgecss = purge(html, filePath);
+  const purgecssMin = purge(html, filePathMin);
+
   const file = path.basename(html, path.extname(html));
   const dir = path.dirname(html);
   const purgecssResult = await purgecss.purge();
   const purgecssParsed = purgecssResult[0].css;
+  const purgecssResultMin = await purgecssMin.purge();
+  const purgecssParsedMin = purgecssResultMin[0].css;
   // create a css file
   try {
     await fs.outputFile(`${dir}/${file}.css`, purgecssParsed);
+  } catch (err) {
+    throw err;
+  }
+  try {
+    await fs.outputFile(`${dir}/${file}-min.css`, purgecssParsedMin);
   } catch (err) {
     throw err;
   }

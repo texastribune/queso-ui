@@ -1,0 +1,20 @@
+// Border (has-border)
+//
+// Helpers for borders. {{isHelper}}
+//
+// .has-border - This is our standard border color.
+// .has-styled-border - Uses `currentColor` to inherit a `border-color` from `color`. Can be coupled with the `has-text-<color>` helper. This border is a common pattern in sidebar blocks and ads.
+//
+// Markup: <div class="{{ className }} has-text-black has-padding">Bordered</div>
+//
+//
+// Styleguide 8.0.3
+//
+.has-border {
+  border: 1px solid $color-gray-light;
+}
+
+.has-styled-border {
+  border-top: 4px solid currentColor;
+  border-bottom: 2px solid currentColor;
+}

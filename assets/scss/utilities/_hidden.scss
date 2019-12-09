@@ -4,6 +4,7 @@
 //
 // .is-hidden -  Hide always
 // .is-hidden-print -  Hide from print previews
+// .is-sr-only - Visible only to assistive technology
 // .is-hidden-from-bp-xs -  Hide from bp-xs onward
 // .is-hidden-from-bp-s -  Hide from bp-s onward
 // .is-hidden-from-bp-m -  Hide from bp-m onward
@@ -41,6 +42,18 @@
   @media print {
     display: none !important;
   }
+}
+
+// https://accessibility.18f.gov/hidden-content/
+.is-sr-only {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; 
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 @each $bp-name, $bp-value in $mq-breakpoints {

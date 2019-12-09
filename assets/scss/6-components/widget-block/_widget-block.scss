@@ -1,0 +1,12 @@
+// Widget Block (c-widget-block)
+//
+// Little sidebar blocks with a 20/80 grid.
+//
+// Markup: 6-components/widget-block/widget-block.html
+//
+// Styleguide 6.1.3
+.c-widget-block {
+  @include gap;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}

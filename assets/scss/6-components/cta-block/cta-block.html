@@ -1,40 +1,83 @@
-<!-- Social Follow CTA -->
-<div class="c-cta-block has-xl-padding has-giant-btm-marg">
-  <div class="c-cta-block__msg t-size-s">
-    <h4 class="t-uppercase t-uppercase--extra-wide t-space-b has-text-teal has-xxs-btm-marg">Stay in the loop</h4>
-    <p class="has-xxs-btm-marg t-size-m"><strong>The next time news breaks, hear about it first.</strong></p>
-    <p class="has-text-gray t-links-underlined">Follow The Texas Tribune on <a href="#">Facebook</a> and <a href="#">Twitter</a>.</p>
-  </div>
-  <div class="c-cta-block__btns t-align-center">
+{% if className == 'c-cta-block--horiz-from-bp-m' %}
+  <!-- Social Follow CTA -->
+  <div class="c-cta-block {{ className }} is-rounded-b has-border has-xl-padding has-giant-btm-marg">
+    <div class="c-cta-block__msg t-size-s">
+      <h4 class="t-uppercase t-lsp-m t-lh-b has-text-teal has-xxs-btm-marg">Stay in the loop</h4>
+      <p class="has-xxs-btm-marg t-size-m"><strong>The next time news breaks, hear about it first.</strong></p>
+      <p class="has-text-gray t-links-underlined">Follow The Texas Tribune on <a href="#">Facebook</a> and <a href="#">Twitter</a>.</p>
+    </div>
+    <div class="c-cta-block__btns c-cta-block__btns--2 c-cta-block__btns--1-from-bp-m t-align-center">
       <a class="c-button has-bg-facebook l-align-center-children has-reset-padding" href="#" aria-label="Share on Facebook">
         <span class="c-button__inner t-size-xxs">Facebook</span>
       </a>
-    <a
-      class="c-button has-bg-twitter l-align-center-children has-reset-padding" href="#" aria-label="Share on Twitter">
+      <a class="c-button has-bg-twitter l-align-center-children has-reset-padding" href="#" aria-label="Share on Twitter">
         <span class="c-button__inner t-size-xxs">Twitter</span>
-    </a>
+      </a>
+    </div>
   </div>
-</div>
 
-<!-- Membership CTA -->
-<div class="c-cta-block has-xl-padding">
-  <div class="c-cta-block__msg t-size-s">
-    <h4 class="t-uppercase t-uppercase--extra-wide t-space-b has-text-teal has-xxs-btm-marg"><strong>Join our nonprofit newsroom</strong></h4>
-    <p class="has-xxs-btm-marg t-size-m"><strong>Support our voting rights coverage by becoming a Texas Tribune member today.</strong></p>
-    <p class="has-text-gray t-links-underlined">Choose an amount to give or <a href="#" class="l-display-ib">learn more about membership</a>.</p>
-  </div>
-  <div class="c-cta-block__btns c-cta-block__btns--1x4 t-align-center t-size-s">
-      <a class="c-button c-button--round has-bg-yellow has-text-black l-align-center-children has-reset-padding" href="#">
+  <!-- Membership CTA -->
+  <div class="c-cta-block {{ className }} is-rounded-b has-border has-xl-padding has-giant-btm-marg">
+    <div class="c-cta-block__msg t-size-s">
+      <h4 class="t-uppercase t-lsp-m t-lh-b has-text-teal has-xxs-btm-marg"><strong>Join our nonprofit newsroom</strong></h4>
+      <p class="has-xxs-btm-marg t-size-m"><strong>Support our voting rights coverage by becoming a Texas Tribune member today.</strong></p>
+      <p class="has-text-gray t-links-underlined">Choose an amount to give or <a href="#" class="l-display-ib">learn more about membership</a>.</p>
+    </div>
+    <div class="c-cta-block__btns c-cta-block__btns--4 c-cta-block__btns--2-from-bp-m t-align-center t-size-s">
+      <a class="c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding" href="#">
         <span class="c-button__inner has-text-black">$35</span>
       </a>
-      <a class="c-button c-button--round has-bg-yellow has-text-black l-align-center-children has-reset-padding" href="#">
+      <a class="c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding" href="#">
         <span class="c-button__inner has-text-black">$75</span>
       </a>
-      <a class="c-button c-button--round has-bg-yellow has-text-black l-align-center-children has-reset-padding" href="#">
+      <a class="c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding" href="#">
         <span class="c-button__inner has-text-black">$150</span>
       </a>
-      <a class="c-button c-button--outline c-button--round has-bg-white has-text-yellow l-align-center-children has-reset-padding" href="#" aria-label="Share on Facebook">
+      <a class="c-button c-button--outline is-rounded-l has-bg-white has-text-yellow l-align-center-children has-reset-padding" href="#" aria-label="Share on Facebook">
         <span class="c-button__inner has-text-black t-titlecase">Other</span>
       </a>
+    </div>
   </div>
-</div>
+
+  <!-- Overlay event CTA -->
+  <div class="c-cta-block {{ className }}">
+    <div class="c-cta-block__msg t-size-s">
+      <h3 aria-hidden="true" class="has-xxxs-btm-marg t-serif t-links-underlined-hover t-size-l">
+        <a href="#" tabindex="-1">The Texas Tribune Festival</a>
+      </h3>
+      <p class="t-uppercase t-lsp-b t-size-xs">
+        <strong>Held in Austin | 7 p.m. - 10 p.m.</strong>
+      </p>
+      <p class="is-sr-only">Sept. 26</p>
+    </div>
+    <div class="c-cta-block__btns c-cta-block__btns--2 c-cta-block__btns--1-from-bp-m t-align-center">
+      <a class="c-button c-button--standard has-bg-blue has-text-black l-align-center-children t-size-xs" href="#">
+        Attend
+      </a>
+      <a class="c-button c-button--standard has-bg-gray-dark has-text-white l-align-center-children t-size-xs" href="#">
+        Watch
+      </a>
+    </div>
+  </div>
+{% else %}
+  <!-- Minimal event block -->
+  <div class="c-cta-block">
+    <div class="c-cta-block__msg t-size-s">
+      <h3 aria-hidden="true" class="has-xxxs-btm-marg t-serif t-links-underlined-hover t-size-m">
+        <a href="#" tabindex="-1">The Texas Tribune Festival</a>
+      </h3>
+      <p class="t-uppercase t-lsp-b t-size-xs">
+        <strong>Held in Austin | 7 p.m. - 10 p.m.</strong>
+      </p>
+      <p class="is-sr-only">Sept. 26</p>
+    </div>
+    <div class="c-cta-block__btns c-cta-block__btns--2 t-align-center l-align-end-self">
+      <a class="c-button c-button--standard has-bg-blue has-text-black l-align-center-children t-size-xs" href="#">
+        Attend
+      </a>
+      <a class="c-button c-button--standard has-bg-gray-dark has-text-white l-align-center-children t-size-xs" href="#">
+        Watch
+      </a>
+    </div>
+  </div>
+{% endif %}

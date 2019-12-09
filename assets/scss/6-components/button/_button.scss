@@ -2,13 +2,12 @@
 //
 // Buttons rely on color helpers for background and text color. The variations are simply sizes. One catch is that are buttons run small in sizes so the names aren't true to their padding and font-size assignments.
 //
+// .c-button--standard - Custom-sized button found throughout our products. Has a hard-set height and line-height for vertical alignment.
 // .c-button--l - Uses size-l for font size and padding
 // .c-button--s - One step down from default
 // .c-button--xs - Two steps down from default
 // .c-button--circle - Circular button (experimentally used for back to top)
 // .c-button--outline - Hover effect of outline (used on social)
-// .c-button--compact - Removes vertical padding (used on social)
-// .c-button--round - For the most part, buttons associated with revenue are rounded.
 //
 // Markup: 6-components/button/button.html
 //
@@ -89,13 +88,11 @@
     }
   }
 
-  &--compact {
+  &--standard {
     padding-top: 0;
     padding-bottom: 0;
-  }
-
-  &--round {
-    border-radius: $border-radius-l;
+    height: 26px;
+    line-height: 26px;
   }
 }
 

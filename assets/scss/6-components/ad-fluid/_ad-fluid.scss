@@ -1,0 +1,24 @@
+// Ad fluid (c-ad-fluid)
+//
+// Currently, this is only intended to wrap around sponsor content ads, which are implemented through Google's native ad feature. Fluid ads contain more dynamic content than our standard set `height` x `width` ads, but we must still declare a height that the browser can anticipate before the ad content loads (aka prevent reflow). <br><br> **Note:** If we start to see more variations of fluid ads in the future, consider making the sponsor styles scoped under a specific modifier. {{isWide}}
+//
+// Markup: 6-components/ad-fluid/ad-fluid.html
+//
+// Styleguide 6.1.3
+
+
+.c-ad-fluid {
+  height: 400px;
+
+  @include mq($from: bp-xs) {
+    height: 365px;
+  }
+
+  @include mq($from: bp-s) {
+    height: 380px;
+  }
+
+  @include mq($from: bp-m) {
+    height: 240px;
+  }
+}

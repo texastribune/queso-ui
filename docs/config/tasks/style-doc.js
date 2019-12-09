@@ -10,6 +10,11 @@ const fs = require('fs');
 const ora = require('ora');
 const kss = require('kss');
 const md = require('markdown-it')({ html: true });
+const {
+  passesWcagAaLargeText,
+  passesWcagAa,
+  passesWcagAaa,
+} = require('passes-wcag');
 
 // internal
 const { slugify, stripTags } = require('./utils');
@@ -91,6 +96,15 @@ const processSection = (section, dir) => {
     };
   });
 
+  // check colors
+  const colors = section.colors.map(color => {
+    return {
+      ...color,
+      aa: passesWcagAa(color.color, '#fff'),
+      aaLargeText: passesWcagAaLargeText(color.color, '#fff'),
+      aaa: passesWcagAaa(color.color, '#fff'),
+    };
+  });
   const context = {
     ...section,
     slug,
@@ -108,6 +122,7 @@ const processSection = (section, dir) => {
     group,
     orderNumber,
     modifiers,
+    colors,
   };
 
   return context;
