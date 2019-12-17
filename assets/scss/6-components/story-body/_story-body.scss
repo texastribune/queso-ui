@@ -29,7 +29,7 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
   }
 
   > p,
-  > h3,
+  > h2,
   > ul,
   > ol {
     @include font-setting('secondary');
