@@ -23,8 +23,8 @@
       <div class="tile is-parent is-vertical is-3">
         <aside class="menu ds-stick-it">
           <div class="box buttons has-text-centered">
-              <button class="button is-primary is-fullwidth" id="showLegacy"><span class="ds-version-toggle">Show</span><span>Hide</span>&nbsp;Legacy</button>
-            </div>
+            {% include '../dist/search.html' %}
+          </div>
           <p class="menu-label">
             Sections
           </p>
@@ -54,7 +54,7 @@
             {% set list = item.list %}
             {% if (list | length) > 2 %}
               <h4 class="title is-size-6 ds-breathe menu-label ds-stick-it has-background-white ds-title-bar"><a href="pages/{{slug}}/index.html">{{ item.name }}</a></h4>
-              <ul class="menu-list ds-multicols ds-breathe">      
+              <ul class="menu-list ds-multicols ds-breathe">
               {% for rule in list %}
                 {% if rule.depth !== 1 %}
                   <li class="{% if rule.deprecated %} ds-legacy{% endif %} ds-multicol"><a href="pages/{{ slug + '/index.html#' + rule.slug }}">{{ rule.prettyName }} {% if item.name != "Starter CSS" and item.name != "Settings" and item.name != "Tools" %}| <span class="has-text-weight-semibold">.{{rule.mainClass}}</span>{% endif %}</a></li>
@@ -62,7 +62,6 @@
               {% endfor %}
               </ul>
             {% endif %}
-            
           {% endfor %}
           </section>
           <section class="ds-spacer">

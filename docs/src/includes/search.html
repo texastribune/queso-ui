@@ -1,0 +1,27 @@
+<div class="field ds-full">
+  <div class="control">
+    <label class="label">Search</label>
+    <input class="input is-primary" type="text" oninput='onInput()' id="default" list="terms" placeholder="e.g. color">
+    <datalist id="terms">
+      {% for keyword in keywords %}
+        {% for term in keyword.terms %}
+          {% if not keyword.deprecated %}
+          <option value="{{ term }}" data-link="{{ keyword.link }}" />
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </datalist>
+  </div>
+</div>
+<script>
+  function onInput() {
+    var val = document.getElementById("default").value;
+    var opts = document.getElementById('terms').childNodes;
+    for (var i = 0; i < opts.length; i++) {
+      if (opts[i].value === val) {
+        window.location.replace(opts[i].dataset.link);
+        break;
+      }
+    }
+  }
+</script>
