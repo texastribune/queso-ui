@@ -120,7 +120,7 @@ const processSection = (section, dir) => {
     const labeledKeywords = extraKeywords.map(word => {
       return `${word} (${prettyName.toLowerCase()})`;
     });
-    keywords = [...labeledKeywords, mainClass];
+    keywords = [...labeledKeywords, ...keywords];
   }
 
   const context = {
