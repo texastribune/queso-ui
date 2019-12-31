@@ -187,9 +187,9 @@
     defer-to-connect "^1.0.1"
 
 "@texastribune/queso-tools@^2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@texastribune/queso-tools/-/queso-tools-2.1.0.tgz#3c12d0d801d3841cb419169db5461dcfdd8f3d69"
-  integrity sha512-3qza46RD/Fiah6NWvK6ohcsajqLb2DaLxcpz++9urPjPFR5jjFtqP6iiTYeVJ7vq3sENpa410Zs2CEplN6mu1w==
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@texastribune/queso-tools/-/queso-tools-2.1.1.tgz#04c3b4dbe22556b835016059d266540b4a743680"
+  integrity sha512-aLBTS4U5V/XNrKrerDyOl1LS7Zx1uXvDRAWo2NRUCIdLkR2DjhtRRaTeyvYwK1ye0K/pExHD4ykmO+fsjvVS4w==
   dependencies:
     amphtml-validator "^1.0.23"
     autoprefixer "^9.6.0"
