@@ -1,29 +1,24 @@
-name: Build and Deploy
 
+name: Deploy to GitHub Pages
 on:
   push:
     branches:
-    - master
-    # file paths to consider in the event.
+      - test-deploy
 jobs:
-  build:
-
+  build-and-deploy:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [11.x]
-
     steps:
-    - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        node-version: ${{ matrix.node-version }}
-    - name: yarn install, build, and deploy
+    - name: Checkout
+      uses: actions/checkout@v1
+
+    - name: Build
       run: |
         yarn
         yarn build
-        yarn deploy
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: docs/dist
