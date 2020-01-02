@@ -130,7 +130,7 @@ module.exports = async () => {
     return item.list.map(className => {
       return {
         ...className,
-        link: `/pages/${item.slug}#${className.slug}`,
+        link: `${siteURL}/pages/${item.slug}#${className.slug}`,
         terms: className.keywords,
       };
     });
@@ -151,7 +151,6 @@ module.exports = async () => {
     config,
     searchData,
   };
-
   try {
     await fs.outputFile(
       './docs/dist/data/docs.json',
@@ -160,9 +159,6 @@ module.exports = async () => {
   } catch (err) {
     throw new Error(err.message);
   }
-
-
-
 
   // creates pages
   const pagesPathIn = './docs/src/page.html';
@@ -219,27 +215,6 @@ module.exports = async () => {
     )
   );
 
-  // creates search include
-  // const searchPathIn = './docs/src/includes/search.html';
-  // const searchPathOut = './docs/dist/search.html';
-  // const searchArr = styleDocs.items.map(item => {
-  //   return item.list.map(className => {
-  //     return {
-  //       ...className,
-  //       link: `/pages/${item.slug}#${className.slug}`,
-  //       terms: className.keywords,
-  //     };
-  //   });
-  // });
-  // const keywords = {
-  //   keywords: searchArr.flat(),
-  // };
-  // const searchMap = {
-  //   in: searchPathIn,
-  //   out: searchPathOut,
-  //   data: keywords,
-  // };
-  // await htmlRunner([searchMap]);
 
   // creates main
   const mainPathIn = './docs/src/index.html';
