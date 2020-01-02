@@ -8,8 +8,8 @@
     "lint:js": "eslint docs/config",
     "lint": "npm run lint:css && npm run lint:js",
     "deploy": "push-dir --dir=docs/dist --branch=gh-pages",
-    "build": "node docs/config/tasks/build.js",
-    "dev": "node docs/config/tasks/dev.js",
+    "build": "NODE_ENV=production node docs/config/tasks/build.js",
+    "dev": "NODE_ENV=development node docs/config/tasks/dev.js",
     "test": "yarn run lint && yarn run build",
     "release": "np --any-branch"
   },

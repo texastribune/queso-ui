@@ -12,7 +12,7 @@ const iconDocRunner = require('./icon-doc');
 const htmlRunner = require('./html');
 const config = require('../../../package.json');
 
-const { docsStyles, docsIcons, mappedGithubData } = require('../paths.js');
+const { docsStyles, docsIcons, mappedGithubData, siteURL } = require('../paths.js');
 
 const COMPONENT_CSS_FILE = 'all.css';
 const COMPONENT_CSS_FILE_MIN = 'no-resets.css';
@@ -98,6 +98,7 @@ const merge = async styles => {
         }
         return {
           ...modifier,
+          siteURL,
           githubData: githubDataMod,
         };
       });
@@ -105,6 +106,7 @@ const merge = async styles => {
         ...classInfo,
         githubData,
         modifiers,
+        siteURL,
       };
     });
     return {

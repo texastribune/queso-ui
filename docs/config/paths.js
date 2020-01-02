@@ -50,6 +50,12 @@ const mappedGithubData = {
   out: './docs/dist/data/github.json',
 };
 
+
+const siteURL =
+  process.env.NODE_ENV === 'production'
+    ? 'https://texastribune.github.io/queso-ui'
+    : 'http://localhost:3000';
+
 module.exports = {
   mappedStyles,
   mappedGithubData,
@@ -58,4 +64,5 @@ module.exports = {
   docsIcons,
   mappedCopies,
   buildDir,
+  siteURL,
 };
