@@ -3,7 +3,7 @@
     <label class="label">Search</label>
     <input class="input is-primary" type="text" oninput='onInput()' id="default" list="terms" placeholder="e.g. color">
     <datalist id="terms">
-      {% for keyword in keywords %}
+      {% for keyword in searchData %}
         {% for term in keyword.terms %}
           {% if not keyword.deprecated %}
           <option value="{{ term }}" data-link="{{ keyword.link }}" />
