@@ -47,11 +47,15 @@ const processSection = (section, dir) => {
   const isRecipeStr = '{{isRecipe}}';
   const isRecipe = section.description.includes(isRecipeStr);
   const isTool = header.includes('@');
+  const keywordsStr = /Keywords: (.*)/;
+  const keywordsMatch = keywordsStr.exec(section.description);
+
   const description = md.render(
     section.description
       .replace(isWideStr, '')
       .replace(isHelperStr, '')
       .replace(isRecipeStr, '')
+      .replace(keywordsStr, '')
   );
   const cleanDesc = stripTags(description);
   const githubLink = `${GITHUB_URL}/${section.source.path}#L${
@@ -105,6 +109,20 @@ const processSection = (section, dir) => {
       aaa: passesWcagAaa(color.color, '#fff'),
     };
   });
+
+  // extra keywords (regex)
+  let keywords = [`${prettyName.toLowerCase()} (${mainClass})`];
+  if (modifiers.length > 0) {
+    keywords = [...keywords, ...modifiers.map(modifier => modifier.className)];
+  }
+  if (keywordsMatch && typeof keywordsMatch[1] !== 'undefined') {
+    const extraKeywords = keywordsMatch[1].replace('</p>', '').split(', ');
+    const labeledKeywords = extraKeywords.map(word => {
+      return `${word} (${prettyName.toLowerCase()})`;
+    });
+    keywords = [...labeledKeywords, ...keywords];
+  }
+
   const context = {
     ...section,
     slug,
@@ -123,6 +141,7 @@ const processSection = (section, dir) => {
     orderNumber,
     modifiers,
     colors,
+    keywords,
   };
 
   return context;

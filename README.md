@@ -61,6 +61,8 @@ We use a comment parser along with some [extra logic](https://github.com/texastr
 //
 // Markup: 6-components/test/test.html
 //
+// Keywords: category1, category2
+//
 // Styleguide 6.0.1
 //
 .root-class-name {

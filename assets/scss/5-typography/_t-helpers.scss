@@ -1,6 +1,6 @@
 // Text font variant (t-<font-variant>)
 //
-// Uses new mixin and naming convention {{isHelper}}
+// Helper to define if serif or sans font is to be used. This uses the `@include font-setting` mixin, which establishes the font-family according to whether or not the `.fonts-loaded` class is present. <br><br> General rule for this is `t-serif` _for editorial_ and `t-sans` _for everything else_<br><br>**Note:** The default font is `t-sans`. That means most of the time you won't need to explicitly set it. {{isHelper}}
 //
 // .t-serif - Default serif
 // .t-sans - Default sans
@@ -19,7 +19,7 @@
 
 // Text case (t-<case>)
 //
-// Adds new naming convention {{isHelper}}
+// Text-transform helpers. {{isHelper}}
 //
 // .t-titlecase - Text transformed to Title Case
 // .t-uppercase - Text transformed to UPPERCASE. Don't forget to add kerning `t-lsp-<size>` with uppercase text.
@@ -38,7 +38,7 @@
 
 // Text align (t-align-<dir>)
 //
-// Adds new naming convention {{isHelper}}
+// Text-align helpers. {{isHelper}}
 //
 // .t-align-left - Left aligned
 // .t-align-center - Center aligned

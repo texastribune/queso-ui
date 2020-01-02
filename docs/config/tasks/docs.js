@@ -10,8 +10,9 @@ const path = require('path');
 const styleDocRunner = require('./style-doc');
 const iconDocRunner = require('./icon-doc');
 const htmlRunner = require('./html');
+const config = require('../../../package.json');
 
-const { docsStyles, docsIcons, mappedGithubData } = require('../paths.js');
+const { docsStyles, docsIcons, mappedGithubData, siteURL } = require('../paths.js');
 
 const COMPONENT_CSS_FILE = 'all.css';
 const COMPONENT_CSS_FILE_MIN = 'no-resets.css';
@@ -75,7 +76,8 @@ const clean = async (html, deprecated) => {
 const merge = async styles => {
   let github = {};
   try {
-    github = await fs.readJson(mappedGithubData.out);
+    const { classData } = await fs.readJson(mappedGithubData.out);
+    github = classData;
   } catch (err) {
     // eslint-disable-next-line no-console
     console.error(err);
@@ -96,6 +98,7 @@ const merge = async styles => {
         }
         return {
           ...modifier,
+          siteURL,
           githubData: githubDataMod,
         };
       });
@@ -103,6 +106,7 @@ const merge = async styles => {
         ...classInfo,
         githubData,
         modifiers,
+        siteURL,
       };
     });
     return {
@@ -133,6 +137,7 @@ module.exports = async () => {
   const allDocs = {
     styleDocs,
     iconDocs,
+    config,
   };
   try {
     await fs.outputFile(
@@ -152,6 +157,7 @@ module.exports = async () => {
       out: `${pagesPathOut}${section.slug}/index.html`,
       data: {
         ...section,
+        config
       },
     };
   });
@@ -195,6 +201,28 @@ module.exports = async () => {
       clean(component.out, component.data.deprecated)
     )
   );
+
+  // creates search include
+  const searchPathIn = './docs/src/includes/search.html';
+  const searchPathOut = './docs/dist/search.html';
+  const searchArr = styleDocs.items.map(item => {
+    return item.list.map(className => {
+      return {
+        ...className,
+        link: `/pages/${item.slug}#${className.slug}`,
+        terms: className.keywords,
+      };
+    });
+  });
+  const keywords = {
+    keywords: searchArr.flat(),
+  };
+  const searchMap = {
+    in: searchPathIn,
+    out: searchPathOut,
+    data: keywords,
+  };
+  await htmlRunner([searchMap]);
 
   // creates main
   const mainPathIn = './docs/src/index.html';

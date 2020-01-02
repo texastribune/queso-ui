@@ -1,4 +1,7 @@
 .ds-header {
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+
   &__link {
     position: absolute;
     top: 1rem;
@@ -233,4 +236,8 @@ h6 {
     left: 10px;
     z-index: 1;
   }
+}
+
+.ds-full {
+  width: 100%;
 }
