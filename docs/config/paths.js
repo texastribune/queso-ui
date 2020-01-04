@@ -53,7 +53,7 @@ const mappedGithubData = {
 
 
 const siteURL =
-  process.env.NODE_ENV === 'production'
+  process.env.SITE_ENV === 'production'
     ? 'https://texastribune.github.io/queso-ui'
     : 'http://localhost:3000';
 
