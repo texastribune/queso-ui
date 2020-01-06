@@ -86,7 +86,6 @@
   @include mq($from: bp-s, $until: bp-l) {
     &__list {
       @include gap($size-tiny);
-      background-color: $color-sand;
       color: $color-blue-dark;
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
