@@ -95,3 +95,33 @@
     --story-block-desc: #{$size-xs};
   }
 }
+
+// Story block variation 1 (.c-story-block--trending)
+//
+// **Used on the homepage.** Version of `c-story-block` with `c-story-block--stack-from-bp-m` used to display trending stories. This is simplified in that it only displays headline and image. {{isRecipe}}
+//
+// Markup: 6-components/story-block/story-block-trending.html
+//
+// Styleguide 6.1.5
+
+
+// Story block variation 2 (.c-story-block--harvey)
+//
+// **Used in series siderail.** Implementation the `c-story-block--stacked` modifier (no columns at any viewport.) We document these here in the off-chance that the flatblock content is wiped-out. The contents of the block might get out of sync, but the layout classes should remain similar to what's documented here.<br>[Live example](https://www.texastribune.org/series/in-harveys-wake/) {{isRecipe}}
+//
+// Keywords: flatblock
+//
+// Markup: 6-components/story-block/story-block-harvey.html
+//
+// Styleguide 6.1.5
+
+
+// Story block variation 3 (.c-story-block--tx-lege)
+//
+// **Used in series siderail.** Implementation the `c-story-block--stacked` modifier (no columns at any viewport.) We document these here in the off-chance that the flatblock content is wiped-out. The contents of the block might get out of sync, but the layout classes should remain similar to what's documented here.<br>[Live example](https://www.texastribune.org/series/texas-legislature-2019/) {{isRecipe}}
+//
+// Keywords: flatblock
+//
+// Markup: 6-components/story-block/story-block-tx-lege-2019.html
+//
+// Styleguide 6.1.5
