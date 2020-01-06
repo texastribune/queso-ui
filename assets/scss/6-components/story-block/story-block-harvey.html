@@ -1,0 +1,47 @@
+{#
+We're storying these one-off variations of c-story-block here for safe-keeping because they are used in a flatblock(https://wiki.texastribune.org/display/MAR/Flat+Blocks)
+
+Found: https://www.texastribune.org/series/in-harveys-wake/
+#}
+<ul style="max-width: 310px;">
+  {% set text = "Boomtown, Flood Town" %}
+  {% set cta = "https://houston.texastribune.org/boomtown-floodtown/"  %}
+  {% set image = "https://propublica.s3.amazonaws.com/assets/houston-cypress/floodtown_fb.jpg" %}
+  {% set image_alt = "Map of Houston area waterways" %}
+  {% set summary = "Climate change will bring more frequent and fierce rainstorms to cities like Houston. But unchecked development remains a priority in the famously un-zoned city, creating short-term economic gains for some while increasing flood risks for everyone." %}
+  <li class="has-xl-btm-marg">
+    <section class="c-story-block c-story-block--stack">
+      <div class="c-story-block__text">
+        <h2 class="is-sr-only">{{ text }}</h2>
+        <p class="t-serif t-links t-size-s is-hidden-until-bp-s"> {{ summary }} <a class="t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib" href="{{ cta }}">Full Story<span class="c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#long-arrow-right"></use></svg></span></a></p>
+      </div>
+      <figure class="c-story-block__image-wrap">
+        <h2 class="c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-tiny-btm-marg" aria-hidden="true"><a
+            href="{{ cta }}" class="has-text-black-off">{{ text }}</a></h2>
+        <a href="{{ cta }}" tabindex="-1">
+          <img class="l-display-block l-width-full" src="{{ image }}" alt="{{ image_alt }}">
+        </a>
+      </figure>
+    </section>
+  </li>
+  {% set text = "Hell and High Water" %}
+  {% set cta = "https://houston.texastribune.org/hell-and-high-water/"  %}
+  {% set image = "https://propublica.s3.amazonaws.com/images/houston-promo.jpg" %}
+  {% set image_alt = "Map showing potential water levels of flooding in Houston suburbs, Seabrook, League City, and Clear Lake home to Johnson Space Center" %}
+  {% set summary = "Houston is the fourth-largest city in the country. It's home to the nation's largest refining and petrochemical complex, where billions of gallons of oil and dangerous chemicals are stored. And it's a sitting duck for the next big hurricane. Learn why Texas isn't ready." %}
+  <li class="has-xl-btm-marg">
+    <section class="c-story-block c-story-block--stack">
+      <div class="c-story-block__text">
+        <h2 class="is-sr-only">{{ text }}</h2>
+        <p class="t-serif t-links t-size-s is-hidden-until-bp-s"> {{ summary }} <a class="t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib" href="{{ cta }}">Full Story<span class="c-icon c-icon--baseline"><svg aria-hidden="true"><use xlink:href="#long-arrow-right"></use></svg></span></a></p>
+      </div>
+      <figure class="c-story-block__image-wrap">
+        <h2 class="c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-tiny-btm-marg" aria-hidden="true"><a
+            href="{{ cta }}" class="has-text-black-off">{{ text }}</a></h2>
+        <a href="{{ cta }}" tabindex="-1">
+          <img class="l-display-block l-width-full" src="{{ image }}" alt="{{ image_alt }}">
+        </a>
+      </figure>
+    </section>
+  </li>
+</ul>
