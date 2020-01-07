@@ -5,18 +5,25 @@
 // .t-links - Typical teal links
 // .t-links-underlined - Typical blue underlined links
 // .t-links-underlined-hover - Underline only appears on hover
+// .t-links-underlined-hover-thin - Smaller, browser-default underline on hover
 //
-// Markup: <p class="{{ className }}">Block of text in a paragraph. <a href="#">This is what links with a parent of {{ className }} look like.</a> <a class="t-unlink">This sentence is link too, but it's using the "t-unlink" class, which will override default link style and look like regular text.</a></p>
+// Markup: <p class="{{ className }}">Block of text in a paragraph. <a href="https://www.texastribune.org/">This is what links with a parent of {{ className }} look like.</a></p>
 //
 // Styleguide 5.2.8
 //
 .t-links {
-  a:not(.t-unlink) {
+  a {
     color: $color-teal-gray;
     font-weight: bold;
   }
+  @media (hover: hover) {
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 
-  a:hover {
+  a:active {
+    opacity: .6;
     text-decoration: underline;
   }
 
@@ -30,24 +37,16 @@
     @include underlined-link-parent('true');
   }
 
-}
+  &-underlined-hover-thin {
+    @media (hover: hover) {
+      a:hover {
+        text-decoration: underline;
+      }
+    }
 
-
-// Non-links (t-unlink)
-//
-// Force a link to look like regular text.
-//
-// Markup: <p class="t-links">The unlink class removes default link styles. <a>This is a regular link</a> and <a class="t-unlink">this is a link with the t-unlink class.</a></p>
-//
-// Styleguide 5.2.8
-//
-.t-unlink {
-  border: none;
-  box-shadow: none;
-
-  &:hover,
-  &:active {
-    border: 0;
-    text-decoration: none;
+    a:active {
+      opacity: .6;
+      text-decoration: underline;
+    }
   }
 }
