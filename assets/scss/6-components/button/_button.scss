@@ -38,10 +38,13 @@
   }
 
   @media (hover: hover) {
-    &:hover,
-    &:active {
+    &:hover {
       opacity: 0.7;
     }
+  }
+
+  &:active {
+    opacity: 0.6;
   }
 
   &--l {
@@ -75,9 +78,8 @@
     transition: background-color 0.3s;
 
     @media (hover: hover) {
-      &:hover,
-      &:active {
-        background-color: #fff;
+      &:hover {
+        background-color: transparent;
         color: currentColor;
         opacity: 1;
 
@@ -85,6 +87,10 @@
           color: currentColor;
         }
       }
+    }
+
+    &:active {
+      opacity: 0.7;
     }
   }
 

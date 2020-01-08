@@ -104,9 +104,10 @@ $color-map: (
   }
 }
 
-@include mq($from: bp-m) {
+@media (hover: hover) {
   @each $color, $value in $color-map {
-    .has-text-hover-#{$color}:hover {
+    .has-text-hover-#{$color}:hover,
+    .has-text-hover-#{$color}:active {
       color: $value;
     }
   }

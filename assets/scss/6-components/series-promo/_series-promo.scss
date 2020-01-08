@@ -1,0 +1,111 @@
+// Series promo (c-series-promo)
+//
+// This is a one-off feature used on the [series page for "In Harvey's Wake"](https://www.texastribune.org/series/in-harveys-wake/). We could potentially repeat this pattern in the future, but may want to consider custom-properies for new color schemes.
+//
+// Keywords: flatblock
+//
+//
+// Markup: 6-components/series-promo/series-promo.html
+//
+// Styleguide 6.1.5
+.c-series-promo {
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: top;
+
+  &__title {
+    color: $color-sand;
+  }
+
+  &__button {
+    background-color: $color-sand;
+    color: $color-blue-dark;
+    display: block;
+    // non-standard letter-spacing setting
+    letter-spacing: .1rem;
+  }
+
+  &__list {
+    color: $color-sand;
+    font-size: $size-m;
+
+    li {
+      margin-bottom: $size-b;
+      margin-left: $size-l;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+      margin-left: 0;
+      list-style: none;
+    }
+  }
+  @include mq($from: bp-s) {
+    height: 350px;
+    display: grid;
+
+    &__title {
+      color: $color-blue-dark;
+    }
+
+    &__button {
+      background-color: $color-blue-dark;
+      color: $color-sand;
+    }
+
+    &__list {
+      background-color: $color-sand;
+      color: $color-blue-dark;
+    }
+
+    &--harvey-1 {
+      background-image: url('https://static.texastribune.org/media/images/2017/10/16/TT-siderail-ad-harvey-walking-bg.JPG');
+      background-position-y: 45%;
+      background-position-x: 55%;
+    }
+
+    &--harvey-2 {
+      background-image: url('https://static.texastribune.org/media/images/2017/10/16/TT-siderail-ad-harvey-neighborhood-bg.jpg');
+    }
+  }
+
+  @include mq($from: bp-m) {
+    height: 450px;
+    text-align: left;
+
+    &__button {
+      display: block;
+    }
+  }
+
+  // siderail would contrain this as well
+  @include mq($from: bp-l) {
+    max-width: 310px;
+  }
+
+  @include mq($from: bp-s, $until: bp-l) {
+    &__list {
+      @include gap($size-tiny);
+      color: $color-blue-dark;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      font-size: $size-b;
+
+      li {
+        margin-bottom: 0;
+      }
+
+      li:last-child {
+        margin-left: $size-b;
+      }
+    }
+
+    &--harvey-1 {
+      text-align: right;
+    }
+
+    &__button--alt {
+      display: inline-block;
+    }
+  }
+}
