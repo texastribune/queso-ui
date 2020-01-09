@@ -15,7 +15,8 @@
   display: grid;
 
   &--min-100 {
-    @include gap($size-s);
+    @include col-gap($size-b);
+    @include row-gap;
   }
 
   @include mq($from: bp-m) {
