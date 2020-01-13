@@ -113,7 +113,7 @@
             <div class="columns is-multiline">
               {% if not item.isHelper %}
                 <div class="column is-full">
-                  {{ snippet(item.header, markup, '', isFile, description, codeSnippet, item.mainClass, item.isRecipe) }}
+                  {{ snippet(item, false, item) }}
                 </div>
               {% else %}
                 <div class="column is-full">
@@ -127,7 +127,7 @@
               {% else %}
                 {% for modifier in item.modifiers %}
                   <div class="column {% if isWide %}is-full{% else %}is-half{% endif %}">
-                    {{ snippet(item.header, markup, modifier, isFile) }}
+                    {{ snippet(modifier, true, item) }}
                   </div>
                 {% endfor %}
               {% endif %}
