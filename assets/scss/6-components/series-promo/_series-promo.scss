@@ -9,16 +9,29 @@
 //
 // Styleguide 6.1.5
 .c-series-promo {
-  background-size: cover;
-  background-position-x: center;
-  background-position-y: top;
+  position: relative;
+
+  &__bg {
+    background-size: cover;
+    background-position-y: 45%;
+    background-position-x: 55%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &__inner {
+    position: relative;
+  }
 
   &__title {
     color: $color-sand;
   }
 
   &__button {
-    background-color: $color-sand;
+    background: $color-sand;
     color: $color-blue-dark;
     display: block;
     // non-standard letter-spacing setting
@@ -58,15 +71,7 @@
       color: $color-blue-dark;
     }
 
-    &--harvey-1 {
-      background-image: url('https://static.texastribune.org/media/images/2017/10/16/TT-siderail-ad-harvey-walking-bg.JPG');
-      background-position-y: 45%;
-      background-position-x: 55%;
-    }
 
-    &--harvey-2 {
-      background-image: url('https://static.texastribune.org/media/images/2017/10/16/TT-siderail-ad-harvey-neighborhood-bg.jpg');
-    }
   }
 
   @include mq($from: bp-m) {
