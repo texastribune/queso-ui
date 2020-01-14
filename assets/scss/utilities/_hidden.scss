@@ -20,6 +20,7 @@
 // .is-hidden-until-bp-xxl -  Hide until bp-xxl
 // .is-hidden-until-bp-default -  Hide until bp-default
 // .is-transparent -  Removes opacity. (Use this to fade elements out.)
+// .is-sr-only - Only visible to screen readers. [Reference](https://accessibility.18f.gov/hidden-content/)
 //
 // Markup: <div style="background:#ffc200;" class="{{ className }}"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>
 //
@@ -42,18 +43,6 @@
   @media print {
     display: none !important;
   }
-}
-
-// https://accessibility.18f.gov/hidden-content/
-.is-sr-only {
-  border: 0; 
-  clip: rect(0 0 0 0); 
-  height: 1px; 
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
 }
 
 @each $bp-name, $bp-value in $mq-breakpoints {

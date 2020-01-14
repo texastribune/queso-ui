@@ -1,0 +1,18 @@
+// Screen Reader Only (is-sr-only)
+//
+// Only visible to screen readers. Use this when you need to give the screen reader or page structure extra context that the design doesn't necessarily account call for. To perform the opposite, aka _hide_ from screen readers, use `aria-hidden="true"`. [Reference](https://accessibility.18f.gov/hidden-content/)
+//
+// Markup: <section><h2 class="is-sr-only">Title of content</h2><p>Content of a section where design does not include heading. Inspect the page to see the hidden heading tag.</p></section>
+//
+// Styleguide 8.0.1
+//
+.is-sr-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}

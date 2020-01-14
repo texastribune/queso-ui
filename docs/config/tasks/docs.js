@@ -178,7 +178,6 @@ module.exports = async () => {
   await htmlRunner(htmlMap);
 
   // creates previews
-  const previewPathIn = './docs/src/preview.html';
   const previewPathInRaw = './docs/src/preview-raw.html';
   const previewPathOut = './docs/dist/pages/';
   const previewArr = [];
@@ -187,14 +186,6 @@ module.exports = async () => {
     section.list.forEach(item => {
       if (item.markup.length > 0) {
         const out = `${previewPathOut}${section.slug}/${item.mainClass}`;
-        // build preview
-        previewArr.push({
-          in: previewPathIn,
-          out: `${out}.html`,
-          data: {
-            ...item,
-          },
-        });
         // build raw preview
         componentArr.push({
           in: previewPathInRaw,
