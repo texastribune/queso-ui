@@ -1,6 +1,6 @@
 // Pagination (c-pagination)
 //
-// Nav buttons for a series of pages used on index pages. The markup is modeled after some of the accessibility features documented in [Yale University's Style Guide](https://yaleux.github.io/yaleui/styleguide/pagination.html).<br>*<span class="tag is-error">Needs art review</span> At current state, this does not meet WCAG2 level AA standards for color contrast and font size. We could consider bumping up the font-size or switching to a darker color from our color palette.*
+// List for paginating links. Three elements are expected in the list: A previous page label, a group of page numbers, and a  "next page" label.
 //
 //
 // Markup: 6-components/pagination/pagination.html
