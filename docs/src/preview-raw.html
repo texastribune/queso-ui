@@ -10,26 +10,27 @@
 <div style="display: none">
   {% include '../dist/sprites/base.html' %}
 </div>
-<!-- {{ mainClass }} -->
-<section style="margin-bottom: 20px">
-{% if isFile %}
-  {% include "../../assets/scss/" + markup %}
-{% else %}
-  {{ markup | safe }}
-{% endif %}
-</section>
-{% for modifier in modifiers %}
-{% set className = modifier.className %}
-<!-- {{ className }} -->
-<section style="margin-bottom: 20px">
-{% if isFile %}
-  {% include "../../assets/scss/" + markup %}
-{% else %}
-  {{ modifier.markup | safe }}
-{% endif %}
-</section>
-{% endfor %}
-
+<main>
+  <!-- {{ mainClass }} -->
+  <section style="margin-bottom: 20px">
+  {% if isFile %}
+    {% include "../../assets/scss/" + markup %}
+  {% else %}
+    {{ markup | safe }}
+  {% endif %}
+  </section>
+  {% for modifier in modifiers %}
+  {% set className = modifier.className %}
+  <!-- {{ className }} -->
+  <section style="margin-bottom: 20px">
+  {% if isFile %}
+    {% include "../../assets/scss/" + markup %}
+  {% else %}
+    {{ modifier.markup | safe }}
+  {% endif %}
+  </section>
+  {% endfor %}
+</main>
 <!-- demo JS -->
 <script src="../../../js/ds.js"></script>
 </body>
