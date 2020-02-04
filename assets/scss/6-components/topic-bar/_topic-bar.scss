@@ -11,12 +11,9 @@
   li {
     margin: 0 auto;
     padding: 0 $size-tiny;
-    text-align: center;
   }
 
   a {
-    color: $color-black-off;
-
     &:hover {
       color: $color-teal-gray;
     }
