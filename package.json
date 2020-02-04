@@ -123,7 +123,7 @@
     "passes-wcag": "^0.2.1",
     "prettier": "1.19.1",
     "purgecss": "^2.0.5",
-    "purgecss-from-html": "^1.1.0",
+    "purgecss-from-html": "^2.0.3",
     "push-dir": "^0.4.1",
     "stylelint": "^13.0.0"
   },
