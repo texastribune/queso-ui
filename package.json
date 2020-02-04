@@ -103,7 +103,7 @@
   },
   "homepage": "https://github.com/texastribune/queso-ui#readme",
   "devDependencies": {
-    "@texastribune/queso-tools": "^2.1.0",
+    "@texastribune/queso-tools": "^2.1.2",
     "axios": "^0.19.0",
     "browser-sync": "^2.26.3",
     "eslint": "^5.16.0",
@@ -123,7 +123,7 @@
     "passes-wcag": "^0.2.1",
     "prettier": "1.19.1",
     "purgecss": "^2.0.5",
-    "purgecss-from-html": "^1.1.0",
+    "purgecss-from-html": "^2.0.3",
     "push-dir": "^0.4.1",
     "stylelint": "^13.0.0"
   },

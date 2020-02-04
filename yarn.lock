@@ -173,10 +173,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@texastribune/queso-tools@^2.1.0":
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/@texastribune/queso-tools/-/queso-tools-2.1.1.tgz#04c3b4dbe22556b835016059d266540b4a743680"
-  integrity sha512-aLBTS4U5V/XNrKrerDyOl1LS7Zx1uXvDRAWo2NRUCIdLkR2DjhtRRaTeyvYwK1ye0K/pExHD4ykmO+fsjvVS4w==
+"@texastribune/queso-tools@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@texastribune/queso-tools/-/queso-tools-2.1.2.tgz#ac15f536d093247026d1df2fa2fc5f0d5abbcccc"
+  integrity sha512-zvnweDfnTqcoZwGSqilFeg/gHIAyumRPWs6IzQKA+5g03qOqjnbdGckCTxWEOueDIGIE8YIyho1CXMlndpkDkg==
   dependencies:
     amphtml-validator "^1.0.23"
     autoprefixer "^9.6.0"
@@ -3682,7 +3682,6 @@ known-css-properties@^0.17.0:
 
 "kss@https://github.com/kss-node/kss-node":
   version "3.0.0-beta.25"
-  uid ddfa3fea0793822ccc6c59330d4a318f908dd95c
   resolved "https://github.com/kss-node/kss-node#ddfa3fea0793822ccc6c59330d4a318f908dd95c"
   dependencies:
     bluebird "^3.5.4"
@@ -5367,10 +5366,10 @@ punycode@^2.1.0:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-purgecss-from-html@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/purgecss-from-html/-/purgecss-from-html-1.1.0.tgz#13288effec33e39c47f517b7515f920348c5a186"
-  integrity sha512-D2ZlY8Qs6SqnWnEg2CULN2/mCMvXj5tHrE4WWqRcHUQGaRgBSJC57Nbx04BpGkESJrcZjqXNPNL69QfeHYdc4A==
+purgecss-from-html@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/purgecss-from-html/-/purgecss-from-html-2.0.3.tgz#9a3ae78ac1c3afef5c53502e1e45d1f5130c09ce"
+  integrity sha512-+MSRN0TROxS7bcdSvGZm2EANYP3rN7ZbTOsadIyJHTCVsUpCsCQKn1kfG8gwDH3TOCS58Ch2HMIbwVimOG0WnQ==
   dependencies:
     parse5 "^5.1.0"
     parse5-htmlparser2-tree-adapter "^5.1.0"
