@@ -5376,9 +5376,9 @@ purgecss-from-html@^1.1.0:
     parse5-htmlparser2-tree-adapter "^5.1.0"
 
 purgecss@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-2.0.5.tgz#b7aa3e3634704aa041d03f007504c303e8c6586e"
-  integrity sha512-VwQoDXImH0pabZ6ivLPCsWuRGd979NEzACaT/P3pWzDVCwHXSgXUM4QDbnMklMawU0r4MrCvdaORM84KJvsCIA==
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/purgecss/-/purgecss-2.0.6.tgz#fc0a03f9533448635309af5979b094aab57ff361"
+  integrity sha512-Xab72ykpWtg+j/dTphz9HCrychRNbMebNBrI+pOU0mC7mG5OlwRksEEpNAdOLb1jg9oRHDDu6Exe+nlM9ZLp5Q==
   dependencies:
     commander "^4.0.0"
     glob "^7.0.0"
