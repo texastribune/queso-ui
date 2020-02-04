@@ -4,7 +4,7 @@
  */
 
 const fs = require('fs-extra');
-const Purgecss = require('purgecss');
+const PurgeCSS = require('purgecss').default;
 const purgeHtml = require('purgecss-from-html');
 const path = require('path');
 const styleDocRunner = require('./style-doc');
@@ -19,8 +19,8 @@ const COMPONENT_CSS_FILE_MIN = 'no-resets.css';
 const LEGACY_CSS_FILE = 'all-legacy.css';
 const COMPONENT_CSS_PATH = './docs/dist/css';
 
-const purge = (html, filePath) => {
-  return new Purgecss({
+const purgeStyles = async (html, filePath) => {
+  const purgeCSSResult = await new PurgeCSS().purge({
     content: [html],
     css: [filePath],
     keyframes: true,
@@ -31,7 +31,9 @@ const purge = (html, filePath) => {
       },
     ],
   });
+  return purgeCSSResult;
 };
+
 
 const clean = async (html, deprecated) => {
   let css = COMPONENT_CSS_FILE;
@@ -41,32 +43,31 @@ const clean = async (html, deprecated) => {
   const filePath = `${COMPONENT_CSS_PATH}/${css}`;
   const filePathMin = `${COMPONENT_CSS_PATH}/${COMPONENT_CSS_FILE_MIN}`;
 
-  const purgecss = purge(html, filePath);
-  const purgecssMin = purge(html, filePathMin);
+  const cleanCSS = await purgeStyles(html, filePath);
+  const cleanCSSMin = await purgeStyles(html, filePathMin);
 
   const file = path.basename(html, path.extname(html));
   const dir = path.dirname(html);
-  const purgecssResult = await purgecss.purge();
-  const purgecssParsed = purgecssResult[0].css;
-  const purgecssResultMin = await purgecssMin.purge();
-  const purgecssParsedMin = purgecssResultMin[0].css;
+  const cleanCSSParsed = cleanCSS[0].css;
+  const cleanCSSMinParsed = cleanCSSMin[0].css;
   // create a css file
   try {
-    await fs.outputFile(`${dir}/${file}.css`, purgecssParsed);
+    await fs.outputFile(`${dir}/${file}.css`, cleanCSSParsed);
   } catch (err) {
     throw err;
   }
   try {
-    await fs.outputFile(`${dir}/${file}-min.css`, purgecssParsedMin);
+    await fs.outputFile(`${dir}/${file}-min.css`, cleanCSSMinParsed);
   } catch (err) {
     throw err;
   }
+
   // create a styled preview
   try {
     const htmlStr = await fs.readFileSync(html, 'utf-8');
     await fs.outputFile(
       `${dir}/${file}-preview.html`,
-      `<style>${purgecssParsed}</style>\n${htmlStr}`
+      `<style>${cleanCSSParsed}</style>\n${htmlStr}`
     );
   } catch (err) {
     throw err;
