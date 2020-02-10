@@ -7,16 +7,33 @@ Along with the library, we set up a few tools that help document updates. CSS co
 
 Our goal is that as we iterate upon the design of our products, we document everything along the way. This keeps our **style docs current and allows for continuous optimization our CSS.**
 
-We named it "queso" because we wanted a Texas-esque name and an easy way to refer to it internally. Also as we all know, everything is better with queso 🧀. 
+We named it "queso" because we wanted a Texas-esque name and an easy way to refer to it internally. Also as we all know, everything is better with queso 🧀.
 
-## Getting started
+
+
+## Installing as a dependency
+To use this library in your project, install the SCSS and SVG files as a dependency.
+
+```sh
+npm install @texastribune/queso-ui --save-dev
+```
+
+Hint: Use [queso-tools](https://github.com/texastribune/queso-tools) to for help compiling into CSS and/or an SVG sprite.
+
+
+
+
+
+## Contributing to this CSS Framework
+
+### Previewing the docs
 To preview these assets and accompanying docs locally, run the following commands:
 ```sh
-yarn
+npm install
 ```
 
 ```sh
-yarn dev
+npm run dev
 ```
 Visit http://localhost:3000
 
@@ -26,28 +43,18 @@ This spins up a browsersync server and watch task for all SCSS and HTML files.
 - node >=8.11.3 (to be replaced with a docker container)
 
 
-## Installing as a dependency
-
-```sh
-yarn add @texastribune/queso-ui --dev
-```
-```sh
-npm install @texastribune/queso-ui --save-dev
-```
-
-## Folders
+### Organization
 | directory          | description              |
 | -----------       | --------------------|
 | assets/scss       | Various SASS files establishing our CSS framework |
 | assets/icons      | Sets of individual SVG icons used throughout our products            |
 | docs      | Tools and templates to statically render documentation, code examples, and usage info for our design system         |
 
-## Adding to the CSS Framework
+
+### SCSS docs boilerplate
 
 When you add a new class, component, scss variable, mixin, etc., you'll want to add a short bit of syntax to enable it to appear in the docs. Use the boilerplate below to get started.
 
-
-### SCSS docs boilerplate
 > How to document a new CSS class
 
 We use a comment parser along with some [extra logic](https://github.com/texastribune/queso-ui/blob/master/tasks/style-doc.js) to generate our docs. To add a new section of documentation, add a boilerplate above your CSS rules like the one below: 
@@ -66,11 +73,12 @@ We use a comment parser along with some [extra logic](https://github.com/texastr
 // Styleguide 6.0.1
 //
 .root-class-name {
-  
+  // your styles
 }
 ```
 - `{{isWide}}` is used to display the demo of each modifier at full width
 - `{{isHelper}}` is used to hide main demo and only display modifiers
+- `{{isRecipe}}` is used to document standard design element that doesn't need any extra CSS. This signifies that it's a section of the docs that's used as a handy recipe of helper classes that accomplish a commonly used look.
 - `// Deprecated` is used to signify a class to be removed. See _Deprecating a CSS class_ for details.
 
 
@@ -121,6 +129,23 @@ _Example: `has-bg-yellow`_
 
 ---
 
+### Publishing
+
+Make sure you're authenticated for npm publishing.
+
+1. `npm login` - then follow the prompts
+2. `npm run release` - Then use semantic versioning to release your change.
+
+#### Semantic versioning
+The npm helper we use for versioning simplifies matching version numbers with the various `MAJOR`, `MINOR`, `PATCH` increment types. For guidance on what type of release you're making, refer to [https://semver.org/](https://semver.org/)
+
+Generally, you could base your increment type on the following list:
+
+- MAJOR version = CSS changes that visually break layouts where `queso-ui` is used on production
+- MINOR version = CSS changes that have no visual effect on production
+- PATCH version = CSS changes that fix a previous bug introduced on production or in development 
+
+#### Steps to test breaking changes:
 
 ## Using this system in our products
 This system is experimental and under rapid development. Use it in situations where it makes sense for the scope of your task.
@@ -134,32 +159,12 @@ This system is experimental and under rapid development. Use it in situations wh
 - The system creates an unnecessarily layer of complexity (take the path of least resistance)
 
 
-## Publishing
 
-Make sure you're authenticated for npm publishing.
-
-1. `npm login` - then follow the prompts
-2. `npm run release` - There's a [bug](https://github.com/sindresorhus/np/issues/420#issuecomment-499273013) in the `np` publishing tool we use where `yarn` commands don't seem to work.
-
-### Semantic versioning
-The npm helper we use for versioning simplifies matching version numbers with the various `MAJOR`, `MINOR`, `PATCH` increment types. For guidance on what type of release you're making, refer to [https://semver.org/](https://semver.org/)
-
-Generally, you could base your increment type on the following list:
-
-- MAJOR version = CSS changes that visually break layouts where `queso-ui` is used on production
-- MINOR version = CSS changes that have no visual effect on production
-- PATCH version = CSS changes that fix a previous bug introduced on production or in development 
-
-### Steps to test breaking changes:
 1. Publish these changes on npm: `npm run release`. Copy the version number.
 2. Create a new branch in the repo in question.
-3. `yarn add @texastribune/queso-ui@VERSION`
+3. `npm install @texastribune/queso-ui@VERSION`
 4. Compile the CSS
-5. Scan the various places where queso-ui is used. At the time of writing, the following pages heavily rely upon this CSS so be sure to check those if you're deprecating/changing classes.
-* [ ] [/podcasts](http://local.texastribune.org:8000/podcasts)
-* [ ] [/support-us/donors-and-members](http://local.texastribune.org:8000/support-us/donors-and-members)
-* [ ] [/newsletters/slug](http://local.texastribune.org:8000/newsletters/tribweek)
-* [ ] [/theblast/*](http://local.texastribune.org:8000/theblast)
+5. Scan the various places where queso-ui is used. At the time of writing, that's most of texastribune.org.
 
 ##  Features/Wishlist
 

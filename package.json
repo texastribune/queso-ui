@@ -10,7 +10,7 @@
     "deploy": "push-dir --dir=docs/dist --branch=gh-pages",
     "build": "SITE_ENV=production node docs/config/tasks/build.js",
     "dev": "SITE_ENV=development node docs/config/tasks/dev.js",
-    "test": "yarn run lint && yarn run build",
+    "test": "npm run lint && npm run build",
     "release": "np --any-branch"
   },
   "files": [
@@ -130,5 +130,8 @@
   "dependencies": {
     "normalize.css": "^8.0.1",
     "sass-mq": "^5.0.0"
+  },
+  "engines": {
+    "yarn": "YARN NO LONGER USED - use npm instead."
   }
 }
