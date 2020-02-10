@@ -7,9 +7,22 @@
 //
 // Styleguide 6.1.3
 .c-podcast-block {
-  @include gap;
+  @include col-gap;
+  @include row-gap($size-xxxs);
   display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'image-wrap' 'content';
+
+  &__image-wrap {
+    grid-area: image-wrap;
+  }
+
+  &__content {
+    grid-area: content;
+  }
+
   @include mq($from: bp-l) {
+    grid-template-areas: 'image-wrap content';
     grid-template-columns: 7fr 6fr;
     // HACK: Align the last element to the bottom (only works with 3 rows :( )
     &__content {
