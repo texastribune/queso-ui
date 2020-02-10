@@ -1,14 +1,8 @@
 <article class="c-podcast-block">
-  <figure class="l-display-block l-width-full">
-    <a href="#" class="has-text-gray-dark has-text-white">
-      <!-- optionally use srcset for optimizing image delivery -->
-      <img class="l-display-block l-width-full" src="{{ siteURL }}/img/podcast-block/c-podcast-block-thumb.png" alt="Album art for The Brief podcast">
-    </a>
-  </figure>
-  <section class="c-podcast-block__content">
-    <h3 class="t-serif has-xxxs-btm-marg t-size-l t-links-underlined-hover">
+  <div class="c-podcast-block__content">
+    <h2 class="t-serif has-xxxs-btm-marg t-size-l t-links-underlined-hover">
       <a href="/podcast/the-brief/">The Brief</a>
-    </h3>
+    </h2>
     <div class="has-xxxs-btm-marg t-uppercase t-lsp-m t-size-xs"><strong>Monday - Friday</strong></div>
     <div class="has-xxxs-btm-marg t-serif t-links-underlined t-size-b">
       <p> Start your day with a quick take on the latest Texas politics and policy news. Subscribe on
@@ -20,8 +14,12 @@
       </p>
     </div>
     <div class="l-width-full">
-      <div class="t-uppercase t-lsp-m has-text-gray t-size-xxs t-lh-l">Play the latest episode</div>
+      <div class="t-uppercase t-lsp-m has-text-gray-dark t-size-xxs t-lh-l">Play the latest episode</div>
       <div class="has-bg-black has-text-white l-align-center-children" style="height: 78px">Player widget</div>
     </div>
-</section>
+  </div>
+  <a href="#" class="c-podcast-block__image-wrap" tabindex="-1">
+    <!-- optionally use srcset for optimizing image delivery -->
+    <img class="l-display-block l-width-full" src="{{ siteURL }}/img/podcast-block/c-podcast-block-thumb.png" alt="Album art for The Brief podcast">
+  </a>
 </article>
