@@ -60,3 +60,13 @@
   font-weight: 400;
   font-style: italic;
 }
+
+
+@font-face {
+  font-display: swap;
+  font-family: 'Open Sans';
+  src: url('https://cdn.texastribune.org/fonts/opensans-bolditalic.woff2') format('woff2'),
+    url('https://cdn.texastribune.org/fonts/opensans-bolditalic.woff') format('woff');
+  font-weight: 700;
+  font-style: italic;
+}
