@@ -1,11 +1,11 @@
 <div class="c-story-body has-l-btm-marg t-size-b story_body">
   <p>Our editor outputs blocks of texts with paragraph tags. This parent class also accounts for descendant links, headings, horizontal rules, and lists.</p>
-  
+
   <h2>Horizontal Rules</h2>
   <p>Use a horizontal rule to break up content. A horizontal rule is displayed below.</p>
   <hr/>
   <p>The hr tag has built in top and bottom margin. We do this because it's normally used as a spacing element and the need for cushion is assumed.</p>
-  
+
   <h2>Ordered Lists</h2>
   <p>Ordered lists are lists with numbers and need the special container and a list style treatment.</p>
   <ol>
@@ -13,7 +13,7 @@
     <li>This is the second item.</li>
     <li>This is the third item.</li>
   </ol>
-  
+
   <h2>Unordered Lists</h2>
   <p>Unordered lists are lists with bullets and also need the special container and a list style treatment. We globally remove bullets so lists within the c-story-body class we add them back via the ul tag.</p>
   <ul>
@@ -21,13 +21,18 @@
     <li>This is the second item.</li>
     <li>This is the third item.</li>
   </ul>
-  
+
   <h2>Headings</h2>
   <p>Our editor has a dropdown option called <em>Subheader</em> for adding a heading element. By default, that tag is an h2.</p>
   <h2>I am an example heading</h2>
-  
+
   <h2>Plugins</h2>
   <p>Plugins are special and have their own rules for positioning. A div without the plugin class will still align with the story text, but any div prefixed with "plugin" will be excluded from the max-width and margin declaration the other elements adhere to.</p>
-  <div class="plugin has-padding has-bg-gray-light">Example of plugin. Should be not be bound by container.</div>
-  <div class="plugin-ad has-padding has-bg-gray-light">Example of ad plugin. Should be not be bound by container</div>
+  <div class="c-plugin">
+    <blockquote class="has-b-btm-marg has-vert-bar has-vert-bar--padded-l has-text-yellow t-sans t-size-m">
+      <p class="has-text-black-off has-xxxs-btm-marg"><strong><em>“Example of a pull quote.”</em></strong></p>
+      <cite class="has-text-black-off t-size-b">—&nbsp;First name, Last name</cite>
+    </blockquote>
+  </div>
+  <div class="c-plugin has-padding has-bg-gray-light">Example of ad plugin. Should be not be bound by container</div>
 </div>
