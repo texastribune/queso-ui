@@ -8,6 +8,7 @@
 // .c-button--xs - Two steps down from default
 // .c-button--circle - Circular button (experimentally used for back to top)
 // .c-button--outline - Hover effect of outline (used on social)
+// .c-button--skip - Visible only on focus, this is used to skip navigation
 //
 // Markup: 6-components/button/button.html
 //
@@ -99,6 +100,23 @@
     padding-bottom: 0;
     height: 26px;
     line-height: 26px;
+  }
+
+  &--skip {
+    height: 1px;
+    left: -999px;
+    position: absolute;
+    overflow: hidden;
+    width: 1px;
+    z-index: -999;
+
+    &:focus {
+      height: auto;
+      left: 0;
+      top: 45px;
+      width: auto;
+      z-index: 5;
+    }
   }
 }
 
