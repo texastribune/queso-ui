@@ -1,4 +1,3 @@
-@use "sass:list";
 // Text color (has-text-<color>)
 //
 // Set the color of text. {{isHelper}}
@@ -112,7 +111,7 @@ $button-colors: "teal", "gray-dark", "blue", "twitter", "facebook", "yellow";
 @each $color in $button-colors {
   .has-bg-#{$color} {
     &:focus {
-      border-color: map-get($color-map, $color);
+      box-shadow: inset 0 0 0 .2rem map-get($color-map, $color);
     }
   }
 }
