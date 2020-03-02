@@ -127,3 +127,13 @@ $column-slug: col !default;
 // Styleguide 1.3.1
 $border-radius-b: 4px;
 $border-radius-l: 40px;
+
+
+// Utility height
+//
+// We often use navbar and forms with a static height. Declare this variable for consistency across platforms.
+//
+// $util-height = 45px - Standard height of navbar and forms
+//
+// Styleguide 1.3.1
+$util-height: 45px;

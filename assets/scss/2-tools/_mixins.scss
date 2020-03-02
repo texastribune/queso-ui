@@ -57,10 +57,10 @@
   }
   // make focus state more apparent
   &:focus {
-    outline: none;
     border-bottom: 1px solid $color-teal-gray;
     box-shadow: inset 0 -2px 0 0 $color-teal-gray;
     color: $color-teal-gray;
+    outline: none;
   }
 }
 
