@@ -48,6 +48,18 @@
     opacity: 0.6;
   }
 
+  &:focus {
+    border-style: solid;
+    border-width: 2px;
+    color: $color-black-off;
+    outline: none;
+    background-color: $color-white-pure;
+    // extra specific to force color
+    .c-button__inner {
+      color: $color-black-off;
+    }
+  }
+
   &--l {
     font-size: $size-l;
     padding: $size-l;
@@ -90,6 +102,11 @@
       }
     }
 
+    &:focus {
+      border-width: 3px;
+      box-shadow: 0 0 0 .2rem rgba($color-black-pure, .5);
+    }
+
     &:active {
       opacity: 0.7;
     }
@@ -106,19 +123,20 @@
     height: 1px;
     left: -999px;
     position: absolute;
-    overflow: hidden;
     width: 1px;
     z-index: -999;
 
     &:focus {
       height: auto;
       left: 0;
+      // same height as .c-navbar__top
       top: 45px;
       width: auto;
       z-index: 5;
     }
   }
 }
+
 
 // Link button (c-link-button)
 //

@@ -55,6 +55,13 @@
     border-bottom: 1px solid rgba($border-hover-color, .6);
     box-shadow: inset 0 -2px 0 0 rgba($border-hover-color, .6);
   }
+  // make focus state more apparent
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid $color-teal-gray;
+    box-shadow: inset 0 -2px 0 0 $color-teal-gray;
+    color: $color-teal-gray;
+  }
 }
 
 
@@ -67,8 +74,8 @@
 // Styleguide 2.1.3
 //
 @mixin underlined-link-parent($hover-only: false) {
-  a:not(.t-unlink) {
-    @include underlined-link($hover-only)
+  a {
+    @include underlined-link($hover-only);
   }
 }
 

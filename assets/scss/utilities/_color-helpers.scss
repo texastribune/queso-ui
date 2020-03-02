@@ -1,3 +1,4 @@
+@use "sass:list";
 // Text color (has-text-<color>)
 //
 // Set the color of text. {{isHelper}}
@@ -25,7 +26,7 @@
 // Styleguide 8.0.1
 //
 
-// Text color:hover (has-text-hover-<color>) 
+// Text color:hover (has-text-hover-<color>)
 //
 // Set the color of text on hover. {{isHelper}}
 //
@@ -52,7 +53,7 @@
 // Styleguide 8.0.2
 //
 
-// Background Color (has-bg-<color>) 
+// Background Color (has-bg-<color>)
 //
 // Set the background-color of an element. {{isHelper}}
 //
@@ -98,12 +99,25 @@ $color-map: (
   "facebook": $color-facebook,
 );
 
+// bg-color
 @each $color, $value in $color-map {
   .has-bg-#{$color} {
     background-color: $value;
   }
 }
 
+// used for focus states of buttons
+// we only add to button colors to trim down on unused styles
+$button-colors: "teal", "gray-dark", "blue", "twitter", "facebook", "yellow";
+@each $color in $button-colors {
+  .has-bg-#{$color} {
+    &:focus {
+      border-color: map-get($color-map, $color);
+    }
+  }
+}
+
+// text-hover
 @media (hover: hover) {
   @each $color, $value in $color-map {
     .has-text-hover-#{$color}:hover,
@@ -113,6 +127,7 @@ $color-map: (
   }
 }
 
+// text-color
 @each $color, $value in $color-map {
   .has-text-#{$color} {
     color: $value;
