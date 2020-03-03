@@ -8,6 +8,7 @@
 // .c-button--xs - Two steps down from default
 // .c-button--circle - Circular button (experimentally used for back to top)
 // .c-button--outline - Hover effect of outline (used on social)
+// .c-button--skip - Visible only on focus, this is used to skip navigation
 //
 // Markup: 6-components/button/button.html
 //
@@ -45,6 +46,17 @@
 
   &:active {
     opacity: 0.6;
+  }
+
+  &:focus {
+    box-shadow: inset 0 0 0 .2rem;
+    color: $color-black-off;
+    outline: none;
+    background-color: transparent;
+    // extra specific to force color
+    .c-button__inner {
+      color: $color-black-off;
+    }
   }
 
   &--l {
@@ -89,6 +101,10 @@
       }
     }
 
+    &:focus {
+      border-color: currentColor;
+    }
+
     &:active {
       opacity: 0.7;
     }
@@ -100,7 +116,25 @@
     height: 26px;
     line-height: 26px;
   }
+
+  &--skip {
+    height: 1px;
+    left: -999px;
+    position: absolute;
+    width: 1px;
+    z-index: -999;
+
+    &:focus {
+      height: auto;
+      left: 0;
+      // same height as .c-navbar__top
+      top: $util-height;
+      width: auto;
+      z-index: 5;
+    }
+  }
 }
+
 
 // Link button (c-link-button)
 //
@@ -112,6 +146,7 @@
 //
 .c-link-button {
   @include underlined-link;
+  color: inherit;
   cursor: pointer;
   line-height: normal;
 }

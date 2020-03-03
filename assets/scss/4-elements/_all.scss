@@ -36,6 +36,14 @@ a {
   text-decoration: none;
 }
 
+// focus states
+a, button {
+  &:focus {
+    outline: 1px dashed $color-teal-gray;
+    outline-offset: 2px;
+  }
+}
+
 // We want all of our cite elements to not be italicized
 cite {
   font-style: normal;
