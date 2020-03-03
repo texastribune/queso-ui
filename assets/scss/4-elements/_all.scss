@@ -37,12 +37,11 @@ a {
 }
 
 // focus states
-a, button {
-  &:focus {
-    outline: 1px dashed $color-teal-gray;
-    outline-offset: 2px;
-  }
+:focus {
+  outline: 2px dotted $color-teal-gray;
+  outline-offset: 5px;
 }
+
 
 // We want all of our cite elements to not be italicized
 cite {
