@@ -105,17 +105,6 @@ $color-map: (
   }
 }
 
-// used for focus states of buttons
-// we only add to button colors to trim down on unused styles
-$button-colors: "teal", "gray-dark", "blue", "twitter", "facebook", "yellow";
-@each $color in $button-colors {
-  .has-bg-#{$color} {
-    &:focus {
-      box-shadow: inset 0 0 0 .2rem map-get($color-map, $color);
-    }
-  }
-}
-
 // text-hover
 @media (hover: hover) {
   @each $color, $value in $color-map {
