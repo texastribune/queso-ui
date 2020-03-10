@@ -42,6 +42,14 @@ a {
   outline-offset: 5px;
 }
 
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 2px dotted $color-teal-gray;
+  outline-offset: 5px;
+}
 
 // We want all of our cite elements to not be italicized
 cite {
