@@ -1,7 +1,13 @@
 // Resets
 //
-// We want to import normalize instead. It's around 6kb and we can update versions as https://github.com/necolas/normalize.css changes.
+// We use [modern-normalize](https://github.com/sindresorhus/modern-normalize/blob/master/modern-normalize.css) and extra resets of our own.
 //
 //
 // Styleguide 3.0.0
+
+// weird quirk of FireFox showing the outline on click
+a:active,
+a:hover {
+  outline: 0;
+}
 @import 'node_modules/modern-normalize/modern-normalize.css';
