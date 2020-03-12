@@ -128,7 +128,6 @@
     "stylelint": "^13.0.0"
   },
   "dependencies": {
-    "modern-normalize": "^0.6.0",
     "normalize.css": "^8.0.1",
     "sass-mq": "^5.0.0"
   }

@@ -1,13 +1,7 @@
 // Resets
 //
-// We use [modern-normalize](https://github.com/sindresorhus/modern-normalize/blob/master/modern-normalize.css) and extra resets of our own.
-//
+// We import the standard https://github.com/necolas/normalize.css reset, but in the future we'll revist this to replace with something potentially smaller.
 //
 // Styleguide 3.0.0
-
-// weird quirk of FireFox showing the outline on click
-a:active,
-a:hover {
-  outline: 0;
-}
-@import 'node_modules/modern-normalize/modern-normalize.css';
+@import 'box-sizing';
+@import 'normalize.css/normalize';
