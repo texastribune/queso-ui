@@ -69,4 +69,4 @@ Alternatively, [dart-sass](https://www.npmjs.com/package/sass) is a great, low-d
 
 ---
 
-[Contributing to this CSS Framework](/texastribune/queso-ui/blob/master/contributing.md).
+[Contributing to this CSS Framework](/contributing.md)
