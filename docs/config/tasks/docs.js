@@ -16,7 +16,6 @@ const { docsStyles, docsIcons, mappedGithubData, siteURL } = require('../paths.j
 
 const COMPONENT_CSS_FILE = 'all.css';
 const COMPONENT_CSS_FILE_MIN = 'no-resets.css';
-const LEGACY_CSS_FILE = 'all-legacy.css';
 const COMPONENT_CSS_PATH = './docs/dist/css';
 
 const purgeStyles = async (html, filePath) => {
@@ -35,11 +34,9 @@ const purgeStyles = async (html, filePath) => {
 };
 
 
-const clean = async (html, deprecated) => {
-  let css = COMPONENT_CSS_FILE;
-  if (deprecated) {
-    css = LEGACY_CSS_FILE;
-  }
+const clean = async (html) => {
+  const css = COMPONENT_CSS_FILE;
+
   const filePath = `${COMPONENT_CSS_PATH}/${css}`;
   const filePathMin = `${COMPONENT_CSS_PATH}/${COMPONENT_CSS_FILE_MIN}`;
 
@@ -203,7 +200,7 @@ module.exports = async () => {
   // generate component CSS
   await Promise.all(
     componentArr.map(component =>
-      clean(component.out, component.data.deprecated)
+      clean(component.out)
     )
   );
 
