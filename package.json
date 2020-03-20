@@ -117,7 +117,7 @@
     "glob-watcher": "^5.0.3",
     "kss": "https://github.com/kss-node/kss-node",
     "markdown-it": "^10.0.0",
-    "np": "^5.0.3",
+    "np": "^6.2.0",
     "nunjucks": "^3.1.7",
     "ora": "^4.0.1",
     "passes-wcag": "^0.2.1",
