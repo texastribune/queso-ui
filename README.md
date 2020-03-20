@@ -20,7 +20,7 @@ npm install @texastribune/queso-ui --save-dev
 
 ### 2. Create an imports file
 
-You'll rarely need all of the [components](https://texastribune.github.io/queso-ui/pages/components/index.html) or [layouts](https://texastribune.github.io/queso-ui/pages/layouts/index.html) so just take what you need for your project and override as you please.
+You'll rarely need all of the [components](https://texastribune.github.io/queso-ui/pages/components/index.html) or [layouts](https://texastribune.github.io/queso-ui/pages/layout/index.html) so just take what you need for your project and override as you please.
 
 Example:
 ```scss
