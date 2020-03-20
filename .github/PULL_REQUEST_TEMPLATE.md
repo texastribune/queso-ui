@@ -11,7 +11,7 @@
 
 
 #### How should this be manually tested?
-`yarn dev`
+`npm run dev`
 
 See: [your-link](http://localhost:3000/)
 
