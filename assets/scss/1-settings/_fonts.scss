@@ -4,15 +4,11 @@
 //
 // $font-family-primary = 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif - Main font applied to :root.
 // $font-family-secondary = 'PT Serif', Georgia, serif - Accent font in our case used for editorial purposes.
-// $font-family-primary-fallback = 'Helvetica Neue', Helvetica, Arial, sans-serif - This displays as the primary font before fonts load.
-// $font-family-secondary-fallback = Georgia, serif - This displays as the secondary font before fonts load.
 //
 // Styleguide 1.2.1
 $font-family-primary: 'Open Sans', 'Helvetica Neue', Helvetica, Arial,
   sans-serif;
 $font-family-secondary: 'PT Serif', Georgia, serif;
-$font-family-primary-fallback: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family-secondary-fallback: Georgia, serif;
 
 // Font Sizings
 //
@@ -26,15 +22,6 @@ $font-family-secondary-fallback: Georgia, serif;
 $font-root: 16px;
 $font-root-tablet: 16px;
 $font-root-mobile: 15px;
-
-// Silent class helpers
-%font-serif {
-  font-family: $font-family-primary;
-}
-
-%font-sansserif {
-  font-family: $font-family-secondary;
-}
 
 // Letter Spacing
 //
@@ -50,6 +37,7 @@ $font-letter-spacing-s: .02em;
 $font-letter-spacing-b: .03em;
 $font-letter-spacing-m: .05em;
 $font-letter-spacing-l: .07em;
+
 // Line Height
 //
 // Consistent line-height values
