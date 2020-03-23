@@ -121,7 +121,7 @@
     "nunjucks": "^3.1.7",
     "ora": "^4.0.1",
     "passes-wcag": "^0.2.1",
-    "prettier": "1.19.1",
+    "prettier": "2.0.1",
     "purgecss": "^2.0",
     "purgecss-from-html": "^2.0.3",
     "push-dir": "^0.4.1",
