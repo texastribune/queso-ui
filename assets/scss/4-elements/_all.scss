@@ -1,3 +1,5 @@
+@import 'font-families';
+
 html {
   font-size: $font-root;
   @include mq($until: bp-s) {
