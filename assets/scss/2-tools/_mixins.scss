@@ -1,6 +1,6 @@
 // @mixin font-setting
 //
-// This will help us move away from silent classes for setting font-families. It still keeps our two main font-family rules in one place. <code class="ds-breathe-m">p { @include font-setting('secondary') }</code>
+// Usage: `@include font-setting('secondary')`
 //
 // $type = 'primary' - Version of font-setting. Options: primary | secondary
 //
@@ -8,17 +8,9 @@
 // Styleguide 2.1.1
 @mixin font-setting($type: 'primary') {
   @if $type == 'secondary' {
-    font-family: $font-family-secondary-fallback;
-
-    .fonts-loaded & {
-      font-family: $font-family-secondary;
-    }
+    font-family: $font-family-secondary;
   } @else {
-    font-family: $font-family-primary-fallback;
-
-    .fonts-loaded & {
-      font-family: $font-family-primary;
-    }
+    font-family: $font-family-primary;
   }
 }
 
