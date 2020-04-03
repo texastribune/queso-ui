@@ -25,13 +25,13 @@
 //
 @mixin underlined-link($hover-only: false) {
   // Set color var
-  $border-hover-color: $color-blue-light;
+  $border-hover-color: $color-link-underline;
   @if ( $hover-only == false ) {
-    $border-hover-color: $color-teal-gray;
-    border-bottom: 1px solid $color-blue-light;
-    box-shadow: inset 0 -1px 0 0 $color-blue-light;
+    $border-hover-color: $color-link-underline-hover;
+    border-bottom: 1px solid $color-link-underline;
+    box-shadow: inset 0 -1px 0 0 $color-link-underline;
   } @else {
-    border-color: $color-blue-light;
+    border-color: $color-link-underline;
   }
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
