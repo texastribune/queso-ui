@@ -2,12 +2,18 @@
 //
 // Story bodies are a special component because we have limited control over the class names within them. We must deviate from BEM and create catch-all tag selectors to allow the greatest flexibility of the markup.
 //
+// .c-story-body--nested - Assumes story body is wrapped in another component.
+//
 // Markup: 6-components/story-body/story-body.html
 //
 // Styleguide 6.1.3
 
 $story-padding-buffer: 2em; // must be em for SASSmq helper
 $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
+
+:root {
+  --story-body-padding: #{$size-xs};
+}
 
 .c-story-body {
   > p,
@@ -24,7 +30,7 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
     margin: $size-b auto;
     line-height: 1.4;
     @include mq($until: $story-narrow-bp) {
-      padding: 0 $size-xs;
+      padding: 0 var(--story-body-padding);
     }
   }
 
@@ -61,5 +67,9 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
 
   hr {
     margin: $size-xl auto;
+  }
+
+  &--nested {
+    --story-body-padding: 0;
   }
 }
