@@ -1,21 +1,77 @@
 // Topic bar (c-topic-bar)
 //
-// Horizontal list of links. This is found on the homepage in a flatblock. For layout, use `l-align-center-children` in the markup. We rely on inheritance for this component to simplify the markup.
+// Horizontal list of links that intentionally overflows on mobile. Found on the homepage and story pages. The list items are editable via flatblock. We rely on inheritance for this component to simplify the markup.
 //
-// Keywords: flatblock
+// .c-topic-bar--sticky - Stick to the top of the screen
+// .c-topic-bar--btm-border - Add a thin gray bottom border
+// .c-topic-bar--top-border-until-bp-l - Add a top gray border on small screens
 //
 // Markup: 6-components/topic-bar/topic-bar.html
 //
 // Styleguide 6.1.5
 .c-topic-bar {
-  li {
-    margin: 0 auto;
-    padding: 0 $size-tiny;
+  $gradient-width: 5rem;
+  position: relative;
+
+  &--sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
-  a {
-    &:hover {
-      color: $color-teal-gray;
+  &--btm-border {
+    border-bottom: 1px solid $color-gray-light;
+  }
+
+  @include mq($until: bp-l) {
+    &:after {
+      background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 100%);
+      content: '';
+      height: 100%;
+      position: absolute;
+      pointer-events: none;
+      right: 0;
+      top: 0;
+      width: $gradient-width;
+    }
+
+    &--top-border-until-bp-l {
+      border-top: 1px solid $color-gray-light;
+    }
+  }
+
+  &__inner {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    padding: $size-b $size-s;
+  }
+
+  ul {
+    align-items: center;
+    display: flex;
+
+    @include mq($from: bp-l) {
+      justify-content: center;
+    }
+
+    li {
+      padding-right: $size-xl;
+
+      &:last-child {
+        padding-right: $gradient-width;
+      }
+
+      @include mq($until: bp-l) {
+        flex-shrink: 0;
+      }
+
+      @include mq($from: bp-l) {
+        padding-right: $size-xxxl;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
     }
   }
 }
