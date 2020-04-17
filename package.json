@@ -16,6 +16,10 @@
   "files": [
     "/assets"
   ],
+  "np": {
+		"yarn": false,
+		"contents": "/assets"
+	},
   "repository": {
     "type": "git",
     "url": "https://github.com/texastribune/queso-ui.git"
