@@ -6,10 +6,11 @@
  */
 
 // utility packages
-const fs = require('fs');
+const fs = require('fs-extra');
 const ora = require('ora');
 const kss = require('kss');
 const md = require('markdown-it')({ html: true });
+const nunjucks = require('nunjucks');
 const {
   passesWcagAaLargeText,
   passesWcagAa,
@@ -18,6 +19,7 @@ const {
 
 // internal
 const { slugify, stripTags } = require('./utils');
+const { mappedGithubData } = require('../paths.js');
 
 const GITHUB_URL = 'https://github.com/texastribune/queso-ui/blob/master';
 
@@ -35,7 +37,20 @@ const createMap = arr => {
   return object;
 };
 
-const processSection = (section, dir) => {
+const readUsageInfo = async () => {
+    let github = {};
+    try {
+    const { classData } = await fs.readJson(mappedGithubData.out);
+    github = classData;
+  } catch (err) {
+    // eslint-disable-next-line no-console
+    console.error(err);
+  }
+  console.log(github);
+  return github;
+}
+
+const processSection = (section, dir, usageInfo) => {
   // helper vars
   const { header, markup } = section;
   const slug = slugify(header);
@@ -58,9 +73,7 @@ const processSection = (section, dir) => {
       .replace(keywordsStr, '')
   );
   const cleanDesc = stripTags(description);
-  const githubLink = `${GITHUB_URL}/${section.source.path}#L${
-    section.source.line
-  }`;
+  const githubLink = `${GITHUB_URL}/${section.source.path}#L${section.source.line}`;
 
   // create an order number
   const ref = section.referenceURI;
@@ -78,30 +91,61 @@ const processSection = (section, dir) => {
     prettyName = prettyName.replace(parens, '').trim();
   }
 
+  // github usage data
+  let githubData = [];
+  try {
+    githubData = usageInfo[mainClass]['searchDataArr'];
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.warn(`No usaage info found for ${mainClass}`);
+  }
+
   // grab code snippet
   let snippet = markup;
+  let templateCode = markup;
   if (isFile) {
     const markupPath = `${dir}/${markup}`;
-    snippet = fs.readFileSync(markupPath, 'utf-8');
+    templateCode = fs.readFileSync(markupPath, 'utf-8');
+  }
+  const env = nunjucks.configure('./');
+  try {
+    snippet = env.renderString(templateCode, section);
+  } catch (error) {
+    console.log(error);
   }
   const codeSnippet = snippet;
 
   // process modifiers
-  const modifiers = section.modifiers.map(modifier => {
+  const modifiers = section.modifiers.map((modifier) => {
     const { className } = modifier;
     const isInverse = className.includes('white');
     const modifierMarkup = markup.replace(/{{ className }}/g, className);
     const modifierDesc = md.render(modifier.description);
+    let modifierSnippet = modifierMarkup;
+    try {
+      modifierSnippet = env.renderString(templateCode, { className });
+    } catch (error) {
+      console.log(error);
+    }
+    let githubData = [];
+    try {
+      githubData = usageInfo[className]['searchDataArr'];
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.warn(`No usaage info found for ${className}`);
+    }
     return {
       ...modifier,
       isInverse,
       markup: modifierMarkup,
       description: modifierDesc,
+      modifierSnippet,
+      githubData,
     };
   });
 
   // check colors
-  const colors = section.colors.map(color => {
+  const colors = section.colors.map((color) => {
     return {
       ...color,
       aa: passesWcagAa(color.color, '#fff'),
@@ -113,11 +157,14 @@ const processSection = (section, dir) => {
   // extra keywords (regex)
   let keywords = [`${prettyName.toLowerCase()} (${mainClass})`];
   if (modifiers.length > 0) {
-    keywords = [...keywords, ...modifiers.map(modifier => modifier.className)];
+    keywords = [
+      ...keywords,
+      ...modifiers.map((modifier) => modifier.className),
+    ];
   }
   if (keywordsMatch && typeof keywordsMatch[1] !== 'undefined') {
     const extraKeywords = keywordsMatch[1].replace('</p>', '').split(', ');
-    const labeledKeywords = extraKeywords.map(word => {
+    const labeledKeywords = extraKeywords.map((word) => {
       return `${word} (${prettyName.toLowerCase()})`;
     });
     keywords = [...labeledKeywords, ...keywords];
@@ -142,6 +189,7 @@ const processSection = (section, dir) => {
     modifiers,
     colors,
     keywords,
+    githubData,
   };
 
   return context;
@@ -151,10 +199,11 @@ const processComments = async dirMap => {
   const raw = await kss.traverse(dirMap, { markdown: true });
   const styleGuideString = JSON.stringify(raw);
   const styleGuideData = JSON.parse(styleGuideString);
+  const usageInfo = await readUsageInfo();
 
   // parse sections
-  const sectionData = styleGuideData.sections.map(section =>
-    processSection(section, dirMap)
+  const sectionData = styleGuideData.sections.map((section) =>
+    processSection(section, dirMap, usageInfo)
   );
 
   // create a map of groups
@@ -171,16 +220,27 @@ const processComments = async dirMap => {
 
   // sort step 2 (nest by section)
   const nested = {};
+  const nonNested = [];
   sectionData.forEach(item => {
     const name = groupMap[item.group.toString()];
+    const {prettyName, slug, header } = item;
+    if (item.depth > 1) {
+      const groupedItem = {
+        ...item,
+        section: name,
+        sectionSlug: slugify(name),
+      };
+      nonNested.push(groupedItem);
+    }
+    const basicInfo = { prettyName, slug, header };
     if (typeof nested[name] !== 'object') {
       nested[name] = {
-        list: [item],
+        list: [basicInfo],
         slug: slugify(name),
         name,
       };
     } else {
-      nested[name].list.push(item);
+      nested[name].list.push(basicInfo);
     }
   });
 
@@ -198,12 +258,10 @@ const processComments = async dirMap => {
     });
     nestedArr.push(nested[e]);
   });
-
   const allData = {
-    github: GITHUB_URL,
-    items: nestedArr,
+    all: nonNested,
+    nested: nestedArr,
   };
-
   return allData;
 };
 
