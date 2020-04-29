@@ -2,8 +2,8 @@ const buildDir = './docs/dist/';
 
 const mappedStyles = [
   {
-    in: './docs/src/scss/ds.scss',
-    out: `${buildDir}css/ds.css`,
+    in: './docs/src/scss/queso-docs.scss',
+    out: `${buildDir}css/queso-docs.css`,
   },
   {
     in: './assets/scss/all.scss',
@@ -26,7 +26,12 @@ const mappedIcons = [
     in: './assets/icons/base/',
     out: `${buildDir}sprites/base.html`,
   },
+  {
+    in: './docs/src/icons/',
+    out: `${buildDir}sprites/docs.html`,
+  },
 ];
+
 
 const docsIcons = ['./assets/icons/'];
 

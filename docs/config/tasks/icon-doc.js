@@ -6,6 +6,7 @@
  */
 
 // utility packages
+const fs = require('fs-extra');
 const glob = require('fast-glob');
 const ora = require('ora');
 const path = require('path');
@@ -45,6 +46,10 @@ const createIconMap = async dirMap => {
 module.exports = async dir => {
   const spinner = ora('Creating icon map').start();
   const docs = createIconMap(dir);
+  await fs.outputFile(
+    './docs/dist/data/icons.json',
+    JSON.stringify(docs, null, 2)
+  );
   spinner.succeed();
   return docs;
 };

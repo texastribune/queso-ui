@@ -46,14 +46,12 @@ const readUsageInfo = async () => {
     // eslint-disable-next-line no-console
     console.error(err);
   }
-  console.log(github);
   return github;
 }
 
 const processSection = (section, dir, usageInfo) => {
   // helper vars
   const { header, markup } = section;
-  const slug = slugify(header);
   const isFile = markup.includes('.html');
   const isWideStr = '{{isWide}}';
   const isWide = section.description.includes(isWideStr);
@@ -82,7 +80,7 @@ const processSection = (section, dir, usageInfo) => {
   const group = ref[0];
 
   // extract mainClass and prettyName (regex)
-  let mainClass = slug;
+  let mainClass = slugify(header);
   let prettyName = header;
   const parens = /\(([^)]+)\)/;
   const parensMatch = parens.exec(header);
@@ -90,6 +88,8 @@ const processSection = (section, dir, usageInfo) => {
     [, mainClass] = parensMatch;
     prettyName = prettyName.replace(parens, '').trim();
   }
+  const slug = slugify(mainClass);
+
 
   // github usage data
   let githubData = [];
@@ -97,7 +97,7 @@ const processSection = (section, dir, usageInfo) => {
     githubData = usageInfo[mainClass]['searchDataArr'];
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.warn(`No usaage info found for ${mainClass}`);
+    //console.warn(`No usage info found for ${mainClass}`);
   }
 
   // grab code snippet
@@ -107,7 +107,7 @@ const processSection = (section, dir, usageInfo) => {
     const markupPath = `${dir}/${markup}`;
     templateCode = fs.readFileSync(markupPath, 'utf-8');
   }
-  const env = nunjucks.configure('./');
+  const env = nunjucks.configure('./assets/scss');
   try {
     snippet = env.renderString(templateCode, section);
   } catch (error) {
@@ -132,13 +132,14 @@ const processSection = (section, dir, usageInfo) => {
       githubData = usageInfo[className]['searchDataArr'];
     } catch (error) {
       // eslint-disable-next-line no-console
-      console.warn(`No usaage info found for ${className}`);
+      // console.warn(`No usaage info found for ${className}`);
     }
     return {
       ...modifier,
-      isInverse,
       markup: modifierMarkup,
       description: modifierDesc,
+      parentClass: slug,
+      isInverse,
       modifierSnippet,
       githubData,
     };
@@ -221,16 +222,22 @@ const processComments = async dirMap => {
   // sort step 2 (nest by section)
   const nested = {};
   const nonNested = [];
+  const modifiers = [];
   sectionData.forEach(item => {
     const name = groupMap[item.group.toString()];
     const {prettyName, slug, header } = item;
-    if (item.depth > 1) {
+    if (item.depth > 2) {
       const groupedItem = {
         ...item,
         section: name,
         sectionSlug: slugify(name),
       };
       nonNested.push(groupedItem);
+      if (item.modifiers.length > 0) {
+        item.modifiers.forEach(modifier => {
+          modifiers.push(modifier);
+        });
+      }
     }
     const basicInfo = { prettyName, slug, header };
     if (typeof nested[name] !== 'object') {
@@ -261,13 +268,18 @@ const processComments = async dirMap => {
   const allData = {
     all: nonNested,
     nested: nestedArr,
+    modifiers
   };
   return allData;
 };
 
 module.exports = async dir => {
   const spinner = ora('Parsing SCSS comments').start();
-  const docs = processComments(dir);
+  const docs = await processComments(dir);
+  await fs.outputFile(
+    './docs/dist/data/styles.json',
+    JSON.stringify(docs, null, 2)
+  );
   spinner.succeed();
   return docs;
 };
