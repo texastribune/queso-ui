@@ -1,0 +1,25 @@
+<nav>
+  <div class="q-side-nav menu">
+    <p class="menu-label">Main</p>
+    <ul class="menu-list">
+      <li>
+        <a href="/colors">Colors</a>
+      </li>
+      <li>
+        <a href="/fonts">Fonts</a>
+      </li>
+    </ul>
+    {% for section in styles.nested %}
+      {% if section.slug !== 'settings' and section.slug !== 'tools' and section.slug !== 'resets' %}
+        <p class="menu-label">{{ section.name }}</p>
+        <ul class="menu-list">
+          {% for class in section.list %}
+            <li>
+              <a href="/sections/{{ section.slug }}/{{ class.slug }}">{{ class.prettyName }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endfor %}
+  </div>
+</nav>

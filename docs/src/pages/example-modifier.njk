@@ -1,0 +1,13 @@
+---
+layout: example-base.njk
+pagination:
+    data: styles.modifiers
+    size: 1
+    alias: modifier
+permalink: "modifier/{{ modifier.className }}/"
+---
+{% block content %}
+  {% if modifier.modifierSnippet %}
+    {{ modifier.modifierSnippet | safe }}
+  {% endif %}
+{% endblock %}

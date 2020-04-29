@@ -1,0 +1,88 @@
+---
+layout: base.njk
+---
+
+<h1>Fonts</h1>
+
+<h2>Font Stack</h2>
+
+<h3>Primary</h3>
+<div class="t-sans">
+<p>Open Sans</p>
+<p>
+  <em>Open Sans Italic</em>
+</p>
+<p>
+  <strong>Open Sans Bold</strong>
+</p>
+<p>
+  <strong>
+    <em>Open Sans Bold Italic</em>
+  </strong>
+</p>
+</div>
+
+<div class="q-spacer">
+<h3>Secondary</h3>
+<div class="t-serif">
+  <p>PT Serif</p>
+  <p>
+    <em>PT Serif Italic</em>
+  </p>
+  <p>
+    <strong>PT Serif Bold</strong>
+  </p>
+  <p>
+    <strong>
+      <em>PT Serif Bold Italic</em>
+    </strong>
+  </p>
+</div>
+</div>
+<div class="q-spacer">
+<h3>SCSS Variables</h3>
+{% for item in styles.all %}
+  {% if item.slug == 'font-families' %}
+    {% for font in item.parameters %}
+      <p>{{font.name}} - {{font.description}}</p>
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+</div>
+<hr>
+
+<h2>Scale</h2>
+{% for item in styles.all %}
+  {% if item.slug == 'size-units' %}
+    <table class="q-table">
+      <tr>
+        <th></th>
+        <th>Rem Value</th>
+        <th>Pixel Value</th>
+        <th>SCSS Variable</th>
+        <th>Helper Class</th>
+      </tr>
+      {% for font in item.parameters %}
+        {% if font.name != '$size-tiny' %}
+          <tr>
+            <td class="t-size-{{ font.name|getSize }}">Hello World</td>
+            <td class="q-number">{{ font.defaultValue }}</td>
+            <td class="q-number">{{ font.defaultValue|toPx }}</td>
+            <td>{{ font.name }}</td>
+            <td>
+              .t-size-{{ font.name|getSize }}
+            </td>
+          </tr>
+        {% endif %}
+      {% endfor %}
+    </table>
+  {% endif %}
+{% endfor %}
+
+<hr>
+
+<h2>Other helpers</h2>
+<ul>
+  <li>Line Height</li>
+  <li>Letter Spacing</li>
+</ul>

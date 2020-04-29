@@ -1,0 +1,16 @@
+{% if not item.isHelper %}
+  <div class="q-flex">
+    {% if not item.isRecipe %}<code class="q-flex__item">.{{ item.mainClass }}</code>{% endif %}
+    <div data-frame-src="/example/{{item.slug}}"></div>
+  </div>
+{% endif %}
+<table class="table is-bordered is-fullwidth">
+  {% for modifier in item.modifiers %}
+    <tr>
+      <td><code>.{{ modifier.className }}</code></td>
+      <td><div data-frame-src="/modifier/{{ modifier.className }}" data-frame-sandbox="allow-scripts allow-same-origin"></div></td>
+    </tr>
+  {% endfor %}
+</table>
+
+{% include "../includes/description.html"%}

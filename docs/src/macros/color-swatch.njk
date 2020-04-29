@@ -1,0 +1,30 @@
+{% macro colorSwatch(color) %}
+  <div class="q-color-swatch card">
+    <div class="image is-4by3" style="background-color: {{ color.color }}">
+      <code class="q-color-swatch__preview">{{ color.color }}</code>
+    </div>
+    <div class="q-color-swatch__text card-content">
+      <p>{{ color.name | safe }}</p>
+      <ul>
+        <li>
+          <div class="ds-mini-swatch" aria-hidden="true" style="color: {{ color.color }}"></div>
+        </li>
+        <li class="ds-half-cols">
+          <span>AA:</span>
+          <span>
+            {% if color.aa %}✅{% else %}🚩{% endif %}
+          </span>
+        </li>
+        <li class="ds-half-cols">
+          <span>AAA:</span>
+          <span>
+            {% if color.aaa %}✅{% else %}🚩{% endif %}</span></li>
+        <li class="ds-half-cols">
+          <span>AA lg text:</span>
+          <span>
+            {% if color.aaLargeText %}✅{% else %}🚩{% endif %}</span></li>
+      </ul>
+    </div>
+
+  </div>
+{% endmacro %}

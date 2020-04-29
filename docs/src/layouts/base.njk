@@ -1,0 +1,30 @@
+---
+title: My Rad Blog
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/queso-docs.css">
+    <link rel="stylesheet" type="text/css" href="/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/css/code.css">
+  </head>
+  <body>
+    <div style="display: none">{% include "../../dist/sprites/docs.html" %}</div>
+    {% include "../includes/navbar.njk" %}
+    <div class="q-content">
+      {% include "../includes/menu-list.njk" %}
+      <main class="q-main">
+      {{ content | safe }}
+      </main>
+    </div>
+    <script src="https://unpkg.com/@newswire/frames/dist/index.umd.js"></script>
+    <script>
+      window.newswireFrames.autoInitFrames();
+      window.newswireFrames.sendFrameHeight();
+    </script>
+  </body>
+</html>

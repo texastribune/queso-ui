@@ -1,0 +1,17 @@
+---
+layout: base.njk
+
+---
+
+<h1>Colors</h1>
+
+{% from "./macros/color-swatch.njk" import colorSwatch %}
+<div class="q-tiles">
+  {% for item in styles.all %}
+  {% if item.colors.length > 1 %}
+      {% for color in item.colors %}
+        {{ colorSwatch(color) }}
+      {% endfor %}
+  {% endif %}
+  {% endfor %}
+</div>
