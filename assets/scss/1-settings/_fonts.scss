@@ -23,6 +23,15 @@ $font-root: 16px;
 $font-root-tablet: 16px;
 $font-root-mobile: 15px;
 
+// Silent class helpers
+%font-serif {
+  font-family: $font-family-primary;
+}
+
+%font-sansserif {
+  font-family: $font-family-secondary;
+}
+
 // Letter Spacing
 //
 // Consistent letter-spacing value

@@ -1,0 +1,44 @@
+---
+layout: base.njk
+---
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="{{ '/' | url }}">Home</a></li>
+    <li class="is-active"><a href="{{ page.url | url }}">Sizes</a></li>
+  </ul>
+</nav>
+<h1 class="is-size-2 q-bottom-spacer">Sizes</h1>
+
+<div class="q-container">
+  <p>We use these size variables throughout our framework. These sizes are used in <a href="{{ '/sections/typography/t-size-size/' | url }}">text size helpers</a>, <a href="{{ '/sections/utilities/has-size-btm-marg/' | url }}">margin utilities</a>, <a href="{{ '/sections/utilities/has-padding/' | url }}">padding</a>, and many more. The measurement for <code>$size b</code> is our base and we go up/down from there.</p>
+</div>
+
+{% for item in styles.all %}
+  {% if item.slug == 'size-units' %}
+    <div class="q-spacer">
+      <table class="table is-bordered">
+        <tr>
+          <th></th>
+          <th>Rem Value</th>
+          <th>Pixel Value</th>
+          <th>SCSS Variable</th>
+          <th>Sample Class</th>
+        </tr>
+        {% for font in item.parameters %}
+            <tr {% if font.name == '$size-b' %}class="has-background-warning"{% endif %}>
+              <td>
+                <div class="has-background-grey-darker" style="height: {{ font.defaultValue }}; width: {{ font.defaultValue }}"></div>
+              </td>
+              <td>{{ font.defaultValue }}</td>
+              <td>{{ font.defaultValue|toPx }}</td>
+              <td><code>{{ font.name }}</code></td>
+              <td>
+                {% if font.name != '$size-tiny' %}<a href="{{ '/sections/typography/t-size-size/' | url }}" class="is-block"><code>.t-size-{{ font.name|getSize }}</code></a>{% endif %}
+                <a href="{{ '/sections/utilities/has-size-btm-marg/' | url }}"><code>.has-{{ font.name|getSize }}-btm-marg</code></a>
+              </td>
+            </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% endif %}
+{% endfor %}

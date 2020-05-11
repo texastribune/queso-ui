@@ -93,12 +93,13 @@ const processSection = (section, dir, usageInfo) => {
 
   // github usage data
   let githubData = [];
-  try {
-    githubData = usageInfo[mainClass]['searchDataArr'];
-  } catch (error) {
-    // eslint-disable-next-line no-console
-    //console.warn(`No usage info found for ${mainClass}`);
+  if (
+    typeof usageInfo[mainClass] !== 'undefined' &&
+    typeof usageInfo[mainClass].searchDataArr === 'object'
+  ) {
+    githubData = usageInfo[mainClass].searchDataArr;
   }
+
 
   // grab code snippet
   let snippet = markup;
@@ -111,6 +112,7 @@ const processSection = (section, dir, usageInfo) => {
   try {
     snippet = env.renderString(templateCode, section);
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.log(error);
   }
   const codeSnippet = snippet;
@@ -125,15 +127,17 @@ const processSection = (section, dir, usageInfo) => {
     try {
       modifierSnippet = env.renderString(templateCode, { className });
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.log(error);
     }
-    let githubData = [];
-    try {
-      githubData = usageInfo[className]['searchDataArr'];
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      // console.warn(`No usaage info found for ${className}`);
+    let modifierGithubData = [];
+    if (
+      typeof usageInfo[className] !== 'undefined' &&
+      typeof usageInfo[className].searchDataArr === 'object'
+    ) {
+      modifierGithubData = usageInfo[className].searchDataArr;
     }
+
     return {
       ...modifier,
       markup: modifierMarkup,
@@ -141,7 +145,7 @@ const processSection = (section, dir, usageInfo) => {
       parentClass: slug,
       isInverse,
       modifierSnippet,
-      githubData,
+      githubData: modifierGithubData,
     };
   });
 

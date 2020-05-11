@@ -56,9 +56,9 @@ const navBar = () => {
 }
 // search autocomplete go to page
 function onInput() {
-  var val = document.getElementById('default').value;
-  var opts = document.getElementById('terms').childNodes;
-  for (var i = 0; i < opts.length; i++) {
+  const val = document.getElementById('default').value;
+  const opts = document.getElementById('terms').childNodes;
+  for (const i = 0; i < opts.length; i++) {
     if (opts[i].value === val) {
       window.location.replace(opts[i].dataset.link);
       break;

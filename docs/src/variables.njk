@@ -1,0 +1,38 @@
+---
+layout: base.njk
+
+---
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="{{ '/' | url }}">Home</a></li>
+    <li class="is-active"><a href="{{ page.url | url }}">Variables</a></li>
+  </ul>
+</nav>
+<h1 class="is-size-2 q-bottom-spacer">Variables</h1>
+
+{% for item in styles.all %}
+  {% if item.sectionSlug == 'settings' and item.colors.length < 1 %}
+    <div id="{{ item.slug }}" class="q-spacer q-container">
+      <div class="q-bottom-spacer">
+        <h2 class="is-size-4 is-inline-block">{{ item.header }}&nbsp;</h2>
+        <a href="{{ item.githubLink }}" title="View on Github">
+          <span class="c-icon c-icon--baseline is-size-5">
+            <svg aria-hidden="true">
+              <use xlink:href="#github"></use>
+            </svg>
+          </span>
+        </a>
+      </div>
+      <table class="table is-bordered">
+        <tr><th>Name</th><th>Default</th><th>Description</th></tr>
+        {% for setting in item.parameters %}
+          <tr>
+            <td><code>{{ setting.name }}</code></td>
+            <td>{{ setting.defaultValue }}</td>
+            <td>{{ setting.description }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    </div>
+  {% endif %}
+{% endfor %}
