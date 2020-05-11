@@ -58,7 +58,7 @@ const navBar = () => {
 function onInput() {
   const val = document.getElementById('default').value;
   const opts = document.getElementById('terms').childNodes;
-  for (const i = 0; i < opts.length; i++) {
+  for (var i = 0; i < opts.length; i++) {
     if (opts[i].value === val) {
       window.location.replace(opts[i].dataset.link);
       break;
