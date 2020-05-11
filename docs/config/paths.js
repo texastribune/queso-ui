@@ -9,10 +9,6 @@ const mappedStyles = [
     in: './assets/scss/all.scss',
     out: `${buildDir}css/all.css`,
   },
-  {
-    in: './assets/scss/no-resets.scss',
-    out: `${buildDir}css/no-resets.css`,
-  },
 ];
 
 const docsStyles = './assets/scss/';

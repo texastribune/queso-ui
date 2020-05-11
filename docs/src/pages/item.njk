@@ -12,7 +12,7 @@ permalink: "sections/{{ item.sectionSlug }}/{{ item.slug }}/"
     <ul>
       <li><a href="{{ '/' | url }}">Home</a></li>
       <li><a href="{{ '/sections/' + item.sectionSlug | url }}">{{ item.section }}</a></li>
-      <li class="is-active"><a href="{{ page.url }}" aria-current="page">.{{ item.mainClass }}</a></li>
+      <li class="is-active"><a href="{{ page.url }}" aria-current="page">{% if item.isRecipe %}{{ item.prettyName }}{% else %}.{{ item.mainClass }}{% endif %}</a></li>
     </ul>
   </nav>
   <header class="level">
