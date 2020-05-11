@@ -1,25 +1,23 @@
-<nav>
-  <div class="q-side-nav menu">
-    <p class="menu-label">Main</p>
+{% from "../macros/menu-item.njk" import menuItem %}
+{% set current = page.url %}
+
+<p class="menu-label">Base</p>
+<ul class="menu-list">
+  {% for item in nav.items %}
+    <li>{{ menuItem(item.slug, item.name, current) }}</li>
+  {% endfor %}
+</ul>
+{% for section in styles.nested %}
+  {% if section.slug !== 'settings' and section.slug !== 'tools' and section.slug !== 'resets' %}
+    <p class="menu-label">{{ section.name }}</p>
     <ul class="menu-list">
-      <li>
-        <a href="/colors">Colors</a>
-      </li>
-      <li>
-        <a href="/fonts">Fonts</a>
-      </li>
+      {% for class in section.list %}
+        {% if class.prettyName != section.name %}
+          <li>
+            {{ menuItem('sections/' + section.slug + '/' + class.slug, class.prettyName, current) }}
+          </li>
+        {% endif %}
+      {% endfor %}
     </ul>
-    {% for section in styles.nested %}
-      {% if section.slug !== 'settings' and section.slug !== 'tools' and section.slug !== 'resets' %}
-        <p class="menu-label">{{ section.name }}</p>
-        <ul class="menu-list">
-          {% for class in section.list %}
-            <li>
-              <a href="/sections/{{ section.slug }}/{{ class.slug }}">{{ class.prettyName }}</a>
-            </li>
-          {% endfor %}
-        </ul>
-      {% endif %}
-    {% endfor %}
-  </div>
-</nav>
+  {% endif %}
+{% endfor %}

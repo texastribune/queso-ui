@@ -1,5 +1,5 @@
 ---
-title: My Rad Blog
+title: Queso UI - CSS + HTML Guide for The Texas Tribune
 ---
 <!doctype html>
 <html lang="en">
@@ -7,24 +7,29 @@ title: My Rad Blog
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }}</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"/>
-    <link rel="stylesheet" type="text/css" href="/css/queso-docs.css">
-    <link rel="stylesheet" type="text/css" href="/css/all.css">
-    <link rel="stylesheet" type="text/css" href="/css/code.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ '/css/queso-docs.css' | url }}">
+    <link rel="stylesheet" type="text/css" href="{{ '/css/all.css' | url }}">
+    <link rel="stylesheet" type="text/css" href="{{ '/css/code.css' | url }}">
   </head>
   <body>
     <div style="display: none">{% include "../../dist/sprites/docs.html" %}</div>
+    <div style="display: none">{% include "../../dist/sprites/base.html" %}</div>
+    <div style="display: none">{% include "../../dist/sprites/amp.html" %}</div>
     {% include "../includes/navbar.njk" %}
     <div class="q-content">
-      {% include "../includes/menu-list.njk" %}
+      <nav class="is-hidden-touch">
+        <div id="sideNav" class="q-side-nav menu">
+          {% include "../includes/menu-list.njk" %}
+        </div>
+      </nav>
       <main class="q-main">
-      {{ content | safe }}
+        {{ content | safe }}
       </main>
     </div>
     <script src="https://unpkg.com/@newswire/frames/dist/index.umd.js"></script>
-    <script>
-      window.newswireFrames.autoInitFrames();
-      window.newswireFrames.sendFrameHeight();
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-scss.min.js"></script>
+    <script src="{{ '/js/queso-docs.js' | url }}"></script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 /**
- * Create object of SCSS documentation in a directory
+ * Create object of SCSS documentation
  *
  * @param {Arr} dir - in/out directory
  * @returns {Object} - array of processed style docs
@@ -225,7 +225,7 @@ const processComments = async dirMap => {
   const modifiers = [];
   sectionData.forEach(item => {
     const name = groupMap[item.group.toString()];
-    const {prettyName, slug, header } = item;
+    const {prettyName, slug, header, description } = item;
     if (item.depth > 2) {
       const groupedItem = {
         ...item,
@@ -245,6 +245,7 @@ const processComments = async dirMap => {
         list: [basicInfo],
         slug: slugify(name),
         name,
+        description,
       };
     } else {
       nested[name].list.push(basicInfo);
@@ -276,10 +277,7 @@ const processComments = async dirMap => {
 module.exports = async dir => {
   const spinner = ora('Parsing SCSS comments').start();
   const docs = await processComments(dir);
-  await fs.outputFile(
-    './docs/dist/data/styles.json',
-    JSON.stringify(docs, null, 2)
-  );
+
   spinner.succeed();
   return docs;
 };

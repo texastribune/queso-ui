@@ -4,9 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block name %}{% endblock %}</title>
-  <link rel="stylesheet" type="text/css" href="/css/all.css">
+  <link rel="stylesheet" type="text/css" href="{{ '/css/all.css' | url }}">
 </head>
-<body>
+<body style="padding-bottom: 10px;">
+  <div style="display: none">{% include "../../dist/sprites/base.html" %}</div>
   {{ content | safe }}
   <script src="https://unpkg.com/@newswire/frames/dist/index.umd.js"></script>
   <script>

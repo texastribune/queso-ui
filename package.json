@@ -121,12 +121,9 @@
     "ora": "^4.0.1",
     "passes-wcag": "^0.2.1",
     "prettier": "2.0.4",
-    "purgecss": "^2.0",
-    "purgecss-from-html": "^2.0.3",
     "push-dir": "^0.4.1",
     "stylelint": "^13.0.0",
-    "@11ty/eleventy": "0.11.0-beta.3",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1"
+    "@11ty/eleventy": "0.11.0-beta.3"
   },
   "dependencies": {
     "modern-normalize": "^0.6.0",

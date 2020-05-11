@@ -1,0 +1,36 @@
+{
+  "items": [
+    {
+      "name": "Home",
+      "slug": "/"
+    },
+    {
+      "name": "Getting Started",
+      "slug": "about"
+    },
+    {
+      "name": "Colors",
+      "slug": "colors"
+    },
+    {
+      "name": "Fonts",
+      "slug": "fonts"
+    },
+    {
+      "name": "Sizes",
+      "slug": "sizes"
+    },
+    {
+      "name": "Variables",
+      "slug": "variables"
+    },
+    {
+      "name": "Functions and Mixins",
+      "slug": "tools"
+    },
+    {
+      "name": "Icons and Logos",
+      "slug": "icons-logos"
+    }
+  ]
+}

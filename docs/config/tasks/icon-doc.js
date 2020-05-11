@@ -39,13 +39,12 @@ const createIconMap = async dirMap => {
       });
     }
   });
-
   return output;
 };
 
 module.exports = async dir => {
   const spinner = ora('Creating icon map').start();
-  const docs = createIconMap(dir);
+  const docs = await createIconMap(dir);
   await fs.outputFile(
     './docs/dist/data/icons.json',
     JSON.stringify(docs, null, 2)

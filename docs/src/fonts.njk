@@ -1,88 +1,74 @@
 ---
 layout: base.njk
 ---
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="{{ '/' | url }}">Home</a></li>
+    <li class="is-active"><a href="{{ page.url | url }}">Fonts</a></li>
+  </ul>
+</nav>
+<h1 class="is-size-2 q-bottom-spacer">Fonts</h1>
 
-<h1>Fonts</h1>
-
-<h2>Font Stack</h2>
-
-<h3>Primary</h3>
-<div class="t-sans">
-<p>Open Sans</p>
-<p>
-  <em>Open Sans Italic</em>
-</p>
-<p>
-  <strong>Open Sans Bold</strong>
-</p>
-<p>
-  <strong>
-    <em>Open Sans Bold Italic</em>
-  </strong>
-</p>
+<div class="q-container">
+  <p> Site elements generally take the primary font stack and editorial content usually uses the secondary stack. We use Google fonts, but self-host them as seen <a href="https://github.com/texastribune/queso-ui/blob/master/assets/scss/4-elements/_font-families.scss">here</a>.</p>
+</div>
+<div class="q-spacer q-fonts">
+  <h3 class="is-size-4 q-fonts__item">Primary</h3>
+  <div class="t-sans">
+    <p>Open Sans</p>
+    <p>
+      <em>Open Sans Italic</em>
+    </p>
+    <p>
+      <strong>Open Sans Bold</strong>
+    </p>
+    <p>
+      <strong>
+        <em>Open Sans Bold Italic</em>
+      </strong>
+    </p>
+  </div>
 </div>
 
-<div class="q-spacer">
-<h3>Secondary</h3>
-<div class="t-serif">
-  <p>PT Serif</p>
-  <p>
-    <em>PT Serif Italic</em>
-  </p>
-  <p>
-    <strong>PT Serif Bold</strong>
-  </p>
-  <p>
-    <strong>
-      <em>PT Serif Bold Italic</em>
-    </strong>
-  </p>
+<div class="q-spacer q-fonts">
+  <h3 class="is-size-4 q-fonts__item">Secondary</h3>
+  <div class="t-serif">
+    <p>PT Serif</p>
+    <p>
+      <em>PT Serif Italic</em>
+    </p>
+    <p>
+      <strong>PT Serif Bold</strong>
+    </p>
+    <p>
+      <strong>
+        <em>PT Serif Bold Italic</em>
+      </strong>
+    </p>
+  </div>
 </div>
-</div>
-<div class="q-spacer">
-<h3>SCSS Variables</h3>
-{% for item in styles.all %}
-  {% if item.slug == 'font-families' %}
-    {% for font in item.parameters %}
-      <p>{{font.name}} - {{font.description}}</p>
-    {% endfor %}
-  {% endif %}
-{% endfor %}
-</div>
-<hr>
 
-<h2>Scale</h2>
+
 {% for item in styles.all %}
   {% if item.slug == 'size-units' %}
-    <table class="q-table">
-      <tr>
-        <th></th>
-        <th>Rem Value</th>
-        <th>Pixel Value</th>
-        <th>SCSS Variable</th>
-        <th>Helper Class</th>
-      </tr>
-      {% for font in item.parameters %}
-        {% if font.name != '$size-tiny' %}
-          <tr>
-            <td class="t-size-{{ font.name|getSize }}">Hello World</td>
-            <td class="q-number">{{ font.defaultValue }}</td>
-            <td class="q-number">{{ font.defaultValue|toPx }}</td>
-            <td>{{ font.name }}</td>
-            <td>
-              .t-size-{{ font.name|getSize }}
-            </td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-    </table>
+    <div class="q-spacer">
+      <h2 class="is-size-4 q-bottom-spacer">Scale</h2>
+      <table class="table is-bordered">
+        <tr>
+          <th>Rem Value</th>
+          <th>Pixel Value</th>
+          <th>Sample</th>
+        </tr>
+        {% for font in item.parameters %}
+          {% if font.name != '$size-tiny' %}
+            <tr>
+              <td>{{ font.defaultValue }}</td>
+              <td>{{ font.defaultValue|toPx }}</td>
+              <td class="t-size-{{ font.name|getSize }} t-serif">Hello World</td>
+            </tr>
+          {% endif %}
+        {% endfor %}
+      </table>
+    </div>
   {% endif %}
 {% endfor %}
-
-<hr>
-
-<h2>Other helpers</h2>
-<ul>
-  <li>Line Height</li>
-  <li>Letter Spacing</li>
-</ul>

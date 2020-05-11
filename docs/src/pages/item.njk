@@ -8,18 +8,18 @@ permalink: "sections/{{ item.sectionSlug }}/{{ item.slug }}/"
 ---
 {% from "../macros/data-list.njk" import dataList %}
 <article>
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="{{ '/' | url }}">Home</a></li>
+      <li><a href="{{ '/sections/' + item.sectionSlug | url }}">{{ item.section }}</a></li>
+      <li class="is-active"><a href="{{ page.url }}" aria-current="page">.{{ item.mainClass }}</a></li>
+    </ul>
+  </nav>
   <header class="level">
     <div class="level-left">
       <h1 class="is-size-3 level-item">{{ item.prettyName }}</h1>
     </div>
     <div class="level-right buttons">
-      <a href="/example/{{item.slug}}" title="Preview">
-        <span class="c-icon is-size-4">
-          <svg aria-hidden="true">
-            <use xlink:href="#eye"></use>
-          </svg>
-        </span>
-      </a>&nbsp;
       <a href="{{ item.githubLink }}" title="View on Github">
         <span class="c-icon is-size-4">
           <svg aria-hidden="true">
@@ -30,42 +30,9 @@ permalink: "sections/{{ item.sectionSlug }}/{{ item.slug }}/"
     </div>
   </header>
 
-{% if item.codeSnippet %}
-  {% if item.sectionSlug == 'components' %}
-    {% include "../includes/component.html"%}
-  {% else %}
-    {% include "../includes/compact.html"%}
-  {% endif %}
+  <div class="q-desc q-container">{{ item.description | safe }}</p></div>
 
-
-  <!-- usage -->
-  <h2 class="is-size-4">Usage Stats</h2>
-  {% if item.githubData | length > 1 %}
-    <table class="table is-bordered is-striped is-fullwidth">
-      <tr>
-        <td>
-          <code>{{ item.mainClass }}</code>
-        </td>
-        <td>{{ dataList(item.githubData)}}</td>
-      </tr>
-    </table>
+  {% if item.codeSnippet %}
+    {% include "../includes/selector.njk" %}
   {% endif %}
-  {% if item.modifiers | length > 1 %}
-    <h3 class="menu-label">Modifiers</h3>
-    <table class="table is-bordered is-striped is-fullwidth">
-      {% for modifier in item.modifiers %}
-        {% if modifier.githubData | length > 1 %}
-          <tr>
-            <td>
-              <code>{{ modifier.name }}</code>
-            </td>
-            <td>{{ dataList(modifier.githubData)}}</td>
-          </tr>
-        {% endif %}
-      {% endfor %}
-    </table>
-  {% endif %}
-
-  <div class="q-snippet">{% highlight "html" %}{{ item.codeSnippet|safe }}{% endhighlight %}</div>
-{% endif %}
 </article>

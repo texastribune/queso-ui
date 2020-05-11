@@ -1,5 +1,5 @@
 /**
- * Builds and compiles docs
+ * Export style data
  *
  */
 const styleDocRunner = require('../../config/tasks/style-doc');
