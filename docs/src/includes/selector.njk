@@ -16,6 +16,8 @@
     {% set id = modifier.className %}
     <div class="q-display-col">
       <code>.{{ id }}</code>
+      <div class="q-bottom-spacer"></div>
+      <div class="is-size-7 has-text-grey">{{ modifier.description | safe }}</div>
     </div>
     {{ toggleView('modifier', id, modifier.modifierSnippet, modifier.githubData) }}
   {% endfor %}
