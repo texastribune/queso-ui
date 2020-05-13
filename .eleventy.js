@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addWatchTarget('**/*.scss');
+  eleventyConfig.addWatchTarget('./assets/scss/**/*.html');
 
   // filters
   eleventyConfig.addNunjucksFilter('toPx', function (value) {

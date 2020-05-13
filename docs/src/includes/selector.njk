@@ -1,6 +1,6 @@
 {% from "../macros/toggle-view.njk" import toggleView %}
 
-<div class="q-display-grid">
+<div class="q-display-grid q-wide-container">
   {% if not item.isHelper %}
     {% set id = item.mainClass %}
     <div class="q-display-col">
@@ -10,7 +10,7 @@
         No specific class used here. See code view for details.
       {% endif %}
     </div>
-    {{ toggleView('example', id, item.codeSnippet, item.githubData) }}
+    {{ toggleView('example', id, item.codeSnippet, item) }}
   {% endif %}
   {% for modifier in item.modifiers %}
     {% set id = modifier.className %}
@@ -19,6 +19,6 @@
       <div class="q-bottom-spacer"></div>
       <div class="is-size-7 has-text-grey">{{ modifier.description | safe }}</div>
     </div>
-    {{ toggleView('modifier', id, modifier.modifierSnippet, modifier.githubData) }}
+    {{ toggleView('modifier', id, modifier.modifierSnippet, modifier) }}
   {% endfor %}
 </div>

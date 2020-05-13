@@ -1,6 +1,6 @@
-{% macro toggleView(path, id, code, data) %}
+{% macro toggleView(path, id, code, item) %}
   {% from "../macros/data-list.njk" import dataList %}
-  {% set previewUrl = '/' + path  + '/' + id %}
+  {% set previewUrl = '/' + path  + '/' + item.slug %}
   <div id="{{ id }}-display" class="q-display-col">
     <div id="{{ id }}-buttons" class="q-display-buttons buttons are-small">
       <button id="view-{{ id }}" class="button is-outlined is-info js-toggle-btn">
@@ -39,7 +39,7 @@
       <pre><code class="language-html">{{ code }}</code></pre>
     </div>
     <div id="stats-{{ id }}-pane" class="q-display-pane js-pane">
-      {{ dataList(data) }}
+      {{ dataList(item.githubData) }}
     </div>
   </div>
 {% endmacro %}

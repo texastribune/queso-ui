@@ -19,7 +19,7 @@ const {
 
 // internal
 const { slugify, stripTags } = require('./utils');
-const { mappedGithubData } = require('../paths.js');
+const { mappedGithubData, siteURL } = require('../paths.js');
 
 const GITHUB_URL = 'https://github.com/texastribune/queso-ui/blob/master';
 
@@ -110,7 +110,7 @@ const processSection = (section, dir, usageInfo) => {
   }
   const env = nunjucks.configure('./assets/scss');
   try {
-    snippet = env.renderString(templateCode, section);
+    snippet = env.renderString(templateCode, {...section, siteURL});
   } catch (error) {
     // eslint-disable-next-line no-console
     console.log(error);
@@ -125,7 +125,7 @@ const processSection = (section, dir, usageInfo) => {
     const modifierDesc = md.render(modifier.description);
     let modifierSnippet = modifierMarkup;
     try {
-      modifierSnippet = env.renderString(templateCode, { className });
+      modifierSnippet = env.renderString(templateCode, { className, siteURL });
     } catch (error) {
       // eslint-disable-next-line no-console
       console.log(error);
@@ -146,6 +146,7 @@ const processSection = (section, dir, usageInfo) => {
       isInverse,
       modifierSnippet,
       githubData: modifierGithubData,
+      slug: className
     };
   });
 

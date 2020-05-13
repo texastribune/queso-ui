@@ -8,8 +8,8 @@
     "lint:js": "eslint docs/config",
     "lint": "npm run lint:css && npm run lint:js",
     "deploy": "push-dir --dir=docs/dist --branch=gh-pages",
-    "build": "SITE_ENV=production node docs/config/tasks/build.js && eleventy --pathprefix=queso-ui",
-    "dev": "npm run build && eleventy --serve",
+    "build": "SITE_ENV=production node docs/config/tasks/build.js && SITE_ENV=production eleventy --pathprefix=queso-ui",
+    "dev": "SITE_ENV=development node docs/config/tasks/build.js && SITE_ENV=development eleventy --serve",
     "test": "npm run lint && npm run build",
     "release": "np --any-branch"
   },
