@@ -1,13 +1,22 @@
 // Site footer (c-site-footer)
 //
-// The footer of our site. {{isWide}}
-//
+// The standard footer on our site. Set the layout based on the number of columns needed. <br><br>
+//  _Example CSS for layout:_
+// ```css
+// .c-site-footer__inner {grid-template-columns: repeat(4, 1fr);}
+// ```
+// <br><br>
 //
 // Markup: 6-components/site-footer/site-footer.html
 //
 // Styleguide 6.1.3
 .c-site-footer {
   padding: $size-xxl $size-xxl $size-giant $size-xxl;
+
+  &__inner {
+    @include gap;
+    display: grid;
+  }
 
   &__header {
     letter-spacing: .08em;
