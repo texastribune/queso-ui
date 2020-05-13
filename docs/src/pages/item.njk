@@ -8,10 +8,11 @@ permalink: "sections/{{ item.sectionSlug }}/{{ item.slug }}/"
 ---
 {% from "../macros/data-list.njk" import dataList %}
 <article>
+  {% set parentUrl = '/sections/' + item.sectionSlug %}
   <nav class="breadcrumb" aria-label="breadcrumbs">
     <ul>
       <li><a href="{{ '/' | url }}">Home</a></li>
-      <li><a href="{{ '/sections/' + item.sectionSlug | url }}">{{ item.section }}</a></li>
+      <li><a href="{{ parentUrl | url }}">{{ item.section }}</a></li>
       <li class="is-active"><a href="{{ page.url }}" aria-current="page">{% if item.isRecipe %}{{ item.prettyName }}{% else %}.{{ item.mainClass }}{% endif %}</a></li>
     </ul>
   </nav>
