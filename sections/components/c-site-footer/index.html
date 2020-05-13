@@ -2886,7 +2886,11 @@
     </div>
   </header>
 
-  <div class="q-desc q-container"><p>The footer of our site. </p>
+  <div class="q-desc q-container"><p>The standard footer on our site. Set the layout based on the number of columns needed. <br><br>
+<em>Example CSS for layout:</em></p>
+<pre class="hljs"><code class="language-css"><span class="hljs-selector-class">.c-site-footer__inner</span> {<span class="hljs-attribute">grid-template-columns</span>: <span class="hljs-built_in">repeat</span>(<span class="hljs-number">4</span>, <span class="hljs-number">1</span>fr);}
+</code></pre>
+<p><br><br></p>
 </p></div>
 
   
@@ -2944,8 +2948,8 @@
     with different links, number of columns, etc. You&#39;ll likely need
     to implement a grid system at the app level to handle those scenarios.
   --&gt;
-  &lt;div class=&quot;c-site-footer__inner l-container l-container--xl grid_row&quot;&gt;
-    &lt;div class=&quot;col&quot;&gt;
+  &lt;div class=&quot;c-site-footer__inner l-container l-container--xl t-size-xs&quot;&gt;
+    &lt;div&gt;
       &lt;div class=&quot;has-b-btm-marg&quot;&gt;
         &lt;span style=&quot;font-size: 4rem;&quot; class=&quot;c-icon has-text-yellow&quot;&gt;
           &lt;svg aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;
@@ -2955,16 +2959,14 @@
       &lt;/div&gt;
 
       &lt;div class=&quot;has-notch has-notch--thin has-bg-yellow has-b-btm-marg&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
-      
       &lt;ul class=&quot;c-site-footer__links t-size-xs has-text-white has-text-hover-white&quot;&gt;
-        &lt;li class=&quot;has-tiny-btm-marg&quot;&gt;&lt;a class=&quot;has-text-blue has-text-hover-blue&quot; href=&quot;https://support.texastribune.org/donate&quot;&gt;Donate&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;has-tiny-btm-marg has-text-blue has-text-hover-blue&quot;&gt;&lt;a href=&quot;https://support.texastribune.org/donate&quot;&gt;Donate&lt;/a&gt;&lt;/li&gt;
         &lt;li class=&quot;has-tiny-btm-marg&quot;&gt;&lt;a href=&quot;https://www.texastribune.org/contact/&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
         &lt;li&gt;&amp;copy; 2019 The Texas Tribune&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
-    
-    &lt;div class=&quot;col t-size-xs&quot;&gt;
-      &lt;h5 class=&quot;c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg&quot;&gt;Heading&lt;/h5&gt;
+    &lt;div&gt;
+      &lt;h2 class=&quot;c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg t-size-xs&quot;&gt;Heading&lt;/h2&gt;
       &lt;ul class=&quot;c-site-footer__links has-text-white has-text-hover-white&quot;&gt;
         &lt;li class=&quot;has-tiny-btm-marg&quot;&gt;&lt;a href=&quot;#&quot;&gt;Foo&lt;/a&gt;&lt;/li&gt;
         &lt;li class=&quot;has-tiny-btm-marg&quot;&gt;&lt;a href=&quot;#&quot;&gt;Bar&lt;/a&gt;&lt;/li&gt;
@@ -2973,9 +2975,8 @@
         &lt;li&gt;&lt;a href=&quot;#&quot;&gt;World&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
-
-    &lt;div class=&quot;col t-size-xs&quot;&gt;
-      &lt;h5 class=&quot;c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg&quot;&gt;Heading&lt;/h5&gt;
+    &lt;div&gt;
+      &lt;h2 class=&quot;c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg t-size-xs&quot;&gt;Heading&lt;/h2&gt;
       &lt;ul class=&quot;c-site-footer__links has-text-white has-text-hover-white&quot;&gt;
         &lt;li class=&quot;has-tiny-btm-marg&quot;&gt;&lt;a href=&quot;#&quot;&gt;Foo&lt;/a&gt;&lt;/li&gt;
         &lt;li class=&quot;has-tiny-btm-marg&quot;&gt;&lt;a href=&quot;#&quot;&gt;Bar&lt;/a&gt;&lt;/li&gt;
@@ -2984,9 +2985,8 @@
         &lt;li class=&quot;has-tiny-btm-marg&quot;&gt;&lt;a href=&quot;#&quot;&gt;World&lt;/a&gt;&lt;/li&gt;
       &lt;/ul&gt;
     &lt;/div&gt;
-    
-    &lt;div class=&quot;col t-size-xs&quot;&gt;
-      &lt;h5 class=&quot;c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg&quot;&gt;Social Media&lt;/h5&gt;
+    &lt;div&gt;
+      &lt;h2 class=&quot;c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg t-size-xs&quot;&gt;Social Media&lt;/h2&gt;
       &lt;ul class=&quot;c-site-footer__links has-b-btm-marg has-text-white has-text-hover-white&quot;&gt;
         &lt;li class=&quot;has-tiny-btm-marg&quot;&gt;
           &lt;span class=&quot;t-size-s c-icon c-icon--baseline c-site-footer__icon&quot;&gt;&lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#facebook&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt;
