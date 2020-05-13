@@ -1,0 +1,191 @@
+@import 'code';
+
+$navbar-height: 3.25rem;
+$mobile-breakpoint: 768px;
+
+code {
+  font-size: 1em;
+  padding: 0.15em 0.5em 0.15em;
+  color: #222;
+}
+
+.q-main a {
+  font-weight: bold;
+}
+
+.q-content {
+  padding-top: $navbar-height * 1.5;
+}
+
+.q-side-nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  overflow-y: auto;
+  padding: $navbar-height * 1.5 1rem;
+
+  &--compact {
+    position: relative;
+    width: 100%;
+  }
+}
+
+.q-main {
+  padding: 2rem 2rem 10rem 350px;
+  @media screen and (max-width: 1023px) {
+    padding-left: 2rem;
+  }
+}
+
+.q-snippet {
+  max-width: 100%;
+  padding: 1rem;
+}
+
+.q-tiles {
+  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));
+}
+
+
+.q-spacer {
+  padding: 3rem 0;
+}
+
+.q-bottom-spacer {
+  margin-bottom: 1rem;
+}
+
+.q-info {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  margin-bottom: 2rem;
+  align-items: start;
+}
+
+.q-desc {
+  margin-top: 2rem;
+}
+
+.q-desc p:last-of-type {
+  margin-bottom: 0;
+}
+
+.q-desc p {
+  margin-bottom: 2rem;
+}
+
+.q-desc ul {
+  margin-top: 1rem;
+  list-style: circle;
+  padding-left: 1rem;
+}
+
+.q-desc li {
+  margin-bottom: 0.5rem;
+}
+
+.q-dropdown {
+  cursor: pointer;
+  position: relative;
+}
+
+.q-dropdown__items {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  text-align: left;
+}
+
+.q-mini-grid {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+}
+
+.q-fonts {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+}
+
+.q-container {
+  max-width: 50rem;
+}
+
+.js-pane {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}
+
+.q-display-grid {
+  grid-template-columns: 250px 1fr;
+  border-top: 1px solid #dbdbdb;
+  border-right: 1px solid #dbdbdb;
+}
+@media screen and (min-width: 1024px) {
+  .q-display-grid {
+    display: grid;
+  }
+}
+
+.q-display-col {
+  padding: 4rem 1rem 1rem;
+  border-bottom: 1px solid #dbdbdb;
+  border-left: 1px solid #dbdbdb;
+  position: relative;
+}
+
+.q-display-buttons {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+// prism fix
+.q-display-pane .tag,
+.q-display-pane .number {
+  display: inline;
+  padding: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: inherit;
+  vertical-align: inherit;
+  border-radius: inherit;
+  font-weight: inherit;
+  white-space: inherit;
+  background: inherit;
+  margin: inherit;
+}
+
+// Bulma overrides
+.navbar {
+  box-shadow: 0px 0px 3px 0px rgba(171, 168, 168, 0.75);
+  position: sticky;
+
+  .navbar-item {
+    padding-top: 0.8rem;
+  }
+
+  &:before {
+    content: '';
+    height: 6px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+      90deg,
+      rgb(255, 217, 91) 0%,
+      rgba(255, 152, 39, 1) 100%
+    );
+  }
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+  font-weight: unset;
+}

@@ -1,0 +1,39 @@
+<nav class="navbar is-fixed-top">
+  <div class="navbar-brand">
+    <a class="navbar-item" href="{{ '/' | url }}">
+      {% include "../includes/logo.njk" %}
+    </a>
+    <div class="navbar-item">
+      {% include "../includes/search.njk" %}
+    </div>
+
+    <a id="navbarToggle" role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+
+  <div id="navbarTarget" class="navbar-menu">
+    <div class="navbar-end">
+      <div class="navbar-item">
+        <a href="https://github.com/texastribune/queso-ui/" title="View on Github">
+          <span class="c-icon c-icon--baseline is-size-4">
+            <svg aria-hidden="true">
+              <use xlink:href="#github"></use>
+            </svg>
+          </span>
+        </a>
+        &nbsp;
+        <a href="https://github.com/texastribune/queso-ui/releases"><strong>{{ version }}</strong></a>
+      </div>
+      <div class="navbar-item is-hidden-desktop">
+        <nav>
+          <div class="q-side-nav q-side-nav--compact menu">
+            {% include "../includes/menu-list.njk" %}
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,27 @@
+{% macro colorSwatch(color) %}
+  <div class="card">
+    <div class="image is-4by3" style="background-color: {{ color.color }}">
+      <code>{{ color.color }}</code>
+      <code class="is-block is-size-7">{{ color.name }}</code>
+    </div>
+    <div class="q-color-swatch__text card-content">
+      <ul>
+        <li class="q-mini-grid">
+          <span>AA:</span>
+          <span>
+            {% if color.aa %}✅{% else %}🚩{% endif %}
+          </span>
+        </li>
+        <li class="q-mini-grid">
+          <span>AAA:</span>
+          <span>
+            {% if color.aaa %}✅{% else %}🚩{% endif %}</span></li>
+        <li class="q-mini-grid">
+          <span>AA lg text:</span>
+          <span>
+            {% if color.aaLargeText %}✅{% else %}🚩{% endif %}</span></li>
+      </ul>
+    </div>
+
+  </div>
+{% endmacro %}

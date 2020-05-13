@@ -1,0 +1,13 @@
+---
+layout: example-base.njk
+pagination:
+    data: styles.all
+    size: 1
+    alias: item
+permalink: "example/{{ item.slug }}/"
+---
+{% block content %}
+  {% if item.codeSnippet and not item.isHelper %}
+    {{ item.codeSnippet | safe }}
+  {% endif %}
+{% endblock %}

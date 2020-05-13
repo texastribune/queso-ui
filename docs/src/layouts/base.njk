@@ -1,0 +1,35 @@
+---
+title: Queso UI - CSS + HTML Guide for The Texas Tribune
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bulma@0.8.2/css/bulma.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ '/css/queso-docs.css' | url }}">
+    <link rel="stylesheet" type="text/css" href="{{ '/css/all.css' | url }}">
+    <link rel="stylesheet" type="text/css" href="{{ '/css/code.css' | url }}">
+  </head>
+  <body>
+    <div style="display: none">{% include "../../dist/sprites/docs.html" %}</div>
+    <div style="display: none">{% include "../../dist/sprites/base.html" %}</div>
+    <div style="display: none">{% include "../../dist/sprites/amp.html" %}</div>
+    {% include "../includes/navbar.njk" %}
+    <div class="q-content">
+      <nav class="is-hidden-touch">
+        <div id="sideNav" class="q-side-nav menu">
+          {% include "../includes/menu-list.njk" %}
+        </div>
+      </nav>
+      <main class="q-main">
+        {{ content | safe }}
+      </main>
+    </div>
+    <script src="https://unpkg.com/@newswire/frames@0.3.1/dist/index.umd.js" integrity="sha384-isau2pnQExWS/gTKRKe2A5UVVaK/luFev6YGFQuF55khkHa407BSq3Nh18Zev23K" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/prism.min.js" integrity="sha384-J1zVcG24RV397GbDZ+vC0EEfXnrNy+PnUR0euKtACpK3NSgamm1TFWmidLaSkSdA" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/components/prism-scss.min.js" integrity="sha384-Bd/w9q8IloECpZIg2SzAMTeez7PWb6ueP9lnvU8Ri+VQnEbrLqQ88mf5mD/kHRs2" crossorigin="anonymous"></script>
+    <script src="{{ '/js/queso-docs.js' | url }}"></script>
+  </body>
+</html>

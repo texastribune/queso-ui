@@ -1,0 +1,21 @@
+<div class="control">
+  <input class="input" type="text" oninput='onInput()' id="default" list="terms" placeholder="e.g. padding">
+  <datalist id="terms">
+    {# custom options #}
+    {% for item in nav.items %}
+      <option value="{{ item.name }}" data-link="{{ '/' + item.slug  + '/' | url }}" />
+    {% endfor %}
+    {% for item in styles.all %}
+      {% if item.depth > 2 and item.colors.length < 1 %}
+        {% if item.sectionSlug == 'settings'  %}
+          {% set dataLink = '/variables#' + item.slug %}
+        {% else %}
+          {% set dataLink = '/sections/'+ item.sectionSlug + '/' + item.slug + '/' %}
+        {% endif %}
+          {% for keyword in item.keywords %}
+            <option value="{{ keyword}}" data-link="{{ dataLink | url }}" />
+          {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </datalist>
+</div>

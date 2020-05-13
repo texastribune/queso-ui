@@ -1,0 +1,29 @@
+{% macro dataList(githubData) %}
+  {% if githubData and githubData.length > 0 %}
+  <table class="table is-striped is-bordered is-fullwidth">
+    <tr><th>Repo</th><th>Count</th><th>Location(s)</th></tr>
+    {% for repo in githubData %}
+      {% if repo.total_count > 0 %}
+      <tr>
+        <td>{{ repo.repo }}</td>
+        <td><strong>{{ repo.total_count }}</strong></td>
+        <td><details class="dropdown q-dropdown">
+        <summary>
+            <span class="button is-info is-outlined is-small">List</strong></span>
+        </summary>
+        <ul class="menu-list box q-dropdown__items">
+          {% for result in repo.results %}
+          <li><a href="{{ result.url }}">
+            {{ result.label }}
+          </a></li>
+          {% endfor %}
+        </ul>
+      </details></td>
+      </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+  {% else %}
+    This class isn't referenced anywhere
+  {% endif %}
+{% endmacro %}

@@ -1,0 +1,71 @@
+---
+layout: base.njk
+---
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="{{ '/' | url }}">Home</a></li>
+    <li class="is-active"><a href="{{ page.url | url }}">About</a></li>
+  </ul>
+</nav>
+<div class="q-container content">
+  <h1 class="is-size-2 q-bottom-spacer">What is Queso?</h1>
+
+  <p>This is a guide to branding elements used for product development at The Texas Tribune. It's a CSS framework and platform-agnostic approach to maintaining consistent UI/UX for our end users.</p>
+
+  <h2 class="is-size-3 q-bottom-spacer">Getting Started</h2>
+  <p>How to use queso styles in your project.</p>
+  <h3 class="is-size-4">SCSS</h3>
+  <ol>
+    <li class="q-bottom-spacer">
+      <p> Install the SCSS files as a dependency:</p><pre><code class="language-shell">npm install @texastribune/queso-ui --save-dev</code></pre>
+    </li>
+    <li class="q-bottom-spacer">
+      <p>Create an imports file to install each SCSS file. You'll rarely need all of the components or layouts so just take what you need for your project and override as you please.</p>
+
+<pre>
+  <code class="language-scss">
+// styles.scss
+
+@import '@texastribune/queso-ui/assets/scss/1-settings/all';
+// Optional: Add overrides to queso SCSS variables or new variables here
+// @import 'settings/all';
+// @import 'settings/my-custom-vars';
+
+@import '@texastribune/queso-ui/assets/scss/2-tools/all';
+@import '@texastribune/queso-ui/assets/scss/3-resets/all';
+@import '@texastribune/queso-ui/assets/scss/4-elements/all';
+@import '@texastribune/queso-ui/assets/scss/5-typography/all';
+
+// components
+@import '@texastribune/queso-ui/assets/scss/6-components/icon/icon';
+@import '@texastribune/queso-ui/assets/scss/6-components/navbar/navbar';
+@import '@texastribune/queso-ui/assets/scss/6-components/site-footer/site-footer';
+
+// Optional: Add overrides to queso components or new components here
+// @import 'components/navbar';
+// @import 'components/site-footer';
+// @import 'components/my-custom-component';
+
+// layout
+@import '@texastribune/queso-ui/assets/scss/7-layout/align';
+@import '@texastribune/queso-ui/assets/scss/7-layout/container';
+@import '@texastribune/queso-ui/assets/scss/7-layout/content-grid';
+@import '@texastribune/queso-ui/assets/scss/7-layout/display';
+@import '@texastribune/queso-ui/assets/scss/7-layout/width';
+
+// utilities
+@import '@texastribune/queso-ui/assets/scss/utilities/all';
+  </code>
+</pre>
+      <p> Note: You may need to adjust the paths on the @imports. Example:<pre><code class="language-scss">@import 'node_modules/@texastribune/queso-ui/assets/scss/1-settings/all';</code></pre>
+      </p>
+    </li>
+    <li>
+      <p>Compile SCSS into CSS. In many projects, we use <a href="https://github.com/texastribune/queso-tools">queso-tools</a> to handle compiling assets. Alternatively, <a href="https://www.npmjs.com/package/sass">dart-sass</a> is a great, low-dependency compiler.</p>
+    </li>
+  </ol>
+
+  <h3 class="is-size-4">CSS CDN</h3>
+  <p>Coming soon</p>
+
+</div>

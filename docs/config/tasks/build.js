@@ -5,10 +5,17 @@
 
 const { styles, icons } = require('@texastribune/queso-tools');
 const copy = require('./copy');
-const docs = require('./docs.js');
 const github = require('./github.js');
+const styleDocRunner = require('./style-doc');
+const iconDocRunner = require('./icon-doc');
 
-const { mappedStyles, mappedIcons, mappedCopies } = require('../paths.js');
+const {
+  mappedStyles,
+  mappedIcons,
+  mappedCopies,
+  docsStyles,
+  docsIcons,
+} = require('../paths.js');
 
 async function build() {
   // grab github data
@@ -20,7 +27,9 @@ async function build() {
   await copy(mappedCopies);
 
   // build doc data and template
-  await docs();
+  await styleDocRunner(docsStyles);
+  await iconDocRunner(docsIcons);
+
 }
 
 build().catch(err => {

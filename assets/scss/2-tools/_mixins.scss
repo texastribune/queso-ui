@@ -17,7 +17,7 @@
 
 // @mixin underlined-link
 //
-// This will replace the need for silent classes, specifically <code>%link--teal</code>.  To use this mixin, apply to an <code>a</code> tag to add special link style. Example: <code class="ds-breathe-m"> a { @include underlined-link }</code>
+// `@include underlined-link`
 //
 // $hover-only = false - Whether this is a subtle or default variation. Options: true | false
 //
@@ -25,13 +25,13 @@
 //
 @mixin underlined-link($hover-only: false) {
   // Set color var
-  $border-hover-color: $color-blue-light;
+  $border-hover-color: $color-link-underline;
   @if ( $hover-only == false ) {
-    $border-hover-color: $color-teal-gray;
-    border-bottom: 1px solid $color-blue-light;
-    box-shadow: inset 0 -1px 0 0 $color-blue-light;
+    $border-hover-color: $color-link-underline-hover;
+    border-bottom: 1px solid $color-link-underline;
+    box-shadow: inset 0 -1px 0 0 $color-link-underline;
   } @else {
-    border-color: $color-blue-light;
+    border-color: $color-link-underline;
   }
   transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 
@@ -52,7 +52,7 @@
 
 // @mixin underlined-link-parent
 //
-// This is an extension of the <code>underlined-link</code> mixin. This version is applied to a parent to force all descendant <code>a</code> tags get a special link style. Example: <code class="ds-breathe-m"> .text-block-with-subtle-links { @include underlined-link-parent('true') }</code>
+// `@include underlined-link-parent`
 //
 // $hover-only = false - Whether or not this a subtle or default variation. Options: true | false
 //
@@ -67,7 +67,7 @@
 
 // @mixin mq
 //
-// This is a mixin helper imported via NPM via the <a href="https://github.com/sass-mq/sass-mq">Sass MQ library</a> <code class="ds-breathe-m">@include mq($from: bp-m, $and: '(orientation: landscape)') {}</code>
+// `@include mq($from: bp-l)`
 //
 // $from = false -  {String | Boolean} One of $mq-breakpoints
 // $until = false - {String | Boolean}  One of $mq-breakpoints

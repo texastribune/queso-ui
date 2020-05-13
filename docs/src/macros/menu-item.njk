@@ -1,0 +1,5 @@
+{% macro menuItem(path, pageTitle, current) %}
+
+  {% set path = '/' + path + '/' %}
+  <a href="{{ path | url }}" {% if current == path %}class="is-active"{% endif %}>{{ pageTitle }}</a>
+{% endmacro %}

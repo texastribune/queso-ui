@@ -62,8 +62,8 @@ $color-twitter: #55acee;
 // These are special variables assigned to specific elements and states.
 //
 // Colors:
-// $color-link-underline: $color-blue-light - Link Underline
-// $color-focus-outline: #348094 - Outline color for keyboard tabbing
+// $color-link-underline: #a1d2df - Link underline color
+// $color-link-underline-hover: #348094 - Link underline color on hover
 // $color-error: #e12931 - Error
 // $color-success: #11A06B - Success
 // $color-fmd-blue-dark: #323a44 - Fall membership drive 1
@@ -74,7 +74,7 @@ $color-twitter: #55acee;
 // Styleguide 1.1.4
 //
 $color-link-underline: $color-blue-light;
-$color-focus-outline: $color-teal-gray;
+$color-link-underline-hover: $color-teal-gray;
 $color-error: $color-red;
 $color-success: #11A06B;
 $color-fmd-blue-dark: #323a44;

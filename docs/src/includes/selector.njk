@@ -1,0 +1,24 @@
+{% from "../macros/toggle-view.njk" import toggleView %}
+
+<div class="q-display-grid">
+  {% if not item.isHelper %}
+    {% set id = item.mainClass %}
+    <div class="q-display-col">
+      {% if not item.isRecipe %}
+        <code>.{{ id }}</code>
+      {% else %}
+        No specific class used here. See code view for details.
+      {% endif %}
+    </div>
+    {{ toggleView('example', id, item.codeSnippet, item.githubData) }}
+  {% endif %}
+  {% for modifier in item.modifiers %}
+    {% set id = modifier.className %}
+    <div class="q-display-col">
+      <code>.{{ id }}</code>
+      <div class="q-bottom-spacer"></div>
+      <div class="is-size-7 has-text-grey">{{ modifier.description | safe }}</div>
+    </div>
+    {{ toggleView('modifier', id, modifier.modifierSnippet, modifier.githubData) }}
+  {% endfor %}
+</div>

@@ -1,0 +1,39 @@
+---
+layout: base.njk
+pagination:
+    data: styles.all
+    size: 1
+    alias: item
+permalink: "sections/{{ item.sectionSlug }}/{{ item.slug }}/"
+---
+{% from "../macros/data-list.njk" import dataList %}
+<article>
+  <nav class="breadcrumb" aria-label="breadcrumbs">
+    <ul>
+      <li><a href="{{ '/' | url }}">Home</a></li>
+      <li><a href="{{ '/sections/' + item.sectionSlug | url }}">{{ item.section }}</a></li>
+      <li class="is-active"><a href="{{ page.url }}" aria-current="page">{% if item.isRecipe %}{{ item.prettyName }}{% else %}.{{ item.mainClass }}{% endif %}</a></li>
+    </ul>
+  </nav>
+  <header class="level">
+    <div class="level-left">
+      <h1 class="is-size-3 level-item">{{ item.prettyName }}</h1>
+    </div>
+    <div class="level-right buttons">
+      <a href="{{ item.githubLink }}" title="View on Github" class="button">
+        <span class="c-icon is-size-4">
+          <svg aria-hidden="true">
+            <use xlink:href="#github"></use>
+          </svg>
+        </span>&nbsp;
+        View in Github
+      </a>
+    </div>
+  </header>
+
+  <div class="q-desc q-container">{{ item.description | safe }}</p></div>
+
+  {% if item.codeSnippet %}
+    {% include "../includes/selector.njk" %}
+  {% endif %}
+</article>

@@ -1,8 +1,7 @@
 // all.css
 //
-// This includes our <strong>whole system</strong>. You will very rarely want to import this. One use case is this documentation site. <div>`@import "@texastribune/queso-ui/assets/scss/all"`</div>
+// Everything in the system
 //
-// Styleguide 0.0.1
 @import '1-settings/all';
 @import '2-tools/all';
 @import '3-resets/all';

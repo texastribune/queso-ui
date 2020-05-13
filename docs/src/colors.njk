@@ -1,0 +1,22 @@
+---
+layout: base.njk
+
+---
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="{{ '/' | url }}">Home</a></li>
+    <li class="is-active"><a href="{{ page.url | url }}">Colors</a></li>
+  </ul>
+</nav>
+<h1 class="is-size-2 q-bottom-spacer">Colors</h1>
+
+{% from "./macros/color-swatch.njk" import colorSwatch %}
+<div class="q-tiles q-spacer">
+  {% for item in styles.all %}
+  {% if item.colors.length > 1 %}
+      {% for color in item.colors %}
+        {{ colorSwatch(color) }}
+      {% endfor %}
+  {% endif %}
+  {% endfor %}
+</div>
