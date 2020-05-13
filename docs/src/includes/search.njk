@@ -3,7 +3,8 @@
   <datalist id="terms">
     {# custom options #}
     {% for item in nav.items %}
-      <option value="{{ item.name }}" data-link="{{ '/' + item.slug  + '/' | url }}" />
+      {% set dataLink = '/' + item.slug  + '/' %}
+      <option value="{{ item.name }}" data-link="{{ dataLink | url }}" />
     {% endfor %}
     {% for item in styles.all %}
       {% if item.depth > 2 and item.colors.length < 1 %}
