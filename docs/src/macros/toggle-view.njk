@@ -1,5 +1,6 @@
 {% macro toggleView(path, id, code, data) %}
   {% from "../macros/data-list.njk" import dataList %}
+  {% set previewUrl = '/' + path  + '/' + id %}
   <div id="{{ id }}-display" class="q-display-col">
     <div id="{{ id }}-buttons" class="q-display-buttons buttons are-small">
       <button id="view-{{ id }}" class="button is-outlined is-info js-toggle-btn">
@@ -23,7 +24,7 @@
           </svg>
         </span>
       </button>
-      <a href="{{ '/' + path  + '/' + id | url }}" class="button is-outlined">
+      <a href="{{ previewUrl | url }}" class="button is-outlined">
         <span class="c-icon">
           <svg aria-hidden="true">
             <use xlink:href="#arrow-up-right"></use>
@@ -32,7 +33,7 @@
       </a>
     </div>
     <div id="view-{{ id }}-pane" class="q-display-pane js-pane active">
-      <div data-frame-src="{{ '/' + path  + '/' + id | url }}"></div>
+      <div data-frame-src="{{ previewUrl | url }}"></div>
     </div>
     <div id="code-{{ id }}-pane" class="q-display-pane js-pane">
       <pre><code class="language-html">{{ code }}</code></pre>
