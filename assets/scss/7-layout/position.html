@@ -1,0 +1,10 @@
+{% if className == 'l-pos-rel' %}
+  <div style="border: 1px solid #000; width: 300px; height: 100px;">
+    <span class="{{ className }}" style="background-color: #222; color: #fff; padding: 10px;">position: relative</span>
+  </div>
+{% endif %}
+{% if className == 'l-pos-abs' %}
+  <div class="l-pos-rel" style="border: 1px solid #000; width: 300px; height: 100px;">
+    <span class="{{ className }}" style="background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;">position: absolute; bottom: 0; right: 0;</span>
+  </div>
+{% endif %}
