@@ -11,7 +11,8 @@
     "build": "SITE_ENV=production node docs/config/tasks/build.js && SITE_ENV=production eleventy --pathprefix=queso-ui",
     "dev": "SITE_ENV=development node docs/config/tasks/build.js && SITE_ENV=development eleventy --serve",
     "test": "npm run lint && npm run build",
-    "release": "np --any-branch"
+    "release": "np --any-branch",
+    "type": "tsc ./docs/config/ts/hello.ts"
   },
   "files": [
     "/assets"
@@ -120,7 +121,8 @@
     "passes-wcag": "^0.2.1",
     "prettier": "2.1.1",
     "push-dir": "^0.4.1",
-    "stylelint": "^13.0.0"
+    "stylelint": "^13.0.0",
+    "typescript": "^3.9.3"
   },
   "dependencies": {
     "modern-normalize": "^1.0.0",
