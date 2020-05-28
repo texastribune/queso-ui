@@ -120,7 +120,7 @@
     "nunjucks": "^3.1.7",
     "ora": "^4.0.1",
     "passes-wcag": "^0.2.1",
-    "prettier": "2.0.4",
+    "prettier": "2.0.5",
     "push-dir": "^0.4.1",
     "stylelint": "^13.0.0",
     "@11ty/eleventy": "0.11.0"
