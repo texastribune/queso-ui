@@ -12,7 +12,7 @@
     "dev": "SITE_ENV=development node docs/config/tasks/build.js && SITE_ENV=development eleventy --serve",
     "test": "npm run lint && npm run build",
     "release": "np --any-branch",
-    "type": "tsc ./docs/config/ts/hello.ts"
+    "type": "tsc ./docs/config/ts/hello.ts && node ./docs/config/ts/hello.js"
   },
   "files": [
     "/assets"
