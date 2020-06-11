@@ -4,6 +4,7 @@
 //
 // c-caption--wide - The removal of padding comes a bit sooner.
 // c-caption--compact - Just a bit o' top padding.
+// c-caption--overlay-from-bp-l - Black overlay caption (desktop only).
 //
 // Markup: 6-components/caption/caption.html
 //
@@ -11,6 +12,7 @@
 .c-caption {
   margin: -5px 0 0 0; // not sure what this accounts for (copied from base)
   padding: $size-xs;
+  color: $color-gray-dark;
 
   &--compact {
     padding: $size-xxxs 0 0;
@@ -25,6 +27,14 @@
     @include mq($from: bp-m) {
       padding-left: 0;
       padding-right: 0;
+    }
+  }
+  @include mq($from: bp-l) {
+    &--overlay-from-bp-l {
+      background-color: rgba(30, 30, 30, .8);
+      bottom: 0;
+      color: $color-white-pure;
+      position: absolute;
     }
   }
 }

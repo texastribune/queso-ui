@@ -1,0 +1,18 @@
+// Position (l-pos-<setting>)
+//
+// Helper for quickly setting `position: absolute` or `position: relative`. {{isHelper}}
+//
+// .l-pos-rel - Relative position
+// .l-pos-abs - Set _`.l-pos-rel`_ on the parent to place within a defined space.
+//
+// Markup: 7-layout/position.html
+//
+//
+// Styleguide 7.0.5
+.l-pos-rel {
+  position: relative;
+}
+
+.l-pos-abs {
+  position: absolute;
+}
