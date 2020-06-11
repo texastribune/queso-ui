@@ -422,6 +422,8 @@
           
             <option value="c-caption--compact" data-link="/queso-ui/sections/components/c-caption/" />
           
+            <option value="c-caption--overlay-from-bp-l" data-link="/queso-ui/sections/components/c-caption/" />
+          
       
     
       
@@ -909,6 +911,19 @@
         
           
             <option value="multi column (l-multicol)" data-link="/queso-ui/sections/layout/l-multicol/" />
+          
+      
+    
+      
+        
+          
+        
+          
+            <option value="position (l-pos-&lt;setting&gt;)" data-link="/queso-ui/sections/layout/l-pos-setting/" />
+          
+            <option value="l-pos-rel" data-link="/queso-ui/sections/layout/l-pos-setting/" />
+          
+            <option value="l-pos-abs" data-link="/queso-ui/sections/layout/l-pos-setting/" />
           
       
     
@@ -1912,6 +1927,16 @@
             
 
   
+  <a href="/queso-ui/sections/layout/l-pos-setting/" >Position</a>
+
+          </li>
+        
+      
+        
+          <li>
+            
+
+  
   <a href="/queso-ui/sections/layout/l-width-size/" >Width</a>
 
           </li>
@@ -2720,6 +2745,16 @@
             
 
   
+  <a href="/queso-ui/sections/layout/l-pos-setting/" >Position</a>
+
+          </li>
+        
+      
+        
+          <li>
+            
+
+  
   <a href="/queso-ui/sections/layout/l-width-size/" >Width</a>
 
           </li>
@@ -2938,11 +2973,11 @@
       <div data-frame-src="/queso-ui/example/c-caption"></div>
     </div>
     <div id="code-c-caption-pane" class="q-display-pane js-pane">
-      <pre><code class="language-html">&lt;figure&gt;
+      <pre><code class="language-html">&lt;figure class=&quot;l-pos-rel&quot;&gt;
   &lt;img
   class=&quot;l-display-block l-width-full&quot; src=&quot;/queso-ui/img/DEFAULT_LEAD_ART.jpg&quot; alt=&quot;Placeholder image of Texas Capitol dome and Texas Tribune branding&quot;
   /&gt;
-  &lt;figcaption class=&quot;c-caption  has-text-gray-dark l-display-block t-size-xs&quot;&gt;
+  &lt;figcaption class=&quot;c-caption  l-display-block t-size-xs&quot;&gt;
   This is an image caption describing the image above. &lt;span class=&quot;c-icon c-icon--baseline&quot;&gt;&lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#camera&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt; &lt;cite&gt;Photographer Name for Company XYZ&lt;/cite&gt;
   &lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
@@ -3069,11 +3104,11 @@
       <div data-frame-src="/queso-ui/modifier/c-caption--wide"></div>
     </div>
     <div id="code-c-caption--wide-pane" class="q-display-pane js-pane">
-      <pre><code class="language-html">&lt;figure&gt;
+      <pre><code class="language-html">&lt;figure class=&quot;l-pos-rel&quot;&gt;
   &lt;img
   class=&quot;l-display-block l-width-full&quot; src=&quot;/queso-ui/img/DEFAULT_LEAD_ART.jpg&quot; alt=&quot;Placeholder image of Texas Capitol dome and Texas Tribune branding&quot;
   /&gt;
-  &lt;figcaption class=&quot;c-caption c-caption--wide has-text-gray-dark l-display-block t-size-xs&quot;&gt;
+  &lt;figcaption class=&quot;c-caption c-caption--wide l-display-block t-size-xs&quot;&gt;
   This is an image caption describing the image above. &lt;span class=&quot;c-icon c-icon--baseline&quot;&gt;&lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#camera&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt; &lt;cite&gt;Photographer Name for Company XYZ&lt;/cite&gt;
   &lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
@@ -3163,11 +3198,11 @@
       <div data-frame-src="/queso-ui/modifier/c-caption--compact"></div>
     </div>
     <div id="code-c-caption--compact-pane" class="q-display-pane js-pane">
-      <pre><code class="language-html">&lt;figure&gt;
+      <pre><code class="language-html">&lt;figure class=&quot;l-pos-rel&quot;&gt;
   &lt;img
   class=&quot;l-display-block l-width-full&quot; src=&quot;/queso-ui/img/DEFAULT_LEAD_ART.jpg&quot; alt=&quot;Placeholder image of Texas Capitol dome and Texas Tribune branding&quot;
   /&gt;
-  &lt;figcaption class=&quot;c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xs&quot;&gt;
+  &lt;figcaption class=&quot;c-caption c-caption--compact l-display-block t-size-xs&quot;&gt;
   This is an image caption describing the image above. &lt;span class=&quot;c-icon c-icon--baseline&quot;&gt;&lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#camera&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt; &lt;cite&gt;Photographer Name for Company XYZ&lt;/cite&gt;
   &lt;/figcaption&gt;
 &lt;/figure&gt;</code></pre>
@@ -3218,6 +3253,70 @@
       
     
   </table>
+  
+
+    </div>
+  </div>
+
+  
+    
+    <div class="q-display-col">
+      <code>.c-caption--overlay-from-bp-l</code>
+      <div class="q-bottom-spacer"></div>
+      <div class="is-size-7 has-text-grey"><p>Black overlay caption (desktop only).</p>
+</div>
+    </div>
+    
+  
+  
+  <div id="c-caption--overlay-from-bp-l-display" class="q-display-col">
+    <div id="c-caption--overlay-from-bp-l-buttons" class="q-display-buttons buttons are-small">
+      <button id="view-c-caption--overlay-from-bp-l" class="button is-outlined is-info js-toggle-btn">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#eye"></use>
+          </svg>
+        </span>
+      </button>
+      <button id="code-c-caption--overlay-from-bp-l" class="button is-outlined js-toggle-btn">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#code"></use>
+          </svg>
+        </span>
+      </button>
+      <button id="stats-c-caption--overlay-from-bp-l" class="button is-outlined js-toggle-btn">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#bar-chart-2"></use>
+          </svg>
+        </span>
+      </button>
+      <a href="/queso-ui/modifier/c-caption--overlay-from-bp-l" class="button is-outlined">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#arrow-up-right"></use>
+          </svg>
+        </span>
+      </a>
+    </div>
+    <div id="view-c-caption--overlay-from-bp-l-pane" class="q-display-pane js-pane active">
+      <div data-frame-src="/queso-ui/modifier/c-caption--overlay-from-bp-l"></div>
+    </div>
+    <div id="code-c-caption--overlay-from-bp-l-pane" class="q-display-pane js-pane">
+      <pre><code class="language-html">&lt;figure class=&quot;l-pos-rel&quot;&gt;
+  &lt;img
+  class=&quot;l-display-block l-width-full&quot; src=&quot;/queso-ui/img/DEFAULT_LEAD_ART.jpg&quot; alt=&quot;Placeholder image of Texas Capitol dome and Texas Tribune branding&quot;
+  /&gt;
+  &lt;figcaption class=&quot;c-caption c-caption--overlay-from-bp-l has-xs-padding l-width-full l-display-block t-size-xs&quot;&gt;
+  This is an image caption describing the image above. &lt;span class=&quot;c-icon c-icon--baseline&quot;&gt;&lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#camera&quot;&gt;&lt;/use&gt;&lt;/svg&gt;&lt;/span&gt; &lt;cite&gt;Photographer Name for Company XYZ&lt;/cite&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+    </div>
+    <div id="stats-c-caption--overlay-from-bp-l-pane" class="q-display-pane js-pane">
+      
+  
+    This class isn't referenced anywhere
   
 
     </div>
