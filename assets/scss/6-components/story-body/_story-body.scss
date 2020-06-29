@@ -1,8 +1,7 @@
 // Story body (c-story-body)
 //
-// Story bodies are a special component because we have limited control over the class names within them. We must deviate from BEM and create catch-all tag selectors to allow the greatest flexibility of the markup.
+// The approach for `c-story-body` is different from other components because we use descendant selectors instead of BEM.
 //
-// .c-story-body--nested - Assumes story body is wrapped in another component.
 //
 // Markup: 6-components/story-body/story-body.html
 //
@@ -26,9 +25,10 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
   > ol,
   > span,
   > hr {
+    @include underlined-link-parent;
     max-width: $story-narrow;
     margin: $size-b auto;
-    line-height: 1.4;
+    line-height: $font-line-height-b;
     @include mq($until: $story-narrow-bp) {
       padding: 0 var(--story-body-padding);
     }
@@ -39,7 +39,6 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
   > ul,
   > ol {
     @include font-setting('secondary');
-    @include underlined-link-parent;
   }
 
   > ul,
@@ -55,10 +54,25 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
     list-style: disc;
   }
 
-  // h2s are a dropdown option in the CMS
-  // we hard-set the font size for this reason
+  // The CMS supports h2 - h4
   > h2 {
     font-size: $size-m;
+    margin-top: $size-giant;
+  }
+
+  > h3 {
+    font-size: $size-b;
+    margin-top: $size-xxl;
+  }
+
+  > h4 {
+    font-size: $size-s;
+    margin-top: $size-xl;
+  }
+
+  // don't add too much space if h2 is first
+  > h2:first-child {
+    margin-top: $size-b;
   }
 
   sub, sup {
@@ -69,7 +83,4 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
     margin: $size-xl auto;
   }
 
-  &--nested {
-    --story-body-padding: 0;
-  }
 }
