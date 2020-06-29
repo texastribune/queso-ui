@@ -75,10 +75,6 @@ $story-narrow-bp: ($story-narrow / 1rem) + $story-padding-buffer;
     margin-top: $size-b;
   }
 
-  sub, sup {
-    position: initial;
-  }
-
   hr {
     margin: $size-xl auto;
   }
