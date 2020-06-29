@@ -10,13 +10,9 @@ const fs = require('fs-extra');
 const { mappedGithubData } = require('../paths.js');
 
 const fetch = async () => {
-  try {
-    const response = await axios.get(mappedGithubData.in);
-    const { data } = response;
-    return data;
-  } catch (error) {
-    throw error;
-  }
+  const response = await axios.get(mappedGithubData.in);
+  const { data } = response;
+  return data;
 };
 
 module.exports = async () => {
