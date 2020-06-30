@@ -31,7 +31,7 @@ When you add a new class, component, scss variable, mixin, etc., you'll want to 
 
 > How to document a new CSS class
 
-We use a comment parser along with some [extra logic](https://github.com/texastribune/queso-ui/blob/master/tasks/style-doc.js) to generate our docs. To add a new section of documentation, add a boilerplate above your CSS rules like the one below: 
+We use a comment parser along with some [extra logic](https://github.com/texastribune/queso-ui/blob/main/tasks/style-doc.js) to generate our docs. To add a new section of documentation, add a boilerplate above your CSS rules like the one below: 
 
 ```scss
 // Title of Section (root-class-name)
@@ -154,4 +154,4 @@ This system is experimental and under rapid development. Use it in situations wh
 * [ ] VS code comment snippet
 * [ ] Way to easily build universal stylesheet
 * [ ] Way to easily build universal sprite
-* [ ] Establish a merge to master deployment flow
+* [x] Establish a merge to main deployment flow

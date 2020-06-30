@@ -21,7 +21,7 @@ const {
 const { slugify, stripTags } = require('./utils');
 const { mappedGithubData, siteURL } = require('../paths.js');
 
-const GITHUB_URL = 'https://github.com/texastribune/queso-ui/blob/master';
+const GITHUB_URL = 'https://github.com/texastribune/queso-ui/blob/main';
 
 const createMap = arr => {
   const object = {};
