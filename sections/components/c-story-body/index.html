@@ -685,8 +685,6 @@
           
             <option value="story body (c-story-body)" data-link="/queso-ui/sections/components/c-story-body/" />
           
-            <option value="c-story-body--nested" data-link="/queso-ui/sections/components/c-story-body/" />
-          
       
     
       
@@ -1261,7 +1259,7 @@
           </span>
         </a>
         &nbsp;
-        <a href="https://github.com/texastribune/queso-ui/releases"><strong>9.1.0</strong></a>
+        <a href="https://github.com/texastribune/queso-ui/releases"><strong>9.2.0</strong></a>
       </div>
       <div class="navbar-item is-hidden-desktop">
         <nav>
@@ -2921,7 +2919,7 @@
     </div>
   </header>
 
-  <div class="q-desc q-container"><p>Story bodies are a special component because we have limited control over the class names within them. We must deviate from BEM and create catch-all tag selectors to allow the greatest flexibility of the markup.</p>
+  <div class="q-desc q-container"><p>The approach for <code>c-story-body</code> is different from other components because we use descendant selectors instead of BEM.</p>
 </p></div>
 
   
@@ -2974,45 +2972,44 @@
     </div>
     <div id="code-c-story-body-pane" class="q-display-pane js-pane">
       <pre><code class="language-html">&lt;div class=&quot;c-story-body  has-l-btm-marg t-size-b story_body&quot;&gt;
-  &lt;h1&gt;&lt;/h1&gt;
+  &lt;h2&gt;Article text formatting preview&lt;/h2&gt;
   &lt;p&gt;Our editor outputs blocks of texts with paragraph tags. This parent class also accounts for descendant links, headings, horizontal rules, and lists.&lt;/p&gt;
 
-  &lt;h2&gt;Horizontal Rules&lt;/h2&gt;
-  &lt;p&gt;Use a horizontal rule to break up content. A horizontal rule is displayed below.&lt;/p&gt;
-  &lt;hr/&gt;
-  &lt;p&gt;The hr tag has built in top and bottom margin. We do this because it&#39;s normally used as a spacing element and the need for cushion is assumed.&lt;/p&gt;
+  &lt;p&gt;This is a paragraph with some &lt;a href=&quot;#&quot;&gt;link text&lt;/a&gt;. This is how &lt;strong&gt;bolded&lt;/strong&gt;, &lt;em&gt;emphasized&lt;/em&gt;, &lt;sup&gt;superscript&lt;/sup&gt; and &lt;sub&gt;subscript&lt;/sub&gt; text displays.&lt;/p&gt;
 
-  &lt;h2&gt;Ordered Lists&lt;/h2&gt;
-  &lt;p&gt;Ordered lists are lists with numbers and need the special container and a list style treatment.&lt;/p&gt;
+  &lt;h2&gt;Lists&lt;/h2&gt;
+  &lt;p&gt;Ordered&lt;/p&gt;
   &lt;ol&gt;
     &lt;li&gt;This is the first item.&lt;/li&gt;
     &lt;li&gt;This is the second item.&lt;/li&gt;
     &lt;li&gt;This is the third item.&lt;/li&gt;
   &lt;/ol&gt;
-
-  &lt;h2&gt;Unordered Lists&lt;/h2&gt;
-  &lt;p&gt;Unordered lists are lists with bullets and also need the special container and a list style treatment. We globally remove bullets so lists within the c-story-body class we add them back via the ul tag.&lt;/p&gt;
+  &lt;p&gt;Unordered&lt;/p&gt;
   &lt;ul&gt;
     &lt;li&gt;This is the first item.&lt;/li&gt;
     &lt;li&gt;This is the second item.&lt;/li&gt;
     &lt;li&gt;This is the third item.&lt;/li&gt;
   &lt;/ul&gt;
-
-  &lt;h2&gt;Headings&lt;/h2&gt;
-  &lt;p&gt;Our editor has a dropdown option called &lt;em&gt;Subheader&lt;/em&gt; for adding a heading element. By default, that tag is an h2.&lt;/p&gt;
-  &lt;h2&gt;I am an example heading&lt;/h2&gt;
-
+  &lt;hr/&gt;
+  &lt;p&gt;Headings are used to label sections of the text body. The text below is an example of how h2 - h4 tags should be formatted.&lt;/p&gt;
+  &lt;h2&gt;Heading level 2&lt;/h2&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam facilis, est error vero distinctio sequi reiciendis ipsam consequuntur enim, aliquam accusamus magni laborum neque reprehenderit labore doloremque nulla ab aspernatur?&lt;/p&gt;
+  &lt;h3&gt;Heading level 3 and example of some &lt;em&gt;emphasized text&lt;/em&gt;
+  &lt;/h3&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam facilis, est error vero distinctio sequi reiciendis ipsam consequuntur enim, aliquam accusamus magni laborum neque reprehenderit labore doloremque nulla ab aspernatur?&lt;/p&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam facilis, est error vero distinctio sequi reiciendis ipsam consequuntur enim, aliquam accusamus magni laborum neque reprehenderit labore doloremque nulla ab aspernatur?&lt;/p&gt;
+  &lt;h4&gt;Heading level 4 and an example of a heading with a &lt;a href=&quot;#&quot;&gt;link&lt;/a&gt;
+  &lt;/h4&gt;
+  &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam facilis, est error vero distinctio sequi reiciendis ipsam consequuntur enim, aliquam accusamus magni laborum neque reprehenderit labore doloremque nulla ab aspernatur?&lt;/p&gt;
+  &lt;h2&gt;Horizontal Rules&lt;/h2&gt;
+  &lt;p&gt;Use a horizontal rule to break up content. A horizontal rule is displayed below.&lt;/p&gt;
+  &lt;hr/&gt;
+  &lt;p&gt;The hr tag has built in top and bottom margin. We do this because it&#39;s normally used as a spacing element and the need for cushion is assumed.&lt;/p&gt;
+  &lt;hr/&gt;
   &lt;h2&gt;Plugins&lt;/h2&gt;
-  &lt;p&gt;Plugins are special and have their own rules for positioning. A div without the plugin class will still align with the story text, but any div prefixed with &quot;plugin&quot; will be excluded from the max-width and margin declaration the other elements adhere to.&lt;/p&gt;
-  &lt;div class=&quot;c-plugin&quot;&gt;
-    &lt;blockquote class=&quot;has-b-btm-marg has-vert-bar has-vert-bar--padded-l has-text-yellow t-sans t-size-m&quot;&gt;
-      &lt;p class=&quot;has-text-black-off has-xxxs-btm-marg&quot;&gt;&lt;strong&gt;&lt;em&gt;“Example of a pull quote.”&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-      &lt;cite class=&quot;has-text-black-off t-size-b&quot;&gt;—&amp;nbsp;First name, Last name&lt;/cite&gt;
-    &lt;/blockquote&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;c-plugin has-padding has-bg-gray-light&quot;&gt;Example of ad plugin. Should be not be bound by container&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
+  &lt;p&gt;We add container rules to specific descendant selectors like paragraphs, headings, lists etc. That means that most elements nested in this component will not be bound by any container and will need their own max-width.&lt;/p&gt;
+  &lt;div class=&quot;c-plugin has-padding has-bg-gray-light&quot;&gt;Plugins should not be bound by any rule in c-story-body. We use separate plugin positioning rules for that.&lt;/div&gt;
+&lt;/div&gt;</code></pre>
     </div>
     <div id="stats-c-story-body-pane" class="q-display-pane js-pane">
       
@@ -3086,102 +3083,6 @@
   </div>
 
   
-  
-    
-    <div class="q-display-col">
-      <code>.c-story-body--nested</code>
-      <div class="q-bottom-spacer"></div>
-      <div class="is-size-7 has-text-grey"><p>Assumes story body is wrapped in another component.</p>
-</div>
-    </div>
-    
-  
-  
-  <div id="c-story-body--nested-display" class="q-display-col">
-    <div id="c-story-body--nested-buttons" class="q-display-buttons buttons are-small">
-      <button id="view-c-story-body--nested" class="button is-outlined is-info js-toggle-btn">
-        <span class="c-icon">
-          <svg aria-hidden="true">
-            <use xlink:href="#eye"></use>
-          </svg>
-        </span>
-      </button>
-      <button id="code-c-story-body--nested" class="button is-outlined js-toggle-btn">
-        <span class="c-icon">
-          <svg aria-hidden="true">
-            <use xlink:href="#code"></use>
-          </svg>
-        </span>
-      </button>
-      <button id="stats-c-story-body--nested" class="button is-outlined js-toggle-btn">
-        <span class="c-icon">
-          <svg aria-hidden="true">
-            <use xlink:href="#bar-chart-2"></use>
-          </svg>
-        </span>
-      </button>
-      <a href="/queso-ui/modifier/c-story-body--nested" class="button is-outlined">
-        <span class="c-icon">
-          <svg aria-hidden="true">
-            <use xlink:href="#arrow-up-right"></use>
-          </svg>
-        </span>
-      </a>
-    </div>
-    <div id="view-c-story-body--nested-pane" class="q-display-pane js-pane active">
-      <div data-frame-src="/queso-ui/modifier/c-story-body--nested"></div>
-    </div>
-    <div id="code-c-story-body--nested-pane" class="q-display-pane js-pane">
-      <pre><code class="language-html">&lt;div class=&quot;c-story-body c-story-body--nested has-l-btm-marg t-size-b story_body&quot;&gt;
-  &lt;h1&gt;c-story-body--nested&lt;/h1&gt;
-  &lt;p&gt;Our editor outputs blocks of texts with paragraph tags. This parent class also accounts for descendant links, headings, horizontal rules, and lists.&lt;/p&gt;
-
-  &lt;h2&gt;Horizontal Rules&lt;/h2&gt;
-  &lt;p&gt;Use a horizontal rule to break up content. A horizontal rule is displayed below.&lt;/p&gt;
-  &lt;hr/&gt;
-  &lt;p&gt;The hr tag has built in top and bottom margin. We do this because it&#39;s normally used as a spacing element and the need for cushion is assumed.&lt;/p&gt;
-
-  &lt;h2&gt;Ordered Lists&lt;/h2&gt;
-  &lt;p&gt;Ordered lists are lists with numbers and need the special container and a list style treatment.&lt;/p&gt;
-  &lt;ol&gt;
-    &lt;li&gt;This is the first item.&lt;/li&gt;
-    &lt;li&gt;This is the second item.&lt;/li&gt;
-    &lt;li&gt;This is the third item.&lt;/li&gt;
-  &lt;/ol&gt;
-
-  &lt;h2&gt;Unordered Lists&lt;/h2&gt;
-  &lt;p&gt;Unordered lists are lists with bullets and also need the special container and a list style treatment. We globally remove bullets so lists within the c-story-body class we add them back via the ul tag.&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li&gt;This is the first item.&lt;/li&gt;
-    &lt;li&gt;This is the second item.&lt;/li&gt;
-    &lt;li&gt;This is the third item.&lt;/li&gt;
-  &lt;/ul&gt;
-
-  &lt;h2&gt;Headings&lt;/h2&gt;
-  &lt;p&gt;Our editor has a dropdown option called &lt;em&gt;Subheader&lt;/em&gt; for adding a heading element. By default, that tag is an h2.&lt;/p&gt;
-  &lt;h2&gt;I am an example heading&lt;/h2&gt;
-
-  &lt;h2&gt;Plugins&lt;/h2&gt;
-  &lt;p&gt;Plugins are special and have their own rules for positioning. A div without the plugin class will still align with the story text, but any div prefixed with &quot;plugin&quot; will be excluded from the max-width and margin declaration the other elements adhere to.&lt;/p&gt;
-  &lt;div class=&quot;c-plugin&quot;&gt;
-    &lt;blockquote class=&quot;has-b-btm-marg has-vert-bar has-vert-bar--padded-l has-text-yellow t-sans t-size-m&quot;&gt;
-      &lt;p class=&quot;has-text-black-off has-xxxs-btm-marg&quot;&gt;&lt;strong&gt;&lt;em&gt;“Example of a pull quote.”&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-      &lt;cite class=&quot;has-text-black-off t-size-b&quot;&gt;—&amp;nbsp;First name, Last name&lt;/cite&gt;
-    &lt;/blockquote&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;c-plugin has-padding has-bg-gray-light&quot;&gt;Example of ad plugin. Should be not be bound by container&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-    </div>
-    <div id="stats-c-story-body--nested-pane" class="q-display-pane js-pane">
-      
-  
-    This class isn't referenced anywhere
-  
-
-    </div>
-  </div>
-
   
 </div>
 

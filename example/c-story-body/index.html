@@ -11,45 +11,44 @@
   
   
     <div class="c-story-body  has-l-btm-marg t-size-b story_body">
-  <h1></h1>
+  <h2>Article text formatting preview</h2>
   <p>Our editor outputs blocks of texts with paragraph tags. This parent class also accounts for descendant links, headings, horizontal rules, and lists.</p>
 
-  <h2>Horizontal Rules</h2>
-  <p>Use a horizontal rule to break up content. A horizontal rule is displayed below.</p>
-  <hr/>
-  <p>The hr tag has built in top and bottom margin. We do this because it's normally used as a spacing element and the need for cushion is assumed.</p>
+  <p>This is a paragraph with some <a href="#">link text</a>. This is how <strong>bolded</strong>, <em>emphasized</em>, <sup>superscript</sup> and <sub>subscript</sub> text displays.</p>
 
-  <h2>Ordered Lists</h2>
-  <p>Ordered lists are lists with numbers and need the special container and a list style treatment.</p>
+  <h2>Lists</h2>
+  <p>Ordered</p>
   <ol>
     <li>This is the first item.</li>
     <li>This is the second item.</li>
     <li>This is the third item.</li>
   </ol>
-
-  <h2>Unordered Lists</h2>
-  <p>Unordered lists are lists with bullets and also need the special container and a list style treatment. We globally remove bullets so lists within the c-story-body class we add them back via the ul tag.</p>
+  <p>Unordered</p>
   <ul>
     <li>This is the first item.</li>
     <li>This is the second item.</li>
     <li>This is the third item.</li>
   </ul>
-
-  <h2>Headings</h2>
-  <p>Our editor has a dropdown option called <em>Subheader</em> for adding a heading element. By default, that tag is an h2.</p>
-  <h2>I am an example heading</h2>
-
+  <hr/>
+  <p>Headings are used to label sections of the text body. The text below is an example of how h2 - h4 tags should be formatted.</p>
+  <h2>Heading level 2</h2>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam facilis, est error vero distinctio sequi reiciendis ipsam consequuntur enim, aliquam accusamus magni laborum neque reprehenderit labore doloremque nulla ab aspernatur?</p>
+  <h3>Heading level 3 and example of some <em>emphasized text</em>
+  </h3>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam facilis, est error vero distinctio sequi reiciendis ipsam consequuntur enim, aliquam accusamus magni laborum neque reprehenderit labore doloremque nulla ab aspernatur?</p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam facilis, est error vero distinctio sequi reiciendis ipsam consequuntur enim, aliquam accusamus magni laborum neque reprehenderit labore doloremque nulla ab aspernatur?</p>
+  <h4>Heading level 4 and an example of a heading with a <a href="#">link</a>
+  </h4>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam facilis, est error vero distinctio sequi reiciendis ipsam consequuntur enim, aliquam accusamus magni laborum neque reprehenderit labore doloremque nulla ab aspernatur?</p>
+  <h2>Horizontal Rules</h2>
+  <p>Use a horizontal rule to break up content. A horizontal rule is displayed below.</p>
+  <hr/>
+  <p>The hr tag has built in top and bottom margin. We do this because it's normally used as a spacing element and the need for cushion is assumed.</p>
+  <hr/>
   <h2>Plugins</h2>
-  <p>Plugins are special and have their own rules for positioning. A div without the plugin class will still align with the story text, but any div prefixed with "plugin" will be excluded from the max-width and margin declaration the other elements adhere to.</p>
-  <div class="c-plugin">
-    <blockquote class="has-b-btm-marg has-vert-bar has-vert-bar--padded-l has-text-yellow t-sans t-size-m">
-      <p class="has-text-black-off has-xxxs-btm-marg"><strong><em>“Example of a pull quote.”</em></strong></p>
-      <cite class="has-text-black-off t-size-b">—&nbsp;First name, Last name</cite>
-    </blockquote>
-  </div>
-  <div class="c-plugin has-padding has-bg-gray-light">Example of ad plugin. Should be not be bound by container</div>
+  <p>We add container rules to specific descendant selectors like paragraphs, headings, lists etc. That means that most elements nested in this component will not be bound by any container and will need their own max-width.</p>
+  <div class="c-plugin has-padding has-bg-gray-light">Plugins should not be bound by any rule in c-story-body. We use separate plugin positioning rules for that.</div>
 </div>
-
   
 
 
