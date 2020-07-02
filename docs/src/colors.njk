@@ -11,12 +11,17 @@ layout: base.njk
 <h1 class="is-size-2 q-bottom-spacer">Colors</h1>
 
 {% from "./macros/color-swatch.njk" import colorSwatch %}
-<div class="q-tiles q-spacer">
-  {% for item in styles.all %}
+
+{% for item in styles.all %}
   {% if item.colors.length > 1 %}
-      {% for color in item.colors %}
-        {{ colorSwatch(color) }}
-      {% endfor %}
+    <div class="q-spacer">
+      <h2 id="{{ item.prettyName | slug }}" class="is-size-4 q-bottom-spacer">{{ item.prettyName }}</h2>
+      <div class="q-tiles">
+        {% for color in item.colors %}
+          {{ colorSwatch(color) }}
+        {% endfor %}
+      </div>
+    </div>
   {% endif %}
-  {% endfor %}
-</div>
+{% endfor %}
+
