@@ -1,32 +1,30 @@
-// Colors - Branding
+// Core
 //
 // Colors specific to our brand.
 //
 // Colors:
 // $color-yellow-tribune: #ffc200 - Primary branding
 // $color-blue-light: #a1d2df - Blue Light
-// $color-blue-dark: #223136 - Used for the blast
 // $color-teal-gray: #348094 - Teal Gray
-// $color-red: #e12931 - Red
-// $color-sand: #f2ede2 - Sand
+// $color-black-off: #222 - A little bit darker now
+// $color-white-off: #f3f3f3 - Off-white
 //
 //
 // Styleguide 1.1.1
 //
 $color-yellow-tribune: #ffc200;
 $color-blue-light: #a1d2df;
-$color-blue-dark: #223136;
 $color-teal-gray: #348094;
-$color-red: #e12931;
-$color-sand: #f2ede2;
+// $color-black-off and $color-white-off are below
 
-// Colors - Grays
+// Grayscale
 //
 // In search of that perfect gray.
 //
 // Colors:
 // $color-white-pure: #fff - White
-// $color-white-off: #f3f3f3 - Kinda white
+// $color-white-off-light: #fbfbfb - Off-white (light)
+// $color-white-off: #f3f3f3 - Off-white
 // $color-gray-light: #d0d0d0 - Gray light
 // $color-gray-medium: #797979 - A little bit darker now
 // $color-gray-dark: #4a4a4a - A little bit darker now
@@ -37,6 +35,7 @@ $color-sand: #f2ede2;
 // Styleguide 1.1.2
 //
 $color-white-pure: #fff;
+$color-white-off-light: #fbfbfb;
 $color-white-off: #f3f3f3;
 $color-gray-light: #d0d0d0;
 $color-gray-medium: #797979;
@@ -44,39 +43,48 @@ $color-gray-dark: #4a4a4a;
 $color-black-off: #222;
 $color-black-pure: #000;
 
-// Colors - Social
-//
-// Used for social sites branding consistency.
-//
-// Colors:
-// $color-facebook: #2d60c4 - Facebook
-// $color-twitter: #55acee - Twitter
-//
-// Styleguide 1.1.3
-//
-$color-facebook: #2d60c4;
-$color-twitter: #55acee;
 
-// Colors - States and promos
+// Site elements
 //
 // These are special variables assigned to specific elements and states.
 //
 // Colors:
 // $color-link-underline: #a1d2df - Link underline color
 // $color-link-underline-hover: #348094 - Link underline color on hover
+// $color-ad-text: #347d90 - Darkened version of `$color-teal-dark` helpful for contrast
 // $color-error: #e12931 - Error
 // $color-success: #11A06B - Success
-// $color-fmd-blue-dark: #323a44 - Fall membership drive 1
-// $color-fmd-blue-light: #6c99c1 - Fall membership drive 2
-// $color-sponsor: #3366cc - Sponsored content signifier
 //
 //
 // Styleguide 1.1.4
 //
-$color-link-underline: $color-blue-light;
-$color-link-underline-hover: $color-teal-gray;
+$color-link-underline: #a1d2df;
+$color-link-underline-hover: #348094;
+$color-ad-text: #347d90;
+$color-red: #e12931;
 $color-error: $color-red;
 $color-success: #11A06B;
+
+
+// Social and promos
+//
+// These are special variables assigned to specific elements and states.
+//
+// Colors:
+// $color-sponsor: #3366cc - Sponsored content signifier
+// $color-facebook: #2d60c4 - Facebook
+// $color-twitter: #55acee - Twitter
+// $color-blue-dark: #223136 - Used for the blast
+// $color-sand: #f2ede2 - Sand
+//
+//
+// Styleguide 1.1.4
+//
+$color-facebook: #2d60c4;
+$color-twitter: #55acee;
+$color-sponsor: #3366cc;
+$color-blue-dark: #223136;
+$color-blue-dark: #223136;
 $color-fmd-blue-dark: #323a44;
 $color-fmd-blue-light: #6c99c1;
-$color-sponsor: #3366cc;
+$color-sand: #f2ede2;
