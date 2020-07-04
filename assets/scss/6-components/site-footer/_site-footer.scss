@@ -19,7 +19,7 @@
   }
 
   &__header {
-    letter-spacing: .08em;
+    letter-spacing: 0.08em;
   }
 
   &__icon {
@@ -32,6 +32,66 @@
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+// test
+.c-site-footer {
+  padding: $size-l $size-b $size-giant;
+
+  &__inner {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  &__links {
+    li {
+      margin-bottom: px-to-rem(4px);
+    }
+
+    @include mq($until: bp-m) {
+    }
+  }
+  // remove after 10yr treatment
+  &__logo {
+    // hack: nudge 10yr bug left for alignment of square
+    margin-left: -$size-xxs;
+    margin-bottom: $size-b;
+    width: 66px;
+  }
+
+  @include mq($until: bp-s) {
+    &__inner {
+      @include gap($size-xxl);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    &__col--1 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    &__col--3 {
+      grid-column: 2 / 3;
+      grid-row: -1 / 1;
+    }
+
+    &__col--4 {
+      grid-column: 1 / 2;
+      grid-row: 2 / 4;
+    }
+    // increase size of mobile tap targets
+    // @link: https://web.dev/tap-targets
+    &__links {
+      li {
+        margin-bottom: px-to-rem(9px);
+      }
+
+      a {
+        display: block;
+        padding: px-to-rem(2px) 0;
+      }
     }
   }
 }
