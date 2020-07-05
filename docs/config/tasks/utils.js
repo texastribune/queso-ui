@@ -27,14 +27,14 @@ const generateName = (str) => {
 };
 
 const generateTemplate = async (str) => {
-    const isFile = str.includes('.html');
-    let template = str;
-    if (isFile) {
-      const codePath = `${docsStyles}${str}`;
-      template = fs.readFileSync(codePath, 'utf-8');
-    }
-    return template;
-}
+  const isFile = str.includes('.html');
+  let template = str;
+  if (isFile) {
+    const codePath = `${docsStyles}${str}`;
+    template = fs.readFileSync(codePath, 'utf-8');
+  }
+  return template;
+};
 
 const renderTemplate = async (template, data) => {
   const env = nunjucks.configure('./assets/scss');
@@ -45,14 +45,13 @@ const renderTemplate = async (template, data) => {
     // eslint-disable-next-line no-console
     console.log(error);
   }
-  return rendered
-}
+  return rendered;
+};
 
 // If string is .classname, make it just classname
 const stripSelector = (str) => {
-  return str[0] === '.' ? str.substring(1) : str
-}
-
+  return str[0] === '.' ? str.substring(1) : str;
+};
 
 const readUsageInfo = async () => {
   let github = {};
@@ -66,13 +65,17 @@ const readUsageInfo = async () => {
 };
 
 const findUsageInfo = (usageInfo, className) => {
-  return typeof usageInfo.classData[stripSelector(className)] !==
-    'undefined'
-    ? usageInfo.classData[stripSelector(className)].searchDataArr
-    : [];
-}
+  const data =
+    typeof usageInfo.classData[className] !== 'undefined'
+      ? usageInfo.classData[className].searchDataArr
+      : [];
+  return {
+    className,
+    data,
+  };
+};
 
-const slugify = text => {
+const slugify = (text) => {
   return text
     .toString()
     .toLowerCase()
@@ -83,8 +86,42 @@ const slugify = text => {
     .replace(/-+$/, '');
 };
 
-const stripTags = str => {
+const stripTags = (str) => {
   return str.replace(/(<([^>]+)>)/gi, '');
+};
+
+const getDetails = (description, name) => {
+  const isHelperStr = '{{isHelper}}';
+  const isHelper = description.includes(isHelperStr);
+  const isRecipeStr = '{{isRecipe}}';
+  const isRecipe = description.includes(isRecipeStr);
+  const isTool = name.includes('@');
+  const keywordsStr = /Keywords: (.*)/;
+  const keywordsMatch = keywordsStr.exec(description);
+
+  const filteredDesc = description
+    .replace(isHelperStr, '')
+    .replace(isRecipeStr, '')
+    .replace(keywordsStr, '');
+  return {
+    details: {
+      isHelper,
+      isRecipe,
+      isTool,
+      keywordsMatch,
+    },
+    description: filteredDesc,
+  };
+};
+
+const convertArrayToObject = (array, key) => {
+  const initialValue = {};
+  return array.reduce((obj, item) => {
+    return {
+      ...obj,
+      [item[key]]: item,
+    };
+  }, initialValue);
 };
 
 module.exports = {
@@ -97,4 +134,6 @@ module.exports = {
   slugify,
   stripSelector,
   stripTags,
+  getDetails,
+  convertArrayToObject,
 };

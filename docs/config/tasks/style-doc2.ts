@@ -1,0 +1,235 @@
+import {
+  Color,
+  ColorMap,
+  CSSClass,
+  Modifier,
+  Section,
+  Sorted,
+  Token,
+  TokenMap,
+  KSSData,
+  KSSModifier,
+} from './types';
+
+const fs = require('fs-extra');
+const kss = require('kss');
+const ora = require('ora');
+const {
+  generateName,
+  generateClassName,
+  generateTemplate,
+  readUsageInfo,
+  stripSelector,
+  findUsageInfo,
+  renderTemplate,
+  getDetails,
+  convertArrayToObject,
+} = require('../tasks/utils');
+
+const {
+  passesWcagAaLargeText,
+  passesWcagAa,
+  passesWcagAaa,
+} = require('passes-wcag');
+
+const GITHUB_URL = 'https://github.com/texastribune/queso-ui/blob/main';
+
+async function createCSSClass(
+  config: CSSClass,
+  modifiers: KSSModifier[] | undefined
+) {
+  let modifierData: Modifier[] = [];
+  let modifierList: string[] = [];
+  if (modifiers) {
+    modifierList = modifiers.map((modifier) =>
+      stripSelector(modifier.data.name)
+    );
+    modifierData = await Promise.all(
+      modifiers.map((modifier: KSSModifier) =>
+        createModifier({
+          name: modifier.data.name,
+          className: stripSelector(modifier.data.name),
+          description: modifier.data.description,
+          type: 'modifier',
+          template: config.template,
+        })
+      )
+    );
+  }
+  config.modifiers = modifierData;
+  config.modifierList = modifierList;
+  return config;
+}
+
+async function createModifier(config: Modifier) {
+  config.preview = await renderTemplate(config.template, config);
+  return config;
+}
+
+function createColor(config: Color) {
+  config.check = {
+    aa: passesWcagAa(config.value, '#fff'),
+    aaLargeText: passesWcagAaLargeText(config.value, '#fff'),
+    aaa: passesWcagAaa(config.value, '#fff'),
+  };
+  return config;
+}
+
+// create a color, color map, section or item
+async function createEntry(section: KSSData) {
+  const { meta, data } = section;
+  const ref = data.reference[0];
+  const id = Number(ref);
+  const { depth } = meta;
+  const { modifiers, header, source, colors, markup, parameters } = data;
+  const location = `${GITHUB_URL}/${source.path}#L${source.line}`;
+  const { details, description } = getDetails(data.description, header);
+  const base = { name: header, description, location };
+  if (colors && colors.length > 0) {
+    // create a color map
+    const colorMap = colors.map((color) => {
+      const { name, description } = color;
+      return createColor({
+        type: 'color',
+        name,
+        description,
+        value: color.color,
+      });
+    });
+    return {
+      ...base,
+      type: 'colorMap',
+      list: colorMap,
+    };
+  } else if (parameters && parameters.length > 0) {
+    const tokenMap = parameters.map((token) => {
+      const { data } = token;
+      const { description, defaultValue, name } = data;
+      return {
+        type: 'token',
+        name,
+        description,
+        value: defaultValue,
+      };
+    });
+    return {
+      ...base,
+      type: 'tokenMap',
+      list: tokenMap,
+    };
+  } else if (meta.depth < 3) {
+    return {
+      ...base,
+      type: 'section',
+      id,
+      depth,
+    };
+  } else {
+    const className = generateClassName(base.name);
+    const config = {
+      ...base,
+      label: generateName(base.name),
+      type: 'cssClass',
+      id,
+      depth: 2,
+      className,
+      details,
+      template: await generateTemplate(markup),
+      preview: await renderTemplate(markup, className),
+    };
+    return await createCSSClass(config, modifiers);
+  }
+}
+
+async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
+  const usageInfo = await readUsageInfo();
+  const sections: Section[] = [];
+  const cssClasses: CSSClass[] = [];
+  const cssClassesSlim: CSSClass[] = [];
+  const cssClassesNoHelpers: CSSClass[] = [];
+  const colorMaps: ColorMap[] = [];
+  const modifiers: Modifier[] = [];
+  const tokenMaps: TokenMap[] = [];
+  arr.forEach((entry: CSSClass | ColorMap | Section) => {
+    const { type } = entry;
+    switch (type) {
+      case 'section':
+        sections.push(entry as Section);
+        break;
+      case 'cssClass':
+        cssClasses.push(entry as CSSClass);
+        break;
+      case 'colorMap':
+        colorMaps.push(entry as ColorMap);
+        break;
+      case 'tokenMap':
+        tokenMaps.push(entry as TokenMap);
+        break;
+    }
+  });
+  // clean up css class data (reduce the repeated keys)
+  cssClasses.forEach((cssClass) => {
+    const { details } = cssClass;
+    if (cssClass.modifiers) {
+      cssClass.modifiers.forEach((modifier: Modifier) => {
+        modifiers.push(modifier as Modifier);
+      });
+      const cssClassSlim = {
+        ...cssClass,
+      };
+      delete cssClassSlim.modifiers;
+      delete cssClassSlim.template;
+      if (details.isHelper) {
+        delete cssClassSlim.preview;
+      }
+      cssClassesSlim.push(cssClassSlim as CSSClass);
+    }
+    if (!details.isHelper && !details.isRecipe) {
+      cssClassesNoHelpers.push(cssClass);
+    }
+  });
+
+  const allClasses = [...cssClassesNoHelpers, ...modifiers];
+  const fullList = allClasses.map((cssClass) => cssClass.className);
+  const usage = fullList.map((cssClass) => findUsageInfo(usageInfo, cssClass));
+  const sorted: Sorted = {
+    sections,
+    cssClasses: cssClassesSlim,
+    colorMaps,
+    modifiers: convertArrayToObject(modifiers, 'className'),
+    tokenMaps,
+    fullList,
+    usage: convertArrayToObject(usage, 'className'),
+  };
+  return sorted;
+}
+
+const processComments = async (directory: string) => {
+  // use KSS library to parse comments
+  const { data } = await kss.traverse(directory, { markdown: true });
+
+  // compile KSS data as various types of entries
+  const all: (Section | CSSClass | ColorMap | TokenMap)[] = await Promise.all(
+    data.sections.map((section: KSSData) => createEntry(section))
+  );
+
+  // separate by type
+  const sorted = await sortByType(all);
+
+  // create json files of style data
+  for (const [key, value] of Object.entries(sorted)) {
+    await fs.outputFile(
+      `./docs/dist/data/${key}.json`,
+      JSON.stringify({ [key]: value }, null, 2)
+    );
+  }
+  return sorted;
+};
+
+module.exports = async (dir: string) => {
+  const spinner = ora('Parsing SCSS comments').start();
+  const docs = await processComments(dir);
+
+  spinner.succeed();
+  return docs;
+};

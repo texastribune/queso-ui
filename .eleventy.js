@@ -19,6 +19,24 @@ module.exports = function (eleventyConfig) {
     return value.replace('$size-', '');
   });
 
+  // temp logger
+  eleventyConfig.addFilter('dump', (obj) => {
+    const getCircularReplacer = () => {
+      const seen = new WeakSet();
+      return (key, value) => {
+        if (typeof value === 'object' && value !== null) {
+          if (seen.has(value)) {
+            return;
+          }
+          seen.add(value);
+        }
+        return value;
+      };
+    };
+
+    return JSON.stringify(obj, getCircularReplacer(), 4);
+  });
+
   // settings
   return {
     dir: {
