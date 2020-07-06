@@ -124,6 +124,12 @@ const convertArrayToObject = (array, key) => {
   }, initialValue);
 };
 
+const buildTokenArr = (arr) => {
+  return arr
+    .map((arrMap) => arrMap.list.map((token) => token.name))
+    .reduce((acc, val) => acc.concat(val), []);
+}
+
 module.exports = {
   findUsageInfo,
   generateClassName,
@@ -136,4 +142,5 @@ module.exports = {
   stripTags,
   getDetails,
   convertArrayToObject,
+  buildTokenArr,
 };

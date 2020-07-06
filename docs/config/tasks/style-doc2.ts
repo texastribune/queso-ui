@@ -5,7 +5,6 @@ import {
   Modifier,
   Section,
   Sorted,
-  Token,
   TokenMap,
   KSSData,
   KSSModifier,
@@ -24,6 +23,7 @@ const {
   renderTemplate,
   getDetails,
   convertArrayToObject,
+  buildTokenArr,
 } = require('../tasks/utils');
 
 const {
@@ -126,6 +126,7 @@ async function createEntry(section: KSSData) {
     };
   } else {
     const className = generateClassName(base.name);
+    const template = await generateTemplate(markup);
     const config = {
       ...base,
       label: generateName(base.name),
@@ -134,8 +135,8 @@ async function createEntry(section: KSSData) {
       depth: 2,
       className,
       details,
-      template: await generateTemplate(markup),
-      preview: await renderTemplate(markup, className),
+      template: template,
+      preview: await renderTemplate(template, className),
     };
     return await createCSSClass(config, modifiers);
   }
@@ -167,26 +168,37 @@ async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
         break;
     }
   });
-  // clean up css class data (reduce the repeated keys)
+  const sectionMap = convertArrayToObject(sections, 'id');
+
+  // clean up css class data
   cssClasses.forEach((cssClass) => {
     const { details } = cssClass;
+    // get section
+    const { name } = sectionMap[cssClass.id];
+    const cssClassSlim = {
+      ...cssClass,
+      section: name,
+    };
+
+    // extract modifiers separately
     if (cssClass.modifiers) {
       cssClass.modifiers.forEach((modifier: Modifier) => {
         modifiers.push(modifier as Modifier);
       });
-      const cssClassSlim = {
-        ...cssClass,
-      };
       delete cssClassSlim.modifiers;
-      delete cssClassSlim.template;
-      if (details.isHelper) {
-        delete cssClassSlim.preview;
-      }
-      cssClassesSlim.push(cssClassSlim as CSSClass);
     }
+
+    // previews aren't relevant in helpers (found in modifiers)
+    if (details.isHelper) {
+      delete cssClassSlim.preview;
+    }
+
+    //  used for full list
     if (!details.isHelper && !details.isRecipe) {
       cssClassesNoHelpers.push(cssClass);
     }
+
+    cssClassesSlim.push(cssClassSlim as CSSClass);
   });
 
   const allClasses = [...cssClassesNoHelpers, ...modifiers];
@@ -200,6 +212,8 @@ async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
     tokenMaps,
     fullList,
     usage: convertArrayToObject(usage, 'className'),
+    tokens: buildTokenArr(tokenMaps),
+    colors: buildTokenArr(colorMaps),
   };
   return sorted;
 }

@@ -20,6 +20,7 @@ export interface CSSClass extends Base {
   label: string;
   modifiers?: Modifier[];
   modifierList?: string[];
+  section?: string;
 }
 
 export interface Modifier extends Base {
@@ -64,8 +65,10 @@ export interface Sorted {
   colorMaps: ColorMap[];
   modifiers: Modifier;
   tokenMaps: TokenMap[];
-  fullList: string[];
   usage: GithubDataItem;
+  fullList: string[];
+  tokens: string[];
+  colors: string[];
 }
 
 // Third party
