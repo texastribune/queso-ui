@@ -1,0 +1,13 @@
+// Height (l-height-<size>)
+//
+// Defines height settings. Helpful for grid, flexbox and buttons. {{isHelper}}
+//
+// .l-height-full - Height is 100% of parent
+//
+// Markup: <div style="border: 2px solid black; height: 500px;"><div class="{{ className }} has-bg-yellow t-align-center">I am a child div</div></div>
+//
+//
+// Styleguide 7.0.5
+.l-height-full {
+  height: 100%;
+}
