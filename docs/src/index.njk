@@ -15,12 +15,10 @@ layout: base.njk
   </div>
   <h2 class="is-size-4 q-bottom-spacer">Sections</h2>
   <ul class="l-multicol">
-  {% for section in styles.nested %}
+  {% for section in docs.sections %}
     {% if section.name != 'Resets' and section.name != 'Settings' and section.name != 'Tools' %}
-      <li class="q-bottom-spacer">{{ menuItem('sections/' + section.slug + '/', section.name) }}</li>
+      <li class="q-bottom-spacer">{{ menuItem('sections/' + section.name | slug + '/', section.name) }}</li>
     {% endif %}
   {% endfor %}
   </ul>
 </div>
-
-<pre>{{ docs.fullList | dump}}</pre>

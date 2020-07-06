@@ -6,17 +6,28 @@
       {% set dataLink = '/' + item.slug  + '/' %}
       <option value="{{ item.name }}" data-link="{{ dataLink | url }}" />
     {% endfor %}
-    {% for item in styles.all %}
-      {% if item.depth > 2 and item.colors.length < 1 %}
-        {% if item.sectionSlug == 'settings'  %}
-          {% set dataLink = '/variables#' + item.slug %}
-        {% else %}
-          {% set dataLink = '/sections/'+ item.sectionSlug + '/' + item.slug + '/' %}
-        {% endif %}
-          {% for keyword in item.keywords %}
-            <option value="{{ keyword}}" data-link="{{ dataLink | url }}" />
-          {% endfor %}
+    {# from data #}
+    {% for item in docs.cssClasses %}
+      {% set dataLink = '/sections/'+ item.section | slug + '/' + item.className | cleanSlug + '/' %}
+      <option value="{{ item.name }}" data-link="{{ dataLink | url }}" />
+      {% for keyword in item.details.keywords %}
+        <option value="{{ keyword }}" data-link="{{ dataLink | url }}" />
+      {% endfor %}
+      {% for keyword in item.modifiers %}
+        <option value="{{ keyword }}" data-link="{{ dataLink | url }}" />
+      {% endfor %}
+    {% endfor %}
+    {% for item in docs.sections %}
+      {% set dataLink = '/sections/'+ item.name | slug + '/' %}
+      <option value="{{ item.name }}" data-link="{{ dataLink | url }}" />
+    {% endfor %}
+    {% for item in docs.tokenMaps %}
+      {% if item.details.isTool %}
+        {% set dataLink = '/tools/#'+ item.name | cleanSlug %}
+      {% else %}
+        {% set dataLink = '/variables/#'+ item.name | cleanSlug %}
       {% endif %}
+      <option value="{{ item.name }}" data-link="{{ dataLink | url }}" />
     {% endfor %}
   </datalist>
 </div>

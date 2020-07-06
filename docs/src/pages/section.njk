@@ -1,10 +1,10 @@
 ---
 layout: base.njk
 pagination:
-    data: styles.nested
+    data: docs.sections
     size: 1
     alias: section
-permalink: "sections/{{ section.slug }}/"
+permalink: "sections/{{ section.name | slug }}/"
 ---
 {% from "../macros/menu-item.njk" import menuItem %}
 <div class="q-container">
@@ -17,8 +17,8 @@ permalink: "sections/{{ section.slug }}/"
   <h1 class="is-size-2 q-bottom-spacer">{{ section.name }}</h1>
   <div class="q-desc q-spacer">{{ section.description | safe }}</div>
   <ul class="l-multicol">
-  {% for item in section.list %}
-      <li class="q-bottom-spacer">{{ menuItem('sections/' + section.slug + '/' + item.slug, item.prettyName) }}</li>
+  {% for item in section.list|sort(attribute='name') %}
+      <li class="q-bottom-spacer">{{ menuItem('sections/' + section.name | slug + '/' + item.className | cleanSlug, item.name | cleanName) }}</li>
   {% endfor %}
   </ul>
 </div>

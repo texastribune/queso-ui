@@ -84,7 +84,11 @@ async function createEntry(section: KSSData) {
   const { modifiers, header, source, colors, markup, parameters } = data;
   const location = `${GITHUB_URL}/${source.path}#L${source.line}`;
   const { details, description } = getDetails(data.description, header);
-  const base = { name: header, description, location };
+  const base = {
+    name: header,
+    description,
+    location,
+  };
   if (colors && colors.length > 0) {
     // create a color map
     const colorMap = colors.map((color) => {
@@ -114,6 +118,7 @@ async function createEntry(section: KSSData) {
     });
     return {
       ...base,
+      details,
       type: 'tokenMap',
       list: tokenMap,
     };
@@ -123,6 +128,7 @@ async function createEntry(section: KSSData) {
       type: 'section',
       id,
       depth,
+      list: [],
     };
   } else {
     const className = generateClassName(base.name);
@@ -180,6 +186,18 @@ async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
       section: name,
     };
 
+    // append class to section
+    if (sectionMap[cssClass.id]) {
+      sections.forEach((section) => {
+        if (section.id == cssClass.id) {
+          section.list?.push({
+            className: cssClass.className,
+            name: cssClass.name,
+          });
+        }
+      });
+    }
+
     // extract modifiers separately
     if (cssClass.modifiers) {
       cssClass.modifiers.forEach((modifier: Modifier) => {
@@ -209,6 +227,7 @@ async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
     cssClasses: cssClassesSlim,
     colorMaps,
     modifiers: convertArrayToObject(modifiers, 'className'),
+    modifierMap: modifiers,
     tokenMaps,
     fullList,
     usage: convertArrayToObject(usage, 'className'),
@@ -237,6 +256,13 @@ const processComments = async (directory: string) => {
       JSON.stringify({ [key]: value }, null, 2)
     );
   }
+  // directory of endpoints
+  const dataKeys = Object.keys(sorted);
+  const dataMap = dataKeys.map((key) => `/data/${key}.json`);
+  await fs.outputFile(
+    `./docs/dist/data/index.json`,
+    JSON.stringify({ dataMap }, null, 2)
+  );
   return sorted;
 };
 

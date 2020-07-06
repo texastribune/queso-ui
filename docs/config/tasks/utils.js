@@ -90,6 +90,26 @@ const stripTags = (str) => {
   return str.replace(/(<([^>]+)>)/gi, '');
 };
 
+const getKeywords = obj => {
+  const {name, description, modifiers} = obj;
+  const className = generateClassName(name);
+  const keywordsStr = /Keywords: (.*)/;
+  const keywordsMatch = keywordsStr.exec(description);
+  let keywords = [`${name.toLowerCase()}`, className];
+  const modifierNames = modifiers.map((modifier) => stripSelector(modifier.data.name));
+  console.log(modifierNames);
+  if (modifiers.length > 0) {
+    keywords = [...keywords, ...modifierNames];
+  }
+  if (keywordsMatch && typeof keywordsMatch[1] !== 'undefined') {
+    const extraKeywords = keywordsMatch[1].replace('</p>', '').split(', ');
+    const labeledKeywords = extraKeywords.map((word) => {
+      return `${word} (${name.toLowerCase()})`;
+    });
+    keywords = [...labeledKeywords, ...keywords];
+  }
+  return keywords;
+}
 const getDetails = (description, name) => {
   const isHelperStr = '{{isHelper}}';
   const isHelper = description.includes(isHelperStr);
@@ -98,6 +118,13 @@ const getDetails = (description, name) => {
   const isTool = name.includes('@');
   const keywordsStr = /Keywords: (.*)/;
   const keywordsMatch = keywordsStr.exec(description);
+  const keywords = [];
+  if (keywordsMatch && typeof keywordsMatch[1] !== 'undefined') {
+    const extraKeywords = keywordsMatch[1].replace('</p>', '').split(', ');
+    keywords = extraKeywords.map((word) => {
+      return `${word} (${name.toLowerCase()})`;
+    });
+  }
 
   const filteredDesc = description
     .replace(isHelperStr, '')
@@ -108,7 +135,7 @@ const getDetails = (description, name) => {
       isHelper,
       isRecipe,
       isTool,
-      keywordsMatch,
+      keywords,
     },
     description: filteredDesc,
   };
@@ -143,4 +170,5 @@ module.exports = {
   getDetails,
   convertArrayToObject,
   buildTokenArr,
+  getKeywords,
 };

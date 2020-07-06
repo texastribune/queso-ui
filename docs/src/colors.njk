@@ -12,16 +12,14 @@ layout: base.njk
 
 {% from "./macros/color-swatch.njk" import colorSwatch %}
 
-{% for item in styles.all %}
-  {% if item.colors.length > 1 %}
-    <div class="q-spacer">
-      <h2 id="{{ item.prettyName | slug }}" class="is-size-4 q-bottom-spacer">{{ item.prettyName }}</h2>
-      <div class="q-tiles">
-        {% for color in item.colors %}
-          {{ colorSwatch(color) }}
-        {% endfor %}
-      </div>
+{% for item in docs.colorMaps %}
+  <div class="q-spacer">
+    <h2 id="{{ item.name | slug }}" class="is-size-4 q-bottom-spacer">{{ item.name }}</h2>
+    <div class="q-tiles">
+      {% for color in item.list %}
+        {{ colorSwatch(color) }}
+      {% endfor %}
     </div>
-  {% endif %}
+  </div>
 {% endfor %}
 

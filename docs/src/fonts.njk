@@ -49,8 +49,8 @@ layout: base.njk
 </div>
 
 
-{% for item in styles.all %}
-  {% if item.slug == 'size-units' %}
+{% for item in docs.tokenMaps %}
+  {% if item.name == 'Size units' %}
     <div class="q-spacer">
       <h2 class="is-size-4 q-bottom-spacer">Scale</h2>
       <table class="table is-bordered">
@@ -59,11 +59,11 @@ layout: base.njk
           <th>Pixel Value</th>
           <th>Sample</th>
         </tr>
-        {% for font in item.parameters %}
+        {% for font in item.list %}
           {% if font.name != '$size-tiny' %}
             <tr>
-              <td>{{ font.defaultValue }}</td>
-              <td>{{ font.defaultValue|toPx }}</td>
+              <td>{{ font.value }}</td>
+              <td>{{ font.value|toPx }}</td>
               <td class="t-size-{{ font.name|getSize }} t-serif">Hello World</td>
             </tr>
           {% endif %}

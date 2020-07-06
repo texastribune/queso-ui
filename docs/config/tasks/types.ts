@@ -1,20 +1,22 @@
-export interface Base {
+interface Base {
   name: string;
   description: string;
   type: string;
   location?: string;
 }
 
+export interface Details {
+  isHelper: true | false;
+  isRecipe: true | false;
+  isTool: true | false;
+  keywords?: string[];
+}
+
 export interface CSSClass extends Base {
   depth: number;
   id: number;
   className: string;
-  details: {
-    isHelper: true | false;
-    isRecipe: true | false;
-    isTool: true | false;
-    keywordsMatch: string;
-  };
+  details: Details;
   template?: string;
   preview: string;
   label: string;
@@ -49,13 +51,17 @@ export interface Token extends Base {
 
 export interface TokenMap extends Base {
   list: Token[];
+  details: Details;
 }
 
 export interface Section extends Base {
   depth: number;
   slug?: string;
   id: number;
-  list?: object[];
+  list?: {
+    className: string;
+    name: string;
+  }[];
 }
 
 // Main data
@@ -64,6 +70,7 @@ export interface Sorted {
   cssClasses: CSSClass[];
   colorMaps: ColorMap[];
   modifiers: Modifier;
+  modifierMap: Modifier[];
   tokenMaps: TokenMap[];
   usage: GithubDataItem;
   fullList: string[];

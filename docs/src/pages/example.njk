@@ -1,14 +1,13 @@
 ---
 layout: example-base.njk
 pagination:
-    data: styles.all
+    data: docs.cssClasses
     size: 1
     alias: item
-permalink: "example/{{ item.slug }}/"
-title: Preview
+permalink: "example/{{ item.className | cleanSlug }}/"
 ---
 {% block content %}
-  {% if item.codeSnippet and not item.isHelper %}
-    {{ item.codeSnippet | safe }}
+  {% if item.preview and not item.details.isHelper %}
+    {{ item.preview | safe }}
   {% endif %}
 {% endblock %}
