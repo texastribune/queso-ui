@@ -5,6 +5,7 @@ pagination:
     size: 1
     alias: item
 permalink: "example/{{ item.slug }}/"
+title: Preview
 ---
 {% block content %}
   {% if item.codeSnippet and not item.isHelper %}

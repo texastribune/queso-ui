@@ -1,11 +1,15 @@
 // Site footer (c-site-footer)
 //
-// The standard footer on our site. Set the layout based on the number of columns needed. <br><br>
+// The base footer on our site. Set the layout based on the number of columns needed. <br><br>
 //  _Example CSS for layout:_
 // ```css
 // .c-site-footer__inner {grid-template-columns: repeat(4, 1fr);}
 // ```
-// <br><br>
+// <br>
+//
+// To render the standard footer, use a combination of `c-site-footer__inner--standard` for layout and `c-site-footer__links--standard` for proper link spacing.
+//
+// c-site-footer__inner--standard - This is our default footer.
 //
 // Markup: 6-components/site-footer/site-footer.html
 //
@@ -18,8 +22,18 @@
     display: grid;
   }
 
+  &__inner--standard {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   &__header {
     letter-spacing: .08em;
+  }
+
+  &__links--standard {
+    li {
+      margin-bottom: px-to-rem(4px);
+    }
   }
 
   &__icon {
@@ -32,6 +46,43 @@
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  // increase size of mobile tap targets
+  // @link: https://web.dev/tap-targets
+  @include mq($until: bp-m) {
+    &__inner--standard {
+      @include gap($size-xxl);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    &__col--1,
+    &__col--4 {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+
+    &__col--3 {
+      grid-column: 2 / 3;
+      grid-row: -1 / 1;
+    }
+
+    &__col--4 {
+      grid-row: 2 / 4;
+    }
+
+    &__links--standard {
+      li {
+        font-size: $size-s;
+        margin-bottom: px-to-rem(9px);
+      }
+
+      a {
+        display: block;
+        padding: px-to-rem(2px) 0;
+      }
     }
   }
 }
