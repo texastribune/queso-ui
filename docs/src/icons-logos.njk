@@ -16,15 +16,28 @@ layout: base.njk
 <div class="q-container q-display-pane">
   <div class="q-spacer">
     <h2 class="is-size-3 q-bottom-spacer">Logos</h2>
-    <div class="q-bottom-spacer">
+    <div class="q-bottom-spacer has-padding">
       {% include './includes/tt-logo.njk' %}
     </div>
-    <div class="has-bg-black-off has-padding">
-      {% set inverse = true %}
+    <div class="q-bottom-spacer has-bg-black-off has-padding">
+      {% set is_inverse = true %}
       {% include './includes/tt-logo.njk' %}
     </div>
-    {% set inverse = false %}
+    {% set is_inverse = false %}
     {% set logoCode %}{% include './includes/tt-logo.njk' %}{% endset %}
+    <pre><code class="language-html">{{ logoCode|escape }}</code></pre>
+  </div>
+  <div class="q-spacer">
+    <h3 class="is-size-4 q-bottom-spacer">Ten year anniversary logo</h3>
+    <div class="q-bottom-spacer has-padding">
+      {% include './includes/tt-logo-10.njk' %}
+    </div>
+    <div class="q-bottom-spacer has-bg-black-off has-padding">
+      {% set is_inverse = true %}
+      {% include './includes/tt-logo-10.njk' %}
+    </div>
+    {% set is_inverse = false %}
+    {% set logoCode %}{% include './includes/tt-logo-10.njk' %}{% endset %}
     <pre><code class="language-html">{{ logoCode|escape }}</code></pre>
   </div>
   <div class="q-spacer">
