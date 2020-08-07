@@ -116,7 +116,7 @@
     "markdown-it": "^11.0.0",
     "np": "^6.2.0",
     "nunjucks": "^3.1.7",
-    "ora": "^4.0.1",
+    "ora": "^5.0.0",
     "passes-wcag": "^0.2.1",
     "prettier": "2.0.5",
     "push-dir": "^0.4.1",
