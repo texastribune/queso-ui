@@ -74,8 +74,8 @@ export interface Sorted {
   tokenMaps: TokenMap[];
   usage: GithubDataItem;
   fullList: string[];
-  tokens: string[];
-  colors: string[];
+  tokens: Token[];
+  colors: Color[];
 }
 
 // Third party

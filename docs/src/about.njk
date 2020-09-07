@@ -68,4 +68,23 @@ layout: base.njk
   <h3 class="is-size-4">CSS CDN</h3>
   <p>Coming soon</p>
 
+
+ <h3 class="is-size-4">Style API</h3>
+
+  <p>We don't normally think of a CSS framework as data, but this library is built out in such a way that we can access various parts of the system through JSON endpoints.</p>
+
+  <h4 class="is-size-5">Endpoints</h4>
+  <ul>
+    {% for key, item in docs %}
+      <li><a href="{{ '/data/' + key + '.json' | url }}">{{ key }}</a></li>
+    {% endfor %}
+  </ul>
+
+  <h4 class="is-size-5">Examples</h4>
+  <ul>
+    <li><a href="{{ '/data/fullList.json' | url }}">List all class names</a></li>
+    <li><a href="{{ '/data/colors.json' | url }}">List all colors</a></li>
+    <li><a href="{{ '/data/colorMaps.json' | url }}">List all color groups</a></li>
+    <li><a href="{{ '/data/usage.json' | url }}">Find how many times each class is used</a></li>
+  </ul>
 </div>

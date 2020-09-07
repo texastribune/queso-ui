@@ -152,7 +152,11 @@ const convertArrayToObject = (array, key) => {
 
 const buildTokenArr = (arr) => {
   return arr
-    .map((arrMap) => arrMap.list.map((token) => token.name))
+    .map((arrMap) => arrMap.list.map((token) => {
+      return {
+        ...token
+      }
+    }))
     .reduce((acc, val) => acc.concat(val), []);
 }
 
