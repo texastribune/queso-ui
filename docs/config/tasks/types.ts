@@ -6,9 +6,9 @@ interface Base {
 }
 
 export interface Details {
-  isHelper: true | false;
-  isRecipe: true | false;
-  isTool: true | false;
+  isHelper: boolean;
+  isRecipe: boolean;
+  isTool: boolean;
   keywords?: string[];
 }
 
@@ -79,6 +79,7 @@ export interface Sorted {
 }
 
 // Third party
+// @link https://github.com/kss-node/kss-node
 export interface KSSData {
   meta: {
     depth: number;

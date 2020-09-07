@@ -4,7 +4,7 @@ const {
   docsStyles,
   siteURL,
   mappedGithubData,
-} = require('../../config/paths.js');
+} = require('../paths.js');
 
 const generateClassName = (str) => {
   let className = str;
@@ -97,7 +97,6 @@ const getKeywords = obj => {
   const keywordsMatch = keywordsStr.exec(description);
   let keywords = [`${name.toLowerCase()}`, className];
   const modifierNames = modifiers.map((modifier) => stripSelector(modifier.data.name));
-  console.log(modifierNames);
   if (modifiers.length > 0) {
     keywords = [...keywords, ...modifierNames];
   }
@@ -118,7 +117,7 @@ const getDetails = (description, name) => {
   const isTool = name.includes('@');
   const keywordsStr = /Keywords: (.*)/;
   const keywordsMatch = keywordsStr.exec(description);
-  const keywords = [];
+  let keywords = [];
   if (keywordsMatch && typeof keywordsMatch[1] !== 'undefined') {
     const extraKeywords = keywordsMatch[1].replace('</p>', '').split(', ');
     keywords = extraKeywords.map((word) => {
