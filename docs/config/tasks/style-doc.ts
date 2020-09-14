@@ -14,6 +14,11 @@ const fs = require('fs-extra');
 const kss = require('kss');
 const ora = require('ora');
 const {
+  passesWcagAaLargeText,
+  passesWcagAa,
+  passesWcagAaa,
+} = require('passes-wcag');
+const {
   generateName,
   generateClassName,
   generateTemplate,
@@ -24,20 +29,23 @@ const {
   getDetails,
   convertArrayToObject,
   buildTokenArr,
-} = require('../tasks/utils');
+} = require('./utils');
 
-const {
-  passesWcagAaLargeText,
-  passesWcagAa,
-  passesWcagAaa,
-} = require('passes-wcag');
+
 
 const GITHUB_URL = 'https://github.com/texastribune/queso-ui/blob/main';
+
+async function createModifier(config: Modifier) {
+  const modifier = config;
+  modifier.preview = await renderTemplate(config.template, config);
+  return modifier;
+}
 
 async function createCSSClass(
   config: CSSClass,
   modifiers: KSSModifier[] | undefined
 ) {
+  const cssClass = config;
   let modifierData: Modifier[] = [];
   let modifierList: string[] = [];
   if (modifiers) {
@@ -56,23 +64,19 @@ async function createCSSClass(
       )
     );
   }
-  config.modifiers = modifierData;
-  config.modifierList = modifierList;
-  return config;
-}
-
-async function createModifier(config: Modifier) {
-  config.preview = await renderTemplate(config.template, config);
-  return config;
+  cssClass.modifiers = modifierData;
+  cssClass.modifierList = modifierList;
+  return cssClass;
 }
 
 function createColor(config: Color) {
-  config.check = {
+  const color = config;
+  color.check = {
     aa: passesWcagAa(config.value, '#fff'),
     aaLargeText: passesWcagAaLargeText(config.value, '#fff'),
     aaa: passesWcagAaa(config.value, '#fff'),
   };
-  return config;
+  return color;
 }
 
 // create a color, color map, section or item
@@ -89,14 +93,14 @@ async function createEntry(section: KSSData) {
     description,
     location,
   };
+  // colorMaps and colors
   if (colors && colors.length > 0) {
-    // create a color map
     const colorMap = colors.map((color) => {
-      const { name, description } = color;
+      const { name } = color;
       return createColor({
         type: 'color',
         name,
-        description,
+        description: color.description,
         value: color.color,
       });
     });
@@ -105,14 +109,16 @@ async function createEntry(section: KSSData) {
       type: 'colorMap',
       list: colorMap,
     };
-  } else if (parameters && parameters.length > 0) {
+  }
+  // tokenMaps and tokens
+  if (parameters && parameters.length > 0) {
     const tokenMap = parameters.map((token) => {
-      const { data } = token;
-      const { description, defaultValue, name } = data;
+      const tokenData = token.data;
+      const { defaultValue, name } = tokenData;
       return {
         type: 'token',
         name,
-        description,
+        description: tokenData.description,
         value: defaultValue,
       };
     });
@@ -122,7 +128,9 @@ async function createEntry(section: KSSData) {
       type: 'tokenMap',
       list: tokenMap,
     };
-  } else if (meta.depth < 3) {
+  }
+  // section
+  if (meta.depth < 3) {
     return {
       ...base,
       type: 'section',
@@ -130,22 +138,22 @@ async function createEntry(section: KSSData) {
       depth,
       list: [],
     };
-  } else {
-    const className = generateClassName(base.name);
-    const template = await generateTemplate(markup);
-    const config = {
-      ...base,
-      label: generateName(base.name),
-      type: 'cssClass',
-      id,
-      depth: 2,
-      className,
-      details,
-      template: template,
-      preview: await renderTemplate(template, className),
-    };
-    return await createCSSClass(config, modifiers);
   }
+  // cssClass
+  const className = generateClassName(base.name);
+  const template = await generateTemplate(markup);
+  const config = {
+    ...base,
+    label: generateName(base.name),
+    type: 'cssClass',
+    id,
+    depth: 2,
+    className,
+    details,
+    template,
+    preview: await renderTemplate(template, className),
+  };
+  return createCSSClass(config, modifiers);
 }
 
 async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
@@ -160,17 +168,18 @@ async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
   arr.forEach((entry: CSSClass | ColorMap | Section) => {
     const { type } = entry;
     switch (type) {
-      case 'section':
-        sections.push(entry as Section);
-        break;
-      case 'cssClass':
-        cssClasses.push(entry as CSSClass);
-        break;
       case 'colorMap':
         colorMaps.push(entry as ColorMap);
         break;
       case 'tokenMap':
         tokenMaps.push(entry as TokenMap);
+        break;
+      case 'section':
+        sections.push(entry as Section);
+        break;
+      case 'cssClass':
+      default:
+        cssClasses.push(entry as CSSClass);
         break;
     }
   });
@@ -189,10 +198,11 @@ async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
     // append class to section
     if (sectionMap[cssClass.id]) {
       sections.forEach((section) => {
-        if (section.id == cssClass.id) {
+        if (section.id === cssClass.id) {
+          const { className } = cssClass;
           section.list?.push({
-            className: cssClass.className,
-            name: cssClass.name,
+            className,
+            name: cssClass.name
           });
         }
       });
@@ -251,7 +261,7 @@ const processComments = async (directory: string) => {
 
   // create json files of style data
   for (const [key, value] of Object.entries(sorted)) {
-    await fs.outputFile(
+    await fs.outputFileSync(
       `./docs/dist/data/${key}.json`,
       JSON.stringify({ [key]: value }, null, 2)
     );
