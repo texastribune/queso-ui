@@ -12,6 +12,12 @@ export interface Details {
   keywords?: string[];
 }
 
+export interface Modifier extends Base {
+  className: string;
+  preview?: string;
+  template?: string;
+}
+
 export interface CSSClass extends Base {
   depth: number;
   id: number;
@@ -20,16 +26,9 @@ export interface CSSClass extends Base {
   template?: string;
   preview: string;
   label: string;
-  modifiers?: Modifier[];
+  modifiers: Modifier[];
   modifierList?: string[];
   section?: string;
-}
-
-export interface Modifier extends Base {
-  className: string;
-  usage?: (string | GithubDataItem)[];
-  preview?: string;
-  template?: string;
 }
 
 export interface Color extends Base {
@@ -64,22 +63,23 @@ export interface Section extends Base {
   }[];
 }
 
-// Main data
-export interface Sorted {
-  sections: Section[];
-  cssClasses: CSSClass[];
-  colorMaps: ColorMap[];
-  modifiers: Modifier;
-  modifierMap: Modifier[];
-  tokenMaps: TokenMap[];
-  usage: GithubDataItem;
-  fullList: string[];
-  tokens: Token[];
-  colors: Color[];
-}
 
 // Third party
 // @link https://github.com/kss-node/kss-node
+export interface KSSParameter {
+  data: {
+    name: string;
+    description: string;
+    defaultValue: string;
+  };
+}
+export interface KSSModifier {
+  data: {
+    name: string;
+    description: string;
+    className: string;
+  };
+}
 export interface KSSData {
   meta: {
     depth: number;
@@ -116,23 +116,10 @@ export interface KSSData {
     markup: string;
   };
 }
-export interface KSSModifier {
-  data: {
-    name: string;
-    description: string;
-    className: string;
-  };
-}
-export interface KSSParameter {
-  data: {
-    name: string;
-    description: string;
-    defaultValue: string;
-  };
-}
+
 export interface GithubDataItem {
   repo: string;
-  total_count: number;
+  totalCount: number;
   results: [
     {
       label: string;
@@ -149,4 +136,19 @@ export interface GithubData {
       searchDataArr: GithubDataItem[];
     };
   };
+}
+
+
+// Main data
+export interface Sorted {
+  sections: Section[];
+  cssClasses: CSSClass[];
+  colorMaps: ColorMap[];
+  modifiers: Modifier;
+  modifierMap: Modifier[];
+  tokenMaps: TokenMap[];
+  usage: GithubDataItem;
+  fullList: string[];
+  tokens: Token[];
+  colors: Color[];
 }

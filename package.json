@@ -5,14 +5,15 @@
   "scripts": {
     "prettier": "prettier --write './docs/**/*.js'",
     "lint:css": "stylelint 'assets/**/**.scss'",
-    "lint:js": "eslint docs/config",
+    "lint:js": "eslint docs/config --ext .ts,.js",
     "lint": "npm run lint:css && npm run lint:js",
     "deploy": "push-dir --dir=docs/dist --branch=gh-pages",
     "build": "npm run compile && SITE_ENV=production node docs/config/tasks/build.js && SITE_ENV=production eleventy --pathprefix=queso-ui",
     "dev": "npm run compile && SITE_ENV=development node docs/config/tasks/build.js && SITE_ENV=development eleventy --serve",
     "test": "npm run lint && npm run build",
     "release": "np --any-branch",
-    "compile": "tsc"
+    "compile": "tsc",
+    "docs": "npm run compile && SITE_ENV=development node docs/src/data/docs.js"
   },
   "files": [
     "/assets"
@@ -25,6 +26,10 @@
     "access": "public"
   },
   "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
     "extends": [
       "airbnb-base",
       "prettier"
@@ -33,8 +38,19 @@
       "jest": true,
       "node": true
     },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [
+            ".js",
+            ".ts"
+          ]
+        }
+      }
+    },
     "rules": {
       "no-console": "error",
+      "no-unused-expressions": "off",
       "no-underscore-dangle": [
         "error",
         {
@@ -106,6 +122,8 @@
   "devDependencies": {
     "@11ty/eleventy": "0.11.0",
     "@texastribune/queso-tools": "^2.1.3",
+    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/parser": "^4.1.1",
     "axios": "^0.20.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",

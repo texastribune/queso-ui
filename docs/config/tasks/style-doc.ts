@@ -8,6 +8,7 @@ import {
   TokenMap,
   KSSData,
   KSSModifier,
+  // eslint-disable-next-line import/extensions
 } from './types';
 
 const fs = require('fs-extra');
@@ -30,8 +31,6 @@ const {
   convertArrayToObject,
   buildTokenArr,
 } = require('./utils');
-
-
 
 const GITHUB_URL = 'https://github.com/texastribune/queso-ui/blob/main';
 
@@ -95,7 +94,7 @@ async function createEntry(section: KSSData) {
   };
   // colorMaps and colors
   if (colors && colors.length > 0) {
-    const colorMap = colors.map((color) => {
+    const colorMap = colors.map((color: { color: string; name: string; description: string; }) => {
       const { name } = color;
       return createColor({
         type: 'color',
@@ -151,6 +150,8 @@ async function createEntry(section: KSSData) {
     className,
     details,
     template,
+    modifiers: [],
+    modifierList: [],
     preview: await renderTemplate(template, className),
   };
   return createCSSClass(config, modifiers);
@@ -160,10 +161,7 @@ async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
   const usageInfo = await readUsageInfo();
   const sections: Section[] = [];
   const cssClasses: CSSClass[] = [];
-  const cssClassesSlim: CSSClass[] = [];
-  const cssClassesNoHelpers: CSSClass[] = [];
   const colorMaps: ColorMap[] = [];
-  const modifiers: Modifier[] = [];
   const tokenMaps: TokenMap[] = [];
   arr.forEach((entry: CSSClass | ColorMap | Section) => {
     const { type } = entry;
@@ -184,51 +182,39 @@ async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
     }
   });
   const sectionMap = convertArrayToObject(sections, 'id');
+  const classesWithModifiers = cssClasses.map(cssClass => cssClass).filter(cssClass => cssClass.modifiers.length > 0);
+  const modifiers = classesWithModifiers.map(cssClass => cssClass.modifiers).flat();
 
-  // clean up css class data
+  // add classes to sections
   cssClasses.forEach((cssClass) => {
-    const { details } = cssClass;
-    // get section
-    const { name } = sectionMap[cssClass.id];
-    const cssClassSlim = {
-      ...cssClass,
-      section: name,
-    };
-
-    // append class to section
     if (sectionMap[cssClass.id]) {
       sections.forEach((section) => {
         if (section.id === cssClass.id) {
           const { className } = cssClass;
-          section.list?.push({
+          if (section.list) {
+            section.list.push({
             className,
             name: cssClass.name
           });
+          }
         }
       });
     }
-
-    // extract modifiers separately
-    if (cssClass.modifiers) {
-      cssClass.modifiers.forEach((modifier: Modifier) => {
-        modifiers.push(modifier as Modifier);
-      });
-      delete cssClassSlim.modifiers;
-    }
-
-    // previews aren't relevant in helpers (found in modifiers)
-    if (details.isHelper) {
-      delete cssClassSlim.preview;
-    }
-
-    //  used for full list
-    if (!details.isHelper && !details.isRecipe) {
-      cssClassesNoHelpers.push(cssClass);
-    }
-
-    cssClassesSlim.push(cssClassSlim as CSSClass);
   });
 
+
+  const cssClassesSlim = cssClasses.map(cssClass => {
+    const current = cssClass
+    if (current.details.isHelper) {
+      delete current.preview;
+    }
+    delete current.modifiers;
+    return {
+      ...current,
+      section: sectionMap[current.id].name,
+    }
+  })
+  const cssClassesNoHelpers = cssClasses.map(cssClass => cssClass).filter(cssClass => !cssClass.details.isHelper && !cssClass.details.isRecipe)
   const allClasses = [...cssClassesNoHelpers, ...modifiers];
   const fullList = allClasses.map((cssClass) => cssClass.className);
   const usage = fullList.map((cssClass) => findUsageInfo(usageInfo, cssClass));
@@ -260,8 +246,9 @@ const processComments = async (directory: string) => {
   const sorted = await sortByType(all);
 
   // create json files of style data
+  // eslint-disable-next-line no-restricted-syntax
   for (const [key, value] of Object.entries(sorted)) {
-    await fs.outputFileSync(
+    fs.outputFileSync(
       `./docs/dist/data/${key}.json`,
       JSON.stringify({ [key]: value }, null, 2)
     );
