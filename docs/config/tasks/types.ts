@@ -62,61 +62,6 @@ export interface Section extends Base {
     name: string;
   }[];
 }
-
-
-// Third party
-// @link https://github.com/kss-node/kss-node
-export interface KSSParameter {
-  data: {
-    name: string;
-    description: string;
-    defaultValue: string;
-  };
-}
-export interface KSSModifier {
-  data: {
-    name: string;
-    description: string;
-    className: string;
-  };
-}
-export interface KSSData {
-  meta: {
-    depth: number;
-    styleGuide: {
-      meta: {
-        autoInit: boolean;
-        files: object;
-        hasNumericReferences: boolean;
-        needsDepth: boolean;
-        needsReferenceNumber: boolean;
-        needsSort: boolean;
-        referenceMap: object;
-        weightMap: object;
-      };
-      data: object;
-    };
-  };
-  data: {
-    header: string;
-    modifiers?: KSSModifier[];
-    reference: string;
-    description: string;
-    colors?: {
-      color: string;
-      name: string;
-      description: string;
-    }[];
-    parameters?: KSSParameter[];
-    source: {
-      filename: string;
-      path: string;
-      line: number;
-    };
-    markup: string;
-  };
-}
-
 export interface GithubDataItem {
   repo: string;
   totalCount: number;

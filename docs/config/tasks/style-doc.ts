@@ -1,4 +1,10 @@
 import {
+  KssSection,
+  KssModifier,
+  KssParameter,
+} from 'kss';
+
+import {
   Color,
   ColorMap,
   CSSClass,
@@ -6,8 +12,6 @@ import {
   Section,
   Sorted,
   TokenMap,
-  KSSData,
-  KSSModifier,
   // eslint-disable-next-line import/extensions
 } from './types';
 
@@ -42,21 +46,21 @@ async function createModifier(config: Modifier) {
 
 async function createCSSClass(
   config: CSSClass,
-  modifiers: KSSModifier[] | undefined
+  modifiers: KssModifier[]
 ) {
   const cssClass = config;
   let modifierData: Modifier[] = [];
   let modifierList: string[] = [];
   if (modifiers) {
     modifierList = modifiers.map((modifier) =>
-      stripSelector(modifier.data.name)
+      stripSelector(modifier.name())
     );
     modifierData = await Promise.all(
-      modifiers.map((modifier: KSSModifier) =>
+      modifiers.map((modifier: KssModifier) =>
         createModifier({
-          name: modifier.data.name,
-          className: stripSelector(modifier.data.name),
-          description: modifier.data.description,
+          name: modifier.name(),
+          className: stripSelector(modifier.name()),
+          description: modifier.description(),
           type: 'modifier',
           template: config.template,
         })
@@ -79,14 +83,11 @@ function createColor(config: Color) {
 }
 
 // create a color, color map, section or item
-async function createEntry(section: KSSData) {
-  const { meta, data } = section;
-  const ref = data.reference[0];
-  const id = Number(ref);
-  const { depth } = meta;
-  const { modifiers, header, source, colors, markup, parameters } = data;
+async function createEntry(section: KssSection) {
+  const { header, source, markup, depth, reference, colors } = section.toJSON();
+  const id = Number(reference[0]);
   const location = `${GITHUB_URL}/${source.path}#L${source.line}`;
-  const { details, description } = getDetails(data.description, header);
+  const { details, description } = getDetails(section.description(), header);
   const base = {
     name: header,
     description,
@@ -110,15 +111,14 @@ async function createEntry(section: KSSData) {
     };
   }
   // tokenMaps and tokens
+  const parameters = section.parameters();
   if (parameters && parameters.length > 0) {
-    const tokenMap = parameters.map((token) => {
-      const tokenData = token.data;
-      const { defaultValue, name } = tokenData;
+    const tokenMap = parameters.map((token: KssParameter) => {
       return {
         type: 'token',
-        name,
-        description: tokenData.description,
-        value: defaultValue,
+        name: token.name(),
+        description: token.description(),
+        value: token.defaultValue(),
       };
     });
     return {
@@ -129,7 +129,7 @@ async function createEntry(section: KSSData) {
     };
   }
   // section
-  if (meta.depth < 3) {
+  if (depth < 3) {
     return {
       ...base,
       type: 'section',
@@ -154,7 +154,7 @@ async function createEntry(section: KSSData) {
     modifierList: [],
     preview: await renderTemplate(template, className),
   };
-  return createCSSClass(config, modifiers);
+  return createCSSClass(config, section.modifiers());
 }
 
 async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
@@ -239,9 +239,8 @@ const processComments = async (directory: string) => {
 
   // compile KSS data as various types of entries
   const all: (Section | CSSClass | ColorMap | TokenMap)[] = await Promise.all(
-    data.sections.map((section: KSSData) => createEntry(section))
+    data.sections.map((section: KssSection) => createEntry(section))
   );
-
   // separate by type
   const sorted = await sortByType(all);
 
