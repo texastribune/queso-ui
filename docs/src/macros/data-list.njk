@@ -3,10 +3,10 @@
   <table class="table is-striped is-bordered is-fullwidth">
     <tr><th>Repo</th><th>Count</th><th>Location(s)</th></tr>
     {% for repo in githubData %}
-      {% if repo.totalCount > 0 %}
+      {% if repo.total_count > 0 %}
       <tr>
         <td>{{ repo.repo }}</td>
-        <td><strong>{{ repo.totalCount }}</strong></td>
+        <td><strong>{{ repo.total_count }}</strong></td>
         <td><details class="dropdown q-dropdown">
         <summary>
             <span class="button is-info is-outlined is-small">List</strong></span>

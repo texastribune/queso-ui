@@ -15,15 +15,7 @@ import {
   // eslint-disable-next-line import/extensions
 } from './types';
 
-const fs = require('fs-extra');
-const kss = require('kss');
-const ora = require('ora');
-const {
-  passesWcagAaLargeText,
-  passesWcagAa,
-  passesWcagAaa,
-} = require('passes-wcag');
-const {
+import {
   generateName,
   generateClassName,
   generateTemplate,
@@ -34,7 +26,17 @@ const {
   getDetails,
   convertArrayToObject,
   buildTokenArr,
-} = require('./utils');
+} from './utils';
+
+const fs = require('fs-extra');
+const kss = require('kss');
+const ora = require('ora');
+const {
+  passesWcagAaLargeText,
+  passesWcagAa,
+  passesWcagAaa,
+} = require('passes-wcag');
+
 
 const GITHUB_URL = 'https://github.com/texastribune/queso-ui/blob/main';
 

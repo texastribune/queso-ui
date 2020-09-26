@@ -66,8 +66,8 @@ const readUsageInfo = async () => {
 
 const findUsageInfo = (usageInfo, className) => {
   const data =
-    typeof usageInfo.classData[className] !== 'undefined'
-      ? usageInfo.classData[className].searchDataArr
+    typeof usageInfo.results[className] !== 'undefined'
+      ? usageInfo.results[className]
       : [];
   return {
     className,
