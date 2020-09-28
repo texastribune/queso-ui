@@ -40,16 +40,17 @@ const {
 
 const GITHUB_URL = 'https://github.com/texastribune/queso-ui/blob/main';
 
-async function createModifier(config: Modifier) {
+// A return value of type Modifier
+async function createModifier(config: Modifier): Promise<Modifier> {
   const modifier = config;
   modifier.preview = await renderTemplate(config.template, config);
   return modifier;
 }
-
+// A return value of type CSSClass
 async function createCSSClass(
   config: CSSClass,
   modifiers: KssModifier[]
-) {
+): Promise<CSSClass> {
   const cssClass = config;
   let modifierData: Modifier[] = [];
   let modifierList: string[] = [];
@@ -73,8 +74,8 @@ async function createCSSClass(
   cssClass.modifierList = modifierList;
   return cssClass;
 }
-
-function createColor(config: Color) {
+// A return value of type Color
+function createColor(config: Color): Color {
   const color = config;
   color.check = {
     aa: passesWcagAa(config.value, '#fff'),
@@ -84,8 +85,8 @@ function createColor(config: Color) {
   return color;
 }
 
-// create a color, color map, section or item
-async function createEntry(section: KssSection) {
+// Returns a function to create one of the style doc types
+async function createEntry(section: KssSection): Promise<object> {
   const { header, source, markup, depth, reference, colors } = section.toJSON();
   const id = Number(reference[0]);
   const location = `${GITHUB_URL}/${source.path}#L${source.line}`;
@@ -158,8 +159,8 @@ async function createEntry(section: KssSection) {
   };
   return createCSSClass(config, section.modifiers());
 }
-
-async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
+// A return value of type Sorted
+async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]): Promise<Sorted> {
   const usageInfo = await readUsageInfo();
   const sections: Section[] = [];
   const cssClasses: CSSClass[] = [];
@@ -234,8 +235,8 @@ async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]) {
   };
   return sorted;
 }
-
-const processComments = async (directory: string) => {
+// Runs a series of functions to create JSON data and returns the final list
+const processComments = async (directory: string): Promise<Sorted> => {
   // use KSS library to parse comments
   const { data } = await kss.traverse(directory, { markdown: true });
 
