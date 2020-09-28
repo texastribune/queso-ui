@@ -1,0 +1,568 @@
+{
+  "tokenMaps": [
+    {
+      "name": "Font Families",
+      "description": "<p>Two font variables used throughout our CSS</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_fonts.scss#L1",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$font-family-primary",
+          "description": "Main font applied to :root.",
+          "value": "'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        },
+        {
+          "type": "token",
+          "name": "$font-family-secondary",
+          "description": "Accent font in our case used for editorial purposes.",
+          "value": "'PT Serif', Georgia, serif"
+        }
+      ]
+    },
+    {
+      "name": "Font Sizings",
+      "description": "<p>Font sizes used at :root</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_fonts.scss#L13",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$font-root",
+          "description": "Desktop font root size",
+          "value": "16px"
+        },
+        {
+          "type": "token",
+          "name": "$font-root-tablet",
+          "description": "Tablet font root size",
+          "value": "16px"
+        },
+        {
+          "type": "token",
+          "name": "$font-root-mobile",
+          "description": "Mobile font root size",
+          "value": "15px"
+        }
+      ]
+    },
+    {
+      "name": "Letter Spacing",
+      "description": "<p>Consistent letter-spacing value</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_fonts.scss#L35",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$font-letter-spacing-s",
+          "description": "Small lsp setting",
+          "value": ".02em"
+        },
+        {
+          "type": "token",
+          "name": "$font-letter-spacing-b",
+          "description": "Base lsp setting",
+          "value": ".03em"
+        },
+        {
+          "type": "token",
+          "name": "$font-letter-spacing-m",
+          "description": "Medium lsp setting",
+          "value": ".05em"
+        },
+        {
+          "type": "token",
+          "name": "$font-letter-spacing-l",
+          "description": "Large lsp setting",
+          "value": ".07em"
+        }
+      ]
+    },
+    {
+      "name": "Line Height",
+      "description": "<p>Consistent line-height values</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_fonts.scss#L50",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$font-line-height-s",
+          "description": "Typically used on headlines",
+          "value": "1.2"
+        },
+        {
+          "type": "token",
+          "name": "$font-line-height-b",
+          "description": "Default leading used on p tags",
+          "value": "1.4"
+        },
+        {
+          "type": "token",
+          "name": "$font-line-height-m",
+          "description": "Heading spacing",
+          "value": "1.5"
+        },
+        {
+          "type": "token",
+          "name": "$font-line-height-l",
+          "description": "More heading spacing",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "name": "Breakpoints",
+      "description": "<p>We import the sass-mq library for our responsive utilities. Our own custom breakpoints are as follows:</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_measures.scss#L5",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$bp-xs",
+          "description": "Mobile",
+          "value": "320px"
+        },
+        {
+          "type": "token",
+          "name": "$bp-s",
+          "description": "Mobile",
+          "value": "520px"
+        },
+        {
+          "type": "token",
+          "name": "$bp-m",
+          "description": "Tablet",
+          "value": "650px"
+        },
+        {
+          "type": "token",
+          "name": "$bp-l",
+          "description": "Small Desktop",
+          "value": "845px"
+        },
+        {
+          "type": "token",
+          "name": "$bp-xl",
+          "description": "Desktop",
+          "value": "1080px"
+        },
+        {
+          "type": "token",
+          "name": "$bp-xxl",
+          "description": "Large Desktop",
+          "value": "1300px"
+        }
+      ]
+    },
+    {
+      "name": "Story Containers",
+      "description": "<p>Specific containers for editorial content.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_measures.scss#L36",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$story-small",
+          "description": "~480px This is our smallest story container; used for plugins",
+          "value": "30rem"
+        },
+        {
+          "type": "token",
+          "name": "$story-narrow",
+          "description": "~664px This is the text story container; used for text and plugins",
+          "value": "41.5rem"
+        },
+        {
+          "type": "token",
+          "name": "$story-giant",
+          "description": "~960px This is our widest story container; used for plugins",
+          "value": "60rem"
+        }
+      ]
+    },
+    {
+      "name": "Border Radius",
+      "description": "<p>Occasionally we use a border-radius for buttons and borders.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_measures.scss#L103",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$border-radius-b",
+          "description": "Subtle radius",
+          "value": "4px"
+        },
+        {
+          "type": "token",
+          "name": "$border-radius-l",
+          "description": "Very round, usually used on buttons relating to monetary values.",
+          "value": "40px"
+        }
+      ]
+    },
+    {
+      "name": "Utility height",
+      "description": "<p>We often use navbar and forms with a static height. Declare this variable for consistency across platforms.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_measures.scss#L115",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$util-height",
+          "description": "Standard height of navbar and forms",
+          "value": "45px"
+        }
+      ]
+    },
+    {
+      "name": "Size units",
+      "description": "<p>Sizes in comparison to base pixel root</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_measures.scss#L49",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$size-xxxl",
+          "description": "size xxxl",
+          "value": "3rem"
+        },
+        {
+          "type": "token",
+          "name": "$size-giant",
+          "description": "size giant",
+          "value": "2.5rem"
+        },
+        {
+          "type": "token",
+          "name": "$size-xxl",
+          "description": "size xxl",
+          "value": "2rem"
+        },
+        {
+          "type": "token",
+          "name": "$size-xl",
+          "description": "size xl",
+          "value": "1.75rem"
+        },
+        {
+          "type": "token",
+          "name": "$size-l",
+          "description": "size l",
+          "value": "1.5rem"
+        },
+        {
+          "type": "token",
+          "name": "$size-m",
+          "description": "size m",
+          "value": "1.2rem"
+        },
+        {
+          "type": "token",
+          "name": "$size-b",
+          "description": "size b",
+          "value": "1.1rem"
+        },
+        {
+          "type": "token",
+          "name": "$size-s",
+          "description": "size s",
+          "value": ".92rem"
+        },
+        {
+          "type": "token",
+          "name": "$size-xs",
+          "description": "size xs",
+          "value": ".85rem"
+        },
+        {
+          "type": "token",
+          "name": "$size-xxs",
+          "description": "size xxs",
+          "value": ".7rem"
+        },
+        {
+          "type": "token",
+          "name": "$size-xxxs",
+          "description": "size xxxs",
+          "value": ".55rem"
+        },
+        {
+          "type": "token",
+          "name": "$size-tiny",
+          "description": "size tiny (only used for margin)",
+          "value": ".275rem"
+        }
+      ]
+    },
+    {
+      "name": "@mixin font-setting",
+      "description": "<p>Usage: <code>@include font-setting('secondary')</code></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_mixins.scss#L1",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": true,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$type",
+          "description": "Version of font-setting. Options: primary | secondary",
+          "value": "'primary'"
+        }
+      ]
+    },
+    {
+      "name": "@mixin underlined-link",
+      "description": "<p><code>@include underlined-link</code></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_mixins.scss#L18",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": true,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$hover-only",
+          "description": "Whether this is a subtle or default variation. Options: true | false",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "name": "@function str-replace",
+      "description": "<p>String replace for class names just like in JS. Used to rename map variables. Stolen from <a href=\"https://css-tricks.com/snippets/sass/str-replace-function/\">CSS Tricks</a>.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_functions.scss#L1",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": true,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$string",
+          "description": "{String} Initial string (required)",
+          "value": "''"
+        },
+        {
+          "type": "token",
+          "name": "$search",
+          "description": "{String} Substring to replace (required)",
+          "value": "''"
+        },
+        {
+          "type": "token",
+          "name": "$replace",
+          "description": "{String} New value",
+          "value": "''"
+        }
+      ]
+    },
+    {
+      "name": "@function px-to-rem",
+      "description": "<p>Convert pixels to rem. EX: <code>px-to-rem(16px)</code></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_functions.scss#L21",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": true,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$pixel-size",
+          "description": "{String} Pixel value to convert (required)",
+          "value": "''"
+        },
+        {
+          "type": "token",
+          "name": "$context",
+          "description": "{String} Substring to replace (defaults to $font-root)",
+          "value": "$font-root"
+        }
+      ]
+    },
+    {
+      "name": "@mixin underlined-link-parent",
+      "description": "<p><code>@include underlined-link-parent</code></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_mixins.scss#L53",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": true,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$hover-only",
+          "description": "Whether or not this a subtle or default variation. Options: true | false",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "name": "@mixin gap",
+      "description": "<p>This is to account for the eminent deprecation of <a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/gap\"><code>grid-gap</code></a>. Some browsers honor <code>gap</code>, while others are living in the past with <code>grid-gap</code>. This keeps us working for both names. Eventually, we can remove this mixin in favor of just using gap. The new <code>gap</code> naming is introduced on Chrome 68+, Safari 11.2, Firefox 61+, and Edge 16+<br>Example: <code>.my-grid { @include gap($size-m) }</code></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_mixins.scss#L81",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": true,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$size",
+          "description": "Size of gap",
+          "value": "$size-b"
+        }
+      ]
+    },
+    {
+      "name": "@mixin row-gap",
+      "description": "<p>This is to account for the eminent deprecation of [<code>grid-row-gap</code>]</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_mixins.scss#L95",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": true,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$size",
+          "description": "Size of gap",
+          "value": "$size-b"
+        }
+      ]
+    },
+    {
+      "name": "@mixin col-gap",
+      "description": "<p>This is to account for the eminent deprecation of [<code>grid-column-gap</code>]</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_mixins.scss#L109",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": true,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$size",
+          "description": "Size of gap",
+          "value": "$size-b"
+        }
+      ]
+    },
+    {
+      "name": "@mixin mq",
+      "description": "<p><code>@include mq($from: bp-l)</code></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_mixins.scss#L68",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": true,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$from",
+          "description": "{String | Boolean} One of $mq-breakpoints",
+          "value": "false"
+        },
+        {
+          "type": "token",
+          "name": "$until",
+          "description": "{String | Boolean}  One of $mq-breakpoints",
+          "value": "false"
+        },
+        {
+          "type": "token",
+          "name": "$and",
+          "description": "{String | Boolean}  Additional media query parameters",
+          "value": "false"
+        },
+        {
+          "type": "token",
+          "name": "$media-type",
+          "description": "{String} ($mq-media-type) Media type: screen, print…",
+          "value": ""
+        }
+      ]
+    }
+  ]
+}

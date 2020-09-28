@@ -1,0 +1,14 @@
+{
+  "dataMap": [
+    "/data/sections.json",
+    "/data/cssClasses.json",
+    "/data/colorMaps.json",
+    "/data/modifiers.json",
+    "/data/modifierMap.json",
+    "/data/tokenMaps.json",
+    "/data/fullList.json",
+    "/data/usage.json",
+    "/data/tokens.json",
+    "/data/colors.json"
+  ]
+}

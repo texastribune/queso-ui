@@ -1,0 +1,1484 @@
+{
+  "modifierMap": [
+    {
+      "name": ".t-serif",
+      "className": "t-serif",
+      "description": "Default serif",
+      "type": "modifier",
+      "template": "<h4 class=\"{{ className }}\">Change inherit font family</h4>",
+      "preview": "<h4 class=\"t-serif\">Change inherit font family</h4>"
+    },
+    {
+      "name": ".t-sans",
+      "className": "t-sans",
+      "description": "Default sans",
+      "type": "modifier",
+      "template": "<h4 class=\"{{ className }}\">Change inherit font family</h4>",
+      "preview": "<h4 class=\"t-sans\">Change inherit font family</h4>"
+    },
+    {
+      "name": ".t-titlecase",
+      "className": "t-titlecase",
+      "description": "Text transformed to Title Case",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Text transform helper.</p>",
+      "preview": "<p class=\"t-titlecase\">Text transform helper.</p>"
+    },
+    {
+      "name": ".t-uppercase",
+      "className": "t-uppercase",
+      "description": "Text transformed to UPPERCASE. Don't forget to add kerning <code>t-lsp-&lt;size&gt;</code> with uppercase text.",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Text transform helper.</p>",
+      "preview": "<p class=\"t-uppercase\">Text transform helper.</p>"
+    },
+    {
+      "name": ".t-align-left",
+      "className": "t-align-left",
+      "description": "Left aligned",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"t-align-left\">Example</p>"
+    },
+    {
+      "name": ".t-align-center",
+      "className": "t-align-center",
+      "description": "Center aligned",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"t-align-center\">Example</p>"
+    },
+    {
+      "name": ".t-align-right",
+      "className": "t-align-right",
+      "description": "Right aligned",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"t-align-right\">Example</p>"
+    },
+    {
+      "name": "t-lh-s",
+      "className": "t-lh-s",
+      "description": "<code>line-height: 1.2</code>",
+      "type": "modifier",
+      "template": "<h2 class=\"{{ className }}\">Texas again mistakenly flags voters for citizenship reviews</h2>",
+      "preview": "<h2 class=\"t-lh-s\">Texas again mistakenly flags voters for citizenship reviews</h2>"
+    },
+    {
+      "name": "t-lh-b",
+      "className": "t-lh-b",
+      "description": "<code>line-height: 1.4</code> (used on paragraphs, lists, and figcaptions)",
+      "type": "modifier",
+      "template": "<h2 class=\"{{ className }}\">Texas again mistakenly flags voters for citizenship reviews</h2>",
+      "preview": "<h2 class=\"t-lh-b\">Texas again mistakenly flags voters for citizenship reviews</h2>"
+    },
+    {
+      "name": "t-lh-m",
+      "className": "t-lh-m",
+      "description": "<code>line-height: 1.5</code>",
+      "type": "modifier",
+      "template": "<h2 class=\"{{ className }}\">Texas again mistakenly flags voters for citizenship reviews</h2>",
+      "preview": "<h2 class=\"t-lh-m\">Texas again mistakenly flags voters for citizenship reviews</h2>"
+    },
+    {
+      "name": "t-lh-l",
+      "className": "t-lh-l",
+      "description": "<code>line-height: 2</code>",
+      "type": "modifier",
+      "template": "<h2 class=\"{{ className }}\">Texas again mistakenly flags voters for citizenship reviews</h2>",
+      "preview": "<h2 class=\"t-lh-l\">Texas again mistakenly flags voters for citizenship reviews</h2>"
+    },
+    {
+      "name": "t-lsp-s",
+      "className": "t-lsp-s",
+      "description": "<code>letter-spacing: .02em</code>",
+      "type": "modifier",
+      "template": "<h2 class=\"{{ className }} t-uppercase\">Texas again mistakenly flags voters for citizenship reviews</h2>",
+      "preview": "<h2 class=\"t-lsp-s t-uppercase\">Texas again mistakenly flags voters for citizenship reviews</h2>"
+    },
+    {
+      "name": "t-lsp-b",
+      "className": "t-lsp-b",
+      "description": "<code>letter-spacing: .03em</code>",
+      "type": "modifier",
+      "template": "<h2 class=\"{{ className }} t-uppercase\">Texas again mistakenly flags voters for citizenship reviews</h2>",
+      "preview": "<h2 class=\"t-lsp-b t-uppercase\">Texas again mistakenly flags voters for citizenship reviews</h2>"
+    },
+    {
+      "name": "t-lsp-m",
+      "className": "t-lsp-m",
+      "description": "<code>letter-spacing: .05em</code>",
+      "type": "modifier",
+      "template": "<h2 class=\"{{ className }} t-uppercase\">Texas again mistakenly flags voters for citizenship reviews</h2>",
+      "preview": "<h2 class=\"t-lsp-m t-uppercase\">Texas again mistakenly flags voters for citizenship reviews</h2>"
+    },
+    {
+      "name": "t-lsp-l",
+      "className": "t-lsp-l",
+      "description": "<code>letter-spacing: .07em</code>",
+      "type": "modifier",
+      "template": "<h2 class=\"{{ className }} t-uppercase\">Texas again mistakenly flags voters for citizenship reviews</h2>",
+      "preview": "<h2 class=\"t-lsp-l t-uppercase\">Texas again mistakenly flags voters for citizenship reviews</h2>"
+    },
+    {
+      "name": ".t-size-xxxs",
+      "className": "t-size-xxxs",
+      "description": "xxxs size",
+      "type": "modifier",
+      "template": "<span class=\"{{ className }} text-size-demo\">Example text</span>",
+      "preview": "<span class=\"t-size-xxxs text-size-demo\">Example text</span>"
+    },
+    {
+      "name": ".t-size-xxs",
+      "className": "t-size-xxs",
+      "description": "xxs size",
+      "type": "modifier",
+      "template": "<span class=\"{{ className }} text-size-demo\">Example text</span>",
+      "preview": "<span class=\"t-size-xxs text-size-demo\">Example text</span>"
+    },
+    {
+      "name": ".t-size-xs",
+      "className": "t-size-xs",
+      "description": "xs size",
+      "type": "modifier",
+      "template": "<span class=\"{{ className }} text-size-demo\">Example text</span>",
+      "preview": "<span class=\"t-size-xs text-size-demo\">Example text</span>"
+    },
+    {
+      "name": ".t-size-s",
+      "className": "t-size-s",
+      "description": "s size",
+      "type": "modifier",
+      "template": "<span class=\"{{ className }} text-size-demo\">Example text</span>",
+      "preview": "<span class=\"t-size-s text-size-demo\">Example text</span>"
+    },
+    {
+      "name": ".t-size-b",
+      "className": "t-size-b",
+      "description": "b size",
+      "type": "modifier",
+      "template": "<span class=\"{{ className }} text-size-demo\">Example text</span>",
+      "preview": "<span class=\"t-size-b text-size-demo\">Example text</span>"
+    },
+    {
+      "name": ".t-size-m",
+      "className": "t-size-m",
+      "description": "m size",
+      "type": "modifier",
+      "template": "<span class=\"{{ className }} text-size-demo\">Example text</span>",
+      "preview": "<span class=\"t-size-m text-size-demo\">Example text</span>"
+    },
+    {
+      "name": ".t-size-l",
+      "className": "t-size-l",
+      "description": "l size",
+      "type": "modifier",
+      "template": "<span class=\"{{ className }} text-size-demo\">Example text</span>",
+      "preview": "<span class=\"t-size-l text-size-demo\">Example text</span>"
+    },
+    {
+      "name": ".t-size-xl",
+      "className": "t-size-xl",
+      "description": "xl size",
+      "type": "modifier",
+      "template": "<span class=\"{{ className }} text-size-demo\">Example text</span>",
+      "preview": "<span class=\"t-size-xl text-size-demo\">Example text</span>"
+    },
+    {
+      "name": ".t-size-xxl",
+      "className": "t-size-xxl",
+      "description": "xxl size",
+      "type": "modifier",
+      "template": "<span class=\"{{ className }} text-size-demo\">Example text</span>",
+      "preview": "<span class=\"t-size-xxl text-size-demo\">Example text</span>"
+    },
+    {
+      "name": ".t-size-giant",
+      "className": "t-size-giant",
+      "description": "giant size",
+      "type": "modifier",
+      "template": "<span class=\"{{ className }} text-size-demo\">Example text</span>",
+      "preview": "<span class=\"t-size-giant text-size-demo\">Example text</span>"
+    },
+    {
+      "name": ".t-size-xxxl",
+      "className": "t-size-xxxl",
+      "description": "xxxl size",
+      "type": "modifier",
+      "template": "<span class=\"{{ className }} text-size-demo\">Example text</span>",
+      "preview": "<span class=\"t-size-xxxl text-size-demo\">Example text</span>"
+    },
+    {
+      "name": ".t-links",
+      "className": "t-links",
+      "description": "Typical teal links",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of {{ className }} look like.</a></p>",
+      "preview": "<p class=\"t-links\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of t-links look like.</a></p>"
+    },
+    {
+      "name": ".t-links-underlined",
+      "className": "t-links-underlined",
+      "description": "Typical blue underlined links",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of {{ className }} look like.</a></p>",
+      "preview": "<p class=\"t-links-underlined\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of t-links-underlined look like.</a></p>"
+    },
+    {
+      "name": ".t-links-underlined-hover",
+      "className": "t-links-underlined-hover",
+      "description": "Underline only appears on hover",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of {{ className }} look like.</a></p>",
+      "preview": "<p class=\"t-links-underlined-hover\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of t-links-underlined-hover look like.</a></p>"
+    },
+    {
+      "name": ".t-links-underlined-hover-thin",
+      "className": "t-links-underlined-hover-thin",
+      "description": "Smaller, browser-default underline on hover",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of {{ className }} look like.</a></p>",
+      "preview": "<p class=\"t-links-underlined-hover-thin\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of t-links-underlined-hover-thin look like.</a></p>"
+    },
+    {
+      "name": ".t-wrap-break",
+      "className": "t-wrap-break",
+      "description": "Allow a word to wrap to the next line mid-word",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\" style=\"width: 150px;\">barbara.gervin.hawkins@house.texas.gov</p>",
+      "preview": "<p class=\"t-wrap-break\" style=\"width: 150px;\">barbara.gervin.hawkins@house.texas.gov</p>"
+    },
+    {
+      "name": ".t-weight-bold",
+      "className": "t-weight-bold",
+      "description": "<code>font-weight: 700</code>",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example text</p>",
+      "preview": "<p class=\"t-weight-bold\">Example text</p>"
+    },
+    {
+      "name": ".t-weight-normal",
+      "className": "t-weight-normal",
+      "description": "<code>font-weight: 400</code>",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example text</p>",
+      "preview": "<p class=\"t-weight-normal\">Example text</p>"
+    },
+    {
+      "name": "c-caption--wide",
+      "className": "c-caption--wide",
+      "description": "The removal of padding comes a bit sooner.",
+      "type": "modifier",
+      "template": "<figure class=\"l-pos-rel\">\n  <img\n  class=\"l-display-block l-width-full\" src=\"{{ siteURL }}/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"\n  />\n  <figcaption class=\"c-caption {{className}}{% if className == 'c-caption--overlay-from-bp-l' %} has-xs-padding l-width-full{% endif %} l-display-block t-size-xs\">\n  This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n  </figcaption>\n</figure>",
+      "preview": "<figure class=\"l-pos-rel\">\n  <img\n  class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"\n  />\n  <figcaption class=\"c-caption c-caption--wide l-display-block t-size-xs\">\n  This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n  </figcaption>\n</figure>"
+    },
+    {
+      "name": "c-caption--compact",
+      "className": "c-caption--compact",
+      "description": "Just a bit o' top padding.",
+      "type": "modifier",
+      "template": "<figure class=\"l-pos-rel\">\n  <img\n  class=\"l-display-block l-width-full\" src=\"{{ siteURL }}/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"\n  />\n  <figcaption class=\"c-caption {{className}}{% if className == 'c-caption--overlay-from-bp-l' %} has-xs-padding l-width-full{% endif %} l-display-block t-size-xs\">\n  This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n  </figcaption>\n</figure>",
+      "preview": "<figure class=\"l-pos-rel\">\n  <img\n  class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"\n  />\n  <figcaption class=\"c-caption c-caption--compact l-display-block t-size-xs\">\n  This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n  </figcaption>\n</figure>"
+    },
+    {
+      "name": "c-caption--overlay-from-bp-l",
+      "className": "c-caption--overlay-from-bp-l",
+      "description": "Black overlay caption (desktop only).",
+      "type": "modifier",
+      "template": "<figure class=\"l-pos-rel\">\n  <img\n  class=\"l-display-block l-width-full\" src=\"{{ siteURL }}/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"\n  />\n  <figcaption class=\"c-caption {{className}}{% if className == 'c-caption--overlay-from-bp-l' %} has-xs-padding l-width-full{% endif %} l-display-block t-size-xs\">\n  This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n  </figcaption>\n</figure>",
+      "preview": "<figure class=\"l-pos-rel\">\n  <img\n  class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"\n  />\n  <figcaption class=\"c-caption c-caption--overlay-from-bp-l has-xs-padding l-width-full l-display-block t-size-xs\">\n  This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n  </figcaption>\n</figure>"
+    },
+    {
+      "name": ".c-cta-block--horiz-from-bp-m",
+      "className": "c-cta-block--horiz-from-bp-m",
+      "description": "Container becomes two columns on wide screens. Fits a wider space.",
+      "type": "modifier",
+      "template": "{% if className == 'c-cta-block--horiz-from-bp-m' %}\n  <!-- Social Follow CTA -->\n  <div class=\"c-cta-block {{ className }} is-rounded-b has-border has-xl-padding has-giant-btm-marg\">\n    <div class=\"c-cta-block__msg t-size-s\">\n      <h4 class=\"t-uppercase t-lsp-m t-lh-b has-text-teal has-xxs-btm-marg\">Stay in the loop</h4>\n      <p class=\"has-xxs-btm-marg t-size-m\"><strong>The next time news breaks, hear about it first.</strong></p>\n      <p class=\"has-text-gray t-links-underlined\">Follow The Texas Tribune on <a href=\"#\">Facebook</a> and <a href=\"#\">Twitter</a>.</p>\n    </div>\n    <div class=\"c-cta-block__btns c-cta-block__btns--2 c-cta-block__btns--1-from-bp-m t-align-center\">\n      <a class=\"c-button has-bg-facebook l-align-center-children has-reset-padding\" href=\"#\" aria-label=\"Share on Facebook\">\n        <span class=\"c-button__inner t-size-xxs\">Facebook</span>\n      </a>\n      <a class=\"c-button has-bg-twitter l-align-center-children has-reset-padding\" href=\"#\" aria-label=\"Share on Twitter\">\n        <span class=\"c-button__inner t-size-xxs\">Twitter</span>\n      </a>\n    </div>\n  </div>\n\n  <!-- Membership CTA -->\n  <div class=\"c-cta-block {{ className }} is-rounded-b has-border has-xl-padding has-giant-btm-marg\">\n    <div class=\"c-cta-block__msg t-size-s\">\n      <h4 class=\"t-uppercase t-lsp-m t-lh-b has-text-teal has-xxs-btm-marg\"><strong>Join our nonprofit newsroom</strong></h4>\n      <p class=\"has-xxs-btm-marg t-size-m\"><strong>Support our voting rights coverage by becoming a Texas Tribune member today.</strong></p>\n      <p class=\"has-text-gray t-links-underlined\">Choose an amount to give or <a href=\"#\" class=\"l-display-ib\">learn more about membership</a>.</p>\n    </div>\n    <div class=\"c-cta-block__btns c-cta-block__btns--4 c-cta-block__btns--2-from-bp-m t-align-center t-size-s\">\n      <a class=\"c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding\" href=\"#\">\n        <span class=\"c-button__inner has-text-black\">$35</span>\n      </a>\n      <a class=\"c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding\" href=\"#\">\n        <span class=\"c-button__inner has-text-black\">$75</span>\n      </a>\n      <a class=\"c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding\" href=\"#\">\n        <span class=\"c-button__inner has-text-black\">$150</span>\n      </a>\n      <a class=\"c-button c-button--outline is-rounded-l has-bg-white has-text-yellow l-align-center-children has-reset-padding\" href=\"#\" aria-label=\"Share on Facebook\">\n        <span class=\"c-button__inner has-text-black t-titlecase\">Other</span>\n      </a>\n    </div>\n  </div>\n\n  <!-- Overlay event CTA -->\n  <div class=\"c-cta-block {{ className }}\">\n    <div class=\"c-cta-block__msg t-size-s\">\n      <h3 aria-hidden=\"true\" class=\"has-xxxs-btm-marg t-serif t-links-underlined-hover t-size-l\">\n        <a href=\"#\" tabindex=\"-1\">The Texas Tribune Festival</a>\n      </h3>\n      <p class=\"t-uppercase t-lsp-b t-size-xs\">\n        <strong>Held in Austin | 7 p.m. - 10 p.m.</strong>\n      </p>\n      <p class=\"is-sr-only\">Sept. 26</p>\n    </div>\n    <div class=\"c-cta-block__btns c-cta-block__btns--2 c-cta-block__btns--1-from-bp-m t-align-center\">\n      <a class=\"c-button c-button--standard has-bg-blue has-text-black l-align-center-children t-size-xs\" href=\"#\">\n        Attend\n      </a>\n      <a class=\"c-button c-button--standard has-bg-gray-dark has-text-white l-align-center-children t-size-xs\" href=\"#\">\n        Watch\n      </a>\n    </div>\n  </div>\n{% else %}\n  <!-- Minimal event block -->\n  <div class=\"c-cta-block\">\n    <div class=\"c-cta-block__msg t-size-s\">\n      <h3 aria-hidden=\"true\" class=\"has-xxxs-btm-marg t-serif t-links-underlined-hover t-size-m\">\n        <a href=\"#\" tabindex=\"-1\">The Texas Tribune Festival</a>\n      </h3>\n      <p class=\"t-uppercase t-lsp-b t-size-xs\">\n        <strong>Held in Austin | 7 p.m. - 10 p.m.</strong>\n      </p>\n      <p class=\"is-sr-only\">Sept. 26</p>\n    </div>\n    <div class=\"c-cta-block__btns c-cta-block__btns--2 t-align-center l-align-end-self\">\n      <a class=\"c-button c-button--standard has-bg-blue has-text-black l-align-center-children t-size-xs\" href=\"#\">\n        Attend\n      </a>\n      <a class=\"c-button c-button--standard has-bg-gray-dark has-text-white l-align-center-children t-size-xs\" href=\"#\">\n        Watch\n      </a>\n    </div>\n  </div>\n{% endif %}",
+      "preview": "\n  <!-- Social Follow CTA -->\n  <div class=\"c-cta-block c-cta-block--horiz-from-bp-m is-rounded-b has-border has-xl-padding has-giant-btm-marg\">\n    <div class=\"c-cta-block__msg t-size-s\">\n      <h4 class=\"t-uppercase t-lsp-m t-lh-b has-text-teal has-xxs-btm-marg\">Stay in the loop</h4>\n      <p class=\"has-xxs-btm-marg t-size-m\"><strong>The next time news breaks, hear about it first.</strong></p>\n      <p class=\"has-text-gray t-links-underlined\">Follow The Texas Tribune on <a href=\"#\">Facebook</a> and <a href=\"#\">Twitter</a>.</p>\n    </div>\n    <div class=\"c-cta-block__btns c-cta-block__btns--2 c-cta-block__btns--1-from-bp-m t-align-center\">\n      <a class=\"c-button has-bg-facebook l-align-center-children has-reset-padding\" href=\"#\" aria-label=\"Share on Facebook\">\n        <span class=\"c-button__inner t-size-xxs\">Facebook</span>\n      </a>\n      <a class=\"c-button has-bg-twitter l-align-center-children has-reset-padding\" href=\"#\" aria-label=\"Share on Twitter\">\n        <span class=\"c-button__inner t-size-xxs\">Twitter</span>\n      </a>\n    </div>\n  </div>\n\n  <!-- Membership CTA -->\n  <div class=\"c-cta-block c-cta-block--horiz-from-bp-m is-rounded-b has-border has-xl-padding has-giant-btm-marg\">\n    <div class=\"c-cta-block__msg t-size-s\">\n      <h4 class=\"t-uppercase t-lsp-m t-lh-b has-text-teal has-xxs-btm-marg\"><strong>Join our nonprofit newsroom</strong></h4>\n      <p class=\"has-xxs-btm-marg t-size-m\"><strong>Support our voting rights coverage by becoming a Texas Tribune member today.</strong></p>\n      <p class=\"has-text-gray t-links-underlined\">Choose an amount to give or <a href=\"#\" class=\"l-display-ib\">learn more about membership</a>.</p>\n    </div>\n    <div class=\"c-cta-block__btns c-cta-block__btns--4 c-cta-block__btns--2-from-bp-m t-align-center t-size-s\">\n      <a class=\"c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding\" href=\"#\">\n        <span class=\"c-button__inner has-text-black\">$35</span>\n      </a>\n      <a class=\"c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding\" href=\"#\">\n        <span class=\"c-button__inner has-text-black\">$75</span>\n      </a>\n      <a class=\"c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding\" href=\"#\">\n        <span class=\"c-button__inner has-text-black\">$150</span>\n      </a>\n      <a class=\"c-button c-button--outline is-rounded-l has-bg-white has-text-yellow l-align-center-children has-reset-padding\" href=\"#\" aria-label=\"Share on Facebook\">\n        <span class=\"c-button__inner has-text-black t-titlecase\">Other</span>\n      </a>\n    </div>\n  </div>\n\n  <!-- Overlay event CTA -->\n  <div class=\"c-cta-block c-cta-block--horiz-from-bp-m\">\n    <div class=\"c-cta-block__msg t-size-s\">\n      <h3 aria-hidden=\"true\" class=\"has-xxxs-btm-marg t-serif t-links-underlined-hover t-size-l\">\n        <a href=\"#\" tabindex=\"-1\">The Texas Tribune Festival</a>\n      </h3>\n      <p class=\"t-uppercase t-lsp-b t-size-xs\">\n        <strong>Held in Austin | 7 p.m. - 10 p.m.</strong>\n      </p>\n      <p class=\"is-sr-only\">Sept. 26</p>\n    </div>\n    <div class=\"c-cta-block__btns c-cta-block__btns--2 c-cta-block__btns--1-from-bp-m t-align-center\">\n      <a class=\"c-button c-button--standard has-bg-blue has-text-black l-align-center-children t-size-xs\" href=\"#\">\n        Attend\n      </a>\n      <a class=\"c-button c-button--standard has-bg-gray-dark has-text-white l-align-center-children t-size-xs\" href=\"#\">\n        Watch\n      </a>\n    </div>\n  </div>\n"
+    },
+    {
+      "name": ".c-button--standard",
+      "className": "c-button--standard",
+      "description": "Custom-sized button found throughout our products. Has a hard-set height and line-height for vertical alignment.",
+      "type": "modifier",
+      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "preview": "\n\n<button class=\"c-button c-button--standard\">\n    Button\n</button>\n\n"
+    },
+    {
+      "name": ".c-button--l",
+      "className": "c-button--l",
+      "description": "Uses size-l for font size and padding",
+      "type": "modifier",
+      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "preview": "\n\n<button class=\"c-button c-button--l\">\n    Button\n</button>\n\n"
+    },
+    {
+      "name": ".c-button--s",
+      "className": "c-button--s",
+      "description": "One step down from default",
+      "type": "modifier",
+      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "preview": "\n\n<button class=\"c-button c-button--s\">\n    Button\n</button>\n\n"
+    },
+    {
+      "name": ".c-button--xs",
+      "className": "c-button--xs",
+      "description": "Two steps down from default",
+      "type": "modifier",
+      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "preview": "\n\n<button class=\"c-button c-button--xs\">\n    Button\n</button>\n\n"
+    },
+    {
+      "name": ".c-button--circle",
+      "className": "c-button--circle",
+      "description": "Circular button (experimentally used for back to top)",
+      "type": "modifier",
+      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "preview": "\n\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button c-button--circle\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n\n"
+    },
+    {
+      "name": ".c-button--outline",
+      "className": "c-button--outline",
+      "description": "Hover effect of outline (used on social)",
+      "type": "modifier",
+      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "preview": "\n\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n\n"
+    },
+    {
+      "name": ".c-button--skip",
+      "className": "c-button--skip",
+      "description": "Visible only on focus, this is used to skip navigation",
+      "type": "modifier",
+      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "preview": "\n\n<button class=\"c-button c-button--skip\">\n    Button\n</button>\n\n"
+    },
+    {
+      "name": ".c-icon--yellow",
+      "className": "c-icon--yellow",
+      "description": "Forces a yellow fill. Can likely be replaced for color helper.",
+      "type": "modifier",
+      "template": "<span class=\"c-icon {{ className }}\">\n  <svg aria-hidden=\"true\">\n    <use xlink:href=\"#search\"></use>\n  </svg>\n</span>\nWords next to the icon!\n",
+      "preview": "<span class=\"c-icon c-icon--yellow\">\n  <svg aria-hidden=\"true\">\n    <use xlink:href=\"#search\"></use>\n  </svg>\n</span>\nWords next to the icon!\n"
+    },
+    {
+      "name": ".c-icon--baseline",
+      "className": "c-icon--baseline",
+      "description": "Forces a the vertical alignment to the baseline of the font.",
+      "type": "modifier",
+      "template": "<span class=\"c-icon {{ className }}\">\n  <svg aria-hidden=\"true\">\n    <use xlink:href=\"#search\"></use>\n  </svg>\n</span>\nWords next to the icon!\n",
+      "preview": "<span class=\"c-icon c-icon--baseline\">\n  <svg aria-hidden=\"true\">\n    <use xlink:href=\"#search\"></use>\n  </svg>\n</span>\nWords next to the icon!\n"
+    },
+    {
+      "name": ".c-block-feed__item--no-border-from-bp-m",
+      "className": "c-block-feed__item--no-border-from-bp-m",
+      "description": "Removes borders after <code>bp-m</code> The homepage does this.",
+      "type": "modifier",
+      "template": "<!-- the variations for this one occur on the items -->\n<ul class=\"c-block-feed has-giant-btm-marg\">\n  <li class=\"c-block-feed__item {{ className }}\">\n    {% include \"6-components/story-block/story-block.html\" %}\n  </li>\n  <li class=\"c-block-feed__item {{ className }}\">\n    {% include \"6-components/story-block/story-block.html\" %}\n  </li>\n  <li class=\"c-block-feed__item {{ className }}\">\n    {% include \"6-components/story-block/story-block.html\" %}\n  </li>\n</ul>\n",
+      "preview": "<!-- the variations for this one occur on the items -->\n<ul class=\"c-block-feed has-giant-btm-marg\">\n  <li class=\"c-block-feed__item c-block-feed__item--no-border-from-bp-m\">\n    <article class=\"c-story-block c-block-feed__item--no-border-from-bp-m\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n\n  </li>\n  <li class=\"c-block-feed__item c-block-feed__item--no-border-from-bp-m\">\n    <article class=\"c-story-block c-block-feed__item--no-border-from-bp-m\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n\n  </li>\n  <li class=\"c-block-feed__item c-block-feed__item--no-border-from-bp-m\">\n    <article class=\"c-story-block c-block-feed__item--no-border-from-bp-m\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n\n  </li>\n</ul>\n"
+    },
+    {
+      "name": ".c-block-grid--bordered",
+      "className": "c-block-grid--bordered",
+      "description": "Has a top/bottom border for separation",
+      "type": "modifier",
+      "template": "<!-- the variations for this one occur on the items -->\n<ul class=\"c-block-grid has-giant-btm-marg {{ className }}\">\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n</ul>\n",
+      "preview": "<!-- the variations for this one occur on the items -->\n<ul class=\"c-block-grid has-giant-btm-marg c-block-grid--bordered\">\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n</ul>\n"
+    },
+    {
+      "name": ".c-block-grid--min-100",
+      "className": "c-block-grid--min-100",
+      "description": "Tighter grid on desktop (used in trending stories on frontpage)",
+      "type": "modifier",
+      "template": "<!-- the variations for this one occur on the items -->\n<ul class=\"c-block-grid has-giant-btm-marg {{ className }}\">\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n</ul>\n",
+      "preview": "<!-- the variations for this one occur on the items -->\n<ul class=\"c-block-grid has-giant-btm-marg c-block-grid--min-100\">\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n</ul>\n"
+    },
+    {
+      "name": ".c-list--arrows",
+      "className": "c-list--arrows",
+      "description": "Sometimes we add little SVG bullets",
+      "type": "modifier",
+      "template": "<ul class=\"c-list {{className}}\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n",
+      "preview": "<ul class=\"c-list c-list--arrows\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n"
+    },
+    {
+      "name": ".c-loading--xs",
+      "className": "c-loading--xs",
+      "description": "Extra small loader animation.",
+      "type": "modifier",
+      "template": "<div class=\"c-loading {{ className }}\" aria-hidden=\"true\"></div>",
+      "preview": "<div class=\"c-loading c-loading--xs\" aria-hidden=\"true\"></div>"
+    },
+    {
+      "name": ".c-loading--s",
+      "className": "c-loading--s",
+      "description": "Small loader animation.",
+      "type": "modifier",
+      "template": "<div class=\"c-loading {{ className }}\" aria-hidden=\"true\"></div>",
+      "preview": "<div class=\"c-loading c-loading--s\" aria-hidden=\"true\"></div>"
+    },
+    {
+      "name": ".c-loading--tight",
+      "className": "c-loading--tight",
+      "description": "Small loader animation with no space around it.",
+      "type": "modifier",
+      "template": "<div class=\"c-loading {{ className }}\" aria-hidden=\"true\"></div>",
+      "preview": "<div class=\"c-loading c-loading--tight\" aria-hidden=\"true\"></div>"
+    },
+    {
+      "name": "c-site-footer__inner--standard",
+      "className": "c-site-footer__inner--standard",
+      "description": "This is our default footer.",
+      "type": "modifier",
+      "template": "{% if className != 'c-site-footer__inner--standard' %}\n  <div class=\"c-site-footer has-bg-black-off\">\n    <!--\n      Our various sites will have different variations on the footer\n      with different links, number of columns, etc. You'll likely need\n      to implement a grid system at the app level to handle those scenarios.\n    -->\n    <div class=\"c-site-footer__inner l-container l-container--xl t-size-xs\">\n      <div>\n        <div class=\"has-b-btm-marg\">\n          <span style=\"font-size: 4rem;\" class=\"c-icon has-text-yellow\">\n            <svg aria-hidden=\"true\" focusable=\"false\">\n              <use xlink:href=\"#bug\"></use>\n            </svg>\n          </span>\n        </div>\n\n        <div class=\"has-notch has-notch--thin has-bg-yellow has-b-btm-marg\" aria-hidden=\"true\"></div>\n        <ul class=\"c-site-footer__links t-size-xs has-text-white has-text-hover-white\">\n          <li class=\"has-tiny-btm-marg has-text-blue has-text-hover-blue\"><a href=\"https://support.texastribune.org/donate\">Donate</a></li>\n          <li class=\"has-tiny-btm-marg\"><a href=\"https://www.texastribune.org/contact/\">Contact Us</a></li>\n          <li>&copy; 2019 The Texas Tribune</li>\n        </ul>\n      </div>\n      <div>\n        <h2 class=\"c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg t-size-xs\">Heading</h2>\n        <ul class=\"c-site-footer__links has-text-white has-text-hover-white\">\n          <li class=\"has-tiny-btm-marg\"><a href=\"#\">Foo</a></li>\n          <li class=\"has-tiny-btm-marg\"><a href=\"#\">Bar</a></li>\n          <li class=\"has-tiny-btm-marg\"><a href=\"#\">Baz</a></li>\n          <li class=\"has-tiny-btm-marg\"><a href=\"#\">Hello</a></li>\n          <li><a href=\"#\">World</a></li>\n        </ul>\n      </div>\n      <div>\n        <h2 class=\"c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg t-size-xs\">Heading</h2>\n        <ul class=\"c-site-footer__links has-text-white has-text-hover-white\">\n          <li class=\"has-tiny-btm-marg\"><a href=\"#\">Foo</a></li>\n          <li class=\"has-tiny-btm-marg\"><a href=\"#\">Bar</a></li>\n          <li class=\"has-tiny-btm-marg\"><a href=\"#\">Baz</a></li>\n          <li class=\"has-tiny-btm-marg\"><a href=\"#\">Hello</a></li>\n          <li class=\"has-tiny-btm-marg\"><a href=\"#\">World</a></li>\n        </ul>\n      </div>\n      <div>\n        <h2 class=\"c-site-footer__header has-text-yellow t-uppercase has-xs-btm-marg t-size-xs\">Social Media</h2>\n        <ul class=\"c-site-footer__links has-b-btm-marg has-text-white has-text-hover-white\">\n          <li class=\"has-tiny-btm-marg\">\n            <span class=\"t-size-s c-icon c-icon--baseline c-site-footer__icon\"><svg aria-hidden=\"true\"><use xlink:href=\"#facebook\"></use></svg></span>\n            <a href=\"http://facebook.com/texastribune\">Facebook</a>\n          </li>\n          <li class=\"has-tiny-btm-marg\">\n            <span class=\"t-size-s c-icon c-icon--baseline c-site-footer__icon\"><svg aria-hidden=\"true\"><use xlink:href=\"#twitter\"></use></svg></span>\n            <a href=\"http://twitter.com/texastribune\">Twitter</a>\n          </li>\n          <li class=\"has-tiny-btm-marg\">\n            <span class=\"t-size-s c-icon c-icon--baseline c-site-footer__icon\"><svg aria-hidden=\"true\"><use xlink:href=\"#youtube\"></use></svg></span>\n            <a href=\"http://youtube.com/user/thetexastribune?sub_confirmation=1\">YouTube</a>\n          </li>\n          <li class=\"has-tiny-btm-marg\">\n            <span class=\"t-size-s c-icon c-icon--baseline c-site-footer__icon\"><svg aria-hidden=\"true\"><use xlink:href=\"#instagram\"></use></svg></span>\n            <a href=\"http://instagram.com/texas_tribune\">Instagram</a>\n          </li>\n          <li class=\"has-tiny-btm-marg\">\n            <span class=\"t-size-s c-icon c-icon--baseline c-site-footer__icon\"><svg aria-hidden=\"true\"><use xlink:href=\"#linkedin\"></use></svg></span>\n            <a href=\"http://www.linkedin.com/company/texas-tribune\">LinkedIn</a>\n          </li>\n          <li>\n            <span class=\"t-size-s c-icon c-icon--baseline c-site-footer__icon\"><svg aria-hidden=\"true\"><use xlink:href=\"#reddit\"></use></svg></span>\n            <a href=\"https://www.reddit.com/user/texastribune\">Reddit</a>\n          </li>\n        </ul>\n\n        <div class=\"has-notch has-notch--thin has-bg-yellow has-b-btm-marg\" aria-hidden=\"true\"></div>\n\n        <ul class=\"c-site-footer__links has-text-white has-text-hover-white\">\n          <li>\n            <a href=\"https://www.facebook.com/groups/thisisyourtexas/\">\n              <span class=\"t-size-s c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\"><use xlink:href=\"#your-texas\"></use></svg></span>\n                Join our Facebook Group, This Is Your Texas.\n            </a>\n          </li>\n        </ul>\n      </div>\n    </div>\n  </div>\n{% else %}\n  <footer class=\"c-site-footer has-bg-black-off has-text-white t-size-xs\">\n    <div class=\"l-container l-container--xl grid_container--xl c-site-footer__inner c-site-footer__inner--standard\">\n      <div class=\"c-site-footer__col c-site-footer__col--1\">\n        <span style=\"font-size: 4rem;\" class=\"c-icon has-text-yellow has-b-btm-marg\">\n          <svg aria-hidden=\"true\" focusable=\"false\">\n            <use xlink:href=\"#bug\"></use>\n          </svg>\n        </span>\n        <div class=\"has-notch has-notch--thin has-bg-yellow has-b-btm-marg\"></div>\n        <ul class=\"c-site-footer__links c-site-footer__links--standard\">\n          <li class=\"has-text-blue\">\n            <a href=\"https://support.texastribune.org/donate?installmentPeriod=once&amp;amount=60\" title=\"Donate\" class=\"donate\" ga-on=\"click\" ga-event-category=\"donations\" ga-event-action=\"membership-intent\" ga-event-label=\"footer\">Donate</a>\n          </li>\n\n          <li>\n            <a href=\"/contact/\" title=\"Contact Us\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"contact us\">Contact Us</a>\n          </li>\n          <li>\n            <a href=\"https://mediakit.texastribune.org/\" title=\"Advertise\" class=\"advertise\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"advertise\">Advertise</a>\n          </li>\n          <li>\n            <a href=\"/\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"copyright\">© 2020 The Texas Tribune</a>\n          </li>\n        </ul>\n      </div>\n      <section id=\"footer-sections\" class=\"c-site-footer__col--2 hide_until--s is-hidden-until-bp-s\">\n        <h2 class=\"c-site-footer__header t-size-xs has-text-yellow t-uppercase has-xxs-btm-marg\">\n          Topics\n        </h2>\n        <ul class=\"c-site-footer__links c-site-footer__links--standard\">\n          <li>\n            <a href=\"https://www.texastribune.org/topics/congress/\" data-section=\"congress\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"congress\">Congress</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/courts/\" data-section=\"courts\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"courts\">Courts</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/criminal-justice/\" data-section=\"criminal-justice\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"criminal justice\">Criminal justice</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/demographics/\" data-section=\"demographics\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"demographics\">Demographics</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/economy/\" data-section=\"economy\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"economy\">Economy</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/energy/\" data-section=\"energy\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"energy\">Energy</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/environment/\" data-section=\"environment\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"environment\">Environment</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/health-care/\" data-section=\"health-care\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"health care\">Health care</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/higher-education/\" data-section=\"higher-education\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"higher education\">Higher education</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/immigration/\" data-section=\"immigration\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"immigration\">Immigration</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/politics/\" data-section=\"politics\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"politics\">Politics</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/public-education/\" data-section=\"public-education\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"public education\">Public education</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/state-government/\" data-section=\"state-government\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"state government\">State government</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"topics\">View all</a>\n          </li>\n\n        </ul>\n      </section>\n      <section class=\"c-site-footer__col c-site-footer__col--3\">\n        <h2 class=\"c-site-footer__header t-size-xs has-text-yellow t-uppercase has-xxs-btm-marg\">\n          <span class=\"is-sr-only\">Company </span>Info</h2>\n        <ul class=\"c-site-footer__links c-site-footer__links--standard\">\n          <li>\n            <a href=\"https://www.texastribune.org/about/\" title=\"About Us\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"about us\">About Us</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/staff/\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"our staff\">Our Staff</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/jobs/\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"jobs\">Jobs</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/support-us/donors-and-members/\" title=\"Who Funds Us?\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"who funds us\">Who Funds Us?</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/texas-tribune-strategic-plan/\" title=\"Strategic Plan\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"strategic plan\">Strategic Plan</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/republishing-guidelines/\" title=\"Republishing Guidelines\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"republishing guidelines\">Republishing Guidelines</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/ethics/\" title=\"Code of Ethics\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"code of ethics\">Code of Ethics</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/terms-of-service/\" title=\"Terms of Service\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"terms of service\">Terms of Service</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/privacy-policy/\" title=\"Privacy Policy\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"privacy policy\">Privacy Policy</a>\n          </li>\n\n          <li>\n            <a href=\"https://www.texastribune.org/about/tips/\" title=\"Send a Tip\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"send us a confidential tip\">Send us a confidential tip</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/corrections/\" title=\"Corrections\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"corrections\">Corrections</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/feeds/\" title=\"Feeds\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"feeds\">Feeds</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/subscribe/\" title=\"Newsletters\" ga-event-category=\"subscribe intent\" ga-event-action=\"footer link\">Newsletters</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/audio/\" title=\"Audio\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"audio\">Audio</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/video/\" title=\"Video\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"video\">Video</a>\n          </li>\n        </ul>\n      </section>\n      <section class=\"c-site-footer__col c-site-footer__col--4\">\n        <h2 class=\"c-site-footer__header t-size-xs has-text-yellow t-uppercase has-xxs-btm-marg\">Social Media</h2>\n        <ul class=\"c-site-footer__links c-site-footer__links--standard\">\n          <li>\n            <a href=\"http://facebook.com/texastribune\" title=\"Facebook\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"facebook\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#facebook\"></use>\n                </svg>\n              </span>Facebook</a>\n          </li>\n          <li>\n            <a href=\"http://twitter.com/texastribune\" title=\"Twitter\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"twitter\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#twitter\"></use>\n                </svg>\n              </span>Twitter</a>\n          </li>\n          <li>\n            <a href=\"http://youtube.com/user/thetexastribune?sub_confirmation=1\" title=\"YouTube\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"youtube\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#youtube\"></use>\n                </svg>\n              </span>YouTube</a>\n          </li>\n          <li>\n            <a href=\"http://instagram.com/texas_tribune\" title=\"Instagram\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"instagram\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#instagram\"></use>\n                </svg>\n              </span>Instagram</a>\n          </li>\n          <li>\n            <a href=\"http://www.linkedin.com/company/texas-tribune\" title=\"LinkedIn\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"linkedin\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#linkedin\"></use>\n                </svg>\n              </span>LinkedIn</a>\n          </li>\n          <li>\n            <a href=\"https://www.reddit.com/user/texastribune\" title=\"Reddit\" class=\"external has-xxs-btm-marg l-display-ib\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"reddit\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#reddit\"></use>\n                </svg>\n              </span>Reddit</a>\n          </li>\n          <li>\n            <div class=\"has-notch has-notch--thin has-bg-yellow has-s-btm-marg\"></div>\n          </li>\n          <li>\n            <a href=\"https://www.facebook.com/groups/thisisyourtexas/\" title=\"This is Your Texas\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"this is your texas\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#your-texas\"></use>\n                </svg>\n              </span>Join our Facebook Group, This Is Your Texas.\n            </a>\n          </li>\n        </ul>\n      </section>\n    </div>\n  </footer>\n{% endif %}\n",
+      "preview": "\n  <footer class=\"c-site-footer has-bg-black-off has-text-white t-size-xs\">\n    <div class=\"l-container l-container--xl grid_container--xl c-site-footer__inner c-site-footer__inner--standard\">\n      <div class=\"c-site-footer__col c-site-footer__col--1\">\n        <span style=\"font-size: 4rem;\" class=\"c-icon has-text-yellow has-b-btm-marg\">\n          <svg aria-hidden=\"true\" focusable=\"false\">\n            <use xlink:href=\"#bug\"></use>\n          </svg>\n        </span>\n        <div class=\"has-notch has-notch--thin has-bg-yellow has-b-btm-marg\"></div>\n        <ul class=\"c-site-footer__links c-site-footer__links--standard\">\n          <li class=\"has-text-blue\">\n            <a href=\"https://support.texastribune.org/donate?installmentPeriod=once&amp;amount=60\" title=\"Donate\" class=\"donate\" ga-on=\"click\" ga-event-category=\"donations\" ga-event-action=\"membership-intent\" ga-event-label=\"footer\">Donate</a>\n          </li>\n\n          <li>\n            <a href=\"/contact/\" title=\"Contact Us\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"contact us\">Contact Us</a>\n          </li>\n          <li>\n            <a href=\"https://mediakit.texastribune.org/\" title=\"Advertise\" class=\"advertise\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"advertise\">Advertise</a>\n          </li>\n          <li>\n            <a href=\"/\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"copyright\">© 2020 The Texas Tribune</a>\n          </li>\n        </ul>\n      </div>\n      <section id=\"footer-sections\" class=\"c-site-footer__col--2 hide_until--s is-hidden-until-bp-s\">\n        <h2 class=\"c-site-footer__header t-size-xs has-text-yellow t-uppercase has-xxs-btm-marg\">\n          Topics\n        </h2>\n        <ul class=\"c-site-footer__links c-site-footer__links--standard\">\n          <li>\n            <a href=\"https://www.texastribune.org/topics/congress/\" data-section=\"congress\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"congress\">Congress</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/courts/\" data-section=\"courts\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"courts\">Courts</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/criminal-justice/\" data-section=\"criminal-justice\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"criminal justice\">Criminal justice</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/demographics/\" data-section=\"demographics\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"demographics\">Demographics</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/economy/\" data-section=\"economy\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"economy\">Economy</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/energy/\" data-section=\"energy\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"energy\">Energy</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/environment/\" data-section=\"environment\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"environment\">Environment</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/health-care/\" data-section=\"health-care\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"health care\">Health care</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/higher-education/\" data-section=\"higher-education\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"higher education\">Higher education</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/immigration/\" data-section=\"immigration\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"immigration\">Immigration</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/politics/\" data-section=\"politics\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"politics\">Politics</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/public-education/\" data-section=\"public-education\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"public education\">Public education</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/state-government/\" data-section=\"state-government\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"state government\">State government</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/topics/\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"topics\">View all</a>\n          </li>\n\n        </ul>\n      </section>\n      <section class=\"c-site-footer__col c-site-footer__col--3\">\n        <h2 class=\"c-site-footer__header t-size-xs has-text-yellow t-uppercase has-xxs-btm-marg\">\n          <span class=\"is-sr-only\">Company </span>Info</h2>\n        <ul class=\"c-site-footer__links c-site-footer__links--standard\">\n          <li>\n            <a href=\"https://www.texastribune.org/about/\" title=\"About Us\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"about us\">About Us</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/staff/\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"our staff\">Our Staff</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/jobs/\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"jobs\">Jobs</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/support-us/donors-and-members/\" title=\"Who Funds Us?\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"who funds us\">Who Funds Us?</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/texas-tribune-strategic-plan/\" title=\"Strategic Plan\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"strategic plan\">Strategic Plan</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/republishing-guidelines/\" title=\"Republishing Guidelines\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"republishing guidelines\">Republishing Guidelines</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/ethics/\" title=\"Code of Ethics\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"code of ethics\">Code of Ethics</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/terms-of-service/\" title=\"Terms of Service\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"terms of service\">Terms of Service</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/privacy-policy/\" title=\"Privacy Policy\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"privacy policy\">Privacy Policy</a>\n          </li>\n\n          <li>\n            <a href=\"https://www.texastribune.org/about/tips/\" title=\"Send a Tip\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"send us a confidential tip\">Send us a confidential tip</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/corrections/\" title=\"Corrections\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"corrections\">Corrections</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/feeds/\" title=\"Feeds\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"feeds\">Feeds</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/about/subscribe/\" title=\"Newsletters\" ga-event-category=\"subscribe intent\" ga-event-action=\"footer link\">Newsletters</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/audio/\" title=\"Audio\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"audio\">Audio</a>\n          </li>\n          <li>\n            <a href=\"https://www.texastribune.org/video/\" title=\"Video\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"video\">Video</a>\n          </li>\n        </ul>\n      </section>\n      <section class=\"c-site-footer__col c-site-footer__col--4\">\n        <h2 class=\"c-site-footer__header t-size-xs has-text-yellow t-uppercase has-xxs-btm-marg\">Social Media</h2>\n        <ul class=\"c-site-footer__links c-site-footer__links--standard\">\n          <li>\n            <a href=\"http://facebook.com/texastribune\" title=\"Facebook\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"facebook\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#facebook\"></use>\n                </svg>\n              </span>Facebook</a>\n          </li>\n          <li>\n            <a href=\"http://twitter.com/texastribune\" title=\"Twitter\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"twitter\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#twitter\"></use>\n                </svg>\n              </span>Twitter</a>\n          </li>\n          <li>\n            <a href=\"http://youtube.com/user/thetexastribune?sub_confirmation=1\" title=\"YouTube\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"youtube\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#youtube\"></use>\n                </svg>\n              </span>YouTube</a>\n          </li>\n          <li>\n            <a href=\"http://instagram.com/texas_tribune\" title=\"Instagram\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"instagram\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#instagram\"></use>\n                </svg>\n              </span>Instagram</a>\n          </li>\n          <li>\n            <a href=\"http://www.linkedin.com/company/texas-tribune\" title=\"LinkedIn\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"linkedin\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#linkedin\"></use>\n                </svg>\n              </span>LinkedIn</a>\n          </li>\n          <li>\n            <a href=\"https://www.reddit.com/user/texastribune\" title=\"Reddit\" class=\"external has-xxs-btm-marg l-display-ib\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"reddit\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#reddit\"></use>\n                </svg>\n              </span>Reddit</a>\n          </li>\n          <li>\n            <div class=\"has-notch has-notch--thin has-bg-yellow has-s-btm-marg\"></div>\n          </li>\n          <li>\n            <a href=\"https://www.facebook.com/groups/thisisyourtexas/\" title=\"This is Your Texas\" class=\"external\" ga-event-category=\"navigation\" ga-event-action=\"footer link click\" ga-event-label=\"this is your texas\">\n              <span class=\"c-icon c-icon--baseline c-site-footer__icon\">\n                <svg aria-hidden=\"true\">\n                  <use xlink:href=\"#your-texas\"></use>\n                </svg>\n              </span>Join our Facebook Group, This Is Your Texas.\n            </a>\n          </li>\n        </ul>\n      </section>\n    </div>\n  </footer>\n\n"
+    },
+    {
+      "name": "c-sponsor-block--filled",
+      "className": "c-sponsor-block--filled",
+      "description": "This version includes a border/bg color. It can be dropped after lazy ads rolls out and c-sponsor-block becomes coupled with <code>c-ad-fluid</code>.",
+      "type": "modifier",
+      "template": "<aside class=\"c-sponsor-block {{ className }}\">\n\t<div class=\"c-sponsor-block__text\">\n\t\t<span class=\"c-sponsor-block__label t-uppercase t-lsp-b has-text-gray-dark t-size-xs has-xxs-btm-marg\"><strong>Paid\n\t\t\t\tPost</strong></span>\n\t\t<div class=\"c-sponsor-block__main\">\n\t\t\t<p class=\"c-sponsor-block__sponsor has-text-sponsor t-uppercase t-lsp-m t-size-xs has-xxs-btm-marg\"><strong>Texas Company ABC 123</strong></p>\n\t\t\t<h3 class=\"c-sponsor-block__headline c-sponsor-block__static-text t-lh-s has-xxxs-btm-marg\"><a href=\"#\"\n\t\t\t\t\tclass=\"has-text-black-off has-text-hover-black\">This is a headline for a sponsor block. The headline is truncated if it exceeds three lines.</a></h3>\n\t\t\t<p class=\"c-sponsor-block__desc c-sponsor-block__static-text t-lh-m\"><a href=\"#\" class=\"has-text-black-off has-text-hover-black\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, impedit amet? Eligendi harum beatae in numquam labore ipsa quasi enim aut ipsum, quibusdam, iste voluptates, quisquam exercitationem assumenda blanditiis esse.</a></p>\n\t\t</div>\n\t</div>\n\t<a href=\"#\" class=\"c-sponsor-block__image-wrap l-display-block\"><img src=\"{{ siteURL }}/img/sponsor-block/c-sponsor-block-thumb.jpg\" class=\"l-width-full c-sponsor-block__image\" alt=\"Texas bluebonnets\" /></a>\n</aside>\n",
+      "preview": "<aside class=\"c-sponsor-block c-sponsor-block--filled\">\n\t<div class=\"c-sponsor-block__text\">\n\t\t<span class=\"c-sponsor-block__label t-uppercase t-lsp-b has-text-gray-dark t-size-xs has-xxs-btm-marg\"><strong>Paid\n\t\t\t\tPost</strong></span>\n\t\t<div class=\"c-sponsor-block__main\">\n\t\t\t<p class=\"c-sponsor-block__sponsor has-text-sponsor t-uppercase t-lsp-m t-size-xs has-xxs-btm-marg\"><strong>Texas Company ABC 123</strong></p>\n\t\t\t<h3 class=\"c-sponsor-block__headline c-sponsor-block__static-text t-lh-s has-xxxs-btm-marg\"><a href=\"#\"\n\t\t\t\t\tclass=\"has-text-black-off has-text-hover-black\">This is a headline for a sponsor block. The headline is truncated if it exceeds three lines.</a></h3>\n\t\t\t<p class=\"c-sponsor-block__desc c-sponsor-block__static-text t-lh-m\"><a href=\"#\" class=\"has-text-black-off has-text-hover-black\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, impedit amet? Eligendi harum beatae in numquam labore ipsa quasi enim aut ipsum, quibusdam, iste voluptates, quisquam exercitationem assumenda blanditiis esse.</a></p>\n\t\t</div>\n\t</div>\n\t<a href=\"#\" class=\"c-sponsor-block__image-wrap l-display-block\"><img src=\"/queso-ui/img/sponsor-block/c-sponsor-block-thumb.jpg\" class=\"l-width-full c-sponsor-block__image\" alt=\"Texas bluebonnets\" /></a>\n</aside>\n"
+    },
+    {
+      "name": ".c-story-block--featured",
+      "className": "c-story-block--featured",
+      "description": "Larger thumbnail photo. Columns are 50/50.",
+      "type": "modifier",
+      "template": "<article class=\"c-story-block {{ className }}\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"{{ siteURL }}/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n",
+      "preview": "<article class=\"c-story-block c-story-block--featured\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n"
+    },
+    {
+      "name": ".c-story-block--stack",
+      "className": "c-story-block--stack",
+      "description": "<strong>Stacked always</strong>; Used in series siderail flatblocks sometimes.",
+      "type": "modifier",
+      "template": "<article class=\"c-story-block {{ className }}\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"{{ siteURL }}/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n",
+      "preview": "<article class=\"c-story-block c-story-block--stack\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n"
+    },
+    {
+      "name": ".c-story-block--stack-from-bp-m",
+      "className": "c-story-block--stack-from-bp-m",
+      "description": "Columns on mobile; <strong>stacked at <code>bp-m</code></strong>. Used in <em>trending on homepage.</em>",
+      "type": "modifier",
+      "template": "<article class=\"c-story-block {{ className }}\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"{{ siteURL }}/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n",
+      "preview": "<article class=\"c-story-block c-story-block--stack-from-bp-m\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n"
+    },
+    {
+      "name": ".c-story-block--stack-from-bp-l",
+      "className": "c-story-block--stack-from-bp-l",
+      "description": "Columns on mobile; <strong>stacked at <code>bp-l</code></strong>. Used in <em>two story wells</em>.",
+      "type": "modifier",
+      "template": "<article class=\"c-story-block {{ className }}\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"{{ siteURL }}/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n",
+      "preview": "<article class=\"c-story-block c-story-block--stack-from-bp-l\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n"
+    },
+    {
+      "name": ".c-story-block--stack-until-bp-m",
+      "className": "c-story-block--stack-until-bp-m",
+      "description": "<strong>Stacked on mobile</strong>; columns on <code>bp-m</code>. Used in <em>our picks series posts</em>.",
+      "type": "modifier",
+      "template": "<article class=\"c-story-block {{ className }}\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"{{ siteURL }}/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n",
+      "preview": "<article class=\"c-story-block c-story-block--stack-until-bp-m\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n"
+    },
+    {
+      "name": ".c-story-block--stack-until-bp-l",
+      "className": "c-story-block--stack-until-bp-l",
+      "description": "<strong>Stacked on mobile</strong>; columns on <code>bp-l</code>. Used in <em>top stories</em> along with <code>.c-story-block--featured</code>",
+      "type": "modifier",
+      "template": "<article class=\"c-story-block {{ className }}\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"{{ siteURL }}/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n",
+      "preview": "<article class=\"c-story-block c-story-block--stack-until-bp-l\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"c-story-block__headline t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a href=\"#\" class=\"has-text-black-off\">The best and worst moments in Texas politics of 2019</a></h3>\n    <!-- byline -->\n    <p class=\"t-byline t-size-xs t-links t-uppercase t-lsp-m has-text-gray has-b-btm-marg\">\n      <span class=\"t-byline__item\">by <a href=\"#\">George Costanza</a> and <a href=\"#\">Cosmo Kramer</a></span><time class=\"t-byline__item\" datetime=\"Mon, 16 Sep 2019 05:00:00 -0500\">Sept. 16, 2019</time>\n    </p>\n    <!-- summary -->\n    <p class=\"t-serif t-links t-size-s is-hidden-until-bp-s\">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Unde rem ipsum officia eum, iusto aliquam reprehenderit similique at vero dolores saepe nisi quas corporis voluptate suscipit explicabo, aspernatur consequuntur nihil. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias velit eaque at nemo! Natus voluptas debitis blanditiis velit rem aut aliquid delectus, voluptatem modi laborum excepturi doloremque dignissimos itaque. Id! <a class=\"t-uppercase t-size-xxs t-lsp-m t-sans l-display-ib\" href=\"#\">Full Story<span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#long-arrow-right\"></use></svg></span></a></p>\n  </div>\n  <figure class=\"c-story-block__image-wrap\">\n    <a href=\"#\" tabindex=\"-1\">\n      <img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\">\n    </a>\n    <figcaption class=\"c-caption c-caption--compact has-text-gray-dark l-display-block t-size-xxs\">This is an image caption describing the image above. <span class=\"c-icon c-icon--baseline\"><svg aria-hidden=\"true\"><use xlink:href=\"#camera\"></use></svg></span> <cite>Photographer Name for Company XYZ</cite>\n    </figcaption>\n  </figure>\n</article>\n"
+    },
+    {
+      "name": ".c-table--striped",
+      "className": "c-table--striped",
+      "description": "Zebra stripes odd rows",
+      "type": "modifier",
+      "template": "<table class=\"c-table {{ className }} l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\"><strong>B</strong></th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>",
+      "preview": "<table class=\"c-table c-table--striped l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\"><strong>B</strong></th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>"
+    },
+    {
+      "name": ".c-table--bordered",
+      "className": "c-table--bordered",
+      "description": "Bordered rows",
+      "type": "modifier",
+      "template": "<table class=\"c-table {{ className }} l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\"><strong>B</strong></th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>",
+      "preview": "<table class=\"c-table c-table--bordered l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\"><strong>B</strong></th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>"
+    },
+    {
+      "name": ".c-table--10-45-45",
+      "className": "c-table--10-45-45",
+      "description": "Three-column table with col widths 10%, 45%, 45%",
+      "type": "modifier",
+      "template": "<table class=\"c-table {{ className }} l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\"><strong>B</strong></th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>",
+      "preview": "<table class=\"c-table c-table--10-45-45 l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\"><strong>B</strong></th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>"
+    },
+    {
+      "name": ".c-table--15-70-15",
+      "className": "c-table--15-70-15",
+      "description": "Two-column table with col widths 15%, 70%, 15%",
+      "type": "modifier",
+      "template": "<table class=\"c-table {{ className }} l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\"><strong>B</strong></th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>",
+      "preview": "<table class=\"c-table c-table--15-70-15 l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\"><strong>B</strong></th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>"
+    },
+    {
+      "name": ".c-topic-bar--sticky",
+      "className": "c-topic-bar--sticky",
+      "description": "Stick to the top of the screen",
+      "type": "modifier",
+      "template": "<div class=\"c-topic-bar {{ className }} t-links-underlined-hover t-size-xs t-align-center has-bg-white\" aria-labelledby=\"topic-bar-label\">\n  <h2 id=\"topic-bar-label\" class=\"is-sr-only\">Key coverage</h2>\n  <div class=\"c-topic-bar__inner\">\n    <ul>\n      <li aria-hidden=\"true\" class=\"t-size-xxs\">\n        <strong>KEY COVERAGE</strong>\n      </li>\n      <li><a href=\"#\">How to Get Help</a></li>\n      <li><a href=\"#\">Coronavirus Newsletter</a></li>\n      <li><a href=\"#\">Life in the Pandemic</a></li>\n      <li><a href=\"#\">Unemployment Benefits</a></li>\n    </ul>\n  </div>\n</div>",
+      "preview": "<div class=\"c-topic-bar c-topic-bar--sticky t-links-underlined-hover t-size-xs t-align-center has-bg-white\" aria-labelledby=\"topic-bar-label\">\n  <h2 id=\"topic-bar-label\" class=\"is-sr-only\">Key coverage</h2>\n  <div class=\"c-topic-bar__inner\">\n    <ul>\n      <li aria-hidden=\"true\" class=\"t-size-xxs\">\n        <strong>KEY COVERAGE</strong>\n      </li>\n      <li><a href=\"#\">How to Get Help</a></li>\n      <li><a href=\"#\">Coronavirus Newsletter</a></li>\n      <li><a href=\"#\">Life in the Pandemic</a></li>\n      <li><a href=\"#\">Unemployment Benefits</a></li>\n    </ul>\n  </div>\n</div>"
+    },
+    {
+      "name": ".c-topic-bar--btm-border",
+      "className": "c-topic-bar--btm-border",
+      "description": "Add a thin gray bottom border",
+      "type": "modifier",
+      "template": "<div class=\"c-topic-bar {{ className }} t-links-underlined-hover t-size-xs t-align-center has-bg-white\" aria-labelledby=\"topic-bar-label\">\n  <h2 id=\"topic-bar-label\" class=\"is-sr-only\">Key coverage</h2>\n  <div class=\"c-topic-bar__inner\">\n    <ul>\n      <li aria-hidden=\"true\" class=\"t-size-xxs\">\n        <strong>KEY COVERAGE</strong>\n      </li>\n      <li><a href=\"#\">How to Get Help</a></li>\n      <li><a href=\"#\">Coronavirus Newsletter</a></li>\n      <li><a href=\"#\">Life in the Pandemic</a></li>\n      <li><a href=\"#\">Unemployment Benefits</a></li>\n    </ul>\n  </div>\n</div>",
+      "preview": "<div class=\"c-topic-bar c-topic-bar--btm-border t-links-underlined-hover t-size-xs t-align-center has-bg-white\" aria-labelledby=\"topic-bar-label\">\n  <h2 id=\"topic-bar-label\" class=\"is-sr-only\">Key coverage</h2>\n  <div class=\"c-topic-bar__inner\">\n    <ul>\n      <li aria-hidden=\"true\" class=\"t-size-xxs\">\n        <strong>KEY COVERAGE</strong>\n      </li>\n      <li><a href=\"#\">How to Get Help</a></li>\n      <li><a href=\"#\">Coronavirus Newsletter</a></li>\n      <li><a href=\"#\">Life in the Pandemic</a></li>\n      <li><a href=\"#\">Unemployment Benefits</a></li>\n    </ul>\n  </div>\n</div>"
+    },
+    {
+      "name": ".c-topic-bar--top-border-until-bp-l",
+      "className": "c-topic-bar--top-border-until-bp-l",
+      "description": "Add a top gray border on small screens",
+      "type": "modifier",
+      "template": "<div class=\"c-topic-bar {{ className }} t-links-underlined-hover t-size-xs t-align-center has-bg-white\" aria-labelledby=\"topic-bar-label\">\n  <h2 id=\"topic-bar-label\" class=\"is-sr-only\">Key coverage</h2>\n  <div class=\"c-topic-bar__inner\">\n    <ul>\n      <li aria-hidden=\"true\" class=\"t-size-xxs\">\n        <strong>KEY COVERAGE</strong>\n      </li>\n      <li><a href=\"#\">How to Get Help</a></li>\n      <li><a href=\"#\">Coronavirus Newsletter</a></li>\n      <li><a href=\"#\">Life in the Pandemic</a></li>\n      <li><a href=\"#\">Unemployment Benefits</a></li>\n    </ul>\n  </div>\n</div>",
+      "preview": "<div class=\"c-topic-bar c-topic-bar--top-border-until-bp-l t-links-underlined-hover t-size-xs t-align-center has-bg-white\" aria-labelledby=\"topic-bar-label\">\n  <h2 id=\"topic-bar-label\" class=\"is-sr-only\">Key coverage</h2>\n  <div class=\"c-topic-bar__inner\">\n    <ul>\n      <li aria-hidden=\"true\" class=\"t-size-xxs\">\n        <strong>KEY COVERAGE</strong>\n      </li>\n      <li><a href=\"#\">How to Get Help</a></li>\n      <li><a href=\"#\">Coronavirus Newsletter</a></li>\n      <li><a href=\"#\">Life in the Pandemic</a></li>\n      <li><a href=\"#\">Unemployment Benefits</a></li>\n    </ul>\n  </div>\n</div>"
+    },
+    {
+      "name": "l-col-grid--1x3",
+      "className": "l-col-grid--1x3",
+      "description": "Columns split in thirds",
+      "type": "modifier",
+      "template": "<div class=\"l-col-grid {{ className }} t-align-center\">\n  <div class=\"has-padding has-bg-white-off\">1</div>\n  <div class=\"has-padding has-bg-white-off\">2</div>\n  <div class=\"has-padding has-bg-white-off\">3</div>\n  <div class=\"has-padding has-bg-white-off\">4</div>\n  {% if className === 'l-col-grid--1x3' %}\n    <div class=\"has-padding has-bg-white-off\">5</div>\n    <div class=\"has-padding has-bg-white-off\">6</div>\n  {% endif %}\n</div>\n",
+      "preview": "<div class=\"l-col-grid l-col-grid--1x3 t-align-center\">\n  <div class=\"has-padding has-bg-white-off\">1</div>\n  <div class=\"has-padding has-bg-white-off\">2</div>\n  <div class=\"has-padding has-bg-white-off\">3</div>\n  <div class=\"has-padding has-bg-white-off\">4</div>\n  \n    <div class=\"has-padding has-bg-white-off\">5</div>\n    <div class=\"has-padding has-bg-white-off\">6</div>\n  \n</div>\n"
+    },
+    {
+      "name": "l-col-grid--xxxs-gap",
+      "className": "l-col-grid--xxxs-gap",
+      "description": "Shrink up the default gap. Used on photo grid",
+      "type": "modifier",
+      "template": "<div class=\"l-col-grid {{ className }} t-align-center\">\n  <div class=\"has-padding has-bg-white-off\">1</div>\n  <div class=\"has-padding has-bg-white-off\">2</div>\n  <div class=\"has-padding has-bg-white-off\">3</div>\n  <div class=\"has-padding has-bg-white-off\">4</div>\n  {% if className === 'l-col-grid--1x3' %}\n    <div class=\"has-padding has-bg-white-off\">5</div>\n    <div class=\"has-padding has-bg-white-off\">6</div>\n  {% endif %}\n</div>\n",
+      "preview": "<div class=\"l-col-grid l-col-grid--xxxs-gap t-align-center\">\n  <div class=\"has-padding has-bg-white-off\">1</div>\n  <div class=\"has-padding has-bg-white-off\">2</div>\n  <div class=\"has-padding has-bg-white-off\">3</div>\n  <div class=\"has-padding has-bg-white-off\">4</div>\n  \n</div>\n"
+    },
+    {
+      "name": "l-col-grid--1x1-until-bp-m",
+      "className": "l-col-grid--1x1-until-bp-m",
+      "description": "Collapse all columns at <code>bp-m</code>",
+      "type": "modifier",
+      "template": "<div class=\"l-col-grid {{ className }} t-align-center\">\n  <div class=\"has-padding has-bg-white-off\">1</div>\n  <div class=\"has-padding has-bg-white-off\">2</div>\n  <div class=\"has-padding has-bg-white-off\">3</div>\n  <div class=\"has-padding has-bg-white-off\">4</div>\n  {% if className === 'l-col-grid--1x3' %}\n    <div class=\"has-padding has-bg-white-off\">5</div>\n    <div class=\"has-padding has-bg-white-off\">6</div>\n  {% endif %}\n</div>\n",
+      "preview": "<div class=\"l-col-grid l-col-grid--1x1-until-bp-m t-align-center\">\n  <div class=\"has-padding has-bg-white-off\">1</div>\n  <div class=\"has-padding has-bg-white-off\">2</div>\n  <div class=\"has-padding has-bg-white-off\">3</div>\n  <div class=\"has-padding has-bg-white-off\">4</div>\n  \n</div>\n"
+    },
+    {
+      "name": "l-container--s",
+      "className": "l-container--s",
+      "description": "Maxed at 520px",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid black\" class=\"l-container {{ className }} has-padding container-demo\"><strong>l-container {% if className %}{{ className }}{%endif%}</strong> (<span></span>)</div>\n",
+      "preview": "<div style=\"border: 2px solid black\" class=\"l-container l-container--s has-padding container-demo\"><strong>l-container l-container--s</strong> (<span></span>)</div>\n"
+    },
+    {
+      "name": "l-container--m",
+      "className": "l-container--m",
+      "description": "Maxed at 650px",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid black\" class=\"l-container {{ className }} has-padding container-demo\"><strong>l-container {% if className %}{{ className }}{%endif%}</strong> (<span></span>)</div>\n",
+      "preview": "<div style=\"border: 2px solid black\" class=\"l-container l-container--m has-padding container-demo\"><strong>l-container l-container--m</strong> (<span></span>)</div>\n"
+    },
+    {
+      "name": "l-container--l",
+      "className": "l-container--l",
+      "description": "Maxed at 845px",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid black\" class=\"l-container {{ className }} has-padding container-demo\"><strong>l-container {% if className %}{{ className }}{%endif%}</strong> (<span></span>)</div>\n",
+      "preview": "<div style=\"border: 2px solid black\" class=\"l-container l-container--l has-padding container-demo\"><strong>l-container l-container--l</strong> (<span></span>)</div>\n"
+    },
+    {
+      "name": "l-container--xl",
+      "className": "l-container--xl",
+      "description": "Maxed at 1080px",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid black\" class=\"l-container {{ className }} has-padding container-demo\"><strong>l-container {% if className %}{{ className }}{%endif%}</strong> (<span></span>)</div>\n",
+      "preview": "<div style=\"border: 2px solid black\" class=\"l-container l-container--xl has-padding container-demo\"><strong>l-container l-container--xl</strong> (<span></span>)</div>\n"
+    },
+    {
+      "name": "l-container--xxl",
+      "className": "l-container--xxl",
+      "description": "Maxed at 1300px",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid black\" class=\"l-container {{ className }} has-padding container-demo\"><strong>l-container {% if className %}{{ className }}{%endif%}</strong> (<span></span>)</div>\n",
+      "preview": "<div style=\"border: 2px solid black\" class=\"l-container l-container--xxl has-padding container-demo\"><strong>l-container l-container--xxl</strong> (<span></span>)</div>\n"
+    },
+    {
+      "name": ".l-content-grid--swapped-until-bp-l",
+      "className": "l-content-grid--swapped-until-bp-l",
+      "description": "Flip the visual order on smaller devices",
+      "type": "modifier",
+      "template": "<div class=\"l-content-grid {{ className }}\">\n  <div class=\"l-content-grid__content has-bg-white-off\">\n    <h3 class=\"has-padding\">Content</h3>\n  </div>\n  <div class=\"l-content-grid__side has-bg-gray-light\">\n    <h3 class=\"has-padding\">Sidebar</h3>\n  </div>\n</div>\n",
+      "preview": "<div class=\"l-content-grid l-content-grid--swapped-until-bp-l\">\n  <div class=\"l-content-grid__content has-bg-white-off\">\n    <h3 class=\"has-padding\">Content</h3>\n  </div>\n  <div class=\"l-content-grid__side has-bg-gray-light\">\n    <h3 class=\"has-padding\">Sidebar</h3>\n  </div>\n</div>\n"
+    },
+    {
+      "name": "l-align-center-x",
+      "className": "l-align-center-x",
+      "description": "Uses auto side margin for <strong>horizontal</strong> center",
+      "type": "modifier",
+      "template": "<div style=\"border:2px solid black; width: 200px; height: 100px; position: relative; {% if className == 'l-align-center-self' or className == 'l-align-end-self' %}display: flex{% endif %}\" {% if className == 'l-align-center-children' %}class=\"{{className}}\"{% endif %}>\n  <div style=\"width: 50%;\" class=\"has-padding has-bg-yellow {{className}}\">Example</div>\n</div>\n{% if className == 'l-align-center-self' or className == 'l-align-end-self'  %}Parent is display: flex{% endif %}\n{% if className == 'l-align-center-y' %}Parent is position: relative{% endif %}",
+      "preview": "<div style=\"border:2px solid black; width: 200px; height: 100px; position: relative; \" >\n  <div style=\"width: 50%;\" class=\"has-padding has-bg-yellow l-align-center-x\">Example</div>\n</div>\n\n"
+    },
+    {
+      "name": "l-align-center-y",
+      "className": "l-align-center-y",
+      "description": "Absolutely positioned for vertical <strong>vertical</strong> center",
+      "type": "modifier",
+      "template": "<div style=\"border:2px solid black; width: 200px; height: 100px; position: relative; {% if className == 'l-align-center-self' or className == 'l-align-end-self' %}display: flex{% endif %}\" {% if className == 'l-align-center-children' %}class=\"{{className}}\"{% endif %}>\n  <div style=\"width: 50%;\" class=\"has-padding has-bg-yellow {{className}}\">Example</div>\n</div>\n{% if className == 'l-align-center-self' or className == 'l-align-end-self'  %}Parent is display: flex{% endif %}\n{% if className == 'l-align-center-y' %}Parent is position: relative{% endif %}",
+      "preview": "<div style=\"border:2px solid black; width: 200px; height: 100px; position: relative; \" >\n  <div style=\"width: 50%;\" class=\"has-padding has-bg-yellow l-align-center-y\">Example</div>\n</div>\n\nParent is position: relative"
+    },
+    {
+      "name": "l-align-center-self",
+      "className": "l-align-center-self",
+      "description": "Used on children of flex or grid parent for <strong>vertical</strong> center",
+      "type": "modifier",
+      "template": "<div style=\"border:2px solid black; width: 200px; height: 100px; position: relative; {% if className == 'l-align-center-self' or className == 'l-align-end-self' %}display: flex{% endif %}\" {% if className == 'l-align-center-children' %}class=\"{{className}}\"{% endif %}>\n  <div style=\"width: 50%;\" class=\"has-padding has-bg-yellow {{className}}\">Example</div>\n</div>\n{% if className == 'l-align-center-self' or className == 'l-align-end-self'  %}Parent is display: flex{% endif %}\n{% if className == 'l-align-center-y' %}Parent is position: relative{% endif %}",
+      "preview": "<div style=\"border:2px solid black; width: 200px; height: 100px; position: relative; display: flex\" >\n  <div style=\"width: 50%;\" class=\"has-padding has-bg-yellow l-align-center-self\">Example</div>\n</div>\nParent is display: flex\n"
+    },
+    {
+      "name": "l-align-end-self",
+      "className": "l-align-end-self",
+      "description": "Used on children of flex or grid parent for forcing <strong>bottom</strong> alignment",
+      "type": "modifier",
+      "template": "<div style=\"border:2px solid black; width: 200px; height: 100px; position: relative; {% if className == 'l-align-center-self' or className == 'l-align-end-self' %}display: flex{% endif %}\" {% if className == 'l-align-center-children' %}class=\"{{className}}\"{% endif %}>\n  <div style=\"width: 50%;\" class=\"has-padding has-bg-yellow {{className}}\">Example</div>\n</div>\n{% if className == 'l-align-center-self' or className == 'l-align-end-self'  %}Parent is display: flex{% endif %}\n{% if className == 'l-align-center-y' %}Parent is position: relative{% endif %}",
+      "preview": "<div style=\"border:2px solid black; width: 200px; height: 100px; position: relative; display: flex\" >\n  <div style=\"width: 50%;\" class=\"has-padding has-bg-yellow l-align-end-self\">Example</div>\n</div>\nParent is display: flex\n"
+    },
+    {
+      "name": "l-align-center-children",
+      "className": "l-align-center-children",
+      "description": "Apply to parent to center children. Centers x and y.",
+      "type": "modifier",
+      "template": "<div style=\"border:2px solid black; width: 200px; height: 100px; position: relative; {% if className == 'l-align-center-self' or className == 'l-align-end-self' %}display: flex{% endif %}\" {% if className == 'l-align-center-children' %}class=\"{{className}}\"{% endif %}>\n  <div style=\"width: 50%;\" class=\"has-padding has-bg-yellow {{className}}\">Example</div>\n</div>\n{% if className == 'l-align-center-self' or className == 'l-align-end-self'  %}Parent is display: flex{% endif %}\n{% if className == 'l-align-center-y' %}Parent is position: relative{% endif %}",
+      "preview": "<div style=\"border:2px solid black; width: 200px; height: 100px; position: relative; \" class=\"l-align-center-children\">\n  <div style=\"width: 50%;\" class=\"has-padding has-bg-yellow l-align-center-children\">Example</div>\n</div>\n\n"
+    },
+    {
+      "name": ".l-display-ib",
+      "className": "l-display-ib",
+      "description": "<strong>Inline Block</strong>: Take up just what you need.",
+      "type": "modifier",
+      "template": "<div style=\"border:2px solid black;\">\n  {% if className == 'l-clearfix' %}\n    <div class=\"has-padding has-bg-yellow {{className}}\"><span class=\"has-padding has-bg-black-off has-text-white\" style=\"float:left; \">Floated div</span></div>\n  {% else %}\n    <div class=\"has-padding has-bg-yellow {{className}}\">Example</div>\n  {% endif %}\n</div>",
+      "preview": "<div style=\"border:2px solid black;\">\n  \n    <div class=\"has-padding has-bg-yellow l-display-ib\">Example</div>\n  \n</div>"
+    },
+    {
+      "name": ".l-display-block",
+      "className": "l-display-block",
+      "description": "<strong>Block</strong>: Take up all the space.",
+      "type": "modifier",
+      "template": "<div style=\"border:2px solid black;\">\n  {% if className == 'l-clearfix' %}\n    <div class=\"has-padding has-bg-yellow {{className}}\"><span class=\"has-padding has-bg-black-off has-text-white\" style=\"float:left; \">Floated div</span></div>\n  {% else %}\n    <div class=\"has-padding has-bg-yellow {{className}}\">Example</div>\n  {% endif %}\n</div>",
+      "preview": "<div style=\"border:2px solid black;\">\n  \n    <div class=\"has-padding has-bg-yellow l-display-block\">Example</div>\n  \n</div>"
+    },
+    {
+      "name": ".l-clearfix",
+      "className": "l-clearfix",
+      "description": "<strong>Clears floats</strong> Clear out everything after a float.",
+      "type": "modifier",
+      "template": "<div style=\"border:2px solid black;\">\n  {% if className == 'l-clearfix' %}\n    <div class=\"has-padding has-bg-yellow {{className}}\"><span class=\"has-padding has-bg-black-off has-text-white\" style=\"float:left; \">Floated div</span></div>\n  {% else %}\n    <div class=\"has-padding has-bg-yellow {{className}}\">Example</div>\n  {% endif %}\n</div>",
+      "preview": "<div style=\"border:2px solid black;\">\n  \n    <div class=\"has-padding has-bg-yellow l-clearfix\"><span class=\"has-padding has-bg-black-off has-text-white\" style=\"float:left; \">Floated div</span></div>\n  \n</div>"
+    },
+    {
+      "name": ".l-height-full",
+      "className": "l-height-full",
+      "description": "Height is 100% of parent",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid black; height: 500px;\"><div class=\"{{ className }} has-bg-yellow t-align-center\">I am a child div</div></div>",
+      "preview": "<div style=\"border: 2px solid black; height: 500px;\"><div class=\"l-height-full has-bg-yellow t-align-center\">I am a child div</div></div>"
+    },
+    {
+      "name": ".l-pos-rel",
+      "className": "l-pos-rel",
+      "description": "Relative position",
+      "type": "modifier",
+      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}",
+      "preview": "\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"l-pos-rel\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n\n"
+    },
+    {
+      "name": ".l-pos-abs",
+      "className": "l-pos-abs",
+      "description": "Set <em><code>.l-pos-rel</code></em> on the parent to place within a defined space.",
+      "type": "modifier",
+      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}",
+      "preview": "\n\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n"
+    },
+    {
+      "name": ".l-width-full",
+      "className": "l-width-full",
+      "description": "Width is 100% of parent",
+      "type": "modifier",
+      "template": "<div style=\"border:2px solid black\"><img class=\"{{ className }}\" src=\"https://static.texastribune.org/media/images/2015/10/22/SpaceJam_Nightscapes_BO_DSC02387.jpg\"/></div>",
+      "preview": "<div style=\"border:2px solid black\"><img class=\"l-width-full\" src=\"https://static.texastribune.org/media/images/2015/10/22/SpaceJam_Nightscapes_BO_DSC02387.jpg\"/></div>"
+    },
+    {
+      "name": ".l-width-max",
+      "className": "l-width-max",
+      "description": "Max-width: 100%. Never greater than parent, but not stretched beyond its natural size.",
+      "type": "modifier",
+      "template": "<div style=\"border:2px solid black\"><img class=\"{{ className }}\" src=\"https://static.texastribune.org/media/images/2015/10/22/SpaceJam_Nightscapes_BO_DSC02387.jpg\"/></div>",
+      "preview": "<div style=\"border:2px solid black\"><img class=\"l-width-max\" src=\"https://static.texastribune.org/media/images/2015/10/22/SpaceJam_Nightscapes_BO_DSC02387.jpg\"/></div>"
+    },
+    {
+      "name": ".has-text-black",
+      "className": "has-text-black",
+      "description": "black text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-black\">Example</p>"
+    },
+    {
+      "name": ".has-text-black-off",
+      "className": "has-text-black-off",
+      "description": "black-off text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-black-off\">Example</p>"
+    },
+    {
+      "name": ".has-text-white",
+      "className": "has-text-white",
+      "description": "white text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-white\">Example</p>"
+    },
+    {
+      "name": ".has-text-white-off",
+      "className": "has-text-white-off",
+      "description": "white off text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-white-off\">Example</p>"
+    },
+    {
+      "name": ".has-text-teal",
+      "className": "has-text-teal",
+      "description": "teal text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-teal\">Example</p>"
+    },
+    {
+      "name": ".has-text-gray",
+      "className": "has-text-gray",
+      "description": "gray text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-gray\">Example</p>"
+    },
+    {
+      "name": ".has-text-gray-light",
+      "className": "has-text-gray-light",
+      "description": "gray-light text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-gray-light\">Example</p>"
+    },
+    {
+      "name": ".has-text-gray-dark",
+      "className": "has-text-gray-dark",
+      "description": "gray-dark text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-gray-dark\">Example</p>"
+    },
+    {
+      "name": ".has-text-yellow",
+      "className": "has-text-yellow",
+      "description": "yellow text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-yellow\">Example</p>"
+    },
+    {
+      "name": ".has-text-blue",
+      "className": "has-text-blue",
+      "description": "blue text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-blue\">Example</p>"
+    },
+    {
+      "name": ".has-text-blue-dark",
+      "className": "has-text-blue-dark",
+      "description": "blue dark text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-blue-dark\">Example</p>"
+    },
+    {
+      "name": ".has-text-error",
+      "className": "has-text-error",
+      "description": "error text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-error\">Example</p>"
+    },
+    {
+      "name": ".has-text-success",
+      "className": "has-text-success",
+      "description": "success text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-success\">Example</p>"
+    },
+    {
+      "name": ".has-text-sponsor",
+      "className": "has-text-sponsor",
+      "description": "sponsor text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-sponsor\">Example</p>"
+    },
+    {
+      "name": ".has-text-facebook",
+      "className": "has-text-facebook",
+      "description": "facebook text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-facebook\">Example</p>"
+    },
+    {
+      "name": ".has-text-twitter",
+      "className": "has-text-twitter",
+      "description": "twitter text color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Example</p>",
+      "preview": "<p class=\"has-text-twitter\">Example</p>"
+    },
+    {
+      "name": ".is-hidden",
+      "className": "is-hidden",
+      "description": "Hide always",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden\"><strong>is-hidden</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-print",
+      "className": "is-hidden-print",
+      "description": "Hide from print previews",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-print\"><strong>is-hidden-print</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-sr-only",
+      "className": "is-sr-only",
+      "description": "Visible only to assistive technology",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-sr-only\"><strong>is-sr-only</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-from-bp-xs",
+      "className": "is-hidden-from-bp-xs",
+      "description": "Hide from bp-xs onward",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-from-bp-xs\"><strong>is-hidden-from-bp-xs</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-from-bp-s",
+      "className": "is-hidden-from-bp-s",
+      "description": "Hide from bp-s onward",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-from-bp-s\"><strong>is-hidden-from-bp-s</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-from-bp-m",
+      "className": "is-hidden-from-bp-m",
+      "description": "Hide from bp-m onward",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-from-bp-m\"><strong>is-hidden-from-bp-m</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-from-bp-l",
+      "className": "is-hidden-from-bp-l",
+      "description": "Hide from bp-l onward",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-from-bp-l\"><strong>is-hidden-from-bp-l</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-from-bp-xl",
+      "className": "is-hidden-from-bp-xl",
+      "description": "Hide from bp-xl onward",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-from-bp-xl\"><strong>is-hidden-from-bp-xl</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-from-bp-xxl",
+      "className": "is-hidden-from-bp-xxl",
+      "description": "Hide from bp-xxl onward",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-from-bp-xxl\"><strong>is-hidden-from-bp-xxl</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-from-bp-default",
+      "className": "is-hidden-from-bp-default",
+      "description": "Hide from bp-default onward",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-from-bp-default\"><strong>is-hidden-from-bp-default</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-until-bp-xs",
+      "className": "is-hidden-until-bp-xs",
+      "description": "Hide until bp-xs",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-until-bp-xs\"><strong>is-hidden-until-bp-xs</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-until-bp-s",
+      "className": "is-hidden-until-bp-s",
+      "description": "Hide until bp-s",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-until-bp-s\"><strong>is-hidden-until-bp-s</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-until-bp-m",
+      "className": "is-hidden-until-bp-m",
+      "description": "Hide until bp-m",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-until-bp-m\"><strong>is-hidden-until-bp-m</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-until-bp-l",
+      "className": "is-hidden-until-bp-l",
+      "description": "Hide until bp-l",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-until-bp-l\"><strong>is-hidden-until-bp-l</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-until-bp-xl",
+      "className": "is-hidden-until-bp-xl",
+      "description": "Hide until bp-xl",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-until-bp-xl\"><strong>is-hidden-until-bp-xl</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-until-bp-xxl",
+      "className": "is-hidden-until-bp-xxl",
+      "description": "Hide until bp-xxl",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-until-bp-xxl\"><strong>is-hidden-until-bp-xxl</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-hidden-until-bp-default",
+      "className": "is-hidden-until-bp-default",
+      "description": "Hide until bp-default",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-hidden-until-bp-default\"><strong>is-hidden-until-bp-default</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".is-transparent",
+      "className": "is-transparent",
+      "description": "Removes opacity. (Use this to fade elements out.)",
+      "type": "modifier",
+      "template": "<div style=\"background:#ffc200;\" class=\"{{ className }}\"><strong>{{ className }}</strong>: Resize to see me appear/disappear</div>",
+      "preview": "<div style=\"background:#ffc200;\" class=\"is-transparent\"><strong>is-transparent</strong>: Resize to see me appear/disappear</div>"
+    },
+    {
+      "name": ".has-xxxl-btm-marg",
+      "className": "has-xxxl-btm-marg",
+      "description": "Margin bottom with $size-xxxl",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-xxxl-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-giant-btm-marg",
+      "className": "has-giant-btm-marg",
+      "description": "Margin bottom with $size-giant",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-giant-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-xxl-btm-marg",
+      "className": "has-xxl-btm-marg",
+      "description": "Margin bottom with $size-xxl",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-xxl-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-xl-btm-marg",
+      "className": "has-xl-btm-marg",
+      "description": "Margin bottom with $size-xl",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-xl-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-l-btm-marg",
+      "className": "has-l-btm-marg",
+      "description": "Margin bottom with $size-l",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-l-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-m-btm-marg",
+      "className": "has-m-btm-marg",
+      "description": "Margin bottom with $size-m",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-m-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-b-btm-marg",
+      "className": "has-b-btm-marg",
+      "description": "Margin bottom with $size-b",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-b-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-s-btm-marg",
+      "className": "has-s-btm-marg",
+      "description": "Margin bottom with $size-s",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-s-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-xs-btm-marg",
+      "className": "has-xs-btm-marg",
+      "description": "Margin bottom with $size-xs",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-xs-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-xxs-btm-marg",
+      "className": "has-xxs-btm-marg",
+      "description": "Margin bottom with $size-xxs",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-xxs-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-xxxs-btm-marg",
+      "className": "has-xxxs-btm-marg",
+      "description": "Margin bottom with $size-xxxs",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-xxxs-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-tiny-btm-marg",
+      "className": "has-tiny-btm-marg",
+      "description": "Margin bottom with $size-tiny",
+      "type": "modifier",
+      "template": "<ul><li class=\"{{ className }} margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>",
+      "preview": "<ul><li class=\"has-tiny-btm-marg margin-demo\" style=\"border:2px solid black;\">Example</li><li style=\"border:2px solid black;\">Example</li></ul>"
+    },
+    {
+      "name": ".has-padding",
+      "className": "has-padding",
+      "description": "All-around padding with $size-b",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid #000; background: #eee\" class=\"{{ className }}\"><div style=\"background: #000;color: #fff;\">{{ className }}</div></div>",
+      "preview": "<div style=\"border: 2px solid #000; background: #eee\" class=\"has-padding\"><div style=\"background: #000;color: #fff;\">has-padding</div></div>"
+    },
+    {
+      "name": ".has-xs-padding",
+      "className": "has-xs-padding",
+      "description": "All-around padding with $size-xs",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid #000; background: #eee\" class=\"{{ className }}\"><div style=\"background: #000;color: #fff;\">{{ className }}</div></div>",
+      "preview": "<div style=\"border: 2px solid #000; background: #eee\" class=\"has-xs-padding\"><div style=\"background: #000;color: #fff;\">has-xs-padding</div></div>"
+    },
+    {
+      "name": ".has-xl-padding",
+      "className": "has-xl-padding",
+      "description": "All-around padding with $size-xl",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid #000; background: #eee\" class=\"{{ className }}\"><div style=\"background: #000;color: #fff;\">{{ className }}</div></div>",
+      "preview": "<div style=\"border: 2px solid #000; background: #eee\" class=\"has-xl-padding\"><div style=\"background: #000;color: #fff;\">has-xl-padding</div></div>"
+    },
+    {
+      "name": ".has-page-padding",
+      "className": "has-page-padding",
+      "description": "Left/right padding on small screens",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid #000; background: #eee\" class=\"{{ className }}\"><div style=\"background: #000;color: #fff;\">{{ className }}</div></div>",
+      "preview": "<div style=\"border: 2px solid #000; background: #eee\" class=\"has-page-padding\"><div style=\"background: #000;color: #fff;\">has-page-padding</div></div>"
+    },
+    {
+      "name": ".has-page-padding-at-bp-l",
+      "className": "has-page-padding-at-bp-l",
+      "description": "Custom setting for story page lead art",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid #000; background: #eee\" class=\"{{ className }}\"><div style=\"background: #000;color: #fff;\">{{ className }}</div></div>",
+      "preview": "<div style=\"border: 2px solid #000; background: #eee\" class=\"has-page-padding-at-bp-l\"><div style=\"background: #000;color: #fff;\">has-page-padding-at-bp-l</div></div>"
+    },
+    {
+      "name": ".has-section-padding",
+      "className": "has-section-padding",
+      "description": "Top/bottom responsive padding",
+      "type": "modifier",
+      "template": "<div style=\"border: 2px solid #000; background: #eee\" class=\"{{ className }}\"><div style=\"background: #000;color: #fff;\">{{ className }}</div></div>",
+      "preview": "<div style=\"border: 2px solid #000; background: #eee\" class=\"has-section-padding\"><div style=\"background: #000;color: #fff;\">has-section-padding</div></div>"
+    },
+    {
+      "name": ".has-text-hover-black",
+      "className": "has-text-hover-black",
+      "description": "black text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-black\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-black-off",
+      "className": "has-text-hover-black-off",
+      "description": "black-off text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-black-off\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-white",
+      "className": "has-text-hover-white",
+      "description": "white text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-white\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-white-off",
+      "className": "has-text-hover-white-off",
+      "description": "white off text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-white-off\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-teal",
+      "className": "has-text-hover-teal",
+      "description": "teal text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-teal\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-gray",
+      "className": "has-text-hover-gray",
+      "description": "gray text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-gray\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-gray-light",
+      "className": "has-text-hover-gray-light",
+      "description": "gray-light text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-gray-light\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-gray-dark",
+      "className": "has-text-hover-gray-dark",
+      "description": "gray-dark text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-gray-dark\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-yellow",
+      "className": "has-text-hover-yellow",
+      "description": "yellow text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-yellow\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-blue",
+      "className": "has-text-hover-blue",
+      "description": "blue text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-blue\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-blue-dark",
+      "className": "has-text-hover-blue-dark",
+      "description": "blue dark text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-blue-dark\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-error",
+      "className": "has-text-hover-error",
+      "description": "error text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-error\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-success",
+      "className": "has-text-hover-success",
+      "description": "success text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-success\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-sponsor",
+      "className": "has-text-hover-sponsor",
+      "description": "sponsor text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-sponsor\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-facebook",
+      "className": "has-text-hover-facebook",
+      "description": "facebook text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-facebook\">Hover me</p>"
+    },
+    {
+      "name": ".has-text-hover-twitter",
+      "className": "has-text-hover-twitter",
+      "description": "twitter text-hover color",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Hover me</p>",
+      "preview": "<p class=\"has-text-hover-twitter\">Hover me</p>"
+    },
+    {
+      "name": ".has-border",
+      "className": "has-border",
+      "description": "This is our standard border color.",
+      "type": "modifier",
+      "template": "<div class=\"{{ className }} has-text-black has-padding\">Bordered</div>",
+      "preview": "<div class=\"has-border has-text-black has-padding\">Bordered</div>"
+    },
+    {
+      "name": ".has-styled-border",
+      "className": "has-styled-border",
+      "description": "Uses <code>currentColor</code> to inherit a <code>border-color</code> from <code>color</code>. Can be coupled with the <code>has-text-&lt;color&gt;</code> helper. This border is a common pattern in sidebar blocks and ads.",
+      "type": "modifier",
+      "template": "<div class=\"{{ className }} has-text-black has-padding\">Bordered</div>",
+      "preview": "<div class=\"has-styled-border has-text-black has-padding\">Bordered</div>"
+    },
+    {
+      "name": ".has-bg-black",
+      "className": "has-bg-black",
+      "description": "black background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-black\">Example</div>"
+    },
+    {
+      "name": ".has-bg-black-off",
+      "className": "has-bg-black-off",
+      "description": "black-off background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-black-off\">Example</div>"
+    },
+    {
+      "name": ".has-bg-white",
+      "className": "has-bg-white",
+      "description": "white background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-white\">Example</div>"
+    },
+    {
+      "name": ".has-bg-white-off",
+      "className": "has-bg-white-off",
+      "description": "white off background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-white-off\">Example</div>"
+    },
+    {
+      "name": ".has-bg-teal",
+      "className": "has-bg-teal",
+      "description": "teal background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-teal\">Example</div>"
+    },
+    {
+      "name": ".has-bg-gray",
+      "className": "has-bg-gray",
+      "description": "gray background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-gray\">Example</div>"
+    },
+    {
+      "name": ".has-bg-gray-light",
+      "className": "has-bg-gray-light",
+      "description": "gray-light background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-gray-light\">Example</div>"
+    },
+    {
+      "name": ".has-bg-gray-dark",
+      "className": "has-bg-gray-dark",
+      "description": "gray-dark background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-gray-dark\">Example</div>"
+    },
+    {
+      "name": ".has-bg-yellow",
+      "className": "has-bg-yellow",
+      "description": "yellow background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-yellow\">Example</div>"
+    },
+    {
+      "name": ".has-bg-blue",
+      "className": "has-bg-blue",
+      "description": "blue background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-blue\">Example</div>"
+    },
+    {
+      "name": ".has-bg-blue-dark",
+      "className": "has-bg-blue-dark",
+      "description": "blue dark background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-blue-dark\">Example</div>"
+    },
+    {
+      "name": ".has-bg-error",
+      "className": "has-bg-error",
+      "description": "error background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-error\">Example</div>"
+    },
+    {
+      "name": ".has-bg-success",
+      "className": "has-bg-success",
+      "description": "success background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-success\">Example</div>"
+    },
+    {
+      "name": ".has-bg-sponsor",
+      "className": "has-bg-sponsor",
+      "description": "sponsor background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-sponsor\">Example</div>"
+    },
+    {
+      "name": ".has-bg-facebook",
+      "className": "has-bg-facebook",
+      "description": "facebook background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-facebook\">Example</div>"
+    },
+    {
+      "name": ".has-bg-twitter",
+      "className": "has-bg-twitter",
+      "description": "twitter background color",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-twitter\">Example</div>"
+    },
+    {
+      "name": ".has-notch--short",
+      "className": "has-notch--short",
+      "description": "Shorter in width and height",
+      "type": "modifier",
+      "template": "<div class=\"has-notch {{ className }} has-bg-yellow\"></div>",
+      "preview": "<div class=\"has-notch has-notch--short has-bg-yellow\"></div>"
+    },
+    {
+      "name": ".has-notch--thin",
+      "className": "has-notch--thin",
+      "description": "Shorter in height. Used in footer",
+      "type": "modifier",
+      "template": "<div class=\"has-notch {{ className }} has-bg-yellow\"></div>",
+      "preview": "<div class=\"has-notch has-notch--thin has-bg-yellow\"></div>"
+    },
+    {
+      "name": ".has-notch--full",
+      "className": "has-notch--full",
+      "description": "Stretches to full width",
+      "type": "modifier",
+      "template": "<div class=\"has-notch {{ className }} has-bg-yellow\"></div>",
+      "preview": "<div class=\"has-notch has-notch--full has-bg-yellow\"></div>"
+    },
+    {
+      "name": ".is-rounded-b",
+      "className": "is-rounded-b",
+      "description": "The base rounded measure <code>4px</code>",
+      "type": "modifier",
+      "template": "<div class=\"{{ className }} has-bg-gray-light has-padding\">Bordered</div>",
+      "preview": "<div class=\"is-rounded-b has-bg-gray-light has-padding\">Bordered</div>"
+    },
+    {
+      "name": ".is-rounded-l",
+      "className": "is-rounded-l",
+      "description": "More dramatic rounding of <code>40px</code>. (Used for pill buttons in donation CTAs.)",
+      "type": "modifier",
+      "template": "<div class=\"{{ className }} has-bg-gray-light has-padding\">Bordered</div>",
+      "preview": "<div class=\"is-rounded-l has-bg-gray-light has-padding\">Bordered</div>"
+    },
+    {
+      "name": ".has-vert-bar--thin",
+      "className": "has-vert-bar--thin",
+      "description": "Used in membership CTA callout on stories",
+      "type": "modifier",
+      "template": "<p class=\"has-vert-bar {{ className }} has-text-yellow\"><span class=\"has-text-gray-dark\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt vel rerum deserunt debitis voluptas, omnis dignissimos, doloribus saepe quae itaque! Consequuntur et eveniet fugit in veritatis quos ver incidunt.</span></p>",
+      "preview": "<p class=\"has-vert-bar has-vert-bar--thin has-text-yellow\"><span class=\"has-text-gray-dark\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt vel rerum deserunt debitis voluptas, omnis dignissimos, doloribus saepe quae itaque! Consequuntur et eveniet fugit in veritatis quos ver incidunt.</span></p>"
+    },
+    {
+      "name": ".has-vert-bar--padded-l",
+      "className": "has-vert-bar--padded-l",
+      "description": "Used in pullquotes",
+      "type": "modifier",
+      "template": "<p class=\"has-vert-bar {{ className }} has-text-yellow\"><span class=\"has-text-gray-dark\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt vel rerum deserunt debitis voluptas, omnis dignissimos, doloribus saepe quae itaque! Consequuntur et eveniet fugit in veritatis quos ver incidunt.</span></p>",
+      "preview": "<p class=\"has-vert-bar has-vert-bar--padded-l has-text-yellow\"><span class=\"has-text-gray-dark\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt vel rerum deserunt debitis voluptas, omnis dignissimos, doloribus saepe quae itaque! Consequuntur et eveniet fugit in veritatis quos ver incidunt.</span></p>"
+    },
+    {
+      "name": ".has-vert-bar--padded-xxl",
+      "className": "has-vert-bar--padded-xxl",
+      "description": "Used in membership CTA callout on stories",
+      "type": "modifier",
+      "template": "<p class=\"has-vert-bar {{ className }} has-text-yellow\"><span class=\"has-text-gray-dark\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt vel rerum deserunt debitis voluptas, omnis dignissimos, doloribus saepe quae itaque! Consequuntur et eveniet fugit in veritatis quos ver incidunt.</span></p>",
+      "preview": "<p class=\"has-vert-bar has-vert-bar--padded-xxl has-text-yellow\"><span class=\"has-text-gray-dark\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt vel rerum deserunt debitis voluptas, omnis dignissimos, doloribus saepe quae itaque! Consequuntur et eveniet fugit in veritatis quos ver incidunt.</span></p>"
+    },
+    {
+      "name": ".has-vert-bar--from-bp-s",
+      "className": "has-vert-bar--from-bp-s",
+      "description": "Resets styling on mobile",
+      "type": "modifier",
+      "template": "<p class=\"has-vert-bar {{ className }} has-text-yellow\"><span class=\"has-text-gray-dark\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt vel rerum deserunt debitis voluptas, omnis dignissimos, doloribus saepe quae itaque! Consequuntur et eveniet fugit in veritatis quos ver incidunt.</span></p>",
+      "preview": "<p class=\"has-vert-bar has-vert-bar--from-bp-s has-text-yellow\"><span class=\"has-text-gray-dark\">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores incidunt vel rerum deserunt debitis voluptas, omnis dignissimos, doloribus saepe quae itaque! Consequuntur et eveniet fugit in veritatis quos ver incidunt.</span></p>"
+    }
+  ]
+}

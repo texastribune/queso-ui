@@ -1,0 +1,596 @@
+{
+  "colorMaps": [
+    {
+      "name": "Core",
+      "description": "<p>Colors specific to our brand.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_colors.scss#L1",
+      "type": "colorMap",
+      "list": [
+        {
+          "type": "color",
+          "name": "$color-yellow-tribune",
+          "description": "Primary branding",
+          "value": "#ffc200",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-blue-light",
+          "description": "Blue Light",
+          "value": "#a1d2df",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-teal-gray",
+          "description": "Teal Gray",
+          "value": "#348094",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-black-off",
+          "description": "A little bit darker now",
+          "value": "#222",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": true
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-white-off",
+          "description": "Off-white",
+          "value": "#f3f3f3",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "Grayscale",
+      "description": "<p>In search of that perfect gray.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_colors.scss#L20",
+      "type": "colorMap",
+      "list": [
+        {
+          "type": "color",
+          "name": "$color-white-pure",
+          "description": "White",
+          "value": "#fff",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-white-off-light",
+          "description": "Off-white (light)",
+          "value": "#fbfbfb",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-white-off",
+          "description": "Off-white",
+          "value": "#f3f3f3",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-gray-light",
+          "description": "Gray light",
+          "value": "#d0d0d0",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-gray-medium",
+          "description": "A little bit darker now",
+          "value": "#797979",
+          "check": {
+            "aa": false,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-gray-dark",
+          "description": "A little bit darker now",
+          "value": "#4a4a4a",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": true
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-black-off",
+          "description": "A little bit darker now",
+          "value": "#222",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": true
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-black-pure",
+          "description": "True black",
+          "value": "#000",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "Site elements",
+      "description": "<p>These are special variables assigned to specific elements and states.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_colors.scss#L47",
+      "type": "colorMap",
+      "list": [
+        {
+          "type": "color",
+          "name": "$color-link-underline",
+          "description": "Link underline color",
+          "value": "#a1d2df",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-link-underline-hover",
+          "description": "Link underline color on hover",
+          "value": "#348094",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-ad-text",
+          "description": "Darkened version of `$color-teal-dark` helpful for contrast",
+          "value": "#347d90",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-error",
+          "description": "Error",
+          "value": "#e12931",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-success",
+          "description": "Success",
+          "value": "#11A06B",
+          "check": {
+            "aa": false,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "Social and promos",
+      "description": "<p>These are special variables assigned to specific elements and states.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_colors.scss#L69",
+      "type": "colorMap",
+      "list": [
+        {
+          "type": "color",
+          "name": "$color-sponsor",
+          "description": "Sponsored content signifier",
+          "value": "#3366cc",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-facebook",
+          "description": "Facebook",
+          "value": "#2d60c4",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-twitter",
+          "description": "Twitter",
+          "value": "#55acee",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-blue-dark",
+          "description": "Used for the blast",
+          "value": "#223136",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": true
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-sand",
+          "description": "Sand",
+          "value": "#f2ede2",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "Elections",
+      "description": "<p>These are used for data visuals.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_colors.scss#L93",
+      "type": "colorMap",
+      "list": [
+        {
+          "type": "color",
+          "name": "$color-elections-republican",
+          "description": "TK",
+          "value": "#f2593b",
+          "check": {
+            "aa": false,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-elections-democrat",
+          "description": "TK",
+          "value": "#1755c5",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-elections-yellow",
+          "description": "TK",
+          "value": "#ffc200",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-elections-green",
+          "description": "TK",
+          "value": "#3cc687",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-elections-gray",
+          "description": "TK",
+          "value": "#99a0af",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-elections-offwhite",
+          "description": "TK",
+          "value": "#f7f7f7",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-elections-navy",
+          "description": "TK",
+          "value": "#1a2b4b",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": true
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-elections-pink",
+          "description": "TK",
+          "value": "#fcc2b6",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "Political parties",
+      "description": "<p>These are used for data visuals.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_colors.scss#L120",
+      "type": "colorMap",
+      "list": [
+        {
+          "type": "color",
+          "name": "$color-republican",
+          "description": "TK",
+          "value": "hsl(1, 64%, 56%)",
+          "check": {
+            "aa": false,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-republican-subset",
+          "description": "TK",
+          "value": "hsl(1, 34%, 56%)",
+          "check": {
+            "aa": false,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-democrat",
+          "description": "TK",
+          "value": "hsl(203, 77%, 39%)",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-democrat-subset",
+          "description": "TK",
+          "value": "hsl(203, 47%, 39%)",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-green",
+          "description": "TK",
+          "value": "hsl(135, 23%, 40%)",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-libertarian",
+          "description": "TK",
+          "value": "hsl(47, 71%, 53%)",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-independent",
+          "description": "TK",
+          "value": "hsl(311, 43%, 42%)",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ratings",
+      "description": "<p>These are used for data visuals.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_colors.scss#L144",
+      "type": "colorMap",
+      "list": [
+        {
+          "type": "color",
+          "name": "$color-positive",
+          "description": "good/bad",
+          "value": "hsl(171, 44%, 44%)",
+          "check": {
+            "aa": false,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-neutral",
+          "description": "approval/disapproval",
+          "value": "hsl(33, 91%, 50%)",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-negative",
+          "description": "positive/negative",
+          "value": "hsl(7, 77%, 54%)",
+          "check": {
+            "aa": false,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        }
+      ]
+    },
+    {
+      "name": "Graphics",
+      "description": "<p>These are used for data visuals.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_colors.scss#L161",
+      "type": "colorMap",
+      "list": [
+        {
+          "type": "color",
+          "name": "$color-chart-purple",
+          "description": "TK",
+          "value": "hsl(267, 42%, 51%)",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-chart-blue",
+          "description": "TK",
+          "value": "hsl(200, 56%, 40%)",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-chart-sea-green",
+          "description": "TK",
+          "value": "hsl(170, 30%, 37%)",
+          "check": {
+            "aa": true,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-men",
+          "description": "TK",
+          "value": "hsl(171, 44%, 44%)",
+          "check": {
+            "aa": false,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-women",
+          "description": "TK",
+          "value": "hsl(46, 100%, 50%)",
+          "check": {
+            "aa": false,
+            "aaLargeText": false,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-national",
+          "description": "TK",
+          "value": "hsl(171, 44%, 44%)",
+          "check": {
+            "aa": false,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        },
+        {
+          "type": "color",
+          "name": "$color-state",
+          "description": "TK",
+          "value": "hsl(7, 77%, 54%)",
+          "check": {
+            "aa": false,
+            "aaLargeText": true,
+            "aaa": false
+          }
+        }
+      ]
+    }
+  ]
+}

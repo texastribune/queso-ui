@@ -1,0 +1,359 @@
+{
+  "sections": [
+    {
+      "name": "Settings",
+      "description": "<p>These are the design tokens of our styles\nThe variables listed in this section are scattered about our files.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/1-settings/_all.scss#L1",
+      "type": "section",
+      "id": 1,
+      "depth": 1,
+      "list": []
+    },
+    {
+      "name": "Tools",
+      "description": "<p>These are mixins and functions</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_all.scss#L1",
+      "type": "section",
+      "id": 2,
+      "depth": 1,
+      "list": []
+    },
+    {
+      "name": "Resets",
+      "description": "<p><a href=\"https://github.com/sindresorhus/modern-normalize\">Modern normalize</a></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/3-resets/_all.scss#L1",
+      "type": "section",
+      "id": 3,
+      "depth": 1,
+      "list": []
+    },
+    {
+      "name": "Typography",
+      "description": "<p>Type styles and helpers. <strong>Prefix with <code>t-</code>.</strong></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/5-typography/_all.scss#L1",
+      "type": "section",
+      "id": 5,
+      "depth": 1,
+      "list": [
+        {
+          "className": "t-<font-variant>",
+          "name": "Text font variant (t-<font-variant>)"
+        },
+        {
+          "className": "t-<case>",
+          "name": "Text case (t-<case>)"
+        },
+        {
+          "className": "t-align-<dir>",
+          "name": "Text align (t-align-<dir>)"
+        },
+        {
+          "className": "t-lh-<size>",
+          "name": "Text line-height (t-lh-<size>)"
+        },
+        {
+          "className": "t-lsp-<size>",
+          "name": "Text letter-spacing (t-lsp-<size>)"
+        },
+        {
+          "className": "t-size-<size>",
+          "name": "Text size (t-size-<size>)"
+        },
+        {
+          "className": "t-<link-style>",
+          "name": "Links (t-<link-style>)"
+        },
+        {
+          "className": "t-headline",
+          "name": "Headline (t-headline)"
+        },
+        {
+          "className": "Kicker",
+          "name": "Kicker"
+        },
+        {
+          "className": "t-widgethead",
+          "name": "Widgethead (t-widgethead)"
+        },
+        {
+          "className": "t-sectionhead",
+          "name": "Sectionhead (t-sectionhead)"
+        },
+        {
+          "className": "t-byline",
+          "name": "Byline (t-byline)"
+        },
+        {
+          "className": "t-wrap-<setting>",
+          "name": "Text wrap (t-wrap-<setting>)"
+        },
+        {
+          "className": "t-weight-<setting>",
+          "name": "Text weight (t-weight-<setting>)"
+        }
+      ]
+    },
+    {
+      "name": "Components",
+      "description": "<p>Scoped elements with HTML counter parts. <strong>Prefix with <code>c-</code>.</strong></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/6-components/_all.scss#L1",
+      "type": "section",
+      "id": 6,
+      "depth": 1,
+      "list": [
+        {
+          "className": "c-caption",
+          "name": "Caption (c-caption)"
+        },
+        {
+          "className": "c-cta-block",
+          "name": "CTA block (c-cta-block)"
+        },
+        {
+          "className": "c-share",
+          "name": "Share (c-share)"
+        },
+        {
+          "className": "c-blast-header",
+          "name": "Blast header (c-blast-header)"
+        },
+        {
+          "className": "c-button",
+          "name": "Button (c-button)"
+        },
+        {
+          "className": "c-link-button",
+          "name": "Link button (c-link-button)"
+        },
+        {
+          "className": "c-full-page-loader",
+          "name": "Full-page loader (c-full-page-loader)"
+        },
+        {
+          "className": "c-icon",
+          "name": "Icon (c-icon)"
+        },
+        {
+          "className": "c-ad-fluid",
+          "name": "Ad fluid (c-ad-fluid)"
+        },
+        {
+          "className": "c-back-to-top",
+          "name": "Back to top (c-back-to-top)"
+        },
+        {
+          "className": "c-block-feed",
+          "name": "Block feed (c-block-feed)"
+        },
+        {
+          "className": "c-block-grid",
+          "name": "Block grid (c-block-grid)"
+        },
+        {
+          "className": "c-event-block",
+          "name": "Event block (c-event-block)"
+        },
+        {
+          "className": "c-info-drop",
+          "name": "Info drop (c-info-drop)"
+        },
+        {
+          "className": "c-info-list",
+          "name": "Info list (c-info-list)"
+        },
+        {
+          "className": "c-list",
+          "name": "List (c-list)"
+        },
+        {
+          "className": "c-loading",
+          "name": "Loading (c-loading)"
+        },
+        {
+          "className": "c-navbar",
+          "name": "Navbar (c-navbar)"
+        },
+        {
+          "className": "c-pagination",
+          "name": "Pagination (c-pagination)"
+        },
+        {
+          "className": "c-podcast-block",
+          "name": "Podcast block (c-podcast-block)"
+        },
+        {
+          "className": "c-site-footer",
+          "name": "Site footer (c-site-footer)"
+        },
+        {
+          "className": "c-sponsor-block",
+          "name": "Sponsor block (c-sponsor-block)"
+        },
+        {
+          "className": "c-story-block",
+          "name": "Story block (c-story-block)"
+        },
+        {
+          "className": "c-story-body",
+          "name": "Story body (c-story-body)"
+        },
+        {
+          "className": "c-tabs",
+          "name": "Tabs (c-tabs)"
+        },
+        {
+          "className": "c-widget-block",
+          "name": "Widget Block (c-widget-block)"
+        },
+        {
+          "className": "c-widget",
+          "name": "Widget (c-widget)"
+        },
+        {
+          "className": "c-checkbox",
+          "name": "Checkbox (c-checkbox)"
+        },
+        {
+          "className": "c-mini-form",
+          "name": "Mini form (c-mini-form)"
+        },
+        {
+          "className": "c-series-promo",
+          "name": "Series promo (c-series-promo)"
+        },
+        {
+          "className": "c-story-block--trending",
+          "name": "Story block variation 1 (c-story-block--trending)"
+        },
+        {
+          "className": "c-story-block--harvey",
+          "name": "Story block variation 2 (c-story-block--harvey)"
+        },
+        {
+          "className": "c-story-block--tx-lege",
+          "name": "Story block variation 3 (c-story-block--tx-lege)"
+        },
+        {
+          "className": "c-table",
+          "name": "Table (c-table)"
+        },
+        {
+          "className": "c-text-input",
+          "name": "Text input (c-text-input)"
+        },
+        {
+          "className": "c-topic-bar",
+          "name": "Topic bar (c-topic-bar)"
+        },
+        {
+          "className": "Reporters list",
+          "name": "Reporters list"
+        }
+      ]
+    },
+    {
+      "name": "Layout",
+      "description": "<p>We define layout in our structure as the way we align, arrange, and structure components on a page.<br><strong>Prefix with <code>l-</code>.</strong></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/7-layout/_all.scss#L1",
+      "type": "section",
+      "id": 7,
+      "depth": 1,
+      "list": [
+        {
+          "className": "l-col-grid",
+          "name": "Column grid (l-col-grid)"
+        },
+        {
+          "className": "l-container",
+          "name": "Container (l-container)"
+        },
+        {
+          "className": "l-content-grid",
+          "name": "Content Grid (l-content-grid)"
+        },
+        {
+          "className": "l-align-<position>",
+          "name": "Align (l-align-<position>)"
+        },
+        {
+          "className": "l-display-<prop>",
+          "name": "Display  (l-display-<prop>)"
+        },
+        {
+          "className": "l-multicol",
+          "name": "Multi column  (l-multicol)"
+        },
+        {
+          "className": "l-height-<size>",
+          "name": "Height (l-height-<size>)"
+        },
+        {
+          "className": "l-pos-<setting>",
+          "name": "Position (l-pos-<setting>)"
+        },
+        {
+          "className": "l-width-<size>",
+          "name": "Width (l-width-<size>)"
+        }
+      ]
+    },
+    {
+      "name": "Utilities",
+      "description": "<p>Helper overrides for various utilities. <strong>Prefix with <code>has-</code>and <code>is-</code>.</strong></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/utilities/_all.scss#L1",
+      "type": "section",
+      "id": 8,
+      "depth": 1,
+      "list": [
+        {
+          "className": "has-text-<color>",
+          "name": "Text color (has-text-<color>)"
+        },
+        {
+          "className": "is-hidden-<specifier>",
+          "name": "Hidden (is-hidden-<specifier>)"
+        },
+        {
+          "className": "has-<size>-btm-marg",
+          "name": "Margin (has-<size>-btm-marg)"
+        },
+        {
+          "className": "has-padding",
+          "name": "Padding (has-padding)"
+        },
+        {
+          "className": "is-sr-only",
+          "name": "Screen Reader Only (is-sr-only)"
+        },
+        {
+          "className": "has-text-hover-<color>",
+          "name": "Text color:hover (has-text-hover-<color>)"
+        },
+        {
+          "className": "has-border",
+          "name": "Border (has-border)"
+        },
+        {
+          "className": "has-bg-<color>",
+          "name": "Background Color (has-bg-<color>)"
+        },
+        {
+          "className": "has-notch",
+          "name": "Notch (has-notch)"
+        },
+        {
+          "className": "is-rounded-<size>",
+          "name": "Border Radius (is-rounded-<size>)"
+        },
+        {
+          "className": "has-vert-bar",
+          "name": "Vertical Bar (has-vert-bar)"
+        },
+        {
+          "className": "has-box-shadow",
+          "name": "Box shadow (has-box-shadow)"
+        }
+      ]
+    }
+  ]
+}
