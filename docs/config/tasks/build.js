@@ -2,19 +2,14 @@
  * Builds and compiles docs
  *
  */
-
 const { styles, icons } = require('@texastribune/queso-tools');
 const copy = require('./copy');
-const github = require('./github.js');
-const styleDocRunner = require('./style-doc');
-const iconDocRunner = require('./icon-doc');
+const github = require('./github');
 
 const {
   mappedStyles,
   mappedIcons,
   mappedCopies,
-  docsStyles,
-  docsIcons,
 } = require('../paths.js');
 
 async function build() {
@@ -25,10 +20,6 @@ async function build() {
   await styles(mappedStyles);
   await icons(mappedIcons);
   await copy(mappedCopies);
-
-  // build doc data and template
-  await styleDocRunner(docsStyles);
-  await iconDocRunner(docsIcons);
 
 }
 

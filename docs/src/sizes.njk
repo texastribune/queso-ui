@@ -13,8 +13,8 @@ layout: base.njk
   <p>We use these size variables throughout our framework. These sizes are used in <a href="{{ '/sections/typography/t-size-size/' | url }}">text size helpers</a>, <a href="{{ '/sections/utilities/has-size-btm-marg/' | url }}">margin utilities</a>, <a href="{{ '/sections/utilities/has-padding/' | url }}">padding</a>, and many more. The measurement for <code>$size b</code> is our base and we go up/down from there.</p>
 </div>
 
-{% for item in styles.all %}
-  {% if item.slug == 'size-units' %}
+{% for item in docs.tokenMaps %}
+  {% if item.name == 'Size units' %}
     <div class="q-spacer">
       <table class="table is-bordered">
         <tr>
@@ -24,13 +24,13 @@ layout: base.njk
           <th>SCSS Variable</th>
           <th>Sample Class</th>
         </tr>
-        {% for font in item.parameters %}
+        {% for font in item.list %}
             <tr {% if font.name == '$size-b' %}class="has-background-warning"{% endif %}>
               <td>
-                <div class="has-background-grey-darker" style="height: {{ font.defaultValue }}; width: {{ font.defaultValue }}"></div>
+                <div class="has-background-grey-darker" style="height: {{ font.value }}; width: {{ font.value }}"></div>
               </td>
-              <td>{{ font.defaultValue }}</td>
-              <td>{{ font.defaultValue|toPx }}</td>
+              <td>{{ font.value }}</td>
+              <td>{{ font.value|toPx }}</td>
               <td><code>{{ font.name }}</code></td>
               <td>
                 {% if font.name != '$size-tiny' %}<a href="{{ '/sections/typography/t-size-size/' | url }}" class="is-block"><code>.t-size-{{ font.name|getSize }}</code></a>{% endif %}

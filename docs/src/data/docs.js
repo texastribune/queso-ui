@@ -2,7 +2,7 @@
  * Export style data
  *
  */
-const styleDocRunner = require('../../config/tasks/style-doc');
+const styleDocRunner = require('../../build/config/tasks/style-doc');
 const { docsStyles } = require('../../config/paths.js');
 
 module.exports = async () => {

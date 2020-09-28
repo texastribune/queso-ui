@@ -1,27 +1,27 @@
 ---
 layout: base.njk
 pagination:
-    data: styles.all
+    data: docs.cssClasses
     size: 1
     alias: item
-permalink: "sections/{{ item.sectionSlug }}/{{ item.slug }}/"
+permalink: "sections/{{ item.section | slug }}/{{ item.className | cleanSlug }}/"
 ---
 {% from "../macros/data-list.njk" import dataList %}
 <article>
-  {% set parentUrl = '/sections/' + item.sectionSlug %}
+  {% set parentUrl = '/sections/' + item.section | slug %}
   <nav class="breadcrumb" aria-label="breadcrumbs">
     <ul>
       <li><a href="{{ '/' | url }}">Home</a></li>
       <li><a href="{{ parentUrl | url }}">{{ item.section }}</a></li>
-      <li class="is-active"><a href="{{ page.url }}" aria-current="page">{% if item.isRecipe %}{{ item.prettyName }}{% else %}.{{ item.mainClass }}{% endif %}</a></li>
+      <li class="is-active"><a href="{{ page.url }}" aria-current="page">{% if item.details.isRecipe %}{{ item.name }}{% else %}.{{ item.className }}{% endif %}</a></li>
     </ul>
   </nav>
   <header class="level">
     <div class="level-left">
-      <h1 class="is-size-3 level-item">{{ item.prettyName }}</h1>
+      <h1 class="is-size-3 level-item">{{ item.name | cleanName }}</h1>
     </div>
     <div class="level-right buttons">
-      <a href="{{ item.githubLink }}" title="View on Github" class="button">
+      <a href="{{ item.location }}" title="View on Github" class="button">
         <span class="c-icon is-size-4">
           <svg aria-hidden="true">
             <use xlink:href="#github"></use>
@@ -34,7 +34,7 @@ permalink: "sections/{{ item.sectionSlug }}/{{ item.slug }}/"
 
   <div class="q-desc q-container">{{ item.description | safe }}</p></div>
 
-  {% if item.codeSnippet %}
+  {% if item.template %}
     {% include "../includes/selector.njk" %}
   {% endif %}
 </article>

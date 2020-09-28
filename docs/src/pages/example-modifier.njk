@@ -1,14 +1,14 @@
 ---
 layout: example-base.njk
 pagination:
-    data: styles.modifiers
+    data: docs.modifierMap
     size: 1
     alias: modifier
 permalink: "modifier/{{ modifier.className }}/"
 title: Preview modifier
 ---
 {% block content %}
-  {% if modifier.modifierSnippet %}
-    {{ modifier.modifierSnippet | safe }}
+  {% if modifier.preview %}
+    {{ modifier.preview | safe }}
   {% endif %}
 {% endblock %}
