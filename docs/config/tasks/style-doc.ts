@@ -1,8 +1,4 @@
-import {
-  KssSection,
-  KssModifier,
-  KssParameter,
-} from 'kss';
+import { KssSection, KssModifier, KssParameter } from 'kss';
 
 import {
   Color,
@@ -37,7 +33,6 @@ const {
   passesWcagAaa,
 } = require('passes-wcag');
 
-
 const GITHUB_URL = 'https://github.com/texastribune/queso-ui/blob/main';
 
 // A return value of type Modifier
@@ -55,9 +50,7 @@ async function createCSSClass(
   let modifierData: Modifier[] = [];
   let modifierList: string[] = [];
   if (modifiers) {
-    modifierList = modifiers.map((modifier) =>
-      stripSelector(modifier.name())
-    );
+    modifierList = modifiers.map((modifier) => stripSelector(modifier.name()));
     modifierData = await Promise.all(
       modifiers.map((modifier: KssModifier) =>
         createModifier({
@@ -98,15 +91,17 @@ async function createEntry(section: KssSection): Promise<object> {
   };
   // colorMaps and colors
   if (colors && colors.length > 0) {
-    const colorMap = colors.map((color: { color: string; name: string; description: string; }) => {
-      const { name } = color;
-      return createColor({
-        type: 'color',
-        name,
-        description: color.description,
-        value: color.color,
-      });
-    });
+    const colorMap = colors.map(
+      (color: { color: string; name: string; description: string }) => {
+        const { name } = color;
+        return createColor({
+          type: 'color',
+          name,
+          description: color.description,
+          value: color.color,
+        });
+      }
+    );
     return {
       ...base,
       type: 'colorMap',
@@ -160,7 +155,9 @@ async function createEntry(section: KssSection): Promise<object> {
   return createCSSClass(config, section.modifiers());
 }
 // A return value of type Sorted
-async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]): Promise<Sorted> {
+async function sortByType(
+  arr: (CSSClass | ColorMap | Section | TokenMap)[]
+): Promise<Sorted> {
   const usageInfo = await readUsageInfo();
   const sections: Section[] = [];
   const cssClasses: CSSClass[] = [];
@@ -185,8 +182,12 @@ async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]): Pr
     }
   });
   const sectionMap = convertArrayToObject(sections, 'id');
-  const classesWithModifiers = cssClasses.map(cssClass => cssClass).filter(cssClass => cssClass.modifiers.length > 0);
-  const modifiers = classesWithModifiers.map(cssClass => cssClass.modifiers).flat();
+  const classesWithModifiers = cssClasses
+    .map((cssClass) => cssClass)
+    .filter((cssClass) => cssClass.modifiers.length > 0);
+  const modifiers = classesWithModifiers
+    .map((cssClass) => cssClass.modifiers)
+    .flat();
 
   // add classes to sections
   cssClasses.forEach((cssClass) => {
@@ -196,28 +197,31 @@ async function sortByType(arr: (CSSClass | ColorMap | Section | TokenMap)[]): Pr
           const { className } = cssClass;
           if (section.list) {
             section.list.push({
-            className,
-            name: cssClass.name
-          });
+              className,
+              name: cssClass.name,
+            });
           }
         }
       });
     }
   });
 
-
-  const cssClassesSlim = cssClasses.map(cssClass => {
-    const current = cssClass
+  const cssClassesSlim = cssClasses.map((cssClass) => {
+    const current = cssClass;
     if (current.details.isHelper) {
-      delete current.preview;
+      current.preview = '';
     }
-    delete current.modifiers;
+    current.modifiers = [];
     return {
       ...current,
       section: sectionMap[current.id].name,
-    }
-  })
-  const cssClassesNoHelpers = cssClasses.map(cssClass => cssClass).filter(cssClass => !cssClass.details.isHelper && !cssClass.details.isRecipe)
+    };
+  });
+  const cssClassesNoHelpers = cssClasses
+    .map((cssClass) => cssClass)
+    .filter(
+      (cssClass) => !cssClass.details.isHelper && !cssClass.details.isRecipe
+    );
   const allClasses = [...cssClassesNoHelpers, ...modifiers];
   const fullList = allClasses.map((cssClass) => cssClass.className);
   const usage = fullList.map((cssClass) => findUsageInfo(usageInfo, cssClass));
