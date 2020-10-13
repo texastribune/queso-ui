@@ -1,6 +1,6 @@
 {% macro toggleView(path, item, githubData) %}
   {% from "../macros/data-list.njk" import dataList %}
-  {% set id = item.className %}
+  {% set id = item.className|lower %}
   {% set previewUrl = '/' + path  + '/' + id %}
   <div id="{{ id }}-display" class="q-display-col">
     <div id="{{ id }}-buttons" class="q-display-buttons buttons are-small">
