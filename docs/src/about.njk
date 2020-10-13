@@ -76,7 +76,8 @@ layout: base.njk
   <h4 class="is-size-5">Endpoints</h4>
   <ul>
     {% for key, item in docs %}
-      <li><a href="{{ '/data/' + key + '.json' | url }}">{{ key }}</a></li>
+      {% set current = '/data/' + key + '.json' %}
+      <li><a href="{{ current | url }}">{{ key }}</a></li>
     {% endfor %}
   </ul>
 
