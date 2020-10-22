@@ -10,5 +10,13 @@
 
   li {
     list-style: disc;
+
+    &::marker {
+      color: $color-gray-medium;
+    }
+
+    &:hover::marker {
+      color: $color-yellow-tribune;
+    }
   }
 }
