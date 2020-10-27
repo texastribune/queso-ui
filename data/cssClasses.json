@@ -694,12 +694,10 @@
         "isTool": false,
         "keywords": []
       },
-      "template": "<ul class=\"c-list {{className}}\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n",
+      "template": "<ul class=\"c-list\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n",
       "modifiers": [],
-      "modifierList": [
-        "c-list--arrows"
-      ],
-      "preview": "<ul class=\"c-list \">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n",
+      "modifierList": [],
+      "preview": "<ul class=\"c-list\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n",
       "section": "Components"
     },
     {

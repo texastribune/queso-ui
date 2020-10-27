@@ -7035,68 +7035,6 @@
         }
       ]
     },
-    "c-list--arrows": {
-      "className": "c-list--arrows",
-      "data": [
-        {
-          "repo": "texastribune",
-          "results": [
-            {
-              "label": "CaretList.jsx",
-              "url": "https://github.com/texastribune/texastribune/blob/b70e5e21b2972f2c48d6b5ae443f6376b88309b7/frontend/js/display/components/CaretList.jsx",
-              "repo": "texastribune"
-            },
-            {
-              "label": "tag_list.html",
-              "url": "https://github.com/texastribune/texastribune/blob/42fd6245f75e5fc3ef29d97da884a8c05050b7b0/snollygoster/guten_tags/templates/guten_tags/tag_list.html",
-              "repo": "texastribune"
-            },
-            {
-              "label": "HeadlineList.jsx",
-              "url": "https://github.com/texastribune/texastribune/blob/b70e5e21b2972f2c48d6b5ae443f6376b88309b7/frontend/js/display/components/HeadlineList.jsx",
-              "repo": "texastribune"
-            },
-            {
-              "label": "read_more.html",
-              "url": "https://github.com/texastribune/texastribune/blob/93d1c099c4ecc0edb3537b284f38de03bf512757/snollygoster/content_management/plugins/promo/templates/cms_promo/read_more.html",
-              "repo": "texastribune"
-            },
-            {
-              "label": "story_block_featured.html",
-              "url": "https://github.com/texastribune/texastribune/blob/c8bb26352ac36a2a4d0cb7ed9192eb0cf7e9c51b/snollygoster/templates/shadow_layouts/content_blocks/story_block_featured.html",
-              "repo": "texastribune"
-            },
-            {
-              "label": "data_explorers_list.html",
-              "url": "https://github.com/texastribune/texastribune/blob/1b32d71d77a9595dcafdde1dc1728d78b8f7efef/snollygoster/templates/shadow_layouts/includes/data_explorers_list.html",
-              "repo": "texastribune"
-            },
-            {
-              "label": "index.html",
-              "url": "https://github.com/texastribune/texastribune/blob/42fd6245f75e5fc3ef29d97da884a8c05050b7b0/snollygoster/tt_events/templates/tt_events/index.html",
-              "repo": "texastribune"
-            }
-          ],
-          "total_count": 7
-        },
-        {
-          "repo": "state-salaries-draft",
-          "results": [
-            {
-              "label": "main.scss",
-              "url": "https://github.com/texastribune/state-salaries-draft/blob/d57ee79df4fbd883dde424d400312e0612701e7b/salaries/static/styles/main.scss",
-              "repo": "state-salaries-draft"
-            },
-            {
-              "label": "faq.html",
-              "url": "https://github.com/texastribune/state-salaries-draft/blob/bf4c2db1429b86147efb61d6901f5c8a43c28bbd/templates/salaries/faq.html",
-              "repo": "state-salaries-draft"
-            }
-          ],
-          "total_count": 2
-        }
-      ]
-    },
     "c-loading--xs": {
       "className": "c-loading--xs",
       "data": []
