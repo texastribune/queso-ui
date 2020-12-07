@@ -49,9 +49,7 @@ const renderTemplate = async (template, data) => {
 };
 
 // If string is .classname, make it just classname
-const stripSelector = (str) => {
-  return str[0] === '.' ? str.substring(1) : str;
-};
+const stripSelector = (str) => (str[0] === '.' ? str.substring(1) : str);
 
 const readUsageInfo = async () => {
   let github = {};
@@ -75,8 +73,8 @@ const findUsageInfo = (usageInfo, className) => {
   };
 };
 
-const slugify = (text) => {
-  return text
+const slugify = (text) =>
+  text
     .toString()
     .toLowerCase()
     .replace(/\s+/g, '-')
@@ -84,11 +82,8 @@ const slugify = (text) => {
     .replace(/--+/g, '-')
     .replace(/^-+/, '')
     .replace(/-+$/, '');
-};
 
-const stripTags = (str) => {
-  return str.replace(/(<([^>]+)>)/gi, '');
-};
+const stripTags = (str) => str.replace(/(<([^>]+)>)/gi, '');
 
 const getKeywords = obj => {
   const {name, description, modifiers} = obj;
@@ -102,9 +97,9 @@ const getKeywords = obj => {
   }
   if (keywordsMatch && typeof keywordsMatch[1] !== 'undefined') {
     const extraKeywords = keywordsMatch[1].replace('</p>', '').split(', ');
-    const labeledKeywords = extraKeywords.map((word) => {
-      return `${word} (${name.toLowerCase()})`;
-    });
+    const labeledKeywords = extraKeywords.map(
+      (word) => `${word} (${name.toLowerCase()})`
+    );
     keywords = [...labeledKeywords, ...keywords];
   }
   return keywords;
@@ -120,9 +115,7 @@ const getDetails = (description, name) => {
   let keywords = [];
   if (keywordsMatch && typeof keywordsMatch[1] !== 'undefined') {
     const extraKeywords = keywordsMatch[1].replace('</p>', '').split(', ');
-    keywords = extraKeywords.map((word) => {
-      return `${word} (${name.toLowerCase()})`;
-    });
+    keywords = extraKeywords.map((word) => `${word} (${name.toLowerCase()})`);
   }
 
   const filteredDesc = description
@@ -142,23 +135,19 @@ const getDetails = (description, name) => {
 
 const convertArrayToObject = (array, key) => {
   const initialValue = {};
-  return array.reduce((obj, item) => {
-    return {
+  return array.reduce(
+    (obj, item) => ({
       ...obj,
       [item[key]]: item,
-    };
-  }, initialValue);
+    }),
+    initialValue
+  );
 };
 
-const buildTokenArr = (arr) => {
-  return arr
-    .map((arrMap) => arrMap.list.map((token) => {
-      return {
-        ...token
-      }
-    }))
+const buildTokenArr = (arr) =>
+  arr
+    .map((arrMap) => arrMap.list.map((token) => ({ ...token })))
     .reduce((acc, val) => acc.concat(val), []);
-}
 
 module.exports = {
   findUsageInfo,

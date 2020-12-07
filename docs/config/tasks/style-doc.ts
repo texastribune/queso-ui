@@ -69,13 +69,14 @@ async function createCSSClass(
 }
 // A return value of type Color
 function createColor(config: Color): Color {
-  const color = config;
-  color.check = {
-    aa: passesWcagAa(config.value, '#fff'),
-    aaLargeText: passesWcagAaLargeText(config.value, '#fff'),
-    aaa: passesWcagAaa(config.value, '#fff'),
+  return {
+    ...config,
+    check: {
+      aa: passesWcagAa(config.value, '#fff'),
+      aaLargeText: passesWcagAaLargeText(config.value, '#fff'),
+      aaa: passesWcagAaa(config.value, '#fff'),
+    },
   };
-  return color;
 }
 
 // Returns a function to create one of the style doc types
@@ -111,14 +112,12 @@ async function createEntry(section: KssSection): Promise<object> {
   // tokenMaps and tokens
   const parameters = section.parameters();
   if (parameters && parameters.length > 0) {
-    const tokenMap = parameters.map((token: KssParameter) => {
-      return {
-        type: 'token',
-        name: token.name(),
-        description: token.description(),
-        value: token.defaultValue(),
-      };
-    });
+    const tokenMap = parameters.map((token: KssParameter) => ({
+      type: 'token',
+      name: token.name(),
+      description: token.description(),
+      value: token.defaultValue(),
+    }));
     return {
       ...base,
       details,

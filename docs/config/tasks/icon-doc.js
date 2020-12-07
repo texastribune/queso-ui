@@ -10,21 +10,19 @@ const glob = require('fast-glob');
 const ora = require('ora');
 const path = require('path');
 
-const createIconMap = async dirMap => {
+const createIconMap = async (dirMap) => {
   // find all .svg files in specified icon directory
   const svgs = await glob(`${dirMap}*/**.svg`);
 
   const output = [];
-  svgs.forEach(svg => {
+  svgs.forEach((svg) => {
     // filename
     const iconName = path.basename(svg, path.extname(svg));
     // parent dir
     const name = path.basename(path.dirname(svg));
 
     // push to output
-    const existing = output.filter(i => {
-      return i.name === name;
-    });
+    const existing = output.filter((i) => i.name === name);
 
     if (existing.length > 0) {
       const existingIndex = output.indexOf(existing[0]);
@@ -41,7 +39,7 @@ const createIconMap = async dirMap => {
   return output;
 };
 
-module.exports = async dir => {
+module.exports = async (dir) => {
   const spinner = ora('Creating icon map').start();
   const docs = await createIconMap(dir);
   spinner.succeed();
