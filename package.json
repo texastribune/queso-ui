@@ -100,7 +100,7 @@
           ]
         }
       ],
-      "unit-whitelist": [
+      "unit-allowed-list": [
         "em",
         "rem",
         "%",
