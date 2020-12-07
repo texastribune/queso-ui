@@ -68,4 +68,15 @@ layout: base.njk
       </div>
     {% endfor %}
   </div>
+  <div class="q-spacer">
+    <h2 class="is-size-3 q-bottom-spacer">Watermarks</h2>
+    <ul class="q-tiles">
+      {% for watermark in watermarks %}
+        <li class="q-bottom-spacer">
+          {% set imagePath = '/img/watermarks/' + watermark.year + '.png' %}
+          <img src="{{ imagePath | url }}" alt="">
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>
