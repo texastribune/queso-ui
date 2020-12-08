@@ -13,7 +13,8 @@
     "test": "npm run lint && npm run build",
     "release": "np --any-branch",
     "compile": "tsc",
-    "docs": "npm run compile && SITE_ENV=development node docs/src/data/docs.js"
+    "docs": "npm run compile && SITE_ENV=development node docs/src/data/docs.js",
+    "watermark": "npm run compile && node docs/build/config/tasks/watermark.js"
   },
   "files": [
     "/assets"

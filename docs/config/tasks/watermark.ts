@@ -1,8 +1,9 @@
-import { buildDir } from '../paths';
+import { docsImages } from '../paths';
 
 const { createCanvas, Image, registerFont } = require('canvas');
 const fs = require('fs-extra');
 const ora = require('ora');
+const path = require('path');
 
 const bugHeight = 35;
 const bugWidth = 30;
@@ -15,6 +16,8 @@ interface Watermark {
   year: Number;
   imagePath: string;
 }
+
+const watermarkDir = path.join(docsImages, 'watermarks', '/');
 
 async function createWatermark(year: Number): Promise<Watermark> {
   const width = 200;
@@ -35,15 +38,15 @@ async function createWatermark(year: Number): Promise<Watermark> {
   img.src = `data:image/svg+xml;charset=utf-8,${bug}`;
   context.drawImage(img, 10, canvas.height / 2 - bugHeight / 2);
   const buffer = canvas.toBuffer('image/png');
-  const imagePath = `${buildDir}/img/watermarks/${year}.png`;
-  fs.outputFile(`${buildDir}/img/watermarks/${year}.png`, buffer);
+  const imagePath = `${watermarkDir}${year}.png`;
+  fs.outputFile(imagePath, buffer);
   return {
     year,
     imagePath,
   };
 }
 
-module.exports = async () => {
+async function build() {
   const spinner = ora('Generating watermark images').start();
   const now = new Date().getUTCFullYear();
   const years = Array(now - 1998)
@@ -54,4 +57,10 @@ module.exports = async () => {
   );
   spinner.succeed();
   return watermarks;
-};
+}
+
+build().catch((err) => {
+  // eslint-disable-next-line no-console
+  console.log(err);
+  process.exit(1);
+});

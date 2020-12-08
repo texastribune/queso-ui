@@ -28,7 +28,6 @@ const mappedIcons = [
   },
 ];
 
-
 const docsIcons = ['./assets/icons/'];
 
 const mappedCopies = [
@@ -39,7 +38,7 @@ const mappedCopies = [
   {
     in: './docs/src/js',
     out: `${buildDir}js`,
-  },
+  }
 ];
 
 const mappedGithubData = {
@@ -48,6 +47,7 @@ const mappedGithubData = {
   out: './docs/dist/data/github.json',
 };
 
+const docsImages = './assets/images/';
 
 const siteURL =
   process.env.SITE_ENV === 'production'
@@ -63,4 +63,5 @@ module.exports = {
   mappedCopies,
   buildDir,
   siteURL,
+  docsImages,
 };
