@@ -11,7 +11,7 @@
   flex-wrap: wrap;
   list-style: none;
   border-bottom: 5px solid $color-yellow-tribune;
-  
+
   &__tab {
     &--wide {
       flex: 0 1 10rem;
@@ -21,6 +21,7 @@
   &__link {
     background-color: $color-black-off;
     color: $color-white-pure;
+    cursor: pointer;
     display: block;
     border-right: 2px solid #fff;
     padding: $size-s;
@@ -43,7 +44,7 @@
 .c-tab-panes {
   &__pane {
     display: none;
-    
+
     &--active {
       display: block;
     }
