@@ -1,6 +1,6 @@
 // Political party colors (has-bg-<party>)
 //
-// Optional colors that extend the standard color helpers. They are separated out in order to to enable only adding this utility import when necessary. {{isHelper}}
+// Optional colors that extend the standard color helpers. They're separated from the standard helpers to allow us to import them only when necessary. {{isHelper}}
 //
 // .has-bg-rep - Background color assigned to republicans
 // .has-bg-dem - Background color assigned to democrats

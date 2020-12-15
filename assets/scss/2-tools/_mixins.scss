@@ -123,8 +123,11 @@
 //
 // Generate color helper classes based on a [map](https://sass-lang.com/documentation/values/maps)
 //
-// $color-map = '' - {Sass map} Ex: $color-map: ("black": $color-black-pure)
-// $type = '' - {String} Either 'bg', 'text' or 'text-hover'
+// `$my-map: ('purple': rebeccapurple, 'blue': dodgerblue)`<br>
+// `@include($my-map, 'bg')`
+//
+// $color-map = '' - A sass map variable (required)
+// $type = '' - Either 'bg', 'text' or 'text-hover' (required)
 //
 // Styleguide 2.1.3
 //

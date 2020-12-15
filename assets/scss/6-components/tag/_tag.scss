@@ -1,6 +1,6 @@
 // Tag (c-tag)
 //
-// Tags can be used to label or categorize items. They're designed to scale to a parent container's font-size.
+// Tags can be used to label or categorize items. They're designed to scale according to their inherited font size using `em`s.
 //
 // .c-tag--fixed - Has a set height and width, which responds to font-size. Use with `is-rounded-full` to create a circle.
 //
