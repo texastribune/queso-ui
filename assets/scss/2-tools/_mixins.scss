@@ -59,7 +59,7 @@
 // Styleguide 2.1.3
 //
 @mixin underlined-link-parent($hover-only: false) {
-  a {
+  a:not(.t-links-unset) {
     @include underlined-link($hover-only);
   }
 }
@@ -117,4 +117,33 @@
 @mixin col-gap($size: $size-b) {
   grid-column-gap: $size;
   column-gap: $size;
+}
+
+// @mixin color-classes
+//
+// Generate color helper classes based on a [map](https://sass-lang.com/documentation/values/maps)
+//
+// $color-map = '' - {Sass map} Ex: $color-map: ("black": $color-black-pure)
+// $type = '' - {String} Either 'bg', 'text' or 'text-hover'
+//
+// Styleguide 2.1.3
+//
+@mixin color-classes($color-map, $type) {
+  $property: 'color';
+  @if ($type == 'bg') {
+    $property:'background-color';
+  }
+  @each $color, $value in $color-map {
+    @if ($type == 'text-hover') {
+      .has-#{$type}-#{$color}:hover,
+      .has-#{$type}-#{$color}:active {
+        #{$property}: $value;
+      }
+    } @else {
+      /* #{$value} */
+      .has-#{$type}-#{$color} {
+        #{$property}: $value;
+      }
+    }
+  }
 }

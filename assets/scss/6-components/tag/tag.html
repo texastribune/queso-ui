@@ -1,0 +1,28 @@
+{% if className === 'c-tag--fixed' %}
+<p class="has-b-btm-marg t-size-s">Jerry Seinfeld <span class="c-tag c-tag--fixed has-bg-ind has-text-white"><span class="c-tag__inner">I</span></span></p>
+<p class="has-b-btm-marg t-size-s"><strong>Cosmo Kramer <span class="c-tag c-tag--fixed has-bg-lib is-rounded-full"><span class="c-tag__inner">L</span></span></strong></p>
+
+Append <code>.t-size-&lt;any-size&gt;</code> to vary the tag size.
+<span class="t-size-m c-tag c-tag--fixed has-bg-rep has-text-white is-rounded-full"><span class="c-tag__inner"><strong>R</strong></span></span>
+
+
+{% else %}
+<div class="has-b-btm-marg">
+  <span class="c-tag has-bg-gray-dark has-text-white">
+    <span class="c-tag__inner">simple tag</span>
+  </span>
+</div>
+<p class="has-b-btm-marg t-links-underlined">
+  This is a paragraph of text, which includes a <span class="c-tag has-bg-white-off is-rounded-b"><span class="c-tag__inner t-weight-bold">tag</span></span>.
+</p>
+<p class="has-b-btm-marg t-links-underlined">
+  Use tags to highlight topics like <span class="c-tag has-bg-white-off is-rounded-b"><span class="c-tag__inner t-weight-bold">politics</span></span> or <a class="c-tag has-border is-rounded-b t-links-unset" href="#"><span class="c-tag__inner t-weight-bold">#txlege</a></span>.
+<p>
+<p class="has-b-btm-marg">You can also use them to list topics:</p>
+<p>
+  <span class="c-tag has-bg-white-off is-rounded-b"><span class="c-tag__inner t-weight-bold">higher education</span></span>&nbsp;
+  <span class="c-tag has-bg-white-off is-rounded-b"><span class="c-tag__inner t-weight-bold">energy</span></span>&nbsp;
+  <span class="c-tag has-bg-white-off is-rounded-b"><span class="c-tag__inner t-weight-bold">immigration</span></span>&nbsp;
+</p>
+
+{% endif %}

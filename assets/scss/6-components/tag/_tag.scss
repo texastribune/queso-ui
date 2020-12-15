@@ -1,0 +1,25 @@
+// Tag (c-tag)
+//
+// Tags can be used to label or categorize items. They're designed to scale to a parent container's font-size.
+//
+// .c-tag--fixed - Has a set height and width, which responds to font-size. Use with `is-rounded-full` to create a circle.
+//
+// Markup: 6-components/tag/tag.html
+//
+// Styleguide 6.0.1
+.c-tag {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: $size-tiny;
+
+  &--fixed {
+    padding: 0;
+    height: 1.5em;
+    width: 1.5em;
+  }
+
+  &__inner {
+    font-size: .92em;
+  }
+}
