@@ -17,7 +17,6 @@
   background-color: $color-blue-light;
   border: none;
   border-radius: 0;
-  cursor: pointer;
   font-weight: 700;
   font-size: $size-xs;
   letter-spacing: $font-letter-spacing-b;
@@ -133,6 +132,5 @@
 .c-link-button {
   @include underlined-link;
   color: inherit;
-  cursor: pointer;
   line-height: normal;
 }
