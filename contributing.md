@@ -31,7 +31,7 @@ When you add a new class, component, scss variable, mixin, etc., you'll want to 
 
 > How to document a new CSS class
 
-We use a comment parser along with some [extra logic](https://github.com/texastribune/queso-ui/blob/main/tasks/style-doc.js) to generate our docs. To add a new section of documentation, add a boilerplate above your CSS rules like the one below: 
+We use a comment parser along with some [extra logic](https://github.com/texastribune/queso-ui/blob/main/tasks/style-doc.js) to generate our docs. To add a new section of documentation, add a boilerplate above your CSS rules like the one below:
 
 ```scss
 // Title of Section (root-class-name)
@@ -116,8 +116,8 @@ The npm helper we use for versioning simplifies matching version numbers with th
 Generally, you could base your increment type on the following list:
 
 - MAJOR version = CSS changes that visually break layouts where `queso-ui` is used on production
-- MINOR version = CSS changes that have no visual effect on production
-- PATCH version = CSS changes that fix a previous bug introduced on production or in development 
+- MINOR version = CSS changes that have subtle or no visual effects on production
+- PATCH version = CSS changes that fix a previous bug introduced on production or in development
 
 #### Steps to test breaking changes:
 
