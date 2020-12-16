@@ -458,7 +458,7 @@
     {
       "name": "Link button (c-link-button)",
       "description": "<p>Sometimes, we need buttons to look like links (see Talk embed log in/log out buttons)</p>\n",
-      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/6-components/button/_button.scss#L125",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/6-components/button/_button.scss#L124",
       "label": "Link button",
       "type": "cssClass",
       "id": 6,
