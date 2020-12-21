@@ -62,9 +62,11 @@
 
   &--bordered {
     border: 1px solid $color-white-off;
+
     tbody > tr {
       border-top: 1px solid $color-white-off;
     }
+
     tr > td, tr > th {
       border-left: 1px solid $color-white-off;
     }

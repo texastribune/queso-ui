@@ -143,7 +143,6 @@
         #{$property}: $value;
       }
     } @else {
-      /* #{$value} */
       .has-#{$type}-#{$color} {
         #{$property}: $value;
       }
