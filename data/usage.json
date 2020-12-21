@@ -470,6 +470,10 @@
         }
       ]
     },
+    "c-tag": {
+      "className": "c-tag",
+      "data": []
+    },
     "c-blast-header": {
       "className": "c-blast-header",
       "data": [
@@ -6018,6 +6022,10 @@
         }
       ]
     },
+    "t-links-unset": {
+      "className": "t-links-unset",
+      "data": []
+    },
     "t-wrap-break": {
       "className": "t-wrap-break",
       "data": [
@@ -6319,6 +6327,10 @@
           "total_count": 4
         }
       ]
+    },
+    "c-tag--fixed": {
+      "className": "c-tag--fixed",
+      "data": []
     },
     "c-button--standard": {
       "className": "c-button--standard",
@@ -9020,6 +9032,26 @@
           "total_count": 1
         }
       ]
+    },
+    "has-bg-rep": {
+      "className": "has-bg-rep",
+      "data": []
+    },
+    "has-bg-dem": {
+      "className": "has-bg-dem",
+      "data": []
+    },
+    "has-bg-lib": {
+      "className": "has-bg-lib",
+      "data": []
+    },
+    "has-bg-gre": {
+      "className": "has-bg-gre",
+      "data": []
+    },
+    "has-bg-ind": {
+      "className": "has-bg-ind",
+      "data": []
     },
     "has-text-black": {
       "className": "has-text-black",
@@ -14701,6 +14733,10 @@
           "total_count": 1
         }
       ]
+    },
+    "is-rounded-full": {
+      "className": "is-rounded-full",
+      "data": []
     },
     "has-vert-bar--thin": {
       "className": "has-vert-bar--thin",

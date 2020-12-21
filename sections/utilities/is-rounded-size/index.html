@@ -135,6 +135,11 @@
       
     
       
+      <option value="Tag (c-tag)" data-link="/queso-ui/sections/components/c-tag/" />
+      
+      
+    
+      
       <option value="Blast header (c-blast-header)" data-link="/queso-ui/sections/components/c-blast-header/" />
       
       
@@ -362,6 +367,11 @@
       
     
       
+      <option value="Political party colors (has-bg-&lt;party&gt;)" data-link="/queso-ui/sections/utilities/has-bg-party/" />
+      
+      
+    
+      
       <option value="Text color (has-text-&lt;color&gt;)" data-link="/queso-ui/sections/utilities/has-text-color/" />
       
       
@@ -528,6 +538,11 @@
         
       
       <option value="@mixin col-gap" data-link="/queso-ui/tools/#mixincol-gap" />
+    
+      
+        
+      
+      <option value="@mixin color-classes" data-link="/queso-ui/tools/#mixincolor-classes" />
     
       
         
@@ -920,6 +935,12 @@
         <li>
 
   
+  <a href="/queso-ui/sections/components/c-tag/" >Tag</a>
+</li>
+      
+        <li>
+
+  
   <a href="/queso-ui/sections/components/c-text-input/" >Text input</a>
 </li>
       
@@ -1055,6 +1076,12 @@
 
   
   <a href="/queso-ui/sections/utilities/has-padding/" >Padding</a>
+</li>
+      
+        <li>
+
+  
+  <a href="/queso-ui/sections/utilities/has-bg-party/" >Political party colors</a>
 </li>
       
         <li>
@@ -1452,6 +1479,12 @@
         <li>
 
   
+  <a href="/queso-ui/sections/components/c-tag/" >Tag</a>
+</li>
+      
+        <li>
+
+  
   <a href="/queso-ui/sections/components/c-text-input/" >Text input</a>
 </li>
       
@@ -1592,6 +1625,12 @@
         <li>
 
   
+  <a href="/queso-ui/sections/utilities/has-bg-party/" >Political party colors</a>
+</li>
+      
+        <li>
+
+  
   <a href="/queso-ui/sections/utilities/is-sr-only/" >Screen Reader Only</a>
 </li>
       
@@ -1659,7 +1698,7 @@
     <div class="q-display-col">
       <code>.is-rounded-b</code>
       <div class="q-bottom-spacer"></div>
-      <div class="is-size-7 has-text-grey">The base rounded measure <code>4px</code></div>
+      <div class="is-size-7 has-text-grey"><code>border-radius: 4px</code> The base rounded measure</div>
     </div>
     
   
@@ -1700,7 +1739,7 @@
       <div data-frame-src="/queso-ui/modifier/is-rounded-b"></div>
     </div>
     <div id="code-is-rounded-b-pane" class="q-display-pane js-pane">
-      <pre><code class="language-html">&lt;div class=&quot;is-rounded-b has-bg-gray-light has-padding&quot;&gt;Bordered&lt;/div&gt;</code></pre>
+      <pre><code class="language-html">&lt;div class=&quot;is-rounded-b has-bg-gray-light has-padding&quot; style=&quot;width:150px;height:150px&quot;&gt;&lt;/div&gt;</code></pre>
     </div>
     <div id="stats-is-rounded-b-pane" class="q-display-pane js-pane">
       
@@ -1755,7 +1794,7 @@
     <div class="q-display-col">
       <code>.is-rounded-l</code>
       <div class="q-bottom-spacer"></div>
-      <div class="is-size-7 has-text-grey">More dramatic rounding of <code>40px</code>. (Used for pill buttons in donation CTAs.)</div>
+      <div class="is-size-7 has-text-grey"><code>border-radius: 40px</code>. (Used for pill buttons in donation CTAs.)</div>
     </div>
     
   
@@ -1796,7 +1835,7 @@
       <div data-frame-src="/queso-ui/modifier/is-rounded-l"></div>
     </div>
     <div id="code-is-rounded-l-pane" class="q-display-pane js-pane">
-      <pre><code class="language-html">&lt;div class=&quot;is-rounded-l has-bg-gray-light has-padding&quot;&gt;Bordered&lt;/div&gt;</code></pre>
+      <pre><code class="language-html">&lt;div class=&quot;is-rounded-l has-bg-gray-light has-padding&quot; style=&quot;width:150px;height:150px&quot;&gt;&lt;/div&gt;</code></pre>
     </div>
     <div id="stats-is-rounded-l-pane" class="q-display-pane js-pane">
       
@@ -1824,6 +1863,64 @@
       
     
   </table>
+  
+
+    </div>
+  </div>
+
+  
+    
+    
+    <div class="q-display-col">
+      <code>.is-rounded-full</code>
+      <div class="q-bottom-spacer"></div>
+      <div class="is-size-7 has-text-grey"><code>border-radius: 50%</code> Used for circles. Works best with a width and height</div>
+    </div>
+    
+  
+  
+  
+  <div id="is-rounded-full-display" class="q-display-col">
+    <div id="is-rounded-full-buttons" class="q-display-buttons buttons are-small">
+      <button id="view-is-rounded-full" class="button is-outlined is-info js-toggle-btn">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#eye"></use>
+          </svg>
+        </span>
+      </button>
+      <button id="code-is-rounded-full" class="button is-outlined js-toggle-btn">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#code"></use>
+          </svg>
+        </span>
+      </button>
+      <button id="stats-is-rounded-full" class="button is-outlined js-toggle-btn">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#bar-chart-2"></use>
+          </svg>
+        </span>
+      </button>
+      <a href="/queso-ui/modifier/is-rounded-full" class="button is-outlined">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#arrow-up-right"></use>
+          </svg>
+        </span>
+      </a>
+    </div>
+    <div id="view-is-rounded-full-pane" class="q-display-pane js-pane active">
+      <div data-frame-src="/queso-ui/modifier/is-rounded-full"></div>
+    </div>
+    <div id="code-is-rounded-full-pane" class="q-display-pane js-pane">
+      <pre><code class="language-html">&lt;div class=&quot;is-rounded-full has-bg-gray-light has-padding&quot; style=&quot;width:150px;height:150px&quot;&gt;&lt;/div&gt;</code></pre>
+    </div>
+    <div id="stats-is-rounded-full-pane" class="q-display-pane js-pane">
+      
+  
+    This class isn't referenced anywhere
   
 
     </div>

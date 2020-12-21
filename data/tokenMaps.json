@@ -527,6 +527,32 @@
       ]
     },
     {
+      "name": "@mixin color-classes",
+      "description": "<p>Generate color helper classes based on a <a href=\"https://sass-lang.com/documentation/values/maps\">map</a></p>\n<p><code>$my-map: ('purple': rebeccapurple, 'blue': dodgerblue)</code><br>\n<code>@include($my-map, 'bg')</code></p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_mixins.scss#L122",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": true,
+        "keywords": []
+      },
+      "type": "tokenMap",
+      "list": [
+        {
+          "type": "token",
+          "name": "$color-map",
+          "description": "A sass map variable (required)",
+          "value": "''"
+        },
+        {
+          "type": "token",
+          "name": "$type",
+          "description": "Either 'bg', 'text' or 'text-hover' (required)",
+          "value": "''"
+        }
+      ]
+    },
+    {
       "name": "@mixin mq",
       "description": "<p><code>@include mq($from: bp-l)</code></p>\n",
       "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_mixins.scss#L68",

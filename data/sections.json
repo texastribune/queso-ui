@@ -114,6 +114,10 @@
           "name": "Share (c-share)"
         },
         {
+          "className": "c-tag",
+          "name": "Tag (c-tag)"
+        },
+        {
           "className": "c-blast-header",
           "name": "Blast header (c-blast-header)"
         },
@@ -305,6 +309,10 @@
       "id": 8,
       "depth": 1,
       "list": [
+        {
+          "className": "has-bg-<party>",
+          "name": "Political party colors (has-bg-<party>)"
+        },
         {
           "className": "has-text-<color>",
           "name": "Text color (has-text-<color>)"

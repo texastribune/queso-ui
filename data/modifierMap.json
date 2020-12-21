@@ -213,32 +213,40 @@
       "className": "t-links",
       "description": "Typical teal links",
       "type": "modifier",
-      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of {{ className }} look like.</a></p>",
-      "preview": "<p class=\"t-links\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of t-links look like.</a></p>"
+      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">Example of {{ className }}.</a></p>",
+      "preview": "<p class=\"t-links\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">Example of t-links.</a></p>"
     },
     {
       "name": ".t-links-underlined",
       "className": "t-links-underlined",
       "description": "Typical blue underlined links",
       "type": "modifier",
-      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of {{ className }} look like.</a></p>",
-      "preview": "<p class=\"t-links-underlined\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of t-links-underlined look like.</a></p>"
+      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">Example of {{ className }}.</a></p>",
+      "preview": "<p class=\"t-links-underlined\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">Example of t-links-underlined.</a></p>"
     },
     {
       "name": ".t-links-underlined-hover",
       "className": "t-links-underlined-hover",
       "description": "Underline only appears on hover",
       "type": "modifier",
-      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of {{ className }} look like.</a></p>",
-      "preview": "<p class=\"t-links-underlined-hover\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of t-links-underlined-hover look like.</a></p>"
+      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">Example of {{ className }}.</a></p>",
+      "preview": "<p class=\"t-links-underlined-hover\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">Example of t-links-underlined-hover.</a></p>"
     },
     {
       "name": ".t-links-underlined-hover-thin",
       "className": "t-links-underlined-hover-thin",
       "description": "Smaller, browser-default underline on hover",
       "type": "modifier",
-      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of {{ className }} look like.</a></p>",
-      "preview": "<p class=\"t-links-underlined-hover-thin\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">This is what links with a parent of t-links-underlined-hover-thin look like.</a></p>"
+      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">Example of {{ className }}.</a></p>",
+      "preview": "<p class=\"t-links-underlined-hover-thin\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">Example of t-links-underlined-hover-thin.</a></p>"
+    },
+    {
+      "name": ".t-links-unset",
+      "className": "t-links-unset",
+      "description": "This is applied <strong>directly to the <code>&lt;a&gt;</code> tag</strong>. Use it in cases where you don't want to inherit link styles.",
+      "type": "modifier",
+      "template": "<p class=\"{{ className }}\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">Example of {{ className }}.</a></p>",
+      "preview": "<p class=\"t-links-unset\">Block of text in a paragraph. <a href=\"https://www.texastribune.org/\">Example of t-links-unset.</a></p>"
     },
     {
       "name": ".t-wrap-break",
@@ -297,11 +305,19 @@
       "preview": "\n  <!-- Social Follow CTA -->\n  <div class=\"c-cta-block c-cta-block--horiz-from-bp-m is-rounded-b has-border has-xl-padding has-giant-btm-marg\">\n    <div class=\"c-cta-block__msg t-size-s\">\n      <h4 class=\"t-uppercase t-lsp-m t-lh-b has-text-teal has-xxs-btm-marg\">Stay in the loop</h4>\n      <p class=\"has-xxs-btm-marg t-size-m\"><strong>The next time news breaks, hear about it first.</strong></p>\n      <p class=\"has-text-gray t-links-underlined\">Follow The Texas Tribune on <a href=\"#\">Facebook</a> and <a href=\"#\">Twitter</a>.</p>\n    </div>\n    <div class=\"c-cta-block__btns c-cta-block__btns--2 c-cta-block__btns--1-from-bp-m t-align-center\">\n      <a class=\"c-button has-bg-facebook l-align-center-children has-reset-padding\" href=\"#\" aria-label=\"Share on Facebook\">\n        <span class=\"c-button__inner t-size-xxs\">Facebook</span>\n      </a>\n      <a class=\"c-button has-bg-twitter l-align-center-children has-reset-padding\" href=\"#\" aria-label=\"Share on Twitter\">\n        <span class=\"c-button__inner t-size-xxs\">Twitter</span>\n      </a>\n    </div>\n  </div>\n\n  <!-- Membership CTA -->\n  <div class=\"c-cta-block c-cta-block--horiz-from-bp-m is-rounded-b has-border has-xl-padding has-giant-btm-marg\">\n    <div class=\"c-cta-block__msg t-size-s\">\n      <h4 class=\"t-uppercase t-lsp-m t-lh-b has-text-teal has-xxs-btm-marg\"><strong>Join our nonprofit newsroom</strong></h4>\n      <p class=\"has-xxs-btm-marg t-size-m\"><strong>Support our voting rights coverage by becoming a Texas Tribune member today.</strong></p>\n      <p class=\"has-text-gray t-links-underlined\">Choose an amount to give or <a href=\"#\" class=\"l-display-ib\">learn more about membership</a>.</p>\n    </div>\n    <div class=\"c-cta-block__btns c-cta-block__btns--4 c-cta-block__btns--2-from-bp-m t-align-center t-size-s\">\n      <a class=\"c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding\" href=\"#\">\n        <span class=\"c-button__inner has-text-black\">$35</span>\n      </a>\n      <a class=\"c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding\" href=\"#\">\n        <span class=\"c-button__inner has-text-black\">$75</span>\n      </a>\n      <a class=\"c-button is-rounded-l has-bg-yellow has-text-black l-align-center-children has-reset-padding\" href=\"#\">\n        <span class=\"c-button__inner has-text-black\">$150</span>\n      </a>\n      <a class=\"c-button c-button--outline is-rounded-l has-bg-white has-text-yellow l-align-center-children has-reset-padding\" href=\"#\" aria-label=\"Share on Facebook\">\n        <span class=\"c-button__inner has-text-black t-titlecase\">Other</span>\n      </a>\n    </div>\n  </div>\n\n  <!-- Overlay event CTA -->\n  <div class=\"c-cta-block c-cta-block--horiz-from-bp-m\">\n    <div class=\"c-cta-block__msg t-size-s\">\n      <h3 aria-hidden=\"true\" class=\"has-xxxs-btm-marg t-serif t-links-underlined-hover t-size-l\">\n        <a href=\"#\" tabindex=\"-1\">The Texas Tribune Festival</a>\n      </h3>\n      <p class=\"t-uppercase t-lsp-b t-size-xs\">\n        <strong>Held in Austin | 7 p.m. - 10 p.m.</strong>\n      </p>\n      <p class=\"is-sr-only\">Sept. 26</p>\n    </div>\n    <div class=\"c-cta-block__btns c-cta-block__btns--2 c-cta-block__btns--1-from-bp-m t-align-center\">\n      <a class=\"c-button c-button--standard has-bg-blue has-text-black l-align-center-children t-size-xs\" href=\"#\">\n        Attend\n      </a>\n      <a class=\"c-button c-button--standard has-bg-gray-dark has-text-white l-align-center-children t-size-xs\" href=\"#\">\n        Watch\n      </a>\n    </div>\n  </div>\n"
     },
     {
+      "name": ".c-tag--fixed",
+      "className": "c-tag--fixed",
+      "description": "Has a set height and width, which responds to font-size. Use with <code>is-rounded-full</code> to create a circle. <em>A11y note:</em> Pay particular attention to the use of <code>.is-sr-only</code>, <code>aria-hidden</code>, and <code>title=</code> to convey meaning to obscure, one letter tags in the HTML of the example.",
+      "type": "modifier",
+      "template": "{% if className === 'c-tag--fixed' %}\n<p class=\"has-b-btm-marg t-size-s\">\n  Jerry Seinfeld <span class=\"is-sr-only\">Libertarian party</span><span class=\"c-tag c-tag--fixed has-bg-lib is-rounded-full\" title=\"Libertarian party\" aria-hidden=\"true\"><span class=\"c-tag__inner\">L</span></span>\n</p>\n<p class=\"has-b-btm-marg t-size-s\">\n  <strong>\n  Cosmo Kramer <span class=\"is-sr-only\">Independent party</span><span class=\"c-tag c-tag--fixed has-bg-ind has-text-white is-rounded-full\" title=\"Independent party\" aria-hidden=\"true\"><span class=\"c-tag__inner\">I</span></span>\n  </strong>\n</p>\n\nAppend <code>.t-size-&lt;any-size&gt;</code> to vary the tag size.\n<span class=\"t-size-m c-tag c-tag--fixed has-bg-rep has-text-white is-rounded-full\" aria-hidden=\"true\"><span class=\"c-tag__inner\"><strong>R</strong></span></span>\n\n\n{% else %}\n<div class=\"has-b-btm-marg\">\n  <span class=\"c-tag has-bg-gray-dark has-text-white\">\n    <span class=\"c-tag__inner\">simple tag</span>\n  </span>\n</div>\n<p class=\"has-b-btm-marg t-links-underlined\">\n  This is a paragraph of text, which includes a <span class=\"c-tag has-bg-white-off is-rounded-b\"><span class=\"c-tag__inner t-weight-bold\">tag</span></span>.\n</p>\n<p class=\"has-b-btm-marg t-links-underlined\">\n  Use tags to highlight topics like <span class=\"c-tag has-bg-white-off is-rounded-b\"><span class=\"c-tag__inner t-weight-bold\">politics</span></span> or <a class=\"c-tag has-border is-rounded-b t-links-unset\" href=\"#\"><span class=\"c-tag__inner t-weight-bold\">#txlege</a></span>.\n<p>\n<p class=\"has-b-btm-marg\">You can also use them to list topics:</p>\n<p>\n  <span class=\"c-tag has-bg-white-off is-rounded-b\"><span class=\"c-tag__inner t-weight-bold\">higher education</span></span>&nbsp;\n  <span class=\"c-tag has-bg-white-off is-rounded-b\"><span class=\"c-tag__inner t-weight-bold\">energy</span></span>&nbsp;\n  <span class=\"c-tag has-bg-white-off is-rounded-b\"><span class=\"c-tag__inner t-weight-bold\">immigration</span></span>&nbsp;\n</p>\n\n{% endif %}",
+      "preview": "\n<p class=\"has-b-btm-marg t-size-s\">\n  Jerry Seinfeld <span class=\"is-sr-only\">Libertarian party</span><span class=\"c-tag c-tag--fixed has-bg-lib is-rounded-full\" title=\"Libertarian party\" aria-hidden=\"true\"><span class=\"c-tag__inner\">L</span></span>\n</p>\n<p class=\"has-b-btm-marg t-size-s\">\n  <strong>\n  Cosmo Kramer <span class=\"is-sr-only\">Independent party</span><span class=\"c-tag c-tag--fixed has-bg-ind has-text-white is-rounded-full\" title=\"Independent party\" aria-hidden=\"true\"><span class=\"c-tag__inner\">I</span></span>\n  </strong>\n</p>\n\nAppend <code>.t-size-&lt;any-size&gt;</code> to vary the tag size.\n<span class=\"t-size-m c-tag c-tag--fixed has-bg-rep has-text-white is-rounded-full\" aria-hidden=\"true\"><span class=\"c-tag__inner\"><strong>R</strong></span></span>\n\n\n"
+    },
+    {
       "name": ".c-button--standard",
       "className": "c-button--standard",
       "description": "Custom-sized button found throughout our products. Has a hard-set height and line-height for vertical alignment.",
       "type": "modifier",
-      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "template": "\n{% if className === 'c-button--circle' %}\n<button class=\"c-button {{ className }} is-rounded-full\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
       "preview": "\n\n<button class=\"c-button c-button--standard\">\n    Button\n</button>\n\n"
     },
     {
@@ -309,7 +325,7 @@
       "className": "c-button--l",
       "description": "Uses size-l for font size and padding",
       "type": "modifier",
-      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "template": "\n{% if className === 'c-button--circle' %}\n<button class=\"c-button {{ className }} is-rounded-full\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
       "preview": "\n\n<button class=\"c-button c-button--l\">\n    Button\n</button>\n\n"
     },
     {
@@ -317,7 +333,7 @@
       "className": "c-button--s",
       "description": "One step down from default",
       "type": "modifier",
-      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "template": "\n{% if className === 'c-button--circle' %}\n<button class=\"c-button {{ className }} is-rounded-full\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
       "preview": "\n\n<button class=\"c-button c-button--s\">\n    Button\n</button>\n\n"
     },
     {
@@ -325,23 +341,23 @@
       "className": "c-button--xs",
       "description": "Two steps down from default",
       "type": "modifier",
-      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "template": "\n{% if className === 'c-button--circle' %}\n<button class=\"c-button {{ className }} is-rounded-full\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
       "preview": "\n\n<button class=\"c-button c-button--xs\">\n    Button\n</button>\n\n"
     },
     {
       "name": ".c-button--circle",
       "className": "c-button--circle",
-      "description": "Circular button (experimentally used for back to top)",
+      "description": "Fixed height and width button paired with <code>is-rounded-full</code>",
       "type": "modifier",
-      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
-      "preview": "\n\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button c-button--circle\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n\n"
+      "template": "\n{% if className === 'c-button--circle' %}\n<button class=\"c-button {{ className }} is-rounded-full\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "preview": "\n\n<button class=\"c-button c-button--circle is-rounded-full\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n\n"
     },
     {
       "name": ".c-button--outline",
       "className": "c-button--outline",
       "description": "Hover effect of outline (used on social)",
       "type": "modifier",
-      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "template": "\n{% if className === 'c-button--circle' %}\n<button class=\"c-button {{ className }} is-rounded-full\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
       "preview": "\n\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n\n"
     },
     {
@@ -349,7 +365,7 @@
       "className": "c-button--skip",
       "description": "Visible only on focus, this is used to skip navigation",
       "type": "modifier",
-      "template": "\n{% if className === 'c-button--circle' or className === 'c-button--circle-responsive' %}\nUse with vertical centering helper. <code>.l-align-center-y</code>\n<button class=\"c-button {{ className }}\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
+      "template": "\n{% if className === 'c-button--circle' %}\n<button class=\"c-button {{ className }} is-rounded-full\">\n    <span class=\"l-align-center-y t-size-xxs\"><span class=\"c-icon c-icon--arrow-up l-display-block\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#arrow-up\"></use>\n    </svg></span>Back to Top</span>\n</button>\n{% elif className === 'c-button--outline' %}\n<button class=\"c-button c-button--outline has-text-facebook has-bg-facebook has-text-hover-facebook l-align-center-children\">\n    <span class=\"c-button__inner c-icon\"><svg aria-hidden=\"true\">\n        <use xlink:href=\"#facebook\"></use>\n    </svg></span>\n</button>\n{% else %}\n<button class=\"c-button {{ className }}\">\n    Button\n</button>\n{% endif %}\n",
       "preview": "\n\n<button class=\"c-button c-button--skip\">\n    Button\n</button>\n\n"
     },
     {
@@ -711,6 +727,46 @@
       "type": "modifier",
       "template": "<div style=\"border:2px solid black\"><img class=\"{{ className }}\" src=\"https://static.texastribune.org/media/images/2015/10/22/SpaceJam_Nightscapes_BO_DSC02387.jpg\"/></div>",
       "preview": "<div style=\"border:2px solid black\"><img class=\"l-width-max\" src=\"https://static.texastribune.org/media/images/2015/10/22/SpaceJam_Nightscapes_BO_DSC02387.jpg\"/></div>"
+    },
+    {
+      "name": ".has-bg-rep",
+      "className": "has-bg-rep",
+      "description": "Background color assigned to republicans",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-rep\">Example</div>"
+    },
+    {
+      "name": ".has-bg-dem",
+      "className": "has-bg-dem",
+      "description": "Background color assigned to democrats",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-dem\">Example</div>"
+    },
+    {
+      "name": ".has-bg-lib",
+      "className": "has-bg-lib",
+      "description": "Background color assigned to libertarians",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-lib\">Example</div>"
+    },
+    {
+      "name": ".has-bg-gre",
+      "className": "has-bg-gre",
+      "description": "Background color assigned to green party",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-gre\">Example</div>"
+    },
+    {
+      "name": ".has-bg-ind",
+      "className": "has-bg-ind",
+      "description": "Background color assigned to independents",
+      "type": "modifier",
+      "template": "<div class=\"has-padding {{ className }}\">Example</div>",
+      "preview": "<div class=\"has-padding has-bg-ind\">Example</div>"
     },
     {
       "name": ".has-text-black",
@@ -1427,18 +1483,26 @@
     {
       "name": ".is-rounded-b",
       "className": "is-rounded-b",
-      "description": "The base rounded measure <code>4px</code>",
+      "description": "<code>border-radius: 4px</code> The base rounded measure",
       "type": "modifier",
-      "template": "<div class=\"{{ className }} has-bg-gray-light has-padding\">Bordered</div>",
-      "preview": "<div class=\"is-rounded-b has-bg-gray-light has-padding\">Bordered</div>"
+      "template": "<div class=\"{{ className }} has-bg-gray-light has-padding\" style=\"width:150px;height:150px\"></div>",
+      "preview": "<div class=\"is-rounded-b has-bg-gray-light has-padding\" style=\"width:150px;height:150px\"></div>"
     },
     {
       "name": ".is-rounded-l",
       "className": "is-rounded-l",
-      "description": "More dramatic rounding of <code>40px</code>. (Used for pill buttons in donation CTAs.)",
+      "description": "<code>border-radius: 40px</code>. (Used for pill buttons in donation CTAs.)",
       "type": "modifier",
-      "template": "<div class=\"{{ className }} has-bg-gray-light has-padding\">Bordered</div>",
-      "preview": "<div class=\"is-rounded-l has-bg-gray-light has-padding\">Bordered</div>"
+      "template": "<div class=\"{{ className }} has-bg-gray-light has-padding\" style=\"width:150px;height:150px\"></div>",
+      "preview": "<div class=\"is-rounded-l has-bg-gray-light has-padding\" style=\"width:150px;height:150px\"></div>"
+    },
+    {
+      "name": ".is-rounded-full",
+      "className": "is-rounded-full",
+      "description": "<code>border-radius: 50%</code> Used for circles. Works best with a width and height",
+      "type": "modifier",
+      "template": "<div class=\"{{ className }} has-bg-gray-light has-padding\" style=\"width:150px;height:150px\"></div>",
+      "preview": "<div class=\"is-rounded-full has-bg-gray-light has-padding\" style=\"width:150px;height:150px\"></div>"
     },
     {
       "name": ".has-vert-bar--thin",

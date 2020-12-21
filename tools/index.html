@@ -135,6 +135,11 @@
       
     
       
+      <option value="Tag (c-tag)" data-link="/queso-ui/sections/components/c-tag/" />
+      
+      
+    
+      
       <option value="Blast header (c-blast-header)" data-link="/queso-ui/sections/components/c-blast-header/" />
       
       
@@ -362,6 +367,11 @@
       
     
       
+      <option value="Political party colors (has-bg-&lt;party&gt;)" data-link="/queso-ui/sections/utilities/has-bg-party/" />
+      
+      
+    
+      
       <option value="Text color (has-text-&lt;color&gt;)" data-link="/queso-ui/sections/utilities/has-text-color/" />
       
       
@@ -528,6 +538,11 @@
         
       
       <option value="@mixin col-gap" data-link="/queso-ui/tools/#mixincol-gap" />
+    
+      
+        
+      
+      <option value="@mixin color-classes" data-link="/queso-ui/tools/#mixincolor-classes" />
     
       
         
@@ -920,6 +935,12 @@
         <li>
 
   
+  <a href="/queso-ui/sections/components/c-tag/" >Tag</a>
+</li>
+      
+        <li>
+
+  
   <a href="/queso-ui/sections/components/c-text-input/" >Text input</a>
 </li>
       
@@ -1055,6 +1076,12 @@
 
   
   <a href="/queso-ui/sections/utilities/has-padding/" >Padding</a>
+</li>
+      
+        <li>
+
+  
+  <a href="/queso-ui/sections/utilities/has-bg-party/" >Political party colors</a>
 </li>
       
         <li>
@@ -1452,6 +1479,12 @@
         <li>
 
   
+  <a href="/queso-ui/sections/components/c-tag/" >Tag</a>
+</li>
+      
+        <li>
+
+  
   <a href="/queso-ui/sections/components/c-text-input/" >Text input</a>
 </li>
       
@@ -1587,6 +1620,12 @@
 
   
   <a href="/queso-ui/sections/utilities/has-padding/" >Padding</a>
+</li>
+      
+        <li>
+
+  
+  <a href="/queso-ui/sections/utilities/has-bg-party/" >Political party colors</a>
 </li>
       
         <li>
@@ -1874,6 +1913,41 @@
             <td><code>$size</code></td>
             <td>$size-b</td>
             <td>Size of gap</td>
+          </tr>
+        
+      </table>
+    </div>
+  
+
+  
+    <div id="mixincolor-classes" class="q-spacer q-container">
+      <div class="q-bottom-spacer">
+        <h2 class="is-size-6 is-inline-block"><code>@mixin color-classes($color-map, $type)</code>&nbsp;</h2>
+        <a href="https://github.com/texastribune/queso-ui/blob/main/assets/scss/2-tools/_mixins.scss#L122" title="View on Github">
+          <span class="c-icon c-icon--baseline is-size-5">
+            <svg aria-hidden="true">
+              <use xlink:href="#github"></use>
+            </svg>
+          </span>
+        </a>
+      </div>
+      <div class="q-desc q-bottom-spacer"><p>Generate color helper classes based on a <a href="https://sass-lang.com/documentation/values/maps">map</a></p>
+<p><code>$my-map: ('purple': rebeccapurple, 'blue': dodgerblue)</code><br>
+<code>@include($my-map, 'bg')</code></p>
+</div>
+      <table class="table is-bordered">
+        <tr><th>Param</th><th>Default</th><th>Description</th></tr>
+        
+          <tr>
+            <td><code>$color-map</code></td>
+            <td>&#39;&#39;</td>
+            <td>A sass map variable (required)</td>
+          </tr>
+        
+          <tr>
+            <td><code>$type</code></td>
+            <td>&#39;&#39;</td>
+            <td>Either &#39;bg&#39;, &#39;text&#39; or &#39;text-hover&#39; (required)</td>
           </tr>
         
       </table>
