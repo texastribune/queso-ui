@@ -1,9 +1,15 @@
 {% if className === 'c-tag--fixed' %}
-<p class="has-b-btm-marg t-size-s">Jerry Seinfeld <span class="c-tag c-tag--fixed has-bg-ind has-text-white"><span class="c-tag__inner">I</span></span></p>
-<p class="has-b-btm-marg t-size-s"><strong>Cosmo Kramer <span class="c-tag c-tag--fixed has-bg-lib is-rounded-full"><span class="c-tag__inner">L</span></span></strong></p>
+<p class="has-b-btm-marg t-size-s">
+  Jerry Seinfeld <span class="is-sr-only">Libertarian party</span><span class="c-tag c-tag--fixed has-bg-lib is-rounded-full" title="Libertarian party" aria-hidden="true"><span class="c-tag__inner">L</span></span>
+</p>
+<p class="has-b-btm-marg t-size-s">
+  <strong>
+  Cosmo Kramer <span class="is-sr-only">Independent party</span><span class="c-tag c-tag--fixed has-bg-ind has-text-white is-rounded-full" title="Independent party" aria-hidden="true"><span class="c-tag__inner">I</span></span>
+  </strong>
+</p>
 
 Append <code>.t-size-&lt;any-size&gt;</code> to vary the tag size.
-<span class="t-size-m c-tag c-tag--fixed has-bg-rep has-text-white is-rounded-full"><span class="c-tag__inner"><strong>R</strong></span></span>
+<span class="t-size-m c-tag c-tag--fixed has-bg-rep has-text-white is-rounded-full" aria-hidden="true"><span class="c-tag__inner"><strong>R</strong></span></span>
 
 
 {% else %}

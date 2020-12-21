@@ -2,7 +2,7 @@
 //
 // Tags can be used to label or categorize items. They're designed to scale according to their inherited font size using `em`s.
 //
-// .c-tag--fixed - Has a set height and width, which responds to font-size. Use with `is-rounded-full` to create a circle.
+// .c-tag--fixed - Has a set height and width, which responds to font-size. Use with `is-rounded-full` to create a circle. *A11y note:* Pay particular attention to the use of `.is-sr-only`, `aria-hidden`, and `title=` to convey meaning to obscure, one letter tags in the HTML of the example.
 //
 // Markup: 6-components/tag/tag.html
 //
