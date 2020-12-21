@@ -6,13 +6,14 @@
 // .t-links-underlined - Typical blue underlined links
 // .t-links-underlined-hover - Underline only appears on hover
 // .t-links-underlined-hover-thin - Smaller, browser-default underline on hover
+// .t-links-unset - This is applied **directly to the `<a>` tag**. Use it in cases where you don't want to inherit link styles.
 //
-// Markup: <p class="{{ className }}">Block of text in a paragraph. <a href="https://www.texastribune.org/">This is what links with a parent of {{ className }} look like.</a></p>
+// Markup: <p class="{{ className }}">Block of text in a paragraph. <a href="https://www.texastribune.org/">Example of {{ className }}.</a></p>
 //
 // Styleguide 5.2.8
 //
 .t-links {
-  a {
+  a:not(.t-links-unset) {
     color: $color-teal-gray;
     font-weight: bold;
   }

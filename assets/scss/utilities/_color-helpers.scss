@@ -98,26 +98,12 @@ $color-map: (
   "facebook": $color-facebook,
 );
 
-// bg-color
-@each $color, $value in $color-map {
-  .has-bg-#{$color} {
-    background-color: $value;
-  }
-}
+// has-bg-<color>
+@include color-classes($color-map, 'bg');
 
-// text-hover
-@media (hover: hover) {
-  @each $color, $value in $color-map {
-    .has-text-hover-#{$color}:hover,
-    .has-text-hover-#{$color}:active {
-      color: $value;
-    }
-  }
-}
+// has-text-hover-<color>
+@include color-classes($color-map, 'text-hover');
 
-// text-color
-@each $color, $value in $color-map {
-  .has-text-#{$color} {
-    color: $value;
-  }
-}
+// has-text-<color>
+@include color-classes($color-map, 'text');
+

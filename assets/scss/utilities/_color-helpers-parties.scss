@@ -1,0 +1,26 @@
+// Political party colors (has-bg-<party>)
+//
+// Optional colors that extend the standard color helpers. They're separated from the standard helpers to allow us to import them only when necessary. {{isHelper}}
+//
+// .has-bg-rep - Background color assigned to republicans
+// .has-bg-dem - Background color assigned to democrats
+// .has-bg-lib - Background color assigned to libertarians
+// .has-bg-gre - Background color assigned to green party
+// .has-bg-ind - Background color assigned to independents
+//
+// Markup: <div class="has-padding {{ className }}">Example</div>
+//
+//
+// Styleguide 8.0.1
+//
+
+$political-parties-colors: (
+  "rep": $color-republican,
+  "dem": $color-democrat,
+  "gre": $color-green,
+  "lib": $color-libertarian,
+  "ind": $color-independent
+);
+
+// has-bg-<party>
+@include color-classes($political-parties-colors, 'bg');
