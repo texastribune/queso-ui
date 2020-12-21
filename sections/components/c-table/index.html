@@ -1684,7 +1684,8 @@
     </div>
   </header>
 
-  <div class="q-desc q-container"><p>Tabular display classes. Tables should be constructed with a <thead> and <tbody>.</p>
+  <div class="q-desc q-container"><p>Tabular display classes. Tables should be constructed with a <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code>. <br><br>
+Tip: Use <code>transform: scaleY(-1);</code> to flip ascending/descending icons</p>
 </p></div>
 
   
@@ -1740,7 +1741,14 @@
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/th&gt;
-      &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;B&lt;/strong&gt;&lt;/th&gt;
+      &lt;th class=&quot;t-align-left&quot;&gt;
+        &lt;button title=&quot;Sort by B in descending order&quot;&gt;
+          &lt;strong&gt;B&lt;/strong&gt;
+          &lt;span class=&quot;c-icon c-icon--baseline t-size-xs&quot;&gt;
+            &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#caret-down&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/th&gt;
       &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
@@ -1935,7 +1943,14 @@
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/th&gt;
-      &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;B&lt;/strong&gt;&lt;/th&gt;
+      &lt;th class=&quot;t-align-left&quot;&gt;
+        &lt;button title=&quot;Sort by B in descending order&quot;&gt;
+          &lt;strong&gt;B&lt;/strong&gt;
+          &lt;span class=&quot;c-icon c-icon--baseline t-size-xs&quot;&gt;
+            &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#caret-down&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/th&gt;
       &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
@@ -2034,7 +2049,7 @@
     <div class="q-display-col">
       <code>.c-table--bordered</code>
       <div class="q-bottom-spacer"></div>
-      <div class="is-size-7 has-text-grey">Bordered rows</div>
+      <div class="is-size-7 has-text-grey">Bordered table, cells, rows and headings</div>
     </div>
     
   
@@ -2079,7 +2094,14 @@
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/th&gt;
-      &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;B&lt;/strong&gt;&lt;/th&gt;
+      &lt;th class=&quot;t-align-left&quot;&gt;
+        &lt;button title=&quot;Sort by B in descending order&quot;&gt;
+          &lt;strong&gt;B&lt;/strong&gt;
+          &lt;span class=&quot;c-icon c-icon--baseline t-size-xs&quot;&gt;
+            &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#caret-down&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/th&gt;
       &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
@@ -2156,6 +2178,96 @@
     
     
     <div class="q-display-col">
+      <code>.c-table--bordered-rows</code>
+      <div class="q-bottom-spacer"></div>
+      <div class="is-size-7 has-text-grey">Bordered rows</div>
+    </div>
+    
+  
+  
+  
+  <div id="c-table--bordered-rows-display" class="q-display-col">
+    <div id="c-table--bordered-rows-buttons" class="q-display-buttons buttons are-small">
+      <button id="view-c-table--bordered-rows" class="button is-outlined is-info js-toggle-btn">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#eye"></use>
+          </svg>
+        </span>
+      </button>
+      <button id="code-c-table--bordered-rows" class="button is-outlined js-toggle-btn">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#code"></use>
+          </svg>
+        </span>
+      </button>
+      <button id="stats-c-table--bordered-rows" class="button is-outlined js-toggle-btn">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#bar-chart-2"></use>
+          </svg>
+        </span>
+      </button>
+      <a href="/queso-ui/modifier/c-table--bordered-rows" class="button is-outlined">
+        <span class="c-icon">
+          <svg aria-hidden="true">
+            <use xlink:href="#arrow-up-right"></use>
+          </svg>
+        </span>
+      </a>
+    </div>
+    <div id="view-c-table--bordered-rows-pane" class="q-display-pane js-pane active">
+      <div data-frame-src="/queso-ui/modifier/c-table--bordered-rows"></div>
+    </div>
+    <div id="code-c-table--bordered-rows-pane" class="q-display-pane js-pane">
+      <pre><code class="language-html">&lt;table class=&quot;c-table c-table--bordered-rows l-width-full&quot;&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/th&gt;
+      &lt;th class=&quot;t-align-left&quot;&gt;
+        &lt;button title=&quot;Sort by B in descending order&quot;&gt;
+          &lt;strong&gt;B&lt;/strong&gt;
+          &lt;span class=&quot;c-icon c-icon--baseline t-size-xs&quot;&gt;
+            &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#caret-down&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/th&gt;
+      &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;3&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;4&lt;/td&gt;
+      &lt;td&gt;5&lt;/td&gt;
+      &lt;td&gt;6&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;7&lt;/td&gt;
+      &lt;td&gt;8&lt;/td&gt;
+      &lt;td&gt;9&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+    </div>
+    <div id="stats-c-table--bordered-rows-pane" class="q-display-pane js-pane">
+      
+  
+    This class isn't referenced anywhere
+  
+
+    </div>
+  </div>
+
+  
+    
+    
+    <div class="q-display-col">
       <code>.c-table--10-45-45</code>
       <div class="q-bottom-spacer"></div>
       <div class="is-size-7 has-text-grey">Three-column table with col widths 10%, 45%, 45%</div>
@@ -2203,7 +2315,14 @@
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/th&gt;
-      &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;B&lt;/strong&gt;&lt;/th&gt;
+      &lt;th class=&quot;t-align-left&quot;&gt;
+        &lt;button title=&quot;Sort by B in descending order&quot;&gt;
+          &lt;strong&gt;B&lt;/strong&gt;
+          &lt;span class=&quot;c-icon c-icon--baseline t-size-xs&quot;&gt;
+            &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#caret-down&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/th&gt;
       &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;
@@ -2286,7 +2405,14 @@
   &lt;thead&gt;
     &lt;tr&gt;
       &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;A&lt;/strong&gt;&lt;/th&gt;
-      &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;B&lt;/strong&gt;&lt;/th&gt;
+      &lt;th class=&quot;t-align-left&quot;&gt;
+        &lt;button title=&quot;Sort by B in descending order&quot;&gt;
+          &lt;strong&gt;B&lt;/strong&gt;
+          &lt;span class=&quot;c-icon c-icon--baseline t-size-xs&quot;&gt;
+            &lt;svg aria-hidden=&quot;true&quot;&gt;&lt;use xlink:href=&quot;#caret-down&quot;&gt;&lt;/use&gt;&lt;/svg&gt;
+          &lt;/span&gt;
+        &lt;/button&gt;
+      &lt;/th&gt;
       &lt;th class=&quot;t-align-left&quot;&gt;&lt;strong&gt;C&lt;/strong&gt;&lt;/th&gt;
     &lt;/tr&gt;
   &lt;/thead&gt;

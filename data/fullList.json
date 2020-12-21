@@ -110,6 +110,7 @@
     "c-story-block--stack-until-bp-l",
     "c-table--striped",
     "c-table--bordered",
+    "c-table--bordered-rows",
     "c-table--10-45-45",
     "c-table--15-70-15",
     "c-topic-bar--sticky",

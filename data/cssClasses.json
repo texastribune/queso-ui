@@ -1104,7 +1104,7 @@
     },
     {
       "name": "Table (c-table)",
-      "description": "<p>Tabular display classes. Tables should be constructed with a <thead> and <tbody>.</p>\n",
+      "description": "<p>Tabular display classes. Tables should be constructed with a <code>&lt;thead&gt;</code> and <code>&lt;tbody&gt;</code>. <br><br>\nTip: Use <code>transform: scaleY(-1);</code> to flip ascending/descending icons</p>\n",
       "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/6-components/table/_table.scss#L12",
       "label": "Table",
       "type": "cssClass",
@@ -1117,15 +1117,16 @@
         "isTool": false,
         "keywords": []
       },
-      "template": "<table class=\"c-table {{ className }} l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\"><strong>B</strong></th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>",
+      "template": "<table class=\"c-table {{ className }} l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\">\n        <button title=\"Sort by B in descending order\">\n          <strong>B</strong>\n          <span class=\"c-icon c-icon--baseline t-size-xs\">\n            <svg aria-hidden=\"true\"><use xlink:href=\"#caret-down\"></use></svg>\n          </span>\n        </button>\n      </th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>",
       "modifiers": [],
       "modifierList": [
         "c-table--striped",
         "c-table--bordered",
+        "c-table--bordered-rows",
         "c-table--10-45-45",
         "c-table--15-70-15"
       ],
-      "preview": "<table class=\"c-table  l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\"><strong>B</strong></th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>",
+      "preview": "<table class=\"c-table  l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\">\n        <button title=\"Sort by B in descending order\">\n          <strong>B</strong>\n          <span class=\"c-icon c-icon--baseline t-size-xs\">\n            <svg aria-hidden=\"true\"><use xlink:href=\"#caret-down\"></use></svg>\n          </span>\n        </button>\n      </th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>",
       "section": "Components"
     },
     {

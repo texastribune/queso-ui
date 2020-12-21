@@ -7316,6 +7316,10 @@
         }
       ]
     },
+    "c-table--bordered-rows": {
+      "className": "c-table--bordered-rows",
+      "data": []
+    },
     "c-table--10-45-45": {
       "className": "c-table--10-45-45",
       "data": []
