@@ -11,10 +11,12 @@
 
 // Table (c-table)
 //
-// Tabular display classes. Tables should be constructed with a <thead> and <tbody>.
+// Tabular display classes. Tables should be constructed with a `<thead>` and `<tbody>`. <br><br>
+// Tip: Use `transform: scaleY(-1);` to flip ascending/descending icons
 //
 // .c-table--striped - Zebra stripes odd rows
-// .c-table--bordered - Bordered rows
+// .c-table--bordered - Bordered table, cells, rows and headings
+// .c-table--bordered-rows - Bordered rows
 // .c-table--10-45-45 - Three-column table with col widths 10%, 45%, 45%
 // .c-table--15-70-15 - Two-column table with col widths 15%, 70%, 15%
 //
@@ -52,9 +54,19 @@
     }
   }
 
-  &--bordered {
+  &--bordered-rows {
     tbody > tr {
       border-top: 1px solid $color-white-off;
+    }
+  }
+
+  &--bordered {
+    border: 1px solid $color-white-off;
+    tbody > tr {
+      border-top: 1px solid $color-white-off;
+    }
+    tr > td, tr > th {
+      border-left: 1px solid $color-white-off;
     }
   }
 }
