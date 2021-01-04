@@ -14,7 +14,7 @@
     "release": "np --any-branch",
     "compile": "tsc",
     "docs": "npm run compile && SITE_ENV=development node docs/src/data/docs.js",
-    "watermark": "npm run compile && node docs/build/config/tasks/watermark.js"
+    "dates": "npm run compile && node docs/build/config/tasks/date-label.js"
   },
   "files": [
     "/assets"

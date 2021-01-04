@@ -10,12 +10,12 @@ const bugHeight = 70;
 const bugWidth = 60;
 const bug = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.9 200" width="${bugWidth}" height="${bugHeight}"><path fill="#ffc200" d="M0 0v200l40.2-25.1h134.6V0H0zm125.2 139.7l-38.3-25.2-38.3 25.2 12.1-44.2L25 66.8l45.8-2.1L87 21.8l16.2 42.9 45.8 2.1-35.8 28.6 12 44.3z"/></svg>`;
 
-interface Watermark {
+interface Label {
   year: Number;
   imagePath: string;
 }
 
-const watermarkDir = path.join(docsImages, 'watermarks', '/');
+const labelDir = path.join(docsImages, 'date-labels', '/');
 
 async function initFonts(): Promise<any> {
   // remote fonts must be downloaded
@@ -29,7 +29,7 @@ async function initFonts(): Promise<any> {
   });
 }
 
-async function createWatermark(year: Number): Promise<Watermark> {
+async function createLabels(year: Number): Promise<Label> {
   const width = 330;
   const height = 90;
 
@@ -48,7 +48,7 @@ async function createWatermark(year: Number): Promise<Watermark> {
   img.src = `data:image/svg+xml;charset=utf-8,${bug}`;
   context.drawImage(img, 10, canvas.height / 2 - bugHeight / 2);
   const buffer = canvas.toBuffer('image/png');
-  const imagePath = `${watermarkDir}${year}.png`;
+  const imagePath = `${labelDir}${year}.png`;
   fs.outputFile(imagePath, buffer);
   return {
     year,
@@ -57,18 +57,18 @@ async function createWatermark(year: Number): Promise<Watermark> {
 }
 
 async function build() {
-  const spinner = ora('Generating watermark images').start();
+  const spinner = ora('Generating date labels').start();
   // download and register CDN fonts
   await initFonts();
   const now = new Date().getUTCFullYear();
   const years = Array(now - 1998)
     .fill('')
     .map((v, idx) => now - idx) as Array<number>;
-  const watermarks = await Promise.all(
-    years.map((year: Number) => createWatermark(year))
+  const labels = await Promise.all(
+    years.map((year: Number) => createLabels(year))
   );
   spinner.succeed();
-  return watermarks;
+  return labels;
 }
 
 build().catch((err) => {
