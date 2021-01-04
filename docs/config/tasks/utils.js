@@ -1,9 +1,12 @@
+const axios = require('axios');
 const fs = require('fs-extra');
 const nunjucks = require('nunjucks');
+const path = require('path');
 const {
   docsStyles,
   siteURL,
   mappedGithubData,
+  buildDir,
 } = require('../paths.js');
 
 const generateClassName = (str) => {
@@ -85,13 +88,15 @@ const slugify = (text) =>
 
 const stripTags = (str) => str.replace(/(<([^>]+)>)/gi, '');
 
-const getKeywords = obj => {
-  const {name, description, modifiers} = obj;
+const getKeywords = (obj) => {
+  const { name, description, modifiers } = obj;
   const className = generateClassName(name);
   const keywordsStr = /Keywords: (.*)/;
   const keywordsMatch = keywordsStr.exec(description);
   let keywords = [`${name.toLowerCase()}`, className];
-  const modifierNames = modifiers.map((modifier) => stripSelector(modifier.data.name));
+  const modifierNames = modifiers.map((modifier) =>
+    stripSelector(modifier.data.name)
+  );
   if (modifiers.length > 0) {
     keywords = [...keywords, ...modifierNames];
   }
@@ -103,7 +108,7 @@ const getKeywords = obj => {
     keywords = [...labeledKeywords, ...keywords];
   }
   return keywords;
-}
+};
 const getDetails = (description, name) => {
   const isHelperStr = '{{isHelper}}';
   const isHelper = description.includes(isHelperStr);
@@ -149,6 +154,34 @@ const buildTokenArr = (arr) =>
     .map((arrMap) => arrMap.list.map((token) => ({ ...token })))
     .reduce((acc, val) => acc.concat(val), []);
 
+const downloadAsset = async (url, name) => {
+  const filepath = path.resolve(buildDir, name);
+  const writer = fs.createWriteStream(filepath);
+
+  const response = await axios({
+    url,
+    method: 'GET',
+    responseEncoding: 'binary',
+    responseType: 'stream',
+  });
+
+  await new Promise((resolve, reject) => {
+    response.data.pipe(writer);
+    let error = null;
+    writer.on('error', (err) => {
+      error = err;
+      writer.close();
+      reject(err);
+    });
+    writer.on('close', () => {
+      if (!error) {
+        resolve(true);
+      }
+    });
+  });
+  return filepath;
+};
+
 module.exports = {
   findUsageInfo,
   generateClassName,
@@ -163,4 +196,5 @@ module.exports = {
   convertArrayToObject,
   buildTokenArr,
   getKeywords,
+  downloadAsset,
 };

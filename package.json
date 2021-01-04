@@ -13,7 +13,8 @@
     "test": "npm run lint && npm run build",
     "release": "np --any-branch",
     "compile": "tsc",
-    "docs": "npm run compile && SITE_ENV=development node docs/src/data/docs.js"
+    "docs": "npm run compile && SITE_ENV=development node docs/src/data/docs.js",
+    "dates": "npm run compile && node docs/build/config/tasks/date-label.js"
   },
   "files": [
     "/assets"
@@ -126,6 +127,7 @@
     "@typescript-eslint/eslint-plugin": "^4.1.1",
     "@typescript-eslint/parser": "^4.1.1",
     "axios": "^0.21.0",
+    "canvas": "^2.6.1",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^7.0.0",
