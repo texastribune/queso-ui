@@ -1,0 +1,33 @@
+// used on /date-labels/
+@import '../../../assets/scss/1-settings/all';
+
+.date-labels {
+  gap: 2rem;
+}
+
+.date-label {
+  display: inline-block;
+  padding: 0 $size-xl 0 $size-xxs;
+  span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  > div {
+    gap: $size-xl;
+  }
+  .c-icon {
+    display: flex;
+    font-size: 2rem;
+    position: relative;
+    &:after {
+      content: '';
+      width: 1px;
+      height: 100%;
+      top: 50%;
+      right: -$size-xl / 2;
+      transform: translateY(-50%);
+      position: absolute;
+      background: #fff;
+    }
+  }
+}

@@ -1,10 +1,19 @@
 const dev = require('./docs/config/tasks/dev');
+const dates = require('./docs/config/tasks/date-labels');
 
-module.exports = function (eleventyConfig) {
+module.exports = function async(eleventyConfig) {
   // watch task
-  eleventyConfig.on('beforeWatch', function () {
+  eleventyConfig.on('beforeWatch', () => {
     dev();
   });
+
+  // date labels
+  if (process.env.SITE_ENV === 'workspace') {
+    eleventyConfig.on('afterBuild', () => {
+      dates();
+    });
+  }
+
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addWatchTarget('**/*.scss');
   eleventyConfig.addWatchTarget('./assets/scss/**/*.html');
@@ -21,7 +30,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('usageKey', (value, usage) => {
     const usageObj = usage[value];
     if (typeof usageObj === 'object') {
-      return usageObj.data
+      return usageObj.data;
     } else {
       return [];
     }

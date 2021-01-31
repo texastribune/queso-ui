@@ -14,7 +14,7 @@
     "release": "np --any-branch",
     "compile": "tsc",
     "docs": "npm run compile && SITE_ENV=development node docs/src/data/docs.js",
-    "dates": "npm run compile && node docs/build/config/tasks/date-label.js"
+    "dates": "npm run compile && SITE_ENV=development node docs/config/tasks/build.js && SITE_ENV=workspace eleventy --serve"
   },
   "files": [
     "/assets"
@@ -140,7 +140,8 @@
     "nunjucks": "^3.1.7",
     "ora": "^5.1.0",
     "passes-wcag": "^0.2.1",
-    "prettier": "2.2.1",
+    "prettier": "2.1.2",
+    "puppeteer": "^5.5.0",
     "push-dir": "^0.4.1",
     "stylelint": "^13.0.0",
     "typescript": "^4.0.3"

@@ -182,6 +182,13 @@ const downloadAsset = async (url, name) => {
   return filepath;
 };
 
+const years = () => {
+  const now = new Date().getUTCFullYear();
+  return Array(now - 1998)
+    .fill('')
+    .map((v, idx) => now - idx);
+};
+
 module.exports = {
   findUsageInfo,
   generateClassName,
@@ -197,4 +204,5 @@ module.exports = {
   buildTokenArr,
   getKeywords,
   downloadAsset,
+  years
 };
