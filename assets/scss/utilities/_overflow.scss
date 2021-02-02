@@ -1,0 +1,13 @@
+// Overflow (has-overflow-x)
+//
+// Used for elements that can scroll left and right usually on mobile. Eventually we could add a variation for the white blurred edge.
+//
+//
+// Markup: <div class="{{ className }} has-bg-gray-light has-padding" style="width:600px;height:150px">Scroll right on mobile</div>
+//
+//
+// Styleguide 8.0.3
+//
+.has-overflow-x {
+  overflow-x: auto;
+}

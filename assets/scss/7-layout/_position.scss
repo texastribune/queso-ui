@@ -1,9 +1,12 @@
 // Position (l-pos-<setting>)
 //
-// Helper for quickly setting `position: absolute` or `position: relative`. {{isHelper}}
+// Helpers for quickly setting `position`, `z-index`, and `top`. {{isHelper}}
 //
 // .l-pos-rel - Relative position
 // .l-pos-abs - Set _`.l-pos-rel`_ on the parent to place within a defined space.
+// .l-pos-sticky - Tells an element to be fixed once a user scrolls past it
+// .l-pos-top - `top: 0`; We use this in directory, but should find more places where we can use this instead of setting it.
+// .l-pos-front - `z-index: 1`; We use this in directory, but should find more places where we can use this instead of setting it.
 //
 // Markup: 7-layout/position.html
 //
@@ -15,4 +18,17 @@
 
 .l-pos-abs {
   position: absolute;
+}
+
+.l-pos-sticky {
+  position: sticky;
+  z-index: 2;
+}
+
+.l-pos-top {
+  top: 0;
+}
+
+.l-pos-front {
+  z-index: 1;
 }
