@@ -1131,7 +1131,7 @@
     },
     {
       "name": "Text input (c-text-input)",
-      "description": "<p>Text form inputs. Can be used with type=&quot;text&quot;, type=&quot;email&quot;, etc. Add .is-valid if the value is not valid.</p>\n",
+      "description": "<p>Text form inputs. Can be used with <code>type=&quot;text&quot;</code>, <code>type=&quot;email&quot;</code>, etc. Add <code>.is-valid</code> if the value is not valid. Use <code>c-text-input__input--standard</code> to fix <a href=\"https://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone\">iOS focus bug</a>.</p>\n",
       "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/6-components/text-input/_text-input.scss#L1",
       "label": "Text input",
       "type": "cssClass",
@@ -1369,7 +1369,7 @@
     },
     {
       "name": "Position (l-pos-<setting>)",
-      "description": "<p>Helper for quickly setting <code>position: absolute</code> or <code>position: relative</code>. </p>\n",
+      "description": "<p>Helpers for quickly setting <code>position</code>, <code>z-index</code>, and <code>top</code>. </p>\n",
       "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/7-layout/_position.scss#L1",
       "label": "Position",
       "type": "cssClass",
@@ -1382,11 +1382,14 @@
         "isTool": false,
         "keywords": []
       },
-      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}",
+      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-sticky' %}\n  Demo TK\n{% endif %}\n{% if className == 'l-pos-top' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }} l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: absolute; top: 0</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-front' %}\n  Demo TK\n{% endif %}",
       "modifiers": [],
       "modifierList": [
         "l-pos-rel",
-        "l-pos-abs"
+        "l-pos-abs",
+        "l-pos-sticky",
+        "l-pos-top",
+        "l-pos-front"
       ],
       "preview": "",
       "section": "Layout"
@@ -1726,6 +1729,27 @@
         "has-notch--full"
       ],
       "preview": "<div class=\"has-notch  has-bg-yellow\"></div>",
+      "section": "Utilities"
+    },
+    {
+      "name": "Overflow (has-overflow-x)",
+      "description": "<p>Used for elements that can scroll left and right usually on mobile. Eventually we could add a variation for the white blurred edge.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/utilities/_overflow.scss#L1",
+      "label": "Overflow",
+      "type": "cssClass",
+      "id": 8,
+      "depth": 2,
+      "className": "has-overflow-x",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "template": "<div class=\"{{ className }} has-bg-gray-light has-padding\" style=\"width:600px;height:150px\">Scroll right on mobile</div>",
+      "modifiers": [],
+      "modifierList": [],
+      "preview": "<div class=\" has-bg-gray-light has-padding\" style=\"width:600px;height:150px\">Scroll right on mobile</div>",
       "section": "Utilities"
     },
     {

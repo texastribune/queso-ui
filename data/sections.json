@@ -350,6 +350,10 @@
           "name": "Notch (has-notch)"
         },
         {
+          "className": "has-overflow-x",
+          "name": "Overflow (has-overflow-x)"
+        },
+        {
           "className": "is-rounded-<size>",
           "name": "Border Radius (is-rounded-<size>)"
         },

@@ -709,16 +709,40 @@
       "className": "l-pos-rel",
       "description": "Relative position",
       "type": "modifier",
-      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}",
-      "preview": "\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"l-pos-rel\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n\n"
+      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-sticky' %}\n  Demo TK\n{% endif %}\n{% if className == 'l-pos-top' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }} l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: absolute; top: 0</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-front' %}\n  Demo TK\n{% endif %}",
+      "preview": "\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"l-pos-rel\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n\n\n\n\n"
     },
     {
       "name": ".l-pos-abs",
       "className": "l-pos-abs",
       "description": "Set <em><code>.l-pos-rel</code></em> on the parent to place within a defined space.",
       "type": "modifier",
-      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}",
-      "preview": "\n\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n"
+      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-sticky' %}\n  Demo TK\n{% endif %}\n{% if className == 'l-pos-top' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }} l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: absolute; top: 0</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-front' %}\n  Demo TK\n{% endif %}",
+      "preview": "\n\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n\n\n\n"
+    },
+    {
+      "name": ".l-pos-sticky",
+      "className": "l-pos-sticky",
+      "description": "Tells an element to be fixed once a user scrolls past it",
+      "type": "modifier",
+      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-sticky' %}\n  Demo TK\n{% endif %}\n{% if className == 'l-pos-top' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }} l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: absolute; top: 0</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-front' %}\n  Demo TK\n{% endif %}",
+      "preview": "\n\n\n  Demo TK\n\n\n"
+    },
+    {
+      "name": ".l-pos-top",
+      "className": "l-pos-top",
+      "description": "<code>top: 0</code>; We use this in directory, but should find more places where we can use this instead of setting it.",
+      "type": "modifier",
+      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-sticky' %}\n  Demo TK\n{% endif %}\n{% if className == 'l-pos-top' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }} l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: absolute; top: 0</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-front' %}\n  Demo TK\n{% endif %}",
+      "preview": "\n\n\n\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"l-pos-top l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: absolute; top: 0</span>\n  </div>\n\n"
+    },
+    {
+      "name": ".l-pos-front",
+      "className": "l-pos-front",
+      "description": "<code>z-index: 1</code>; We use this in directory, but should find more places where we can use this instead of setting it.",
+      "type": "modifier",
+      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-sticky' %}\n  Demo TK\n{% endif %}\n{% if className == 'l-pos-top' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }} l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: absolute; top: 0</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-front' %}\n  Demo TK\n{% endif %}",
+      "preview": "\n\n\n\n\n  Demo TK\n"
     },
     {
       "name": ".l-width-full",

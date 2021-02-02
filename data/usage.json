@@ -2672,6 +2672,10 @@
         }
       ]
     },
+    "has-overflow-x": {
+      "className": "has-overflow-x",
+      "data": []
+    },
     "has-vert-bar": {
       "className": "has-vert-bar",
       "data": [
@@ -8842,6 +8846,18 @@
           "total_count": 1
         }
       ]
+    },
+    "l-pos-sticky": {
+      "className": "l-pos-sticky",
+      "data": []
+    },
+    "l-pos-top": {
+      "className": "l-pos-top",
+      "data": []
+    },
+    "l-pos-front": {
+      "className": "l-pos-front",
+      "data": []
     },
     "l-width-full": {
       "className": "l-width-full",
