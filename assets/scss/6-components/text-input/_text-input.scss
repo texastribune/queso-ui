@@ -1,6 +1,6 @@
 // Text input (c-text-input)
 //
-// Text form inputs. Can be used with type="text", type="email", etc. Add .is-valid if the value is not valid.
+// Text form inputs. Can be used with `type="text"`, `type="email"`, etc. Add `.is-valid` if the value is not valid. Use `c-text-input__input--standard` to fix [iOS focus bug](https://stackoverflow.com/questions/2989263/disable-auto-zoom-in-input-text-tag-safari-on-iphone).
 //
 // Markup: 6-components/text-input/text-input.html
 //
@@ -15,6 +15,10 @@
     outline: none;
     padding: $size-xxs;
     transition: box-shadow .15s ease-in-out;
+
+    &--standard {
+      font-size: 16px;
+    }
 
     // kill X button that appears on IE and edge
     // because it doesn't handle JS input event correctly
