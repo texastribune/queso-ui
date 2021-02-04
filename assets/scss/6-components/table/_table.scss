@@ -19,12 +19,17 @@
 // .c-table--bordered-rows - Bordered rows
 // .c-table--10-45-45 - Three-column table with col widths 10%, 45%, 45%
 // .c-table--15-70-15 - Two-column table with col widths 15%, 70%, 15%
+// .c-table--fixed - Adds `table-layout: fixed`. Helpful for mobile-friendly tables.
 //
 // Markup: 6-components/table/table.html
 //
 // Styleguide 6.1.5
 .c-table {
   border-collapse: collapse;
+
+  &--fixed {
+    table-layout: fixed;
+  }
 
   td,
   th {

@@ -5,17 +5,22 @@
 {% endif %}
 {% if className == 'l-pos-abs' %}
   <div class="l-pos-rel" style="border: 1px solid #000; width: 300px; height: 100px;">
-    <span class="{{ className }}" style="background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;">position: absolute; bottom: 0; right: 0;</span>
+    <span class="{{ className }}" style="background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;">position: absolute;</span>
   </div>
 {% endif %}
 {% if className == 'l-pos-sticky' %}
-  Demo TK
+  <div class="l-pos-sticky l-pos-top l-pos-front" style="background-color: #222; color: #fff; padding: 10px; width: 60%;">
+    position: sticky; top: 0;
+  </div>
 {% endif %}
 {% if className == 'l-pos-top' %}
   <div class="l-pos-rel" style="border: 1px solid #000; width: 300px; height: 100px;">
-    <span class="{{ className }} l-pos-abs" style="background-color: #222; color: #fff; padding: 10px;">position: absolute; top: 0</span>
+    <span class="{{ className }} l-pos-abs" style="background-color: #222; color: #fff; padding: 10px;">top: 0</span>
   </div>
 {% endif %}
 {% if className == 'l-pos-front' %}
-  Demo TK
+  <div class="l-pos-rel" style="border: 1px solid #000; width: 300px; height: 100px;">
+    <span class="l-pos-front l-pos-abs" style="background-color: #222; color: #fff; padding: 10px; top: 20px; left: 20px;">z-index: 1</span>
+    <span style="background-color: #999; color: #fff; padding: 10px; l-pos-abs">z-index: not set</span>
+  </div>
 {% endif %}

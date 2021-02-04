@@ -1,7 +1,8 @@
-// Overflow (has-overflow-x)
+// Overflow (has-overflow-<type>)
 //
-// Used for elements that can scroll left and right usually on mobile. Eventually we could add a variation for the white blurred edge.
+// Used for elements that can scroll left and right usually on mobile. Eventually we could add a variation for the white blurred edge. {{isHelper}}
 //
+// .has-overflow-x - Allows an element to scroll horizontally if it becomes wider than the viewport
 //
 // Markup: <div class="{{ className }} has-bg-gray-light has-padding" style="width:600px;height:150px">Scroll right on mobile</div>
 //
