@@ -417,7 +417,7 @@
       
     
       
-      <option value="Overflow (has-overflow-x)" data-link="/queso-ui/sections/utilities/has-overflow-x/" />
+      <option value="Overflow (has-overflow-&lt;type&gt;)" data-link="/queso-ui/sections/utilities/has-overflow-type/" />
       
       
     
@@ -1080,7 +1080,7 @@
         <li>
 
   
-  <a href="/queso-ui/sections/utilities/has-overflow-x/" class="is-active">Overflow</a>
+  <a href="/queso-ui/sections/utilities/has-overflow-type/" class="is-active">Overflow</a>
 </li>
       
         <li>
@@ -1630,7 +1630,7 @@
         <li>
 
   
-  <a href="/queso-ui/sections/utilities/has-overflow-x/" class="is-active">Overflow</a>
+  <a href="/queso-ui/sections/utilities/has-overflow-type/" class="is-active">Overflow</a>
 </li>
       
         <li>
@@ -1682,7 +1682,7 @@
     <ul>
       <li><a href="/queso-ui/">Home</a></li>
       <li><a href="/queso-ui/sections/utilities">Utilities</a></li>
-      <li class="is-active"><a href="/sections/utilities/has-overflow-x/" aria-current="page">.has-overflow-x</a></li>
+      <li class="is-active"><a href="/sections/utilities/has-overflow-type/" aria-current="page">.has-overflow-&lt;type&gt;</a></li>
     </ul>
   </nav>
   <header class="level">
@@ -1701,7 +1701,7 @@
     </div>
   </header>
 
-  <div class="q-desc q-container"><p>Used for elements that can scroll left and right usually on mobile. Eventually we could add a variation for the white blurred edge.</p>
+  <div class="q-desc q-container"><p>Used for elements that can scroll left and right usually on mobile. Eventually we could add a variation for the white blurred edge. </p>
 </p></div>
 
   
@@ -1709,10 +1709,13 @@
 
 <div class="q-display-grid q-wide-container">
   
+  
+    
+    
     <div class="q-display-col">
-      
-        <code>.has-overflow-x</code>
-      
+      <code>.has-overflow-x</code>
+      <div class="q-bottom-spacer"></div>
+      <div class="is-size-7 has-text-grey">Allows an element to scroll horizontally if it becomes wider than the viewport</div>
     </div>
     
   
@@ -1741,7 +1744,7 @@
           </svg>
         </span>
       </button>
-      <a href="/queso-ui/example/has-overflow-x" class="button is-outlined">
+      <a href="/queso-ui/modifier/has-overflow-x" class="button is-outlined">
         <span class="c-icon">
           <svg aria-hidden="true">
             <use xlink:href="#arrow-up-right"></use>
@@ -1750,10 +1753,10 @@
       </a>
     </div>
     <div id="view-has-overflow-x-pane" class="q-display-pane js-pane active">
-      <div data-frame-src="/queso-ui/example/has-overflow-x"></div>
+      <div data-frame-src="/queso-ui/modifier/has-overflow-x"></div>
     </div>
     <div id="code-has-overflow-x-pane" class="q-display-pane js-pane">
-      <pre><code class="language-html">&lt;div class=&quot; has-bg-gray-light has-padding&quot; style=&quot;width:600px;height:150px&quot;&gt;Scroll right on mobile&lt;/div&gt;</code></pre>
+      <pre><code class="language-html">&lt;div class=&quot;has-overflow-x has-bg-gray-light has-padding&quot; style=&quot;width:600px;height:150px&quot;&gt;Scroll right on mobile&lt;/div&gt;</code></pre>
     </div>
     <div id="stats-has-overflow-x-pane" class="q-display-pane js-pane">
       
@@ -1764,7 +1767,6 @@
     </div>
   </div>
 
-  
   
 </div>
 

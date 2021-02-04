@@ -417,7 +417,7 @@
       
     
       
-      <option value="Overflow (has-overflow-x)" data-link="/queso-ui/sections/utilities/has-overflow-x/" />
+      <option value="Overflow (has-overflow-&lt;type&gt;)" data-link="/queso-ui/sections/utilities/has-overflow-type/" />
       
       
     
@@ -1080,7 +1080,7 @@
         <li>
 
   
-  <a href="/queso-ui/sections/utilities/has-overflow-x/" >Overflow</a>
+  <a href="/queso-ui/sections/utilities/has-overflow-type/" >Overflow</a>
 </li>
       
         <li>
@@ -1630,7 +1630,7 @@
         <li>
 
   
-  <a href="/queso-ui/sections/utilities/has-overflow-x/" >Overflow</a>
+  <a href="/queso-ui/sections/utilities/has-overflow-type/" >Overflow</a>
 </li>
       
         <li>
@@ -1715,7 +1715,7 @@
     <div class="q-display-col">
       <code>.l-pos-rel</code>
       <div class="q-bottom-spacer"></div>
-      <div class="is-size-7 has-text-grey">Relative position</div>
+      <div class="is-size-7 has-text-grey"><code>position: relative</code></div>
     </div>
     
   
@@ -1819,7 +1819,7 @@
     <div class="q-display-col">
       <code>.l-pos-abs</code>
       <div class="q-bottom-spacer"></div>
-      <div class="is-size-7 has-text-grey">Set <em><code>.l-pos-rel</code></em> on the parent to place within a defined space.</div>
+      <div class="is-size-7 has-text-grey"><code>position: absolute</code>; Set <em><code>.l-pos-rel</code></em> on the parent to place within a defined space.</div>
     </div>
     
   
@@ -1863,7 +1863,7 @@
       <pre><code class="language-html">
 
   &lt;div class=&quot;l-pos-rel&quot; style=&quot;border: 1px solid #000; width: 300px; height: 100px;&quot;&gt;
-    &lt;span class=&quot;l-pos-abs&quot; style=&quot;background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;&quot;&gt;position: absolute; bottom: 0; right: 0;&lt;/span&gt;
+    &lt;span class=&quot;l-pos-abs&quot; style=&quot;background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;&quot;&gt;position: absolute;&lt;/span&gt;
   &lt;/div&gt;
 
 
@@ -1907,7 +1907,7 @@
     <div class="q-display-col">
       <code>.l-pos-sticky</code>
       <div class="q-bottom-spacer"></div>
-      <div class="is-size-7 has-text-grey">Tells an element to be fixed once a user scrolls past it</div>
+      <div class="is-size-7 has-text-grey"><code>position: sticky</code>; Read more in <a href="https://css-tricks.com/position-sticky-2/"><code>CSS tricks</code></a></div>
     </div>
     
   
@@ -1951,7 +1951,9 @@
       <pre><code class="language-html">
 
 
-  Demo TK
+  &lt;div class=&quot;l-pos-sticky l-pos-top l-pos-front&quot; style=&quot;background-color: #222; color: #fff; padding: 10px; width: 60%;&quot;&gt;
+    position: sticky; top: 0;
+  &lt;/div&gt;
 
 
 </code></pre>
@@ -1971,7 +1973,7 @@
     <div class="q-display-col">
       <code>.l-pos-top</code>
       <div class="q-bottom-spacer"></div>
-      <div class="is-size-7 has-text-grey"><code>top: 0</code>; We use this in directory, but should find more places where we can use this instead of setting it.</div>
+      <div class="is-size-7 has-text-grey"><code>top: 0</code></div>
     </div>
     
   
@@ -2017,7 +2019,7 @@
 
 
   &lt;div class=&quot;l-pos-rel&quot; style=&quot;border: 1px solid #000; width: 300px; height: 100px;&quot;&gt;
-    &lt;span class=&quot;l-pos-top l-pos-abs&quot; style=&quot;background-color: #222; color: #fff; padding: 10px;&quot;&gt;position: absolute; top: 0&lt;/span&gt;
+    &lt;span class=&quot;l-pos-top l-pos-abs&quot; style=&quot;background-color: #222; color: #fff; padding: 10px;&quot;&gt;top: 0&lt;/span&gt;
   &lt;/div&gt;
 
 </code></pre>
@@ -2037,7 +2039,7 @@
     <div class="q-display-col">
       <code>.l-pos-front</code>
       <div class="q-bottom-spacer"></div>
-      <div class="is-size-7 has-text-grey"><code>z-index: 1</code>; We use this in directory, but should find more places where we can use this instead of setting it.</div>
+      <div class="is-size-7 has-text-grey"><code>z-index: 1</code></div>
     </div>
     
   
@@ -2083,7 +2085,10 @@
 
 
 
-  Demo TK
+  &lt;div class=&quot;l-pos-rel&quot; style=&quot;border: 1px solid #000; width: 300px; height: 100px;&quot;&gt;
+    &lt;span class=&quot;l-pos-front l-pos-abs&quot; style=&quot;background-color: #222; color: #fff; padding: 10px; top: 20px; left: 20px;&quot;&gt;z-index: 1&lt;/span&gt;
+    &lt;span style=&quot;background-color: #999; color: #fff; padding: 10px; l-pos-abs&quot;&gt;z-index: not set&lt;/span&gt;
+  &lt;/div&gt;
 </code></pre>
     </div>
     <div id="stats-l-pos-front-pane" class="q-display-pane js-pane">

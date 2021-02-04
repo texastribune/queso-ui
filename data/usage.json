@@ -2672,10 +2672,6 @@
         }
       ]
     },
-    "has-overflow-x": {
-      "className": "has-overflow-x",
-      "data": []
-    },
     "has-vert-bar": {
       "className": "has-vert-bar",
       "data": [
@@ -7330,6 +7326,10 @@
     },
     "c-table--15-70-15": {
       "className": "c-table--15-70-15",
+      "data": []
+    },
+    "c-table--fixed": {
+      "className": "c-table--fixed",
       "data": []
     },
     "c-topic-bar--sticky": {
@@ -14701,6 +14701,10 @@
           "total_count": 3
         }
       ]
+    },
+    "has-overflow-x": {
+      "className": "has-overflow-x",
+      "data": []
     },
     "is-rounded-b": {
       "className": "is-rounded-b",

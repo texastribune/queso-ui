@@ -1124,7 +1124,8 @@
         "c-table--bordered",
         "c-table--bordered-rows",
         "c-table--10-45-45",
-        "c-table--15-70-15"
+        "c-table--15-70-15",
+        "c-table--fixed"
       ],
       "preview": "<table class=\"c-table  l-width-full\">\n  <thead>\n    <tr>\n      <th class=\"t-align-left\"><strong>A</strong></th>\n      <th class=\"t-align-left\">\n        <button title=\"Sort by B in descending order\">\n          <strong>B</strong>\n          <span class=\"c-icon c-icon--baseline t-size-xs\">\n            <svg aria-hidden=\"true\"><use xlink:href=\"#caret-down\"></use></svg>\n          </span>\n        </button>\n      </th>\n      <th class=\"t-align-left\"><strong>C</strong></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>1</td>\n      <td>2</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <td>4</td>\n      <td>5</td>\n      <td>6</td>\n    </tr>\n    <tr>\n      <td>7</td>\n      <td>8</td>\n      <td>9</td>\n    </tr>\n  </tbody>\n</table>",
       "section": "Components"
@@ -1382,7 +1383,7 @@
         "isTool": false,
         "keywords": []
       },
-      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute; bottom: 0; right: 0;</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-sticky' %}\n  Demo TK\n{% endif %}\n{% if className == 'l-pos-top' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }} l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: absolute; top: 0</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-front' %}\n  Demo TK\n{% endif %}",
+      "template": "{% if className == 'l-pos-rel' %}\n  <div style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px;\">position: relative</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-abs' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }}\" style=\"background-color: #222; color: #fff; padding: 10px; bottom: 0; right: 0; width: 60%;\">position: absolute;</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-sticky' %}\n  <div class=\"l-pos-sticky l-pos-top l-pos-front\" style=\"background-color: #222; color: #fff; padding: 10px; width: 60%;\">\n    position: sticky; top: 0;\n  </div>\n{% endif %}\n{% if className == 'l-pos-top' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"{{ className }} l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px;\">top: 0</span>\n  </div>\n{% endif %}\n{% if className == 'l-pos-front' %}\n  <div class=\"l-pos-rel\" style=\"border: 1px solid #000; width: 300px; height: 100px;\">\n    <span class=\"l-pos-front l-pos-abs\" style=\"background-color: #222; color: #fff; padding: 10px; top: 20px; left: 20px;\">z-index: 1</span>\n    <span style=\"background-color: #999; color: #fff; padding: 10px; l-pos-abs\">z-index: not set</span>\n  </div>\n{% endif %}",
       "modifiers": [],
       "modifierList": [
         "l-pos-rel",
@@ -1732,24 +1733,26 @@
       "section": "Utilities"
     },
     {
-      "name": "Overflow (has-overflow-x)",
-      "description": "<p>Used for elements that can scroll left and right usually on mobile. Eventually we could add a variation for the white blurred edge.</p>\n",
+      "name": "Overflow (has-overflow-<type>)",
+      "description": "<p>Used for elements that can scroll left and right usually on mobile. Eventually we could add a variation for the white blurred edge. </p>\n",
       "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/utilities/_overflow.scss#L1",
       "label": "Overflow",
       "type": "cssClass",
       "id": 8,
       "depth": 2,
-      "className": "has-overflow-x",
+      "className": "has-overflow-<type>",
       "details": {
-        "isHelper": false,
+        "isHelper": true,
         "isRecipe": false,
         "isTool": false,
         "keywords": []
       },
       "template": "<div class=\"{{ className }} has-bg-gray-light has-padding\" style=\"width:600px;height:150px\">Scroll right on mobile</div>",
       "modifiers": [],
-      "modifierList": [],
-      "preview": "<div class=\" has-bg-gray-light has-padding\" style=\"width:600px;height:150px\">Scroll right on mobile</div>",
+      "modifierList": [
+        "has-overflow-x"
+      ],
+      "preview": "",
       "section": "Utilities"
     },
     {

@@ -350,8 +350,8 @@
           "name": "Notch (has-notch)"
         },
         {
-          "className": "has-overflow-x",
-          "name": "Overflow (has-overflow-x)"
+          "className": "has-overflow-<type>",
+          "name": "Overflow (has-overflow-<type>)"
         },
         {
           "className": "is-rounded-<size>",
