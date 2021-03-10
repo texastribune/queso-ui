@@ -12,10 +12,11 @@
   }
 
   &__tab {
+    color: currentColor;
     padding-bottom: $size-xs;
     &--active {
       &:after {
-        background-color: $color-teal-gray;
+        background-color: currentColor;
         bottom: -2px;
         content: '';
         height: 3px;

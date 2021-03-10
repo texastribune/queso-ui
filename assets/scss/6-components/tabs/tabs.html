@@ -1,7 +1,11 @@
 <div class="c-tabs">
-  <div class="c-tabs__list" role="tablist" aria-label="Seinfeld taglines">
+  <div
+    class="c-tabs__list has-text-gray-dark"
+    role="tablist"
+    aria-label="Seinfeld taglines"
+  >
     <button
-      class="c-tabs__tab c-tabs__tab--active t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding has-text-teal"
+      class="c-tabs__tab c-tabs__tab--active has-text-teal t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding"
       role="tab"
       aria-selected="true"
       aria-controls="jerry-tab"
@@ -10,7 +14,7 @@
       Jerry Seinfeld
     </button>
     <button
-      class="c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding has-text-gray-dark"
+      class="c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding"
       role="tab"
       aria-selected="false"
       aria-controls="elaine-tab"
@@ -20,7 +24,7 @@
       Elaine Benes
     </button>
     <button
-      class="c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding has-text-gray-dark"
+      class="c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding"
       role="tab"
       aria-selected="false"
       aria-controls="cosmo-tab"
@@ -30,7 +34,7 @@
       Cosmo Kramer
     </button>
     <button
-      class="c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding has-text-gray-dark"
+      class="c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding"
       role="tab"
       aria-selected="false"
       aria-controls="george-tab"
@@ -47,9 +51,7 @@
     id="jerry-tab"
     aria-labelledby="jerry"
   >
-    <p>
-      Hello, Newman.
-    </p>
+    <p>Hello, Newman.</p>
     <p>– Jerry</p>
   </div>
   <div
@@ -60,9 +62,7 @@
     aria-labelledby="elaine"
     hidden
   >
-    <p>
-      Get out!
-    </p>
+    <p>Get out!</p>
     <p>– Elaine</p>
   </div>
   <div
@@ -94,20 +94,16 @@
 
 <script>
   (function () {
-    var tabs = document.querySelectorAll('[role="tab"]');
-    var active = "c-tabs__tab--active";
+    var tabs = document.querySelectorAll(".c-tabs__tab");
+    var activeState = "c-tabs__tab--active";
     var activeColor = "has-text-teal";
-    var defaultColor = "has-text-gray-dark";
     function clickEventListener(event) {
       // deactivate all tabs
       for (i = 0; i < tabs.length; ++i) {
-        tabs[i].classList.remove(active, activeColor);
-        tabs[i].classList.add(defaultColor);
+        tabs[i].classList.remove(activeState, activeColor);
       }
       // activate current
-      var tab = event.target;
-      tab.classList.remove(defaultColor);
-      tab.classList.add(active, activeColor);
+      event.target.classList.add(activeState, activeColor);
     }
     for (i = 0; i < tabs.length; ++i) {
       tabs[i].addEventListener("click", clickEventListener);
