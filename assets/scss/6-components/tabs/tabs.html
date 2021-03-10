@@ -1,57 +1,116 @@
-<ul class="c-tabs">
-  <li class="c-tabs__tab"><a href="#tab1" class="c-tabs__link c-tabs__link--active">Tab 1</a></li>
-  <li class="c-tabs__tab c-tabs__tab--wide"><a href="#tab2" class="c-tabs__link">Wide Tab</a></li>
-  <li class="c-tabs__tab"><a href="#tab3" class="c-tabs__link c-tabs__link--s">Small Link</a></li>
-  <li class="c-tabs__tab"><a href="#tab4" class="c-tabs__link">Tab 4</a></li>
-</ul>
-<div class="c-tab-panes">
-	<div id="tab1" class="c-tab-panes__pane c-tab-panes__pane--active">
-		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?</p>
-	</div>
-	<div id="tab2" class="c-tab-panes__pane">
-		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
-		incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?</p>
-		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
-			incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?</p>
-	</div>
-	<div id="tab3" class="c-tab-panes__pane">
-		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
-			incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?</p>
-	</div>
-	<div id="tab4" class="c-tab-panes__pane">
-		<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
-			incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?</p>
-	</div>
+<div class="c-tabs">
+  <div class="c-tabs__list" role="tablist" aria-label="Entertainment">
+    <button
+      class="c-tabs__tab c-tabs__tab--active t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding has-text-teal"
+      role="tab"
+      aria-selected="true"
+      aria-controls="jerry-tab"
+      id="jerry"
+    >
+      Jerry Seinfeld
+    </button>
+    <button
+      class="c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding has-text-gray-dark"
+      role="tab"
+      aria-selected="false"
+      aria-controls="elaine-tab"
+      id="elaine"
+      tabindex="-1"
+    >
+      Elaine Benes
+    </button>
+    <button
+      class="c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding has-text-gray-dark"
+      role="tab"
+      aria-selected="false"
+      aria-controls="cosmo-tab"
+      id="cosmo"
+      tabindex="-1"
+    >
+      Cosmo Kramer
+    </button>
+    <button
+      class="c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding has-text-gray-dark"
+      role="tab"
+      aria-selected="false"
+      aria-controls="george-tab"
+      id="george"
+      tabindex="-1"
+    >
+      George Costanza
+    </button>
+  </div>
+  <div
+    class="has-xs-padding"
+    tabindex="0"
+    role="tabpanel"
+    id="jerry-tab"
+    aria-labelledby="jerry"
+  >
+    <p>
+      Hello, Newman.
+    </p>
+    <p>– Jerry</p>
+  </div>
+  <div
+    class="has-xs-padding"
+    tabindex="0"
+    role="tabpanel"
+    id="elaine-tab"
+    aria-labelledby="elaine"
+    hidden
+  >
+    <p>
+      Get out!
+    </p>
+    <p>– Elaine</p>
+  </div>
+  <div
+    class="has-xs-padding"
+    tabindex="0"
+    role="tabpanel"
+    id="cosmo-tab"
+    aria-labelledby="cosmo"
+    hidden
+  >
+    <p>Giddyup!</p>
+    <p>– Kramer</p>
+  </div>
+  <div
+    class="has-xs-padding"
+    tabindex="0"
+    role="tabpanel"
+    id="george-tab"
+    aria-labelledby="george"
+    hidden
+  >
+    <p>Serenity now.</p>
+    <p>– George</p>
+  </div>
 </div>
 
-
+<!-- example of w3 JS -->
+<script src="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/js/tabs.js"></script>
 
 <script>
-
-window.addEventListener("load", function() {
-	// store tabs variable
-	var myTabs = document.querySelectorAll(".c-tabs__link");
-  function myTabClicks(tabClickEvent) {
-		var activeTabClass = 'c-tabs__link--active';
-		var activePaneClass = 'c-tab-panes__pane--active';
-		for (var i = 0; i < myTabs.length; i++) {
-			myTabs[i].classList.remove(activeTabClass);
-		}
-		var clickedTab = tabClickEvent.currentTarget;
-		clickedTab.classList.add(activeTabClass);
-		tabClickEvent.preventDefault();
-		var myContentPanes = document.querySelectorAll(".c-tab-panes__pane");
-		for (i = 0; i < myContentPanes.length; i++) {
-			myContentPanes[i].classList.remove(activePaneClass);
-		}
-		var anchorReference = tabClickEvent.target;
-		var activePaneId = anchorReference.getAttribute("href");
-		var activePane = document.querySelector(activePaneId);
-		activePane.classList.add(activePaneClass);
-	}
-	
-	for (i = 0; i < myTabs.length; i++) {
-		myTabs[i].addEventListener("click", myTabClicks)
-	}
-});
+  (function () {
+    var tabs = document.querySelectorAll('[role="tab"]');
+    var active = "c-tabs__tab--active";
+    var activeColor = "has-text-teal";
+    var defaultColor = "has-text-gray-dark";
+    function clickEventListener(event) {
+      // deactivate all tabs
+      for (i = 0; i < tabs.length; ++i) {
+        tabs[i].classList.remove(active, activeColor);
+        tabs[i].classList.add(defaultColor);
+      }
+      // activate current
+      var tab = event.target;
+      tab.classList.remove(defaultColor);
+      tab.classList.add(active, activeColor);
+    }
+    for (i = 0; i < tabs.length; ++i) {
+      tabs[i].addEventListener("click", clickEventListener);
+    }
+  })();
 </script>

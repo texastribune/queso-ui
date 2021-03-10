@@ -1,51 +1,40 @@
 // Tabs (c-tabs)
 //
-// Tab class {{isWide}} https://gist.github.com/jonathantneal/435478e415bfe4f54d06
+// Tabs based on a [w3 example](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html). The JS in the example uses [w3's script](https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/js/tabs.js), but state change implementation will vary by environment.
 //
 // Markup: 6-components/tabs/tabs.html
 //
 // Styleguide 6.1.3
 .c-tabs {
-  align-items: flex-end;
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  border-bottom: 5px solid $color-yellow-tribune;
+  &__list {
+    align-items: flex-end;
+    border-bottom: 1px solid $color-gray-light;
+    display: flex;
+    flex-wrap: nowrap;
+  }
 
   &__tab {
-    &--wide {
-      flex: 0 1 10rem;
-    }
-  }
-
-  &__link {
-    background-color: $color-black-off;
-    color: $color-white-pure;
-    display: block;
-    border-right: 2px solid #fff;
-    padding: $size-s;
-    text-align: center;
-
-    &--s {
-      padding: $size-xxxs;
-    }
-
+    padding-bottom: $size-xs;
     &--active {
-      background-color: $color-yellow-tribune;
-      color: $color-black-off;
-      font-weight: 700;
+      &:after {
+        content: '';
+        height: 3px;
+        width: 100%;
+        left: 0;
+        bottom: -2px;
+        position: absolute;
+        background-color: $color-teal-gray;
+      }
     }
-  }
-
-}
-
-// display helpers
-.c-tab-panes {
-  &__pane {
-    display: none;
-
-    &--active {
-      display: block;
+    // prevent outline on mouse click
+    &:focus {
+      outline: inherit solid 2px;
+    }
+    &:not(:focus-visible) {
+      outline: none;
+    }
+    &:focus-visible {
+      outline: inherit solid 2px;
     }
   }
 }
