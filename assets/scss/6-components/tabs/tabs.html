@@ -89,24 +89,82 @@
   </div>
 </div>
 
-<!-- example of w3 JS -->
-<script src="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/js/tabs.js"></script>
-
+<!-- sample JS based on example in w3 -->
+<!-- link: https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/js/tabs.js -->
 <script>
   (function () {
-    var tabs = document.querySelectorAll(".c-tabs__tab");
-    var activeState = "c-tabs__tab--active";
-    var activeColor = "has-text-teal";
-    function clickEventListener(event) {
-      // deactivate all tabs
-      for (i = 0; i < tabs.length; ++i) {
-        tabs[i].classList.remove(activeState, activeColor);
-      }
-      // activate current
-      event.target.classList.add(activeState, activeColor);
+    // implementation approaches may vary, but tabs should always be keyboard accessible
+    // and will likely require listeners for left/right keys
+    var tabs = document.querySelectorAll('[role="tab"]');
+    var panels = document.querySelectorAll('[role="tabpanel"]');
+    var activeState = 'c-tabs__tab--active';
+    var activeColor = 'has-text-teal';
+    var currentIndex = 0;
+
+    function activateTab(tab) {
+      // visual style changes
+      tab.classList.add(activeState, activeColor);
+
+      // Remove tabindex attribute
+      tab.removeAttribute('tabindex');
+
+      // Set the tab as selected
+      tab.setAttribute('aria-selected', 'true');
+
+      // Get the value of aria-controls (which is an ID)
+      var controls = tab.getAttribute('aria-controls');
+
+      // Remove hidden attribute from tab panel to make it visible
+      document.getElementById(controls).removeAttribute('hidden');
+
+      // update current index
+      currentIndex = parseInt(tab.dataset.order);
+
+      // update focus
+      tab.focus();
     }
-    for (i = 0; i < tabs.length; ++i) {
-      tabs[i].addEventListener("click", clickEventListener);
+    function deactivateTabs() {
+      for (var i = 0; i < tabs.length; ++i) {
+        tabs[i].classList.remove(activeState, activeColor);
+        tabs[i].setAttribute('tabindex', '-1');
+        tabs[i].setAttribute('aria-selected', 'false');
+      }
+      for (var p = 0; p < panels.length; p++) {
+        panels[p].setAttribute('hidden', 'hidden');
+      }
+    }
+    function onClick(event) {
+      // deactivate all tabs
+      deactivateTabs();
+      // activate current
+      activateTab(event.target);
+    }
+    function onKeyUp(event) {
+      var isOnFirst = currentIndex === 0;
+      var isOnLast = currentIndex === tabs.length - 1;
+      var noTabActive = currentIndex === -1;
+      var isLeftArrow = event.keyCode === 37;
+      var isRightArrow = event.keyCode === 39;
+
+      if ((isLeftArrow || isRightArrow) && noTabActive) {
+        tabs[0].click();
+      } else if (isLeftArrow && isOnFirst) {
+        tabs[tabs.length - 1].click();
+      } else if (isLeftArrow) {
+        tabs[currentIndex - 1].click();
+      } else if (isRightArrow && isOnLast) {
+        tabs[0].click();
+      } else if (isRightArrow) {
+        tabs[currentIndex + 1].click();
+      }
+    }
+    for (var i = 0; i < tabs.length; ++i) {
+      // assign an index to the tab
+      tabs[i].dataset.order = i;
+      // click display/hide behavior
+      tabs[i].addEventListener('click', onClick);
+      // navigate through tabs with left/right keys
+      tabs[i].addEventListener('keyup', onKeyUp);
     }
   })();
 </script>
