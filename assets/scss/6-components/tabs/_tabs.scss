@@ -14,6 +14,7 @@
   &__tab {
     color: currentColor;
     padding-bottom: $size-xs;
+
     &--active {
       &:after {
         background-color: currentColor;
@@ -25,13 +26,16 @@
         width: 100%;
       }
     }
+
     // prevent outline on mouse click
     &:focus {
       outline: 2px solid inherit;
     }
+
     &:not(:focus-visible) {
       outline: none;
     }
+
     &:focus-visible {
       outline: 2px solid inherit;
     }
