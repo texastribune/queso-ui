@@ -1701,7 +1701,7 @@
     </div>
   </header>
 
-  <div class="q-desc q-container"><p>Tab class {{isWide}} https://gist.github.com/jonathantneal/435478e415bfe4f54d06</p>
+  <div class="q-desc q-container"><p>The tabs HTML is based on a <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/tabs.html">w3 example</a>. The JS in the example uses <a href="https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/js/tabs.js">w3's script</a>, but state change implementation will vary by environment.</p>
 </p></div>
 
   
@@ -1753,62 +1753,175 @@
       <div data-frame-src="/queso-ui/example/c-tabs"></div>
     </div>
     <div id="code-c-tabs-pane" class="q-display-pane js-pane">
-      <pre><code class="language-html">&lt;ul class=&quot;c-tabs&quot;&gt;
-  &lt;li class=&quot;c-tabs__tab&quot;&gt;&lt;a href=&quot;#tab1&quot; class=&quot;c-tabs__link c-tabs__link--active&quot;&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
-  &lt;li class=&quot;c-tabs__tab c-tabs__tab--wide&quot;&gt;&lt;a href=&quot;#tab2&quot; class=&quot;c-tabs__link&quot;&gt;Wide Tab&lt;/a&gt;&lt;/li&gt;
-  &lt;li class=&quot;c-tabs__tab&quot;&gt;&lt;a href=&quot;#tab3&quot; class=&quot;c-tabs__link c-tabs__link--s&quot;&gt;Small Link&lt;/a&gt;&lt;/li&gt;
-  &lt;li class=&quot;c-tabs__tab&quot;&gt;&lt;a href=&quot;#tab4&quot; class=&quot;c-tabs__link&quot;&gt;Tab 4&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;div class=&quot;c-tab-panes&quot;&gt;
-	&lt;div id=&quot;tab1&quot; class=&quot;c-tab-panes__pane c-tab-panes__pane--active&quot;&gt;
-		&lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?&lt;/p&gt;
-	&lt;/div&gt;
-	&lt;div id=&quot;tab2&quot; class=&quot;c-tab-panes__pane&quot;&gt;
-		&lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
-		incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?&lt;/p&gt;
-		&lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
-			incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?&lt;/p&gt;
-	&lt;/div&gt;
-	&lt;div id=&quot;tab3&quot; class=&quot;c-tab-panes__pane&quot;&gt;
-		&lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
-			incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?&lt;/p&gt;
-	&lt;/div&gt;
-	&lt;div id=&quot;tab4&quot; class=&quot;c-tab-panes__pane&quot;&gt;
-		&lt;p&gt;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque, quas eum sequi quasi neque magni aperiam laborum
-			incidunt modi repellendus minima eligendi vel illum soluta rem. Odio officiis dicta quam?&lt;/p&gt;
-	&lt;/div&gt;
+      <pre><code class="language-html">&lt;div class=&quot;c-tabs&quot;&gt;
+  &lt;div
+    class=&quot;c-tabs__list has-text-gray-dark&quot;
+    role=&quot;tablist&quot;
+    aria-label=&quot;Seinfeld taglines&quot;
+  &gt;
+    &lt;button
+      class=&quot;c-tabs__tab c-tabs__tab--active has-text-teal t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding&quot;
+      role=&quot;tab&quot;
+      aria-selected=&quot;true&quot;
+      aria-controls=&quot;jerry-tab&quot;
+      id=&quot;jerry&quot;
+    &gt;
+      Jerry Seinfeld
+    &lt;/button&gt;
+    &lt;button
+      class=&quot;c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding&quot;
+      role=&quot;tab&quot;
+      aria-selected=&quot;false&quot;
+      aria-controls=&quot;elaine-tab&quot;
+      id=&quot;elaine&quot;
+      tabindex=&quot;-1&quot;
+    &gt;
+      Elaine Benes
+    &lt;/button&gt;
+    &lt;button
+      class=&quot;c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding&quot;
+      role=&quot;tab&quot;
+      aria-selected=&quot;false&quot;
+      aria-controls=&quot;cosmo-tab&quot;
+      id=&quot;cosmo&quot;
+      tabindex=&quot;-1&quot;
+    &gt;
+      Cosmo Kramer
+    &lt;/button&gt;
+    &lt;button
+      class=&quot;c-tabs__tab t-uppercase t-weight-bold t-size-xs t-lsp-m l-pos-rel has-xs-padding&quot;
+      role=&quot;tab&quot;
+      aria-selected=&quot;false&quot;
+      aria-controls=&quot;george-tab&quot;
+      id=&quot;george&quot;
+      tabindex=&quot;-1&quot;
+    &gt;
+      George Costanza
+    &lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div
+    class=&quot;has-xs-padding&quot;
+    tabindex=&quot;0&quot;
+    role=&quot;tabpanel&quot;
+    id=&quot;jerry-tab&quot;
+    aria-labelledby=&quot;jerry&quot;
+  &gt;
+    &lt;p&gt;Hello, Newman.&lt;/p&gt;
+    &lt;p&gt;– Jerry&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div
+    class=&quot;has-xs-padding&quot;
+    tabindex=&quot;0&quot;
+    role=&quot;tabpanel&quot;
+    id=&quot;elaine-tab&quot;
+    aria-labelledby=&quot;elaine&quot;
+    hidden
+  &gt;
+    &lt;p&gt;Get out!&lt;/p&gt;
+    &lt;p&gt;– Elaine&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div
+    class=&quot;has-xs-padding&quot;
+    tabindex=&quot;0&quot;
+    role=&quot;tabpanel&quot;
+    id=&quot;cosmo-tab&quot;
+    aria-labelledby=&quot;cosmo&quot;
+    hidden
+  &gt;
+    &lt;p&gt;Giddyup!&lt;/p&gt;
+    &lt;p&gt;– Kramer&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div
+    class=&quot;has-xs-padding&quot;
+    tabindex=&quot;0&quot;
+    role=&quot;tabpanel&quot;
+    id=&quot;george-tab&quot;
+    aria-labelledby=&quot;george&quot;
+    hidden
+  &gt;
+    &lt;p&gt;Serenity now.&lt;/p&gt;
+    &lt;p&gt;– George&lt;/p&gt;
+  &lt;/div&gt;
 &lt;/div&gt;
 
-
-
+&lt;!-- sample JS based on example in w3 --&gt;
+&lt;!-- link: https://www.w3.org/TR/wai-aria-practices-1.1/examples/tabs/tabs-1/js/tabs.js --&gt;
 &lt;script&gt;
+  (function () {
+    // implementation approaches may vary, but tabs should always be keyboard accessible
+    // and will likely require listeners for left/right keys
+    var tabs = document.querySelectorAll(&#39;[role=&quot;tab&quot;]&#39;);
+    var panels = document.querySelectorAll(&#39;[role=&quot;tabpanel&quot;]&#39;);
+    var activeState = &#39;c-tabs__tab--active&#39;;
+    var activeColor = &#39;has-text-teal&#39;;
+    var currentIndex = 0;
 
-window.addEventListener(&quot;load&quot;, function() {
-	// store tabs variable
-	var myTabs = document.querySelectorAll(&quot;.c-tabs__link&quot;);
-  function myTabClicks(tabClickEvent) {
-		var activeTabClass = &#39;c-tabs__link--active&#39;;
-		var activePaneClass = &#39;c-tab-panes__pane--active&#39;;
-		for (var i = 0; i &lt; myTabs.length; i++) {
-			myTabs[i].classList.remove(activeTabClass);
-		}
-		var clickedTab = tabClickEvent.currentTarget;
-		clickedTab.classList.add(activeTabClass);
-		tabClickEvent.preventDefault();
-		var myContentPanes = document.querySelectorAll(&quot;.c-tab-panes__pane&quot;);
-		for (i = 0; i &lt; myContentPanes.length; i++) {
-			myContentPanes[i].classList.remove(activePaneClass);
-		}
-		var anchorReference = tabClickEvent.target;
-		var activePaneId = anchorReference.getAttribute(&quot;href&quot;);
-		var activePane = document.querySelector(activePaneId);
-		activePane.classList.add(activePaneClass);
-	}
-	
-	for (i = 0; i &lt; myTabs.length; i++) {
-		myTabs[i].addEventListener(&quot;click&quot;, myTabClicks)
-	}
-});
+    function activateTab(tab) {
+      // visual style changes
+      tab.classList.add(activeState, activeColor);
+
+      // Remove tabindex attribute
+      tab.removeAttribute(&#39;tabindex&#39;);
+
+      // Set the tab as selected
+      tab.setAttribute(&#39;aria-selected&#39;, &#39;true&#39;);
+
+      // Get the value of aria-controls (which is an ID)
+      var controls = tab.getAttribute(&#39;aria-controls&#39;);
+
+      // Remove hidden attribute from tab panel to make it visible
+      document.getElementById(controls).removeAttribute(&#39;hidden&#39;);
+
+      // update current index
+      currentIndex = parseInt(tab.dataset.order);
+
+      // update focus
+      tab.focus();
+    }
+    function deactivateTabs() {
+      for (var i = 0; i &lt; tabs.length; ++i) {
+        tabs[i].classList.remove(activeState, activeColor);
+        tabs[i].setAttribute(&#39;tabindex&#39;, &#39;-1&#39;);
+        tabs[i].setAttribute(&#39;aria-selected&#39;, &#39;false&#39;);
+      }
+      for (var p = 0; p &lt; panels.length; p++) {
+        panels[p].setAttribute(&#39;hidden&#39;, &#39;hidden&#39;);
+      }
+    }
+    function onClick(event) {
+      // deactivate all tabs
+      deactivateTabs();
+      // activate current
+      activateTab(event.target);
+    }
+    function onKeyUp(event) {
+      var isOnFirst = currentIndex === 0;
+      var isOnLast = currentIndex === tabs.length - 1;
+      var noTabActive = currentIndex === -1;
+      var isLeftArrow = event.keyCode === 37;
+      var isRightArrow = event.keyCode === 39;
+
+      if ((isLeftArrow || isRightArrow) &amp;&amp; noTabActive) {
+        tabs[0].click();
+      } else if (isLeftArrow &amp;&amp; isOnFirst) {
+        tabs[tabs.length - 1].click();
+      } else if (isLeftArrow) {
+        tabs[currentIndex - 1].click();
+      } else if (isRightArrow &amp;&amp; isOnLast) {
+        tabs[0].click();
+      } else if (isRightArrow) {
+        tabs[currentIndex + 1].click();
+      }
+    }
+    for (var i = 0; i &lt; tabs.length; ++i) {
+      // assign an index to the tab
+      tabs[i].dataset.order = i;
+      // click display/hide behavior
+      tabs[i].addEventListener(&#39;click&#39;, onClick);
+      // navigate through tabs with left/right keys
+      tabs[i].addEventListener(&#39;keyup&#39;, onKeyUp);
+    }
+  })();
 &lt;/script&gt;
 </code></pre>
     </div>
