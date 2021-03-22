@@ -1664,6 +1664,7 @@
       "modifiers": [],
       "modifierList": [
         "has-border",
+        "has-featured-border",
         "has-styled-border"
       ],
       "preview": "",

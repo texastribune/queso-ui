@@ -1360,6 +1360,14 @@
       "template": "<div class=\"{{ className }} has-text-black has-padding\">Bordered</div>",
       "preview": "<div class=\"has-border has-text-black has-padding\">Bordered</div>"
     },
+    "has-featured-border": {
+      "name": ".has-featured-border",
+      "className": "has-featured-border",
+      "description": "A thick yellow border on top and thin gray borders everywhere else. Used to draw attention to a box of content. Used on the home-page featured series module and the live-blog table of contents.",
+      "type": "modifier",
+      "template": "<div class=\"{{ className }} has-text-black has-padding\">Bordered</div>",
+      "preview": "<div class=\"has-featured-border has-text-black has-padding\">Bordered</div>"
+    },
     "has-styled-border": {
       "name": ".has-styled-border",
       "className": "has-styled-border",

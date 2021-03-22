@@ -13556,6 +13556,10 @@
         }
       ]
     },
+    "has-featured-border": {
+      "className": "has-featured-border",
+      "data": []
+    },
     "has-styled-border": {
       "className": "has-styled-border",
       "data": [

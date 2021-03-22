@@ -1361,6 +1361,14 @@
       "preview": "<div class=\"has-border has-text-black has-padding\">Bordered</div>"
     },
     {
+      "name": ".has-featured-border",
+      "className": "has-featured-border",
+      "description": "A thick yellow border on top and thin gray borders everywhere else. Used to draw attention to a box of content. Used on the home-page featured series module and the live-blog table of contents.",
+      "type": "modifier",
+      "template": "<div class=\"{{ className }} has-text-black has-padding\">Bordered</div>",
+      "preview": "<div class=\"has-featured-border has-text-black has-padding\">Bordered</div>"
+    },
+    {
       "name": ".has-styled-border",
       "className": "has-styled-border",
       "description": "Uses <code>currentColor</code> to inherit a <code>border-color</code> from <code>color</code>. Can be coupled with the <code>has-text-&lt;color&gt;</code> helper. This border is a common pattern in sidebar blocks and ads.",
