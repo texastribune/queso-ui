@@ -3,6 +3,7 @@
 // Helpers for borders. {{isHelper}}
 //
 // .has-border - This is our standard border color.
+// .has-featured-border - A thick yellow border on top and thin gray borders everywhere else. Used to draw attention to a box of content. Used on the home-page featured series module and the live-blog table of contents.
 // .has-styled-border - Uses `currentColor` to inherit a `border-color` from `color`. Can be coupled with the `has-text-<color>` helper. This border is a common pattern in sidebar blocks and ads.
 //
 // Markup: <div class="{{ className }} has-text-black has-padding">Bordered</div>
@@ -12,6 +13,11 @@
 //
 .has-border {
   border: 1px solid $color-gray-light;
+}
+
+.has-featured-border {
+  border: 1px solid $color-gray-light;
+  border-top: 5px solid $color-yellow-tribune;
 }
 
 .has-styled-border {
