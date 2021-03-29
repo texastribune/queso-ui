@@ -814,7 +814,7 @@
     },
     {
       "name": "Site footer (c-site-footer)",
-      "description": "<p>The base footer on our site. Set the layout based on the number of columns needed. <br><br>\n<em>Example CSS for layout:</em></p>\n<pre class=\"hljs\"><code class=\"language-css\"><span class=\"hljs-selector-class\">.c-site-footer__inner</span> {<span class=\"hljs-attribute\">grid-template-columns</span>: <span class=\"hljs-built_in\">repeat</span>(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">1</span>fr);}\n</code></pre>\n<br>\n<p>To render the standard footer, use a combination of <code>c-site-footer__inner--standard</code> for layout and <code>c-site-footer__links--standard</code> for proper link spacing.</p>\n",
+      "description": "<p>The base footer on our site. Set the layout based on the number of columns needed. <br><br>\n<em>Example CSS for layout:</em></p>\n<pre class=\"hljs\"><code class=\"language-css\"><span class=\"hljs-selector-class\">.c-site-footer__inner</span> {grid-template-<span class=\"hljs-attribute\">columns</span>: <span class=\"hljs-built_in\">repeat</span>(<span class=\"hljs-number\">4</span>, <span class=\"hljs-number\">1</span>fr);}\n</code></pre>\n<br>\n<p>To render the standard footer, use a combination of <code>c-site-footer__inner--standard</code> for layout and <code>c-site-footer__links--standard</code> for proper link spacing.</p>\n",
       "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/6-components/site-footer/_site-footer.scss#L1",
       "label": "Site footer",
       "type": "cssClass",
