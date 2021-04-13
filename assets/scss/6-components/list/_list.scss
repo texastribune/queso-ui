@@ -2,21 +2,26 @@
 //
 // Our standard list is just plain ol' bullets
 //
+// .c-list--hoverable - Bullets become yellow on hover; best used for a list of links maybe.
+// .c-list--indented - Lists used in the context of an article
+//
 // Markup: 6-components/list/list.html
 //
 // Styleguide 6.1.3
 .c-list {
   padding-left: $size-b;
 
-  li {
+  &:not(ol) {
     list-style: disc;
+  }
 
-    &::marker {
-      color: $color-black-off;
-    }
-
-    &:hover::marker {
+  &--hoverable {
+    li:hover::marker {
       color: $color-yellow-tribune;
     }
+  }
+
+  &--indented {
+    padding-left: 3.5rem;
   }
 }

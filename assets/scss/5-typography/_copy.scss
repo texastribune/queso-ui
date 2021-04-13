@@ -1,0 +1,41 @@
+// Copy (t-copy)
+//
+// This helper will set reasonable defaults on copy.
+//
+// .t-copy--level-2 - Adds highest layer of hierarchy to text. Level modifiers are typically used on heading tags.
+// .t-copy--level-3 - Adds next layer of hierarchy to text.
+// .t-copy--level-4 - Adds lowest layer of hierarchy to text.
+//
+// Markup: <h2 class="t-copy {{ className }}">Example of {{ className }} text</h2><p class="t-copy">Normal paragraph of text with no modifier.</p>
+//
+// Styleguide 5.1.1
+//
+.t-copy {
+  @include font-setting('secondary');
+  line-height: $font-line-height-b;
+  margin: $size-b auto;
+  max-width: $story-narrow;
+
+  // must be em for SASSmq helper
+  @include mq($until: ($story-narrow / 1rem) + 2em) {
+    // Hack: breakpoint divides by 1rem for compatible units
+    padding: 0 $size-xs;
+  }
+
+  &--level-2 {
+    font-size: $size-m;
+    margin-top: $size-giant;
+  }
+
+  &--level-3 {
+    @include font-setting('primary');
+    font-size: $size-b;
+    margin-top: $size-xxl;
+  }
+
+  &--level-4 {
+    @include font-setting('primary');
+    font-size: $size-s;
+    margin-top: $size-xl;
+  }
+}
