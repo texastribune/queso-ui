@@ -1,5 +1,9 @@
 {
   "usage": {
+    "t-copy": {
+      "className": "t-copy",
+      "data": []
+    },
     "t-headline": {
       "className": "t-headline",
       "data": [
@@ -2723,6 +2727,18 @@
           "total_count": 1
         }
       ]
+    },
+    "t-copy--level-2": {
+      "className": "t-copy--level-2",
+      "data": []
+    },
+    "t-copy--level-3": {
+      "className": "t-copy--level-3",
+      "data": []
+    },
+    "t-copy--level-4": {
+      "className": "t-copy--level-4",
+      "data": []
     },
     "t-serif": {
       "className": "t-serif",
@@ -7046,6 +7062,14 @@
           "total_count": 2
         }
       ]
+    },
+    "c-list--hoverable": {
+      "className": "c-list--hoverable",
+      "data": []
+    },
+    "c-list--indented": {
+      "className": "c-list--indented",
+      "data": []
     },
     "c-loading--xs": {
       "className": "c-loading--xs",

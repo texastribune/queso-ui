@@ -36,6 +36,10 @@
       "depth": 1,
       "list": [
         {
+          "className": "t-copy",
+          "name": "Copy (t-copy)"
+        },
+        {
           "className": "t-<font-variant>",
           "name": "Text font variant (t-<font-variant>)"
         },

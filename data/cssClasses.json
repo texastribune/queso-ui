@@ -1,6 +1,31 @@
 {
   "cssClasses": [
     {
+      "name": "Copy (t-copy)",
+      "description": "<p>This helper will set reasonable defaults on copy.</p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/5-typography/_copy.scss#L1",
+      "label": "Copy",
+      "type": "cssClass",
+      "id": 5,
+      "depth": 2,
+      "className": "t-copy",
+      "details": {
+        "isHelper": false,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "template": "<h2 class=\"t-copy {{ className }}\">Example of {{ className }} text</h2><p class=\"t-copy\">Normal paragraph of text with no modifier.</p>",
+      "modifiers": [],
+      "modifierList": [
+        "t-copy--level-2",
+        "t-copy--level-3",
+        "t-copy--level-4"
+      ],
+      "preview": "<h2 class=\"t-copy \">Example of  text</h2><p class=\"t-copy\">Normal paragraph of text with no modifier.</p>",
+      "section": "Typography"
+    },
+    {
       "name": "Text font variant (t-<font-variant>)",
       "description": "<p>Helper to define if serif or sans font is to be used. This uses the <code>@include font-setting</code> mixin, which establishes the font-family according to whether or not the <code>.fonts-loaded</code> class is present. <br><br> General rule for this is <code>t-serif</code> <em>for editorial</em> and <code>t-sans</code> <em>for everything else</em><br><br><strong>Note:</strong> The default font is <code>t-sans</code>. That means most of the time you won't need to explicitly set it. </p>\n",
       "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/5-typography/_t-helpers.scss#L1",
@@ -718,10 +743,13 @@
         "isTool": false,
         "keywords": []
       },
-      "template": "<ul class=\"c-list\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n",
+      "template": "<ul class=\"c-list {{ className }}\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n\n<ol class=\"c-list {{ className }}\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ol>\n",
       "modifiers": [],
-      "modifierList": [],
-      "preview": "<ul class=\"c-list\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n",
+      "modifierList": [
+        "c-list--hoverable",
+        "c-list--indented"
+      ],
+      "preview": "<ul class=\"c-list \">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n\n<ol class=\"c-list \">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ol>\n",
       "section": "Components"
     },
     {

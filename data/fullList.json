@@ -1,5 +1,6 @@
 {
   "fullList": [
+    "t-copy",
     "t-headline",
     "t-widgethead",
     "t-sectionhead",
@@ -46,6 +47,9 @@
     "has-notch",
     "has-vert-bar",
     "has-box-shadow",
+    "t-copy--level-2",
+    "t-copy--level-3",
+    "t-copy--level-4",
     "t-serif",
     "t-sans",
     "t-titlecase",
@@ -97,6 +101,8 @@
     "c-block-feed__item--no-border-from-bp-m",
     "c-block-grid--bordered",
     "c-block-grid--min-100",
+    "c-list--hoverable",
+    "c-list--indented",
     "c-loading--xs",
     "c-loading--s",
     "c-loading--tight",

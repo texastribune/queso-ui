@@ -1,5 +1,29 @@
 {
   "modifiers": {
+    "t-copy--level-2": {
+      "name": ".t-copy--level-2",
+      "className": "t-copy--level-2",
+      "description": "Adds highest layer of hierarchy to text. Level modifiers are typically used on heading tags.",
+      "type": "modifier",
+      "template": "<h2 class=\"t-copy {{ className }}\">Example of {{ className }} text</h2><p class=\"t-copy\">Normal paragraph of text with no modifier.</p>",
+      "preview": "<h2 class=\"t-copy t-copy--level-2\">Example of t-copy--level-2 text</h2><p class=\"t-copy\">Normal paragraph of text with no modifier.</p>"
+    },
+    "t-copy--level-3": {
+      "name": ".t-copy--level-3",
+      "className": "t-copy--level-3",
+      "description": "Adds next layer of hierarchy to text.",
+      "type": "modifier",
+      "template": "<h2 class=\"t-copy {{ className }}\">Example of {{ className }} text</h2><p class=\"t-copy\">Normal paragraph of text with no modifier.</p>",
+      "preview": "<h2 class=\"t-copy t-copy--level-3\">Example of t-copy--level-3 text</h2><p class=\"t-copy\">Normal paragraph of text with no modifier.</p>"
+    },
+    "t-copy--level-4": {
+      "name": ".t-copy--level-4",
+      "className": "t-copy--level-4",
+      "description": "Adds lowest layer of hierarchy to text.",
+      "type": "modifier",
+      "template": "<h2 class=\"t-copy {{ className }}\">Example of {{ className }} text</h2><p class=\"t-copy\">Normal paragraph of text with no modifier.</p>",
+      "preview": "<h2 class=\"t-copy t-copy--level-4\">Example of t-copy--level-4 text</h2><p class=\"t-copy\">Normal paragraph of text with no modifier.</p>"
+    },
     "t-serif": {
       "name": ".t-serif",
       "className": "t-serif",
@@ -407,6 +431,22 @@
       "type": "modifier",
       "template": "<!-- the variations for this one occur on the items -->\n<ul class=\"c-block-grid has-giant-btm-marg {{ className }}\">\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n  <li class=\"c-block-grid__item\">\n    {% include \"6-components/story-block/story-block-trending.html\" %}\n  </li>\n</ul>\n",
       "preview": "<!-- the variations for this one occur on the items -->\n<ul class=\"c-block-grid has-giant-btm-marg c-block-grid--min-100\">\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n  <li class=\"c-block-grid__item\">\n    <article class=\"c-story-block c-story-block--stack-from-bp-m\" style=\"max-width:200px\">\n  <div class=\"c-story-block__text\">\n    <!-- headline (h# tag will depend on context) -->\n    <h3 class=\"t-size-s t-serif t-lh-s t-lsp-s t-links-underlined-hover has-xxxs-btm-marg\"><a class=\"has-text-black-off\"><a href=\"#\">The best and worst moments in Texas politics of 2019</a></h3>\n  </div>\n  <figure class=\"c-story-block__image-wrap l-display-block l-width-full\">\n    <a href=\"#\" tabindex=\"-1\"><img class=\"l-display-block l-width-full\" src=\"/queso-ui/img/DEFAULT_LEAD_ART.jpg\" alt=\"Placeholder image of Texas Capitol dome and Texas Tribune branding\"></a>\n  </figure>\n</article>\n\n\n  </li>\n</ul>\n"
+    },
+    "c-list--hoverable": {
+      "name": ".c-list--hoverable",
+      "className": "c-list--hoverable",
+      "description": "Bullets become yellow on hover; best used for a list of links maybe.",
+      "type": "modifier",
+      "template": "<ul class=\"c-list {{ className }}\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n\n<ol class=\"c-list {{ className }}\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ol>\n",
+      "preview": "<ul class=\"c-list c-list--hoverable\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n\n<ol class=\"c-list c-list--hoverable\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ol>\n"
+    },
+    "c-list--indented": {
+      "name": ".c-list--indented",
+      "className": "c-list--indented",
+      "description": "Lists used in the context of an article",
+      "type": "modifier",
+      "template": "<ul class=\"c-list {{ className }}\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n\n<ol class=\"c-list {{ className }}\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ol>\n",
+      "preview": "<ul class=\"c-list c-list--indented\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ul>\n\n<ol class=\"c-list c-list--indented\">\n  <li>Bacon</li>\n  <li>Eggs</li>\n  <li>Cheese</li>\n  <li>Potato</li>\n</ol>\n"
     },
     "c-loading--xs": {
       "name": ".c-loading--xs",
