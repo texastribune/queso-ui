@@ -78,7 +78,7 @@ $size-s: .92rem;
 $size-xs: .85rem;
 $size-xxs: .7rem;
 $size-xxxs: .55rem;
-$size-tiny: $size-b / 4;
+$size-tiny: $size-b * 0.25;
 
 // Map of all sizes for easy iteration
 $size-map: (

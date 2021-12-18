@@ -10,14 +10,18 @@
 //
 // Styleguide 5.1.1
 //
+@use "sass:math";
+
 .t-copy {
   @include font-setting('secondary');
   line-height: $font-line-height-b;
   margin: $size-b auto;
   max-width: $story-narrow;
 
+  $t-copy-bp: (math.div($story-narrow, 1rem)) + 2em;
+
   // must be em for SASSmq helper
-  @include mq($until: ($story-narrow / 1rem) + 2em) {
+  @include mq($until: $t-copy-bp) {
     // Hack: breakpoint divides by 1rem for compatible units
     padding: 0 $size-xs;
   }

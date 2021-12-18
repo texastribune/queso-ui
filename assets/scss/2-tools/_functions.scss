@@ -8,6 +8,8 @@
 //
 // Styleguide 2.1.3
 //
+@use "sass:math";
+
 @function str-replace($string, $search, $replace: '') {
   $index: str-index($string, $search);
 
@@ -29,5 +31,5 @@
 //
 
 @function px-to-rem($pixel-size, $context: $font-root) {
-  @return ($pixel-size / $context) * 1rem;
+  @return math.div($pixel-size, $context) * 1rem;
 }
