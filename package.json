@@ -147,6 +147,6 @@
   },
   "dependencies": {
     "modern-normalize": "^1.0.0",
-    "sass-mq": "^5.0.0"
+    "sass-mq": "^6.0.0-beta.1"
   }
 }
