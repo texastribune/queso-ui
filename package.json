@@ -7,7 +7,6 @@
     "lint:css": "stylelint 'assets/**/**.scss'",
     "lint:js": "eslint docs/config --ext .ts,.js",
     "lint": "npm run lint:css && npm run lint:js",
-    "deploy": "push-dir --dir=docs/dist --branch=gh-pages",
     "build": "npm run compile && SITE_ENV=production node docs/config/tasks/build.js && SITE_ENV=production eleventy --pathprefix=queso-ui",
     "dev": "npm run compile && SITE_ENV=development node docs/config/tasks/build.js && SITE_ENV=development eleventy --serve",
     "test": "npm run lint && npm run build",
@@ -141,7 +140,6 @@
     "passes-wcag": "^0.2.1",
     "prettier": "2.1.2",
     "puppeteer": "^5.5.0",
-    "push-dir": "^0.4.1",
     "stylelint": "^13.0.0",
     "typescript": "^4.0.3"
   },
