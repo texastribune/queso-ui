@@ -120,7 +120,7 @@
   },
   "homepage": "https://github.com/texastribune/queso-ui#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.0",
+    "@11ty/eleventy": "^2.0.0",
     "@texastribune/queso-tools": "^2.2.5",
     "@types/kss": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^4.1.1",
