@@ -15,9 +15,9 @@
     "docs": "npm run compile && SITE_ENV=development node docs/src/data/docs.js",
     "dates": "npm run compile && SITE_ENV=development node docs/config/tasks/build.js && SITE_ENV=workspace eleventy --serve"
   },
-  "engines" : { 
-    "npm" : ">=8.0.0 <9.0.0",
-    "node" : ">=16.0.0 <20.0.0"
+  "engines": {
+    "npm": ">=8.0.0 <9.0.0",
+    "node": ">=16.0.0 <20.0.0"
   },
   "files": [
     "/assets"
@@ -138,7 +138,7 @@
     "fs-extra": "^10.0.0",
     "kss": "git+https://github.com/kss-node/kss-node.git",
     "markdown-it": "^12.3.2",
-    "np": "^7.5.0",
+    "np": "^8.0.4",
     "nunjucks": "^3.1.7",
     "ora": "^5.1.0",
     "passes-wcag": "^0.2.1",
