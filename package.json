@@ -127,7 +127,7 @@
     "@11ty/eleventy": "^2.0.1",
     "@texastribune/queso-tools": "^2.2.5",
     "@types/kss": "^3.0.1",
-    "@typescript-eslint/eslint-plugin": "^4.1.1",
+    "@typescript-eslint/eslint-plugin": "^6.11.0",
     "@typescript-eslint/parser": "^4.1.1",
     "axios": "^0.21.0",
     "eslint": "^7.2.0",
