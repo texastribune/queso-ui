@@ -1,0 +1,11 @@
+{% if className == 'l-flex' %}
+    <div class="has-padding {{className}}">
+        <div class="has-bg-black has-text-white" style="width: 150px; height: 150px;">1</div>
+        <div class="has-bg-yellow" style="width: 150px; height: 150px;">2</div>
+    </div>    
+{% else %}
+<div class="has-padding has-section-padding has-border l-flex {{className}}">
+    <div class="has-bg-black has-text-white" style="width: 150px; height: 150px;">1</div>
+    <div class="has-bg-yellow" style="width: 150px; height: 150px;">2</div>
+  </div>
+{% endif %}
