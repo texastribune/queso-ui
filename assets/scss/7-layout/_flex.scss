@@ -5,8 +5,9 @@
 // .l-flex - **display:flex** Uses flexbox.
 // .l-flex-row - **flex-direction: row** Horizontal flexbox.
 // .l-flex-column - **flex-direction: column** Vertical flexbox.
-// .l-flex-center-items - **align-items: center** Center items vertically (for row).
-// .l-flex-center-content - **justify-content: center** Center items horizontally (for row).
+// .l-flex-ai-center - **align-items: center** Center items vertically (for row).
+// .l-flex-jc-center - **justify-content: center** Center items horizontally (for row).
+// .l-flex-jc-space - **justify-content: space-between** Evenly space items horizontally (for row).
 //
 // Markup: 7-layout/flex.html
 // 
@@ -25,10 +26,14 @@
   flex-direction: column;
 }
 
-.l-flex-center-items {
+.l-flex-ai-center {
   align-items: center;
 }
 
-.l-flex-center-content {
+.l-flex-jc-center {
   justify-content: center;
+}
+
+.l-flex-jc-space {
+  justify-content: space-between;
 }
