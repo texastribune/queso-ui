@@ -121,13 +121,18 @@ $letter-spacing-type: (
 // Helper classes for handling how words are allowed to wrap and break. {{isHelper}}
 //
 // .t-wrap-break - Allow a word to wrap to the next line mid-word
+// .t-wrap-balance - Allow a word to wrap to the next line, but try to keep the lines balanced. This isn't supported in all browsers and could be used in conjunction with our fork of [NYT's balanacer helper](https://github.com/texastribune/text-balancer).
 //
-// Markup: <p class="{{ className }}" style="width: 150px;">barbara.gervin.hawkins@house.texas.gov</p>
+// Markup: 5-typography/wrap.html
 //
 //
 // Styleguide 5.3.6
 .t-wrap-break {
   word-break: break-all;
+}
+
+.t-wrap-balance {
+  text-wrap: balance;
 }
 
 // Text weight (t-weight-<setting>)

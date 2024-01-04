@@ -1,6 +1,7 @@
 {
     "conventionalCommits.scopes": [
         "icons",
-        "deps"
+        "deps",
+        "type"
     ]
 }
