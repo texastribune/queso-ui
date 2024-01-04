@@ -1,13 +1,10 @@
 // Flex  (l-flex)
 //
-// Barebones flex helpers. This breaks some convention with other layout classes, but we use flexbox enough to justify it (no pun intended) {{isHelper}}
+// Barebones flex helpers. This breaks some convention with other layout classes, but we use flexbox enough to justify it. <br><br>💡 See [align-items](/sections/layout/l-ai-position/) and [justify-content](/sections/layout/l-jc-position/) helpers for alignment helpers. {{isHelper}}
 //
 // .l-flex - **display:flex** Uses flexbox.
-// .l-flex-row - **flex-direction: row** Horizontal flexbox.
+// .l-flex-row - **flex-direction: row** Horizontal flexbox. (default)
 // .l-flex-column - **flex-direction: column** Vertical flexbox.
-// .l-flex-ai-center - **align-items: center** Center items vertically (for row).
-// .l-flex-jc-center - **justify-content: center** Center items horizontally (for row).
-// .l-flex-jc-space - **justify-content: space-between** Evenly space items horizontally (for row).
 //
 // Markup: 7-layout/flex.html
 // 
@@ -24,16 +21,4 @@
 
 .l-flex-column {
   flex-direction: column;
-}
-
-.l-flex-ai-center {
-  align-items: center;
-}
-
-.l-flex-jc-center {
-  justify-content: center;
-}
-
-.l-flex-jc-space {
-  justify-content: space-between;
 }

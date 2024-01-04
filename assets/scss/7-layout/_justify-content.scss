@@ -1,0 +1,18 @@
+// Justify content (l-jc-<position>)
+//
+// Alignment utilities for flex/grid elements. {{isHelper}}
+//
+// l-jc-center - **align-items: center** Center items horizontally (if row).
+// l-jc-space - **justify-content: space-between** Evenly space items horizontally (if row).
+//
+// Markup: Parent: <code>display: flex</code> + <code>.{{className}}</code>  <div style="border: 2px solid black; height: 100px; display:grid" class="{{ className }}"><div class="has-bg-yellow has-padding">Child</div><div class="has-bg-black has-text-white has-padding">Child</div></div>
+//
+//
+// Styleguide 7.0.4
+.l-jc-center {
+  justify-content: center;
+}
+
+.l-jc-space {
+  justify-content: space-between;
+}
