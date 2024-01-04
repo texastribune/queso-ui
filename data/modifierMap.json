@@ -277,8 +277,16 @@
       "className": "t-wrap-break",
       "description": "Allow a word to wrap to the next line mid-word",
       "type": "modifier",
-      "template": "<p class=\"{{ className }}\" style=\"width: 150px;\">barbara.gervin.hawkins@house.texas.gov</p>",
-      "preview": "<p class=\"t-wrap-break\" style=\"width: 150px;\">barbara.gervin.hawkins@house.texas.gov</p>"
+      "template": "{% if className === 't-wrap-break' %}\n<p class=\"t-wrap-break\" style=\"width: 150px;\">barbara.gervin.hawkins@house.texas.gov</p>\n{% else %}\n<p class=\"{{className}}\" style=\"width: 150px;\">The best and worst moments in Texas politics</p>\n{% endif %}\n",
+      "preview": "\n<p class=\"t-wrap-break\" style=\"width: 150px;\">barbara.gervin.hawkins@house.texas.gov</p>\n\n"
+    },
+    {
+      "name": ".t-wrap-balance",
+      "className": "t-wrap-balance",
+      "description": "Allow a word to wrap to the next line, but try to keep the lines balanced. This isn't supported in all browsers and could be used in conjunction with our fork of <a href=\"https://github.com/texastribune/text-balancer\">NYT's balanacer helper</a>.",
+      "type": "modifier",
+      "template": "{% if className === 't-wrap-break' %}\n<p class=\"t-wrap-break\" style=\"width: 150px;\">barbara.gervin.hawkins@house.texas.gov</p>\n{% else %}\n<p class=\"{{className}}\" style=\"width: 150px;\">The best and worst moments in Texas politics</p>\n{% endif %}\n",
+      "preview": "\n<p class=\"t-wrap-balance\" style=\"width: 150px;\">The best and worst moments in Texas politics</p>\n\n"
     },
     {
       "name": ".t-weight-bold",

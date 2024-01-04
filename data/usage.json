@@ -6058,6 +6058,10 @@
         }
       ]
     },
+    "t-wrap-balance": {
+      "className": "t-wrap-balance",
+      "data": []
+    },
     "t-weight-bold": {
       "className": "t-weight-bold",
       "data": [

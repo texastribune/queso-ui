@@ -330,10 +330,11 @@
         "isTool": false,
         "keywords": []
       },
-      "template": "<p class=\"{{ className }}\" style=\"width: 150px;\">barbara.gervin.hawkins@house.texas.gov</p>",
+      "template": "{% if className === 't-wrap-break' %}\n<p class=\"t-wrap-break\" style=\"width: 150px;\">barbara.gervin.hawkins@house.texas.gov</p>\n{% else %}\n<p class=\"{{className}}\" style=\"width: 150px;\">The best and worst moments in Texas politics</p>\n{% endif %}\n",
       "modifiers": [],
       "modifierList": [
-        "t-wrap-break"
+        "t-wrap-break",
+        "t-wrap-balance"
       ],
       "preview": "",
       "section": "Typography"
@@ -341,7 +342,7 @@
     {
       "name": "Text weight (t-weight-<setting>)",
       "description": "<p>Helper for adding bold/normal <code>font-weight</code>. Sometimes individual <code>&lt;strong&gt;</code> can be redundant tags. </p>\n",
-      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/5-typography/_t-helpers.scss#L133",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/5-typography/_t-helpers.scss#L138",
       "label": "Text weight",
       "type": "cssClass",
       "id": 5,
