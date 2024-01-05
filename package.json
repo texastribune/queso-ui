@@ -1,13 +1,12 @@
 {
   "name": "@texastribune/queso-ui",
-  "version": "10.3.0",
+  "version": "10.3.3",
   "description": "Asset library of SCSS and SVG files",
   "scripts": {
     "prettier": "prettier --write './docs/**/*.js'",
     "lint:css": "stylelint 'assets/**/**.scss'",
     "lint:js": "eslint docs/config --ext .ts,.js",
     "lint": "npm run lint:css && npm run lint:js",
-    "deploy": "push-dir --dir=docs/dist --branch=gh-pages",
     "build": "npm run compile && SITE_ENV=production node docs/config/tasks/build.js && SITE_ENV=production eleventy --pathprefix=queso-ui",
     "dev": "npm run compile && SITE_ENV=development node docs/config/tasks/build.js && SITE_ENV=development eleventy --serve",
     "test": "npm run lint && npm run build",
@@ -15,6 +14,10 @@
     "compile": "tsc",
     "docs": "npm run compile && SITE_ENV=development node docs/src/data/docs.js",
     "dates": "npm run compile && SITE_ENV=development node docs/config/tasks/build.js && SITE_ENV=workspace eleventy --serve"
+  },
+  "engines": {
+    "npm": ">=8.0.0 <9.0.0",
+    "node": ">=16.0.0 <20.0.0"
   },
   "files": [
     "/assets"
@@ -121,12 +124,12 @@
   },
   "homepage": "https://github.com/texastribune/queso-ui#readme",
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^2.0.1",
     "@texastribune/queso-tools": "^2.2.5",
     "@types/kss": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^4.1.1",
     "@typescript-eslint/parser": "^4.1.1",
-    "axios": "^0.21.0",
+    "axios": "^1.6.4",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^8.3.0",
@@ -134,14 +137,13 @@
     "fast-glob": "^3.0.1",
     "fs-extra": "^10.0.0",
     "kss": "git+https://github.com/kss-node/kss-node.git",
-    "markdown-it": "^12.0.1",
-    "np": "^7.5.0",
+    "markdown-it": "^12.3.2",
+    "np": "^8.0.4",
     "nunjucks": "^3.1.7",
     "ora": "^5.1.0",
     "passes-wcag": "^0.2.1",
     "prettier": "2.1.2",
-    "puppeteer": "^5.5.0",
-    "push-dir": "^0.4.1",
+    "puppeteer": "^19.4.0",
     "stylelint": "^13.0.0",
     "typescript": "^4.0.3"
   },

@@ -1,0 +1,8 @@
+{
+    "conventionalCommits.scopes": [
+        "icons",
+        "deps",
+        "layout",
+        "type"
+    ]
+}

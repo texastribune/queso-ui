@@ -1,0 +1,13 @@
+// Align items (l-ai-<position>)
+//
+// Alignment utilities for flex/grid elements. {{isHelper}}
+//
+// l-ai-center - **align-items: center** Center items vertically (if row).
+//
+// Markup: Parent: <code>display: flex</code> + <code>.{{className}}</code>  <div style="border: 2px solid black; height: 100px; display:flex" class="{{ className }}"><div class="has-bg-yellow has-padding">Child</div></div>
+//
+//
+// Styleguide 7.0.4
+.l-ai-center {
+  align-items: center;
+}

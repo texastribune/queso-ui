@@ -17,18 +17,10 @@
   &--light {
     background-color: $color-white-pure;
     border-bottom: 1px solid $color-white-off;
-
-    .c-icon {
-      color: $color-black-off;
-    }
   }
 
   &--dark {
     background-color: $color-black-off;
-
-    .c-icon {
-      color: $color-yellow-tribune;
-    }
   }
 
   &__top {
