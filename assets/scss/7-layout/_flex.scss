@@ -1,0 +1,24 @@
+// Flex  (l-flex)
+//
+// Barebones flex helpers. This breaks some convention with other layout classes, but we use flexbox enough to justify it. <br><br>💡 See [align-items](/sections/layout/l-ai-position/) and [justify-content](/sections/layout/l-jc-position/) helpers for alignment helpers. {{isHelper}}
+//
+// .l-flex - **display:flex** Uses flexbox.
+// .l-flex-row - **flex-direction: row** Horizontal flexbox. (default)
+// .l-flex-column - **flex-direction: column** Vertical flexbox.
+//
+// Markup: 7-layout/flex.html
+// 
+//
+// Styleguide 7.0.4
+
+.l-flex {
+  display: flex;
+}
+
+.l-flex-row {
+  flex-direction: row;
+}
+
+.l-flex-column {
+  flex-direction: column;
+}
