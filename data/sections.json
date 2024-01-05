@@ -280,12 +280,24 @@
           "name": "Content Grid (l-content-grid)"
         },
         {
+          "className": "l-ai-<position>",
+          "name": "Align items (l-ai-<position>)"
+        },
+        {
           "className": "l-align-<position>",
           "name": "Align (l-align-<position>)"
         },
         {
           "className": "l-display-<prop>",
           "name": "Display  (l-display-<prop>)"
+        },
+        {
+          "className": "l-flex",
+          "name": "Flex  (l-flex)"
+        },
+        {
+          "className": "l-jc-<position>",
+          "name": "Justify content (l-jc-<position>)"
         },
         {
           "className": "l-multicol",

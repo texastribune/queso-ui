@@ -1302,6 +1302,29 @@
       "section": "Layout"
     },
     {
+      "name": "Align items (l-ai-<position>)",
+      "description": "<p>Alignment utilities for flex/grid elements. </p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/7-layout/_align-items.scss#L1",
+      "label": "Align items",
+      "type": "cssClass",
+      "id": 7,
+      "depth": 2,
+      "className": "l-ai-<position>",
+      "details": {
+        "isHelper": true,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "template": "Parent: <code>display: flex</code> + <code>.{{className}}</code>  <div style=\"border: 2px solid black; height: 100px; display:flex\" class=\"{{ className }}\"><div class=\"has-bg-yellow has-padding\">Child</div></div>",
+      "modifiers": [],
+      "modifierList": [
+        "l-ai-center"
+      ],
+      "preview": "",
+      "section": "Layout"
+    },
+    {
       "name": "Align (l-align-<position>)",
       "description": "<p>Mostly used for centering and some assume a flex parent. </p>\n",
       "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/7-layout/_align.scss#L1",
@@ -1349,6 +1372,55 @@
         "l-display-ib",
         "l-display-block",
         "l-clearfix"
+      ],
+      "preview": "",
+      "section": "Layout"
+    },
+    {
+      "name": "Flex  (l-flex)",
+      "description": "<p>Barebones flex helpers. This breaks some convention with other layout classes, but we use flexbox enough to justify it. <br><br>💡 See <a href=\"/sections/layout/l-ai-position/\">align-items</a> and <a href=\"/sections/layout/l-jc-position/\">justify-content</a> helpers for alignment helpers. </p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/7-layout/_flex.scss#L1",
+      "label": "Flex",
+      "type": "cssClass",
+      "id": 7,
+      "depth": 2,
+      "className": "l-flex",
+      "details": {
+        "isHelper": true,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "template": "{% if className == 'l-flex' %}\n    <div class=\"has-padding {{className}}\">\n        <div class=\"has-bg-black has-text-white\" style=\"width: 150px; height: 150px;\">1</div>\n        <div class=\"has-bg-yellow\" style=\"width: 150px; height: 150px;\">2</div>\n    </div>    \n{% else %}\n<div class=\"has-padding has-section-padding has-border l-flex {{className}}\">\n    <div class=\"has-bg-black has-text-white\" style=\"width: 150px; height: 150px;\">1</div>\n    <div class=\"has-bg-yellow\" style=\"width: 150px; height: 150px;\">2</div>\n  </div>\n{% endif %}",
+      "modifiers": [],
+      "modifierList": [
+        "l-flex",
+        "l-flex-row",
+        "l-flex-column"
+      ],
+      "preview": "",
+      "section": "Layout"
+    },
+    {
+      "name": "Justify content (l-jc-<position>)",
+      "description": "<p>Alignment utilities for flex/grid elements. </p>\n",
+      "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/7-layout/_justify-content.scss#L1",
+      "label": "Justify content",
+      "type": "cssClass",
+      "id": 7,
+      "depth": 2,
+      "className": "l-jc-<position>",
+      "details": {
+        "isHelper": true,
+        "isRecipe": false,
+        "isTool": false,
+        "keywords": []
+      },
+      "template": "Parent: <code>display: flex</code> + <code>.{{className}}</code>  <div style=\"border: 2px solid black; height: 100px; display:flex\" class=\"{{ className }}\"><div class=\"has-bg-yellow has-padding\">Child</div><div class=\"has-bg-black has-text-white has-padding\">Child</div></div>",
+      "modifiers": [],
+      "modifierList": [
+        "l-jc-center",
+        "l-jc-space"
       ],
       "preview": "",
       "section": "Layout"

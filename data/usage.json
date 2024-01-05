@@ -8010,6 +8010,10 @@
         }
       ]
     },
+    "l-ai-center": {
+      "className": "l-ai-center",
+      "data": []
+    },
     "l-align-center-x": {
       "className": "l-align-center-x",
       "data": [
@@ -8817,6 +8821,26 @@
     },
     "l-clearfix": {
       "className": "l-clearfix",
+      "data": []
+    },
+    "l-flex": {
+      "className": "l-flex",
+      "data": []
+    },
+    "l-flex-row": {
+      "className": "l-flex-row",
+      "data": []
+    },
+    "l-flex-column": {
+      "className": "l-flex-column",
+      "data": []
+    },
+    "l-jc-center": {
+      "className": "l-jc-center",
+      "data": []
+    },
+    "l-jc-space": {
+      "className": "l-jc-space",
       "data": []
     },
     "l-height-full": {
