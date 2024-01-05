@@ -125,7 +125,7 @@
   "homepage": "https://github.com/texastribune/queso-ui#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
-    "@texastribune/queso-tools": "^2.2.5",
+    "@texastribune/queso-tools": "3.0",
     "@types/kss": "^3.0.1",
     "@typescript-eslint/eslint-plugin": "^4.1.1",
     "@typescript-eslint/parser": "^4.1.1",
