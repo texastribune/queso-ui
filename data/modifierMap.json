@@ -787,7 +787,7 @@
     {
       "name": "l-jc-center",
       "className": "l-jc-center",
-      "description": "<strong>align-items: center</strong> Center items horizontally (if row).",
+      "description": "<strong>justify-content: center</strong> Center items horizontally (if row).",
       "type": "modifier",
       "template": "Parent: <code>display: flex</code> + <code>.{{className}}</code>  <div style=\"border: 2px solid black; height: 100px; display:flex\" class=\"{{ className }}\"><div class=\"has-bg-yellow has-padding\">Child</div><div class=\"has-bg-black has-text-white has-padding\">Child</div></div>",
       "preview": "Parent: <code>display: flex</code> + <code>.l-jc-center</code>  <div style=\"border: 2px solid black; height: 100px; display:flex\" class=\"l-jc-center\"><div class=\"has-bg-yellow has-padding\">Child</div><div class=\"has-bg-black has-text-white has-padding\">Child</div></div>"

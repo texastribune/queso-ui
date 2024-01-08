@@ -1378,7 +1378,7 @@
     },
     {
       "name": "Flex  (l-flex)",
-      "description": "<p>Barebones flex helpers. This breaks some convention with other layout classes, but we use flexbox enough to justify it. <br><br>💡 See <a href=\"/sections/layout/l-ai-position/\">align-items</a> and <a href=\"/sections/layout/l-jc-position/\">justify-content</a> helpers for alignment helpers. </p>\n",
+      "description": "<p>Barebones flex helpers. This breaks some convention with other layout classes, but we use flexbox enough to justify it. <br><br>💡 See <a href=\"/queso-ui/sections/layout/l-ai-position/\">align-items</a> and <a href=\"/queso-ui/sections/layout/l-jc-position/\">justify-content</a> helpers for alignment helpers. </p>\n",
       "location": "https://github.com/texastribune/queso-ui/blob/main/assets/scss/7-layout/_flex.scss#L1",
       "label": "Flex",
       "type": "cssClass",
