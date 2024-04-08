@@ -184,9 +184,10 @@ const downloadAsset = async (url, name) => {
 
 const years = () => {
   const now = new Date().getUTCFullYear();
-  return Array(now - 1998)
+  const in20years = now + 20; 
+  return Array(in20years - 1998)
     .fill('')
-    .map((v, idx) => now - idx);
+    .map((v, idx) => in20years - idx);
 };
 
 module.exports = {

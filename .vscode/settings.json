@@ -3,6 +3,7 @@
         "icons",
         "deps",
         "layout",
-        "type"
+        "type",
+        "date-labels"
     ]
 }
