@@ -140,7 +140,7 @@
     "markdown-it": "^12.3.2",
     "np": "^8.0.4",
     "nunjucks": "^3.1.7",
-    "ora": "^5.1.0",
+    "ora": "^8.0.1",
     "passes-wcag": "^0.2.1",
     "prettier": "2.1.2",
     "puppeteer": "^19.4.0",
