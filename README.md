@@ -70,3 +70,13 @@ Alternatively, [dart-sass](https://www.npmjs.com/package/sass) is a great, low-d
 ---
 
 [Contributing to this CSS Framework](/contributing.md)
+
+## Using a CDN link
+A version of [/assets/scss/all.scss](https://github.com/texastribune/queso-ui/blob/57947f66069d9e90d01eb08f6fe1fe0218a846b6/assets/scss/all.scss) is compiled and hosted in s3 at
+https://cdn.texastribune.org/css/queso.min.css
+
+To use that, add this to your HTML:
+
+```
+<link rel="stylesheet" href="https://cdn.texastribune.org/css/queso.min.css">
+```
